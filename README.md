@@ -324,7 +324,7 @@ SwiftBite is a **self‑built enterprise application** created to demonstrate re
 
 ## 👨‍💻 Author
 
-**Sreedhar**
+**Sreedhar Nagalli**
 .NET & Angular Developer
 
 ---
