@@ -1,0 +1,23 @@
+# ===============================
+# SwiftBite - Global .gitignore
+# ===============================
+
+# -------- .NET --------
+bin/
+obj/
+.vs/
+
+# -------- Angular / Node --------
+node_modules/
+.angular/
+dist/
+
+# -------- Environment / Secrets --------
+appsettings.Development.json
+appsettings.Production.json
+.env
+
+# -------- OS / IDE --------
+.vscode/
+.idea/
+.DS_Store

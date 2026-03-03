@@ -1,0 +1,48 @@
+# infrastructure/docker/docker-compose.yml
+
+version: '3.9'
+
+services:
+
+  # ?? SQL Server ?????????????????????????????????????????
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: swiftbite-sql
+    environment:
+      SA_PASSWORD: "SwiftBite@2024!"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql    # data persists even if container restarts
+    restart: unless-stopped              # auto starts with Docker Desktop
+
+  # ?? Redis (for Cart) ???????????????????????????????????
+  redis:
+    image: redis:7-alpine
+    container_name: swiftbite-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+  # ?? RabbitMQ (for Events) ??????????????????????????????
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: swiftbite-rabbitmq
+    ports:
+      - "5672:5672"      # app connection
+      - "15672:15672"    # management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin123
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    restart: unless-stopped
+
+volumes:
+  sqlserver_data:
+  redis_data:
+  rabbitmq_data:
