@@ -61,7 +61,8 @@ public class ClientSeeder : IHostedService
         }
 
         // ── Client 2: API Gateway (service-to-service) ───────
-        if (await manager.FindByClientIdAsync("swiftbite-gateway", ct) is null)
+        var gatewayClient = await manager.FindByClientIdAsync("swiftbite-gateway", ct);
+        if (gatewayClient is null)
         {
             await manager.CreateAsync(new OpenIddictApplicationDescriptor
             {
@@ -72,6 +73,7 @@ public class ClientSeeder : IHostedService
                 Permissions =
                 {
                     Permissions.Endpoints.Token,
+                    Permissions.Endpoints.Introspection,        // ✅ Gateway can validate tokens
                     Permissions.GrantTypes.ClientCredentials,
                     Permissions.Prefixes.Scope + "swiftbite.user",
                     Permissions.Prefixes.Scope + "swiftbite.restaurant",
@@ -81,7 +83,16 @@ public class ClientSeeder : IHostedService
                 }
             }, ct);
         }
+        else
+        {
+            // ✅ Update existing client to add Introspection permission
+            var descriptor = new OpenIddictApplicationDescriptor();
+            await manager.PopulateAsync(descriptor, gatewayClient, ct);
 
+            descriptor.Permissions.Add(Permissions.Endpoints.Introspection);
+
+            await manager.UpdateAsync(gatewayClient, descriptor, ct);
+        }
         // ── Client 3: Restaurant Admin App ───────────────────
         if (await manager.FindByClientIdAsync("swiftbite-restaurant-portal", ct) is null)
         {
