@@ -30,7 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthServer", "AuthServer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.AuthServer", "src\AuthServer\SwiftBite.AuthServer\SwiftBite.AuthServer.csproj", "{CC7B9E92-0F1B-4AEB-B6F6-5412E680CCF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.ApiGateway", "src\SwiftBite.ApiGateway\SwiftBite.ApiGateway.csproj", "{C7983148-1BC6-4C46-8603-725378142BA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.ApiGateway", "src\ApiGateway\SwiftBite.ApiGateway\SwiftBite.ApiGateway.csproj", "{C7983148-1BC6-4C46-8603-725378142BA8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{FCA01246-F2C6-0AA7-D43F-FD13BE0B9D88}"
 EndProject
