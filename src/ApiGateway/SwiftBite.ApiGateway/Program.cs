@@ -51,7 +51,7 @@ builder.Services.AddInMemoryRateLimiting();
 builder.Services.AddOpenIddict()
     .AddValidation(options =>
     {
-        options.SetIssuer(builder.Configuration["AuthServer:Authority"]!);
+        options.SetIssuer(builder.Configuration["AuthServer:Authority"]?? "https://localhost:5001");
         options.AddAudiences("swiftbite-gateway");
 
         options.UseIntrospection()
