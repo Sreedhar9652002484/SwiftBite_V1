@@ -1,0 +1,13 @@
+name: Swift CI
+on:
+  pull_request:
+    branches: [ "develop", "main" ]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: swift build
+      - name: Run tests
+        run: swift test

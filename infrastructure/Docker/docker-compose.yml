@@ -1,10 +1,6 @@
-# infrastructure/docker/docker-compose.yml
-
 version: '3.9'
-
 services:
-
-  # ?? SQL Server ?????????????????????????????????????????
+  # ? SQL Server
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: swiftbite-sql
@@ -15,10 +11,10 @@ services:
     ports:
       - "1433:1433"
     volumes:
-      - sqlserver_data:/var/opt/mssql    # data persists even if container restarts
-    restart: unless-stopped              # auto starts with Docker Desktop
+      - sqlserver_data:/var/opt/mssql
+    restart: unless-stopped
 
-  # ?? Redis (for Cart) ???????????????????????????????????
+  # ? Redis
   redis:
     image: redis:7-alpine
     container_name: swiftbite-redis
@@ -28,18 +24,36 @@ services:
       - redis_data:/data
     restart: unless-stopped
 
-  # ?? RabbitMQ (for Events) ??????????????????????????????
+  # ? RabbitMQ
   rabbitmq:
     image: rabbitmq:3-management-alpine
     container_name: swiftbite-rabbitmq
     ports:
-      - "5672:5672"      # app connection
-      - "15672:15672"    # management UI
+      - "5672:5672"
+      - "15672:15672"
     environment:
       RABBITMQ_DEFAULT_USER: admin
       RABBITMQ_DEFAULT_PASS: admin123
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
+    restart: unless-stopped
+
+  # ?? API Gateway
+  api-gateway:
+    build:
+      context: .
+      dockerfile: src/SwiftBite.ApiGateway/Dockerfile
+    container_name: swiftbite-gateway
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000
+      - Redis__ConnectionString=swiftbite-redis:6379
+      - AuthServer__Authority=http://swiftbite-auth:5001
+    depends_on:
+      - redis
+      - sqlserver
     restart: unless-stopped
 
 volumes:

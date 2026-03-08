@@ -1,0 +1,37 @@
+﻿{
+  "ReverseProxy": {
+    "Routes": {
+      "auth-route": {
+        "ClusterId": "auth-cluster",
+        "Match": {
+          "Path": "/api/auth/{**catch-all}"
+        }
+      },
+      "user-route": {
+        "ClusterId": "user-cluster",
+        "Match": {
+          "Path": "/api/users/{**catch-all}"
+        },
+        "Metadata": {
+          "RequireAuth": "true"
+        }
+      }
+    },
+    "Clusters": {
+      "auth-cluster": {
+        "Destinations": {
+          "auth-server": {
+            "Address": "http://localhost:5149"
+          }
+        }
+      },
+      "user-cluster": {
+        "Destinations": {
+          "user-service": {
+            "Address": "http://localhost:5002"
+          }
+        }
+      }
+    }
+  }
+}
