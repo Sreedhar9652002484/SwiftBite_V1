@@ -123,6 +123,70 @@ public class ClientSeeder : IHostedService
                 }
             }, ct);
         }
+
+        // ── Client 4: UserService ─────────────────────────────
+        var userServiceClient = await manager
+            .FindByClientIdAsync("swiftbite-userservice", ct);
+
+        if (userServiceClient is null)
+        {
+            await manager.CreateAsync(new OpenIddictApplicationDescriptor
+            {
+                ClientId = "swiftbite-userservice",
+                ClientSecret = "userservice-secret",
+                ClientType = ClientTypes.Confidential,
+                DisplayName = "SwiftBite UserService",
+                Permissions =
+        {
+            Permissions.Endpoints.Introspection, // ✅ validate tokens
+        }
+            }, ct);
+        }
+        else
+        {
+            var descriptor = new OpenIddictApplicationDescriptor();
+            await manager.PopulateAsync(descriptor, userServiceClient, ct);
+            descriptor.Permissions.Add(Permissions.Endpoints.Introspection);
+            await manager.UpdateAsync(userServiceClient, descriptor, ct);
+        }
+
+        // ── Client 5: RestaurantService ───────────────────────
+        var restaurantClient = await manager
+            .FindByClientIdAsync("swiftbite-restaurantservice", ct);
+
+        if (restaurantClient is null)
+        {
+            await manager.CreateAsync(new OpenIddictApplicationDescriptor
+            {
+                ClientId = "swiftbite-restaurantservice",
+                ClientSecret = "restaurantservice-secret",
+                ClientType = ClientTypes.Confidential,
+                DisplayName = "SwiftBite RestaurantService",
+                Permissions =
+        {
+            Permissions.Endpoints.Introspection,
+        }
+            }, ct);
+        }
+
+        // ── Client 6: OrderService ────────────────────────────
+        var orderClient = await manager
+            .FindByClientIdAsync("swiftbite-orderservice", ct);
+
+        if (orderClient is null)
+        {
+            await manager.CreateAsync(new OpenIddictApplicationDescriptor
+            {
+                ClientId = "swiftbite-orderservice",
+                ClientSecret = "orderservice-secret",
+                ClientType = ClientTypes.Confidential,
+                DisplayName = "SwiftBite OrderService",
+                Permissions =
+        {
+            Permissions.Endpoints.Introspection,
+        }
+            }, ct);
+        }
     }
 
     public Task StopAsync(CancellationToken ct) => Task.CompletedTask;

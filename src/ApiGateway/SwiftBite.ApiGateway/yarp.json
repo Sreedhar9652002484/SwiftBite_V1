@@ -12,6 +12,18 @@
         "Match": {
           "Path": "/api/users/{**catch-all}"
         },
+        "restaurant-route": {
+          "ClusterId": "restaurant-cluster",
+          "Match": {
+            "Path": "/api/restaurants/{**catch-all}"
+          }
+        },
+        "order-route": {
+          "ClusterId": "order-cluster",
+          "Match": {
+            "Path": "/api/orders/{**catch-all}"
+          }
+        },
         "Metadata": {
           "RequireAuth": "true"
         }
@@ -28,10 +40,24 @@
       "user-cluster": {
         "Destinations": {
           "user-service": {
-            "Address": "http://localhost:5002"
+            "Address": "http://localhost:7008"
+          }
+        }
+      },
+      "restaurant-cluster": {
+        "Destinations": {
+          "restaurant-service": {
+            "Address": "http://localhost:5003"
+          }
+        }
+      },
+      "order-cluster": {
+        "Destinations": {
+          "order-service": {
+            "Address": "http://localhost:5004"
           }
         }
       }
     }
   }
-}
+  }

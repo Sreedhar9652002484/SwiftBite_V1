@@ -1,37 +1,62 @@
-﻿using SwiftBite.Shared.Kernel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace SwiftBite.UserService.Domain.Entities;
 
-namespace SwiftBite.UserService.Domain.Entities
+public class User
 {
-    public class User : BaseEntity
+    public Guid Id { get; private set; }
+    public string AuthUserId { get; private set; } = string.Empty; // from AuthServer
+    public string FirstName { get; private set; } = string.Empty;
+    public string LastName { get; private set; } = string.Empty;
+    public string Email { get; private set; } = string.Empty;
+    public string? PhoneNumber { get; private set; }
+    public string? ProfilePictureUrl { get; private set; }
+    public DateTime DateOfBirth { get; private set; }
+    public DateTime CreatedAt { get; private set; }
+    public DateTime UpdatedAt { get; private set; }
+    public bool IsActive { get; private set; }
+
+    // Navigation
+    public ICollection<Address> Addresses { get; private set; } = new List<Address>();
+    public UserPreference? Preference { get; private set; }
+
+    // EF Constructor
+    private User() { }
+
+    public static User Create(
+        string authUserId,
+        string firstName,
+        string lastName,
+        string email,
+        DateTime dateOfBirth)
     {
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public string Email { get; private set; }
-        public string PhoneNumber { get; private set; }
-        public UserRole Role { get; private set; }
-        public List<Address> Addresses { get; private set; } = new();
-
-        private User() { } // EF Core needs this
-
-        public static User Create(string firstName, string lastName,
-                                   string email, string phone)
+        return new User
         {
-            return new User
-            {
-                FirstName = firstName.Trim(),
-                LastName = lastName.Trim(),
-                Email = email.ToLowerInvariant(),
-                PhoneNumber = phone,
-                Role = UserRole.Customer
-            };
-        }
-
-        public void AddAddress(Address address) => Addresses.Add(address);
+            Id = Guid.NewGuid(),
+            AuthUserId = authUserId,
+            FirstName = firstName,
+            LastName = lastName,
+            Email = email,
+            DateOfBirth = dateOfBirth,
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow,
+            IsActive = true
+        };
     }
+
+    public void UpdateProfile(string firstName, string lastName,
+        string? phoneNumber, string? profilePictureUrl)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        PhoneNumber = phoneNumber;
+        ProfilePictureUrl = profilePictureUrl;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void Deactivate()
+    {
+        IsActive = false;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public string FullName => $"{FirstName} {LastName}";
 }

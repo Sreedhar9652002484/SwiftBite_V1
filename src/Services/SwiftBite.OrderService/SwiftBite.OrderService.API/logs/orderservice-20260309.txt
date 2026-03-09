@@ -1,0 +1,30 @@
+2026-03-09 07:00:55.534 +05:30 [INF] Executed DbCommand (1,253ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [SwiftBite_OrderDb];
+2026-03-09 07:00:56.811 +05:30 [INF] Executed DbCommand (1,169ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [SwiftBite_OrderDb] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2026-03-09 07:00:56.899 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-09 07:00:56.994 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2026-03-09 07:00:57.011 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-09 07:00:57.052 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-09 07:00:57.113 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-09 07:00:57.147 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-09 07:00:57.722 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-09 07:00:58.110 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-09 07:00:58.272 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-09 07:00:58.279 +05:30 [INF] Hosting environment: Development
+2026-03-09 07:00:58.281 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-09 07:00:59.667 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger - null null

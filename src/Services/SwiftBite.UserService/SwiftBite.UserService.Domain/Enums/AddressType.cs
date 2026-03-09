@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SwiftBite.UserService.Domain.Enums
 {
-    internal class AddressType
+    public enum AddressType
     {
+        Home = 1,
+        Office = 2,
+        Other = 3
     }
 }
