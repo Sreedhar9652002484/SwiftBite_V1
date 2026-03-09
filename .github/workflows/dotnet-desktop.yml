@@ -1,0 +1,41 @@
+name: SwiftBite CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore Dependencies
+      run: dotnet restore SwiftBite.sln
+
+    - name: Build Application
+      run: dotnet build SwiftBite.sln --configuration Release --no-restore
+
+    - name: Run Unit Tests
+      run: dotnet test SwiftBite.sln --no-build --verbosity normal
+
+    - name: Publish Application
+      run: dotnet publish SwiftBite.sln -c Release -o publish
+
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: SwiftBite-Build
+        path: publish
