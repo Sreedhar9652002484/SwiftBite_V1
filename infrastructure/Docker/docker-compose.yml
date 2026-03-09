@@ -1,4 +1,4 @@
-version: '3.9'
+﻿version: '3.9'
 services:
   # ? SQL Server
   sqlserver:
@@ -38,22 +38,49 @@ services:
       - rabbitmq_data:/var/lib/rabbitmq
     restart: unless-stopped
 
-  # ?? API Gateway
-  api-gateway:
-    build:
-      context: .
-      dockerfile: src/SwiftBite.ApiGateway/Dockerfile
-    container_name: swiftbite-gateway
-    ports:
-      - "5000:5000"
+
+
+    # 🆕 Zookeeper (Kafka needs this)
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: swiftbite-zookeeper
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:5000
-      - Redis__ConnectionString=swiftbite-redis:6379
-      - AuthServer__Authority=http://swiftbite-auth:5001
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    restart: unless-stopped
+
+    # 🆕 Kafka
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: swiftbite-kafka
     depends_on:
-      - redis
-      - sqlserver
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    restart: unless-stopped
+
+     # 🆕 Kafka UI (like RabbitMQ management UI!)
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: swiftbite-kafka-ui
+    depends_on:
+      - kafka
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: swiftbite
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
     restart: unless-stopped
 
 volumes:

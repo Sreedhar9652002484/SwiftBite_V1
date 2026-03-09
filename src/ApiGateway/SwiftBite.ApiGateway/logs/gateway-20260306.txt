@@ -1,0 +1,155 @@
+2026-03-06 14:10:07.319 +05:30 [INF] Loading proxy data from config.
+2026-03-06 14:16:23.377 +05:30 [INF] Loading proxy data from config.
+2026-03-06 15:02:39.674 +05:30 [INF] Loading proxy data from config.
+2026-03-06 15:05:03.697 +05:30 [INF] Loading proxy data from config.
+2026-03-06 15:05:04.012 +05:30 [INF] Loading proxy data from config.
+2026-03-06 19:38:37.720 +05:30 [INF] [6d778c31] ➡️ POST /api/users/profile from ::1
+2026-03-06 19:38:37.825 +05:30 [WRN] 🚫 No token provided for path: /api/users/profile
+2026-03-06 19:38:37.909 +05:30 [INF] [6d778c31] ⬅️ 401 in 202ms
+2026-03-06 19:38:37.930 +05:30 [INF] HTTP POST /api/users/profile responded 401 in 243.4280 ms
+2026-03-06 19:40:27.206 +05:30 [INF] [ebecacb3] ➡️ POST /api/users/profile from ::1
+2026-03-06 19:40:27.268 +05:30 [WRN] 🚫 No token provided for path: /api/users/profile
+2026-03-06 19:40:27.285 +05:30 [INF] [ebecacb3] ⬅️ 401 in 79ms
+2026-03-06 19:40:27.323 +05:30 [INF] HTTP POST /api/users/profile responded 401 in 119.7981 ms
+2026-03-06 19:42:21.952 +05:30 [INF] [9216285c] ➡️ POST /api/users/profile from ::1
+2026-03-06 19:42:21.979 +05:30 [WRN] 🚫 No token provided for path: /api/users/profile
+2026-03-06 19:42:21.994 +05:30 [INF] [9216285c] ⬅️ 401 in 44ms
+2026-03-06 19:42:22.001 +05:30 [INF] HTTP POST /api/users/profile responded 401 in 61.2880 ms
+2026-03-06 19:43:58.235 +05:30 [INF] [4eb8c57e] ➡️ POST /api/users/profile from ::1
+2026-03-06 19:43:58.256 +05:30 [WRN] 🚫 No token provided for path: /api/users/profile
+2026-03-06 19:43:58.261 +05:30 [INF] [4eb8c57e] ⬅️ 401 in 25ms
+2026-03-06 19:43:58.268 +05:30 [INF] HTTP POST /api/users/profile responded 401 in 32.9923 ms
+2026-03-06 19:44:14.026 +05:30 [INF] [1d031a78] ➡️ POST /api/users/profile from ::1
+2026-03-06 19:44:14.038 +05:30 [WRN] 🚫 No token provided for path: /api/users/profile
+2026-03-06 19:44:14.043 +05:30 [INF] [1d031a78] ⬅️ 401 in 16ms
+2026-03-06 19:44:14.051 +05:30 [INF] HTTP POST /api/users/profile responded 401 in 24.4702 ms
+2026-03-06 19:44:17.705 +05:30 [INF] [e230343d] ➡️ POST /api/users/profile from ::1
+2026-03-06 19:44:17.722 +05:30 [WRN] 🚫 No token provided for path: /api/users/profile
+2026-03-06 19:44:17.730 +05:30 [INF] [e230343d] ⬅️ 401 in 25ms
+2026-03-06 19:44:17.740 +05:30 [INF] HTTP POST /api/users/profile responded 401 in 35.0127 ms
+2026-03-06 19:45:59.853 +05:30 [INF] [3339f2bb] ➡️ POST /api/users/profile from ::1
+2026-03-06 19:45:59.867 +05:30 [WRN] 🚫 No token provided for path: /api/users/profile
+2026-03-06 19:45:59.873 +05:30 [INF] [3339f2bb] ⬅️ 401 in 20ms
+2026-03-06 19:45:59.883 +05:30 [INF] HTTP POST /api/users/profile responded 401 in 31.0758 ms
+2026-03-06 19:46:26.312 +05:30 [INF] [b4338404] ➡️ POST /api/users/profile from ::1
+2026-03-06 19:46:26.330 +05:30 [WRN] 🚫 No token provided for path: /api/users/profile
+2026-03-06 19:46:26.336 +05:30 [INF] [b4338404] ⬅️ 401 in 24ms
+2026-03-06 19:46:26.358 +05:30 [INF] HTTP POST /api/users/profile responded 401 in 46.4940 ms
+2026-03-06 19:47:00.737 +05:30 [INF] [16374e89] ➡️ POST /api/users/profile from ::1
+2026-03-06 19:47:06.232 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-06 19:47:06.362 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-06 19:47:06.480 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-06 19:47:06.502 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-06 19:47:07.563 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-06 19:47:07.581 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "4644d7a5-f51f-4e88-8731-a3aa52764738",
+  "jti": "18005b2f-80c1-4cf7-88d1-fb72d74d362c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1772805897,
+  "nbf": 1772805897,
+  "exp": 1772809497
+}.
+2026-03-06 19:47:07.657 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-06 19:47:07.677 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-06 19:47:07.808 +05:30 [INF] Proxying to http://localhost:7008/api/users/profile HTTP/2 RequestVersionOrLower 
+2026-03-06 19:47:08.207 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-06 19:47:08.331 +05:30 [INF] [16374e89] ⬅️ 502 in 7603ms
+2026-03-06 19:47:08.345 +05:30 [ERR] HTTP POST /api/users/profile responded 502 in 7618.3655 ms
+2026-03-06 22:26:38.572 +05:30 [INF] Loading proxy data from config.
+2026-03-06 22:32:53.993 +05:30 [INF] Loading proxy data from config.

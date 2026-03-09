@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "src\\Services\\SwiftBite.UserService\\SwiftBite.UserService.API\\SwiftBite.UserService.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\AuthServer\\SwiftBite.AuthServer\\SwiftBite.AuthServer.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\ApiGateway\\SwiftBite.ApiGateway\\SwiftBite.ApiGateway.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

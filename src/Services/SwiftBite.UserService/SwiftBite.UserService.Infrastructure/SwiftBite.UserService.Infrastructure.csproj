@@ -8,11 +8,20 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\SwiftBite.Shared.Kernel\SwiftBite.Shared.Kernel.csproj" />
+    <ProjectReference Include="..\SwiftBite.UserService.Application\SwiftBite.UserService.Application.csproj" />
     <ProjectReference Include="..\SwiftBite.UserService.Domain\SwiftBite.UserService.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.5.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.3" />
     <PackageReference Include="StackExchange.Redis" Version="2.11.8" />
   </ItemGroup>
 
