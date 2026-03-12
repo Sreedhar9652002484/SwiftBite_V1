@@ -127,3 +127,18 @@ Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.paym
 2026-03-12 06:25:03.870 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_vs/browserLink - 200 null text/javascript; charset=UTF-8 728.818ms
 2026-03-12 06:25:04.266 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - null null
 2026-03-12 06:25:04.455 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 189.1546ms
+2026-03-12 06:25:52.237 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/hubs/notifications - null null
+2026-03-12 06:25:56.056 +05:30 [INF] HTTP GET /swagger/hubs/notifications responded 404 in 3658.0046 ms
+2026-03-12 06:25:56.074 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/hubs/notifications - 404 0 null 3846.6031ms
+2026-03-12 06:25:56.092 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5006/swagger/hubs/notifications, Response status code: 404
+2026-03-12 06:33:10.117 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications - null null
+2026-03-12 06:33:10.496 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-12 06:33:10.611 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "missing_token",
+  "error_description": "The security token is missing.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2000"
+}.
+2026-03-12 06:33:10.616 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-12 06:33:10.619 +05:30 [INF] HTTP GET /hubs/notifications responded 401 in 246.5582 ms
+2026-03-12 06:33:10.626 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications - 401 0 null 524.7167ms
