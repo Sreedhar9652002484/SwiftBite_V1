@@ -16,6 +16,7 @@ dist/
 appsettings.Development.json
 appsettings.Production.json
 .env
+appsettings.json
 
 # -------- OS / IDE --------
 .vscode/
