@@ -28,3 +28,24 @@ ORDER BY [MigrationId];
 2026-03-09 07:00:58.279 +05:30 [INF] Hosting environment: Development
 2026-03-09 07:00:58.281 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
 2026-03-09 07:00:59.667 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger - null null
+2026-03-09 07:00:59.979 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger - 301 0 null 345.9283ms
+2026-03-09 07:00:59.990 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-09 07:01:00.079 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 88.8318ms
+2026-03-09 07:01:00.168 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui-bundle.js - null null
+2026-03-09 07:01:00.168 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui.css - null null
+2026-03-09 07:01:00.174 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui-standalone-preset.js - null null
+2026-03-09 07:01:00.192 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-09 07:01:00.207 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-09 07:01:00.238 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 45.8538ms
+2026-03-09 07:01:00.969 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-03-09 07:01:00.969 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-03-09 07:01:00.984 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-03-09 07:01:00.984 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui.css - 200 144929 text/css 815.9184ms
+2026-03-09 07:01:00.985 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 811.9166ms
+2026-03-09 07:01:00.992 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 823.3565ms
+2026-03-09 07:01:01.039 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 837.2998ms
+2026-03-09 07:01:01.302 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-09 07:01:01.325 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.8337ms
+2026-03-09 07:01:01.363 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/favicon-32x32.png - null null
+2026-03-09 07:01:01.408 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-03-09 07:01:01.414 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/favicon-32x32.png - 200 628 image/png 53.4696ms

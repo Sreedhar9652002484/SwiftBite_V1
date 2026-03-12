@@ -1,0 +1,6 @@
+@SwiftBite.NotificationService.API_HostAddress = http://localhost:5063
+
+GET {{SwiftBite.NotificationService.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
