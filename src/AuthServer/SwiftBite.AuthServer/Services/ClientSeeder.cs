@@ -187,7 +187,49 @@ public class ClientSeeder : IHostedService
         }
             }, ct);
         }
+
+        // ── Client 7: PaymentService ──────────────────────────
+        var paymentClient = await manager
+            .FindByClientIdAsync("swiftbite-paymentservice", ct);
+
+        if (paymentClient is null)
+        {
+            await manager.CreateAsync(new OpenIddictApplicationDescriptor
+            {
+                ClientId = "swiftbite-paymentservice",
+                ClientSecret = "paymentservice-secret",
+                ClientType = ClientTypes.Confidential,
+                DisplayName = "SwiftBite PaymentService",
+                Permissions =
+        {
+            Permissions.Endpoints.Introspection,
+        }
+            }, ct);
+        }
+
+        // ── Client 8: NotificationService ─────────────────────
+        var notifClient = await manager
+            .FindByClientIdAsync(
+                "swiftbite-notificationservice", ct);
+
+        if (notifClient is null)
+        {
+            await manager.CreateAsync(
+                new OpenIddictApplicationDescriptor
+                {
+                    ClientId = "swiftbite-notificationservice",
+                    ClientSecret = "notificationservice-secret",
+                    ClientType = ClientTypes.Confidential,
+                    DisplayName = "SwiftBite NotificationService",
+                    Permissions =
+                    {
+                Permissions.Endpoints.Introspection,
+                    }
+                }, ct);
+        }
     }
+
+
 
     public Task StopAsync(CancellationToken ct) => Task.CompletedTask;
 }

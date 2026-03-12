@@ -13,6 +13,22 @@
       {
         "Path": "src\\ApiGateway\\SwiftBite.ApiGateway\\SwiftBite.ApiGateway.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "src\\Services\\SwiftBite.RestaurantService\\SwiftBite.RestaurantService.API\\SwiftBite.RestaurantService.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\Services\\SwiftBite.OrderService\\SwiftBite.OrderService.API\\SwiftBite.OrderService.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\Services\\SwiftBite.PaymentService\\SwiftBite.PaymentService.API\\SwiftBite.PaymentService.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\Services\\SwiftBite.NotificationService\\SwiftBite.NotificationService.API\\SwiftBite.NotificationService.API.csproj",
+        "Action": "Start"
       }
     ]
   }

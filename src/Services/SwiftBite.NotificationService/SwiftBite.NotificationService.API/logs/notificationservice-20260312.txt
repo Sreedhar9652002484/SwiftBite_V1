@@ -1,0 +1,129 @@
+2026-03-12 06:21:57.034 +05:30 [INF] Executed DbCommand (1,396ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [SwiftBite_NotificationDb];
+2026-03-12 06:21:57.919 +05:30 [INF] Executed DbCommand (784ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [SwiftBite_NotificationDb] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2026-03-12 06:21:58.068 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-12 06:21:58.240 +05:30 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2026-03-12 06:21:58.262 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-12 06:21:58.318 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-12 06:21:58.412 +05:30 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-12 06:21:58.492 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-12 06:21:59.703 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-12 06:21:59.725 +05:30 [INF] 🎧 Kafka consumer started | Topics: swiftbite.order.placed, swiftbite.order.confirmed, swiftbite.order.cancelled, swiftbite.payment.success, swiftbite.payment.failed
+2026-03-12 06:22:04.175 +05:30 [INF] Now listening on: http://localhost:5006
+2026-03-12 06:22:04.311 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-12 06:22:04.325 +05:30 [INF] Hosting environment: Development
+2026-03-12 06:22:04.328 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.API
+2026-03-12 06:22:06.086 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger - null null
+2026-03-12 06:22:06.424 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger - 301 0 null 373.6087ms
+2026-03-12 06:22:06.447 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/index.html - null null
+2026-03-12 06:22:06.565 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/index.html - 200 null text/html;charset=utf-8 118.9838ms
+2026-03-12 06:22:06.758 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/swagger-ui.css - null null
+2026-03-12 06:22:06.765 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/swagger-ui-bundle.js - null null
+2026-03-12 06:22:06.769 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-12 06:22:06.767 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/swagger-ui-standalone-preset.js - null null
+2026-03-12 06:22:06.793 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_vs/browserLink - null null
+2026-03-12 06:22:06.842 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - 200 16551 application/javascript; charset=utf-8 73.0465ms
+2026-03-12 06:22:06.930 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-03-12 06:22:06.935 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-03-12 06:22:06.930 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-03-12 06:22:06.975 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/swagger-ui.css - 200 144929 text/css 216.5839ms
+2026-03-12 06:22:06.980 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 215.053ms
+2026-03-12 06:22:06.983 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 215.987ms
+2026-03-12 06:22:07.034 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_vs/browserLink - 200 null text/javascript; charset=UTF-8 241.3609ms
+2026-03-12 06:22:07.363 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - null null
+2026-03-12 06:22:07.392 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.8293ms
+2026-03-12 06:22:07.433 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/favicon-32x32.png - null null
+2026-03-12 06:22:07.448 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-03-12 06:22:07.451 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/favicon-32x32.png - 200 628 image/png 17.5158ms
+2026-03-12 06:22:12.267 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.cancelled: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-12 06:22:12.386 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.confirmed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-12 06:22:12.412 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.placed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-12 06:22:12.439 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.payment.failed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-12 06:22:12.466 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.payment.success: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-12 06:24:55.628 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-12 06:24:55.788 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-12 06:24:55.802 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-12 06:24:55.812 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-12 06:24:55.931 +05:30 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-12 06:24:55.967 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-12 06:24:56.402 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-12 06:24:56.434 +05:30 [INF] 🎧 Kafka consumer started | Topics: swiftbite.order.placed, swiftbite.order.confirmed, swiftbite.order.cancelled, swiftbite.payment.success, swiftbite.payment.failed
+2026-03-12 06:24:56.689 +05:30 [INF] Now listening on: http://localhost:5006
+2026-03-12 06:24:56.944 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-12 06:24:56.949 +05:30 [INF] Hosting environment: Development
+2026-03-12 06:24:56.954 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.API
+2026-03-12 06:24:57.274 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.cancelled: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-12 06:24:57.325 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.confirmed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-12 06:24:57.364 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.placed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-12 06:24:57.406 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.payment.failed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-12 06:24:57.437 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.payment.success: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-12 06:25:01.384 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/index.html - null null
+2026-03-12 06:25:03.042 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/index.html - 200 null text/html;charset=utf-8 1678.9026ms
+2026-03-12 06:25:03.142 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_vs/browserLink - null null
+2026-03-12 06:25:03.596 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-12 06:25:03.751 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - 200 16551 application/javascript; charset=utf-8 154.8668ms
+2026-03-12 06:25:03.870 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_vs/browserLink - 200 null text/javascript; charset=UTF-8 728.818ms
+2026-03-12 06:25:04.266 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - null null
+2026-03-12 06:25:04.455 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 189.1546ms
