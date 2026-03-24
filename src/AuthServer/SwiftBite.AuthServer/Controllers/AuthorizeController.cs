@@ -76,6 +76,8 @@ public class AuthorizeController : Controller
             OpenIddictConstants.Claims.FamilyName, user.LastName);
         identity.AddClaim("firstName", user.FirstName);
         identity.AddClaim("lastName", user.LastName);
+        if (user.RestaurantId.HasValue)                    
+            identity.AddClaim("restaurantId", user.RestaurantId.Value.ToString());
 
         var roles = await _userManager.GetRolesAsync(user);
         foreach (var role in roles)
@@ -92,7 +94,7 @@ public class AuthorizeController : Controller
                 OpenIddictConstants.Claims.Email or
                 OpenIddictConstants.Claims.GivenName or
                 OpenIddictConstants.Claims.FamilyName or
-                "firstName" or "lastName" => new[]
+                "firstName" or "lastName" or "restaurantId" => new[]
                 {
                     OpenIddictConstants.Destinations.AccessToken,
                     OpenIddictConstants.Destinations.IdentityToken

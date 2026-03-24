@@ -1,0 +1,112 @@
+2026-03-24 05:48:22.157 +05:30 [INF] Executed DbCommand (124ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 05:48:22.545 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 05:48:22.715 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 05:48:22.822 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 05:48:22.955 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-24 05:48:23.032 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-24 05:48:23.656 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-24 05:48:24.705 +05:30 [INF] Now listening on: http://localhost:5005
+2026-03-24 05:48:25.603 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-03-24 05:48:26.745 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-24 05:48:26.786 +05:30 [INF] Hosting environment: Development
+2026-03-24 05:48:26.802 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-03-24 05:48:26.987 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 1385.294ms
+2026-03-24 05:48:27.049 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-24 05:48:27.049 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-03-24 05:48:27.071 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 22.1934ms
+2026-03-24 05:48:27.187 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 137.1592ms
+2026-03-24 05:48:27.340 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-03-24 05:48:27.485 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 145.5823ms
+2026-03-24 05:53:31.599 +05:30 [INF] Executed DbCommand (230ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 05:53:32.099 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 05:53:32.170 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 05:53:32.186 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 05:53:32.291 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-24 05:53:32.476 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-24 05:53:33.320 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-24 05:53:33.930 +05:30 [INF] Now listening on: http://localhost:5005
+2026-03-24 05:53:34.863 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-24 05:53:35.733 +05:30 [INF] Hosting environment: Development
+2026-03-24 05:53:38.162 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-03-24 05:53:38.198 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-03-24 05:53:40.655 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 2466.038ms
+2026-03-24 05:53:41.680 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-24 05:53:41.759 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-03-24 05:53:42.050 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 370.7274ms
+2026-03-24 05:53:42.263 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 504.2945ms
+2026-03-24 05:53:44.931 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-03-24 05:53:44.960 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.3683ms
+2026-03-24 05:58:17.331 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-03-24 05:58:17.633 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 304.8556ms
+2026-03-24 05:58:17.747 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-24 05:58:17.748 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-03-24 05:58:17.763 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 16.0794ms
+2026-03-24 05:58:17.874 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 125.1856ms
+2026-03-24 05:58:18.229 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-03-24 05:58:18.397 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 168.1602ms
+2026-03-24 06:19:53.934 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 06:19:54.130 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 06:19:54.141 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 06:19:54.151 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 06:19:54.205 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-24 06:19:54.236 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-24 06:19:54.887 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-24 06:19:55.287 +05:30 [INF] Now listening on: http://localhost:5005
+2026-03-24 06:19:55.519 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-24 06:19:55.522 +05:30 [INF] Hosting environment: Development
+2026-03-24 06:19:55.543 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-03-24 06:19:56.026 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-03-24 06:19:56.446 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 449.3796ms
+2026-03-24 06:19:56.517 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-03-24 06:19:56.527 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-24 06:19:56.589 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 62.5216ms
+2026-03-24 06:19:56.670 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 152.6146ms
+2026-03-24 06:19:56.972 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-03-24 06:19:57.065 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 93.5818ms
+2026-03-24 06:46:52.784 +05:30 [INF] Executed DbCommand (221ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 06:46:53.107 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 06:46:53.177 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 06:46:53.228 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 06:46:53.404 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-24 06:46:53.529 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-24 06:46:54.864 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-24 06:46:55.860 +05:30 [INF] Now listening on: http://localhost:5005
+2026-03-24 06:46:56.610 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-24 06:46:56.759 +05:30 [INF] Hosting environment: Development
+2026-03-24 06:46:57.093 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-03-24 06:46:57.397 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-03-24 06:46:59.282 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 1888.2197ms
+2026-03-24 06:46:59.412 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-24 06:46:59.440 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-03-24 06:46:59.473 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 60.8208ms
+2026-03-24 06:46:59.955 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 512.8734ms
+2026-03-24 06:47:02.554 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-03-24 06:47:02.653 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 99.3883ms

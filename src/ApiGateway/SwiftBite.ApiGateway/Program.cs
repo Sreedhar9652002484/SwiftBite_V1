@@ -88,8 +88,11 @@ app.UseCors("SwiftBitePolicy");     // 3️⃣ CORS for Angular
 app.UseMiddleware<LoggingMiddleware>();          // 4️⃣ Custom logging
 app.UseMiddleware<AuthenticationMiddleware>();   // 5️⃣ JWT validation
 app.UseMiddleware<CachingMiddleware>(); // 6️⃣ 🆕 Cache GET responses!
+
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<UserIdForwardingMiddleware>();  // ← here
+
 app.MapReverseProxy();              // 6️⃣ Forward to services
 
 app.Run();
