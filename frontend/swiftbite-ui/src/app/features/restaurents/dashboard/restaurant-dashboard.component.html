@@ -1,0 +1,150 @@
+<div class="dashboard">
+
+  <!-- ── Header ────────────────────────────────────────── -->
+  <div class="dashboard-header">
+    <div>
+      <h1 class="page-title">Orders Queue</h1>
+      <p class="page-sub">
+        {{ pendingCount() }} pending &nbsp;·&nbsp; {{ activeCount() }} active
+      </p>
+    </div>
+    <button class="btn-refresh" (click)="loadOrders()" [disabled]="loading()">
+      ↻ Refresh
+    </button>
+  </div>
+
+  <!-- ── Filter tabs ────────────────────────────────────── -->
+  <div class="filter-tabs">
+    <button
+      *ngFor="let f of filters"
+      class="tab"
+      [class.active]="activeFilter() === f.value"
+      (click)="setFilter(f.value)"
+    >
+      {{ f.label }}
+      <span class="badge" *ngIf="f.value === 'Pending' && pendingCount() > 0">
+        {{ pendingCount() }}
+      </span>
+    </button>
+  </div>
+
+  <!-- ── Loading ────────────────────────────────────────── -->
+  <div class="state-box" *ngIf="loading()">
+    <div class="spinner"></div>
+    <p>Loading orders…</p>
+  </div>
+
+  <!-- ── Error ──────────────────────────────────────────── -->
+  <div class="state-box error" *ngIf="error() && !loading()">
+    <p>⚠️ {{ error() }}</p>
+    <button class="btn-refresh" (click)="loadOrders()">Retry</button>
+  </div>
+
+  <!-- ── Empty ──────────────────────────────────────────── -->
+  <div class="state-box" *ngIf="!loading() && !error() && filteredOrders().length === 0">
+    <p class="empty-icon">🧾</p>
+    <p>No {{ activeFilter() === 'All' ? '' : activeFilter() }} orders right now.</p>
+  </div>
+
+  <!-- ── Orders grid ────────────────────────────────────── -->
+  <div class="orders-grid" *ngIf="!loading() && !error()">
+
+    <div
+      class="order-card"
+      *ngFor="let order of filteredOrders()"
+      [class.pending]="order.status === 'Pending'"
+      [class.updating]="isUpdating(order.id)"
+    >
+      <!-- Card header -->
+      <div class="card-header">
+        <div>
+          <span class="order-id">#{{ order.id.slice(-6).toUpperCase() }}</span>
+          <span class="status-pill" [ngClass]="order.status.toLowerCase()">
+            {{ order.status }}
+          </span>
+        </div>
+        <span class="time-ago">{{ timeAgo(order.createdAt) }}</span>
+      </div>
+
+      <!-- Customer -->
+      <p class="customer-name">{{ order.customerName }}</p>
+      <p class="customer-address" *ngIf="order.address">📍 {{ order.address }}</p>
+
+      <!-- Items list -->
+      <ul class="items-list">
+        <li *ngFor="let item of order.items" class="item-row">
+          <span class="item-qty">× {{ item.quantity }}</span>
+          <span class="item-name">{{ item.name }}</span>
+          <span class="item-price">₹{{ item.price * item.quantity }}</span>
+        </li>
+      </ul>
+
+      <!-- Total -->
+      <div class="card-total">
+        <span>Total</span>
+        <span class="total-amount">₹{{ order.totalAmount }}</span>
+      </div>
+
+      <!-- Actions -->
+      <div class="card-actions" [ngSwitch]="order.status">
+
+        <!-- Pending → Accept or Reject -->
+        <ng-container *ngSwitchCase="'Pending'">
+          <button
+            class="btn btn-danger"
+            (click)="rejectOrder(order)"
+            [disabled]="isUpdating(order.id)"
+          >
+            Reject
+          </button>
+          <button
+            class="btn btn-success"
+            (click)="acceptOrder(order)"
+            [disabled]="isUpdating(order.id)"
+          >
+            {{ isUpdating(order.id) ? 'Accepting…' : 'Accept' }}
+          </button>
+        </ng-container>
+
+        <!-- Confirmed → Mark Preparing -->
+        <ng-container *ngSwitchCase="'Confirmed'">
+          <button
+            class="btn btn-orange full"
+            (click)="markPreparing(order)"
+            [disabled]="isUpdating(order.id)"
+          >
+            {{ isUpdating(order.id) ? 'Updating…' : 'Start Preparing' }}
+          </button>
+        </ng-container>
+
+        <!-- Preparing → Mark Ready -->
+        <ng-container *ngSwitchCase="'Preparing'">
+          <button
+            class="btn btn-blue full"
+            (click)="markReady(order)"
+            [disabled]="isUpdating(order.id)"
+          >
+            {{ isUpdating(order.id) ? 'Updating…' : 'Mark Ready for Pickup' }}
+          </button>
+        </ng-container>
+
+        <!-- ReadyForPickup / Cancelled → no actions -->
+        <ng-container *ngSwitchCase="'ReadyForPickup'">
+          <p class="done-label">✅ Awaiting delivery partner</p>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'Cancelled'">
+          <p class="done-label cancelled">✕ Order cancelled</p>
+        </ng-container>
+
+      </div>
+
+      <!-- Updating overlay -->
+      <div class="updating-overlay" *ngIf="isUpdating(order.id)">
+        <div class="spinner small"></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

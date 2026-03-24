@@ -1,0 +1,163 @@
+<div class="menu-manager">
+
+  <!-- Toast messages -->
+  <div class="toast success" *ngIf="successMsg()">✓ {{ successMsg() }}</div>
+  <div class="toast error"   *ngIf="errorMsg()">✕ {{ errorMsg() }}</div>
+
+  <!-- Header -->
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Menu Manager</h1>
+      <p class="page-sub">{{ categories().length }} categories · {{ totalItems() }} items</p>
+    </div>
+    <button class="btn-primary" (click)="showAddCategory.set(!showAddCategory())">
+      {{ showAddCategory() ? '✕ Cancel' : '+ Add Category' }}
+    </button>
+  </div>
+
+  <!-- Add Category form -->
+  <div class="form-card" *ngIf="showAddCategory()">
+    <h3 class="form-title">New category</h3>
+    <div class="form-row">
+      <div class="field">
+        <label>Category name *</label>
+        <input [(ngModel)]="newCategory.name" placeholder="e.g. Starters, Biryanis…" />
+      </div>
+      <div class="field field-sm">
+        <label>Display order</label>
+        <input type="number" [(ngModel)]="newCategory.displayOrder" min="1" />
+      </div>
+    </div>
+    <div class="field">
+      <label>Description (optional)</label>
+      <input [(ngModel)]="newCategory.description" placeholder="Short description…" />
+    </div>
+    <div class="form-actions">
+      <button class="btn-ghost" (click)="showAddCategory.set(false)">Cancel</button>
+      <button class="btn-primary" [disabled]="saving() || !newCategory.name.trim()" (click)="submitCategory()">
+        {{ saving() ? 'Adding…' : 'Add Category' }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div class="loader-wrap" *ngIf="loading()">
+    <div class="spinner"></div>
+    <p>Loading menu…</p>
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" *ngIf="!loading() && categories().length === 0">
+    <span class="empty-icon">🍽️</span>
+    <p>No categories yet. Add your first one above.</p>
+  </div>
+
+  <!-- Category list -->
+  <div class="category-list" *ngIf="!loading()">
+    <div class="category-card" *ngFor="let cat of categories()">
+
+      <!-- Category header -->
+      <div class="cat-header" (click)="toggleCategory(cat.id)">
+        <div class="cat-meta">
+          <span class="cat-chevron">{{ expandedCategory() === cat.id ? '▾' : '▸' }}</span>
+          <div>
+            <span class="cat-name">{{ cat.name }}</span>
+            <span class="cat-count">{{ cat.items?.length }} items</span>
+          </div>
+        </div>
+        <div class="cat-actions" (click)="$event.stopPropagation()">
+          <button class="btn-add-item" (click)="openAddItem(cat.id)">+ Add Item</button>
+          <button class="btn-delete-cat" (click)="deleteCategory(cat.id, cat.name)">Delete</button>
+        </div>
+      </div>
+
+      <!-- Items list (expanded) -->
+      <div class="items-section" *ngIf="expandedCategory() === cat.id">
+
+        <!-- Add item form -->
+        <div class="item-form" *ngIf="addingItemToCatId() === cat.id">
+          <h4 class="form-title">New item in {{ cat.name }}</h4>
+
+          <div class="form-row">
+            <div class="field">
+              <label>Item name *</label>
+              <input [(ngModel)]="newItem.name" placeholder="e.g. Chicken Biryani" />
+            </div>
+            <div class="field field-sm">
+              <label>Price (₹) *</label>
+              <input type="number" [(ngModel)]="newItem.price" min="1" placeholder="0" />
+            </div>
+            <div class="field field-sm">
+              <label>Prep time (mins)</label>
+              <input type="number" [(ngModel)]="newItem.preparationTimeMinutes" min="1" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Description</label>
+            <input [(ngModel)]="newItem.description" placeholder="Short description…" />
+          </div>
+
+          <div class="field">
+            <label>Image URL (optional)</label>
+            <input [(ngModel)]="newItem.imageUrl" placeholder="https://…" />
+          </div>
+
+          <div class="checkbox-row">
+            <label class="checkbox-label">
+              <input type="checkbox" [(ngModel)]="newItem.isVegetarian" />
+              Vegetarian
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" [(ngModel)]="newItem.isVegan" />
+              Vegan
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" [(ngModel)]="newItem.isGlutenFree" />
+              Gluten Free
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn-ghost" (click)="cancelAddItem()">Cancel</button>
+            <button
+              class="btn-primary"
+              [disabled]="saving() || !newItem.name.trim() || newItem.price <= 0"
+              (click)="submitItem(cat.id)"
+            >
+              {{ saving() ? 'Adding…' : 'Add Item' }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Empty items -->
+        <div class="items-empty" *ngIf="!cat.items?.length && addingItemToCatId() !== cat.id">
+          No items yet. Click <strong>+ Add Item</strong> above.
+        </div>
+
+        <!-- Item rows -->
+        <div class="item-row" *ngFor="let item of cat.items">
+          <img *ngIf="item.imageUrl" [src]="item.imageUrl" class="item-img" alt="" />
+          <div class="item-placeholder" *ngIf="!item.imageUrl">🍴</div>
+
+          <div class="item-info">
+            <div class="item-top">
+              <span class="item-name">{{ item.name }}</span>
+              <span class="diet-tag" [ngClass]="dietClass(item)">{{ dietLabel(item) }}</span>
+              <span class="gluten-tag" *ngIf="item.isGlutenFree">GF</span>
+            </div>
+            <p class="item-desc" *ngIf="item.description">{{ item.description }}</p>
+            <div class="item-bottom">
+              <span class="item-price">₹{{ item.price }}</span>
+              <span class="item-prep">{{ item.preparationTimeMinutes }} min</span>
+            </div>
+          </div>
+
+          <button class="btn-delete-item" (click)="deleteItem(item.id, cat.id, item.name)">✕</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
