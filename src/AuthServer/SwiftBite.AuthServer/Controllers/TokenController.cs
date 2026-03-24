@@ -167,7 +167,8 @@ namespace SwiftBite.AuthServer.Controllers
                 lastName = user.LastName,
                 role = roles.Count == 1
                                 ? (object)roles[0]
-                                : roles.ToArray()
+                                : roles.ToArray(),
+                restaurantId = user.RestaurantId?.ToString() 
             });
         }
 
@@ -184,6 +185,9 @@ namespace SwiftBite.AuthServer.Controllers
 
                 Claims.Role
                     => [Destinations.AccessToken, Destinations.IdentityToken],
+                "restaurantId"                              // ← ADD THIS CASE
+                    => [Destinations.AccessToken, Destinations.IdentityToken],
+
 
                 _ => [Destinations.AccessToken]
             };
