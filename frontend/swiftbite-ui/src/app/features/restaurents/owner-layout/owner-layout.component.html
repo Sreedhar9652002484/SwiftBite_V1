@@ -1,0 +1,59 @@
+<div class="owner-shell">
+
+  <!-- ── Sidebar ─────────────────────────────────────── -->
+  <aside class="sidebar">
+
+    <div class="sidebar-brand">
+      <span class="brand-icon">🍴</span>
+      <span class="brand-name">SwiftBite</span>
+      <span class="brand-pill">Owner</span>
+    </div>
+
+    <!-- Restaurant name + open/closed toggle -->
+    <div class="restaurant-card">
+      <p class="restaurant-name">{{ restaurantName() }}</p>
+
+      <button
+        class="status-toggle"
+        [class.open]="isOpen()"
+        [disabled]="togglingStatus()"
+        (click)="toggleStatus()"
+        [attr.aria-label]="isOpen() ? 'Close restaurant' : 'Open restaurant'"
+      >
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+        </span>
+        <span class="status-label">{{ isOpen() ? 'Open' : 'Closed' }}</span>
+      </button>
+    </div>
+
+    <!-- Nav links -->
+    <nav class="sidebar-nav">
+      <a
+        *ngFor="let item of navItems"
+        [routerLink]="item.path"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <span class="nav-icon">{{ item.icon }}</span>
+        <span class="nav-text">{{ item.label }}</span>
+      </a>
+    </nav>
+
+    <!-- Footer: user + logout -->
+    <div class="sidebar-footer">
+      <div class="owner-row">
+        <div class="avatar">{{ auth.firstName ? auth.firstName[0] : 'O' }}</div>
+        <span class="owner-name">{{ auth.firstName || 'Owner' }}</span>
+      </div>
+      <button class="btn-logout" (click)="logout()">Logout</button>
+    </div>
+
+  </aside>
+
+  <!-- ── Main content area ────────────────────────────── -->
+  <main class="owner-content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>
