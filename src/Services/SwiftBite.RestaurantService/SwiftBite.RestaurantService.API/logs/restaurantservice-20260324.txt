@@ -637,3 +637,1298 @@ System.InvalidOperationException: Cannot convert string value 'Biryani' from the
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
 2026-03-24 06:49:35.274 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 458.0527ms
+2026-03-24 07:20:40.092 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 07:20:40.365 +05:30 [INF] Executed DbCommand (104ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 07:20:40.474 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 07:20:40.521 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 07:20:40.716 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-24 07:20:40.796 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-24 07:20:43.169 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-24 07:20:43.816 +05:30 [INF] Now listening on: http://localhost:5003
+2026-03-24 07:20:46.019 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-24 07:20:46.263 +05:30 [INF] Hosting environment: Development
+2026-03-24 07:20:46.461 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API
+2026-03-24 07:20:46.767 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html - null null
+2026-03-24 07:20:47.810 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/swagger/index.html - 200 null text/html;charset=utf-8 1046.5446ms
+2026-03-24 07:20:48.073 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/_vs/browserLink - null null
+2026-03-24 07:20:48.429 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-24 07:20:48.555 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/_framework/aspnetcore-browser-refresh.js - 200 16547 application/javascript; charset=utf-8 124.9561ms
+2026-03-24 07:20:48.649 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/_vs/browserLink - 200 null text/javascript; charset=UTF-8 575.8004ms
+2026-03-24 07:20:51.871 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json - null null
+2026-03-24 07:20:51.965 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 94.1837ms
+2026-03-24 07:21:16.481 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:21:16.510 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:21:19.014 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-24 07:21:19.711 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-24 07:21:19.763 +05:30 [INF] Received HTTP response headers after 42.8128ms - 200
+2026-03-24 07:21:19.779 +05:30 [INF] End processing HTTP request after 805.292ms - 200
+2026-03-24 07:21:19.806 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-24 07:21:19.890 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-24 07:21:19.920 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-24 07:21:19.924 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-24 07:21:19.951 +05:30 [INF] Received HTTP response headers after 25.166ms - 200
+2026-03-24 07:21:19.955 +05:30 [INF] End processing HTTP request after 34.3743ms - 200
+2026-03-24 07:21:19.959 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-24 07:21:19.970 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-24 07:21:20.105 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:21:20.107 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:21:20.184 +05:30 [INF] Received HTTP response headers after 74.9489ms - 200
+2026-03-24 07:21:20.189 +05:30 [INF] End processing HTTP request after 84.6535ms - 200
+2026-03-24 07:21:20.193 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:21:20.203 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "c151edfa-7d6d-4d6b-b577-338bbc46945b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317072,
+  "nbf": 1774317072,
+  "exp": 1774320672
+}.
+2026-03-24 07:21:20.227 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:21:20.239 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:21:20.245 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:21:20.316 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:21:20.333 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-24 07:21:21.534 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:21:21.621 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:21:21.885 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 1561.3835ms
+2026-03-24 07:21:21.890 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:21:21.899 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 5378.3761 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:21:21.937 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:21:21.969 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 5488.4647ms
+2026-03-24 07:21:23.123 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:21:23.132 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:21:23.136 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:21:23.139 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:21:23.207 +05:30 [INF] Received HTTP response headers after 65.1402ms - 200
+2026-03-24 07:21:23.213 +05:30 [INF] End processing HTTP request after 76.5999ms - 200
+2026-03-24 07:21:23.218 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:21:23.221 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "c151edfa-7d6d-4d6b-b577-338bbc46945b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317072,
+  "nbf": 1774317072,
+  "exp": 1774320672
+}.
+2026-03-24 07:21:23.224 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:21:23.225 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:21:23.230 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:21:23.235 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:21:23.828 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:21:23.834 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:21:23.997 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 758.6666ms
+2026-03-24 07:21:24.000 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:21:24.003 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 869.1152 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:21:24.019 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:21:24.034 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 910.7059ms
+2026-03-24 07:21:26.164 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:21:26.173 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:21:26.190 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:21:26.201 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:21:26.323 +05:30 [INF] Received HTTP response headers after 100.9456ms - 200
+2026-03-24 07:21:26.334 +05:30 [INF] End processing HTTP request after 144.482ms - 200
+2026-03-24 07:21:26.337 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:21:26.340 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "c151edfa-7d6d-4d6b-b577-338bbc46945b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317072,
+  "nbf": 1774317072,
+  "exp": 1774320672
+}.
+2026-03-24 07:21:26.347 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:21:26.349 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:21:26.351 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:21:26.353 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:21:26.385 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:21:26.399 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:21:26.593 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 236.658ms
+2026-03-24 07:21:26.596 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:21:26.599 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 416.8639 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:21:26.617 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:21:26.633 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 468.2473ms
+2026-03-24 07:22:00.985 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-24 07:22:01.010 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:22:01.016 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:22:01.019 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:22:01.095 +05:30 [INF] Received HTTP response headers after 74.1297ms - 200
+2026-03-24 07:22:01.098 +05:30 [INF] End processing HTTP request after 81.6609ms - 200
+2026-03-24 07:22:01.100 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:22:01.103 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "d7bf1db6-d9ff-4faf-a67d-aa3df19f24a1",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317120,
+  "nbf": 1774317120,
+  "exp": 1774320720
+}.
+2026-03-24 07:22:01.106 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:22:01.108 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:22:01.112 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-24 07:22:01.122 +05:30 [INF] Route matched with {action = "GetById", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:22:01.391 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-03-24 07:22:01.533 +05:30 [INF] Executed DbCommand (111ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[AverageDeliveryTimeMinutes], [t].[AverageRating], [t].[BannerUrl], [t].[City], [t].[CreatedAt], [t].[CuisineType], [t].[Description], [t].[Email], [t].[IsOpen], [t].[Latitude], [t].[LogoUrl], [t].[Longitude], [t].[MinimumOrderAmount], [t].[Name], [t].[OwnerId], [t].[PhoneNumber], [t].[PinCode], [t].[Status], [t].[TotalRatings], [t].[UpdatedAt], [t0].[Id], [t0].[CreatedAt], [t0].[Description], [t0].[DisplayOrder], [t0].[IsActive], [t0].[Name], [t0].[RestaurantId], [t0].[Id0], [t0].[CategoryId], [t0].[CreatedAt0], [t0].[Description0], [t0].[ImageUrl], [t0].[IsBestseller], [t0].[IsGlutenFree], [t0].[IsVegan], [t0].[IsVegetarian], [t0].[Name0], [t0].[PreparationTimeMinutes], [t0].[Price], [t0].[RestaurantId0], [t0].[Status], [t0].[UpdatedAt], [r0].[Id], [r0].[CloseTime], [r0].[DayOfWeek], [r0].[IsClosed], [r0].[OpenTime], [r0].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id] AS [Id0], [m0].[CategoryId], [m0].[CreatedAt] AS [CreatedAt0], [m0].[Description] AS [Description0], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name] AS [Name0], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId] AS [RestaurantId0], [m0].[Status], [m0].[UpdatedAt]
+    FROM [MenuCategories] AS [m]
+    LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+) AS [t0] ON [t].[Id] = [t0].[RestaurantId]
+LEFT JOIN [RestaurantHours] AS [r0] ON [t].[Id] = [r0].[RestaurantId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]
+2026-03-24 07:22:01.828 +05:30 [INF] 💾 Cache SET: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-24 07:22:01.839 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.RestaurantService.Application.Restaurants.DTOs.RestaurantDto'.
+2026-03-24 07:22:01.852 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API) in 724.9524ms
+2026-03-24 07:22:01.856 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-24 07:22:01.858 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 844.7999 ms
+2026-03-24 07:22:01.863 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 877.7051ms
+2026-03-24 07:22:59.978 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:23:00.060 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:23:00.066 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:23:00.068 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:23:00.177 +05:30 [INF] Received HTTP response headers after 103.5711ms - 200
+2026-03-24 07:23:00.185 +05:30 [INF] End processing HTTP request after 119.0821ms - 200
+2026-03-24 07:23:00.194 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:23:00.197 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "d1377218-9395-4880-aece-6388200ebb4c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317179,
+  "nbf": 1774317179,
+  "exp": 1774320779
+}.
+2026-03-24 07:23:00.201 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:23:00.207 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:23:00.209 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:23:00.211 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:23:00.312 +05:30 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:23:00.323 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:23:00.673 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 457.4127ms
+2026-03-24 07:23:00.677 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:23:00.680 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 617.3920 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:23:00.711 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:23:00.739 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 760.6625ms
+2026-03-24 07:23:02.140 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:23:02.146 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:23:02.148 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:23:02.150 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:23:02.214 +05:30 [INF] Received HTTP response headers after 58.6677ms - 200
+2026-03-24 07:23:02.217 +05:30 [INF] End processing HTTP request after 68.4808ms - 200
+2026-03-24 07:23:02.224 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:23:02.227 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "d1377218-9395-4880-aece-6388200ebb4c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317179,
+  "nbf": 1774317179,
+  "exp": 1774320779
+}.
+2026-03-24 07:23:02.230 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:23:02.232 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:23:02.234 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:23:02.240 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:23:02.256 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:23:02.261 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:23:02.425 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 180.8674ms
+2026-03-24 07:23:02.428 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:23:02.431 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 283.7311 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:23:02.447 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:23:02.465 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 324.4084ms
+2026-03-24 07:23:04.595 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:23:04.608 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:23:04.610 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:23:04.613 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:23:04.678 +05:30 [INF] Received HTTP response headers after 60.9058ms - 200
+2026-03-24 07:23:04.681 +05:30 [INF] End processing HTTP request after 70.9616ms - 200
+2026-03-24 07:23:04.688 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:23:04.691 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "d1377218-9395-4880-aece-6388200ebb4c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317179,
+  "nbf": 1774317179,
+  "exp": 1774320779
+}.
+2026-03-24 07:23:04.693 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:23:04.695 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:23:04.697 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:23:04.700 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:23:04.713 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:23:04.723 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:23:04.926 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 221.5367ms
+2026-03-24 07:23:04.929 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:23:04.936 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 326.8090 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:23:04.953 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:23:04.970 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 375.1566ms
+2026-03-24 07:27:14.484 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:27:14.520 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:27:14.547 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:27:14.550 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:27:14.784 +05:30 [INF] Received HTTP response headers after 229.7588ms - 200
+2026-03-24 07:27:14.796 +05:30 [INF] End processing HTTP request after 249.7404ms - 200
+2026-03-24 07:27:14.802 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:27:14.816 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "d1377218-9395-4880-aece-6388200ebb4c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317179,
+  "nbf": 1774317179,
+  "exp": 1774320779
+}.
+2026-03-24 07:27:14.830 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:27:14.833 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:27:14.843 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:27:14.848 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:27:15.068 +05:30 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:27:15.089 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:27:15.364 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 505.8261ms
+2026-03-24 07:27:15.370 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:27:15.374 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 850.5639 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:27:15.402 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:27:15.423 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 942.1797ms
+2026-03-24 07:27:17.072 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:27:17.077 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:27:17.080 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:27:17.083 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:27:17.165 +05:30 [INF] Received HTTP response headers after 79.3067ms - 200
+2026-03-24 07:27:17.171 +05:30 [INF] End processing HTTP request after 90.5056ms - 200
+2026-03-24 07:27:17.173 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:27:17.176 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "d1377218-9395-4880-aece-6388200ebb4c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317179,
+  "nbf": 1774317179,
+  "exp": 1774320779
+}.
+2026-03-24 07:27:17.180 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:27:17.183 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:27:17.191 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:27:17.193 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:27:17.212 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:27:17.218 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:27:17.396 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 199.1031ms
+2026-03-24 07:27:17.400 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:27:17.403 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 323.6187 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:27:17.419 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:27:17.432 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 360.6417ms
+2026-03-24 07:27:20.076 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:27:20.083 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:27:20.085 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:27:20.087 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:27:20.153 +05:30 [INF] Received HTTP response headers after 63.5978ms - 200
+2026-03-24 07:27:20.156 +05:30 [INF] End processing HTTP request after 71.0319ms - 200
+2026-03-24 07:27:20.159 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:27:20.161 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "d1377218-9395-4880-aece-6388200ebb4c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317179,
+  "nbf": 1774317179,
+  "exp": 1774320779
+}.
+2026-03-24 07:27:20.164 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:27:20.166 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:27:20.168 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:27:20.170 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:27:20.222 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:27:20.227 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:27:20.357 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 183.2954ms
+2026-03-24 07:27:20.360 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:27:20.363 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 278.0679 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:27:20.378 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:27:20.393 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 316.5903ms
+2026-03-24 07:28:06.390 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:28:06.465 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:28:06.491 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:28:06.495 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:28:06.579 +05:30 [INF] Received HTTP response headers after 81.8516ms - 200
+2026-03-24 07:28:06.583 +05:30 [INF] End processing HTTP request after 92.3614ms - 200
+2026-03-24 07:28:06.591 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:28:06.602 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "596aa98a-a13b-433c-8334-b76062f6a9eb",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317485,
+  "nbf": 1774317485,
+  "exp": 1774321085
+}.
+2026-03-24 07:28:06.630 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:28:06.635 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:28:06.644 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:28:06.650 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:28:06.777 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:28:06.810 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:28:07.047 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 387.5161ms
+2026-03-24 07:28:07.055 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:28:07.060 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 590.8026 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:28:07.100 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:28:07.125 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 741.5142ms
+2026-03-24 07:28:08.260 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:28:08.266 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:28:08.270 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:28:08.274 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:28:08.334 +05:30 [INF] Received HTTP response headers after 56.8293ms - 200
+2026-03-24 07:28:08.338 +05:30 [INF] End processing HTTP request after 68.5186ms - 200
+2026-03-24 07:28:08.341 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:28:08.346 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "596aa98a-a13b-433c-8334-b76062f6a9eb",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317485,
+  "nbf": 1774317485,
+  "exp": 1774321085
+}.
+2026-03-24 07:28:08.348 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:28:08.350 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:28:08.354 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:28:08.357 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:28:08.374 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:28:08.379 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:28:08.511 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 150.8278ms
+2026-03-24 07:28:08.515 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:28:08.518 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 249.7975 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:28:08.533 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:28:08.547 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 287.0613ms
+2026-03-24 07:28:10.658 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-24 07:28:10.664 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:28:10.666 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:28:10.672 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:28:10.737 +05:30 [INF] Received HTTP response headers after 62.2529ms - 200
+2026-03-24 07:28:10.742 +05:30 [INF] End processing HTTP request after 75.4239ms - 200
+2026-03-24 07:28:10.744 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:28:10.747 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "596aa98a-a13b-433c-8334-b76062f6a9eb",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317485,
+  "nbf": 1774317485,
+  "exp": 1774321085
+}.
+2026-03-24 07:28:10.749 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:28:10.753 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:28:10.755 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:28:10.758 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-24 07:28:10.775 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-24 07:28:10.781 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'SwiftBite.RestaurantService.Infrastructure.Persistence.RestaurantDbContext'.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-03-24 07:28:10.958 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 197.3441ms
+2026-03-24 07:28:10.962 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-24 07:28:10.965 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 299.0080 ms
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-24 07:28:10.985 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot convert string value 'Biryani' from the database to any value in the mapped 'CuisineType' enum.
+   at Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter`3.ConvertToEnum(String value)
+   at lambda_method11(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SwiftBite.RestaurantService.Infrastructure.Persistence.Repositories.RestaurantRepository.GetAllAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Infrastructure\Persistence\Repositories\RestaurantRepository.cs:line 23
+   at SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants.GetAllRestaurantsQueryHandler.Handle(GetAllRestaurantsQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.Application\Restaurants\Queries\GetAllRestaurants\GetAllRestaurantsQueryHandler.cs:line 31
+   at SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API\Controllers\RestaurantsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-24 07:28:11.006 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 500 null text/plain; charset=utf-8 347.4409ms

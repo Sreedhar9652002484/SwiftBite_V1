@@ -55,7 +55,9 @@ public class ClientSeeder : IHostedService
                     Permissions.Prefixes.Scope + "offline_access",
                     Permissions.Prefixes.Scope + "swiftbite.user",
                     Permissions.Prefixes.Scope + "swiftbite.order",
-                    Permissions.Prefixes.Scope + "swiftbite.restaurant",
+                     Permissions.Prefixes.Scope + "swiftbite.restaurant",
+                Permissions.Prefixes.Scope + "swiftbite.payment",
+                Permissions.Prefixes.Scope + "swiftbite.delivery",
                 }
             }, ct);
         }

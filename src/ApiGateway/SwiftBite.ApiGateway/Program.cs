@@ -52,7 +52,15 @@ builder.Services.AddOpenIddict()
     .AddValidation(options =>
     {
         options.SetIssuer(builder.Configuration["AuthServer:Authority"]!);
+
+        // ✅ Add ALL audiences this gateway serves
         options.AddAudiences("swiftbite-gateway");
+        options.AddAudiences("swiftbite-userservice");
+        options.AddAudiences("swiftbite-restaurantservice");
+        options.AddAudiences("swiftbite-orderservice");
+        options.AddAudiences("swiftbite-paymentservice");
+        options.AddAudiences("swiftbite-deliveryservice");
+
 
         options.UseIntrospection()
                .SetClientId("swiftbite-gateway")
@@ -82,17 +90,25 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // ✅ Middleware Pipeline (ORDER MATTERS!)
-app.UseIpRateLimiting();            // 1️⃣ Rate limit first
-app.UseSerilogRequestLogging();     // 2️⃣ Log all requests
-app.UseCors("SwiftBitePolicy");     // 3️⃣ CORS for Angular
-app.UseMiddleware<LoggingMiddleware>();          // 4️⃣ Custom logging
-app.UseMiddleware<AuthenticationMiddleware>();   // 5️⃣ JWT validation
-app.UseMiddleware<CachingMiddleware>(); // 6️⃣ 🆕 Cache GET responses!
+// 1. CORS first (preflight requests)
+app.UseCors("SwiftBitePolicy");
 
-app.UseAuthentication();
+// 2. Rate limiting
+app.UseIpRateLimiting();
+
+// 3. Logging
+app.UseSerilogRequestLogging();
+
+// 4. Authentication & Authorization
+app.UseAuthentication();  // ✅ MUST be before UseAuthorization
 app.UseAuthorization();
-app.UseMiddleware<UserIdForwardingMiddleware>();  // ← here
 
-app.MapReverseProxy();              // 6️⃣ Forward to services
+// 5. Custom middleware
+app.UseMiddleware<AuthenticationMiddleware>();
+app.UseMiddleware<LoggingMiddleware>();
+app.UseMiddleware<UserIdForwardingMiddleware>();
+
+// 6. Reverse proxy
+app.MapReverseProxy();           // 6️⃣ Forward to services
 
 app.Run();

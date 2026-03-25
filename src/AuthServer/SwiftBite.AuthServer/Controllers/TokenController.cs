@@ -127,6 +127,9 @@ namespace SwiftBite.AuthServer.Controllers
             var roles = await _userManager.GetRolesAsync(user);
             foreach (var role in roles)
                 identity.AddClaim(Claims.Role, role);
+            // ← ADD THIS BLOCK (only 3 lines)
+            if (user.RestaurantId.HasValue)
+                identity.AddClaim("restaurantId", user.RestaurantId.Value.ToString());
 
             identity.SetDestinations(GetDestinations);
 

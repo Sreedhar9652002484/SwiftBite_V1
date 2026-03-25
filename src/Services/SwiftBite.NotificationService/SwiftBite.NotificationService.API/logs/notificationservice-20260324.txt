@@ -262,3 +262,328 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2026-03-24 06:49:35.976 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
 2026-03-24 06:49:35.982 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 401 in 6039.7766 ms
 2026-03-24 06:49:35.991 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 401 0 null 6099.4754ms
+2026-03-24 07:20:39.952 +05:30 [INF] Executed DbCommand (143ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 07:20:40.194 +05:30 [INF] Executed DbCommand (81ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 07:20:40.212 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-24 07:20:40.227 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-24 07:20:40.294 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-24 07:20:40.408 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-24 07:20:43.528 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-24 07:20:43.642 +05:30 [INF] 🎧 Kafka consumer started | Topics: swiftbite.order.placed, swiftbite.order.confirmed, swiftbite.order.cancelled, swiftbite.payment.success, swiftbite.payment.failed
+2026-03-24 07:20:44.462 +05:30 [INF] Now listening on: http://localhost:5006
+2026-03-24 07:20:45.526 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-24 07:20:46.207 +05:30 [INF] Hosting environment: Development
+2026-03-24 07:20:48.988 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.API
+2026-03-24 07:20:49.371 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/index.html - null null
+2026-03-24 07:20:50.916 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/index.html - 200 null text/html;charset=utf-8 1547.7187ms
+2026-03-24 07:20:51.031 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_vs/browserLink - null null
+2026-03-24 07:20:51.129 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-24 07:20:51.196 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - 200 16551 application/javascript; charset=utf-8 66.7875ms
+2026-03-24 07:20:51.266 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_vs/browserLink - 200 null text/javascript; charset=UTF-8 234.8798ms
+2026-03-24 07:20:51.672 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.cancelled: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-24 07:20:51.837 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.confirmed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-24 07:20:51.897 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.payment.failed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-24 07:20:52.765 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - null null
+2026-03-24 07:20:52.818 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 52.64ms
+2026-03-24 07:21:12.914 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null null
+2026-03-24 07:21:12.999 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:21:13.015 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 204 null null 100.8251ms
+2026-03-24 07:21:13.019 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-24 07:21:13.050 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:21:16.060 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-24 07:21:16.958 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-24 07:21:17.011 +05:30 [INF] Received HTTP response headers after 46.3739ms - 200
+2026-03-24 07:21:17.038 +05:30 [INF] End processing HTTP request after 990.5172ms - 200
+2026-03-24 07:21:17.060 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-24 07:21:17.151 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-24 07:21:17.181 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-24 07:21:17.186 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-24 07:21:17.231 +05:30 [INF] Received HTTP response headers after 42.0104ms - 200
+2026-03-24 07:21:17.240 +05:30 [INF] End processing HTTP request after 58.6176ms - 200
+2026-03-24 07:21:17.244 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-24 07:21:17.255 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-24 07:21:17.415 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:21:17.419 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:21:17.552 +05:30 [INF] Received HTTP response headers after 131.3658ms - 200
+2026-03-24 07:21:17.561 +05:30 [INF] End processing HTTP request after 146.4631ms - 200
+2026-03-24 07:21:17.566 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:21:17.577 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "c151edfa-7d6d-4d6b-b577-338bbc46945b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317072,
+  "nbf": 1774317072,
+  "exp": 1774320672
+}.
+2026-03-24 07:21:17.605 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:21:17.614 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:21:17.643 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-24 07:21:17.670 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-24 07:21:17.673 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-24 07:21:17.680 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 401 in 4616.5108 ms
+2026-03-24 07:21:17.694 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 401 0 null 4675.2742ms
+2026-03-24 07:21:45.992 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5006/api/notifications/mark-all-read - application/json 2
+2026-03-24 07:21:46.001 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:21:46.012 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:21:46.015 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:21:46.085 +05:30 [INF] Received HTTP response headers after 67.5266ms - 200
+2026-03-24 07:21:46.088 +05:30 [INF] End processing HTTP request after 76.3687ms - 200
+2026-03-24 07:21:46.092 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:21:46.098 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "c151edfa-7d6d-4d6b-b577-338bbc46945b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317072,
+  "nbf": 1774317072,
+  "exp": 1774320672
+}.
+2026-03-24 07:21:46.104 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:21:46.106 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:21:46.110 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-24 07:21:46.113 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-24 07:21:46.115 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-24 07:21:46.117 +05:30 [INF] HTTP PUT /api/notifications/mark-all-read responded 401 in 114.0814 ms
+2026-03-24 07:21:46.120 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5006/api/notifications/mark-all-read - 401 0 null 127.9173ms
+2026-03-24 07:22:59.591 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null null
+2026-03-24 07:22:59.602 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:22:59.612 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 204 null null 29.9267ms
+2026-03-24 07:22:59.632 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-24 07:22:59.673 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:22:59.731 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:22:59.863 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:23:00.085 +05:30 [INF] Received HTTP response headers after 186.0277ms - 200
+2026-03-24 07:23:00.093 +05:30 [INF] End processing HTTP request after 362.233ms - 200
+2026-03-24 07:23:00.097 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:23:00.101 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "d1377218-9395-4880-aece-6388200ebb4c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317179,
+  "nbf": 1774317179,
+  "exp": 1774320779
+}.
+2026-03-24 07:23:00.109 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:23:00.111 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:23:00.121 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-24 07:23:00.127 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-24 07:23:00.133 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-24 07:23:00.135 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 401 in 425.5174 ms
+2026-03-24 07:23:00.146 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 401 0 null 514.4117ms
+2026-03-24 07:27:12.062 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null null
+2026-03-24 07:27:12.131 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:27:12.144 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 204 null null 86.817ms
+2026-03-24 07:27:12.177 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-24 07:27:12.211 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:27:12.299 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:27:12.309 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:27:12.488 +05:30 [INF] Received HTTP response headers after 175.9359ms - 200
+2026-03-24 07:27:12.493 +05:30 [INF] End processing HTTP request after 196.2872ms - 200
+2026-03-24 07:27:12.501 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:27:12.529 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "d1377218-9395-4880-aece-6388200ebb4c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317179,
+  "nbf": 1774317179,
+  "exp": 1774320779
+}.
+2026-03-24 07:27:12.538 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:27:12.541 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:27:12.548 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-24 07:27:12.559 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-24 07:27:12.561 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-24 07:27:12.563 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 401 in 349.4172 ms
+2026-03-24 07:27:12.567 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 401 0 null 390.2158ms
+2026-03-24 07:28:06.247 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null null
+2026-03-24 07:28:06.390 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:28:06.414 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 204 null null 177.624ms
+2026-03-24 07:28:06.431 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-24 07:28:06.485 +05:30 [INF] CORS policy execution successful.
+2026-03-24 07:28:06.569 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:28:06.578 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-24 07:28:06.684 +05:30 [INF] Received HTTP response headers after 98.8248ms - 200
+2026-03-24 07:28:06.693 +05:30 [INF] End processing HTTP request after 125.8192ms - 200
+2026-03-24 07:28:06.725 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-24 07:28:06.741 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "596aa98a-a13b-433c-8334-b76062f6a9eb",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774317485,
+  "nbf": 1774317485,
+  "exp": 1774321085
+}.
+2026-03-24 07:28:06.757 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-24 07:28:06.760 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-24 07:28:06.778 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-24 07:28:06.782 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-24 07:28:06.784 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-24 07:28:06.786 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 401 in 298.2826 ms
+2026-03-24 07:28:06.796 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 401 0 null 370.7858ms

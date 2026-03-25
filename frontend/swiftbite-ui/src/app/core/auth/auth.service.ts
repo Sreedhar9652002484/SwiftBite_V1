@@ -20,8 +20,6 @@ export class AuthService {
   isLoggedIn  = signal<boolean>(false);
   currentUser = signal<any>(null);
 
-  // ── NEW: tracks whether initialize() has fully completed ──
-  // Guards and components wait on this before reading role
   private initComplete = false;
   private initResolvers: (() => void)[] = [];
 
@@ -37,8 +35,6 @@ export class AuthService {
     this.initialize();
   }
 
-  // ── Wait for init to fully complete before reading roles ──
-  // Guards call this so they never read role before profile loads
   waitForInit(): Promise<void> {
     if (this.initComplete) return Promise.resolve();
     return new Promise(resolve => this.initResolvers.push(resolve));
@@ -60,16 +56,15 @@ export class AuthService {
       );
       this.discoveryLoaded = true;
 
+      // ✅ Check if already logged in
       if (this.oauthService.hasValidAccessToken()) {
         this.isLoggedIn.set(true);
-
-        // ✅ MUST await profile before markInitComplete
-        // Without this, guards read role while currentUser is still null
+        
+        // ✅ Load profile BEFORE marking complete
         await this.loadUserProfile();
         console.log('✅ Session restored');
 
-        // ✅ Only redirect if on a generic/default route
-        // If user refreshed on /owner/dashboard, stay there
+        // ✅ Only redirect on default routes
         const path = window.location.pathname;
         const isDefaultRoute = path === '/' || path === '/home' || path === '';
         if (isDefaultRoute) {
@@ -77,18 +72,17 @@ export class AuthService {
         }
       }
 
+      // ✅ Setup silent refresh
       this.oauthService.setupAutomaticSilentRefresh();
 
     } catch (err) {
-      console.error('Init error:', err);
+      console.error('❌ Init error:', err);
     } finally {
-      // ✅ Always mark complete — even on error
-      // So guards don't hang forever
+      // ✅ Always mark complete
       this.markInitComplete();
     }
   }
 
-  // ── Wait for discovery ────────────────────────────────────
   async ensureDiscoveryLoaded(): Promise<void> {
     if (this.discoveryLoaded) return;
     for (let i = 0; i < 50; i++) {
@@ -107,32 +101,33 @@ export class AuthService {
       await this.ensureDiscoveryLoaded();
       await this.oauthService.fetchTokenUsingPasswordFlow(email, password);
       this.isLoggedIn.set(true);
+      
+      // ✅ Load profile after login
       await this.loadUserProfile();
+      console.log('✅ Login successful');
       return true;
     } catch (error: any) {
-      console.error('Login failed:', error?.message || error);
+      console.error('❌ Login failed:', error?.message || error);
       return false;
     }
   }
 
-  // ── OAuth redirect ────────────────────────────────────────
   loginWithRedirect(): void {
     this.oauthService.initCodeFlow();
   }
 
-  // ── Register ──────────────────────────────────────────────
   register(request: RegisterRequest) {
     return this.http
       .post(`${this.apiGatewayUrl}/api/auth/register`, request)
       .pipe(tap(() => console.log('✅ Registered')));
   }
 
-  // ── Logout ────────────────────────────────────────────────
   logout(): void {
     this.oauthService.logOut(true);
     this.isLoggedIn.set(false);
     this.currentUser.set(null);
 
+    // ✅ Call backend logout
     fetch(`${this.authServerUrl}/Account/SignOut`, {
       method: 'GET',
       credentials: 'include',
@@ -142,39 +137,45 @@ export class AuthService {
     });
   }
 
-  // ── Role-based redirect ───────────────────────────────────
   redirectBasedOnRole(): void {
-    if      (this.hasRole('Admin'))           this.router.navigate(['/admin/dashboard']);
+    if (this.hasRole('Admin'))           this.router.navigate(['/admin/dashboard']);
     else if (this.hasRole('RestaurantAdmin')) this.router.navigate(['/owner/dashboard']);
     else if (this.hasRole('DeliveryPartner')) this.router.navigate(['/delivery/dashboard']);
-    else                                      this.router.navigate(['/home']);
+    else this.router.navigate(['/home']);
   }
 
-  // ── Load user profile from userinfo endpoint ──────────────
+  // ── Load user profile from /connect/userinfo ──────────────
   async loadUserProfile(): Promise<void> {
     try {
-      const token = sessionStorage.getItem('access_token')
-                 || this.oauthService.getAccessToken();
-      if (!token) return;
+      // ✅ Use OAuthService.getAccessToken() NOT sessionStorage
+      const token = this.oauthService.getAccessToken();
+      if (!token) {
+        console.warn('⚠️ No token available for profile load');
+        return;
+      }
 
       const response = await fetch(
         `${this.authServerUrl}/connect/userinfo`,
-        { headers: { Authorization: `Bearer ${token}` } }
+        { 
+          headers: { Authorization: `Bearer ${token}` },
+          credentials: 'include'
+        }
       );
 
       if (response.ok) {
         const profile = await response.json();
         this.currentUser.set(profile);
         console.log('✅ Profile loaded:', profile);
+      } else {
+        console.error('❌ Profile load failed:', response.status);
       }
     } catch (error) {
-      console.error('Profile load failed:', error);
+      console.error('❌ Profile load error:', error);
     }
   }
 
-  // ── Token & Claims ────────────────────────────────────────
-  getToken():      string { return this.oauthService.getAccessToken(); }
-  getUserClaims(): any    { return this.oauthService.getIdentityClaims(); }
+  getToken(): string { return this.oauthService.getAccessToken(); }
+  getUserClaims(): any { return this.oauthService.getIdentityClaims(); }
 
   hasRole(role: string): boolean {
     const user = this.currentUser();
