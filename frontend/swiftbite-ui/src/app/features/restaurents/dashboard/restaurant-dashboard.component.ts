@@ -3,27 +3,29 @@ import { CommonModule }   from '@angular/common';
 import { AuthService }    from '../../../core/auth/auth.service';
 import { OrderService }   from '../../../core/services/order.service';
 
-export type OrderStatus =
-  | 'Pending'
-  | 'Confirmed'
-  | 'Preparing'
-  | 'ReadyForPickup'
-  | 'Cancelled';
+export type OrderStatus = 1 | 2 | 3 | 4 | 5;
 
 export interface OrderItem {
-  name:     string;
-  quantity: number;
-  price:    number;
+  name:       string;
+  quantity:   number;
+  unitPrice:  number;
+  totalPrice: number;
 }
 
 export interface Order {
-  id:           string;
-  customerName: string;
-  items:        OrderItem[];
-  totalAmount:  number;
-  status:       OrderStatus;
-  createdAt:    string;
-  address?:     string;
+  id:                  string;
+  customerName:        string;
+  items:               OrderItem[];
+  totalAmount:         number;
+  status:              OrderStatus;
+  placedAt:            string;
+  deliveryAddress:     string;
+  subTotal:            number;
+  taxes:               number;
+  deliveryFee:         number;
+  restaurantName:      string;
+  paymentMethod:       string;
+  estimatedDeliveryAt: string;
 }
 
 @Component({
@@ -39,7 +41,7 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
   loading      = signal(true);
   error        = signal<string | null>(null);
   updatingId   = signal<string | null>(null);
-  activeFilter = signal<OrderStatus | 'All'>('All');
+  activeFilter = signal<number | 'All'>(1);
   private pollInterval: any;
 
   filteredOrders = computed(() => {
@@ -50,20 +52,27 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
   });
 
   pendingCount = computed(() =>
-    this.orders().filter(o => o.status === 'Pending').length);
+    this.orders().filter(o => o.status === 1).length);
 
   activeCount = computed(() =>
-    this.orders().filter(o =>
-      o.status === 'Confirmed' || o.status === 'Preparing').length);
+    this.orders().filter(o => o.status === 2 || o.status === 3).length);
 
-  filters: Array<{ label: string; value: OrderStatus | 'All' }> = [
-    { label: 'All',       value: 'All'            },
-    { label: 'Pending',   value: 'Pending'         },
-    { label: 'Confirmed', value: 'Confirmed'       },
-    { label: 'Preparing', value: 'Preparing'       },
-    { label: 'Ready',     value: 'ReadyForPickup'  },
-    { label: 'Cancelled', value: 'Cancelled'       },
+  filters: Array<{ label: string; value: number | 'All' }> = [
+    { label: 'All',       value: 'All'  },
+    { label: 'Pending',   value: 1      },
+    { label: 'Confirmed', value: 2      },
+    { label: 'Preparing', value: 3      },
+    { label: 'Ready',     value: 4      },
+    { label: 'Cancelled', value: 5      },
   ];
+
+  statusLabels: Record<OrderStatus, string> = {
+    1: 'Pending',
+    2: 'Confirmed',
+    3: 'Preparing',
+    4: 'Ready for Pickup',
+    5: 'Cancelled',
+  };
 
   constructor(
     private auth:     AuthService,
@@ -97,14 +106,17 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
 
     this.orderSvc.getRestaurantOrders(rid).subscribe({
       next: orders => {
+
         const sorted = [...orders].sort((a, b) => {
-          if (a.status === 'Pending' && b.status !== 'Pending') return -1;
-          if (b.status === 'Pending' && a.status !== 'Pending') return  1;
-          return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+          if (a.status === 1 && b.status !== 1) return -1;
+          if (b.status === 1 && a.status !== 1) return  1;
+          return new Date(b.placedAt).getTime() - new Date(a.placedAt).getTime();
         });
         this.orders.set(sorted);
         this.loading.set(false);
         this.error.set(null);
+
+        console.log('✅ Orders loaded:', orders);
       },
       error: err => {
         this.error.set('Failed to load orders. Please try again.');
@@ -114,14 +126,14 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
     });
   }
 
-  setFilter(f: OrderStatus | 'All'): void {
+  setFilter(f: number | 'All'): void {
     this.activeFilter.set(f);
   }
 
-  acceptOrder(order: Order): void   { this.changeStatus(order, 'Confirmed');      }
-  rejectOrder(order: Order): void   { this.changeStatus(order, 'Cancelled');      }
-  markPreparing(order: Order): void { this.changeStatus(order, 'Preparing');      }
-  markReady(order: Order): void     { this.changeStatus(order, 'ReadyForPickup'); }
+  acceptOrder(order: Order): void   { this.changeStatus(order, 2);   }
+  rejectOrder(order: Order): void   { this.changeStatus(order, 5);   }
+  markPreparing(order: Order): void { this.changeStatus(order, 3);   }
+  markReady(order: Order): void     { this.changeStatus(order, 4);   }
 
   private changeStatus(order: Order, status: OrderStatus): void {
     if (this.updatingId()) return;
@@ -150,5 +162,9 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
 
   isUpdating(id: string): boolean {
     return this.updatingId() === id;
+  }
+
+  getStatusLabel(status: OrderStatus): string {
+    return this.statusLabels[status];
   }
 }

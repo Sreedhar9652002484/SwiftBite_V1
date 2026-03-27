@@ -28,7 +28,7 @@ export class OrderService {
       `${this.api}/api/orders/${id}`);
   }
 
-  updateStatus(id: string, status: string): Observable<any> {
+  updateStatus(id: string, status: number): Observable<any> {
     return this.http.put(
       `${this.api}/api/orders/${id}/status`,
       { newStatus: status });

@@ -1,34 +1,47 @@
 ﻿{
   "ReverseProxy": {
     "Routes": {
+
       "auth-route": {
         "ClusterId": "auth-cluster",
         "Match": { "Path": "/api/auth/{**catch-all}" }
       },
+
+      "openiddict-route": {
+        "ClusterId": "auth-cluster",
+        "Match": { "Path": "/connect/{**catch-all}" }
+      },
+
       "user-route": {
         "ClusterId": "user-cluster",
         "Match": { "Path": "/api/users/{**catch-all}" }
       },
+
       "restaurant-route": {
         "ClusterId": "restaurant-cluster",
         "Match": { "Path": "/api/restaurants/{**catch-all}" }
       },
+
       "order-route": {
         "ClusterId": "order-cluster",
         "Match": { "Path": "/api/orders/{**catch-all}" }
       },
+
       "payment-route": {
         "ClusterId": "payment-cluster",
         "Match": { "Path": "/api/payments/{**catch-all}" }
       },
+
       "notification-route": {
         "ClusterId": "notification-cluster",
         "Match": { "Path": "/api/notifications/{**catch-all}" }
       },
+
       "notification-hub-route": {
         "ClusterId": "notification-cluster",
-        "Match": { "Path": "/hubs/notifications/{**catch-all}" }
+        "Match": { "Path": "/hubs/{**catch-all}" }
       }
+
     },
     "Clusters": {
       "auth-cluster": {
@@ -38,7 +51,7 @@
       },
       "user-cluster": {
         "Destinations": {
-          "user-service": { "Address": "http://localhost:5002" }
+          "user-service": { "Address": "http://localhost:5001" }
         }
       },
       "restaurant-cluster": {

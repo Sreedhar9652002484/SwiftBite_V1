@@ -5,25 +5,18 @@ public class AuthenticationMiddleware
     private readonly RequestDelegate _next;
     private readonly ILogger<AuthenticationMiddleware> _logger;
 
-    // Routes that DON'T need auth
     private static readonly HashSet<string> _publicRoutes = new()
-    {
-
-        "/api/auth/login",
-        "/api/auth/register",
-        "/api/auth/callback",
-        "/api/auth/refresh",
-        "/connect/token",
-        "/connect/authorize",
-        "/connect/logout",
-        "/.well-known/openid-configuration",
-        "/Account/Login",
-        "/Account/ExternalLogin",
-        "/api/restaurants",  // ✅ Public - customers can view
-        "/health",
-        "/swagger"
-    };
-
+{
+    "/api/auth/login",
+    "/api/auth/register",
+    "/api/auth/refresh",
+    "/api/auth/callback",
+    "/connect/token",
+    "/connect/authorize",
+    "/connect/userinfo",    // ← add this
+    "/connect/logout",      // ← add this
+    "/hubs"                 // ← add this for SignalR
+};
     public AuthenticationMiddleware(
         RequestDelegate next,
         ILogger<AuthenticationMiddleware> logger)

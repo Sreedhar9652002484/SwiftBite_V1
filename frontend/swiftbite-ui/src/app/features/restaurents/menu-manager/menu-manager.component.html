@@ -62,7 +62,7 @@
           <span class="cat-chevron">{{ expandedCategory() === cat.id ? '▾' : '▸' }}</span>
           <div>
             <span class="cat-name">{{ cat.name }}</span>
-            <span class="cat-count">{{ cat.items?.length }} items</span>
+            <span class="cat-count">{{ cat?.items?.length }} items</span>
           </div>
         </div>
         <div class="cat-actions" (click)="$event.stopPropagation()">

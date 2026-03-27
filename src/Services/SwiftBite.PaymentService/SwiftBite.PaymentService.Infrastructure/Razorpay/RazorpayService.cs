@@ -4,7 +4,9 @@ using SwiftBite.PaymentService.Domain.Interfaces;
 using System.Security.Cryptography;
 using System.Text;
 using Razorpay.Api;
+
 namespace SwiftBite.PaymentService.Infrastructure.Razorpay;
+
 public class RazorpayService : IRazorpayService
 {
     private readonly string _keyId;
@@ -22,41 +24,59 @@ public class RazorpayService : IRazorpayService
         _isDevelopment = _keyId.Contains("dummy");
     }
 
-    public async Task<RazorpayOrderResult> CreateOrderAsync(
-        decimal amount, string currency,
-        string receipt, CancellationToken ct = default)
+    // ✅ Generate safe receipt (ALWAYS < 40 chars)
+    private string GenerateReceipt()
     {
-        // ✅ Mock mode — no real Razorpay needed!
+        var timestamp = DateTime.UtcNow.ToString("yyyyMMddHHmmss");
+        var random = Guid.NewGuid().ToString("N")[..4]; // short suffix
+        return $"ord_{timestamp}_{random}";
+    }
+
+    public async Task<RazorpayOrderResult> CreateOrderAsync(
+        decimal amount,
+        string currency,
+        string receipt,
+        CancellationToken ct = default)
+    {
+        // ✅ Always override unsafe receipt
+        var safeReceipt = GenerateReceipt();
+
+        // 🧪 Mock mode
         if (_isDevelopment)
         {
             var mockOrderId = $"order_mock_{Guid.NewGuid():N}";
+
             _logger.LogInformation(
-                "🧪 MOCK Razorpay order | Id: {Id} | ₹{Amount}",
-                mockOrderId, amount);
+                "🧪 MOCK Razorpay order | Id: {Id} | ₹{Amount} | Receipt: {Receipt}",
+                mockOrderId, amount, safeReceipt);
 
             return new RazorpayOrderResult(
                 mockOrderId, amount, currency, "created");
         }
 
-        // 🔴 Real Razorpay — production only
         try
         {
             var client = new RazorpayClient(_keyId, _keySecret);
 
             var options = new Dictionary<string, object>
             {
-                { "amount",          (int)(amount * 100) },
-                { "currency",        currency },
-                { "receipt",         receipt },
+                { "amount", (int)(amount * 100) },
+                { "currency", currency },
+                { "receipt", safeReceipt },
                 { "payment_capture", 1 }
             };
 
+            _logger.LogInformation(
+                "📤 Creating Razorpay order | Receipt: {Receipt} | Length: {Length}",
+                safeReceipt, safeReceipt.Length);
+
             var order = client.Order.Create(options);
+
             string id = order["id"].ToString()!;
             string stat = order["status"].ToString()!;
 
             _logger.LogInformation(
-                "💳 Razorpay order | Id: {Id} | ₹{Amount}",
+                "💳 Razorpay order created | Id: {Id} | ₹{Amount}",
                 id, amount);
 
             return new RazorpayOrderResult(
@@ -64,8 +84,7 @@ public class RazorpayService : IRazorpayService
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex,
-                "❌ Razorpay order creation failed");
+            _logger.LogError(ex, "❌ Razorpay order creation failed");
             throw;
         }
     }
@@ -75,19 +94,15 @@ public class RazorpayService : IRazorpayService
         string razorpayPaymentId,
         string razorpaySignature)
     {
-        // ✅ Mock mode — always return true in dev
         if (_isDevelopment)
         {
-            _logger.LogInformation(
-                "🧪 MOCK signature verification — VALID");
+            _logger.LogInformation("🧪 MOCK signature verification — VALID");
             return true;
         }
 
-        // 🔴 Real verification
         try
         {
-            var payload =
-                $"{razorpayOrderId}|{razorpayPaymentId}";
+            var payload = $"{razorpayOrderId}|{razorpayPaymentId}";
 
             using var hmac = new HMACSHA256(
                 Encoding.UTF8.GetBytes(_keySecret));
@@ -103,14 +118,14 @@ public class RazorpayService : IRazorpayService
             var isValid = generated == razorpaySignature;
 
             _logger.LogInformation(
-                "🔐 Signature: {Result}",
+                "🔐 Signature verification: {Result}",
                 isValid ? "VALID ✅" : "INVALID ❌");
 
             return isValid;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Signature error");
+            _logger.LogError(ex, "Signature verification error");
             return false;
         }
     }
@@ -120,23 +135,22 @@ public class RazorpayService : IRazorpayService
         decimal amount,
         CancellationToken ct = default)
     {
-        // ✅ Mock refund
         if (_isDevelopment)
         {
             var mockRefundId = $"rfnd_mock_{Guid.NewGuid():N}";
+
             _logger.LogInformation(
                 "🧪 MOCK refund | Id: {Id} | ₹{Amount}",
                 mockRefundId, amount);
+
             return mockRefundId;
         }
 
-        // 🔴 Real refund
         try
         {
             var client = new RazorpayClient(_keyId, _keySecret);
 
-            var payment = client.Payment
-                .Fetch(razorpayPaymentId);
+            var payment = client.Payment.Fetch(razorpayPaymentId);
 
             var refund = payment.Refund(
                 new Dictionary<string, object>
@@ -147,7 +161,7 @@ public class RazorpayService : IRazorpayService
             string refundId = refund["id"].ToString()!;
 
             _logger.LogInformation(
-                "💰 Refund | Id: {Id} | ₹{Amount}",
+                "💰 Refund processed | Id: {Id} | ₹{Amount}",
                 refundId, amount);
 
             return refundId;
