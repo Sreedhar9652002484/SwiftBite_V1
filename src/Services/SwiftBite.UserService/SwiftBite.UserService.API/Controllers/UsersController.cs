@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SwiftBite.UserService.Application.Users.Commands.CreateUser;
 using SwiftBite.UserService.Application.Users.Commands.UpdateProfile;
 using SwiftBite.UserService.Application.Users.Queries.GetProfile;
+using System.Security.Claims;
 
 namespace SwiftBite.UserService.API.Controllers;
 
@@ -20,21 +21,46 @@ public class UsersController : ControllerBase
     // ── GET api/users/profile ─────────────────────────────
     [HttpGet("profile")]
     public async Task<IActionResult> GetProfile(
-        CancellationToken ct)
+       CancellationToken ct)
     {
-        var authUserId = GetAuthUserId();
-        if (authUserId is null)
+        var authUserId =
+            User.FindFirst("sub")?.Value
+            ?? User.FindFirst(
+                ClaimTypes.NameIdentifier)?.Value;
+
+        if (string.IsNullOrEmpty(authUserId))
             return Unauthorized();
 
-        try
+        var firstName =
+            User.FindFirst("given_name")?.Value
+            ?? User.FindFirst("name")?.Value
+            ?? "User";
+
+        var lastName =
+            User.FindFirst("family_name")?.Value ?? "";
+
+        var email =
+            User.FindFirst("email")?.Value ?? "";
+
+        var dobString =
+     User.FindFirst("birthdate")?.Value ??
+     User.FindFirst(ClaimTypes.DateOfBirth)?.Value ??
+     User.FindFirst("dob")?.Value;
+
+        DateTime dateOfBirth;
+
+        if (!DateTime.TryParse(dobString, out dateOfBirth))
         {
-            var result = await _mediator.Send(new GetProfileQuery(authUserId), ct);
-            return Ok(result);
+            dateOfBirth = DateTime.MinValue; // or handle properly
         }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
+
+
+        var result = await _mediator.Send(
+            new GetProfileQuery(
+                authUserId, firstName,
+                lastName, email, dateOfBirth), ct);
+
+        return Ok(result);
     }
 
     // ── POST api/users/profile ────────────────────────────

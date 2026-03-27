@@ -11,10 +11,10 @@ export const authConfig: AuthConfig = {
   requireHttps:                      false,
   skipIssuerCheck:                   true,
   strictDiscoveryDocumentValidation: false,
-  sessionChecksEnabled:              false,
+  sessionChecksEnabled:              false,  // ✅ DISABLED - AuthServer doesn't support it
   showDebugInformation:              !environment.production,
   oidc:             true,
   disablePKCE:      false,
   useHttpBasicAuth: false,
-  logoutUrl: environment.angularBaseUrl + '/auth/login',
+  logoutUrl: environment.authServerUrl + '/connect/logout'
 };

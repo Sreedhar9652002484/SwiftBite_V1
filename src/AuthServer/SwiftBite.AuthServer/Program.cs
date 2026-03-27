@@ -80,6 +80,8 @@ builder.Services.AddOpenIddict()
         // ✅ Force issuer without trailing slash
         //options.SetIssuer(new Uri("http://localhost:5149"));
         options.SetIssuer(new Uri(authIssuer));
+
+
         options.SetAuthorizationEndpointUris("/connect/authorize")
                .SetTokenEndpointUris("/connect/token")
                .SetUserinfoEndpointUris("/connect/userinfo")

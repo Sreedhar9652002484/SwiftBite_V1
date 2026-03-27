@@ -124,9 +124,18 @@ namespace SwiftBite.AuthServer.Controllers
             identity.AddClaim("firstName", user.FirstName);
             identity.AddClaim("lastName", user.LastName);
 
+            identity.AddClaim(Claims.Audience, "swiftbite-gateway");
+            identity.AddClaim(Claims.Audience, "swiftbite-userservice");
+            identity.AddClaim(Claims.Audience, "swiftbite-restaurantservice");
+            identity.AddClaim(Claims.Audience, "swiftbite-orderservice");
+            identity.AddClaim(Claims.Audience, "swiftbite-paymentservice");
+            identity.AddClaim(Claims.Audience, "swiftbite-notificationservice");
             var roles = await _userManager.GetRolesAsync(user);
             foreach (var role in roles)
                 identity.AddClaim(Claims.Role, role);
+            // ← ADD THIS BLOCK (only 3 lines)
+            if (user.RestaurantId.HasValue)
+                identity.AddClaim("restaurantId", user.RestaurantId.Value.ToString());
 
             identity.SetDestinations(GetDestinations);
 

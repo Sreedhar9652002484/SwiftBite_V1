@@ -1,0 +1,1247 @@
+2026-03-25 05:36:06.737 +05:30 [INF] Executed DbCommand (263ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 05:36:08.317 +05:30 [INF] Executed DbCommand (245ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 05:36:09.462 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 05:36:10.029 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 05:36:10.858 +05:30 [INF] Executed DbCommand (242ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 05:36:11.634 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 05:36:13.382 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 05:36:16.006 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-25 05:36:17.384 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-25 05:36:18.757 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 05:36:18.782 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 1402.5506ms
+2026-03-25 05:36:18.823 +05:30 [INF] Hosting environment: Development
+2026-03-25 05:36:18.931 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-25 05:36:19.078 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 05:36:19.083 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-25 05:36:19.349 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 412.0721ms
+2026-03-25 05:36:19.421 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 342.8908ms
+2026-03-25 05:36:19.739 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-25 05:36:19.808 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 69.1223ms
+2026-03-25 05:36:51.494 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 05:36:51.826 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:36:52.600 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 05:36:52.693 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 05:36:52.806 +05:30 [INF] Received HTTP response headers after 100.4038ms - 200
+2026-03-25 05:36:52.852 +05:30 [INF] End processing HTTP request after 270.0109ms - 200
+2026-03-25 05:36:52.903 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 05:36:53.024 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 05:36:53.072 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 05:36:53.075 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 05:36:53.114 +05:30 [INF] Received HTTP response headers after 33.7822ms - 200
+2026-03-25 05:36:53.119 +05:30 [INF] End processing HTTP request after 46.6714ms - 200
+2026-03-25 05:36:53.128 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 05:36:53.144 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 05:36:53.285 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:36:53.288 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:36:53.380 +05:30 [INF] Received HTTP response headers after 88.921ms - 200
+2026-03-25 05:36:53.382 +05:30 [INF] End processing HTTP request after 97.5948ms - 200
+2026-03-25 05:36:53.387 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:36:53.400 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "7868cdd6-a3d9-4a1b-a896-906942eed26f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397203,
+  "nbf": 1774397203,
+  "exp": 1774400803
+}.
+2026-03-25 05:36:53.432 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:36:53.444 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:36:53.464 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 05:36:53.484 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 05:36:53.492 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 05:36:53.503 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 1625.6676 ms
+2026-03-25 05:36:53.516 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 2030.2241ms
+2026-03-25 05:37:01.477 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 05:37:01.504 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:37:01.519 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:37:01.522 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:37:01.672 +05:30 [INF] Received HTTP response headers after 143.8907ms - 200
+2026-03-25 05:37:01.724 +05:30 [INF] End processing HTTP request after 205.784ms - 200
+2026-03-25 05:37:01.784 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:37:01.819 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "09db73c5-e981-481a-bc7c-ea4c7b1726fc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397221,
+  "nbf": 1774397221,
+  "exp": 1774400821
+}.
+2026-03-25 05:37:01.868 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:37:01.889 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:37:01.960 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 05:37:02.001 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 05:37:02.006 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 05:37:02.015 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 508.0086 ms
+2026-03-25 05:37:02.025 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 548.4259ms
+2026-03-25 05:37:51.799 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 05:37:52.317 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:37:52.417 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:37:52.428 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:37:52.523 +05:30 [INF] Received HTTP response headers after 90.5443ms - 200
+2026-03-25 05:37:52.528 +05:30 [INF] End processing HTTP request after 111.7922ms - 200
+2026-03-25 05:37:52.541 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:37:52.565 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "333e7934-f6f5-43b7-86a9-12a847b9abb8",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397270,
+  "nbf": 1774397270,
+  "exp": 1774400870
+}.
+2026-03-25 05:37:52.583 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:37:52.594 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:37:52.621 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 05:37:52.635 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 05:37:52.643 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 05:37:52.647 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 301.1884 ms
+2026-03-25 05:37:52.655 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 877.4956ms
+2026-03-25 05:47:49.408 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/ord-001 - null null
+2026-03-25 05:47:49.487 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:47:49.557 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:47:49.567 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:47:49.818 +05:30 [INF] Received HTTP response headers after 248.1811ms - 200
+2026-03-25 05:47:49.824 +05:30 [INF] End processing HTTP request after 268.6617ms - 200
+2026-03-25 05:47:49.838 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:47:49.856 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "88cfadbe-0389-4ac3-a2a0-bf1b773fc8f5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397853,
+  "nbf": 1774397853,
+  "exp": 1774401453
+}.
+2026-03-25 05:47:49.869 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:47:49.872 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:47:49.885 +05:30 [INF] HTTP GET /api/orders/ord-001 responded 404 in 395.7961 ms
+2026-03-25 05:47:49.889 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/ord-001 - 404 0 null 489.1181ms
+2026-03-25 05:47:49.909 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5004/api/orders/ord-001, Response status code: 404
+2026-03-25 05:48:04.112 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/ord-001 - null null
+2026-03-25 05:48:04.138 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:48:04.145 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:48:04.148 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:48:04.205 +05:30 [INF] Received HTTP response headers after 53.8941ms - 200
+2026-03-25 05:48:04.209 +05:30 [INF] End processing HTTP request after 63.8453ms - 200
+2026-03-25 05:48:04.212 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:48:04.216 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "88cfadbe-0389-4ac3-a2a0-bf1b773fc8f5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397853,
+  "nbf": 1774397853,
+  "exp": 1774401453
+}.
+2026-03-25 05:48:04.222 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:48:04.226 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:48:04.228 +05:30 [INF] HTTP GET /api/orders/ord-001 responded 404 in 86.3002 ms
+2026-03-25 05:48:04.232 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/ord-001 - 404 0 null 119.7545ms
+2026-03-25 05:48:04.242 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5004/api/orders/ord-001, Response status code: 404
+2026-03-25 05:48:04.974 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/my - null null
+2026-03-25 05:48:04.985 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:48:04.992 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:48:04.995 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:48:05.060 +05:30 [INF] Received HTTP response headers after 62.2197ms - 200
+2026-03-25 05:48:05.062 +05:30 [INF] End processing HTTP request after 70.7532ms - 200
+2026-03-25 05:48:05.065 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:48:05.073 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "88cfadbe-0389-4ac3-a2a0-bf1b773fc8f5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397853,
+  "nbf": 1774397853,
+  "exp": 1774401453
+}.
+2026-03-25 05:48:05.077 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:48:05.078 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:48:05.087 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 05:48:05.090 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 05:48:05.206 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 05:48:05.211 +05:30 [INF] HTTP GET /api/orders/my responded 401 in 220.2657 ms
+2026-03-25 05:48:05.223 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/my - 401 0 null 248.6053ms
+2026-03-25 05:49:53.322 +05:30 [INF] Executed DbCommand (117ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 05:49:53.626 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 05:49:53.681 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 05:49:53.824 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 05:49:53.900 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 05:49:53.967 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 05:49:54.458 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 05:49:55.404 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-25 05:49:56.182 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 05:49:56.716 +05:30 [INF] Hosting environment: Development
+2026-03-25 05:49:56.905 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-25 05:49:57.035 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-25 05:49:58.173 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 1143.73ms
+2026-03-25 05:49:58.446 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-25 05:49:58.583 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 05:49:58.787 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 345.8667ms
+2026-03-25 05:49:58.873 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 289.9965ms
+2026-03-25 05:49:59.642 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-25 05:50:00.280 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 637.4006ms
+2026-03-25 05:50:18.622 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 05:50:18.657 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:50:19.193 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 05:50:19.306 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 05:50:19.400 +05:30 [INF] Received HTTP response headers after 83.2938ms - 200
+2026-03-25 05:50:19.429 +05:30 [INF] End processing HTTP request after 251.4446ms - 200
+2026-03-25 05:50:19.456 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 05:50:19.686 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 05:50:19.812 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 05:50:19.825 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 05:50:19.912 +05:30 [INF] Received HTTP response headers after 83.1412ms - 200
+2026-03-25 05:50:19.921 +05:30 [INF] End processing HTTP request after 108.7221ms - 200
+2026-03-25 05:50:19.927 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 05:50:19.946 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 05:50:20.160 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:50:20.176 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:50:20.459 +05:30 [INF] Received HTTP response headers after 279.2429ms - 200
+2026-03-25 05:50:20.480 +05:30 [INF] End processing HTTP request after 321.5254ms - 200
+2026-03-25 05:50:20.527 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:50:20.558 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "a4d6121d-e8fe-4e6a-987e-d2d67d6d9ee1",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398013,
+  "nbf": 1774398013,
+  "exp": 1774401613
+}.
+2026-03-25 05:50:20.625 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:50:21.253 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:50:21.273 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 05:50:21.299 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 05:50:21.303 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 05:50:21.312 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 2639.9404 ms
+2026-03-25 05:50:21.326 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 2704.0348ms
+2026-03-25 05:51:36.566 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 05:51:36.598 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:51:36.629 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:51:36.638 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:51:36.740 +05:30 [INF] Received HTTP response headers after 97.9038ms - 200
+2026-03-25 05:51:36.744 +05:30 [INF] End processing HTTP request after 115.1008ms - 200
+2026-03-25 05:51:36.748 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:51:36.758 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "fcb6e17b-1828-4658-b7cb-74b935858b87",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398093,
+  "nbf": 1774398093,
+  "exp": 1774401693
+}.
+2026-03-25 05:51:36.764 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:51:36.766 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:51:36.771 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 05:51:36.774 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 05:51:36.776 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 05:51:36.778 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 175.5486 ms
+2026-03-25 05:51:36.783 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 218.8715ms
+2026-03-25 05:51:43.386 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 05:51:43.404 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:51:43.415 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:51:43.418 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:51:43.518 +05:30 [INF] Received HTTP response headers after 97.1689ms - 200
+2026-03-25 05:51:43.521 +05:30 [INF] End processing HTTP request after 105.8179ms - 200
+2026-03-25 05:51:43.524 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:51:43.532 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "9da380b0-054c-43e8-9f2d-58d1cbdee2af",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398102,
+  "nbf": 1774398102,
+  "exp": 1774401702
+}.
+2026-03-25 05:51:43.535 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:51:43.537 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:51:43.545 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 05:51:43.548 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 05:51:43.550 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 05:51:43.552 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 140.6393 ms
+2026-03-25 05:51:43.557 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 170.6242ms
+2026-03-25 05:52:05.384 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 05:52:05.399 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:52:05.407 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:52:05.420 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:52:05.605 +05:30 [INF] Received HTTP response headers after 171.8616ms - 200
+2026-03-25 05:52:05.770 +05:30 [INF] End processing HTTP request after 362.5902ms - 200
+2026-03-25 05:52:05.788 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:52:05.823 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "fc17a411-5fa1-4d2f-ae60-6a9493e42a57",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398124,
+  "nbf": 1774398124,
+  "exp": 1774401724
+}.
+2026-03-25 05:52:05.832 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:52:05.835 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:52:05.848 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 05:52:05.854 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 05:52:05.860 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 05:52:05.863 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 459.1332 ms
+2026-03-25 05:52:05.870 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 487.0132ms
+2026-03-25 05:54:20.540 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 05:54:20.555 +05:30 [INF] CORS policy execution successful.
+2026-03-25 05:54:20.571 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:54:20.575 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 05:54:20.673 +05:30 [INF] Received HTTP response headers after 94.5738ms - 200
+2026-03-25 05:54:20.681 +05:30 [INF] End processing HTTP request after 110.755ms - 200
+2026-03-25 05:54:20.685 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:54:20.690 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "03c8186b-3c0e-4c50-bc1c-c39cd4142212",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398259,
+  "nbf": 1774398259,
+  "exp": 1774401859
+}.
+2026-03-25 05:54:20.696 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 05:54:20.698 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:54:20.700 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 05:54:20.702 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 05:54:20.704 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 05:54:20.706 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 148.7458 ms
+2026-03-25 05:54:20.711 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 171.9489ms
+2026-03-25 06:00:36.334 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:00:36.499 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:00:36.599 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 06:00:36.609 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 06:00:36.929 +05:30 [INF] Received HTTP response headers after 315.2212ms - 200
+2026-03-25 06:00:36.936 +05:30 [INF] End processing HTTP request after 341.6038ms - 200
+2026-03-25 06:00:36.950 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:00:36.973 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "8df801aa-50b3-480b-9f7a-a3cf4fbb813b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398632,
+  "nbf": 1774398632,
+  "exp": 1774402232
+}.
+2026-03-25 06:00:36.996 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 06:00:37.001 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:00:37.027 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:00:37.083 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 06:00:37.106 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:00:37.116 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 608.6334 ms
+2026-03-25 06:00:37.123 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 796.0581ms
+2026-03-25 06:05:49.746 +05:30 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:05:52.396 +05:30 [INF] Executed DbCommand (2,427ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:05:52.492 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:05:52.512 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:05:52.886 +05:30 [INF] Executed DbCommand (132ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 06:05:53.094 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 06:06:05.712 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 06:06:06.740 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-25 06:06:21.339 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-25 06:06:22.873 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 06:06:22.899 +05:30 [INF] Hosting environment: Development
+2026-03-25 06:06:22.920 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-25 06:06:35.844 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 14510.5733ms
+2026-03-25 06:06:40.450 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 06:06:40.450 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-25 06:06:40.468 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 17.5682ms
+2026-03-25 06:06:40.573 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 123.203ms
+2026-03-25 06:06:41.221 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-25 06:06:42.807 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1586.4476ms
+2026-03-25 06:07:32.462 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:07:32.581 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:07:35.179 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 06:07:35.874 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 06:07:35.953 +05:30 [INF] Received HTTP response headers after 66.106ms - 200
+2026-03-25 06:07:35.977 +05:30 [INF] End processing HTTP request after 809.0809ms - 200
+2026-03-25 06:07:36.005 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 06:07:36.144 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 06:07:36.180 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 06:07:36.188 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 06:07:36.226 +05:30 [INF] Received HTTP response headers after 34.3767ms - 200
+2026-03-25 06:07:36.229 +05:30 [INF] End processing HTTP request after 49.7804ms - 200
+2026-03-25 06:07:36.240 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 06:07:36.254 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 06:07:36.424 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:07:36.442 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:07:36.466 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:07:36.470 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:07:36.478 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 3878.4108 ms
+2026-03-25 06:07:36.490 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 4030.4641ms
+2026-03-25 06:07:42.409 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:07:42.428 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:07:42.455 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:07:42.473 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:07:42.498 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:07:42.521 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:07:42.562 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 130.5549 ms
+2026-03-25 06:07:42.785 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 375.6082ms
+2026-03-25 06:07:52.236 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:07:52.244 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:07:52.256 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:07:52.260 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:07:52.263 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:07:52.269 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:07:52.271 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 24.6918 ms
+2026-03-25 06:07:52.275 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 38.4134ms
+2026-03-25 06:08:24.855 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:08:24.872 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:08:24.875 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:08:24.878 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:08:24.881 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:08:24.883 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:08:24.887 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 12.5379 ms
+2026-03-25 06:08:24.891 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 37.0462ms
+2026-03-25 06:09:05.432 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:09:05.474 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:09:05.506 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:09:05.570 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:09:05.587 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:09:05.603 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:09:05.665 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 183.2413 ms
+2026-03-25 06:09:05.688 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 259.5671ms
+2026-03-25 06:13:45.078 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:13:45.488 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:13:45.689 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:13:45.757 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:13:45.791 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:13:45.819 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:13:45.836 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 316.4119 ms
+2026-03-25 06:13:45.883 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 867.2668ms
+2026-03-25 06:13:49.913 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:13:49.961 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:13:50.095 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:13:50.114 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:13:50.129 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:13:50.157 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:13:50.162 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 194.0945 ms
+2026-03-25 06:13:50.173 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 258.599ms
+2026-03-25 06:19:32.454 +05:30 [INF] Executed DbCommand (190ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:19:34.642 +05:30 [INF] Executed DbCommand (498ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:19:35.092 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:19:35.443 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:19:35.808 +05:30 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 06:19:55.704 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 06:19:56.190 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 06:19:57.112 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-25 06:19:57.777 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 06:19:58.048 +05:30 [INF] Hosting environment: Development
+2026-03-25 06:19:58.100 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-25 06:20:00.139 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-25 06:20:01.259 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 1120.702ms
+2026-03-25 06:20:01.467 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-25 06:20:01.664 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 06:20:01.785 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 120.3272ms
+2026-03-25 06:20:01.907 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 440.2315ms
+2026-03-25 06:20:04.150 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-25 06:20:04.270 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 120.4781ms
+2026-03-25 06:26:15.000 +05:30 [INF] Executed DbCommand (239ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:26:15.319 +05:30 [INF] Executed DbCommand (112ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:26:15.355 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:26:15.380 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:26:15.475 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 06:26:15.575 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 06:26:15.991 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 06:26:17.470 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-25 06:26:18.282 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 06:26:18.527 +05:30 [INF] Hosting environment: Development
+2026-03-25 06:26:18.572 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-25 06:26:18.776 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-25 06:26:20.321 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 1556.9693ms
+2026-03-25 06:26:23.361 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-25 06:26:23.516 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 06:26:23.654 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 137.3545ms
+2026-03-25 06:26:23.801 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 440.2408ms
+2026-03-25 06:26:26.415 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-25 06:26:26.450 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.2924ms
+2026-03-25 06:26:41.015 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/orders - application/json 569
+2026-03-25 06:26:41.032 +05:30 [INF] CORS policy execution failed.
+2026-03-25 06:26:41.034 +05:30 [INF] Request origin http://localhost:5004 does not have permission to access the resource.
+2026-03-25 06:26:41.237 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:26:41.269 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "missing_token",
+  "error_description": "The security token is missing.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2000"
+}.
+2026-03-25 06:26:41.273 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:26:41.278 +05:30 [INF] HTTP POST /api/orders responded 401 in 233.4167 ms
+2026-03-25 06:26:41.285 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/orders - 401 0 null 270.2991ms
+2026-03-25 06:26:55.348 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/orders - application/json 569
+2026-03-25 06:26:55.365 +05:30 [INF] CORS policy execution failed.
+2026-03-25 06:26:55.370 +05:30 [INF] Request origin http://localhost:5004 does not have permission to access the resource.
+2026-03-25 06:26:55.538 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 06:26:55.614 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 06:26:55.993 +05:30 [INF] Received HTTP response headers after 371.0261ms - 200
+2026-03-25 06:26:56.008 +05:30 [INF] End processing HTTP request after 474.4869ms - 200
+2026-03-25 06:26:56.018 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 06:26:56.131 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 06:26:56.154 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 06:26:56.157 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 06:26:56.319 +05:30 [INF] Received HTTP response headers after 160.327ms - 200
+2026-03-25 06:26:56.367 +05:30 [INF] End processing HTTP request after 213.0745ms - 200
+2026-03-25 06:26:56.371 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 06:26:56.377 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 06:26:56.537 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:26:56.544 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:26:56.551 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:26:56.553 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:26:56.556 +05:30 [INF] HTTP POST /api/orders responded 401 in 1183.6211 ms
+2026-03-25 06:26:56.561 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/orders - 401 0 null 1212.9028ms
+2026-03-25 06:27:04.368 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/orders - application/json 569
+2026-03-25 06:27:04.378 +05:30 [INF] CORS policy execution failed.
+2026-03-25 06:27:04.380 +05:30 [INF] Request origin http://localhost:5004 does not have permission to access the resource.
+2026-03-25 06:27:04.392 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:04.398 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:27:04.401 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:27:04.403 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:27:04.405 +05:30 [INF] HTTP POST /api/orders responded 401 in 22.6181 ms
+2026-03-25 06:27:04.411 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/orders - 401 0 null 43.2865ms
+2026-03-25 06:27:18.936 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/orders - application/json 569
+2026-03-25 06:27:18.945 +05:30 [INF] CORS policy execution failed.
+2026-03-25 06:27:18.947 +05:30 [INF] Request origin http://localhost:5004 does not have permission to access the resource.
+2026-03-25 06:27:18.952 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:18.966 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:27:18.969 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:27:18.974 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:27:18.977 +05:30 [INF] HTTP POST /api/orders responded 401 in 28.0155 ms
+2026-03-25 06:27:18.982 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/orders - 401 0 null 45.9148ms
+2026-03-25 06:27:47.844 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:27:47.876 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:27:47.885 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:47.890 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:27:47.892 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:27:47.897 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:27:47.903 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 25.1603 ms
+2026-03-25 06:27:47.908 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 64.7519ms
+2026-03-25 06:27:52.524 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:27:52.567 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:27:52.573 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:52.576 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:27:52.586 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:27:52.589 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:27:52.601 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 30.9411 ms
+2026-03-25 06:27:52.605 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 81.4142ms
+2026-03-25 06:27:55.418 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:27:55.431 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:27:55.438 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:55.440 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:27:55.447 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:27:55.449 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:27:55.451 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 17.8988 ms
+2026-03-25 06:27:55.457 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 38.3183ms
+2026-03-25 06:27:57.449 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:27:57.454 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:27:57.463 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:57.466 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:27:57.468 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:27:57.470 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:27:57.472 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 11.5661 ms
+2026-03-25 06:27:57.480 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 30.7538ms
+2026-03-25 06:28:00.244 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:28:00.259 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:28:00.261 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:28:00.266 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:28:00.268 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:28:00.280 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:28:00.347 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 85.8640 ms
+2026-03-25 06:28:00.408 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 165.3672ms
+2026-03-25 06:28:02.900 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-25 06:28:02.916 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:28:02.922 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:28:02.925 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:28:02.928 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:28:02.932 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:28:02.940 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 19.1905 ms
+2026-03-25 06:28:02.944 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 401 0 null 44.4199ms
+2026-03-25 06:31:49.465 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/19ADBE9B-E339-4891-B424-B266D9C2C540 - null null
+2026-03-25 06:31:49.557 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:31:49.566 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:31:49.575 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:31:49.579 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:31:49.581 +05:30 [INF] HTTP GET /api/orders/restaurant/19ADBE9B-E339-4891-B424-B266D9C2C540 responded 401 in 67.8387 ms
+2026-03-25 06:31:49.587 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/19ADBE9B-E339-4891-B424-B266D9C2C540 - 401 0 null 124.785ms
+2026-03-25 06:36:11.879 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/my - null null
+2026-03-25 06:36:12.022 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:36:12.086 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:36:12.101 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:36:12.111 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:36:12.113 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:36:12.118 +05:30 [INF] HTTP GET /api/orders/my responded 401 in 90.7092 ms
+2026-03-25 06:36:12.125 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/my - 401 0 null 249.5156ms
+2026-03-25 06:56:17.900 +05:30 [INF] Executed DbCommand (209ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:56:19.199 +05:30 [INF] Executed DbCommand (338ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:56:19.435 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:56:19.975 +05:30 [INF] Executed DbCommand (139ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:56:22.213 +05:30 [INF] Executed DbCommand (1,972ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 06:56:24.116 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 06:56:27.278 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 06:56:28.738 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-25 06:56:29.399 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 06:56:29.487 +05:30 [INF] Hosting environment: Development
+2026-03-25 06:56:29.588 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-25 06:56:33.907 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-25 06:56:37.702 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 3804.6238ms
+2026-03-25 06:56:37.840 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-25 06:56:38.901 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 06:56:39.177 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 276.4988ms
+2026-03-25 06:56:39.241 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1400.8304ms
+2026-03-25 06:56:48.755 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-25 06:56:49.094 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 340.3293ms
+2026-03-25 06:59:24.234 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-25 06:59:24.440 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 207.1788ms
+2026-03-25 06:59:24.928 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-25 06:59:24.939 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 06:59:24.966 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 26.7142ms
+2026-03-25 06:59:24.993 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 65.5103ms
+2026-03-25 06:59:25.238 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-25 06:59:25.314 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 74.1483ms
+2026-03-25 07:02:15.364 +05:30 [INF] Executed DbCommand (328ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 07:02:16.207 +05:30 [INF] Executed DbCommand (155ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 07:02:16.643 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 07:02:16.741 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 07:02:16.973 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 07:02:17.153 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 07:02:18.437 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 07:02:20.236 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-25 07:02:23.749 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-25 07:02:24.229 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 07:02:24.437 +05:30 [INF] Hosting environment: Development
+2026-03-25 07:02:24.684 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-25 07:02:26.659 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 2920.6813ms
+2026-03-25 07:02:26.861 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-25 07:02:27.249 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 07:02:28.395 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 1144.5009ms
+2026-03-25 07:02:28.551 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1689.7983ms
+2026-03-25 07:02:31.277 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-25 07:02:31.307 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 29.8447ms
+2026-03-25 07:14:24.938 +05:30 [INF] Executed DbCommand (138ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 07:14:25.352 +05:30 [INF] Executed DbCommand (104ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 07:14:25.432 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 07:14:25.488 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 07:14:26.323 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 07:14:26.415 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 07:14:29.110 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 07:14:30.235 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-25 07:14:32.780 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 07:14:32.860 +05:30 [INF] Hosting environment: Development
+2026-03-25 07:14:32.868 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-25 07:14:32.912 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-25 07:14:40.909 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 8008.2596ms
+2026-03-25 07:14:41.059 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-25 07:14:41.067 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 07:14:41.233 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 166.1202ms
+2026-03-25 07:14:41.346 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 287.4332ms
+2026-03-25 07:14:41.600 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-25 07:14:41.760 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 159.2334ms

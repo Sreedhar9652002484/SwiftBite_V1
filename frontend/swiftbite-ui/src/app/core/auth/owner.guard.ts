@@ -3,13 +3,14 @@ import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 
 export const ownerGuard: CanActivateFn = async () => {
-  const auth   = inject(AuthService);
+  const auth = inject(AuthService);
   const router = inject(Router);
 
-  // ✅ Wait for profile to be loaded — role is only available after this
+  // ✅ Wait for profile to load
   await auth.waitForInit();
 
   if (!auth.isLoggedIn()) {
+    console.warn('⚠️ User not logged in');
     router.navigate(['/auth/login']);
     return false;
   }
@@ -18,6 +19,7 @@ export const ownerGuard: CanActivateFn = async () => {
     return true;
   }
 
+  console.warn('⚠️ User is not a RestaurantAdmin');
   router.navigate(['/home']);
   return false;
 };

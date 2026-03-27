@@ -5,17 +5,18 @@ public class AuthenticationMiddleware
     private readonly RequestDelegate _next;
     private readonly ILogger<AuthenticationMiddleware> _logger;
 
-    // Routes that DON'T need auth
     private static readonly HashSet<string> _publicRoutes = new()
-    {
-        "/api/auth/login",
-        "/api/auth/register",
-        "/api/auth/refresh",
-        "/api/auth/callback",
-        "/connect/token",
-        "/connect/authorize"
-    };
-
+{
+    "/api/auth/login",
+    "/api/auth/register",
+    "/api/auth/refresh",
+    "/api/auth/callback",
+    "/connect/token",
+    "/connect/authorize",
+    "/connect/userinfo",    // ← add this
+    "/connect/logout",      // ← add this
+    "/hubs"                 // ← add this for SignalR
+};
     public AuthenticationMiddleware(
         RequestDelegate next,
         ILogger<AuthenticationMiddleware> logger)

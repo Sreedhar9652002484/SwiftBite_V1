@@ -1,0 +1,2372 @@
+2026-03-25 05:35:54.730 +05:30 [INF] Loading proxy data from config.
+2026-03-25 05:36:49.797 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 24.1872 ms
+2026-03-25 05:36:49.797 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 24.1628 ms
+2026-03-25 05:36:49.896 +05:30 [INF] [e3335370] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:36:49.900 +05:30 [INF] [9364815c] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:36:50.695 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 05:36:50.700 +05:30 [INF] 🔍 Cache MISS: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 05:36:50.825 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 05:36:50.895 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 05:36:50.902 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 05:36:51.203 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:36:51.213 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "7868cdd6-a3d9-4a1b-a896-906942eed26f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397203,
+  "nbf": 1774397203,
+  "exp": 1774400803
+}.
+2026-03-25 05:36:51.255 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:36:51.266 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:36:51.338 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 05:36:51.788 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:36:51.793 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "7868cdd6-a3d9-4a1b-a896-906942eed26f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397203,
+  "nbf": 1774397203,
+  "exp": 1774400803
+}.
+2026-03-25 05:36:51.799 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:36:51.801 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:36:51.804 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 05:36:53.525 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 05:36:53.544 +05:30 [INF] [e3335370] ⬅️ 401 in 3654ms
+2026-03-25 05:36:53.551 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 3667.1521 ms
+2026-03-25 05:36:56.485 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 05:36:56.586 +05:30 [INF] Cache SET for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:, Expiry: "00:05:00"
+2026-03-25 05:36:56.592 +05:30 [INF] 💾 Cached: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd for 5 mins
+2026-03-25 05:36:56.597 +05:30 [INF] [9364815c] ⬅️ 200 in 6696ms
+2026-03-25 05:36:56.601 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 6701.2865 ms
+2026-03-25 05:37:01.314 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.2110 ms
+2026-03-25 05:37:01.319 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.0762 ms
+2026-03-25 05:37:01.330 +05:30 [INF] [2bbfb4ee] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:37:01.341 +05:30 [INF] [40fce02a] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:37:01.352 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 05:37:01.355 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 05:37:01.378 +05:30 [INF] [2bbfb4ee] ⬅️ 200 in 52ms
+2026-03-25 05:37:01.391 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 65.1620 ms
+2026-03-25 05:37:01.423 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:37:01.458 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "09db73c5-e981-481a-bc7c-ea4c7b1726fc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397221,
+  "nbf": 1774397221,
+  "exp": 1774400821
+}.
+2026-03-25 05:37:01.466 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:37:01.469 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:37:01.472 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 05:37:02.026 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 05:37:02.040 +05:30 [INF] [40fce02a] ⬅️ 401 in 698ms
+2026-03-25 05:37:02.043 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 701.7910 ms
+2026-03-25 05:37:51.111 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 3.9509 ms
+2026-03-25 05:37:51.112 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 3.9636 ms
+2026-03-25 05:37:51.177 +05:30 [INF] [651328f6] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:37:51.177 +05:30 [INF] [b9f585a5] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:37:51.246 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 05:37:51.346 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 05:37:51.379 +05:30 [INF] [651328f6] ⬅️ 200 in 219ms
+2026-03-25 05:37:51.444 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 289.4561 ms
+2026-03-25 05:37:51.557 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:37:51.576 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "333e7934-f6f5-43b7-86a9-12a847b9abb8",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397270,
+  "nbf": 1774397270,
+  "exp": 1774400870
+}.
+2026-03-25 05:37:51.588 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:37:51.595 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:37:51.602 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 05:37:52.658 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 05:37:52.667 +05:30 [INF] [b9f585a5] ⬅️ 401 in 1506ms
+2026-03-25 05:37:52.677 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 1517.1318 ms
+2026-03-25 05:38:06.579 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 1.8589 ms
+2026-03-25 05:38:08.462 +05:30 [INF] [575977f2] ➡️ GET /api/restaurants from ::1
+2026-03-25 05:38:08.503 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 05:38:08.600 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:38:08.606 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "58a69fac-50fe-4a88-a1c7-7d7bd62ed55a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397286,
+  "nbf": 1774397286,
+  "exp": 1774400886
+}.
+2026-03-25 05:38:08.615 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:38:08.618 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:38:08.621 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 05:38:11.043 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-03-25 05:38:11.049 +05:30 [INF] [575977f2] ⬅️ 500 in 2587ms
+2026-03-25 05:38:11.057 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 2595.3198 ms
+2026-03-25 05:38:12.080 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 0.2989 ms
+2026-03-25 05:38:12.093 +05:30 [INF] [998928d4] ➡️ GET /api/restaurants from ::1
+2026-03-25 05:38:12.109 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 05:38:12.213 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:38:12.230 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "58a69fac-50fe-4a88-a1c7-7d7bd62ed55a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397286,
+  "nbf": 1774397286,
+  "exp": 1774400886
+}.
+2026-03-25 05:38:12.246 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:38:12.249 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:38:12.251 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 05:38:13.032 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-03-25 05:38:13.042 +05:30 [INF] [998928d4] ⬅️ 500 in 949ms
+2026-03-25 05:38:13.045 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 952.2566 ms
+2026-03-25 05:38:15.190 +05:30 [INF] [4cd0d2e1] ➡️ GET /api/restaurants from ::1
+2026-03-25 05:38:15.205 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 05:38:15.290 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:38:15.297 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "58a69fac-50fe-4a88-a1c7-7d7bd62ed55a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397286,
+  "nbf": 1774397286,
+  "exp": 1774400886
+}.
+2026-03-25 05:38:15.304 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:38:15.306 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:38:15.308 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 05:38:15.828 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-03-25 05:38:15.838 +05:30 [INF] [4cd0d2e1] ⬅️ 500 in 647ms
+2026-03-25 05:38:15.844 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 654.0875 ms
+2026-03-25 05:47:31.745 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 6.9744 ms
+2026-03-25 05:47:31.774 +05:30 [INF] [d75342a3] ➡️ GET /api/restaurants from ::1
+2026-03-25 05:47:31.792 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 05:47:32.003 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:47:32.019 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "58a69fac-50fe-4a88-a1c7-7d7bd62ed55a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397286,
+  "nbf": 1774397286,
+  "exp": 1774400886
+}.
+2026-03-25 05:47:32.032 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:47:32.039 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:47:32.045 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 05:47:34.635 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-03-25 05:47:34.644 +05:30 [INF] [d75342a3] ⬅️ 500 in 2872ms
+2026-03-25 05:47:34.649 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 2878.5598 ms
+2026-03-25 05:47:35.669 +05:30 [INF] [4a6e127e] ➡️ GET /api/restaurants from ::1
+2026-03-25 05:47:35.677 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 05:47:35.755 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:47:35.761 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "58a69fac-50fe-4a88-a1c7-7d7bd62ed55a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397286,
+  "nbf": 1774397286,
+  "exp": 1774400886
+}.
+2026-03-25 05:47:35.766 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:47:35.767 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:47:35.770 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 05:47:36.154 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-03-25 05:47:36.159 +05:30 [INF] [4a6e127e] ⬅️ 500 in 489ms
+2026-03-25 05:47:36.167 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 498.4550 ms
+2026-03-25 05:47:38.181 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 0.0882 ms
+2026-03-25 05:47:38.194 +05:30 [INF] [568f0519] ➡️ GET /api/restaurants from ::1
+2026-03-25 05:47:38.201 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 05:47:38.269 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:47:38.273 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "58a69fac-50fe-4a88-a1c7-7d7bd62ed55a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397286,
+  "nbf": 1774397286,
+  "exp": 1774400886
+}.
+2026-03-25 05:47:38.280 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:47:38.281 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:47:38.284 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 05:47:38.720 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-03-25 05:47:38.728 +05:30 [INF] [568f0519] ⬅️ 500 in 534ms
+2026-03-25 05:47:38.733 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 539.1229 ms
+2026-03-25 05:47:49.020 +05:30 [INF] HTTP OPTIONS /api/orders/ord-001 responded 204 in 0.8570 ms
+2026-03-25 05:47:49.035 +05:30 [INF] [89c2d841] ➡️ GET /api/orders/ord-001 from ::1
+2026-03-25 05:47:49.154 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:47:49.158 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "88cfadbe-0389-4ac3-a2a0-bf1b773fc8f5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397853,
+  "nbf": 1774397853,
+  "exp": 1774401453
+}.
+2026-03-25 05:47:49.162 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:47:49.164 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:47:49.168 +05:30 [INF] Proxying to http://localhost:5004/api/orders/ord-001 HTTP/2 RequestVersionOrLower 
+2026-03-25 05:47:49.890 +05:30 [INF] Received HTTP/1.1 response 404.
+2026-03-25 05:47:49.896 +05:30 [INF] [89c2d841] ⬅️ 404 in 860ms
+2026-03-25 05:47:49.902 +05:30 [INF] HTTP GET /api/orders/ord-001 responded 404 in 866.8856 ms
+2026-03-25 05:48:04.022 +05:30 [INF] HTTP OPTIONS /api/orders/ord-001 responded 204 in 0.1244 ms
+2026-03-25 05:48:04.029 +05:30 [INF] [67ae4b17] ➡️ GET /api/orders/ord-001 from ::1
+2026-03-25 05:48:04.092 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:48:04.095 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "88cfadbe-0389-4ac3-a2a0-bf1b773fc8f5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397853,
+  "nbf": 1774397853,
+  "exp": 1774401453
+}.
+2026-03-25 05:48:04.098 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:48:04.100 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:48:04.107 +05:30 [INF] Proxying to http://localhost:5004/api/orders/ord-001 HTTP/2 RequestVersionOrLower 
+2026-03-25 05:48:04.232 +05:30 [INF] Received HTTP/1.1 response 404.
+2026-03-25 05:48:04.237 +05:30 [INF] [67ae4b17] ⬅️ 404 in 207ms
+2026-03-25 05:48:04.243 +05:30 [INF] HTTP GET /api/orders/ord-001 responded 404 in 213.8103 ms
+2026-03-25 05:48:04.881 +05:30 [INF] HTTP OPTIONS /api/orders/my responded 204 in 0.3445 ms
+2026-03-25 05:48:04.892 +05:30 [INF] [49a6275b] ➡️ GET /api/orders/my from ::1
+2026-03-25 05:48:04.956 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:48:04.960 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "88cfadbe-0389-4ac3-a2a0-bf1b773fc8f5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397853,
+  "nbf": 1774397853,
+  "exp": 1774401453
+}.
+2026-03-25 05:48:04.963 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:48:04.965 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:48:04.970 +05:30 [INF] Proxying to http://localhost:5004/api/orders/my HTTP/2 RequestVersionOrLower 
+2026-03-25 05:48:05.223 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 05:48:05.228 +05:30 [INF] [49a6275b] ⬅️ 401 in 336ms
+2026-03-25 05:48:05.239 +05:30 [INF] HTTP GET /api/orders/my responded 401 in 347.2266 ms
+2026-03-25 05:48:15.519 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 0.1152 ms
+2026-03-25 05:48:15.569 +05:30 [INF] [ec1e149e] ➡️ GET /api/restaurants from ::1
+2026-03-25 05:48:15.584 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 05:48:15.765 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:48:15.783 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "jti": "e35977cf-8171-4568-a641-82ab2629bc67",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397895,
+  "nbf": 1774397895,
+  "exp": 1774401495
+}.
+2026-03-25 05:48:15.787 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:48:15.789 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:48:15.797 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 05:48:16.586 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-03-25 05:48:16.595 +05:30 [INF] [ec1e149e] ⬅️ 500 in 1026ms
+2026-03-25 05:48:16.598 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 1029.3073 ms
+2026-03-25 05:48:18.349 +05:30 [INF] [7891a2c6] ➡️ GET /api/restaurants from ::1
+2026-03-25 05:48:18.356 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 05:48:18.420 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:48:18.426 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "jti": "e35977cf-8171-4568-a641-82ab2629bc67",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397895,
+  "nbf": 1774397895,
+  "exp": 1774401495
+}.
+2026-03-25 05:48:18.429 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:48:18.430 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:48:18.432 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 05:48:18.825 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-03-25 05:48:18.829 +05:30 [INF] [7891a2c6] ⬅️ 500 in 479ms
+2026-03-25 05:48:18.831 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 481.8577 ms
+2026-03-25 05:48:20.857 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 1.1112 ms
+2026-03-25 05:48:20.878 +05:30 [INF] [78ad7c1a] ➡️ GET /api/restaurants from ::1
+2026-03-25 05:48:20.900 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 05:48:21.006 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:48:21.013 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "jti": "e35977cf-8171-4568-a641-82ab2629bc67",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397895,
+  "nbf": 1774397895,
+  "exp": 1774401495
+}.
+2026-03-25 05:48:21.016 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:48:21.018 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:48:21.022 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 05:48:21.662 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-03-25 05:48:21.668 +05:30 [INF] [78ad7c1a] ⬅️ 500 in 789ms
+2026-03-25 05:48:21.677 +05:30 [ERR] HTTP GET /api/restaurants responded 500 in 798.6981 ms
+2026-03-25 05:49:42.585 +05:30 [INF] Loading proxy data from config.
+2026-03-25 05:50:16.752 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 11.0231 ms
+2026-03-25 05:50:16.752 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 11.1809 ms
+2026-03-25 05:50:16.850 +05:30 [INF] [03d71869] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:50:16.850 +05:30 [INF] [44fd8814] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:50:17.713 +05:30 [INF] 🔍 Cache MISS: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 05:50:17.780 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 05:50:17.916 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 05:50:18.016 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 05:50:18.028 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 05:50:18.472 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:50:18.481 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "a4d6121d-e8fe-4e6a-987e-d2d67d6d9ee1",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398013,
+  "nbf": 1774398013,
+  "exp": 1774401613
+}.
+2026-03-25 05:50:18.529 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:50:18.542 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:50:18.601 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 05:50:18.864 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:50:18.872 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "a4d6121d-e8fe-4e6a-987e-d2d67d6d9ee1",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398013,
+  "nbf": 1774398013,
+  "exp": 1774401613
+}.
+2026-03-25 05:50:18.876 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:50:18.878 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:50:18.882 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 05:50:21.340 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 05:50:21.365 +05:30 [INF] [44fd8814] ⬅️ 401 in 4520ms
+2026-03-25 05:50:21.375 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 4534.1019 ms
+2026-03-25 05:50:24.688 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 05:50:24.887 +05:30 [INF] Cache SET for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:, Expiry: "00:05:00"
+2026-03-25 05:50:24.900 +05:30 [INF] 💾 Cached: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd for 5 mins
+2026-03-25 05:50:24.908 +05:30 [INF] [03d71869] ⬅️ 200 in 8063ms
+2026-03-25 05:50:24.911 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 8070.7432 ms
+2026-03-25 05:51:34.756 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 46.3201 ms
+2026-03-25 05:51:34.756 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 46.3394 ms
+2026-03-25 05:51:36.354 +05:30 [INF] [c9de24a8] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:51:36.354 +05:30 [INF] [b3dbf332] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:51:36.370 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 05:51:36.372 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 05:51:36.378 +05:30 [INF] [c9de24a8] ⬅️ 200 in 25ms
+2026-03-25 05:51:36.384 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 30.7724 ms
+2026-03-25 05:51:36.508 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:51:36.519 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "fcb6e17b-1828-4658-b7cb-74b935858b87",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398093,
+  "nbf": 1774398093,
+  "exp": 1774401693
+}.
+2026-03-25 05:51:36.529 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:51:36.531 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:51:36.537 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 05:51:36.784 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 05:51:36.789 +05:30 [INF] [b3dbf332] ⬅️ 401 in 435ms
+2026-03-25 05:51:36.792 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 438.7415 ms
+2026-03-25 05:51:43.187 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.2004 ms
+2026-03-25 05:51:43.187 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.1035 ms
+2026-03-25 05:51:43.215 +05:30 [INF] [6bd45a30] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:51:43.234 +05:30 [INF] [68ae1dcb] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:51:43.250 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 05:51:43.259 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 05:51:43.275 +05:30 [INF] [6bd45a30] ⬅️ 200 in 61ms
+2026-03-25 05:51:43.284 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 70.7130 ms
+2026-03-25 05:51:43.362 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:51:43.368 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "9da380b0-054c-43e8-9f2d-58d1cbdee2af",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398102,
+  "nbf": 1774398102,
+  "exp": 1774401702
+}.
+2026-03-25 05:51:43.373 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:51:43.375 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:51:43.380 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 05:51:43.557 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 05:51:43.563 +05:30 [INF] [68ae1dcb] ⬅️ 401 in 328ms
+2026-03-25 05:51:43.566 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 332.3722 ms
+2026-03-25 05:52:04.739 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.2594 ms
+2026-03-25 05:52:04.752 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 12.2433 ms
+2026-03-25 05:52:05.117 +05:30 [INF] [90a319f7] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:52:05.131 +05:30 [INF] [3dd4c7fd] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:52:05.162 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 05:52:05.165 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 05:52:05.202 +05:30 [INF] [90a319f7] ⬅️ 200 in 69ms
+2026-03-25 05:52:05.268 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 150.8192 ms
+2026-03-25 05:52:05.350 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:52:05.355 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "fc17a411-5fa1-4d2f-ae60-6a9493e42a57",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398124,
+  "nbf": 1774398124,
+  "exp": 1774401724
+}.
+2026-03-25 05:52:05.365 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:52:05.369 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:52:05.372 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 05:52:05.871 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 05:52:05.881 +05:30 [INF] [3dd4c7fd] ⬅️ 401 in 750ms
+2026-03-25 05:52:05.885 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 755.0050 ms
+2026-03-25 05:54:20.140 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 1.4085 ms
+2026-03-25 05:54:20.149 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.3299 ms
+2026-03-25 05:54:20.166 +05:30 [INF] [2c69087a] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:54:20.166 +05:30 [INF] [fa34bef6] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 05:54:20.188 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 05:54:20.247 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 05:54:20.251 +05:30 [INF] [2c69087a] ⬅️ 200 in 86ms
+2026-03-25 05:54:20.255 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 89.4469 ms
+2026-03-25 05:54:20.393 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 05:54:20.401 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "03c8186b-3c0e-4c50-bc1c-c39cd4142212",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398259,
+  "nbf": 1774398259,
+  "exp": 1774401859
+}.
+2026-03-25 05:54:20.405 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 05:54:20.407 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 05:54:20.413 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 05:54:20.713 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 05:54:20.716 +05:30 [INF] [fa34bef6] ⬅️ 401 in 551ms
+2026-03-25 05:54:20.719 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 556.0328 ms
+2026-03-25 06:00:35.554 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 7.8815 ms
+2026-03-25 06:00:35.554 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.0900 ms
+2026-03-25 06:00:35.599 +05:30 [INF] [8f45f66a] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:00:35.600 +05:30 [INF] [10837ba1] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:00:35.622 +05:30 [INF] 🔍 Cache MISS: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:00:35.955 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:00:35.995 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "8df801aa-50b3-480b-9f7a-a3cf4fbb813b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398632,
+  "nbf": 1774398632,
+  "exp": 1774402232
+}.
+2026-03-25 06:00:36.026 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:00:36.032 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:00:36.040 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:00:36.041 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:00:36.046 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "8df801aa-50b3-480b-9f7a-a3cf4fbb813b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774398632,
+  "nbf": 1774398632,
+  "exp": 1774402232
+}.
+2026-03-25 06:00:36.057 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:00:36.063 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:00:36.066 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:00:37.125 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:00:37.138 +05:30 [INF] [10837ba1] ⬅️ 401 in 1538ms
+2026-03-25 06:00:37.147 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 1548.3486 ms
+2026-03-25 06:00:38.400 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 06:00:38.431 +05:30 [INF] Cache SET for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:, Expiry: "00:05:00"
+2026-03-25 06:00:38.434 +05:30 [INF] 💾 Cached: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd for 5 mins
+2026-03-25 06:00:38.437 +05:30 [INF] [8f45f66a] ⬅️ 200 in 2843ms
+2026-03-25 06:00:38.441 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 2850.1397 ms
+2026-03-25 06:05:16.445 +05:30 [INF] Loading proxy data from config.
+2026-03-25 06:07:21.970 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 12.9814 ms
+2026-03-25 06:07:21.970 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 12.9613 ms
+2026-03-25 06:07:22.057 +05:30 [INF] [90919fb5] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:07:22.057 +05:30 [INF] [e0c27723] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:07:24.267 +05:30 [INF] 🔍 Cache MISS: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:07:24.491 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 06:07:24.688 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 06:07:24.812 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 06:07:24.840 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 06:07:32.158 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:07:32.166 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "6bedd6d6-9dbc-4fd4-9c67-dbe2238c1f54",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774399039,
+  "nbf": 1774399039,
+  "exp": 1774402639
+}.
+2026-03-25 06:07:32.204 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:07:32.214 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:07:32.269 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:07:32.407 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:07:32.411 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "6bedd6d6-9dbc-4fd4-9c67-dbe2238c1f54",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774399039,
+  "nbf": 1774399039,
+  "exp": 1774402639
+}.
+2026-03-25 06:07:32.415 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:07:32.417 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:07:32.423 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:07:36.497 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:07:36.518 +05:30 [INF] [e0c27723] ⬅️ 401 in 14468ms
+2026-03-25 06:07:36.523 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 14476.9845 ms
+2026-03-25 06:07:38.288 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 06:07:38.382 +05:30 [INF] Cache SET for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:, Expiry: "00:05:00"
+2026-03-25 06:07:38.387 +05:30 [INF] 💾 Cached: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd for 5 mins
+2026-03-25 06:07:38.392 +05:30 [INF] [90919fb5] ⬅️ 200 in 16342ms
+2026-03-25 06:07:38.396 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 16349.3795 ms
+2026-03-25 06:07:41.826 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.3048 ms
+2026-03-25 06:07:41.843 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.2554 ms
+2026-03-25 06:07:41.875 +05:30 [INF] [7e8ee866] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:07:41.921 +05:30 [INF] [1faae43d] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:07:41.952 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 06:07:42.023 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:07:42.041 +05:30 [INF] [7e8ee866] ⬅️ 200 in 166ms
+2026-03-25 06:07:42.087 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 212.6931 ms
+2026-03-25 06:07:42.201 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:07:42.233 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "e93a2a73-ee94-4e4a-9812-88fa8674e7e4",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774399061,
+  "nbf": 1774399061,
+  "exp": 1774402661
+}.
+2026-03-25 06:07:42.311 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:07:42.347 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:07:42.368 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:07:42.789 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:07:42.835 +05:30 [INF] [1faae43d] ⬅️ 401 in 914ms
+2026-03-25 06:07:42.838 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 916.8619 ms
+2026-03-25 06:07:51.102 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.1946 ms
+2026-03-25 06:07:51.103 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.1254 ms
+2026-03-25 06:07:51.127 +05:30 [INF] [49eaa7b9] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:07:51.128 +05:30 [INF] [61b6e658] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:07:51.138 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 06:07:51.173 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:07:51.181 +05:30 [INF] [49eaa7b9] ⬅️ 200 in 54ms
+2026-03-25 06:07:51.199 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 71.2955 ms
+2026-03-25 06:07:52.217 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:07:52.222 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "3e0cc584-7445-4855-b49e-c62ec84891db",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774399070,
+  "nbf": 1774399070,
+  "exp": 1774402670
+}.
+2026-03-25 06:07:52.225 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:07:52.227 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:07:52.229 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:07:52.275 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:07:52.279 +05:30 [INF] [61b6e658] ⬅️ 401 in 1151ms
+2026-03-25 06:07:52.287 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 1158.9435 ms
+2026-03-25 06:08:17.031 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.1874 ms
+2026-03-25 06:08:17.058 +05:30 [INF] [580fdac8] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:08:17.066 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 06:08:17.069 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:08:17.071 +05:30 [INF] [580fdac8] ⬅️ 200 in 13ms
+2026-03-25 06:08:17.078 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 20.1816 ms
+2026-03-25 06:08:17.108 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.4601 ms
+2026-03-25 06:08:17.129 +05:30 [INF] [3c2168b5] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:08:24.836 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:08:24.841 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "cb01f4d3-05cb-44d9-b49d-76cad16923c9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774399075,
+  "nbf": 1774399075,
+  "exp": 1774402675
+}.
+2026-03-25 06:08:24.844 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:08:24.846 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:08:24.849 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:08:24.891 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:08:24.895 +05:30 [INF] [3c2168b5] ⬅️ 401 in 7766ms
+2026-03-25 06:08:24.898 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 7769.6146 ms
+2026-03-25 06:09:05.012 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 4.3936 ms
+2026-03-25 06:09:05.026 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.4790 ms
+2026-03-25 06:09:05.062 +05:30 [INF] [f052e5c4] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:09:05.072 +05:30 [INF] [b5a9f4b6] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:09:05.088 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 06:09:05.109 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:09:05.116 +05:30 [INF] [f052e5c4] ⬅️ 200 in 57ms
+2026-03-25 06:09:05.124 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 67.3096 ms
+2026-03-25 06:09:05.243 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:09:05.273 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "9ec0ae27-3402-409c-8c43-890b0f488876",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774399125,
+  "nbf": 1774399125,
+  "exp": 1774402725
+}.
+2026-03-25 06:09:05.286 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:09:05.291 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:09:05.392 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:09:05.691 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:09:05.703 +05:30 [INF] [b5a9f4b6] ⬅️ 401 in 631ms
+2026-03-25 06:09:05.706 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 634.4335 ms
+2026-03-25 06:13:43.011 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 20.6888 ms
+2026-03-25 06:13:43.011 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 20.6726 ms
+2026-03-25 06:13:43.077 +05:30 [INF] [8fbb199d] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:13:43.077 +05:30 [INF] [826e248e] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:13:43.160 +05:30 [INF] 🔍 Cache MISS: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:13:43.561 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:13:43.598 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "c9b4c15c-047f-49f3-afd6-1617967132ce",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774399414,
+  "nbf": 1774399414,
+  "exp": 1774403014
+}.
+2026-03-25 06:13:43.629 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:13:43.637 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:13:43.667 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:13:44.526 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:13:44.535 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "c9b4c15c-047f-49f3-afd6-1617967132ce",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774399414,
+  "nbf": 1774399414,
+  "exp": 1774403014
+}.
+2026-03-25 06:13:44.540 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:13:44.542 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:13:44.545 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:13:45.886 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:13:45.906 +05:30 [INF] [826e248e] ⬅️ 401 in 2836ms
+2026-03-25 06:13:45.925 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 2859.2601 ms
+2026-03-25 06:13:46.452 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 06:13:46.548 +05:30 [INF] Cache SET for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:, Expiry: "00:05:00"
+2026-03-25 06:13:46.554 +05:30 [INF] 💾 Cached: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd for 5 mins
+2026-03-25 06:13:46.560 +05:30 [INF] [8fbb199d] ⬅️ 200 in 3487ms
+2026-03-25 06:13:46.567 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 3495.5280 ms
+2026-03-25 06:13:49.201 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.1741 ms
+2026-03-25 06:13:49.223 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 5.7468 ms
+2026-03-25 06:13:49.627 +05:30 [INF] [3504fadf] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:13:49.634 +05:30 [INF] [0ea55be6] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:13:49.672 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 06:13:49.680 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:13:49.714 +05:30 [INF] [3504fadf] ⬅️ 200 in 86ms
+2026-03-25 06:13:49.722 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 91.6706 ms
+2026-03-25 06:13:49.853 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:13:49.856 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "b5c16b74-e154-47a2-a095-3f0de5067f82",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774399428,
+  "nbf": 1774399428,
+  "exp": 1774403028
+}.
+2026-03-25 06:13:49.866 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:13:49.878 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:13:49.894 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:13:50.172 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:13:50.186 +05:30 [INF] [0ea55be6] ⬅️ 401 in 551ms
+2026-03-25 06:13:50.198 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 563.0839 ms
+2026-03-25 06:19:20.919 +05:30 [INF] Loading proxy data from config.
+2026-03-25 06:26:04.765 +05:30 [INF] Loading proxy data from config.
+2026-03-25 06:27:45.717 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 7.9623 ms
+2026-03-25 06:27:45.717 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 7.9695 ms
+2026-03-25 06:27:45.805 +05:30 [INF] [9c9b0bd2] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:27:45.806 +05:30 [INF] [fb1de88a] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:27:46.719 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 06:27:46.764 +05:30 [INF] 🔍 Cache MISS: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:27:46.980 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 06:27:47.046 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 06:27:47.056 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 06:27:47.306 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:27:47.313 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "2c677818-98d1-4784-bce0-40b79d5f94cb",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400260,
+  "nbf": 1774400260,
+  "exp": 1774403860
+}.
+2026-03-25 06:27:47.370 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:27:47.380 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:47.439 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:27:47.790 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:27:47.794 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "2c677818-98d1-4784-bce0-40b79d5f94cb",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400260,
+  "nbf": 1774400260,
+  "exp": 1774403860
+}.
+2026-03-25 06:27:47.798 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:27:47.806 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:47.810 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:27:47.919 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:27:47.945 +05:30 [INF] [fb1de88a] ⬅️ 401 in 2148ms
+2026-03-25 06:27:47.954 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 2162.6529 ms
+2026-03-25 06:27:51.123 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 06:27:51.188 +05:30 [INF] Cache SET for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:, Expiry: "00:05:00"
+2026-03-25 06:27:51.193 +05:30 [INF] 💾 Cached: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd for 5 mins
+2026-03-25 06:27:51.198 +05:30 [INF] [9c9b0bd2] ⬅️ 200 in 5402ms
+2026-03-25 06:27:51.202 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 5410.6327 ms
+2026-03-25 06:27:52.246 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.1791 ms
+2026-03-25 06:27:52.246 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.1460 ms
+2026-03-25 06:27:52.263 +05:30 [INF] [f5d0b567] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:27:52.272 +05:30 [INF] [9a1e0ba8] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:27:52.289 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 06:27:52.349 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:27:52.360 +05:30 [INF] [9a1e0ba8] ⬅️ 200 in 87ms
+2026-03-25 06:27:52.375 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 102.9425 ms
+2026-03-25 06:27:52.475 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:27:52.493 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "e2e1ee6c-c386-4b01-b22b-873b5332f25d",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400272,
+  "nbf": 1774400272,
+  "exp": 1774403872
+}.
+2026-03-25 06:27:52.515 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:27:52.517 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:52.519 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:27:52.606 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:27:52.619 +05:30 [INF] [f5d0b567] ⬅️ 401 in 356ms
+2026-03-25 06:27:52.623 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 359.8677 ms
+2026-03-25 06:27:55.197 +05:30 [INF] [c99535b8] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:27:55.202 +05:30 [INF] [0dbaf7be] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:27:55.223 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 06:27:55.267 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:27:55.280 +05:30 [INF] [c99535b8] ⬅️ 200 in 83ms
+2026-03-25 06:27:55.339 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 142.3370 ms
+2026-03-25 06:27:55.387 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:27:55.399 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "2b544451-5343-4151-bf61-4f6e03ac0dc6",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400275,
+  "nbf": 1774400275,
+  "exp": 1774403875
+}.
+2026-03-25 06:27:55.403 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:27:55.405 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:55.407 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:27:55.461 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:27:55.466 +05:30 [INF] [0dbaf7be] ⬅️ 401 in 264ms
+2026-03-25 06:27:55.468 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 266.8562 ms
+2026-03-25 06:27:57.232 +05:30 [INF] [daad0627] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:27:57.233 +05:30 [INF] [f00f6304] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:27:57.245 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 06:27:57.254 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:27:57.282 +05:30 [INF] [daad0627] ⬅️ 200 in 49ms
+2026-03-25 06:27:57.302 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 70.1538 ms
+2026-03-25 06:27:57.416 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:27:57.421 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "439237cb-3b24-484a-aba0-af36a8653b32",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400277,
+  "nbf": 1774400277,
+  "exp": 1774403877
+}.
+2026-03-25 06:27:57.433 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:27:57.436 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:27:57.438 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:27:57.480 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:27:57.484 +05:30 [INF] [f00f6304] ⬅️ 401 in 251ms
+2026-03-25 06:27:57.487 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 254.2839 ms
+2026-03-25 06:27:59.635 +05:30 [INF] HTTP OPTIONS /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.3431 ms
+2026-03-25 06:27:59.638 +05:30 [INF] HTTP OPTIONS /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 204 in 0.1124 ms
+2026-03-25 06:27:59.689 +05:30 [INF] [53da6d85] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:27:59.700 +05:30 [INF] [925e835e] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:27:59.728 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 06:27:59.745 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:27:59.747 +05:30 [INF] [53da6d85] ⬅️ 200 in 57ms
+2026-03-25 06:27:59.827 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 137.7077 ms
+2026-03-25 06:28:00.169 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:28:00.198 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "46b2c7ce-45a7-4cf3-a4c7-c377fe4de729",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400279,
+  "nbf": 1774400279,
+  "exp": 1774403879
+}.
+2026-03-25 06:28:00.211 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:28:00.229 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:28:00.234 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:28:00.411 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:28:00.695 +05:30 [INF] [925e835e] ⬅️ 401 in 995ms
+2026-03-25 06:28:00.698 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 998.9154 ms
+2026-03-25 06:28:02.485 +05:30 [INF] [a60343e0] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:28:02.493 +05:30 [INF] [f3fa1373] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-03-25 06:28:02.544 +05:30 [INF] Cache HIT for key: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd:anonymous:
+2026-03-25 06:28:02.589 +05:30 [INF] ⚡ Cache HIT: /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-25 06:28:02.615 +05:30 [INF] [a60343e0] ⬅️ 200 in 129ms
+2026-03-25 06:28:02.639 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 153.2395 ms
+2026-03-25 06:28:02.680 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:28:02.694 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "jti": "6a10550f-3952-4d6f-8335-5c6a0c64a48d",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400282,
+  "nbf": 1774400282,
+  "exp": 1774403882
+}.
+2026-03-25 06:28:02.870 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:28:02.891 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:28:02.894 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-03-25 06:28:02.945 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:28:02.974 +05:30 [INF] [f3fa1373] ⬅️ 401 in 480ms
+2026-03-25 06:28:02.982 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 401 in 489.6639 ms
+2026-03-25 06:33:47.979 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 22.6368 ms
+2026-03-25 06:33:48.092 +05:30 [INF] [bd4a288a] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:33:48.126 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 06:33:48.457 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:33:49.124 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "0d681ec6-75eb-4e7a-a6cc-4e91a41528ae",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400622,
+  "nbf": 1774400622,
+  "exp": 1774404222
+}.
+2026-03-25 06:33:49.190 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:33:49.194 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:33:49.212 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 06:33:51.681 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 06:33:51.793 +05:30 [INF] Cache SET for key: /api/restaurants:anonymous:, Expiry: "00:05:00"
+2026-03-25 06:33:51.826 +05:30 [INF] 💾 Cached: /api/restaurants for 5 mins
+2026-03-25 06:33:51.837 +05:30 [INF] [bd4a288a] ⬅️ 200 in 3751ms
+2026-03-25 06:33:51.871 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 3785.7373 ms
+2026-03-25 06:35:42.823 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 6.5465 ms
+2026-03-25 06:35:42.893 +05:30 [INF] [e9d670fe] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:35:42.943 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:35:42.949 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:35:42.976 +05:30 [INF] [e9d670fe] ⬅️ 200 in 87ms
+2026-03-25 06:35:43.172 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 284.6335 ms
+2026-03-25 06:36:11.310 +05:30 [INF] HTTP OPTIONS /api/orders/my responded 204 in 0.1232 ms
+2026-03-25 06:36:11.326 +05:30 [INF] [ed9a556c] ➡️ GET /api/orders/my from ::1
+2026-03-25 06:36:11.573 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:36:11.583 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "jti": "e35977cf-8171-4568-a641-82ab2629bc67",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774397895,
+  "nbf": 1774397895,
+  "exp": 1774401495
+}.
+2026-03-25 06:36:11.596 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:36:11.599 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:36:11.608 +05:30 [INF] Proxying to http://localhost:5004/api/orders/my HTTP/2 RequestVersionOrLower 
+2026-03-25 06:36:12.126 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:36:12.133 +05:30 [INF] [ed9a556c] ⬅️ 401 in 807ms
+2026-03-25 06:36:12.139 +05:30 [INF] HTTP GET /api/orders/my responded 401 in 813.3854 ms
+2026-03-25 06:36:46.823 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 0.5825 ms
+2026-03-25 06:36:46.842 +05:30 [INF] [6c08716c] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:36:46.882 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:36:46.893 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:36:46.895 +05:30 [INF] [6c08716c] ⬅️ 200 in 53ms
+2026-03-25 06:36:46.909 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 67.1523 ms
+2026-03-25 06:39:12.106 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 34.8708 ms
+2026-03-25 06:39:12.209 +05:30 [INF] [471e0b65] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:39:12.293 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 06:39:12.682 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 0.7762 ms
+2026-03-25 06:39:12.720 +05:30 [INF] [e20c243d] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:39:12.986 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 06:39:16.396 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:39:16.398 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:39:16.436 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "beae7c69-dc9d-4770-a79d-b1fda0ff5ccb",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400806,
+  "nbf": 1774400806,
+  "exp": 1774404406
+}.
+2026-03-25 06:39:16.437 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "2237c593-ac78-4474-9a94-02108fa54f1c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400744,
+  "nbf": 1774400744,
+  "exp": 1774404344
+}.
+2026-03-25 06:39:16.490 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:39:16.490 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:39:16.504 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:39:16.505 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:39:16.524 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 06:39:16.524 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 06:39:18.250 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 06:39:18.251 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 06:39:18.355 +05:30 [INF] Cache SET for key: /api/restaurants:anonymous:, Expiry: "00:05:00"
+2026-03-25 06:39:18.364 +05:30 [INF] 💾 Cached: /api/restaurants for 5 mins
+2026-03-25 06:39:18.369 +05:30 [INF] [e20c243d] ⬅️ 200 in 5649ms
+2026-03-25 06:39:18.369 +05:30 [INF] Cache SET for key: /api/restaurants:anonymous:, Expiry: "00:05:00"
+2026-03-25 06:39:18.383 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 5664.3901 ms
+2026-03-25 06:39:18.386 +05:30 [INF] 💾 Cached: /api/restaurants for 5 mins
+2026-03-25 06:39:18.404 +05:30 [INF] [471e0b65] ⬅️ 200 in 6213ms
+2026-03-25 06:39:19.248 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 7058.6154 ms
+2026-03-25 06:39:21.143 +05:30 [INF] HTTP OPTIONS /api/users/profile responded 204 in 0.1715 ms
+2026-03-25 06:39:21.159 +05:30 [INF] HTTP OPTIONS /api/users/addresses responded 204 in 0.1091 ms
+2026-03-25 06:39:21.163 +05:30 [INF] HTTP OPTIONS /api/users/preferences responded 204 in 0.1214 ms
+2026-03-25 06:39:21.179 +05:30 [INF] [d8d31d45] ➡️ GET /api/users/addresses from ::1
+2026-03-25 06:39:21.179 +05:30 [INF] [621d7c02] ➡️ GET /api/users/profile from ::1
+2026-03-25 06:39:21.185 +05:30 [INF] [7e506415] ➡️ GET /api/users/preferences from ::1
+2026-03-25 06:39:21.207 +05:30 [INF] 🔍 Cache MISS: /api/users/profile
+2026-03-25 06:39:21.354 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:39:21.362 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "0f95245a-d72e-4b22-89e0-3af05f2f7028",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400953,
+  "nbf": 1774400953,
+  "exp": 1774404553
+}.
+2026-03-25 06:39:21.366 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:39:21.368 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:39:21.374 +05:30 [INF] Proxying to http://localhost:5002/api/users/addresses HTTP/2 RequestVersionOrLower 
+2026-03-25 06:39:21.450 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:39:21.552 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "0f95245a-d72e-4b22-89e0-3af05f2f7028",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400953,
+  "nbf": 1774400953,
+  "exp": 1774404553
+}.
+2026-03-25 06:39:21.553 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:39:21.565 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:39:21.569 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:39:21.569 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "0f95245a-d72e-4b22-89e0-3af05f2f7028",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400953,
+  "nbf": 1774400953,
+  "exp": 1774404553
+}.
+2026-03-25 06:39:21.576 +05:30 [INF] Proxying to http://localhost:5002/api/users/preferences HTTP/2 RequestVersionOrLower 
+2026-03-25 06:39:21.580 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:39:21.610 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:39:21.626 +05:30 [INF] Proxying to http://localhost:5002/api/users/profile HTTP/2 RequestVersionOrLower 
+2026-03-25 06:39:29.072 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 3.6350 ms
+2026-03-25 06:39:29.108 +05:30 [INF] [7de06326] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:39:29.142 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:39:29.147 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:39:29.172 +05:30 [INF] [7de06326] ⬅️ 200 in 63ms
+2026-03-25 06:39:29.179 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 70.6039 ms
+2026-03-25 06:39:31.377 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:39:31.377 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:39:31.386 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:39:31.386 +05:30 [INF] [d8d31d45] ⬅️ 401 in 10207ms
+2026-03-25 06:39:31.393 +05:30 [INF] [621d7c02] ⬅️ 401 in 10214ms
+2026-03-25 06:39:31.405 +05:30 [INF] HTTP GET /api/users/profile responded 401 in 10225.9646 ms
+2026-03-25 06:39:31.402 +05:30 [INF] HTTP GET /api/users/addresses responded 401 in 10223.1658 ms
+2026-03-25 06:39:31.395 +05:30 [INF] [7e506415] ⬅️ 401 in 10210ms
+2026-03-25 06:39:31.436 +05:30 [INF] HTTP GET /api/users/preferences responded 401 in 10251.7627 ms
+2026-03-25 06:51:08.472 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 12.0449 ms
+2026-03-25 06:51:08.517 +05:30 [INF] [cc7901bb] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:51:08.591 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 06:51:08.929 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:51:08.946 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "2237c593-ac78-4474-9a94-02108fa54f1c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400744,
+  "nbf": 1774400744,
+  "exp": 1774404344
+}.
+2026-03-25 06:51:08.968 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:51:08.972 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:51:08.986 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 06:51:09.692 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 06:51:09.729 +05:30 [INF] Cache SET for key: /api/restaurants:anonymous:, Expiry: "00:05:00"
+2026-03-25 06:51:09.732 +05:30 [INF] 💾 Cached: /api/restaurants for 5 mins
+2026-03-25 06:51:09.735 +05:30 [INF] [cc7901bb] ⬅️ 200 in 1221ms
+2026-03-25 06:51:09.739 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 1229.5198 ms
+2026-03-25 06:51:23.917 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 13.6637 ms
+2026-03-25 06:51:24.009 +05:30 [INF] [6c92f6ed] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:51:24.071 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:51:24.090 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:51:24.116 +05:30 [INF] [6c92f6ed] ⬅️ 200 in 110ms
+2026-03-25 06:51:24.151 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 147.5123 ms
+2026-03-25 06:51:30.518 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 1.2530 ms
+2026-03-25 06:51:30.606 +05:30 [INF] [a8e756cf] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:51:30.699 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:51:30.733 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:51:30.752 +05:30 [INF] [a8e756cf] ⬅️ 200 in 146ms
+2026-03-25 06:51:30.799 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 194.2677 ms
+2026-03-25 06:51:38.691 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 0.5237 ms
+2026-03-25 06:51:38.707 +05:30 [INF] [6602ee74] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:51:38.731 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:51:38.747 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:51:38.755 +05:30 [INF] [6602ee74] ⬅️ 200 in 48ms
+2026-03-25 06:51:38.774 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 67.9436 ms
+2026-03-25 06:52:29.685 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 0.0973 ms
+2026-03-25 06:52:29.710 +05:30 [INF] [0b0e72a2] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:52:29.739 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:52:29.751 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:52:29.761 +05:30 [INF] [0b0e72a2] ⬅️ 200 in 51ms
+2026-03-25 06:52:29.777 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 67.1251 ms
+2026-03-25 06:52:46.719 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 0.0698 ms
+2026-03-25 06:52:46.750 +05:30 [INF] [53156b9c] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:52:46.776 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:52:46.785 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:52:46.799 +05:30 [INF] [53156b9c] ⬅️ 200 in 49ms
+2026-03-25 06:52:46.816 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 66.8234 ms
+2026-03-25 06:53:08.195 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 0.2732 ms
+2026-03-25 06:53:08.219 +05:30 [INF] [a4fd6e00] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:53:08.246 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:53:08.263 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:53:08.297 +05:30 [INF] [a4fd6e00] ⬅️ 200 in 79ms
+2026-03-25 06:53:08.316 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 99.1468 ms
+2026-03-25 06:53:17.891 +05:30 [INF] HTTP OPTIONS /api/notifications/mark-all-read responded 204 in 6.3484 ms
+2026-03-25 06:53:17.915 +05:30 [INF] [3e90b639] ➡️ PUT /api/notifications/mark-all-read from ::1
+2026-03-25 06:53:18.140 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:53:18.168 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "e76c06ce-6c6f-44bc-a828-bfd8cc4453e7",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774401787,
+  "nbf": 1774401787,
+  "exp": 1774405387
+}.
+2026-03-25 06:53:18.217 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:53:18.237 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:53:18.314 +05:30 [INF] Proxying to http://localhost:5006/api/notifications/mark-all-read HTTP/2 RequestVersionOrLower 
+2026-03-25 06:53:18.512 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:53:18.524 +05:30 [INF] [3e90b639] ⬅️ 401 in 609ms
+2026-03-25 06:53:18.533 +05:30 [INF] HTTP PUT /api/notifications/mark-all-read responded 401 in 619.3420 ms
+2026-03-25 06:53:27.994 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 0.0832 ms
+2026-03-25 06:53:28.048 +05:30 [INF] [74a1859f] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:53:28.144 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:53:28.250 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:53:28.266 +05:30 [INF] [74a1859f] ⬅️ 200 in 218ms
+2026-03-25 06:53:28.298 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 250.0951 ms
+2026-03-25 06:55:54.546 +05:30 [INF] Loading proxy data from config.
+2026-03-25 06:57:06.360 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 16.8242 ms
+2026-03-25 06:57:06.543 +05:30 [INF] [8603dc70] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:57:07.484 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 06:57:08.287 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 06:57:08.638 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 06:57:08.864 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 06:57:08.879 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 06:57:09.852 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:57:09.954 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "2237c593-ac78-4474-9a94-02108fa54f1c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400744,
+  "nbf": 1774400744,
+  "exp": 1774404344
+}.
+2026-03-25 06:57:10.074 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:57:10.123 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:57:10.321 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 06:57:14.831 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 06:57:14.942 +05:30 [INF] Cache SET for key: /api/restaurants:anonymous:, Expiry: "00:05:00"
+2026-03-25 06:57:14.952 +05:30 [INF] 💾 Cached: /api/restaurants for 5 mins
+2026-03-25 06:57:14.960 +05:30 [INF] [8603dc70] ⬅️ 200 in 8426ms
+2026-03-25 06:57:14.966 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 8443.2712 ms
+2026-03-25 06:57:18.546 +05:30 [INF] HTTP OPTIONS /api/users/profile responded 204 in 2.7925 ms
+2026-03-25 06:57:18.546 +05:30 [INF] HTTP OPTIONS /api/users/addresses responded 204 in 0.0697 ms
+2026-03-25 06:57:18.587 +05:30 [INF] HTTP OPTIONS /api/users/preferences responded 204 in 0.0674 ms
+2026-03-25 06:57:18.614 +05:30 [INF] [b533e0c0] ➡️ GET /api/users/profile from ::1
+2026-03-25 06:57:18.614 +05:30 [INF] [6be57545] ➡️ GET /api/users/addresses from ::1
+2026-03-25 06:57:18.615 +05:30 [INF] [70fa5637] ➡️ GET /api/users/preferences from ::1
+2026-03-25 06:57:18.626 +05:30 [INF] 🔍 Cache MISS: /api/users/profile
+2026-03-25 06:57:19.004 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:57:19.064 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "2237c593-ac78-4474-9a94-02108fa54f1c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400744,
+  "nbf": 1774400744,
+  "exp": 1774404344
+}.
+2026-03-25 06:57:19.066 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:57:19.085 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:57:19.090 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "2237c593-ac78-4474-9a94-02108fa54f1c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400744,
+  "nbf": 1774400744,
+  "exp": 1774404344
+}.
+2026-03-25 06:57:19.096 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:57:19.102 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:57:19.108 +05:30 [INF] Proxying to http://localhost:5002/api/users/addresses HTTP/2 RequestVersionOrLower 
+2026-03-25 06:57:19.110 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:57:19.130 +05:30 [INF] Proxying to http://localhost:5002/api/users/profile HTTP/2 RequestVersionOrLower 
+2026-03-25 06:57:19.682 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:57:19.686 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "2237c593-ac78-4474-9a94-02108fa54f1c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400744,
+  "nbf": 1774400744,
+  "exp": 1774404344
+}.
+2026-03-25 06:57:19.693 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 06:57:19.695 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:57:19.697 +05:30 [INF] Proxying to http://localhost:5002/api/users/preferences HTTP/2 RequestVersionOrLower 
+2026-03-25 06:57:21.012 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:57:21.012 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:57:21.012 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 06:57:21.016 +05:30 [INF] [b533e0c0] ⬅️ 401 in 2402ms
+2026-03-25 06:57:21.018 +05:30 [INF] [70fa5637] ⬅️ 401 in 2402ms
+2026-03-25 06:57:21.020 +05:30 [INF] [6be57545] ⬅️ 401 in 2405ms
+2026-03-25 06:57:21.024 +05:30 [INF] HTTP GET /api/users/profile responded 401 in 2410.1376 ms
+2026-03-25 06:57:21.027 +05:30 [INF] HTTP GET /api/users/preferences responded 401 in 2412.7645 ms
+2026-03-25 06:57:21.030 +05:30 [INF] HTTP GET /api/users/addresses responded 401 in 2416.0076 ms
+2026-03-25 06:57:42.781 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 2.7774 ms
+2026-03-25 06:57:42.991 +05:30 [INF] [397d6d42] ➡️ GET /api/restaurants from ::1
+2026-03-25 06:57:43.060 +05:30 [INF] Cache HIT for key: /api/restaurants:anonymous:
+2026-03-25 06:57:43.065 +05:30 [INF] ⚡ Cache HIT: /api/restaurants
+2026-03-25 06:57:43.080 +05:30 [INF] [397d6d42] ⬅️ 200 in 90ms
+2026-03-25 06:57:43.091 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 109.6947 ms
+2026-03-25 07:02:05.222 +05:30 [INF] Loading proxy data from config.
+2026-03-25 07:02:56.703 +05:30 [INF] HTTP OPTIONS /api/restaurants responded 204 in 9.3736 ms
+2026-03-25 07:02:56.796 +05:30 [INF] [42d90c6f] ➡️ GET /api/restaurants from ::1
+2026-03-25 07:02:57.594 +05:30 [INF] 🔍 Cache MISS: /api/restaurants
+2026-03-25 07:02:58.167 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 07:02:58.300 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 07:02:58.387 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 07:02:58.409 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 07:02:58.617 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:02:58.632 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "75ea5fb6-8152-42c7-8c39-ec3ced55f1b5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774402375,
+  "nbf": 1774402375,
+  "exp": 1774405975
+}.
+2026-03-25 07:02:58.706 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 07:02:58.721 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:02:58.803 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 07:03:02.421 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 07:03:02.503 +05:30 [INF] Cache SET for key: /api/restaurants:anonymous:, Expiry: "00:05:00"
+2026-03-25 07:03:02.510 +05:30 [INF] 💾 Cached: /api/restaurants for 5 mins
+2026-03-25 07:03:02.518 +05:30 [INF] [42d90c6f] ⬅️ 200 in 5728ms
+2026-03-25 07:03:02.523 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 5737.6915 ms
+2026-03-25 07:03:07.427 +05:30 [INF] HTTP OPTIONS /api/users/profile responded 204 in 2.5358 ms
+2026-03-25 07:03:07.435 +05:30 [INF] HTTP OPTIONS /api/users/addresses responded 204 in 0.1522 ms
+2026-03-25 07:03:07.447 +05:30 [INF] [1a36b342] ➡️ GET /api/users/profile from ::1
+2026-03-25 07:03:07.453 +05:30 [INF] HTTP OPTIONS /api/users/preferences responded 204 in 0.1333 ms
+2026-03-25 07:03:07.486 +05:30 [INF] 🔍 Cache MISS: /api/users/profile
+2026-03-25 07:03:07.472 +05:30 [INF] [0a3a93d4] ➡️ GET /api/users/addresses from ::1
+2026-03-25 07:03:07.529 +05:30 [INF] [4dedc6b7] ➡️ GET /api/users/preferences from ::1
+2026-03-25 07:03:07.697 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:03:07.709 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "75ea5fb6-8152-42c7-8c39-ec3ced55f1b5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774402375,
+  "nbf": 1774402375,
+  "exp": 1774405975
+}.
+2026-03-25 07:03:07.720 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 07:03:07.736 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:03:07.747 +05:30 [INF] Proxying to http://localhost:5002/api/users/profile HTTP/2 RequestVersionOrLower 
+2026-03-25 07:03:07.808 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:03:07.813 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "75ea5fb6-8152-42c7-8c39-ec3ced55f1b5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774402375,
+  "nbf": 1774402375,
+  "exp": 1774405975
+}.
+2026-03-25 07:03:07.817 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 07:03:07.819 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:03:07.821 +05:30 [INF] Proxying to http://localhost:5002/api/users/preferences HTTP/2 RequestVersionOrLower 
+2026-03-25 07:03:08.285 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:03:08.291 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "75ea5fb6-8152-42c7-8c39-ec3ced55f1b5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774402375,
+  "nbf": 1774402375,
+  "exp": 1774405975
+}.
+2026-03-25 07:03:08.295 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 07:03:08.296 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:03:08.299 +05:30 [INF] Proxying to http://localhost:5002/api/users/addresses HTTP/2 RequestVersionOrLower 
+2026-03-25 07:03:09.778 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 07:03:09.778 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 07:03:09.781 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 07:03:09.782 +05:30 [INF] [4dedc6b7] ⬅️ 401 in 2253ms
+2026-03-25 07:03:09.784 +05:30 [INF] [1a36b342] ⬅️ 401 in 2336ms
+2026-03-25 07:03:09.786 +05:30 [INF] [0a3a93d4] ⬅️ 401 in 2314ms
+2026-03-25 07:03:09.791 +05:30 [INF] HTTP GET /api/users/preferences responded 401 in 2261.4576 ms
+2026-03-25 07:03:09.793 +05:30 [INF] HTTP GET /api/users/profile responded 401 in 2346.3153 ms
+2026-03-25 07:03:09.796 +05:30 [INF] HTTP GET /api/users/addresses responded 401 in 2326.8262 ms
+2026-03-25 07:14:05.574 +05:30 [INF] Loading proxy data from config.
+2026-03-25 07:15:15.721 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 07:15:15.942 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 07:15:16.065 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 07:15:16.095 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 07:15:17.283 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:15:17.292 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "01d17032-25ca-4386-b6bd-4a9ce9d9405b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774403109,
+  "nbf": 1774403109,
+  "exp": 1774406709
+}.
+2026-03-25 07:15:17.352 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 07:15:17.373 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:15:17.472 +05:30 [INF] [1cd3cc17] ➡️ GET /api/restaurants from ::1
+2026-03-25 07:15:17.569 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-25 07:15:23.217 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-25 07:15:23.255 +05:30 [INF] [1cd3cc17] ⬅️ 200 in 5784ms
+2026-03-25 07:15:23.268 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 10586.3736 ms
+2026-03-25 07:15:31.011 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:15:31.019 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "01d17032-25ca-4386-b6bd-4a9ce9d9405b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774403109,
+  "nbf": 1774403109,
+  "exp": 1774406709
+}.
+2026-03-25 07:15:31.028 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 07:15:31.032 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:15:31.036 +05:30 [INF] [bc225740] ➡️ GET /api/users/profile from ::1
+2026-03-25 07:15:31.042 +05:30 [INF] Proxying to http://localhost:5002/api/users/profile HTTP/2 RequestVersionOrLower 
+2026-03-25 07:15:31.047 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:15:31.066 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "01d17032-25ca-4386-b6bd-4a9ce9d9405b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774403109,
+  "nbf": 1774403109,
+  "exp": 1774406709
+}.
+2026-03-25 07:15:31.067 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:15:31.075 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 07:15:31.078 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:15:31.077 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "01d17032-25ca-4386-b6bd-4a9ce9d9405b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774403109,
+  "nbf": 1774403109,
+  "exp": 1774406709
+}.
+2026-03-25 07:15:31.081 +05:30 [INF] [c7765684] ➡️ GET /api/users/addresses from ::1
+2026-03-25 07:15:31.085 +05:30 [INF] The authentication demand was rejected because the token had no audience attached.
+2026-03-25 07:15:31.095 +05:30 [INF] Proxying to http://localhost:5002/api/users/addresses HTTP/2 RequestVersionOrLower 
+2026-03-25 07:15:31.097 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:15:31.108 +05:30 [INF] [91f92c15] ➡️ GET /api/users/preferences from ::1
+2026-03-25 07:15:31.118 +05:30 [INF] Proxying to http://localhost:5002/api/users/preferences HTTP/2 RequestVersionOrLower 
+2026-03-25 07:15:34.413 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 07:15:34.421 +05:30 [INF] [bc225740] ⬅️ 401 in 3385ms
+2026-03-25 07:15:34.424 +05:30 [INF] HTTP GET /api/users/profile responded 401 in 3579.0069 ms
+2026-03-25 07:15:34.814 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 07:15:34.821 +05:30 [INF] [c7765684] ⬅️ 401 in 3740ms
+2026-03-25 07:15:34.825 +05:30 [INF] HTTP GET /api/users/addresses responded 401 in 3995.1339 ms
+2026-03-25 07:15:34.838 +05:30 [INF] Received HTTP/1.1 response 401.
+2026-03-25 07:15:34.843 +05:30 [INF] [91f92c15] ⬅️ 401 in 3735ms
+2026-03-25 07:15:34.847 +05:30 [INF] HTTP GET /api/users/preferences responded 401 in 4002.2891 ms

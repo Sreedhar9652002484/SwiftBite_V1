@@ -1,0 +1,2172 @@
+2026-03-27 10:04:39.941 +05:30 [INF] Executed DbCommand (211ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-27 10:04:42.778 +05:30 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-27 10:04:43.094 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-27 10:04:43.124 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-27 10:04:43.223 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-27 10:04:43.382 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-27 10:04:44.308 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-27 10:04:45.130 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-27 10:04:45.447 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-27 10:04:45.450 +05:30 [INF] Hosting environment: Development
+2026-03-27 10:04:45.455 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-27 10:04:46.295 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger - null null
+2026-03-27 10:04:47.092 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger - 301 0 null 798.4305ms
+2026-03-27 10:04:47.130 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-27 10:04:47.344 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 213.636ms
+2026-03-27 10:04:47.387 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui.css - null null
+2026-03-27 10:04:47.374 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui-bundle.js - null null
+2026-03-27 10:04:47.376 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui-standalone-preset.js - null null
+2026-03-27 10:04:47.710 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-03-27 10:04:47.721 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-03-27 10:04:47.766 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-03-27 10:04:47.800 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui.css - 200 144929 text/css 424.5046ms
+2026-03-27 10:04:47.842 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 466.2234ms
+2026-03-27 10:04:47.879 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 505.1197ms
+2026-03-27 10:04:48.480 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-27 10:04:48.575 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-27 10:04:48.673 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 192.5857ms
+2026-03-27 10:04:48.958 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 382.6224ms
+2026-03-27 10:04:51.784 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-27 10:04:51.807 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.1987ms
+2026-03-27 10:06:24.600 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/my - null null
+2026-03-27 10:06:24.748 +05:30 [INF] CORS policy execution successful.
+2026-03-27 10:06:27.377 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-27 10:06:28.022 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-27 10:06:28.086 +05:30 [INF] Received HTTP response headers after 55.8482ms - 200
+2026-03-27 10:06:28.103 +05:30 [INF] End processing HTTP request after 734.0093ms - 200
+2026-03-27 10:06:28.125 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-27 10:06:28.219 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-27 10:06:28.257 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-27 10:06:28.260 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-27 10:06:28.288 +05:30 [INF] Received HTTP response headers after 26.3631ms - 200
+2026-03-27 10:06:28.291 +05:30 [INF] End processing HTTP request after 34.8739ms - 200
+2026-03-27 10:06:28.295 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-27 10:06:28.306 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-27 10:06:28.454 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 10:06:28.456 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 10:06:28.519 +05:30 [INF] Received HTTP response headers after 60.3224ms - 200
+2026-03-27 10:06:28.522 +05:30 [INF] End processing HTTP request after 68.2177ms - 200
+2026-03-27 10:06:28.525 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 10:06:28.537 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "59896722-6133-48f2-9c16-3a51a6d9ce3a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774586174,
+  "nbf": 1774586174,
+  "exp": 1774589774
+}.
+2026-03-27 10:06:28.560 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-27 10:06:28.574 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-27 10:06:28.598 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-27 10:06:28.610 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-27 10:06:28.613 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-27 10:06:28.620 +05:30 [INF] HTTP GET /api/orders/my responded 401 in 3854.3347 ms
+2026-03-27 10:06:28.628 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/my - 401 0 null 4036.015ms
+2026-03-27 10:08:57.792 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/my - null null
+2026-03-27 10:08:57.846 +05:30 [INF] CORS policy execution successful.
+2026-03-27 10:08:57.902 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 10:08:57.908 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 10:08:58.088 +05:30 [INF] Received HTTP response headers after 177.3077ms - 200
+2026-03-27 10:08:58.095 +05:30 [INF] End processing HTTP request after 193.5685ms - 200
+2026-03-27 10:08:58.106 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 10:08:58.113 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "b085d04e-2228-439f-9ec9-728fd75f1882",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774586322,
+  "nbf": 1774586322,
+  "exp": 1774589922
+}.
+2026-03-27 10:08:58.145 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-27 10:08:58.147 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-27 10:08:58.168 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-27 10:08:58.174 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-27 10:08:58.177 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-27 10:08:58.179 +05:30 [INF] HTTP GET /api/orders/my responded 401 in 322.6544 ms
+2026-03-27 10:08:58.189 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/my - 401 0 null 399.349ms
+2026-03-27 10:27:23.826 +05:30 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-27 10:27:24.069 +05:30 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-27 10:27:24.092 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-27 10:27:24.112 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-27 10:27:24.179 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-27 10:27:24.249 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-27 10:27:25.229 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-27 10:27:26.027 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-27 10:27:27.316 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-27 10:27:27.452 +05:30 [INF] Hosting environment: Development
+2026-03-27 10:27:27.502 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-27 10:27:27.592 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-27 10:27:30.363 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 2864.4876ms
+2026-03-27 10:27:30.437 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-27 10:27:30.823 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-27 10:27:32.901 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 2077.1818ms
+2026-03-27 10:27:33.133 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 2695.8181ms
+2026-03-27 10:27:36.767 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-27 10:27:36.807 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 40.4056ms
+2026-03-27 10:30:00.055 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-27 10:30:00.259 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-27 10:30:00.300 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-27 10:30:00.315 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-27 10:30:00.412 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-27 10:30:00.541 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-27 10:30:01.492 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-27 10:30:02.017 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-27 10:30:07.039 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-27 10:30:07.052 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-27 10:30:07.418 +05:30 [INF] Hosting environment: Development
+2026-03-27 10:30:08.253 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-27 10:30:11.544 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-27 10:30:11.466 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 4432.5933ms
+2026-03-27 10:30:13.044 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-27 10:30:13.462 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1920.4554ms
+2026-03-27 10:30:13.463 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 419.1943ms
+2026-03-27 10:30:19.721 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-27 10:30:19.960 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 238.2119ms
+2026-03-27 10:31:18.230 +05:30 [INF] Executed DbCommand (1,073ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-27 10:31:19.676 +05:30 [INF] Executed DbCommand (378ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-27 10:31:19.904 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-27 10:31:19.974 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-27 10:31:20.070 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-27 10:31:20.148 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-27 10:31:21.370 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-27 10:31:22.598 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-27 10:31:24.991 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-27 10:31:25.826 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-27 10:31:25.834 +05:30 [INF] Hosting environment: Development
+2026-03-27 10:31:25.846 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-27 10:31:26.806 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 1824.3777ms
+2026-03-27 10:31:27.007 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-27 10:31:27.020 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-27 10:31:27.045 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 37.4425ms
+2026-03-27 10:31:27.163 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 143.5941ms
+2026-03-27 10:31:30.783 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-27 10:31:30.802 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.2424ms
+2026-03-27 10:36:37.883 +05:30 [INF] Executed DbCommand (140ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-27 10:36:38.336 +05:30 [INF] Executed DbCommand (136ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-27 10:36:38.607 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-27 10:36:38.689 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-27 10:36:38.858 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-27 10:36:39.060 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-27 10:36:39.783 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-27 10:36:40.675 +05:30 [INF] Now listening on: http://localhost:5004
+2026-03-27 10:36:41.624 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-27 10:36:42.071 +05:30 [INF] Hosting environment: Development
+2026-03-27 10:36:42.163 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.OrderService\SwiftBite.OrderService.API
+2026-03-27 10:36:42.347 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2026-03-27 10:36:46.274 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 3939.7282ms
+2026-03-27 10:36:46.452 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2026-03-27 10:36:46.529 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-27 10:36:46.650 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 120.0479ms
+2026-03-27 10:36:46.677 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 225.4421ms
+2026-03-27 10:36:48.127 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2026-03-27 10:36:48.149 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.2142ms
+2026-03-27 11:04:55.566 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/orders - application/json 388
+2026-03-27 11:04:55.773 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:04:59.485 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-27 11:05:00.168 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-27 11:05:00.256 +05:30 [INF] Received HTTP response headers after 82.0054ms - 200
+2026-03-27 11:05:00.278 +05:30 [INF] End processing HTTP request after 807.1741ms - 200
+2026-03-27 11:05:00.316 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-27 11:05:00.447 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-27 11:05:00.485 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-27 11:05:00.488 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-27 11:05:00.550 +05:30 [INF] Received HTTP response headers after 58.8397ms - 200
+2026-03-27 11:05:00.553 +05:30 [INF] End processing HTTP request after 68.6087ms - 200
+2026-03-27 11:05:00.559 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-27 11:05:00.568 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-27 11:05:00.796 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:05:00.799 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:05:00.885 +05:30 [INF] Received HTTP response headers after 82.6434ms - 200
+2026-03-27 11:05:00.890 +05:30 [INF] End processing HTTP request after 93.309ms - 200
+2026-03-27 11:05:00.901 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:05:00.917 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:05:01.016 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.PlaceOrder (SwiftBite.OrderService.API)'
+2026-03-27 11:05:01.526 +05:30 [INF] Route matched with {action = "PlaceOrder", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlaceOrder(SwiftBite.OrderService.API.Controllers.PlaceOrderRequest, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:05:01.562 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-27 11:05:03.379 +05:30 [INF] Executed DbCommand (294ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (Size = 20), @p4='?' (DbType = DateTime2), @p5='?' (Size = 250), @p6='?' (Size = 50), @p7='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p8='?' (DbType = Double), @p9='?' (DbType = Double), @p10='?' (Size = 10), @p11='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p12='?' (DbType = DateTime2), @p13='?' (Size = 50), @p14='?' (Size = 30), @p15='?' (Size = 100), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Guid), @p18='?' (Size = 100), @p19='?' (Size = 500), @p20='?' (Size = 30), @p21='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p22='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p23='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p24='?' (DbType = DateTime2), @p25='?' (DbType = Guid), @p26='?' (Size = 500), @p27='?' (Size = 500), @p28='?' (DbType = Guid), @p29='?' (Size = 100), @p30='?' (DbType = Guid), @p31='?' (DbType = Int32), @p32='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p33='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p34='?' (DbType = Guid), @p35='?' (Size = 500), @p36='?' (DbType = Guid), @p37='?' (Size = 30), @p38='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CustomerId], [CustomerName], [CustomerPhone], [DeliveredAt], [DeliveryAddress], [DeliveryCity], [DeliveryFee], [DeliveryLatitude], [DeliveryLongitude], [DeliveryPinCode], [Discount], [EstimatedDeliveryAt], [PaymentMethod], [PaymentStatus], [PaymentTransactionId], [PlacedAt], [RestaurantId], [RestaurantName], [SpecialInstructions], [Status], [SubTotal], [Taxes], [TotalAmount], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24);
+INSERT INTO [OrderItems] ([Id], [Customization], [ImageUrl], [MenuItemId], [Name], [OrderId], [Quantity], [TotalPrice], [UnitPrice])
+VALUES (@p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33);
+INSERT INTO [OrderStatusHistory] ([Id], [Note], [OrderId], [Status], [Timestamp])
+VALUES (@p34, @p35, @p36, @p37, @p38);
+2026-03-27 11:05:05.062 +05:30 [INF] 🔥 Kafka event published | Topic: swiftbite.order.placed | Partition: 0 | Offset: 12
+2026-03-27 11:05:05.084 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:05:05.150 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.PlaceOrder (SwiftBite.OrderService.API) in 3613.8971ms
+2026-03-27 11:05:05.155 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.PlaceOrder (SwiftBite.OrderService.API)'
+2026-03-27 11:05:05.162 +05:30 [INF] HTTP POST /api/orders responded 201 in 9365.0981 ms
+2026-03-27 11:05:05.174 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/orders - 201 null application/json; charset=utf-8 9618.2594ms
+2026-03-27 11:05:12.122 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:05:12.143 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:05:12.155 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:05:12.158 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:05:12.242 +05:30 [INF] Received HTTP response headers after 80.7118ms - 200
+2026-03-27 11:05:12.292 +05:30 [INF] End processing HTTP request after 137.935ms - 200
+2026-03-27 11:05:12.298 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:05:12.305 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:05:12.343 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:05:12.359 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:05:13.703 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-03-27 11:05:13.839 +05:30 [INF] Executed DbCommand (83ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CustomerId], [t].[CustomerName], [t].[CustomerPhone], [t].[DeliveredAt], [t].[DeliveryAddress], [t].[DeliveryCity], [t].[DeliveryFee], [t].[DeliveryLatitude], [t].[DeliveryLongitude], [t].[DeliveryPinCode], [t].[Discount], [t].[EstimatedDeliveryAt], [t].[PaymentMethod], [t].[PaymentStatus], [t].[PaymentTransactionId], [t].[PlacedAt], [t].[RestaurantId], [t].[RestaurantName], [t].[SpecialInstructions], [t].[Status], [t].[SubTotal], [t].[Taxes], [t].[TotalAmount], [t].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM (
+    SELECT TOP(1) [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt]
+    FROM [Orders] AS [o]
+    WHERE [o].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [OrderItems] AS [o0] ON [t].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [t].[Id] = [o1].[OrderId]
+ORDER BY [t].[Id], [o0].[Id], [o1].[Timestamp]
+2026-03-27 11:05:13.901 +05:30 [INF] 💾 Cache SET: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:05:13.905 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:05:13.909 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 1541.4157ms
+2026-03-27 11:05:13.913 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:05:13.917 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 1770.8912 ms
+2026-03-27 11:05:13.921 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 1799.8658ms
+2026-03-27 11:05:27.111 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:05:27.120 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:05:27.127 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:05:27.131 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:05:27.178 +05:30 [INF] Received HTTP response headers after 42.9524ms - 200
+2026-03-27 11:05:27.182 +05:30 [INF] End processing HTTP request after 54.2819ms - 200
+2026-03-27 11:05:27.187 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:05:27.191 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:05:27.197 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:05:27.200 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:05:27.211 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:05:27.233 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:05:27.238 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 33.9228ms
+2026-03-27 11:05:27.242 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:05:27.245 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 121.2416 ms
+2026-03-27 11:05:27.250 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 138.6995ms
+2026-03-27 11:05:42.141 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:05:42.148 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:05:42.150 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:05:42.153 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:05:42.198 +05:30 [INF] Received HTTP response headers after 41.9972ms - 200
+2026-03-27 11:05:42.202 +05:30 [INF] End processing HTTP request after 51.3287ms - 200
+2026-03-27 11:05:42.205 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:05:42.210 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:05:42.214 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:05:42.217 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:05:42.227 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:05:42.230 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:05:42.233 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 12.1628ms
+2026-03-27 11:05:42.237 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:05:42.243 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 93.0419 ms
+2026-03-27 11:05:42.248 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 106.9615ms
+2026-03-27 11:05:57.130 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:05:57.137 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:05:57.139 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:05:57.142 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:05:57.194 +05:30 [INF] Received HTTP response headers after 46.6723ms - 200
+2026-03-27 11:05:57.198 +05:30 [INF] End processing HTTP request after 58.7373ms - 200
+2026-03-27 11:05:57.201 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:05:57.204 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:05:57.207 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:05:57.211 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:05:57.219 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:05:57.221 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:05:57.227 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 10.9134ms
+2026-03-27 11:05:57.233 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:05:57.247 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 108.7642 ms
+2026-03-27 11:05:57.257 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 126.1015ms
+2026-03-27 11:06:12.123 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:06:12.131 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:06:12.134 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:06:12.137 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:06:12.185 +05:30 [INF] Received HTTP response headers after 45.7658ms - 200
+2026-03-27 11:06:12.189 +05:30 [INF] End processing HTTP request after 54.8136ms - 200
+2026-03-27 11:06:12.193 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:06:12.197 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:06:12.201 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:06:12.203 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:06:12.211 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:06:12.214 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:06:12.217 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 9.4456ms
+2026-03-27 11:06:12.221 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:06:12.223 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 89.5011 ms
+2026-03-27 11:06:12.228 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 104.8521ms
+2026-03-27 11:06:27.145 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:06:27.156 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:06:27.159 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:06:27.161 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:06:27.225 +05:30 [INF] Received HTTP response headers after 60.1916ms - 200
+2026-03-27 11:06:27.228 +05:30 [INF] End processing HTTP request after 68.9612ms - 200
+2026-03-27 11:06:27.231 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:06:27.237 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:06:27.241 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:06:27.243 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:06:27.252 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:06:27.256 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:06:27.259 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 11.6727ms
+2026-03-27 11:06:27.262 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:06:27.265 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 106.5996 ms
+2026-03-27 11:06:27.271 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 125.5959ms
+2026-03-27 11:06:42.170 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:06:42.178 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:06:42.181 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:06:42.183 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:06:42.258 +05:30 [INF] Received HTTP response headers after 68.0215ms - 200
+2026-03-27 11:06:42.261 +05:30 [INF] End processing HTTP request after 79.1866ms - 200
+2026-03-27 11:06:42.263 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:06:42.277 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:06:42.282 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:06:42.287 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:06:42.299 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:06:42.301 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:06:42.307 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 11.4259ms
+2026-03-27 11:06:42.310 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:06:42.312 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 132.3653 ms
+2026-03-27 11:06:42.316 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 147.2565ms
+2026-03-27 11:06:57.413 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:06:57.432 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:06:57.464 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:06:57.474 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:06:57.586 +05:30 [INF] Received HTTP response headers after 105.8431ms - 200
+2026-03-27 11:06:57.596 +05:30 [INF] End processing HTTP request after 131.9946ms - 200
+2026-03-27 11:06:57.600 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:06:57.603 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:06:57.616 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:06:57.625 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:06:57.664 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:06:57.669 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:06:57.679 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 49.1257ms
+2026-03-27 11:06:57.682 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:06:57.684 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 250.7008 ms
+2026-03-27 11:06:57.695 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 282.062ms
+2026-03-27 11:07:12.107 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:07:12.114 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:07:12.126 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:07:12.130 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:07:12.240 +05:30 [INF] Received HTTP response headers after 107.0447ms - 200
+2026-03-27 11:07:12.246 +05:30 [INF] End processing HTTP request after 120.732ms - 200
+2026-03-27 11:07:12.250 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:07:12.253 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:07:12.257 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:07:12.259 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:07:12.266 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:07:12.269 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:07:12.271 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 8.6586ms
+2026-03-27 11:07:12.277 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:07:12.285 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 169.0707 ms
+2026-03-27 11:07:12.289 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 181.8966ms
+2026-03-27 11:07:28.796 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:07:28.830 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:07:28.853 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:07:28.855 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:07:28.977 +05:30 [INF] Received HTTP response headers after 118.9041ms - 200
+2026-03-27 11:07:28.985 +05:30 [INF] End processing HTTP request after 132.4032ms - 200
+2026-03-27 11:07:28.990 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:07:29.007 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:07:29.026 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:07:29.040 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:07:29.244 +05:30 [INF] Executed DbCommand (61ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CustomerId], [t].[CustomerName], [t].[CustomerPhone], [t].[DeliveredAt], [t].[DeliveryAddress], [t].[DeliveryCity], [t].[DeliveryFee], [t].[DeliveryLatitude], [t].[DeliveryLongitude], [t].[DeliveryPinCode], [t].[Discount], [t].[EstimatedDeliveryAt], [t].[PaymentMethod], [t].[PaymentStatus], [t].[PaymentTransactionId], [t].[PlacedAt], [t].[RestaurantId], [t].[RestaurantName], [t].[SpecialInstructions], [t].[Status], [t].[SubTotal], [t].[Taxes], [t].[TotalAmount], [t].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM (
+    SELECT TOP(1) [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt]
+    FROM [Orders] AS [o]
+    WHERE [o].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [OrderItems] AS [o0] ON [t].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [t].[Id] = [o1].[OrderId]
+ORDER BY [t].[Id], [o0].[Id], [o1].[Timestamp]
+2026-03-27 11:07:29.292 +05:30 [INF] 💾 Cache SET: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:07:29.297 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:07:29.304 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 260.9546ms
+2026-03-27 11:07:29.307 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:07:29.310 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 476.3051 ms
+2026-03-27 11:07:29.320 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 526.9413ms
+2026-03-27 11:08:29.723 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:08:29.982 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:08:30.171 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:08:30.187 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:08:30.353 +05:30 [INF] Received HTTP response headers after 159.8782ms - 200
+2026-03-27 11:08:30.379 +05:30 [INF] End processing HTTP request after 212.0491ms - 200
+2026-03-27 11:08:30.419 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:08:30.489 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:08:30.555 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:08:30.586 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:08:30.798 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:08:30.856 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:08:30.882 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 290.8595ms
+2026-03-27 11:08:30.885 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:08:30.891 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 887.9039 ms
+2026-03-27 11:08:30.905 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 1198.3016ms
+2026-03-27 11:09:28.955 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:09:29.037 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:09:29.105 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:09:29.111 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:09:29.307 +05:30 [INF] Received HTTP response headers after 192.0913ms - 200
+2026-03-27 11:09:29.315 +05:30 [INF] End processing HTTP request after 212.9875ms - 200
+2026-03-27 11:09:29.326 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:09:29.360 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:09:29.388 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:09:29.406 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:09:29.682 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CustomerId], [t].[CustomerName], [t].[CustomerPhone], [t].[DeliveredAt], [t].[DeliveryAddress], [t].[DeliveryCity], [t].[DeliveryFee], [t].[DeliveryLatitude], [t].[DeliveryLongitude], [t].[DeliveryPinCode], [t].[Discount], [t].[EstimatedDeliveryAt], [t].[PaymentMethod], [t].[PaymentStatus], [t].[PaymentTransactionId], [t].[PlacedAt], [t].[RestaurantId], [t].[RestaurantName], [t].[SpecialInstructions], [t].[Status], [t].[SubTotal], [t].[Taxes], [t].[TotalAmount], [t].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM (
+    SELECT TOP(1) [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt]
+    FROM [Orders] AS [o]
+    WHERE [o].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [OrderItems] AS [o0] ON [t].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [t].[Id] = [o1].[OrderId]
+ORDER BY [t].[Id], [o0].[Id], [o1].[Timestamp]
+2026-03-27 11:09:29.741 +05:30 [INF] 💾 Cache SET: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:09:29.747 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:09:29.759 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 347.0977ms
+2026-03-27 11:09:29.761 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:09:29.764 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 720.1687 ms
+2026-03-27 11:09:29.779 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 832.371ms
+2026-03-27 11:10:28.750 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:10:28.833 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:10:28.899 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:10:28.908 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:10:28.990 +05:30 [INF] Received HTTP response headers after 78.9711ms - 200
+2026-03-27 11:10:28.995 +05:30 [INF] End processing HTTP request after 98.74ms - 200
+2026-03-27 11:10:29.005 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:10:29.028 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:10:29.056 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:10:29.070 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:10:29.153 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:10:29.181 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:10:29.198 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 122.2079ms
+2026-03-27 11:10:29.200 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:10:29.209 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 369.8995 ms
+2026-03-27 11:10:29.214 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 471.8686ms
+2026-03-27 11:11:28.877 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:11:28.958 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:11:29.029 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:11:29.034 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:11:29.118 +05:30 [INF] Received HTTP response headers after 80.145ms - 200
+2026-03-27 11:11:29.124 +05:30 [INF] End processing HTTP request after 95.967ms - 200
+2026-03-27 11:11:29.136 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:11:29.159 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:11:29.181 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:11:29.193 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:11:29.262 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:11:29.328 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:11:29.344 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 147.536ms
+2026-03-27 11:11:29.357 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:11:29.360 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 397.9071 ms
+2026-03-27 11:11:29.366 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 493.6626ms
+2026-03-27 11:12:28.861 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:12:28.930 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:12:29.001 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:12:29.005 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:12:29.162 +05:30 [INF] Received HTTP response headers after 154.1014ms - 200
+2026-03-27 11:12:29.165 +05:30 [INF] End processing HTTP request after 166.6062ms - 200
+2026-03-27 11:12:29.173 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:12:29.185 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:12:29.213 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:12:29.225 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:12:29.453 +05:30 [INF] Executed DbCommand (60ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CustomerId], [t].[CustomerName], [t].[CustomerPhone], [t].[DeliveredAt], [t].[DeliveryAddress], [t].[DeliveryCity], [t].[DeliveryFee], [t].[DeliveryLatitude], [t].[DeliveryLongitude], [t].[DeliveryPinCode], [t].[Discount], [t].[EstimatedDeliveryAt], [t].[PaymentMethod], [t].[PaymentStatus], [t].[PaymentTransactionId], [t].[PlacedAt], [t].[RestaurantId], [t].[RestaurantName], [t].[SpecialInstructions], [t].[Status], [t].[SubTotal], [t].[Taxes], [t].[TotalAmount], [t].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM (
+    SELECT TOP(1) [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt]
+    FROM [Orders] AS [o]
+    WHERE [o].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [OrderItems] AS [o0] ON [t].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [t].[Id] = [o1].[OrderId]
+ORDER BY [t].[Id], [o0].[Id], [o1].[Timestamp]
+2026-03-27 11:12:29.508 +05:30 [INF] 💾 Cache SET: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:12:29.513 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:12:29.523 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 293.145ms
+2026-03-27 11:12:29.527 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:12:29.529 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 594.3645 ms
+2026-03-27 11:12:29.536 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 680.7622ms
+2026-03-27 11:13:29.523 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:13:29.592 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:13:29.660 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:13:29.669 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:13:29.780 +05:30 [INF] Received HTTP response headers after 106.2317ms - 200
+2026-03-27 11:13:29.790 +05:30 [INF] End processing HTTP request after 131.4892ms - 200
+2026-03-27 11:13:29.797 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:13:29.832 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:13:29.858 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:13:29.875 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:13:29.945 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:13:29.970 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:13:29.982 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 101.543ms
+2026-03-27 11:13:29.985 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:13:29.989 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 390.3495 ms
+2026-03-27 11:13:29.997 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 478.1568ms
+2026-03-27 11:13:57.455 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - null null
+2026-03-27 11:13:57.476 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:13:57.481 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:13:57.483 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:13:57.532 +05:30 [INF] Received HTTP response headers after 46.922ms - 200
+2026-03-27 11:13:57.536 +05:30 [INF] End processing HTTP request after 54.8331ms - 200
+2026-03-27 11:13:57.541 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:13:57.544 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:13:57.548 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:13:57.550 +05:30 [INF] Route matched with {action = "GetOrderById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:13:57.580 +05:30 [INF] ⚡ Cache HIT: order:0b29be07-8310-4727-98cc-0d6ddb23eae7
+2026-03-27 11:13:57.591 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.OrderService.Application.Orders.DTOs.OrderDto'.
+2026-03-27 11:13:57.594 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API) in 40.1126ms
+2026-03-27 11:13:57.597 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetOrderById (SwiftBite.OrderService.API)'
+2026-03-27 11:13:57.599 +05:30 [INF] HTTP GET /api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 responded 200 in 120.8833 ms
+2026-03-27 11:13:57.602 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/0b29be07-8310-4727-98cc-0d6ddb23eae7 - 200 null application/json; charset=utf-8 148.0118ms
+2026-03-27 11:14:01.113 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/my - null null
+2026-03-27 11:14:01.123 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:14:01.126 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:01.128 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:01.180 +05:30 [INF] Received HTTP response headers after 50.3345ms - 200
+2026-03-27 11:14:01.190 +05:30 [INF] End processing HTTP request after 63.3407ms - 200
+2026-03-27 11:14:01.193 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:14:01.196 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "d1e48a23-4bb7-4b21-ad0b-ad7741c7e115",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774589467,
+  "nbf": 1774589467,
+  "exp": 1774593067,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-27 11:14:01.200 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetMyOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:01.301 +05:30 [INF] Route matched with {action = "GetMyOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMyOrders(System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:14:01.615 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-03-27 11:14:01.872 +05:30 [INF] Executed DbCommand (204ms) [Parameters=[@__customerId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[CustomerId] = @__customerId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:14:01.927 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:14:01.950 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetMyOrders (SwiftBite.OrderService.API) in 643.6829ms
+2026-03-27 11:14:01.955 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetMyOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:01.958 +05:30 [INF] HTTP GET /api/orders/my responded 200 in 833.0469 ms
+2026-03-27 11:14:01.963 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/my - 200 null application/json; charset=utf-8 849.6332ms
+2026-03-27 11:14:16.256 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:14:16.267 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:14:16.270 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:16.274 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:16.430 +05:30 [INF] Received HTTP response headers after 153.2016ms - 200
+2026-03-27 11:14:16.436 +05:30 [INF] End processing HTTP request after 165.5959ms - 200
+2026-03-27 11:14:16.446 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:14:16.449 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:14:16.452 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:16.468 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:14:16.512 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-03-27 11:14:16.629 +05:30 [INF] Executed DbCommand (105ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:14:16.637 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:14:16.643 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 170.9964ms
+2026-03-27 11:14:16.646 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:16.649 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 380.6519 ms
+2026-03-27 11:14:16.653 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 396.9114ms
+2026-03-27 11:14:26.529 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:14:26.536 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:14:26.539 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:26.542 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:26.605 +05:30 [INF] Received HTTP response headers after 59.9934ms - 200
+2026-03-27 11:14:26.608 +05:30 [INF] End processing HTTP request after 68.5067ms - 200
+2026-03-27 11:14:26.610 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:14:26.615 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:14:26.619 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:26.621 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:14:26.635 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:14:26.639 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:14:26.641 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 17.1767ms
+2026-03-27 11:14:26.643 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:26.651 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 112.9155 ms
+2026-03-27 11:14:26.655 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 126.5325ms
+2026-03-27 11:14:32.009 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:14:32.016 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:14:32.020 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:32.022 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:32.091 +05:30 [INF] Received HTTP response headers after 65.1708ms - 200
+2026-03-27 11:14:32.094 +05:30 [INF] End processing HTTP request after 73.5394ms - 200
+2026-03-27 11:14:32.096 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:14:32.099 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:14:32.102 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:32.105 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:14:32.116 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:14:32.121 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:14:32.127 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 17.4491ms
+2026-03-27 11:14:32.130 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:32.132 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 113.9041 ms
+2026-03-27 11:14:32.136 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 126.3624ms
+2026-03-27 11:14:46.963 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:14:46.969 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:14:46.972 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:46.976 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:47.032 +05:30 [INF] Received HTTP response headers after 53.4815ms - 200
+2026-03-27 11:14:47.035 +05:30 [INF] End processing HTTP request after 62.6067ms - 200
+2026-03-27 11:14:47.038 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:14:47.041 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:14:47.048 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:47.050 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:14:47.069 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:14:47.073 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:14:47.076 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 22.4756ms
+2026-03-27 11:14:47.080 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:47.082 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 110.9479 ms
+2026-03-27 11:14:47.086 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 123.1088ms
+2026-03-27 11:14:49.257 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:14:49.264 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:14:49.267 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:49.269 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:14:49.321 +05:30 [INF] Received HTTP response headers after 49.7306ms - 200
+2026-03-27 11:14:49.325 +05:30 [INF] End processing HTTP request after 58.3034ms - 200
+2026-03-27 11:14:49.329 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:14:49.332 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:14:49.334 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:49.336 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:14:49.348 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:14:49.352 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:14:49.355 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 15.8626ms
+2026-03-27 11:14:49.358 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:14:49.362 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 96.3087 ms
+2026-03-27 11:14:49.366 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 108.5253ms
+2026-03-27 11:15:29.031 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:15:29.050 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:15:29.053 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:15:29.055 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:15:29.102 +05:30 [INF] Received HTTP response headers after 44.6781ms - 200
+2026-03-27 11:15:29.105 +05:30 [INF] End processing HTTP request after 52.0782ms - 200
+2026-03-27 11:15:29.107 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:15:29.111 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:15:29.114 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:15:29.116 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:15:29.125 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:15:29.130 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:15:29.133 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 14.0453ms
+2026-03-27 11:15:29.136 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:15:29.138 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 86.1213 ms
+2026-03-27 11:15:29.141 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 110.3692ms
+2026-03-27 11:16:34.858 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:16:34.864 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:16:34.867 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:16:34.875 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:16:34.936 +05:30 [INF] Received HTTP response headers after 58.3653ms - 200
+2026-03-27 11:16:34.939 +05:30 [INF] End processing HTTP request after 71.8625ms - 200
+2026-03-27 11:16:34.941 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:16:34.944 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:16:34.946 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:16:34.948 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:16:34.959 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:16:34.963 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:16:34.965 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 14.0231ms
+2026-03-27 11:16:34.969 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:16:34.974 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 108.6038 ms
+2026-03-27 11:16:34.977 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 119.2592ms
+2026-03-27 11:16:52.493 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:16:52.499 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:16:52.501 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:16:52.506 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:16:52.553 +05:30 [INF] Received HTTP response headers after 44.3069ms - 200
+2026-03-27 11:16:52.557 +05:30 [INF] End processing HTTP request after 55.6353ms - 200
+2026-03-27 11:16:52.559 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:16:52.562 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:16:52.564 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:16:52.566 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:16:52.575 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:16:52.579 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:16:52.582 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 11.636ms
+2026-03-27 11:16:52.586 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:16:52.589 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 88.9602 ms
+2026-03-27 11:16:52.592 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 99.4005ms
+2026-03-27 11:17:23.112 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:17:23.120 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:17:23.122 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:17:23.126 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:17:23.173 +05:30 [INF] Received HTTP response headers after 43.1074ms - 200
+2026-03-27 11:17:23.176 +05:30 [INF] End processing HTTP request after 54.1885ms - 200
+2026-03-27 11:17:23.179 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:17:23.182 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:17:23.185 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:17:23.187 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:17:23.204 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:17:23.211 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:17:23.214 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 23.166ms
+2026-03-27 11:17:23.216 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:17:23.218 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 96.9916 ms
+2026-03-27 11:17:23.222 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 110.033ms
+2026-03-27 11:17:53.110 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:17:53.117 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:17:53.120 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:17:53.123 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:17:53.168 +05:30 [INF] Received HTTP response headers after 43.126ms - 200
+2026-03-27 11:17:53.172 +05:30 [INF] End processing HTTP request after 51.7937ms - 200
+2026-03-27 11:17:53.175 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:17:53.178 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:17:53.181 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:17:53.183 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:17:53.191 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:17:53.196 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:17:53.200 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 13.3727ms
+2026-03-27 11:17:53.204 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:17:53.207 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 87.0803 ms
+2026-03-27 11:17:53.211 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 100.9043ms
+2026-03-27 11:18:23.336 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:18:23.346 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:18:23.350 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:18:23.352 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:18:23.419 +05:30 [INF] Received HTTP response headers after 65.1869ms - 200
+2026-03-27 11:18:23.423 +05:30 [INF] End processing HTTP request after 73.018ms - 200
+2026-03-27 11:18:23.426 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:18:23.430 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:18:23.433 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:18:23.435 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:18:23.446 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:18:23.450 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:18:23.454 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 15.4715ms
+2026-03-27 11:18:23.457 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:18:23.460 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 111.6970 ms
+2026-03-27 11:18:23.465 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 128.2621ms
+2026-03-27 11:18:53.186 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:18:53.192 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:18:53.195 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:18:53.199 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:18:53.281 +05:30 [INF] Received HTTP response headers after 78.9254ms - 200
+2026-03-27 11:18:53.284 +05:30 [INF] End processing HTTP request after 89.2014ms - 200
+2026-03-27 11:18:53.287 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:18:53.292 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:18:53.297 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:18:53.300 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:18:53.319 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:18:53.325 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:18:53.328 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 19.775ms
+2026-03-27 11:18:53.333 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:18:53.336 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 142.6885 ms
+2026-03-27 11:18:53.340 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 153.5848ms
+2026-03-27 11:19:23.178 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:19:23.200 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:19:23.203 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:19:23.207 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:19:23.283 +05:30 [INF] Received HTTP response headers after 71.8297ms - 200
+2026-03-27 11:19:23.286 +05:30 [INF] End processing HTTP request after 82.5506ms - 200
+2026-03-27 11:19:23.292 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:19:23.297 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:19:23.301 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:19:23.305 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:19:23.314 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:19:23.319 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:19:23.323 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 13.4596ms
+2026-03-27 11:19:23.327 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:19:23.329 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 127.5462 ms
+2026-03-27 11:19:23.333 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 154.7804ms
+2026-03-27 11:19:53.262 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:19:53.279 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:19:53.286 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:19:53.289 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:19:53.334 +05:30 [INF] Received HTTP response headers after 42.7968ms - 200
+2026-03-27 11:19:53.338 +05:30 [INF] End processing HTTP request after 53.1664ms - 200
+2026-03-27 11:19:53.341 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:19:53.347 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:19:53.358 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:19:53.363 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:19:53.427 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:19:53.433 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:19:53.437 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 69.6242ms
+2026-03-27 11:19:53.439 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:19:53.442 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 160.4076 ms
+2026-03-27 11:19:53.446 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 184.7969ms
+2026-03-27 11:20:28.151 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:20:28.161 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:20:28.168 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:20:28.171 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:20:28.225 +05:30 [INF] Received HTTP response headers after 50.458ms - 200
+2026-03-27 11:20:28.228 +05:30 [INF] End processing HTTP request after 59.2432ms - 200
+2026-03-27 11:20:28.231 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:20:28.235 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:20:28.237 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:20:28.239 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:20:28.262 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:20:28.269 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:20:28.271 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 29.118ms
+2026-03-27 11:20:28.275 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:20:28.277 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 111.6722 ms
+2026-03-27 11:20:28.281 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 129.7603ms
+2026-03-27 11:21:28.218 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-27 11:21:28.224 +05:30 [INF] CORS policy execution successful.
+2026-03-27 11:21:28.233 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:21:28.235 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-27 11:21:28.355 +05:30 [INF] Received HTTP response headers after 117.8797ms - 200
+2026-03-27 11:21:28.358 +05:30 [INF] End processing HTTP request after 124.7516ms - 200
+2026-03-27 11:21:28.361 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-orderservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-27 11:21:28.369 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "9ff7962b-6397-4c35-a2f0-650e49403c2c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774590255,
+  "nbf": 1774590255,
+  "exp": 1774593855,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-27 11:21:28.372 +05:30 [INF] Executing endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:21:28.375 +05:30 [INF] Route matched with {action = "GetRestaurantOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRestaurantOrders(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.OrderService.API.Controllers.OrdersController (SwiftBite.OrderService.API).
+2026-03-27 11:21:28.402 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [o].[CustomerName], [o].[CustomerPhone], [o].[DeliveredAt], [o].[DeliveryAddress], [o].[DeliveryCity], [o].[DeliveryFee], [o].[DeliveryLatitude], [o].[DeliveryLongitude], [o].[DeliveryPinCode], [o].[Discount], [o].[EstimatedDeliveryAt], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PaymentTransactionId], [o].[PlacedAt], [o].[RestaurantId], [o].[RestaurantName], [o].[SpecialInstructions], [o].[Status], [o].[SubTotal], [o].[Taxes], [o].[TotalAmount], [o].[UpdatedAt], [o0].[Id], [o0].[Customization], [o0].[ImageUrl], [o0].[MenuItemId], [o0].[Name], [o0].[OrderId], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice], [o1].[Id], [o1].[Note], [o1].[OrderId], [o1].[Status], [o1].[Timestamp]
+FROM [Orders] AS [o]
+LEFT JOIN [OrderItems] AS [o0] ON [o].[Id] = [o0].[OrderId]
+LEFT JOIN [OrderStatusHistory] AS [o1] ON [o].[Id] = [o1].[OrderId]
+WHERE [o].[RestaurantId] = @__restaurantId_0
+ORDER BY [o].[PlacedAt] DESC, [o].[Id], [o0].[Id]
+2026-03-27 11:21:28.408 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectIPartitionIterator`2[[SwiftBite.OrderService.Domain.Entities.Order, SwiftBite.OrderService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SwiftBite.OrderService.Application.Orders.DTOs.OrderDto, SwiftBite.OrderService.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-27 11:21:28.411 +05:30 [INF] Executed action SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API) in 31.0535ms
+2026-03-27 11:21:28.415 +05:30 [INF] Executed endpoint 'SwiftBite.OrderService.API.Controllers.OrdersController.GetRestaurantOrders (SwiftBite.OrderService.API)'
+2026-03-27 11:21:28.417 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 191.5945 ms
+2026-03-27 11:21:28.420 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 201.6769ms

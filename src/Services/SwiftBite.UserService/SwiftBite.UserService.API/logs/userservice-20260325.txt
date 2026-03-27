@@ -1,0 +1,943 @@
+2026-03-25 05:36:01.685 +05:30 [INF] Executed DbCommand (203ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 05:36:02.423 +05:30 [INF] Executed DbCommand (168ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 05:36:02.523 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 05:36:03.663 +05:30 [INF] Executed DbCommand (949ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 05:36:04.314 +05:30 [INF] Executed DbCommand (412ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 05:36:04.373 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 05:36:05.170 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 05:36:06.316 +05:30 [INF] Now listening on: http://localhost:5002
+2026-03-25 05:36:08.330 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2026-03-25 05:36:09.878 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 05:36:10.014 +05:30 [INF] Hosting environment: Development
+2026-03-25 05:36:10.251 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-25 05:36:10.335 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 2038.1673ms
+2026-03-25 05:36:10.737 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - null null
+2026-03-25 05:36:11.569 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 05:36:12.852 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 1282.9452ms
+2026-03-25 05:36:13.017 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - 200 null text/javascript; charset=UTF-8 2280.1852ms
+2026-03-25 05:36:26.385 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-03-25 05:36:26.492 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 108.4287ms
+2026-03-25 05:49:51.992 +05:30 [INF] Executed DbCommand (344ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 05:49:52.523 +05:30 [INF] Executed DbCommand (146ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 05:49:52.709 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 05:49:52.883 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 05:49:53.217 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 05:49:53.294 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 05:49:53.878 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 05:49:54.559 +05:30 [INF] Now listening on: http://localhost:5002
+2026-03-25 05:49:56.356 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 05:49:56.746 +05:30 [INF] Hosting environment: Development
+2026-03-25 05:49:56.959 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-25 05:49:56.986 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2026-03-25 05:49:58.162 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 1223.4832ms
+2026-03-25 05:49:58.432 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - null null
+2026-03-25 05:49:58.568 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 05:49:59.063 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - 200 null text/javascript; charset=UTF-8 632.2742ms
+2026-03-25 05:49:59.259 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 690.9018ms
+2026-03-25 05:50:09.607 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-03-25 05:50:09.799 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 193.7654ms
+2026-03-25 06:05:30.434 +05:30 [INF] Executed DbCommand (167ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:05:30.885 +05:30 [INF] Executed DbCommand (115ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:05:31.153 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:05:31.506 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:05:32.139 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 06:05:32.304 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 06:05:39.200 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 06:05:42.051 +05:30 [INF] Now listening on: http://localhost:5002
+2026-03-25 06:05:42.674 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 06:05:49.582 +05:30 [INF] Hosting environment: Development
+2026-03-25 06:05:49.599 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-25 06:05:49.710 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2026-03-25 06:05:53.029 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 3349.6633ms
+2026-03-25 06:05:55.084 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 06:05:55.084 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - null null
+2026-03-25 06:05:55.128 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 43.5827ms
+2026-03-25 06:05:55.234 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - 200 null text/javascript; charset=UTF-8 149.4137ms
+2026-03-25 06:05:56.007 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-03-25 06:05:56.036 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.5729ms
+2026-03-25 06:19:24.443 +05:30 [INF] Executed DbCommand (115ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:19:24.847 +05:30 [INF] Executed DbCommand (112ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:19:25.260 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:19:25.541 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:19:26.514 +05:30 [INF] Executed DbCommand (81ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 06:19:26.941 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 06:19:27.725 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 06:19:28.794 +05:30 [INF] Now listening on: http://localhost:5002
+2026-03-25 06:19:30.755 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2026-03-25 06:19:31.331 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 06:19:31.972 +05:30 [INF] Hosting environment: Development
+2026-03-25 06:19:32.089 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-25 06:19:33.577 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 3062.2737ms
+2026-03-25 06:19:33.762 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - null null
+2026-03-25 06:19:55.724 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 06:19:55.770 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 32.7173ms
+2026-03-25 06:19:55.875 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22122.9084ms
+2026-03-25 06:19:56.754 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-03-25 06:19:57.024 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 270.0076ms
+2026-03-25 06:26:10.990 +05:30 [INF] Executed DbCommand (191ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:26:11.791 +05:30 [INF] Executed DbCommand (199ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:26:13.506 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:26:14.055 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:26:14.410 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 06:26:14.638 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 06:26:15.554 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 06:26:16.108 +05:30 [INF] Now listening on: http://localhost:5002
+2026-03-25 06:26:17.776 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 06:26:18.031 +05:30 [INF] Hosting environment: Development
+2026-03-25 06:26:18.004 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2026-03-25 06:26:18.141 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-25 06:26:19.473 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 1528.7674ms
+2026-03-25 06:26:19.659 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - null null
+2026-03-25 06:26:20.143 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 06:26:20.915 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1256.0403ms
+2026-03-25 06:26:20.988 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 845.007ms
+2026-03-25 06:26:23.357 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-03-25 06:26:23.566 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 208.4495ms
+2026-03-25 06:39:22.414 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/preferences - null null
+2026-03-25 06:39:22.414 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/addresses - null null
+2026-03-25 06:39:22.414 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/profile - null null
+2026-03-25 06:39:22.798 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:39:22.801 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:39:22.801 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:39:29.788 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 06:39:30.641 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 06:39:30.725 +05:30 [INF] Received HTTP response headers after 75.5238ms - 200
+2026-03-25 06:39:30.744 +05:30 [INF] End processing HTTP request after 970.4312ms - 200
+2026-03-25 06:39:30.776 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 06:39:30.906 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 06:39:30.954 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 06:39:30.957 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 06:39:30.993 +05:30 [INF] Received HTTP response headers after 33.6698ms - 200
+2026-03-25 06:39:30.995 +05:30 [INF] End processing HTTP request after 41.3313ms - 200
+2026-03-25 06:39:31.006 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 06:39:31.020 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 06:39:31.286 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:39:31.286 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:39:31.286 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:39:31.319 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:39:31.319 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:39:31.320 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:39:31.342 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:39:31.342 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:39:31.343 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token is invalid.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2004"
+}.
+2026-03-25 06:39:31.348 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:39:31.349 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:39:31.351 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:39:31.360 +05:30 [INF] HTTP GET /api/users/profile responded 401 in 8532.7585 ms
+2026-03-25 06:39:31.360 +05:30 [INF] HTTP GET /api/users/preferences responded 401 in 8532.3751 ms
+2026-03-25 06:39:31.360 +05:30 [INF] HTTP GET /api/users/addresses responded 401 in 8536.4213 ms
+2026-03-25 06:39:31.376 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/profile - 401 0 null 9111.6711ms
+2026-03-25 06:39:31.377 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/addresses - 401 0 null 9078.1885ms
+2026-03-25 06:39:31.376 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/preferences - 401 0 null 9111.6721ms
+2026-03-25 06:56:07.104 +05:30 [INF] Executed DbCommand (455ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:56:08.826 +05:30 [INF] Executed DbCommand (795ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:56:09.974 +05:30 [INF] Executed DbCommand (104ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 06:56:10.733 +05:30 [INF] Executed DbCommand (136ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 06:56:12.134 +05:30 [INF] Executed DbCommand (970ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 06:56:12.753 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 06:56:14.720 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 06:56:16.294 +05:30 [INF] Now listening on: http://localhost:5002
+2026-03-25 06:56:18.263 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 06:56:18.497 +05:30 [INF] Hosting environment: Development
+2026-03-25 06:56:18.619 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-25 06:56:18.638 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2026-03-25 06:56:20.822 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 2208.2996ms
+2026-03-25 06:56:21.141 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - null null
+2026-03-25 06:56:23.795 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 06:56:24.594 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - 200 null text/javascript; charset=UTF-8 3452.8093ms
+2026-03-25 06:56:24.691 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 897.1374ms
+2026-03-25 06:56:44.212 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-03-25 06:56:44.504 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 294.7257ms
+2026-03-25 06:57:19.388 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/addresses - null null
+2026-03-25 06:57:19.388 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/profile - null null
+2026-03-25 06:57:19.711 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/preferences - null null
+2026-03-25 06:57:19.731 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:57:19.733 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:57:19.735 +05:30 [INF] CORS policy execution successful.
+2026-03-25 06:57:20.241 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 06:57:20.322 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 06:57:20.378 +05:30 [INF] Received HTTP response headers after 47.6892ms - 200
+2026-03-25 06:57:20.398 +05:30 [INF] End processing HTTP request after 173.8975ms - 200
+2026-03-25 06:57:20.427 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 06:57:20.566 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 06:57:20.604 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 06:57:20.607 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 06:57:20.634 +05:30 [INF] Received HTTP response headers after 24.2391ms - 200
+2026-03-25 06:57:20.636 +05:30 [INF] End processing HTTP request after 32.149ms - 200
+2026-03-25 06:57:20.641 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 06:57:20.647 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 06:57:20.749 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 06:57:20.749 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 06:57:20.749 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 06:57:20.752 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 06:57:20.755 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 06:57:20.758 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 06:57:20.874 +05:30 [INF] Received HTTP response headers after 113.4459ms - 200
+2026-03-25 06:57:20.878 +05:30 [INF] End processing HTTP request after 128.8412ms - 200
+2026-03-25 06:57:20.884 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:57:20.897 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "2237c593-ac78-4474-9a94-02108fa54f1c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400744,
+  "nbf": 1774400744,
+  "exp": 1774404344
+}.
+2026-03-25 06:57:20.912 +05:30 [INF] Received HTTP response headers after 146.6722ms - 200
+2026-03-25 06:57:20.915 +05:30 [INF] End processing HTTP request after 166.7358ms - 200
+2026-03-25 06:57:20.918 +05:30 [INF] Received HTTP response headers after 133.546ms - 200
+2026-03-25 06:57:20.918 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:57:20.922 +05:30 [INF] End processing HTTP request after 173.0667ms - 200
+2026-03-25 06:57:20.925 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "2237c593-ac78-4474-9a94-02108fa54f1c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400744,
+  "nbf": 1774400744,
+  "exp": 1774404344
+}.
+2026-03-25 06:57:20.927 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 06:57:20.932 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "2237c593-ac78-4474-9a94-02108fa54f1c",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774400744,
+  "nbf": 1774400744,
+  "exp": 1774404344
+}.
+2026-03-25 06:57:20.934 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 06:57:20.934 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 06:57:20.935 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 06:57:20.946 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:57:20.946 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:57:20.946 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 06:57:20.967 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:57:20.967 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:57:20.967 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 06:57:20.985 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 06:57:20.985 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 06:57:20.985 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 06:57:20.989 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:57:20.991 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:57:20.992 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 06:57:20.999 +05:30 [INF] HTTP GET /api/users/profile responded 401 in 1248.7175 ms
+2026-03-25 06:57:20.999 +05:30 [INF] HTTP GET /api/users/preferences responded 401 in 1247.7173 ms
+2026-03-25 06:57:20.999 +05:30 [INF] HTTP GET /api/users/addresses responded 401 in 1250.4027 ms
+2026-03-25 06:57:21.011 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/profile - 401 0 null 1665.247ms
+2026-03-25 06:57:21.011 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/preferences - 401 0 null 1300.4195ms
+2026-03-25 06:57:21.012 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/addresses - 401 0 null 1665.8512ms
+2026-03-25 06:59:39.117 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2026-03-25 06:59:39.386 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 292.1412ms
+2026-03-25 06:59:39.554 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - null null
+2026-03-25 06:59:39.586 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 06:59:39.613 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 27.8676ms
+2026-03-25 06:59:39.684 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - 200 null text/javascript; charset=UTF-8 129.8966ms
+2026-03-25 06:59:39.893 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-03-25 06:59:39.999 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 106.59ms
+2026-03-25 07:02:04.590 +05:30 [INF] Executed DbCommand (190ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 07:02:05.680 +05:30 [INF] Executed DbCommand (417ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 07:02:06.302 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 07:02:06.708 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 07:02:07.194 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 07:02:07.535 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 07:02:10.135 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 07:02:11.320 +05:30 [INF] Now listening on: http://localhost:5002
+2026-03-25 07:02:12.109 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 07:02:12.226 +05:30 [INF] Hosting environment: Development
+2026-03-25 07:02:12.462 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-25 07:02:13.369 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2026-03-25 07:02:14.645 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 1305.5958ms
+2026-03-25 07:02:14.721 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 07:02:14.981 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - null null
+2026-03-25 07:02:15.084 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 363.645ms
+2026-03-25 07:02:15.568 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - 200 null text/javascript; charset=UTF-8 587.2225ms
+2026-03-25 07:02:15.963 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-03-25 07:02:16.334 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 373.4935ms
+2026-03-25 07:03:08.015 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/preferences - null null
+2026-03-25 07:03:08.015 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/profile - null null
+2026-03-25 07:03:08.148 +05:30 [INF] CORS policy execution successful.
+2026-03-25 07:03:08.149 +05:30 [INF] CORS policy execution successful.
+2026-03-25 07:03:08.463 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/addresses - null null
+2026-03-25 07:03:08.511 +05:30 [INF] CORS policy execution successful.
+2026-03-25 07:03:08.960 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 07:03:09.057 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 07:03:09.111 +05:30 [INF] Received HTTP response headers after 44.6113ms - 200
+2026-03-25 07:03:09.131 +05:30 [INF] End processing HTTP request after 185.371ms - 200
+2026-03-25 07:03:09.155 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 07:03:09.272 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 07:03:09.302 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 07:03:09.305 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 07:03:09.335 +05:30 [INF] Received HTTP response headers after 26.7821ms - 200
+2026-03-25 07:03:09.338 +05:30 [INF] End processing HTTP request after 35.943ms - 200
+2026-03-25 07:03:09.343 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 07:03:09.353 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 07:03:09.477 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:03:09.477 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:03:09.477 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:03:09.480 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:03:09.482 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:03:09.484 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:03:09.647 +05:30 [INF] Received HTTP response headers after 160.5631ms - 200
+2026-03-25 07:03:09.652 +05:30 [INF] End processing HTTP request after 175.398ms - 200
+2026-03-25 07:03:09.654 +05:30 [INF] Received HTTP response headers after 162.6749ms - 200
+2026-03-25 07:03:09.661 +05:30 [INF] End processing HTTP request after 184.3825ms - 200
+2026-03-25 07:03:09.661 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:03:09.664 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:03:09.678 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "75ea5fb6-8152-42c7-8c39-ec3ced55f1b5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774402375,
+  "nbf": 1774402375,
+  "exp": 1774405975
+}.
+2026-03-25 07:03:09.678 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "75ea5fb6-8152-42c7-8c39-ec3ced55f1b5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774402375,
+  "nbf": 1774402375,
+  "exp": 1774405975
+}.
+2026-03-25 07:03:09.678 +05:30 [INF] Received HTTP response headers after 174.5732ms - 200
+2026-03-25 07:03:09.686 +05:30 [INF] End processing HTTP request after 208.7227ms - 200
+2026-03-25 07:03:09.690 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:03:09.694 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "75ea5fb6-8152-42c7-8c39-ec3ced55f1b5",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774402375,
+  "nbf": 1774402375,
+  "exp": 1774405975
+}.
+2026-03-25 07:03:09.711 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 07:03:09.711 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 07:03:09.711 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 07:03:09.720 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:03:09.720 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:03:09.720 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:03:09.738 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 07:03:09.738 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 07:03:09.739 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 07:03:09.756 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 07:03:09.756 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 07:03:09.756 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 07:03:09.758 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 07:03:09.759 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 07:03:09.761 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 07:03:09.767 +05:30 [INF] HTTP GET /api/users/profile responded 401 in 1604.7106 ms
+2026-03-25 07:03:09.767 +05:30 [INF] HTTP GET /api/users/preferences responded 401 in 1602.0482 ms
+2026-03-25 07:03:09.767 +05:30 [INF] HTTP GET /api/users/addresses responded 401 in 1227.4550 ms
+2026-03-25 07:03:09.778 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/preferences - 401 0 null 1785.0921ms
+2026-03-25 07:03:09.778 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/profile - 401 0 null 1785.092ms
+2026-03-25 07:03:09.780 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/addresses - 401 0 null 1317.3537ms
+2026-03-25 07:14:23.014 +05:30 [INF] Executed DbCommand (480ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 07:14:23.419 +05:30 [INF] Executed DbCommand (104ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 07:14:23.492 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-25 07:14:23.527 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-25 07:14:23.644 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-25 07:14:23.732 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-25 07:14:24.839 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 07:14:25.664 +05:30 [INF] Now listening on: http://localhost:5002
+2026-03-25 07:14:26.418 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 07:14:26.465 +05:30 [INF] Hosting environment: Development
+2026-03-25 07:14:26.540 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-25 07:14:28.316 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2026-03-25 07:14:29.861 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 1601.9982ms
+2026-03-25 07:14:30.684 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 07:14:30.688 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - null null
+2026-03-25 07:14:30.805 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 123.6111ms
+2026-03-25 07:14:31.681 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - 200 null text/javascript; charset=UTF-8 993.4097ms
+2026-03-25 07:14:35.848 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-03-25 07:14:35.896 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 48.4012ms
+2026-03-25 07:15:31.117 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/profile - null null
+2026-03-25 07:15:31.127 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/addresses - null null
+2026-03-25 07:15:31.159 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/users/preferences - null null
+2026-03-25 07:15:31.229 +05:30 [INF] CORS policy execution successful.
+2026-03-25 07:15:31.229 +05:30 [INF] CORS policy execution successful.
+2026-03-25 07:15:31.230 +05:30 [INF] CORS policy execution successful.
+2026-03-25 07:15:33.057 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 07:15:33.786 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-25 07:15:33.830 +05:30 [INF] Received HTTP response headers after 33.2859ms - 200
+2026-03-25 07:15:33.847 +05:30 [INF] End processing HTTP request after 800.6878ms - 200
+2026-03-25 07:15:33.869 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-25 07:15:33.956 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-25 07:15:33.983 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 07:15:33.986 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-25 07:15:34.009 +05:30 [INF] Received HTTP response headers after 20.1981ms - 200
+2026-03-25 07:15:34.012 +05:30 [INF] End processing HTTP request after 28.9112ms - 200
+2026-03-25 07:15:34.018 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-25 07:15:34.024 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-25 07:15:34.148 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:15:34.148 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:15:34.148 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:15:34.151 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:15:34.154 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:15:34.157 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-25 07:15:34.287 +05:30 [INF] Received HTTP response headers after 128.5645ms - 200
+2026-03-25 07:15:34.294 +05:30 [INF] End processing HTTP request after 145.4302ms - 200
+2026-03-25 07:15:34.299 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:15:34.308 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "01d17032-25ca-4386-b6bd-4a9ce9d9405b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774403109,
+  "nbf": 1774403109,
+  "exp": 1774406709
+}.
+2026-03-25 07:15:34.337 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 07:15:34.345 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:15:34.362 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 07:15:34.380 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 07:15:34.385 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 07:15:34.392 +05:30 [INF] HTTP GET /api/users/profile responded 401 in 3151.0064 ms
+2026-03-25 07:15:34.412 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/profile - 401 0 null 3303.05ms
+2026-03-25 07:15:34.660 +05:30 [INF] Received HTTP response headers after 498.3549ms - 200
+2026-03-25 07:15:34.705 +05:30 [INF] End processing HTTP request after 556.8223ms - 200
+2026-03-25 07:15:34.709 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:15:34.713 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "01d17032-25ca-4386-b6bd-4a9ce9d9405b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774403109,
+  "nbf": 1774403109,
+  "exp": 1774406709
+}.
+2026-03-25 07:15:34.730 +05:30 [INF] Received HTTP response headers after 558.4518ms - 200
+2026-03-25 07:15:34.751 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 07:15:34.759 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:15:34.757 +05:30 [INF] End processing HTTP request after 608.5324ms - 200
+2026-03-25 07:15:34.772 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-25 07:15:34.773 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 07:15:34.790 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "jti": "01d17032-25ca-4386-b6bd-4a9ce9d9405b",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774403109,
+  "nbf": 1774403109,
+  "exp": 1774406709
+}.
+2026-03-25 07:15:34.793 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 07:15:34.797 +05:30 [INF] The authentication demand was rejected because the token validated via introspection had no audience attached.
+2026-03-25 07:15:34.802 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 07:15:34.803 +05:30 [INF] OpenIddict.Validation.AspNetCore was not authenticated. Failure message: An error occurred while authenticating the current request.
+2026-03-25 07:15:34.805 +05:30 [INF] HTTP GET /api/users/addresses responded 401 in 3568.6190 ms
+2026-03-25 07:15:34.810 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-03-25 07:15:34.813 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/addresses - 401 0 null 3690.3849ms
+2026-03-25 07:15:34.817 +05:30 [INF] The response was successfully returned as a challenge response: {
+  "error": "invalid_token",
+  "error_description": "The specified token doesn't contain any audience.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2093"
+}.
+2026-03-25 07:15:34.826 +05:30 [INF] AuthenticationScheme: OpenIddict.Validation.AspNetCore was challenged.
+2026-03-25 07:15:34.829 +05:30 [INF] HTTP GET /api/users/preferences responded 401 in 3592.2964 ms
+2026-03-25 07:15:34.837 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/users/preferences - 401 0 null 3678.6818ms

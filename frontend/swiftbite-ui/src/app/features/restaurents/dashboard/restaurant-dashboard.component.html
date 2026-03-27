@@ -22,7 +22,7 @@
       (click)="setFilter(f.value)"
     >
       {{ f.label }}
-      <span class="badge" *ngIf="f.value === 'Pending' && pendingCount() > 0">
+      <span class="badge" *ngIf="f.value === 1 && pendingCount() > 0">
         {{ pendingCount() }}
       </span>
     </button>
@@ -43,7 +43,7 @@
   <!-- ── Empty ──────────────────────────────────────────── -->
   <div class="state-box" *ngIf="!loading() && !error() && filteredOrders().length === 0">
     <p class="empty-icon">🧾</p>
-    <p>No {{ activeFilter() === 'All' ? '' : activeFilter() }} orders right now.</p>
+    <p>No {{ activeFilter() === 'All' ? '' : (activeFilter() | json) }} orders right now.</p>
   </div>
 
   <!-- ── Orders grid ────────────────────────────────────── -->
@@ -52,32 +52,51 @@
     <div
       class="order-card"
       *ngFor="let order of filteredOrders()"
-      [class.pending]="order.status === 'Pending'"
+      [class.pending]="order.status === 1"
       [class.updating]="isUpdating(order.id)"
     >
       <!-- Card header -->
       <div class="card-header">
         <div>
           <span class="order-id">#{{ order.id.slice(-6).toUpperCase() }}</span>
-          <span class="status-pill" [ngClass]="order.status.toLowerCase()">
-            {{ order.status }}
+          <span class="status-pill" [ngClass]="order.status | json">
+            {{ getStatusLabel(order.status) }}
           </span>
         </div>
-        <span class="time-ago">{{ timeAgo(order.createdAt) }}</span>
+        <span class="time-ago">{{ timeAgo(order.placedAt) }}</span>
       </div>
 
       <!-- Customer -->
       <p class="customer-name">{{ order.customerName }}</p>
-      <p class="customer-address" *ngIf="order.address">📍 {{ order.address }}</p>
+      <p class="customer-address" *ngIf="order.deliveryAddress">📍 {{ order.deliveryAddress }}</p>
+
+      <!-- Restaurant -->
+      <p class="restaurant-name">🏪 {{ order.restaurantName }}</p>
 
       <!-- Items list -->
       <ul class="items-list">
         <li *ngFor="let item of order.items" class="item-row">
           <span class="item-qty">× {{ item.quantity }}</span>
           <span class="item-name">{{ item.name }}</span>
-          <span class="item-price">₹{{ item.price * item.quantity }}</span>
+          <span class="item-price">₹{{ item.totalPrice }}</span>
         </li>
       </ul>
+
+      <!-- Price breakdown -->
+      <div class="price-breakdown">
+        <div class="price-row">
+          <span>Subtotal</span>
+          <span>₹{{ order.subTotal }}</span>
+        </div>
+        <div class="price-row">
+          <span>Taxes</span>
+          <span>₹{{ order.taxes }}</span>
+        </div>
+        <div class="price-row">
+          <span>Delivery Fee</span>
+          <span>₹{{ order.deliveryFee }}</span>
+        </div>
+      </div>
 
       <!-- Total -->
       <div class="card-total">
@@ -85,11 +104,17 @@
         <span class="total-amount">₹{{ order.totalAmount }}</span>
       </div>
 
+      <!-- Payment & Delivery Info -->
+      <div class="order-meta">
+        <p class="meta-item">💳 {{ order.paymentMethod }}</p>
+        <p class="meta-item">📦 Est. {{ order.estimatedDeliveryAt | date: 'short' }}</p>
+      </div>
+
       <!-- Actions -->
       <div class="card-actions" [ngSwitch]="order.status">
 
-        <!-- Pending → Accept or Reject -->
-        <ng-container *ngSwitchCase="'Pending'">
+        <!-- Pending (1) → Accept or Reject -->
+        <ng-container *ngSwitchCase="1">
           <button
             class="btn btn-danger"
             (click)="rejectOrder(order)"
@@ -106,8 +131,8 @@
           </button>
         </ng-container>
 
-        <!-- Confirmed → Mark Preparing -->
-        <ng-container *ngSwitchCase="'Confirmed'">
+        <!-- Confirmed (2) → Mark Preparing -->
+        <ng-container *ngSwitchCase="2">
           <button
             class="btn btn-orange full"
             (click)="markPreparing(order)"
@@ -117,8 +142,8 @@
           </button>
         </ng-container>
 
-        <!-- Preparing → Mark Ready -->
-        <ng-container *ngSwitchCase="'Preparing'">
+        <!-- Preparing (3) → Mark Ready -->
+        <ng-container *ngSwitchCase="3">
           <button
             class="btn btn-blue full"
             (click)="markReady(order)"
@@ -128,12 +153,12 @@
           </button>
         </ng-container>
 
-        <!-- ReadyForPickup / Cancelled → no actions -->
-        <ng-container *ngSwitchCase="'ReadyForPickup'">
+        <!-- ReadyForPickup (4) / Cancelled (5) → no actions -->
+        <ng-container *ngSwitchCase="4">
           <p class="done-label">✅ Awaiting delivery partner</p>
         </ng-container>
 
-        <ng-container *ngSwitchCase="'Cancelled'">
+        <ng-container *ngSwitchCase="5">
           <p class="done-label cancelled">✕ Order cancelled</p>
         </ng-container>
 
