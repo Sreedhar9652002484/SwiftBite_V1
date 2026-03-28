@@ -1,10 +1,8 @@
 <!-- ── LOADING ──────────────────────────────────────── -->
 @if (loading()) {
-  <div class="flex flex-col items-center justify-center
-              h-64 gap-4">
+  <div class="flex flex-col items-center justify-center h-64 gap-4">
     <div class="w-12 h-12 border-4 border-orange-200
-                border-t-orange-500 rounded-full
-                animate-spin"></div>
+                border-t-orange-500 rounded-full animate-spin"></div>
     <p class="text-gray-400 text-sm">Loading menu...</p>
   </div>
 }
@@ -14,8 +12,7 @@
 
   <!-- ── NAVBAR ───────────────────────────────────────── -->
   <nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-3
-                flex items-center gap-3">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
       <button (click)="router.navigate(['/home'])"
         class="p-2 rounded-lg hover:bg-gray-100
                text-gray-600 font-medium text-sm">
@@ -51,8 +48,7 @@
                 from-black/75 via-black/20 to-transparent">
     </div>
     <!-- Info -->
-    <div class="absolute bottom-0 left-0 right-0
-                px-6 py-5">
+    <div class="absolute bottom-0 left-0 right-0 px-6 py-5">
       <div class="flex items-end gap-4">
         @if (restaurant()!.logoUrl) {
           <img [src]="restaurant()!.logoUrl"
@@ -67,28 +63,23 @@
           <p class="text-white/80 text-sm">
             {{ restaurant()!.cuisineType }}
           </p>
-          <div class="flex items-center gap-3
-                      mt-1.5 flex-wrap">
+          <div class="flex items-center gap-3 mt-1.5 flex-wrap">
             <span class="bg-green-500 text-white text-xs
                          font-bold px-2 py-0.5 rounded-lg">
-              ⭐ {{ restaurant()!.averageRating
-                   | number:'1.1-1' }}
+              ⭐ {{ restaurant()!.averageRating | number:'1.1-1' }}
               ({{ restaurant()!.totalRatings }})
             </span>
             <span class="text-white/80 text-xs">
-              ⏱ {{ restaurant()!.averageDeliveryTimeMinutes }}
-              mins
+              ⏱ {{ restaurant()!.averageDeliveryTimeMinutes }} mins
             </span>
             <span class="text-white/80 text-xs">
               ₹{{ restaurant()!.minimumOrderAmount }} min
             </span>
-            <span class="text-xs font-semibold px-2 py-0.5
-                         rounded-full"
+            <span class="text-xs font-semibold px-2 py-0.5 rounded-full"
               [class]="restaurant()!.isOpen
                 ? 'bg-green-500/30 text-white'
                 : 'bg-red-500/30 text-white'">
-              {{ restaurant()!.isOpen
-                 ? '🟢 Open' : '🔴 Closed' }}
+              {{ restaurant()!.isOpen ? '🟢 Open' : '🔴 Closed' }}
             </span>
           </div>
         </div>
@@ -97,8 +88,7 @@
   </div>
 
   <!-- ── FILTER BAR ────────────────────────────────────── -->
-  <div class="bg-white border-b border-gray-100
-              sticky top-14 z-40">
+  <div class="bg-white border-b border-gray-100 sticky top-14 z-40">
     <div class="max-w-6xl mx-auto px-4 py-2.5
                 flex items-center gap-3">
       <!-- Search -->
@@ -109,8 +99,7 @@
           placeholder="Search in menu..."
           class="bg-transparent text-sm outline-none
                  w-full text-gray-700 placeholder-gray-400"
-          (input)="searchQuery.set(
-            $any($event.target).value)"/>
+          (input)="searchQuery.set($any($event.target).value)"/>
       </div>
       <!-- Veg toggle -->
       <button
@@ -120,11 +109,11 @@
                text-sm transition-all"
         [class]="vegOnly()
           ? 'border-green-500 bg-green-50 text-green-600'
-          : 'border-gray-200 text-gray-500
-             hover:border-green-400'">
+          : 'border-gray-200 text-gray-500 hover:border-green-400'">
         🟢 Veg Only
       </button>
     </div>
+
     <!-- Category scroll tabs -->
     <div class="max-w-6xl mx-auto px-4 pb-2
                 flex gap-2 overflow-x-auto">
@@ -158,9 +147,7 @@
           <div class="text-center py-20 text-gray-400">
             <div class="text-5xl mb-3">🔍</div>
             <p class="font-semibold">No items found</p>
-            <p class="text-sm mt-1">
-              Try a different search
-            </p>
+            <p class="text-sm mt-1">Try a different search</p>
           </div>
         }
 
@@ -169,8 +156,7 @@
 
             <!-- Category Header -->
             <div class="mb-3">
-              <h2 class="font-extrabold text-gray-900
-                         text-lg">
+              <h2 class="font-extrabold text-gray-900 text-lg">
                 {{ cat.name }}
               </h2>
               @if (cat.description) {
@@ -187,7 +173,7 @@
 
                 <!-- Left: Info -->
                 <div class="flex-1 min-w-0">
-                  <!-- Veg + Bestseller -->
+                  <!-- Veg + Bestseller badges -->
                   <div class="flex items-center gap-2 mb-1">
                     <span class="text-xs">
                       {{ item.isVegetarian ? '🟢' : '🔴' }}
@@ -204,8 +190,7 @@
                              text-sm leading-snug">
                     {{ item.name }}
                   </h3>
-                  <p class="font-extrabold text-gray-900
-                             mt-1">
+                  <p class="font-extrabold text-gray-900 mt-1">
                     ₹{{ item.price }}
                   </p>
                   @if (item.description) {
@@ -215,15 +200,14 @@
                     </p>
                   }
                   <p class="text-gray-300 text-xs mt-1">
-                    ⏱ {{ item.preparationTimeMinutes }}
-                    min prep
+                    ⏱ {{ item.preparationTimeMinutes }} min prep
                   </p>
                 </div>
 
                 <!-- Right: Image + Button -->
                 <div class="flex flex-col items-center
                             gap-2 flex-shrink-0">
-                  <!-- Image -->
+                  <!-- Item image -->
                   <div class="w-24 h-20 rounded-xl
                               overflow-hidden flex-shrink-0">
                     @if (item.imageUrl) {
@@ -232,11 +216,8 @@
                         class="w-full h-full object-cover"/>
                     } @else {
                       <div class="w-full h-full bg-orange-50
-                                  flex items-center
-                                  justify-content-center
-                                  text-3xl"
-                        style="display:flex;align-items:center;
-                               justify-content:center">
+                                  flex items-center justify-center
+                                  text-3xl">
                         🍽️
                       </div>
                     }
@@ -255,8 +236,7 @@
                                flex items-center justify-center">
                         −
                       </button>
-                      <span class="w-8 text-center font-bold
-                                   text-sm">
+                      <span class="w-8 text-center font-bold text-sm">
                         {{ cartSvc.getQuantity(item.id) }}
                       </span>
                       <button
@@ -311,8 +291,7 @@
             <!-- Cart Items -->
             <div class="px-4 py-3 max-h-56 overflow-y-auto
                         divide-y divide-gray-50">
-              @for (item of cartSvc.items();
-                    track item.menuItemId) {
+              @for (item of cartSvc.items(); track item.menuItemId) {
                 <div class="flex items-center gap-2 py-2.5">
                   <span class="flex-1 text-sm text-gray-700
                                font-medium leading-snug">
@@ -321,16 +300,14 @@
                   <!-- Controls -->
                   <div class="flex items-center gap-1">
                     <button
-                      (click)="cartSvc.removeItem(
-                                 item.menuItemId)"
+                      (click)="cartSvc.removeItem(item.menuItemId)"
                       class="w-6 h-6 rounded-full border
                              border-orange-400 text-orange-500
                              font-bold text-sm hover:bg-orange-50
                              flex items-center justify-center">
                       −
                     </button>
-                    <span class="w-5 text-center text-sm
-                                 font-bold">
+                    <span class="w-5 text-center text-sm font-bold">
                       {{ item.quantity }}
                     </span>
                     <button
@@ -352,24 +329,20 @@
 
             <!-- Bill Summary -->
             <div class="px-4 py-3 bg-gray-50 space-y-1.5">
-              <div class="flex justify-between text-xs
-                          text-gray-500">
+              <div class="flex justify-between text-xs text-gray-500">
                 <span>Subtotal</span>
                 <span>₹{{ cartSvc.subTotal() }}</span>
               </div>
-              <div class="flex justify-between text-xs
-                          text-gray-500">
+              <div class="flex justify-between text-xs text-gray-500">
                 <span>Delivery</span>
                 <span>₹{{ cartSvc.deliveryFee() }}</span>
               </div>
-              <div class="flex justify-between text-xs
-                          text-gray-500">
+              <div class="flex justify-between text-xs text-gray-500">
                 <span>GST (5%)</span>
                 <span>₹{{ cartSvc.taxes() }}</span>
               </div>
               <div class="flex justify-between font-extrabold
-                          text-gray-900 pt-1.5 border-t
-                          border-gray-200">
+                          text-gray-900 pt-1.5 border-t border-gray-200">
                 <span>Total</span>
                 <span class="text-orange-500">
                   ₹{{ cartSvc.total() }}
@@ -380,8 +353,7 @@
             <!-- Checkout Button -->
             <button (click)="goToCheckout()"
               class="w-full py-4 bg-orange-500 text-white
-                     font-extrabold hover:bg-orange-600
-                     transition-all">
+                     font-extrabold hover:bg-orange-600 transition-all">
               Proceed to Checkout →
             </button>
           </div>
@@ -401,12 +373,8 @@
                rounded-xl font-extrabold text-sm
                hover:bg-orange-600 transition-all
                flex items-center justify-between px-5">
-        <span>
-          🛒 {{ cartSvc.itemCount() }} items
-        </span>
-        <span>
-          Checkout · ₹{{ cartSvc.total() }} →
-        </span>
+        <span>🛒 {{ cartSvc.itemCount() }} items</span>
+        <span>Checkout · ₹{{ cartSvc.total() }} →</span>
       </button>
     </div>
   }

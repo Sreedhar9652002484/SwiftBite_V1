@@ -3,13 +3,23 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OpenIddict.Abstractions;
+using Serilog;
 using SwiftBite.AuthServer.Data;
 using SwiftBite.AuthServer.Models;
 using SwiftBite.AuthServer.Models.Validators;
 using SwiftBite.AuthServer.Services;
+using SwiftBite.Shared.Exceptions.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// ✅ 1. Serilog - FIRST
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.File("logs/authserver-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+builder.Host.UseSerilog();
 
 var authIssuer = builder.Configuration["AuthServer:Issuer"]!;
 var angularBaseUrl = builder.Configuration["AuthServer:AngularBaseUrl"]!;
@@ -161,6 +171,10 @@ builder.Services.AddHostedService<RoleSeeder>();
 builder.Services.AddHostedService<ClientSeeder>();
 
 var app = builder.Build();
+app.UseGlobalExceptionHandler();
+
+// ✅ Serilog Request Logging - AFTER exception handler
+app.UseSerilogRequestLogging();
 
 if (app.Environment.IsDevelopment())
 {

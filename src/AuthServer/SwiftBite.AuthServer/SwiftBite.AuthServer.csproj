@@ -21,12 +21,18 @@
 		<!-- ✅ OpenIddict full packages (not just Abstractions) -->
 		<PackageReference Include="OpenIddict.AspNetCore" Version="5.2.0" />
 		<PackageReference Include="OpenIddict.EntityFrameworkCore" Version="5.2.0" />
+		<PackageReference Include="Serilog" Version="4.3.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
 
 		<!-- ✅ Swagger -->
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	 <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.0" />
 	 <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.24.0" />
 	
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\SwiftBite.Shared.Exceptions\SwiftBite.Shared.Exceptions.csproj" />
 	</ItemGroup>
 
 </Project>

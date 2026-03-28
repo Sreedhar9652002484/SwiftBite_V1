@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy,
   inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { NotificationService }
+import { NotificationService,  NotificationType }
   from '../../../../core/services/notification.service';
 import { AuthService }
   from '../../../../core/auth/auth.service';
@@ -185,22 +185,28 @@ export class NotificationBellComponent
     }
   }
 
-  getIcon(type: string): string {
-    const map: Record<string, string> = {
-      'OrderPlaced':        '🛒',
-      'OrderConfirmed':     '✅',
-      'OrderPreparing':     '👨‍🍳',
-      'OrderReady':         '📦',
-      'OrderPickedUp':      '🛵',
-      'OrderOutForDelivery':'🚀',
-      'OrderDelivered':     '🎉',
-      'OrderCancelled':     '❌',
-      'PaymentSuccess':     '💳',
-      'PaymentFailed':      '❌',
-      'Promotional':        '🎁',
-      'General':            'ℹ️',
+ getIcon(type: NotificationType): string {
+    const iconMap: Record<string, string> = {
+      // String-enum values
+      'OrderPlaced':    '📦',
+      'OrderConfirmed': '✅',
+      'OrderPreparing': '👨‍🍳',
+      'OutForDelivery': '🛵',
+      'OrderDelivered': '🎉',
+      'OrderCancelled': '❌',
+      'Promotion':      '🎁',
+      'General':        '🔔',
+      // Numeric-enum values (if backend sends numbers)
+      '0':  '📦',
+      '1':  '✅',
+      '2':  '👨‍🍳',
+      '3':  '🛵',
+      '4':  '🎉',
+      '5':  '❌',
+      '6':  '🎁',
+      '7':  '🔔',
     };
-    return map[type] ?? '🔔';
+    return iconMap[String(type)] ?? '🔔';
   }
 
   getTimeAgo(date: Date | string): string {

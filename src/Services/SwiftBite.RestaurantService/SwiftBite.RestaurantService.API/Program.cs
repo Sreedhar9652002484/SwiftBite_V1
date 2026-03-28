@@ -6,6 +6,7 @@ using Serilog;
 using SwiftBite.RestaurantService.Application.Restaurants.Commands.CreateRestaurant;
 using SwiftBite.RestaurantService.Infrastructure;
 using SwiftBite.RestaurantService.Infrastructure.Persistence;
+using SwiftBite.Shared.Exceptions.Extensions;
 using SwiftBite.UserService.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -102,6 +103,7 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+app.UseGlobalExceptionHandler();
 // ✅ Auto-migrate on startup
 using (var scope = app.Services.CreateScope())
 {

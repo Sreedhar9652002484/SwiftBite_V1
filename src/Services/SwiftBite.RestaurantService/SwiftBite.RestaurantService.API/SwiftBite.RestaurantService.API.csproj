@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\SwiftBite.Shared.Exceptions\SwiftBite.Shared.Exceptions.csproj" />
     <ProjectReference Include="..\..\SwiftBite.UserService\SwiftBite.UserService.Infrastructure\SwiftBite.UserService.Infrastructure.csproj" />
     <ProjectReference Include="..\SwiftBite.RestaurantService.Application\SwiftBite.RestaurantService.Application.csproj" />
     <ProjectReference Include="..\SwiftBite.RestaurantService.Infrastructure\SwiftBite.RestaurantService.Infrastructure.csproj" />

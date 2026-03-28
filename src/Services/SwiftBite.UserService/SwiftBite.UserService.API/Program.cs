@@ -7,6 +7,7 @@ using SwiftBite.UserService.Application.Users.Commands.CreateUser;
 using SwiftBite.UserService.Infrastructure;
 using SwiftBite.UserService.Infrastructure.Persistence;
 using OpenIddict.Validation.AspNetCore;
+using SwiftBite.Shared.Exceptions.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -97,6 +98,8 @@ builder.Services.AddAuthorization(); ;
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+// ✅ ADD THIS - MUST BE FIRST!
+app.UseGlobalExceptionHandler();
 
 // ✅ Auto-migrate DB on startup
 using (var scope = app.Services.CreateScope())

@@ -7,6 +7,7 @@ using Serilog;
 using SwiftBite.PaymentService.Application.Payments.Commands.InitiatePayment;
 using SwiftBite.PaymentService.Infrastructure;
 using SwiftBite.PaymentService.Infrastructure.Persistence;
+using SwiftBite.Shared.Exceptions.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -98,6 +99,7 @@ builder.Services.AddAuthentication(
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+app.UseGlobalExceptionHandler();
 
 // ? Auto-migrate on startup
 using (var scope = app.Services.CreateScope())

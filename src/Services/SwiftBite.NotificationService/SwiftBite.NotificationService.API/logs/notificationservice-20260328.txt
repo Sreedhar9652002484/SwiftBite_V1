@@ -1,0 +1,1551 @@
+2026-03-28 10:56:23.552 +05:30 [INF] Executed DbCommand (788ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 10:56:24.356 +05:30 [INF] Executed DbCommand (121ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 10:56:25.284 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 10:56:25.318 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 10:56:26.017 +05:30 [INF] Executed DbCommand (187ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 10:56:26.163 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 10:56:31.006 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 10:56:31.175 +05:30 [INF] 🎧 Kafka consumer started | Topics: swiftbite.order.placed, swiftbite.order.confirmed, swiftbite.order.cancelled, swiftbite.payment.success, swiftbite.payment.failed
+2026-03-28 10:56:32.674 +05:30 [INF] Now listening on: http://localhost:5006
+2026-03-28 10:56:33.046 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 10:56:33.076 +05:30 [INF] Hosting environment: Development
+2026-03-28 10:56:33.079 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.API
+2026-03-28 10:56:33.410 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.cancelled: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-28 10:56:34.127 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.payment.failed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-28 10:56:40.935 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/index.html - null null
+2026-03-28 10:56:44.256 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/index.html - 200 null text/html;charset=utf-8 3321.1602ms
+2026-03-28 10:56:44.418 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 10:56:44.474 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_vs/browserLink - null null
+2026-03-28 10:56:47.064 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - 200 16551 application/javascript; charset=utf-8 2645.4475ms
+2026-03-28 10:56:47.195 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_vs/browserLink - 200 null text/javascript; charset=UTF-8 2721.2805ms
+2026-03-28 10:56:54.399 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - null null
+2026-03-28 10:56:54.660 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 260.4379ms
+2026-03-28 10:57:24.373 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 27
+2026-03-28 10:57:24.462 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-28 10:57:25.819 +05:30 [INF] Executed DbCommand (169ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 10:57:25.875 +05:30 [INF] 📨 SignalR sent | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | Title: ✅ Order Confirmed!
+2026-03-28 10:57:28.226 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 28
+2026-03-28 10:57:28.451 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 10:57:28.462 +05:30 [INF] 📨 SignalR sent | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | Title: ✅ Order Confirmed!
+2026-03-28 10:57:31.941 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 29
+2026-03-28 10:57:32.084 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 10:57:32.098 +05:30 [INF] 📨 SignalR sent | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | Title: ✅ Order Confirmed!
+2026-03-28 10:57:46.491 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 30
+2026-03-28 10:57:46.533 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 10:57:46.566 +05:30 [INF] 📨 SignalR sent | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | Title: ✅ Order Confirmed!
+2026-03-28 10:57:49.089 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 31
+2026-03-28 10:57:49.123 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 10:57:49.144 +05:30 [INF] 📨 SignalR sent | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | Title: ✅ Order Confirmed!
+2026-03-28 10:57:53.040 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 32
+2026-03-28 10:57:53.095 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 10:57:53.117 +05:30 [INF] 📨 SignalR sent | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | Title: ✅ Order Confirmed!
+2026-03-28 11:04:47.635 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 33
+2026-03-28 11:04:48.272 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:04:48.294 +05:30 [INF] 📨 SignalR sent | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | Title: ✅ Order Confirmed!
+2026-03-28 11:04:50.126 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 34
+2026-03-28 11:04:50.209 +05:30 [INF] Executed DbCommand (48ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:04:50.253 +05:30 [INF] 📨 SignalR sent | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | Title: ✅ Order Confirmed!
+2026-03-28 11:04:54.877 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 35
+2026-03-28 11:04:54.936 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:04:54.970 +05:30 [INF] 📨 SignalR sent | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | Title: ✅ Order Confirmed!
+2026-03-28 11:05:27.405 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-28 11:05:27.555 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:28.730 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 11:05:28.905 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 11:05:29.064 +05:30 [INF] Received HTTP response headers after 145.87ms - 200
+2026-03-28 11:05:29.108 +05:30 [INF] End processing HTTP request after 409.2466ms - 200
+2026-03-28 11:05:29.163 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-28 11:05:29.425 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-28 11:05:29.513 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 11:05:29.523 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 11:05:29.592 +05:30 [INF] Received HTTP response headers after 64.0441ms - 200
+2026-03-28 11:05:29.598 +05:30 [INF] End processing HTTP request after 85.1911ms - 200
+2026-03-28 11:05:29.610 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-28 11:05:29.645 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-28 11:05:29.906 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:29.912 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:30.097 +05:30 [INF] Received HTTP response headers after 174.9278ms - 200
+2026-03-28 11:05:30.105 +05:30 [INF] End processing HTTP request after 199.3602ms - 200
+2026-03-28 11:05:30.117 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:30.134 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:30.251 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:05:30.317 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:05:30.354 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 2742.1640 ms
+2026-03-28 11:05:30.408 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 3004.9194ms
+2026-03-28 11:05:30.574 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=V5hAWeOFdUIfZ12RkWWPGg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - null null
+2026-03-28 11:05:30.602 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:30.612 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:30.620 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:30.740 +05:30 [INF] Received HTTP response headers after 114.8741ms - 200
+2026-03-28 11:05:30.745 +05:30 [INF] End processing HTTP request after 133.3575ms - 200
+2026-03-28 11:05:30.762 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:30.775 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:30.794 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-03-28 11:05:30.980 +05:30 [INF] 🔌 SignalR connected | User: a3785f1d-0314-4060-897b-11850e7062a5 | ConnectionId: 1rdfKEwOUjLxRsJFDb3wkg
+2026-03-28 11:05:31.088 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-03-28 11:05:31.106 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:31.121 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:31.127 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:31.249 +05:30 [INF] Received HTTP response headers after 112.3937ms - 200
+2026-03-28 11:05:31.258 +05:30 [INF] End processing HTTP request after 137.2611ms - 200
+2026-03-28 11:05:31.263 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:31.277 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:31.292 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:05:31.429 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-03-28 11:05:33.071 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-03-28 11:05:33.299 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-03-28 11:05:33.342 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:33.466 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 2013.918ms
+2026-03-28 11:05:33.475 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:05:33.483 +05:30 [INF] HTTP GET /api/notifications responded 200 in 2372.3495 ms
+2026-03-28 11:05:33.509 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 2421.0377ms
+2026-03-28 11:05:33.917 +05:30 [INF] 🔌 SignalR disconnected | User: a3785f1d-0314-4060-897b-11850e7062a5
+2026-03-28 11:05:33.934 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-03-28 11:05:33.939 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 3334.0824 ms
+2026-03-28 11:05:33.954 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=V5hAWeOFdUIfZ12RkWWPGg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - 101 null null 3379.7226ms
+2026-03-28 11:05:36.958 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-28 11:05:36.992 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:37.007 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:37.020 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:37.201 +05:30 [INF] Received HTTP response headers after 164.4673ms - 200
+2026-03-28 11:05:37.206 +05:30 [INF] End processing HTTP request after 199.0626ms - 200
+2026-03-28 11:05:37.219 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:37.233 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:37.241 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:05:37.255 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:05:37.272 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 266.7976 ms
+2026-03-28 11:05:37.317 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 359.4762ms
+2026-03-28 11:05:37.499 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=k8zvu0q5cSEvw8hUr2ENNg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - null null
+2026-03-28 11:05:37.518 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:37.527 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:37.534 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:37.647 +05:30 [INF] Received HTTP response headers after 107.2826ms - 200
+2026-03-28 11:05:37.654 +05:30 [INF] End processing HTTP request after 126.675ms - 200
+2026-03-28 11:05:37.661 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:37.668 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:37.674 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-03-28 11:05:37.707 +05:30 [INF] 🔌 SignalR connected | User: a3785f1d-0314-4060-897b-11850e7062a5 | ConnectionId: cidXhQNZkVCZCw0IFfiR4Q
+2026-03-28 11:05:37.887 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-03-28 11:05:37.901 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:37.907 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:37.913 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:38.033 +05:30 [INF] Received HTTP response headers after 114.1461ms - 200
+2026-03-28 11:05:38.039 +05:30 [INF] End processing HTTP request after 132.3797ms - 200
+2026-03-28 11:05:38.048 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:38.054 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:38.064 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:05:38.070 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-03-28 11:05:38.104 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-03-28 11:05:38.118 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-03-28 11:05:38.130 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:38.136 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 56.8201ms
+2026-03-28 11:05:38.142 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:05:38.147 +05:30 [INF] HTTP GET /api/notifications responded 200 in 242.1900 ms
+2026-03-28 11:05:38.155 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 267.7157ms
+2026-03-28 11:05:40.063 +05:30 [INF] 🔌 SignalR disconnected | User: a3785f1d-0314-4060-897b-11850e7062a5
+2026-03-28 11:05:40.072 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-03-28 11:05:40.080 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 2557.8356 ms
+2026-03-28 11:05:40.089 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=k8zvu0q5cSEvw8hUr2ENNg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - 101 null null 2590.04ms
+2026-03-28 11:05:46.811 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-28 11:05:46.826 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:46.832 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:46.841 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:47.006 +05:30 [INF] Received HTTP response headers after 160.2245ms - 200
+2026-03-28 11:05:47.011 +05:30 [INF] End processing HTTP request after 180.006ms - 200
+2026-03-28 11:05:47.020 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:47.026 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:47.041 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:05:47.045 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:05:47.049 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 218.5668 ms
+2026-03-28 11:05:47.066 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 254.9935ms
+2026-03-28 11:05:47.245 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=f_SOesgz3QNo0qPj4WQhAw&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - null null
+2026-03-28 11:05:47.259 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:47.264 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:47.271 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:47.367 +05:30 [INF] Received HTTP response headers after 91.6546ms - 200
+2026-03-28 11:05:47.375 +05:30 [INF] End processing HTTP request after 111.0194ms - 200
+2026-03-28 11:05:47.380 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:47.390 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:47.398 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-03-28 11:05:47.430 +05:30 [INF] 🔌 SignalR connected | User: a3785f1d-0314-4060-897b-11850e7062a5 | ConnectionId: zzynNudi_K93RtkXTkKlgQ
+2026-03-28 11:05:47.596 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-03-28 11:05:47.611 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:47.618 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:47.624 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:47.737 +05:30 [INF] Received HTTP response headers after 106.9153ms - 200
+2026-03-28 11:05:47.742 +05:30 [INF] End processing HTTP request after 124.3048ms - 200
+2026-03-28 11:05:47.747 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:47.757 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:47.763 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:05:47.769 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-03-28 11:05:47.790 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-03-28 11:05:47.805 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-03-28 11:05:47.814 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:47.821 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 44.1162ms
+2026-03-28 11:05:47.827 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:05:47.831 +05:30 [INF] HTTP GET /api/notifications responded 200 in 214.5111 ms
+2026-03-28 11:05:47.838 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 241.953ms
+2026-03-28 11:05:49.085 +05:30 [INF] 🔌 SignalR disconnected | User: a3785f1d-0314-4060-897b-11850e7062a5
+2026-03-28 11:05:49.124 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-03-28 11:05:49.130 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 1866.8978 ms
+2026-03-28 11:05:49.142 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=f_SOesgz3QNo0qPj4WQhAw&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - 101 null null 1896.4835ms
+2026-03-28 11:06:07.994 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.placed | Offset: 17
+2026-03-28 11:06:08.055 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:06:08.069 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: 🛒 Order Placed!
+2026-03-28 11:06:45.840 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.payment.success | Offset: 6
+2026-03-28 11:06:45.875 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:06:45.890 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: 💳 Payment Successful!
+2026-03-28 11:06:46.244 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-28 11:06:46.291 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:06:46.295 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:06:46.305 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:06:46.427 +05:30 [INF] Received HTTP response headers after 116.947ms - 200
+2026-03-28 11:06:46.435 +05:30 [INF] End processing HTTP request after 139.7915ms - 200
+2026-03-28 11:06:46.446 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:06:46.468 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:06:46.480 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:06:46.492 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:06:46.506 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 211.8580 ms
+2026-03-28 11:06:46.528 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 284.1461ms
+2026-03-28 11:06:46.697 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=-7iaq5aj7fJ_uJ4uxtLv-A&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - null null
+2026-03-28 11:06:46.721 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:06:46.727 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:06:46.740 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:06:46.896 +05:30 [INF] Received HTTP response headers after 139.0677ms - 200
+2026-03-28 11:06:46.906 +05:30 [INF] End processing HTTP request after 179.4621ms - 200
+2026-03-28 11:06:46.913 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:06:46.921 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:06:46.929 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-03-28 11:06:46.955 +05:30 [INF] 🔌 SignalR connected | User: a3785f1d-0314-4060-897b-11850e7062a5 | ConnectionId: B_DoppHUbpEt3yaZGcfZJA
+2026-03-28 11:06:47.148 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-03-28 11:06:47.169 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:06:47.173 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:06:47.179 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:06:47.319 +05:30 [INF] Received HTTP response headers after 130.7926ms - 200
+2026-03-28 11:06:47.324 +05:30 [INF] End processing HTTP request after 151.4437ms - 200
+2026-03-28 11:06:47.334 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:06:47.340 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:06:47.352 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:06:47.357 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-03-28 11:06:47.379 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-03-28 11:06:47.441 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-03-28 11:06:47.462 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:06:47.494 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 127.8949ms
+2026-03-28 11:06:47.507 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:06:47.510 +05:30 [INF] HTTP GET /api/notifications responded 200 in 338.4533 ms
+2026-03-28 11:06:47.524 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 376.2601ms
+2026-03-28 11:07:18.035 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-28 11:07:18.048 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:18.052 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:18.061 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:18.174 +05:30 [INF] Received HTTP response headers after 107.8712ms - 200
+2026-03-28 11:07:18.180 +05:30 [INF] End processing HTTP request after 128.2855ms - 200
+2026-03-28 11:07:18.185 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:18.194 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:18.202 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:07:18.209 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:07:18.214 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 163.0825 ms
+2026-03-28 11:07:18.232 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 196.7089ms
+2026-03-28 11:07:18.405 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=Xty2BOx4LYVbapFCLwOlSw&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - null null
+2026-03-28 11:07:18.419 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:18.426 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:18.432 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:18.529 +05:30 [INF] Received HTTP response headers after 92.6725ms - 200
+2026-03-28 11:07:18.537 +05:30 [INF] End processing HTTP request after 110.9936ms - 200
+2026-03-28 11:07:18.546 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:18.551 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:18.559 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-03-28 11:07:18.589 +05:30 [INF] 🔌 SignalR connected | User: a3785f1d-0314-4060-897b-11850e7062a5 | ConnectionId: zRuHggKBL0FCRnTxGo-k_w
+2026-03-28 11:07:18.747 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-03-28 11:07:18.760 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:18.764 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:18.768 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:18.860 +05:30 [INF] Received HTTP response headers after 87.3298ms - 200
+2026-03-28 11:07:18.865 +05:30 [INF] End processing HTTP request after 101.3868ms - 200
+2026-03-28 11:07:18.871 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:18.879 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:18.889 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:07:18.894 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-03-28 11:07:18.913 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-03-28 11:07:18.929 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-03-28 11:07:18.939 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:07:18.945 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 41.9979ms
+2026-03-28 11:07:18.949 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:07:18.956 +05:30 [INF] HTTP GET /api/notifications responded 200 in 192.5389 ms
+2026-03-28 11:07:18.967 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 219.9244ms
+2026-03-28 11:07:21.970 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-28 11:07:21.984 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:21.993 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:21.997 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:22.211 +05:30 [INF] Received HTTP response headers after 202.0664ms - 200
+2026-03-28 11:07:22.224 +05:30 [INF] End processing HTTP request after 230.6377ms - 200
+2026-03-28 11:07:22.232 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:22.243 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:22.252 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:07:22.258 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:07:22.263 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 270.6777 ms
+2026-03-28 11:07:22.293 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 322.3708ms
+2026-03-28 11:07:22.615 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=5Vc_RWxiPdeH54CytdUOIg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - null null
+2026-03-28 11:07:22.641 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:22.645 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:22.650 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:22.763 +05:30 [INF] Received HTTP response headers after 105.122ms - 200
+2026-03-28 11:07:22.770 +05:30 [INF] End processing HTTP request after 124.3665ms - 200
+2026-03-28 11:07:22.775 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:22.782 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:22.791 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-03-28 11:07:22.812 +05:30 [INF] 🔌 SignalR connected | User: a3785f1d-0314-4060-897b-11850e7062a5 | ConnectionId: 7XXfWQ8liddWq5aiZNGj0w
+2026-03-28 11:07:22.965 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-03-28 11:07:22.981 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:22.989 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:22.995 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:23.110 +05:30 [INF] Received HTTP response headers after 109.279ms - 200
+2026-03-28 11:07:23.116 +05:30 [INF] End processing HTTP request after 127.5171ms - 200
+2026-03-28 11:07:23.124 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:23.132 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:23.144 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:07:23.151 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-03-28 11:07:23.175 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-03-28 11:07:23.193 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-03-28 11:07:23.206 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:07:23.212 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 50.3426ms
+2026-03-28 11:07:23.221 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:07:23.228 +05:30 [INF] HTTP GET /api/notifications responded 200 in 240.7062 ms
+2026-03-28 11:07:23.239 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 274.0761ms
+2026-03-28 11:07:30.719 +05:30 [INF] 🔌 SignalR disconnected | User: a3785f1d-0314-4060-897b-11850e7062a5
+2026-03-28 11:07:30.719 +05:30 [INF] 🔌 SignalR disconnected | User: a3785f1d-0314-4060-897b-11850e7062a5
+2026-03-28 11:07:30.747 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-03-28 11:07:30.719 +05:30 [INF] 🔌 SignalR disconnected | User: a3785f1d-0314-4060-897b-11850e7062a5
+2026-03-28 11:07:30.759 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-03-28 11:07:30.763 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 8119.3652 ms
+2026-03-28 11:07:30.768 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-03-28 11:07:30.771 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 12346.0095 ms
+2026-03-28 11:07:30.778 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=5Vc_RWxiPdeH54CytdUOIg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - 101 null null 8163.1142ms
+2026-03-28 11:07:30.784 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 44058.2635 ms
+2026-03-28 11:07:30.791 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=Xty2BOx4LYVbapFCLwOlSw&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - 101 null null 12385.6486ms
+2026-03-28 11:07:30.820 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=-7iaq5aj7fJ_uJ4uxtLv-A&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - 101 null null 44123.3154ms
+2026-03-28 11:07:31.402 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-28 11:07:31.419 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:31.428 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:31.439 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:31.644 +05:30 [INF] Received HTTP response headers after 192.5723ms - 200
+2026-03-28 11:07:31.652 +05:30 [INF] End processing HTTP request after 224.3551ms - 200
+2026-03-28 11:07:31.664 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:31.689 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:31.722 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:07:31.737 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:07:31.741 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 317.9923 ms
+2026-03-28 11:07:31.770 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 367.6189ms
+2026-03-28 11:07:32.064 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=Ido66NFEQWgQQJL4606mAA&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - null null
+2026-03-28 11:07:32.089 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:32.096 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:32.103 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:32.269 +05:30 [INF] Received HTTP response headers after 161.7598ms - 200
+2026-03-28 11:07:32.290 +05:30 [INF] End processing HTTP request after 193.5967ms - 200
+2026-03-28 11:07:32.304 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:32.321 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:32.339 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-03-28 11:07:32.386 +05:30 [INF] 🔌 SignalR connected | User: a3785f1d-0314-4060-897b-11850e7062a5 | ConnectionId: FMPmv1CkNx95n1AQR73eBQ
+2026-03-28 11:07:32.664 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-03-28 11:07:32.680 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:32.684 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:32.688 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:32.809 +05:30 [INF] Received HTTP response headers after 108.7702ms - 200
+2026-03-28 11:07:32.816 +05:30 [INF] End processing HTTP request after 132.7942ms - 200
+2026-03-28 11:07:32.821 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:32.829 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:32.838 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:07:32.846 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-03-28 11:07:32.870 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-03-28 11:07:32.886 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-03-28 11:07:32.896 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:07:32.903 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 49.5623ms
+2026-03-28 11:07:32.910 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:07:32.915 +05:30 [INF] HTTP GET /api/notifications responded 200 in 232.3201 ms
+2026-03-28 11:07:32.924 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 259.5145ms
+2026-03-28 11:07:33.649 +05:30 [INF] 🔌 SignalR disconnected | User: a3785f1d-0314-4060-897b-11850e7062a5
+2026-03-28 11:07:33.656 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-03-28 11:07:33.666 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 1574.5957 ms
+2026-03-28 11:07:33.681 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=Ido66NFEQWgQQJL4606mAA&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - 101 null null 1616.7597ms
+2026-03-28 11:07:46.505 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.placed | Offset: 18
+2026-03-28 11:07:46.530 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:07:46.542 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: 🛒 Order Placed!
+2026-03-28 11:08:15.348 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 36
+2026-03-28 11:08:15.392 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:08:15.412 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:08:17.976 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 37
+2026-03-28 11:08:17.998 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:08:18.009 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:08:21.390 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 38
+2026-03-28 11:08:21.414 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:08:21.425 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:08:32.090 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.payment.success | Offset: 7
+2026-03-28 11:08:32.121 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:08:32.149 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: 💳 Payment Successful!
+2026-03-28 11:08:32.697 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-28 11:08:32.712 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:08:32.721 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:08:32.727 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:08:32.857 +05:30 [INF] Received HTTP response headers after 123.9257ms - 200
+2026-03-28 11:08:32.864 +05:30 [INF] End processing HTTP request after 142.5717ms - 200
+2026-03-28 11:08:32.869 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:08:32.877 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:08:32.886 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:08:32.895 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:08:32.903 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 184.4718 ms
+2026-03-28 11:08:32.913 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 215.7889ms
+2026-03-28 11:08:33.070 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=syTWjdPZ-3P7XP-Z5RCWUg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - null null
+2026-03-28 11:08:33.083 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:08:33.088 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:08:33.093 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:08:33.193 +05:30 [INF] Received HTTP response headers after 95.0674ms - 200
+2026-03-28 11:08:33.200 +05:30 [INF] End processing HTTP request after 112.0104ms - 200
+2026-03-28 11:08:33.207 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:08:33.214 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:08:33.222 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-03-28 11:08:33.243 +05:30 [INF] 🔌 SignalR connected | User: a3785f1d-0314-4060-897b-11850e7062a5 | ConnectionId: Yl5oR5CheDjbXCPqXoV8QQ
+2026-03-28 11:08:33.418 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-03-28 11:08:33.431 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:08:33.436 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:08:33.441 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:08:33.565 +05:30 [INF] Received HTTP response headers after 118.209ms - 200
+2026-03-28 11:08:33.573 +05:30 [INF] End processing HTTP request after 137.1882ms - 200
+2026-03-28 11:08:33.581 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:08:33.592 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:08:33.601 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:08:33.608 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-03-28 11:08:33.638 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-03-28 11:08:33.661 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-03-28 11:08:33.670 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:08:33.678 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 57.1689ms
+2026-03-28 11:08:33.683 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-03-28 11:08:33.688 +05:30 [INF] HTTP GET /api/notifications responded 200 in 252.8215 ms
+2026-03-28 11:08:33.698 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 279.7046ms
+2026-03-28 11:09:06.890 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 39
+2026-03-28 11:09:09.894 +05:30 [INF] Executed DbCommand (1,600ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:09:27.426 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:10:08.218 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 40
+2026-03-28 11:10:08.365 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:19:19.913 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:19:20.050 +05:30 [INF] 🔌 SignalR disconnected | User: a3785f1d-0314-4060-897b-11850e7062a5
+2026-03-28 11:19:20.074 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-03-28 11:19:20.097 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 646996.9830 ms
+2026-03-28 11:19:20.145 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=syTWjdPZ-3P7XP-Z5RCWUg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - 101 null null 647065.8948ms
+2026-03-28 11:19:20.471 +05:30 [ERR] ❌ Message processing error
+Confluent.Kafka.KafkaException: Broker: Unknown member
+   at Confluent.Kafka.Impl.SafeKafkaHandle.Commit(IEnumerable`1 offsets)
+   at Confluent.Kafka.Consumer`2.Commit(IEnumerable`1 offsets)
+   at Confluent.Kafka.Consumer`2.Commit(ConsumeResult`2 result)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 84
+2026-03-28 11:19:20.760 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Application maximum poll interval (300000ms) exceeded by 494ms
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-28 11:19:21.784 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-03-28 11:19:21.839 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:19:21.936 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:19:21.967 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:19:22.148 +05:30 [INF] Received HTTP response headers after 172.6732ms - 200
+2026-03-28 11:19:22.154 +05:30 [INF] End processing HTTP request after 221.1615ms - 200
+2026-03-28 11:19:22.159 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:19:22.176 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:19:22.194 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:19:22.206 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-03-28 11:19:22.211 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 361.1418 ms
+2026-03-28 11:19:22.216 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 432.7086ms
+2026-03-28 11:19:22.388 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=ODX0tfT-meeZfLEg0qSyhw&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.FpRVl_RsSTlRUwCXddZZ3aATYdbUfBwXVQ3Lww4NLBabCfYksikSSdQNxALp-a8r9mjphghn2_N1R3OsTWDTgNjgaPko3ryd6Pi6yau480FCxScefwD3UA05WUJ_GlHOvMRZylINogyeg8WjwR6vpGZgne7RVcLcWxpnkC18P7Mka9jxlu_p_ev9uyRdcyhsqXZqcQOi5ZZPOOI_g4DpgCQkeqmMb_wanpuOnmgUGN_JnKmR5MPDQdmk24KL7KbhNYVziIoiCZVxKI4pg9K6RE9TbIsYHhZOgM651r58Z_38ySllcHSZ4aGmrQc-tzz8WaOZN9rO9j_8AWdoOZbYfg.AK1frQi3Kzronzue9oeBJw.mf-FUPlMxTLsRort-fMSibpQH2JpUHifieYes2jN9_An8DuFlXJcmld2w2e95lAD22ibQ1xknWnbpKgi3SyVPhqDxSNvoVOuWZ2r0zLw2GohdhcUhBmn0bQUv14M2jjSumxNGpTOgA_4awrJ8q5bNs1CYMAyfCU-AeJkMeTt52qepmfj7L9b0J5hrYRUOphevM4emML55h57gpqm91Vd5iqhfoVNqc2WBEW4t3BHT83gHu2UC99Lqp1mXyM2wJxMmCzELNzp2U5DAZJp9E0LEa7BOaFGyDVMaU6o7SoWf3IAsQSWzjJCC9Un0ks0XrmHZm2tYVCwEGLgzQtMZYOK54nlgZVZoUNoC10ExWX6-dvetkqy_OqWtWIGfZtGZvNwZq0NvrxaZdmeWupShWHwL5U-YlCSAxKGiiPwfY47777aVbPdLnFfmF-42JTuZ9dCOCW0kd9u9g6d2ZYYzsRGcwPZ1e938ZEZ85oocjDeQbBYikcD9zadvgXbmtnPk2LcX7RkG_LvukiDliRP9bEpCmGhtAqH_t6lvOq0LmoJlne7QU0Sc4XzBs9XmrXyqXdRoADtudfMJsidhsJ0GQqxd3ddqD52ifJGlyDnUxjQEInOmjE6cDmeHLmNTOSySyFcy0wnQabNVYnq6bYVUdgI9A5QeoJ8U7pR2-qGWoP11wdL8xjCzBcxCYw0t1SXiuHq2hzTTB8r5EbowMSo1ep58V1dwKVXRsMG6xLisqwx0uy5vJPfzbEdWRzZjKaHj224kxeAbLghj5h_aF9G4pQVP1xwiwhXegULhE_MXPj5E1zpaDCnefZDrcTRtg0ysqmWU8LKmiZoFNLC7JUeTpxLi_FiMPUY4_IVSC3oHgT9IDvuMJS4jYWhHEIoKVevj70f4j_2CYa5MYAKsHJgIZEVjnBs6XyMHstNAreUQGbQ5J84RrW1bFkDSssGdbZY3Ky_kjBE3ko94JUo7amieR-ZJ-CKudwQrMjzAUio51yC23gCNKBqAveBBtTQAXloYugRLqJXGW12MJjHqNm7v4HaWdAavBsCTljuXmpuBpbYvTysifqm6MaETcuIlDUqEAAi8U1UfKPz6BCFD8OJBCfaGZf3ERvIRbF0pv5vlfl8sI6G8R_30WVmBZXgSSKJ1_5l0u4U2nsK-D6DI_nllmE4kM0WrMXgOqTI10KjY5V-Sdfz6K4qinGqSMbqI4C5ZfcknRr6BWoros5_mYxlEA9G2KGbBqfFkIwtTcXvILFL-pR92peY1TWxdbUOEKCblzwx6xDjLDYapqY3GPHWHKjSqLPbRoyN0vQWHKQf-uj-HILyjt3A4QfSzpyYgey2aT4b7U7PJ9PpRxXbxzBjDdr0LPEHrqSyRrq0B2DBSBQt6_8SwCGfFMeHG9LR0o4xoqjhmyO7f7_96JK0RluMIrbskippCCIRIT7eDlSaUyTy6dWwnIHw7RUTw4_8j3sOy9EdE0B8JRwaSKzUaZu3ymVAdZzMrAl51mIKYNIjnrMxZtgGwpb1AumLQoQb-b4iGkSxdaJK0qHSN5k-EciI04SXLmTODElx6ZKQOe_pFVoGIBQ4ABwoUbJO3LGZpse_K4NReRFfRHdja3NRoWAcQhKAU6-m2tfIi0Z35zfaffdtSxDyXyA6tEy4Bxtm7UkqfQdhfmn8e6wc3fXOZdzIa-3VVjHdQPbjwBtaYUsKO-7vAkj0TDBjeGe46dkKB-wMBeHXKp8WlY1jouVJnCbsd9cJHA_MKxsbIiUHZmE6DF3CbWKavBNl1XXrJPzcgMAsmvSz-gIp01KtzitKxSq6fk3ed0uQpNEpxHnYuEW9soIDiqJSV3v8ooF_vzWFO5tL9GOD08MWOMw5I_IZx-sRBPHq2JZ9i_Yp22dbNcmw8Hs5UOY-c78cQxn2OU8EIZqNOXWm.N742J83maxJH6Xx8LAisZKtiIslgEKv9K7jgbLuZIIE - null null
+2026-03-28 11:19:22.403 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:19:22.409 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:19:22.412 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:19:22.497 +05:30 [INF] Received HTTP response headers after 81.3631ms - 200
+2026-03-28 11:19:22.502 +05:30 [INF] End processing HTTP request after 93.1039ms - 200
+2026-03-28 11:19:22.505 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:19:22.516 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:19:22.520 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-03-28 11:19:22.560 +05:30 [INF] 🔌 SignalR connected | User: a3785f1d-0314-4060-897b-11850e7062a5 | ConnectionId: dVGyAcu98D71HFjrzdzvDQ
+2026-03-28 11:19:27.186 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 40
+2026-03-28 11:19:27.876 +05:30 [INF] Executed DbCommand (578ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:19:27.885 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:19:29.329 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 41
+2026-03-28 11:19:29.353 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:19:29.362 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:21:28.599 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 42
+2026-03-28 11:21:28.761 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:21:28.785 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:21:32.152 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 43
+2026-03-28 11:21:32.198 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:21:32.205 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:21:36.380 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 44
+2026-03-28 11:21:36.415 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:21:36.425 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:24:08.272 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 45
+2026-03-28 11:24:10.674 +05:30 [INF] Executed DbCommand (511ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:24:10.693 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!
+2026-03-28 11:27:57.069 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.confirmed | Offset: 46
+2026-03-28 11:28:23.410 +05:30 [INF] Executed DbCommand (21,388ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-03-28 11:28:23.488 +05:30 [INF] 📨 SignalR sent | User: a3785f1d-0314-4060-897b-11850e7062a5 | Title: ✅ Order Confirmed!

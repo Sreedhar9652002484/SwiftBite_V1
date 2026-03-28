@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using SwiftBite.UserService.Application.Users.Commands.CreateUser;
 using SwiftBite.UserService.Application.Users.Commands.UpdateProfile;
 using SwiftBite.UserService.Application.Users.Queries.GetProfile;
+using SwiftBite.Shared.Exceptions.Exceptions;  // ✅ ADD THIS
+using SwiftBite.Shared.Exceptions.Models;      // ✅ ADD THIS
 using System.Security.Claims;
 
 namespace SwiftBite.UserService.API.Controllers;
@@ -18,18 +20,23 @@ public class UsersController : ControllerBase
     public UsersController(IMediator mediator)
         => _mediator = mediator;
 
-    // ── GET api/users/profile ─────────────────────────────
+    /// <summary>
+    /// Get current user profile.
+    /// </summary>
     [HttpGet("profile")]
-    public async Task<IActionResult> GetProfile(
-       CancellationToken ct)
+    [ProducesResponseType(typeof(ApiResponse<object>), 200)]
+    [ProducesResponseType(typeof(ExceptionResponse), 401)]
+    [ProducesResponseType(typeof(ExceptionResponse), 500)]
+    public async Task<IActionResult> GetProfile(CancellationToken ct)
     {
         var authUserId =
             User.FindFirst("sub")?.Value
-            ?? User.FindFirst(
-                ClaimTypes.NameIdentifier)?.Value;
+            ?? User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
+        // ✅ CHANGE: Throw instead of return Unauthorized()
         if (string.IsNullOrEmpty(authUserId))
-            return Unauthorized();
+            throw new UnauthorizedException(
+                "User ID not found in claims.");
 
         var firstName =
             User.FindFirst("given_name")?.Value
@@ -43,86 +50,100 @@ public class UsersController : ControllerBase
             User.FindFirst("email")?.Value ?? "";
 
         var dobString =
-     User.FindFirst("birthdate")?.Value ??
-     User.FindFirst(ClaimTypes.DateOfBirth)?.Value ??
-     User.FindFirst("dob")?.Value;
+            User.FindFirst("birthdate")?.Value
+            ?? User.FindFirst(ClaimTypes.DateOfBirth)?.Value
+            ?? User.FindFirst("dob")?.Value;
 
         DateTime dateOfBirth;
-
         if (!DateTime.TryParse(dobString, out dateOfBirth))
         {
-            dateOfBirth = DateTime.MinValue; // or handle properly
+            dateOfBirth = DateTime.MinValue;
         }
-
 
         var result = await _mediator.Send(
             new GetProfileQuery(
                 authUserId, firstName,
                 lastName, email, dateOfBirth), ct);
 
-        return Ok(result);
+        // ✅ CHANGE: Wrap response with ApiResponse
+        return Ok(ApiResponse<object>.SuccessResponse(
+            result,
+            "Profile retrieved successfully.",
+            HttpContext.TraceIdentifier));
     }
 
-    // ── POST api/users/profile ────────────────────────────
+    /// <summary>
+    /// Create user profile (called right after registration).
+    /// </summary>
     [HttpPost("profile")]
-    [AllowAnonymous] // ✅ Called right after registration
+    [AllowAnonymous]
+    [ProducesResponseType(typeof(ApiResponse<object>), 201)]
+    [ProducesResponseType(typeof(ExceptionResponse), 400)]
+    [ProducesResponseType(typeof(ExceptionResponse), 409)]
+    [ProducesResponseType(typeof(ExceptionResponse), 500)]
     public async Task<IActionResult> CreateProfile(
         [FromBody] CreateUserRequest request,
         CancellationToken ct)
     {
-        try
-        {
-            var result = await _mediator.Send(
-                new CreateUserCommand(
-                    request.AuthUserId,
-                    request.FirstName,
-                    request.LastName,
-                    request.Email,
-                    request.DateOfBirth), ct);
+        // ✅ CHANGE: NO try-catch! Middleware handles it
+        var result = await _mediator.Send(
+            new CreateUserCommand(
+                request.AuthUserId,
+                request.FirstName,
+                request.LastName,
+                request.Email,
+                request.DateOfBirth), ct);
 
-            return CreatedAtAction( nameof(GetProfile), result);
-        }
-        catch (InvalidOperationException ex)
-        {
-            return Conflict(new { message = ex.Message });
-        }
+        // ✅ Middleware automatically catches InvalidOperationException
+        // and converts to 409 Conflict
+
+        return CreatedAtAction(
+            nameof(GetProfile),
+            ApiResponse<object>.SuccessResponse(
+                result,
+                "User profile created successfully.",
+                HttpContext.TraceIdentifier));
     }
 
-    // ── PUT api/users/profile ─────────────────────────────
+    /// <summary>
+    /// Update user profile.
+    /// </summary>
     [HttpPut("profile")]
+    [ProducesResponseType(typeof(ApiResponse<object>), 200)]
+    [ProducesResponseType(typeof(ExceptionResponse), 401)]
+    [ProducesResponseType(typeof(ExceptionResponse), 404)]
+    [ProducesResponseType(typeof(ExceptionResponse), 500)]
     public async Task<IActionResult> UpdateProfile(
         [FromBody] UpdateProfileRequest request,
         CancellationToken ct)
     {
         var authUserId = GetAuthUserId();
+
+        // ✅ CHANGE: Throw instead of return Unauthorized()
         if (authUserId is null)
-            return Unauthorized();
+            throw new UnauthorizedException(
+                "User ID not found in request.");
 
-        try
-        {
-            var result = await _mediator.Send(
-                new UpdateProfileCommand(
-                    authUserId,
-                    request.FirstName,
-                    request.LastName,
-                    request.PhoneNumber,
-                    request.ProfilePictureUrl), ct);
+        // ✅ CHANGE: NO try-catch! Middleware handles it
+        var result = await _mediator.Send(
+            new UpdateProfileCommand(
+                authUserId,
+                request.FirstName,
+                request.LastName,
+                request.PhoneNumber,
+                request.ProfilePictureUrl), ct);
 
-            return Ok(result);
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
+        return Ok(ApiResponse<object>.SuccessResponse(
+            result,
+            "Profile updated successfully.",
+            HttpContext.TraceIdentifier));
     }
 
-    // ── Helper — reads X-User-Id from Gateway ─────────────
     private string? GetAuthUserId()
         => Request.Headers["X-User-Id"].FirstOrDefault()
         ?? User.FindFirst("sub")?.Value;
 }
 
-// ── Request Models ────────────────────────────────────────
 public record CreateUserRequest(
     string AuthUserId,
     string FirstName,
@@ -133,5 +154,5 @@ public record CreateUserRequest(
 public record UpdateProfileRequest(
     string FirstName,
     string LastName,
-    string? PhoneNumber,
-    string? ProfilePictureUrl);
+    string? PhoneNumber = null,
+    string? ProfilePictureUrl = null);
