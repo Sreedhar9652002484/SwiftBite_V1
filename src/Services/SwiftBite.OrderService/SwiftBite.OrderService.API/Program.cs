@@ -7,6 +7,7 @@ using Serilog;
 using SwiftBite.OrderService.Application.Orders.Commands.PlaceOrder;
 using SwiftBite.OrderService.Infrastructure;
 using SwiftBite.OrderService.Infrastructure.Persistence;
+using SwiftBite.Shared.Exceptions.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -98,6 +99,7 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+app.UseGlobalExceptionHandler();
 // ? Auto-migrate on startup
 using (var scope = app.Services.CreateScope())
 {

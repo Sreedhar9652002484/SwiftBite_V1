@@ -8,6 +8,7 @@ using SwiftBite.NotificationService.Application.Notifications.Commands.SendNotif
 using SwiftBite.NotificationService.Infrastructure;
 using SwiftBite.NotificationService.Infrastructure.Persistence;
 using SwiftBite.NotificationService.Infrastructure.SignalR;
+using SwiftBite.Shared.Exceptions.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -123,6 +124,7 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+app.UseGlobalExceptionHandler();
 // ? Auto-migrate on startup
 using (var scope = app.Services.CreateScope())
 {

@@ -1,0 +1,1287 @@
+2026-03-28 10:55:47.236 +05:30 [INF] Executed DbCommand (232ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 10:55:51.844 +05:30 [INF] Executed DbCommand (490ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 10:55:52.323 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 10:55:52.839 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 10:55:53.373 +05:30 [INF] Executed DbCommand (125ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 10:55:54.573 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 10:56:13.306 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 10:56:34.302 +05:30 [INF] Now listening on: http://localhost:5003
+2026-03-28 10:56:35.368 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 10:56:36.567 +05:30 [INF] Hosting environment: Development
+2026-03-28 10:56:36.735 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.RestaurantService\SwiftBite.RestaurantService.API
+2026-03-28 10:56:40.930 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/index.html - null null
+2026-03-28 10:56:43.879 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/swagger/index.html - 200 null text/html;charset=utf-8 2975.245ms
+2026-03-28 10:56:44.030 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 10:56:44.042 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/_vs/browserLink - null null
+2026-03-28 10:56:47.014 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/_framework/aspnetcore-browser-refresh.js - 200 16547 application/javascript; charset=utf-8 2983.774ms
+2026-03-28 10:56:47.295 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/_vs/browserLink - 200 null text/javascript; charset=UTF-8 3252.2702ms
+2026-03-28 10:56:54.401 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json - null null
+2026-03-28 10:56:54.854 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 453.8495ms
+2026-03-28 10:57:11.594 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-28 10:57:11.684 +05:30 [INF] CORS policy execution successful.
+2026-03-28 10:57:12.749 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 10:57:12.902 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 10:57:13.125 +05:30 [INF] Received HTTP response headers after 197.7075ms - 200
+2026-03-28 10:57:13.200 +05:30 [INF] End processing HTTP request after 473.3236ms - 200
+2026-03-28 10:57:13.258 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-28 10:57:13.530 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-28 10:57:13.609 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 10:57:13.617 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 10:57:13.684 +05:30 [INF] Received HTTP response headers after 56.3559ms - 200
+2026-03-28 10:57:13.690 +05:30 [INF] End processing HTTP request after 81.2774ms - 200
+2026-03-28 10:57:13.705 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-28 10:57:13.726 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-28 10:57:13.971 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 10:57:13.976 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 10:57:14.140 +05:30 [INF] Received HTTP response headers after 155.5862ms - 200
+2026-03-28 10:57:14.148 +05:30 [INF] End processing HTTP request after 177.3581ms - 200
+2026-03-28 10:57:14.157 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 10:57:14.186 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "3b42b20c-4425-4de9-9f8f-76c7382a8062",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774675616,
+  "nbf": 1774675616,
+  "exp": 1774679216,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-28 10:57:14.287 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 10:57:14.484 +05:30 [INF] Route matched with {action = "GetById", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 10:57:14.566 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-28 10:57:17.218 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-03-28 10:57:17.535 +05:30 [INF] Executed DbCommand (139ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[AverageDeliveryTimeMinutes], [t].[AverageRating], [t].[BannerUrl], [t].[City], [t].[CreatedAt], [t].[CuisineType], [t].[Description], [t].[Email], [t].[IsOpen], [t].[Latitude], [t].[LogoUrl], [t].[Longitude], [t].[MinimumOrderAmount], [t].[Name], [t].[OwnerId], [t].[PhoneNumber], [t].[PinCode], [t].[Status], [t].[TotalRatings], [t].[UpdatedAt], [t0].[Id], [t0].[CreatedAt], [t0].[Description], [t0].[DisplayOrder], [t0].[IsActive], [t0].[Name], [t0].[RestaurantId], [t0].[Id0], [t0].[CategoryId], [t0].[CreatedAt0], [t0].[Description0], [t0].[ImageUrl], [t0].[IsBestseller], [t0].[IsGlutenFree], [t0].[IsVegan], [t0].[IsVegetarian], [t0].[Name0], [t0].[PreparationTimeMinutes], [t0].[Price], [t0].[RestaurantId0], [t0].[Status], [t0].[UpdatedAt], [r0].[Id], [r0].[CloseTime], [r0].[DayOfWeek], [r0].[IsClosed], [r0].[OpenTime], [r0].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id] AS [Id0], [m0].[CategoryId], [m0].[CreatedAt] AS [CreatedAt0], [m0].[Description] AS [Description0], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name] AS [Name0], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId] AS [RestaurantId0], [m0].[Status], [m0].[UpdatedAt]
+    FROM [MenuCategories] AS [m]
+    LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+) AS [t0] ON [t].[Id] = [t0].[RestaurantId]
+LEFT JOIN [RestaurantHours] AS [r0] ON [t].[Id] = [r0].[RestaurantId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]
+2026-03-28 10:57:18.033 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle - application/json 2
+2026-03-28 10:57:18.052 +05:30 [INF] CORS policy execution successful.
+2026-03-28 10:57:18.064 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 10:57:18.070 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 10:57:18.221 +05:30 [INF] Received HTTP response headers after 146.1969ms - 200
+2026-03-28 10:57:18.230 +05:30 [INF] End processing HTTP request after 165.2622ms - 200
+2026-03-28 10:57:18.235 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 10:57:18.248 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "3b42b20c-4425-4de9-9f8f-76c7382a8062",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774675616,
+  "nbf": 1774675616,
+  "exp": 1774679216,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-28 10:57:18.301 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API)'
+2026-03-28 10:57:18.334 +05:30 [INF] Route matched with {action = "ToggleOpen", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ToggleOpen(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 10:57:18.468 +05:30 [INF] 💾 Cache SET: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 10:57:18.509 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 10:57:18.567 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API) in 4041.7746ms
+2026-03-28 10:57:18.576 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 10:57:18.593 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 6884.0779 ms
+2026-03-28 10:57:18.630 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 7036.2308ms
+2026-03-28 10:57:18.670 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[AverageDeliveryTimeMinutes], [t].[AverageRating], [t].[BannerUrl], [t].[City], [t].[CreatedAt], [t].[CuisineType], [t].[Description], [t].[Email], [t].[IsOpen], [t].[Latitude], [t].[LogoUrl], [t].[Longitude], [t].[MinimumOrderAmount], [t].[Name], [t].[OwnerId], [t].[PhoneNumber], [t].[PinCode], [t].[Status], [t].[TotalRatings], [t].[UpdatedAt], [t0].[Id], [t0].[CreatedAt], [t0].[Description], [t0].[DisplayOrder], [t0].[IsActive], [t0].[Name], [t0].[RestaurantId], [t0].[Id0], [t0].[CategoryId], [t0].[CreatedAt0], [t0].[Description0], [t0].[ImageUrl], [t0].[IsBestseller], [t0].[IsGlutenFree], [t0].[IsVegan], [t0].[IsVegetarian], [t0].[Name0], [t0].[PreparationTimeMinutes], [t0].[Price], [t0].[RestaurantId0], [t0].[Status], [t0].[UpdatedAt], [r0].[Id], [r0].[CloseTime], [r0].[DayOfWeek], [r0].[IsClosed], [r0].[OpenTime], [r0].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id] AS [Id0], [m0].[CategoryId], [m0].[CreatedAt] AS [CreatedAt0], [m0].[Description] AS [Description0], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name] AS [Name0], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId] AS [RestaurantId0], [m0].[Status], [m0].[UpdatedAt]
+    FROM [MenuCategories] AS [m]
+    LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+) AS [t0] ON [t].[Id] = [t0].[RestaurantId]
+LEFT JOIN [RestaurantHours] AS [r0] ON [t].[Id] = [r0].[RestaurantId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]
+2026-03-28 10:57:19.401 +05:30 [INF] Executed DbCommand (260ms) [Parameters=[@p21='?' (DbType = Guid), @p0='?' (Size = 250), @p1='?' (DbType = Int32), @p2='?' (DbType = Double), @p3='?' (Size = 500), @p4='?' (Size = 50), @p5='?' (DbType = DateTime2), @p6='?' (Size = 30), @p7='?' (Size = 500), @p8='?' (Size = 100), @p9='?' (DbType = Boolean), @p10='?' (DbType = Double), @p11='?' (Size = 500), @p12='?' (DbType = Double), @p13='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p14='?' (Size = 100), @p15='?' (Size = 450), @p16='?' (Size = 20), @p17='?' (Size = 10), @p18='?' (Size = 30), @p19='?' (DbType = Int32), @p20='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Restaurants] SET [Address] = @p0, [AverageDeliveryTimeMinutes] = @p1, [AverageRating] = @p2, [BannerUrl] = @p3, [City] = @p4, [CreatedAt] = @p5, [CuisineType] = @p6, [Description] = @p7, [Email] = @p8, [IsOpen] = @p9, [Latitude] = @p10, [LogoUrl] = @p11, [Longitude] = @p12, [MinimumOrderAmount] = @p13, [Name] = @p14, [OwnerId] = @p15, [PhoneNumber] = @p16, [PinCode] = @p17, [Status] = @p18, [TotalRatings] = @p19, [UpdatedAt] = @p20
+OUTPUT 1
+WHERE [Id] = @p21;
+2026-03-28 10:57:19.473 +05:30 [INF] 🗑️ Cache REMOVE: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 10:57:19.481 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse'.
+2026-03-28 10:57:19.497 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API) in 1151.2429ms
+2026-03-28 10:57:19.503 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API)'
+2026-03-28 10:57:19.509 +05:30 [INF] HTTP PUT /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle responded 200 in 1452.6182 ms
+2026-03-28 10:57:19.519 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle - 200 null application/json; charset=utf-8 1486.7538ms
+2026-03-28 11:05:02.569 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-28 11:05:02.756 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:02.880 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:02.891 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:03.109 +05:30 [INF] Received HTTP response headers after 208.5002ms - 200
+2026-03-28 11:05:03.126 +05:30 [INF] End processing HTTP request after 248.6869ms - 200
+2026-03-28 11:05:03.153 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:03.190 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "3b42b20c-4425-4de9-9f8f-76c7382a8062",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774675616,
+  "nbf": 1774675616,
+  "exp": 1774679216,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-28 11:05:03.230 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:03.268 +05:30 [INF] Route matched with {action = "GetById", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:05:03.666 +05:30 [INF] Executed DbCommand (81ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[AverageDeliveryTimeMinutes], [t].[AverageRating], [t].[BannerUrl], [t].[City], [t].[CreatedAt], [t].[CuisineType], [t].[Description], [t].[Email], [t].[IsOpen], [t].[Latitude], [t].[LogoUrl], [t].[Longitude], [t].[MinimumOrderAmount], [t].[Name], [t].[OwnerId], [t].[PhoneNumber], [t].[PinCode], [t].[Status], [t].[TotalRatings], [t].[UpdatedAt], [t0].[Id], [t0].[CreatedAt], [t0].[Description], [t0].[DisplayOrder], [t0].[IsActive], [t0].[Name], [t0].[RestaurantId], [t0].[Id0], [t0].[CategoryId], [t0].[CreatedAt0], [t0].[Description0], [t0].[ImageUrl], [t0].[IsBestseller], [t0].[IsGlutenFree], [t0].[IsVegan], [t0].[IsVegetarian], [t0].[Name0], [t0].[PreparationTimeMinutes], [t0].[Price], [t0].[RestaurantId0], [t0].[Status], [t0].[UpdatedAt], [r0].[Id], [r0].[CloseTime], [r0].[DayOfWeek], [r0].[IsClosed], [r0].[OpenTime], [r0].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id] AS [Id0], [m0].[CategoryId], [m0].[CreatedAt] AS [CreatedAt0], [m0].[Description] AS [Description0], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name] AS [Name0], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId] AS [RestaurantId0], [m0].[Status], [m0].[UpdatedAt]
+    FROM [MenuCategories] AS [m]
+    LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+) AS [t0] ON [t].[Id] = [t0].[RestaurantId]
+LEFT JOIN [RestaurantHours] AS [r0] ON [t].[Id] = [r0].[RestaurantId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]
+2026-03-28 11:05:03.767 +05:30 [INF] 💾 Cache SET: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 11:05:03.777 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:03.787 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API) in 506.2838ms
+2026-03-28 11:05:03.798 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:03.808 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 1042.5274 ms
+2026-03-28 11:05:03.824 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 1267.7212ms
+2026-03-28 11:05:27.161 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-28 11:05:27.182 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:27.196 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:27.206 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:27.390 +05:30 [INF] Received HTTP response headers after 177.2744ms - 200
+2026-03-28 11:05:27.401 +05:30 [INF] End processing HTTP request after 205.2656ms - 200
+2026-03-28 11:05:27.409 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:27.423 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:27.438 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:27.505 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:05:27.805 +05:30 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+FROM [Restaurants] AS [r]
+WHERE [r].[Status] = N'Active'
+ORDER BY [r].[AverageRating] DESC
+2026-03-28 11:05:27.903 +05:30 [INF] 💾 Cache SET: restaurants:all
+2026-03-28 11:05:27.915 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:27.953 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 438.4097ms
+2026-03-28 11:05:27.988 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:27.995 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 801.5169 ms
+2026-03-28 11:05:28.016 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 200 null application/json; charset=utf-8 854.7189ms
+2026-03-28 11:05:34.129 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/8329bd29-b9fa-4ff5-b4bc-53e96e612249/menu - null null
+2026-03-28 11:05:34.153 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:34.157 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/8329bd29-b9fa-4ff5-b4bc-53e96e612249 - null null
+2026-03-28 11:05:34.175 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:34.193 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:34.200 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:34.206 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:34.223 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:34.343 +05:30 [INF] Received HTTP response headers after 131.4715ms - 200
+2026-03-28 11:05:34.352 +05:30 [INF] End processing HTTP request after 176.652ms - 200
+2026-03-28 11:05:34.357 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:34.370 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:34.381 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:34.403 +05:30 [INF] Route matched with {action = "GetMenu", controller = "MenuCategories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMenu(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController (SwiftBite.RestaurantService.API).
+2026-03-28 11:05:34.464 +05:30 [INF] Received HTTP response headers after 232.844ms - 200
+2026-03-28 11:05:34.474 +05:30 [INF] End processing HTTP request after 268.4844ms - 200
+2026-03-28 11:05:34.483 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:34.491 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:34.507 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:34.513 +05:30 [INF] Route matched with {action = "GetById", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:05:34.549 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[AverageDeliveryTimeMinutes], [t].[AverageRating], [t].[BannerUrl], [t].[City], [t].[CreatedAt], [t].[CuisineType], [t].[Description], [t].[Email], [t].[IsOpen], [t].[Latitude], [t].[LogoUrl], [t].[Longitude], [t].[MinimumOrderAmount], [t].[Name], [t].[OwnerId], [t].[PhoneNumber], [t].[PinCode], [t].[Status], [t].[TotalRatings], [t].[UpdatedAt], [t0].[Id], [t0].[CreatedAt], [t0].[Description], [t0].[DisplayOrder], [t0].[IsActive], [t0].[Name], [t0].[RestaurantId], [t0].[Id0], [t0].[CategoryId], [t0].[CreatedAt0], [t0].[Description0], [t0].[ImageUrl], [t0].[IsBestseller], [t0].[IsGlutenFree], [t0].[IsVegan], [t0].[IsVegetarian], [t0].[Name0], [t0].[PreparationTimeMinutes], [t0].[Price], [t0].[RestaurantId0], [t0].[Status], [t0].[UpdatedAt], [r0].[Id], [r0].[CloseTime], [r0].[DayOfWeek], [r0].[IsClosed], [r0].[OpenTime], [r0].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id] AS [Id0], [m0].[CategoryId], [m0].[CreatedAt] AS [CreatedAt0], [m0].[Description] AS [Description0], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name] AS [Name0], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId] AS [RestaurantId0], [m0].[Status], [m0].[UpdatedAt]
+    FROM [MenuCategories] AS [m]
+    LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+) AS [t0] ON [t].[Id] = [t0].[RestaurantId]
+LEFT JOIN [RestaurantHours] AS [r0] ON [t].[Id] = [r0].[RestaurantId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]
+2026-03-28 11:05:34.565 +05:30 [INF] 💾 Cache SET: restaurant:8329bd29-b9fa-4ff5-b4bc-53e96e612249
+2026-03-28 11:05:34.570 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:34.577 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API) in 57.0104ms
+2026-03-28 11:05:34.585 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:34.590 +05:30 [INF] HTTP GET /api/restaurants/8329bd29-b9fa-4ff5-b4bc-53e96e612249 responded 200 in 385.9161 ms
+2026-03-28 11:05:34.590 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id], [m0].[CategoryId], [m0].[CreatedAt], [m0].[Description], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId], [m0].[Status], [m0].[UpdatedAt]
+FROM [MenuCategories] AS [m]
+LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+WHERE [m].[RestaurantId] = @__restaurantId_0 AND [m].[IsActive] = CAST(1 AS bit)
+ORDER BY [m].[DisplayOrder], [m].[Id]
+2026-03-28 11:05:34.602 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/8329bd29-b9fa-4ff5-b4bc-53e96e612249 - 200 null application/json; charset=utf-8 444.5332ms
+2026-03-28 11:05:34.643 +05:30 [INF] 💾 Cache SET: menu:8329bd29-b9fa-4ff5-b4bc-53e96e612249
+2026-03-28 11:05:34.649 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:34.658 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API) in 239.376ms
+2026-03-28 11:05:34.672 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:34.683 +05:30 [INF] HTTP GET /api/restaurants/8329bd29-b9fa-4ff5-b4bc-53e96e612249/menu responded 200 in 519.7586 ms
+2026-03-28 11:05:34.690 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/8329bd29-b9fa-4ff5-b4bc-53e96e612249/menu - 200 null application/json; charset=utf-8 560.9978ms
+2026-03-28 11:05:36.938 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-28 11:05:36.976 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:36.991 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:37.007 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:37.198 +05:30 [INF] Received HTTP response headers after 177.3333ms - 200
+2026-03-28 11:05:37.204 +05:30 [INF] End processing HTTP request after 213.1606ms - 200
+2026-03-28 11:05:37.217 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:37.222 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:37.237 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:37.241 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:05:37.318 +05:30 [INF] ⚡ Cache HIT: restaurants:all
+2026-03-28 11:05:37.452 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:37.464 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 196.8018ms
+2026-03-28 11:05:37.471 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:37.483 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 493.9490 ms
+2026-03-28 11:05:37.498 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 200 null application/json; charset=utf-8 560.0558ms
+2026-03-28 11:05:40.287 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/cd3f79c7-191a-490e-8f86-ba9b191118df - null null
+2026-03-28 11:05:40.299 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/cd3f79c7-191a-490e-8f86-ba9b191118df/menu - null null
+2026-03-28 11:05:40.303 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:40.316 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:40.321 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:40.324 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:40.329 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:40.336 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:40.485 +05:30 [INF] Received HTTP response headers after 141.5376ms - 200
+2026-03-28 11:05:40.492 +05:30 [INF] End processing HTTP request after 171.4265ms - 200
+2026-03-28 11:05:40.492 +05:30 [INF] Received HTTP response headers after 139.2121ms - 200
+2026-03-28 11:05:40.498 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:40.502 +05:30 [INF] End processing HTTP request after 178.0867ms - 200
+2026-03-28 11:05:40.511 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:40.515 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:40.523 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:40.528 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:40.533 +05:30 [INF] Route matched with {action = "GetById", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:05:40.543 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:40.562 +05:30 [INF] Route matched with {action = "GetMenu", controller = "MenuCategories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMenu(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController (SwiftBite.RestaurantService.API).
+2026-03-28 11:05:40.569 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[AverageDeliveryTimeMinutes], [t].[AverageRating], [t].[BannerUrl], [t].[City], [t].[CreatedAt], [t].[CuisineType], [t].[Description], [t].[Email], [t].[IsOpen], [t].[Latitude], [t].[LogoUrl], [t].[Longitude], [t].[MinimumOrderAmount], [t].[Name], [t].[OwnerId], [t].[PhoneNumber], [t].[PinCode], [t].[Status], [t].[TotalRatings], [t].[UpdatedAt], [t0].[Id], [t0].[CreatedAt], [t0].[Description], [t0].[DisplayOrder], [t0].[IsActive], [t0].[Name], [t0].[RestaurantId], [t0].[Id0], [t0].[CategoryId], [t0].[CreatedAt0], [t0].[Description0], [t0].[ImageUrl], [t0].[IsBestseller], [t0].[IsGlutenFree], [t0].[IsVegan], [t0].[IsVegetarian], [t0].[Name0], [t0].[PreparationTimeMinutes], [t0].[Price], [t0].[RestaurantId0], [t0].[Status], [t0].[UpdatedAt], [r0].[Id], [r0].[CloseTime], [r0].[DayOfWeek], [r0].[IsClosed], [r0].[OpenTime], [r0].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id] AS [Id0], [m0].[CategoryId], [m0].[CreatedAt] AS [CreatedAt0], [m0].[Description] AS [Description0], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name] AS [Name0], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId] AS [RestaurantId0], [m0].[Status], [m0].[UpdatedAt]
+    FROM [MenuCategories] AS [m]
+    LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+) AS [t0] ON [t].[Id] = [t0].[RestaurantId]
+LEFT JOIN [RestaurantHours] AS [r0] ON [t].[Id] = [r0].[RestaurantId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]
+2026-03-28 11:05:40.627 +05:30 [INF] 💾 Cache SET: restaurant:cd3f79c7-191a-490e-8f86-ba9b191118df
+2026-03-28 11:05:40.632 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:40.638 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API) in 86.8702ms
+2026-03-28 11:05:40.645 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:40.650 +05:30 [INF] HTTP GET /api/restaurants/cd3f79c7-191a-490e-8f86-ba9b191118df responded 200 in 330.3754 ms
+2026-03-28 11:05:40.659 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/cd3f79c7-191a-490e-8f86-ba9b191118df - 200 null application/json; charset=utf-8 371.6748ms
+2026-03-28 11:05:40.677 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id], [m0].[CategoryId], [m0].[CreatedAt], [m0].[Description], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId], [m0].[Status], [m0].[UpdatedAt]
+FROM [MenuCategories] AS [m]
+LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+WHERE [m].[RestaurantId] = @__restaurantId_0 AND [m].[IsActive] = CAST(1 AS bit)
+ORDER BY [m].[DisplayOrder], [m].[Id]
+2026-03-28 11:05:40.732 +05:30 [INF] 💾 Cache SET: menu:cd3f79c7-191a-490e-8f86-ba9b191118df
+2026-03-28 11:05:40.737 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:40.746 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API) in 175.6636ms
+2026-03-28 11:05:40.753 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:40.758 +05:30 [INF] HTTP GET /api/restaurants/cd3f79c7-191a-490e-8f86-ba9b191118df/menu responded 200 in 434.9325 ms
+2026-03-28 11:05:40.770 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/cd3f79c7-191a-490e-8f86-ba9b191118df/menu - 200 null application/json; charset=utf-8 470.8879ms
+2026-03-28 11:05:46.824 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-28 11:05:46.840 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:46.844 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:46.849 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:47.010 +05:30 [INF] Received HTTP response headers after 151.0424ms - 200
+2026-03-28 11:05:47.016 +05:30 [INF] End processing HTTP request after 172.0065ms - 200
+2026-03-28 11:05:47.026 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:47.035 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:47.046 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:47.054 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:05:47.089 +05:30 [INF] ⚡ Cache HIT: restaurants:all
+2026-03-28 11:05:47.098 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:47.108 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 32.6515ms
+2026-03-28 11:05:47.115 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:47.127 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 283.5092 ms
+2026-03-28 11:05:47.141 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 200 null application/json; charset=utf-8 318.1713ms
+2026-03-28 11:05:49.339 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-28 11:05:49.351 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/menu - null null
+2026-03-28 11:05:49.353 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:49.366 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:05:49.370 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:49.373 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:49.377 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:49.383 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:05:49.521 +05:30 [INF] Received HTTP response headers after 133.1364ms - 200
+2026-03-28 11:05:49.525 +05:30 [INF] Received HTTP response headers after 125.9974ms - 200
+2026-03-28 11:05:49.527 +05:30 [INF] End processing HTTP request after 156.4746ms - 200
+2026-03-28 11:05:49.532 +05:30 [INF] End processing HTTP request after 159.785ms - 200
+2026-03-28 11:05:49.537 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:49.541 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:05:49.547 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:49.553 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:05:49.557 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:49.563 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:49.570 +05:30 [INF] Route matched with {action = "GetById", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:05:49.574 +05:30 [INF] Route matched with {action = "GetMenu", controller = "MenuCategories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMenu(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController (SwiftBite.RestaurantService.API).
+2026-03-28 11:05:49.589 +05:30 [INF] ⚡ Cache HIT: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 11:05:49.598 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:49.610 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API) in 26.5245ms
+2026-03-28 11:05:49.613 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__restaurantId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id], [m0].[CategoryId], [m0].[CreatedAt], [m0].[Description], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId], [m0].[Status], [m0].[UpdatedAt]
+FROM [MenuCategories] AS [m]
+LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+WHERE [m].[RestaurantId] = @__restaurantId_0 AND [m].[IsActive] = CAST(1 AS bit)
+ORDER BY [m].[DisplayOrder], [m].[Id]
+2026-03-28 11:05:49.617 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:49.630 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 261.2012 ms
+2026-03-28 11:05:49.630 +05:30 [INF] 💾 Cache SET: menu:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 11:05:49.641 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 301.6708ms
+2026-03-28 11:05:49.643 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:05:49.664 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API) in 70.8667ms
+2026-03-28 11:05:49.671 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API)'
+2026-03-28 11:05:49.676 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/menu responded 200 in 304.1196 ms
+2026-03-28 11:05:49.688 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/menu - 200 null application/json; charset=utf-8 337.7334ms
+2026-03-28 11:07:00.001 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle - application/json 2
+2026-03-28 11:07:00.035 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:00.040 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:00.044 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:00.131 +05:30 [INF] Received HTTP response headers after 81.9816ms - 200
+2026-03-28 11:07:00.137 +05:30 [INF] End processing HTTP request after 97.215ms - 200
+2026-03-28 11:07:00.143 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:00.149 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "3b42b20c-4425-4de9-9f8f-76c7382a8062",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774675616,
+  "nbf": 1774675616,
+  "exp": 1774679216,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-28 11:07:00.163 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:00.167 +05:30 [INF] Route matched with {action = "ToggleOpen", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ToggleOpen(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:07:00.185 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[AverageDeliveryTimeMinutes], [t].[AverageRating], [t].[BannerUrl], [t].[City], [t].[CreatedAt], [t].[CuisineType], [t].[Description], [t].[Email], [t].[IsOpen], [t].[Latitude], [t].[LogoUrl], [t].[Longitude], [t].[MinimumOrderAmount], [t].[Name], [t].[OwnerId], [t].[PhoneNumber], [t].[PinCode], [t].[Status], [t].[TotalRatings], [t].[UpdatedAt], [t0].[Id], [t0].[CreatedAt], [t0].[Description], [t0].[DisplayOrder], [t0].[IsActive], [t0].[Name], [t0].[RestaurantId], [t0].[Id0], [t0].[CategoryId], [t0].[CreatedAt0], [t0].[Description0], [t0].[ImageUrl], [t0].[IsBestseller], [t0].[IsGlutenFree], [t0].[IsVegan], [t0].[IsVegetarian], [t0].[Name0], [t0].[PreparationTimeMinutes], [t0].[Price], [t0].[RestaurantId0], [t0].[Status], [t0].[UpdatedAt], [r0].[Id], [r0].[CloseTime], [r0].[DayOfWeek], [r0].[IsClosed], [r0].[OpenTime], [r0].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id] AS [Id0], [m0].[CategoryId], [m0].[CreatedAt] AS [CreatedAt0], [m0].[Description] AS [Description0], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name] AS [Name0], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId] AS [RestaurantId0], [m0].[Status], [m0].[UpdatedAt]
+    FROM [MenuCategories] AS [m]
+    LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+) AS [t0] ON [t].[Id] = [t0].[RestaurantId]
+LEFT JOIN [RestaurantHours] AS [r0] ON [t].[Id] = [r0].[RestaurantId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]
+2026-03-28 11:07:00.246 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@p21='?' (DbType = Guid), @p0='?' (Size = 250), @p1='?' (DbType = Int32), @p2='?' (DbType = Double), @p3='?' (Size = 500), @p4='?' (Size = 50), @p5='?' (DbType = DateTime2), @p6='?' (Size = 30), @p7='?' (Size = 500), @p8='?' (Size = 100), @p9='?' (DbType = Boolean), @p10='?' (DbType = Double), @p11='?' (Size = 500), @p12='?' (DbType = Double), @p13='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p14='?' (Size = 100), @p15='?' (Size = 450), @p16='?' (Size = 20), @p17='?' (Size = 10), @p18='?' (Size = 30), @p19='?' (DbType = Int32), @p20='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Restaurants] SET [Address] = @p0, [AverageDeliveryTimeMinutes] = @p1, [AverageRating] = @p2, [BannerUrl] = @p3, [City] = @p4, [CreatedAt] = @p5, [CuisineType] = @p6, [Description] = @p7, [Email] = @p8, [IsOpen] = @p9, [Latitude] = @p10, [LogoUrl] = @p11, [Longitude] = @p12, [MinimumOrderAmount] = @p13, [Name] = @p14, [OwnerId] = @p15, [PhoneNumber] = @p16, [PinCode] = @p17, [Status] = @p18, [TotalRatings] = @p19, [UpdatedAt] = @p20
+OUTPUT 1
+WHERE [Id] = @p21;
+2026-03-28 11:07:00.263 +05:30 [INF] 🗑️ Cache REMOVE: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 11:07:00.269 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse'.
+2026-03-28 11:07:00.275 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API) in 101.0559ms
+2026-03-28 11:07:00.280 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:00.285 +05:30 [INF] HTTP PUT /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle responded 200 in 246.7085 ms
+2026-03-28 11:07:00.293 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle - 200 null application/json; charset=utf-8 291.9798ms
+2026-03-28 11:07:02.962 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle - application/json 2
+2026-03-28 11:07:02.976 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:02.983 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:02.990 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:03.162 +05:30 [INF] Received HTTP response headers after 166.0954ms - 200
+2026-03-28 11:07:03.170 +05:30 [INF] End processing HTTP request after 186.9864ms - 200
+2026-03-28 11:07:03.176 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:03.184 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "3b42b20c-4425-4de9-9f8f-76c7382a8062",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774675616,
+  "nbf": 1774675616,
+  "exp": 1774679216,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-28 11:07:03.194 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:03.199 +05:30 [INF] Route matched with {action = "ToggleOpen", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ToggleOpen(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:07:03.217 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[AverageDeliveryTimeMinutes], [t].[AverageRating], [t].[BannerUrl], [t].[City], [t].[CreatedAt], [t].[CuisineType], [t].[Description], [t].[Email], [t].[IsOpen], [t].[Latitude], [t].[LogoUrl], [t].[Longitude], [t].[MinimumOrderAmount], [t].[Name], [t].[OwnerId], [t].[PhoneNumber], [t].[PinCode], [t].[Status], [t].[TotalRatings], [t].[UpdatedAt], [t0].[Id], [t0].[CreatedAt], [t0].[Description], [t0].[DisplayOrder], [t0].[IsActive], [t0].[Name], [t0].[RestaurantId], [t0].[Id0], [t0].[CategoryId], [t0].[CreatedAt0], [t0].[Description0], [t0].[ImageUrl], [t0].[IsBestseller], [t0].[IsGlutenFree], [t0].[IsVegan], [t0].[IsVegetarian], [t0].[Name0], [t0].[PreparationTimeMinutes], [t0].[Price], [t0].[RestaurantId0], [t0].[Status], [t0].[UpdatedAt], [r0].[Id], [r0].[CloseTime], [r0].[DayOfWeek], [r0].[IsClosed], [r0].[OpenTime], [r0].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id] AS [Id0], [m0].[CategoryId], [m0].[CreatedAt] AS [CreatedAt0], [m0].[Description] AS [Description0], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name] AS [Name0], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId] AS [RestaurantId0], [m0].[Status], [m0].[UpdatedAt]
+    FROM [MenuCategories] AS [m]
+    LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+) AS [t0] ON [t].[Id] = [t0].[RestaurantId]
+LEFT JOIN [RestaurantHours] AS [r0] ON [t].[Id] = [r0].[RestaurantId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]
+2026-03-28 11:07:03.241 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@p21='?' (DbType = Guid), @p0='?' (Size = 250), @p1='?' (DbType = Int32), @p2='?' (DbType = Double), @p3='?' (Size = 500), @p4='?' (Size = 50), @p5='?' (DbType = DateTime2), @p6='?' (Size = 30), @p7='?' (Size = 500), @p8='?' (Size = 100), @p9='?' (DbType = Boolean), @p10='?' (DbType = Double), @p11='?' (Size = 500), @p12='?' (DbType = Double), @p13='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p14='?' (Size = 100), @p15='?' (Size = 450), @p16='?' (Size = 20), @p17='?' (Size = 10), @p18='?' (Size = 30), @p19='?' (DbType = Int32), @p20='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Restaurants] SET [Address] = @p0, [AverageDeliveryTimeMinutes] = @p1, [AverageRating] = @p2, [BannerUrl] = @p3, [City] = @p4, [CreatedAt] = @p5, [CuisineType] = @p6, [Description] = @p7, [Email] = @p8, [IsOpen] = @p9, [Latitude] = @p10, [LogoUrl] = @p11, [Longitude] = @p12, [MinimumOrderAmount] = @p13, [Name] = @p14, [OwnerId] = @p15, [PhoneNumber] = @p16, [PinCode] = @p17, [Status] = @p18, [TotalRatings] = @p19, [UpdatedAt] = @p20
+OUTPUT 1
+WHERE [Id] = @p21;
+2026-03-28 11:07:03.256 +05:30 [INF] 🗑️ Cache REMOVE: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 11:07:03.261 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse'.
+2026-03-28 11:07:03.268 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API) in 60.4603ms
+2026-03-28 11:07:03.277 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:03.285 +05:30 [INF] HTTP PUT /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle responded 200 in 303.9491 ms
+2026-03-28 11:07:03.299 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle - 200 null application/json; charset=utf-8 336.4799ms
+2026-03-28 11:07:04.498 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle - application/json 2
+2026-03-28 11:07:04.513 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:04.517 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:04.523 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:04.619 +05:30 [INF] Received HTTP response headers after 91.2621ms - 200
+2026-03-28 11:07:04.625 +05:30 [INF] End processing HTTP request after 108.3749ms - 200
+2026-03-28 11:07:04.636 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:04.642 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "3b42b20c-4425-4de9-9f8f-76c7382a8062",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774675616,
+  "nbf": 1774675616,
+  "exp": 1774679216,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-28 11:07:04.650 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:04.654 +05:30 [INF] Route matched with {action = "ToggleOpen", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ToggleOpen(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:07:04.674 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[AverageDeliveryTimeMinutes], [t].[AverageRating], [t].[BannerUrl], [t].[City], [t].[CreatedAt], [t].[CuisineType], [t].[Description], [t].[Email], [t].[IsOpen], [t].[Latitude], [t].[LogoUrl], [t].[Longitude], [t].[MinimumOrderAmount], [t].[Name], [t].[OwnerId], [t].[PhoneNumber], [t].[PinCode], [t].[Status], [t].[TotalRatings], [t].[UpdatedAt], [t0].[Id], [t0].[CreatedAt], [t0].[Description], [t0].[DisplayOrder], [t0].[IsActive], [t0].[Name], [t0].[RestaurantId], [t0].[Id0], [t0].[CategoryId], [t0].[CreatedAt0], [t0].[Description0], [t0].[ImageUrl], [t0].[IsBestseller], [t0].[IsGlutenFree], [t0].[IsVegan], [t0].[IsVegetarian], [t0].[Name0], [t0].[PreparationTimeMinutes], [t0].[Price], [t0].[RestaurantId0], [t0].[Status], [t0].[UpdatedAt], [r0].[Id], [r0].[CloseTime], [r0].[DayOfWeek], [r0].[IsClosed], [r0].[OpenTime], [r0].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id] AS [Id0], [m0].[CategoryId], [m0].[CreatedAt] AS [CreatedAt0], [m0].[Description] AS [Description0], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name] AS [Name0], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId] AS [RestaurantId0], [m0].[Status], [m0].[UpdatedAt]
+    FROM [MenuCategories] AS [m]
+    LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+) AS [t0] ON [t].[Id] = [t0].[RestaurantId]
+LEFT JOIN [RestaurantHours] AS [r0] ON [t].[Id] = [r0].[RestaurantId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]
+2026-03-28 11:07:04.698 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p21='?' (DbType = Guid), @p0='?' (Size = 250), @p1='?' (DbType = Int32), @p2='?' (DbType = Double), @p3='?' (Size = 500), @p4='?' (Size = 50), @p5='?' (DbType = DateTime2), @p6='?' (Size = 30), @p7='?' (Size = 500), @p8='?' (Size = 100), @p9='?' (DbType = Boolean), @p10='?' (DbType = Double), @p11='?' (Size = 500), @p12='?' (DbType = Double), @p13='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p14='?' (Size = 100), @p15='?' (Size = 450), @p16='?' (Size = 20), @p17='?' (Size = 10), @p18='?' (Size = 30), @p19='?' (DbType = Int32), @p20='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Restaurants] SET [Address] = @p0, [AverageDeliveryTimeMinutes] = @p1, [AverageRating] = @p2, [BannerUrl] = @p3, [City] = @p4, [CreatedAt] = @p5, [CuisineType] = @p6, [Description] = @p7, [Email] = @p8, [IsOpen] = @p9, [Latitude] = @p10, [LogoUrl] = @p11, [Longitude] = @p12, [MinimumOrderAmount] = @p13, [Name] = @p14, [OwnerId] = @p15, [PhoneNumber] = @p16, [PinCode] = @p17, [Status] = @p18, [TotalRatings] = @p19, [UpdatedAt] = @p20
+OUTPUT 1
+WHERE [Id] = @p21;
+2026-03-28 11:07:04.710 +05:30 [INF] 🗑️ Cache REMOVE: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 11:07:04.714 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse'.
+2026-03-28 11:07:04.719 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API) in 55.3456ms
+2026-03-28 11:07:04.724 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.ToggleOpen (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:04.728 +05:30 [INF] HTTP PUT /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle responded 200 in 212.3200 ms
+2026-03-28 11:07:04.738 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/toggle - 200 null application/json; charset=utf-8 239.6325ms
+2026-03-28 11:07:06.612 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-28 11:07:06.625 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:06.629 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:06.638 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:06.796 +05:30 [INF] Received HTTP response headers after 150.7329ms - 200
+2026-03-28 11:07:06.806 +05:30 [INF] End processing HTTP request after 176.494ms - 200
+2026-03-28 11:07:06.813 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:06.826 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "3b42b20c-4425-4de9-9f8f-76c7382a8062",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774675616,
+  "nbf": 1774675616,
+  "exp": 1774679216,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-28 11:07:06.857 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:06.875 +05:30 [INF] Route matched with {action = "GetById", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:07:06.909 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[AverageDeliveryTimeMinutes], [t].[AverageRating], [t].[BannerUrl], [t].[City], [t].[CreatedAt], [t].[CuisineType], [t].[Description], [t].[Email], [t].[IsOpen], [t].[Latitude], [t].[LogoUrl], [t].[Longitude], [t].[MinimumOrderAmount], [t].[Name], [t].[OwnerId], [t].[PhoneNumber], [t].[PinCode], [t].[Status], [t].[TotalRatings], [t].[UpdatedAt], [t0].[Id], [t0].[CreatedAt], [t0].[Description], [t0].[DisplayOrder], [t0].[IsActive], [t0].[Name], [t0].[RestaurantId], [t0].[Id0], [t0].[CategoryId], [t0].[CreatedAt0], [t0].[Description0], [t0].[ImageUrl], [t0].[IsBestseller], [t0].[IsGlutenFree], [t0].[IsVegan], [t0].[IsVegetarian], [t0].[Name0], [t0].[PreparationTimeMinutes], [t0].[Price], [t0].[RestaurantId0], [t0].[Status], [t0].[UpdatedAt], [r0].[Id], [r0].[CloseTime], [r0].[DayOfWeek], [r0].[IsClosed], [r0].[OpenTime], [r0].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Address], [r].[AverageDeliveryTimeMinutes], [r].[AverageRating], [r].[BannerUrl], [r].[City], [r].[CreatedAt], [r].[CuisineType], [r].[Description], [r].[Email], [r].[IsOpen], [r].[Latitude], [r].[LogoUrl], [r].[Longitude], [r].[MinimumOrderAmount], [r].[Name], [r].[OwnerId], [r].[PhoneNumber], [r].[PinCode], [r].[Status], [r].[TotalRatings], [r].[UpdatedAt]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [m].[Id], [m].[CreatedAt], [m].[Description], [m].[DisplayOrder], [m].[IsActive], [m].[Name], [m].[RestaurantId], [m0].[Id] AS [Id0], [m0].[CategoryId], [m0].[CreatedAt] AS [CreatedAt0], [m0].[Description] AS [Description0], [m0].[ImageUrl], [m0].[IsBestseller], [m0].[IsGlutenFree], [m0].[IsVegan], [m0].[IsVegetarian], [m0].[Name] AS [Name0], [m0].[PreparationTimeMinutes], [m0].[Price], [m0].[RestaurantId] AS [RestaurantId0], [m0].[Status], [m0].[UpdatedAt]
+    FROM [MenuCategories] AS [m]
+    LEFT JOIN [MenuItems] AS [m0] ON [m].[Id] = [m0].[CategoryId]
+) AS [t0] ON [t].[Id] = [t0].[RestaurantId]
+LEFT JOIN [RestaurantHours] AS [r0] ON [t].[Id] = [r0].[RestaurantId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]
+2026-03-28 11:07:06.939 +05:30 [INF] 💾 Cache SET: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 11:07:06.944 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:07:06.968 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API) in 76.8667ms
+2026-03-28 11:07:06.976 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:06.986 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 357.2580 ms
+2026-03-28 11:07:07.016 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 403.9351ms
+2026-03-28 11:07:21.981 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-28 11:07:21.995 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:21.999 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:22.011 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:22.274 +05:30 [INF] Received HTTP response headers after 250.5247ms - 200
+2026-03-28 11:07:22.300 +05:30 [INF] End processing HTTP request after 300.9458ms - 200
+2026-03-28 11:07:22.310 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:22.316 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:22.330 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:22.339 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:07:22.360 +05:30 [INF] ⚡ Cache HIT: restaurants:all
+2026-03-28 11:07:22.443 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:07:22.460 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 111.0009ms
+2026-03-28 11:07:22.482 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:22.497 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 498.7721 ms
+2026-03-28 11:07:22.517 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 200 null application/json; charset=utf-8 535.8616ms
+2026-03-28 11:07:27.470 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-28 11:07:27.484 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:27.489 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:27.495 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:27.633 +05:30 [INF] Received HTTP response headers after 132.0616ms - 200
+2026-03-28 11:07:27.638 +05:30 [INF] End processing HTTP request after 148.7594ms - 200
+2026-03-28 11:07:27.645 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:27.654 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "3b42b20c-4425-4de9-9f8f-76c7382a8062",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774675616,
+  "nbf": 1774675616,
+  "exp": 1774679216,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-03-28 11:07:27.659 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:27.666 +05:30 [INF] Route matched with {action = "GetById", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:07:27.682 +05:30 [INF] ⚡ Cache HIT: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 11:07:27.688 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:07:27.694 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API) in 19.7853ms
+2026-03-28 11:07:27.703 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:27.707 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 219.2847 ms
+2026-03-28 11:07:27.717 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 246.9697ms
+2026-03-28 11:07:31.415 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants - null null
+2026-03-28 11:07:31.436 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:31.442 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:31.452 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:31.626 +05:30 [INF] Received HTTP response headers after 167.2892ms - 200
+2026-03-28 11:07:31.633 +05:30 [INF] End processing HTTP request after 191.2315ms - 200
+2026-03-28 11:07:31.637 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:31.647 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:31.657 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:31.672 +05:30 [INF] Route matched with {action = "GetAll", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:07:31.713 +05:30 [INF] ⚡ Cache HIT: restaurants:all
+2026-03-28 11:07:31.727 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:07:31.740 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API) in 36.1839ms
+2026-03-28 11:07:31.757 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetAll (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:31.772 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 330.8841 ms
+2026-03-28 11:07:31.801 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants - 200 null application/json; charset=utf-8 386.5299ms
+2026-03-28 11:07:33.864 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/menu - null null
+2026-03-28 11:07:33.873 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:33.882 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:33.884 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - null null
+2026-03-28 11:07:33.887 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:33.900 +05:30 [INF] CORS policy execution successful.
+2026-03-28 11:07:33.918 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:33.922 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 11:07:34.015 +05:30 [INF] Received HTTP response headers after 111.2604ms - 200
+2026-03-28 11:07:34.020 +05:30 [INF] End processing HTTP request after 137.6267ms - 200
+2026-03-28 11:07:34.029 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:34.034 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:34.044 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:34.048 +05:30 [INF] Route matched with {action = "GetMenu", controller = "MenuCategories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMenu(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController (SwiftBite.RestaurantService.API).
+2026-03-28 11:07:34.061 +05:30 [INF] ⚡ Cache HIT: menu:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 11:07:34.063 +05:30 [INF] Received HTTP response headers after 132.4275ms - 200
+2026-03-28 11:07:34.070 +05:30 [INF] End processing HTTP request after 151.744ms - 200
+2026-03-28 11:07:34.074 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:07:34.075 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 11:07:34.080 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API) in 25.5432ms
+2026-03-28 11:07:34.085 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e2395df6-d742-4f85-b019-997d5cc123b9",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774676126,
+  "nbf": 1774676126,
+  "exp": 1774679726,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 11:07:34.089 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.MenuCategoriesController.GetMenu (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:34.098 +05:30 [INF] Executing endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:34.102 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/menu responded 200 in 220.1554 ms
+2026-03-28 11:07:34.107 +05:30 [INF] Route matched with {action = "GetById", controller = "Restaurants"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.Threading.CancellationToken) on controller SwiftBite.RestaurantService.API.Controllers.RestaurantsController (SwiftBite.RestaurantService.API).
+2026-03-28 11:07:34.116 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/menu - 200 null application/json; charset=utf-8 252.3765ms
+2026-03-28 11:07:34.132 +05:30 [INF] ⚡ Cache HIT: restaurant:4121c5d5-9af8-44cd-9738-064d3a325bcd
+2026-03-28 11:07:34.148 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 11:07:34.155 +05:30 [INF] Executed action SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API) in 29.8896ms
+2026-03-28 11:07:34.163 +05:30 [INF] Executed endpoint 'SwiftBite.RestaurantService.API.Controllers.RestaurantsController.GetById (SwiftBite.RestaurantService.API)'
+2026-03-28 11:07:34.167 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 254.9895 ms
+2026-03-28 11:07:34.178 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd - 200 null application/json; charset=utf-8 293.994ms

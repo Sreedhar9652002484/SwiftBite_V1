@@ -1,32 +1,7 @@
 import { Component, OnInit, OnDestroy, signal, computed } from '@angular/core';
-import { CommonModule }   from '@angular/common';
-import { AuthService }    from '../../../core/auth/auth.service';
-import { OrderService }   from '../../../core/services/order.service';
-
-export type OrderStatus = 1 | 2 | 3 | 4 | 5;
-
-export interface OrderItem {
-  name:       string;
-  quantity:   number;
-  unitPrice:  number;
-  totalPrice: number;
-}
-
-export interface Order {
-  id:                  string;
-  customerName:        string;
-  items:               OrderItem[];
-  totalAmount:         number;
-  status:              OrderStatus;
-  placedAt:            string;
-  deliveryAddress:     string;
-  subTotal:            number;
-  taxes:               number;
-  deliveryFee:         number;
-  restaurantName:      string;
-  paymentMethod:       string;
-  estimatedDeliveryAt: string;
-}
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../../../core/auth/auth.service';
+import { OrderService, Order, OrderStatus } from '../../../core/services/order.service';  // ✅ IMPORT ENUM
 
 @Component({
   selector: 'app-restaurant-dashboard',
@@ -37,11 +12,11 @@ export interface Order {
 })
 export class RestaurantDashboardComponent implements OnInit, OnDestroy {
 
-  orders       = signal<Order[]>([]);
-  loading      = signal(true);
-  error        = signal<string | null>(null);
-  updatingId   = signal<string | null>(null);
-  activeFilter = signal<number | 'All'>(1);
+  orders = signal<Order[]>([]);
+  loading = signal(true);
+  error = signal<string | null>(null);
+  updatingId = signal<string | null>(null);
+  activeFilter = signal<OrderStatus | 'All'>(OrderStatus.Pending);  // ✅ USE ENUM
   private pollInterval: any;
 
   filteredOrders = computed(() => {
@@ -52,30 +27,54 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
   });
 
   pendingCount = computed(() =>
-    this.orders().filter(o => o.status === 1).length);
+    this.orders().filter(o => o.status === OrderStatus.Pending).length);
 
   activeCount = computed(() =>
-    this.orders().filter(o => o.status === 2 || o.status === 3).length);
+    this.orders().filter(o =>
+      o.status === OrderStatus.Confirmed ||
+      o.status === OrderStatus.Preparing).length);
 
-  filters: Array<{ label: string; value: number | 'All' }> = [
-    { label: 'All',       value: 'All'  },
-    { label: 'Pending',   value: 1      },
-    { label: 'Confirmed', value: 2      },
-    { label: 'Preparing', value: 3      },
-    { label: 'Ready',     value: 4      },
-    { label: 'Cancelled', value: 5      },
+  // ✅ UPDATED: Map ENUM values to filter options
+  filters: Array<{ label: string; value: OrderStatus | 'All' }> = [
+    { label: 'All', value: 'All' },
+    { label: 'Pending', value: OrderStatus.Pending },
+    { label: 'Confirmed', value: OrderStatus.Confirmed },
+    { label: 'Preparing', value: OrderStatus.Preparing },
+    { label: 'Ready', value: OrderStatus.Ready },
+    { label: 'Picked Up', value: OrderStatus.PickedUp },
+    { label: 'Out for Delivery', value: OrderStatus.OutForDelivery },
+    { label: 'Delivered', value: OrderStatus.Delivered },
+    { label: 'Cancelled', value: OrderStatus.Cancelled },
   ];
 
+  // ✅ UPDATED: Map ENUM values to labels
   statusLabels: Record<OrderStatus, string> = {
-    1: 'Pending',
-    2: 'Confirmed',
-    3: 'Preparing',
-    4: 'Ready for Pickup',
-    5: 'Cancelled',
+    [OrderStatus.Pending]: 'Pending',
+    [OrderStatus.Confirmed]: 'Confirmed',
+    [OrderStatus.Preparing]: 'Preparing',
+    [OrderStatus.Ready]: 'Ready for Pickup',
+    [OrderStatus.PickedUp]: 'Picked Up',
+    [OrderStatus.OutForDelivery]: 'Out for Delivery',
+    [OrderStatus.Delivered]: 'Delivered',
+    [OrderStatus.Cancelled]: 'Cancelled',
+    [OrderStatus.Refunded]: 'Refunded',
+  };
+
+  // ✅ NEW: Status order for sorting
+  statusOrder: Record<OrderStatus, number> = {
+    [OrderStatus.Pending]: 1,
+    [OrderStatus.Confirmed]: 2,
+    [OrderStatus.Preparing]: 3,
+    [OrderStatus.Ready]: 4,
+    [OrderStatus.PickedUp]: 5,
+    [OrderStatus.OutForDelivery]: 6,
+    [OrderStatus.Delivered]: 7,
+    [OrderStatus.Cancelled]: 8,
+    [OrderStatus.Refunded]: 9,
   };
 
   constructor(
-    private auth:     AuthService,
+    private auth: AuthService,
     private orderSvc: OrderService,
   ) {}
 
@@ -91,9 +90,9 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
   private getRestaurantId(): string | null {
     const user = this.auth.currentUser();
     return user?.['restaurantId']
-        ?? user?.['restaurant_id']
-        ?? user?.['RestaurantId']
-        ?? null;
+      ?? user?.['restaurant_id']
+      ?? user?.['RestaurantId']
+      ?? null;
   }
 
   loadOrders(): void {
@@ -106,12 +105,21 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
 
     this.orderSvc.getRestaurantOrders(rid).subscribe({
       next: orders => {
-
+        // ✅ UPDATED: Sort by ENUM status values
         const sorted = [...orders].sort((a, b) => {
-          if (a.status === 1 && b.status !== 1) return -1;
-          if (b.status === 1 && a.status !== 1) return  1;
+          // Pending orders first
+          if (a.status === OrderStatus.Pending && b.status !== OrderStatus.Pending) return -1;
+          if (b.status === OrderStatus.Pending && a.status !== OrderStatus.Pending) return 1;
+
+          // Then by status order
+          const aOrder = this.statusOrder[a.status] ?? 99;
+          const bOrder = this.statusOrder[b.status] ?? 99;
+          if (aOrder !== bOrder) return aOrder - bOrder;
+
+          // Finally by date (newest first)
           return new Date(b.placedAt).getTime() - new Date(a.placedAt).getTime();
         });
+
         this.orders.set(sorted);
         this.loading.set(false);
         this.error.set(null);
@@ -126,15 +134,17 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
     });
   }
 
-  setFilter(f: number | 'All'): void {
+  setFilter(f: OrderStatus | 'All'): void {
     this.activeFilter.set(f);
   }
 
-  acceptOrder(order: Order): void   { this.changeStatus(order, 2);   }
-  rejectOrder(order: Order): void   { this.changeStatus(order, 5);   }
-  markPreparing(order: Order): void { this.changeStatus(order, 3);   }
-  markReady(order: Order): void     { this.changeStatus(order, 4);   }
+  // ✅ UPDATED: Use ENUM values
+  acceptOrder(order: Order): void { this.changeStatus(order, OrderStatus.Confirmed); }
+  rejectOrder(order: Order): void { this.changeStatus(order, OrderStatus.Cancelled); }
+  markPreparing(order: Order): void { this.changeStatus(order, OrderStatus.Preparing); }
+  markReady(order: Order): void { this.changeStatus(order, OrderStatus.Ready); }
 
+  // ✅ UPDATED: Accept OrderStatus ENUM
   private changeStatus(order: Order, status: OrderStatus): void {
     if (this.updatingId()) return;
     this.updatingId.set(order.id);
@@ -153,18 +163,35 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
     });
   }
 
-  timeAgo(dateStr: string): string {
-    const mins = Math.floor((Date.now() - new Date(dateStr).getTime()) / 60_000);
-    if (mins < 1)  return 'Just now';
-    if (mins < 60) return `${mins}m ago`;
-    return `${Math.floor(mins / 60)}h ago`;
-  }
-
+// ✅ UPDATED: Accept Date parameter
+timeAgo(dateStr: Date | string): string {
+  const date = typeof dateStr === 'string' ? new Date(dateStr) : dateStr;
+  const mins = Math.floor((Date.now() - date.getTime()) / 60_000);
+  if (mins < 1) return 'Just now';
+  if (mins < 60) return `${mins}m ago`;
+  return `${Math.floor(mins / 60)}h ago`;
+}
   isUpdating(id: string): boolean {
     return this.updatingId() === id;
   }
 
   getStatusLabel(status: OrderStatus): string {
-    return this.statusLabels[status];
+    return this.statusLabels[status] || 'Unknown';
+  }
+
+  // ✅ NEW: Get badge color based on status ENUM
+  getStatusColor(status: OrderStatus): string {
+    const colors: Record<OrderStatus, string> = {
+      [OrderStatus.Pending]: 'badge-warning',
+      [OrderStatus.Confirmed]: 'badge-info',
+      [OrderStatus.Preparing]: 'badge-primary',
+      [OrderStatus.Ready]: 'badge-secondary',
+      [OrderStatus.PickedUp]: 'badge-secondary',
+      [OrderStatus.OutForDelivery]: 'badge-secondary',
+      [OrderStatus.Delivered]: 'badge-success',
+      [OrderStatus.Cancelled]: 'badge-danger',
+      [OrderStatus.Refunded]: 'badge-danger',
+    };
+    return colors[status] || 'badge-secondary';
   }
 }

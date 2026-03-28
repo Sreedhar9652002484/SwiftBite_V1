@@ -8,6 +8,8 @@ using SwiftBite.OrderService.Application.Orders.Queries.GetCustomerOrders;
 using SwiftBite.OrderService.Application.Orders.Queries.GetOrderById;
 using SwiftBite.OrderService.Application.Orders.Queries.GetRestaurantOrders;
 using SwiftBite.OrderService.Domain.Enums;
+using SwiftBite.Shared.Exceptions.Exceptions;  // ✅ ADD THIS
+using SwiftBite.Shared.Exceptions.Models;
 
 namespace SwiftBite.OrderService.API.Controllers;
 
@@ -24,16 +26,21 @@ public class OrdersController : ControllerBase
     // ── POST api/orders ───────────────────────────────────
     // Customer places an order
     [HttpPost]
+    [ProducesResponseType(typeof(ApiResponse<object>), 201)]
+    [ProducesResponseType(typeof(ExceptionResponse), 400)]
+    [ProducesResponseType(typeof(ExceptionResponse), 401)]
+    [ProducesResponseType(typeof(ExceptionResponse), 500)]
     public async Task<IActionResult> PlaceOrder(
         [FromBody] PlaceOrderRequest request,
         CancellationToken ct)
     {
         var customerId = GetAuthUserId();
-        if (customerId is null) return Unauthorized();
-
-        try
-        {
-            var result = await _mediator.Send(
+        // ✅ CHANGE: Throw instead of return Unauthorized()
+        if (customerId is null)
+            throw new UnauthorizedException(
+                "Customer ID not found in request.");
+       
+        var result = await _mediator.Send(
                 new PlaceOrderCommand(
                     customerId,
                     request.CustomerName,
@@ -49,32 +56,32 @@ public class OrdersController : ControllerBase
                     request.SpecialInstructions,
                     request.Items), ct);
 
-            // 🔥 Order placed → Kafka event fired!
             return CreatedAtAction(
-                nameof(GetOrderById),
-                new { id = result.Id }, result);
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(new { message = ex.Message });
-        }
+            nameof(GetOrderById),
+            new { id = result.Id },
+            ApiResponse<object>.SuccessResponse(
+                result,
+                "Order placed successfully.",
+                HttpContext.TraceIdentifier));
+      
     }
 
     // ── GET api/orders/{id} ───────────────────────────────
     [HttpGet("{id:guid}")]
+    [ProducesResponseType(typeof(ApiResponse<object>), 200)]
+    [ProducesResponseType(typeof(ExceptionResponse), 404)]
+    [ProducesResponseType(typeof(ExceptionResponse), 500)]
     public async Task<IActionResult> GetOrderById(
         Guid id, CancellationToken ct)
     {
-        try
-        {
-            var result = await _mediator.Send(
-                new GetOrderByIdQuery(id), ct);
-            return Ok(result);
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
+        // ✅ CHANGE: NO try-catch! Middleware handles it
+        var result = await _mediator.Send(
+            new GetOrderByIdQuery(id), ct);
+
+        return Ok(ApiResponse<object>.SuccessResponse(
+            result,
+            "Order retrieved successfully.",
+            HttpContext.TraceIdentifier));
     }
 
     // ── GET api/orders/my ─────────────────────────────────
@@ -84,11 +91,19 @@ public class OrdersController : ControllerBase
         CancellationToken ct)
     {
         var customerId = GetAuthUserId();
-        if (customerId is null) return Unauthorized();
+
+        // ✅ CHANGE: Throw instead of return Unauthorized()
+        if (customerId is null)
+            throw new UnauthorizedException(
+                "Customer ID not found in request.");
 
         var result = await _mediator.Send(
             new GetCustomerOrdersQuery(customerId), ct);
-        return Ok(result);
+
+        return Ok(ApiResponse<object>.SuccessResponse(
+            result,
+            "Orders retrieved successfully.",
+            HttpContext.TraceIdentifier));
     }
 
     // ── GET api/orders/restaurant/{restaurantId} ──────────
@@ -97,16 +112,14 @@ public class OrdersController : ControllerBase
     public async Task<IActionResult> GetRestaurantOrders(
         Guid restaurantId, CancellationToken ct)
     {
-        try
-        {
-            var result = await _mediator.Send(
-                new GetRestaurantOrdersQuery(restaurantId), ct);
-            return Ok(result);
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
+        // ✅ CHANGE: NO try-catch! Middleware handles it
+        var result = await _mediator.Send(
+            new GetRestaurantOrdersQuery(restaurantId), ct);
+
+        return Ok(ApiResponse<object>.SuccessResponse(
+            result,
+            "Restaurant orders retrieved successfully.",
+            HttpContext.TraceIdentifier));
     }
 
     // ── PUT api/orders/{id}/status ────────────────────────
@@ -118,26 +131,22 @@ public class OrdersController : ControllerBase
         CancellationToken ct)
     {
         var requesterId = GetAuthUserId();
-        if (requesterId is null) return Unauthorized();
 
-        try
-        {
-            var result = await _mediator.Send(
-                new UpdateOrderStatusCommand(
-                    id, requesterId,
-                    request.NewStatus), ct);
+        // ✅ CHANGE: Throw instead of return Unauthorized()
+        if (requesterId is null)
+            throw new UnauthorizedException(
+                "Requester ID not found in request.");
 
-            // 🔥 Status change → Kafka event fired!
-            return Ok(result);
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(new { message = ex.Message });
-        }
+        // ✅ CHANGE: NO try-catch! Middleware handles it
+        var result = await _mediator.Send(
+            new UpdateOrderStatusCommand(
+                id, requesterId,
+                request.NewStatus), ct);
+
+        return Ok(ApiResponse<object>.SuccessResponse(
+            result,
+            "Order status updated successfully.",
+            HttpContext.TraceIdentifier));
     }
 
     // ── DELETE api/orders/{id} ────────────────────────────
@@ -149,33 +158,20 @@ public class OrdersController : ControllerBase
         CancellationToken ct)
     {
         var customerId = GetAuthUserId();
-        if (customerId is null) return Unauthorized();
 
-        try
-        {
-            await _mediator.Send(
-                new CancelOrderCommand(
-                    id, customerId,
-                    request.Reason), ct);
+        // ✅ CHANGE: Throw instead of return Unauthorized()
+        if (customerId is null)
+            throw new UnauthorizedException(
+                "Customer ID not found in request.");
 
-            // 🔥 Order cancelled → Kafka event fired!
-            return Ok(new
-            {
-                message = "Order cancelled successfully."
-            });
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(new { message = ex.Message });
-        }
-        catch (UnauthorizedAccessException)
-        {
-            return Forbid();
-        }
+        // ✅ CHANGE: NO try-catch! Middleware handles it
+        await _mediator.Send(
+            new CancelOrderCommand(
+                id, customerId, request.Reason), ct);
+
+        return Ok(ApiResponse.SuccessResponse(
+            "Order cancelled successfully.",
+            HttpContext.TraceIdentifier));
     }
 
     private string? GetAuthUserId()

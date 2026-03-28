@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\SwiftBite.Shared.Exceptions\SwiftBite.Shared.Exceptions.csproj" />
     <ProjectReference Include="..\SwiftBite.PaymentService.Application\SwiftBite.PaymentService.Application.csproj" />
     <ProjectReference Include="..\SwiftBite.PaymentService.Infrastructure\SwiftBite.PaymentService.Infrastructure.csproj" />
   </ItemGroup>

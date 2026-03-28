@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using SwiftBite.RestaurantService.Application.MenuItems.Commands.CreateMenuItem;
 using SwiftBite.RestaurantService.Application.MenuItems.Commands.DeleteMenuItem;
 using SwiftBite.RestaurantService.Application.MenuItems.Queries.SearchMenuItems;
+using SwiftBite.Shared.Exceptions.Exceptions;  // ✅ ADD THIS
+using SwiftBite.Shared.Exceptions.Models;      // ✅ ADD THIS
 
 namespace SwiftBite.RestaurantService.API.Controllers;
 
@@ -16,85 +18,102 @@ public class MenuItemsController : ControllerBase
     public MenuItemsController(IMediator mediator)
         => _mediator = mediator;
 
-    // ── GET api/restaurants/items/search?keyword=biryani ──
+    /// <summary>
+    /// Search menu items by keyword.
+    /// Public endpoint - no authentication required.
+    /// </summary>
     [HttpGet("search")]
+    [ProducesResponseType(typeof(ApiResponse<object>), 200)]
+    [ProducesResponseType(typeof(ExceptionResponse), 400)]
+    [ProducesResponseType(typeof(ExceptionResponse), 500)]
     public async Task<IActionResult> Search(
         [FromQuery] string keyword,
         CancellationToken ct)
     {
         if (string.IsNullOrWhiteSpace(keyword))
-            return BadRequest(new
-            {
-                message = "Keyword is required."
-            });
+            throw new ValidationException(
+                "Keyword is required for search.");
 
         var result = await _mediator.Send(
             new SearchMenuItemsQuery(keyword), ct);
-        return Ok(result);
+
+        return Ok(ApiResponse<object>.SuccessResponse(
+            result,
+            $"Menu items matching '{keyword}' retrieved successfully.",
+            HttpContext.TraceIdentifier));
     }
 
-    // ── POST api/restaurants/items ────────────────────────
+    /// <summary>
+    /// Create new menu item.
+    /// </summary>
     [HttpPost]
     [Authorize]
+    [ProducesResponseType(typeof(ApiResponse<object>), 201)]
+    [ProducesResponseType(typeof(ExceptionResponse), 400)]
+    [ProducesResponseType(typeof(ExceptionResponse), 401)]
+    [ProducesResponseType(typeof(ExceptionResponse), 403)]
+    [ProducesResponseType(typeof(ExceptionResponse), 404)]
+    [ProducesResponseType(typeof(ExceptionResponse), 500)]
     public async Task<IActionResult> CreateItem(
         [FromBody] CreateMenuItemRequest request,
         CancellationToken ct)
     {
         var ownerId = GetAuthUserId();
-        if (ownerId is null) return Unauthorized();
 
-        try
-        {
-            var result = await _mediator.Send(
-                new CreateMenuItemCommand(
-                    request.CategoryId,
-                    request.RestaurantId,
-                    ownerId,
-                    request.Name,
-                    request.Description,
-                    request.Price,
-                    request.IsVegetarian,
-                    request.IsVegan,
-                    request.IsGlutenFree,
-                    request.PreparationTimeMinutes,
-                    request.ImageUrl), ct);
+        // ✅ CHANGE: Throw instead of return Unauthorized()
+        if (ownerId is null)
+            throw new UnauthorizedException(
+                "Owner ID not found in request.");
 
-            return CreatedAtAction(
-                nameof(Search), result);
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
-        catch (UnauthorizedAccessException)
-        {
-            return Forbid();
-        }
+        // ✅ CHANGE: NO try-catch! Middleware handles it
+        var result = await _mediator.Send(
+            new CreateMenuItemCommand(
+                request.CategoryId,
+                request.RestaurantId,
+                ownerId,
+                request.Name,
+                request.Description,
+                request.Price,
+                request.IsVegetarian,
+                request.IsVegan,
+                request.IsGlutenFree,
+                request.PreparationTimeMinutes,
+                request.ImageUrl), ct);
+
+        return CreatedAtAction(
+            nameof(Search),
+            ApiResponse<object>.SuccessResponse(
+                result,
+                "Menu item created successfully.",
+                HttpContext.TraceIdentifier));
     }
 
-    // ── DELETE api/restaurants/items/{id} ─────────────────
+    /// <summary>
+    /// Delete menu item by ID.
+    /// </summary>
     [HttpDelete("{id:guid}")]
     [Authorize]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(typeof(ExceptionResponse), 401)]
+    [ProducesResponseType(typeof(ExceptionResponse), 403)]
+    [ProducesResponseType(typeof(ExceptionResponse), 404)]
+    [ProducesResponseType(typeof(ExceptionResponse), 500)]
     public async Task<IActionResult> DeleteItem(
-        Guid id, CancellationToken ct)
+        Guid id,
+        CancellationToken ct)
     {
         var ownerId = GetAuthUserId();
-        if (ownerId is null) return Unauthorized();
 
-        try
-        {
-            await _mediator.Send(
-                new DeleteMenuItemCommand(id, ownerId), ct);
-            return NoContent();
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
-        catch (UnauthorizedAccessException)
-        {
-            return Forbid();
-        }
+        // ✅ CHANGE: Throw instead of return Unauthorized()
+        if (ownerId is null)
+            throw new UnauthorizedException(
+                "Owner ID not found in request.");
+
+        // ✅ CHANGE: NO try-catch! Middleware handles it
+        await _mediator.Send(
+            new DeleteMenuItemCommand(id, ownerId), ct);
+
+        return NoContent();
     }
 
     private string? GetAuthUserId()
@@ -102,7 +121,6 @@ public class MenuItemsController : ControllerBase
         ?? User.FindFirst("sub")?.Value;
 }
 
-// ── Request Model ─────────────────────────────────────────
 public record CreateMenuItemRequest(
     Guid CategoryId,
     Guid RestaurantId,
