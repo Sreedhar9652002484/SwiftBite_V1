@@ -272,19 +272,19 @@ A `docker-compose.yml` is included to orchestrate frontend, backend services, an
 
 * ✅ Angular Auth Flow (Login / Register / JWT Handling)
 
-* 🚧 API Gateway Implementation
+* ✅ API Gateway Implementation
 
-* ⏳ User Service Completion
+* ✅ User Service Completion
 
-* ⏳ Restaurant & Menu Service
+* ✅ Restaurant & Menu Service
 
-* ⏳ Order Management Service
+* ✅ Order Management Service
 
 * ⏳ Delivery Partner Service
 
-* ⏳ Payment Service
+* ✅ Payment Service
 
-* ⏳ Admin Dashboard Expansion
+* ✅ Admin Dashboard Expansion
 
 * ⏳ Dockerized Deployment
 
@@ -292,21 +292,11 @@ A `docker-compose.yml` is included to orchestrate frontend, backend services, an
 
 * ✅ Centralized Authentication Service
 
-* ⏳ User Service
+* ✅ API Gateway
 
-* ⏳ Restaurant Service
+* ✅ Admin Dashboard
 
-* ⏳ Order Management Service
-
-* ⏳ Delivery Partner Service
-
-* ⏳ Payment Service
-
-* ⏳ API Gateway
-
-* ⏳ Admin Dashboard
-
-* ⏳ Mobile & Web UI Enhancements
+* ✅ Mobile & Web UI Enhancements
 
 ---
 
