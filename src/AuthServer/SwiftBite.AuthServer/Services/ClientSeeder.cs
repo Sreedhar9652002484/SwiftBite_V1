@@ -229,6 +229,25 @@ public class ClientSeeder : IHostedService
                     }
                 }, ct);
         }
+
+        // ── Client: DeliveryService ───────────────────────────────────
+        var deliveryClient = await manager
+            .FindByClientIdAsync("swiftbite-deliveryservice", ct);
+
+        if (deliveryClient is null)
+        {
+            await manager.CreateAsync(new OpenIddictApplicationDescriptor
+            {
+                ClientId = "swiftbite-deliveryservice",
+                ClientSecret = "deliveryservice-secret",
+                ClientType = ClientTypes.Confidential,
+                DisplayName = "SwiftBite DeliveryService",
+                Permissions =
+        {
+            Permissions.Endpoints.Introspection,
+        }
+            }, ct);
+        }
     }
 
 

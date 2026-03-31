@@ -141,7 +141,7 @@ public class OrdersController : ControllerBase
         var result = await _mediator.Send(
             new UpdateOrderStatusCommand(
                 id, requesterId,
-                request.NewStatus), ct);
+                request.NewStatus, request.RowVersion), ct);
 
         return Ok(ApiResponse<object>.SuccessResponse(
             result,
@@ -194,5 +194,5 @@ public record PlaceOrderRequest(
     string? SpecialInstructions,
     List<OrderItemRequest> Items);
 
-public record UpdateStatusRequest(OrderStatus NewStatus);
+public record UpdateStatusRequest(OrderStatus NewStatus, byte[] RowVersion);
 public record CancelOrderRequest(string Reason);

@@ -44,6 +44,7 @@ public class Order
     public DateTime UpdatedAt { get; private set; }
     public DateTime? EstimatedDeliveryAt { get; private set; }
     public DateTime? DeliveredAt { get; private set; }
+    public byte[]? RowVersion { get; set; }
 
     // ── Navigation ────────────────────────────────────────
     public ICollection<OrderItem> Items { get; private set; }

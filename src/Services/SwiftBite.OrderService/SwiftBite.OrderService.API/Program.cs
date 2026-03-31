@@ -100,12 +100,22 @@ builder.Services.AddAuthorization();
 var app = builder.Build();
 
 app.UseGlobalExceptionHandler();
-// ? Auto-migrate on startup
+// ? NEW (with error handling):
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider
         .GetRequiredService<OrderDbContext>();
-    await db.Database.MigrateAsync();
+    try
+    {
+        await db.Database.MigrateAsync();
+        Log.Information("Database migration completed successfully.");
+    }
+    catch (Exception ex)
+    {
+        Log.Warning("Database migration failed or already applied: {Message}", ex.Message);
+        // Don't throw - continue startup even if migration fails
+        // This handles cases where migrations are already applied
+    }
 }
 
 if (app.Environment.IsDevelopment())

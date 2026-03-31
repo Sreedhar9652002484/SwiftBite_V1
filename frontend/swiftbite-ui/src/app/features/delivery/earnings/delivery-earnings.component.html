@@ -1,0 +1,43 @@
+<div class="earnings-page">
+      <h1 class="page-title">Earnings</h1>
+
+      <div class="loader-wrap" *ngIf="loading()">
+        <div class="spinner"></div><p>Loading earnings…</p>
+      </div>
+
+      <div *ngIf="!loading() && data()">
+        <div class="stat-grid">
+          <div class="stat-card green-card">
+            <p class="stat-value">₹{{ data()!.totalEarnings | number:'1.0-0' }}</p>
+            <p class="stat-label">Total earnings</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-value">{{ data()!.totalDeliveries }}</p>
+            <p class="stat-label">Total deliveries</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-value">{{ data()!.rating | number:'1.1-1' }}</p>
+            <p class="stat-label">Your rating</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Recent deliveries</h2>
+          <div class="empty-state" *ngIf="data()!.recentJobs.length === 0">
+            <p>No deliveries yet.</p>
+          </div>
+          <div class="job-list" *ngIf="data()!.recentJobs.length > 0">
+            <div class="job-row" *ngFor="let job of data()!.recentJobs">
+              <div>
+                <p class="fw-600">#{{ job.orderNumber }}</p>
+                <p class="text-muted small">{{ job.restaurantName }} → {{ job.deliveryCity }}</p>
+              </div>
+              <div class="right-col">
+                <p class="fw-600 green">₹{{ job.deliveryFee }}</p>
+                <span class="status-pill" [class.delivered]="job.status === 'Delivered'">{{ job.status }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

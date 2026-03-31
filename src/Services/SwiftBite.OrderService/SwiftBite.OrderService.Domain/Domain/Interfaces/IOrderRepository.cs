@@ -28,4 +28,8 @@ public interface IOrderRepository
 
     Task SaveChangesAsync(
         CancellationToken ct = default);
+
+
+    void SetOriginalRowVersion(Order order, byte[] rowVersion);
+   
 }

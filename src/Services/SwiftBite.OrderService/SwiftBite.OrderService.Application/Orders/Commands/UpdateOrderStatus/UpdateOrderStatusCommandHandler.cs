@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using SwiftBite.OrderService.Application.Common.Interfaces;
 using SwiftBite.OrderService.Application.Events;
 using SwiftBite.OrderService.Application.Orders.Commands.PlaceOrder;
@@ -11,6 +12,7 @@ namespace SwiftBite.OrderService.Application.Orders.Commands.UpdateOrderStatus;
 public class UpdateOrderStatusCommandHandler
     : IRequestHandler<UpdateOrderStatusCommand, OrderDto>
 {
+   
     private readonly IOrderRepository _repo;
     private readonly IEventPublisher _publisher;
     private readonly ICacheService _cache;
@@ -32,6 +34,8 @@ public class UpdateOrderStatusCommandHandler
             ?? throw new KeyNotFoundException(
                 $"Order {cmd.OrderId} not found.");
 
+        // ✅🔥 CRITICAL LINE (YOU WERE MISSING THIS)
+        _repo.SetOriginalRowVersion(order, cmd.RowVersion);
         // ✅ Transition to new status
         switch (cmd.NewStatus)
         {
@@ -76,7 +80,24 @@ public class UpdateOrderStatusCommandHandler
         }
 
         await _repo.UpdateAsync(order, ct);
-        await _repo.SaveChangesAsync(ct);
+        // 4️⃣ SAVE WITH ERROR HANDLING
+        try
+        {
+            await _repo.SaveChangesAsync(ct);
+        }
+        catch (DbUpdateConcurrencyException ex)
+        {
+            throw new InvalidOperationException(
+                $"Failed to update order {cmd.OrderId}. The order may have been modified or deleted.",
+                ex);
+        }
+        catch (DbUpdateException ex)
+        {
+            throw new InvalidOperationException(
+                $"Database error while updating order {cmd.OrderId}.",
+                ex);
+        }
+
 
         // ✅ Invalidate cache
         await _cache.RemoveAsync($"order:{cmd.OrderId}", ct);

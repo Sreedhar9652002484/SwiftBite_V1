@@ -1,0 +1,96 @@
+<div class="jobs-page">
+
+  <div class="toast success" *ngIf="successMsg()">✓ {{ successMsg() }}</div>
+  <div class="toast error"   *ngIf="errorMsg()">✕ {{ errorMsg() }}</div>
+
+  <div class="page-header">
+    <h1 class="page-title">Job Queue</h1>
+    <button class="btn-refresh" (click)="loadJobs()">↻ Refresh</button>
+  </div>
+
+  <div class="tab-bar">
+    <button [class.active]="activeTab() === 'assigned'"  (click)="activeTab.set('assigned')">
+      Assigned
+      <span class="tab-count" *ngIf="assignedJobs().length">{{ assignedJobs().length }}</span>
+    </button>
+    <button [class.active]="activeTab() === 'completed'" (click)="activeTab.set('completed')">Completed</button>
+  </div>
+
+  <div class="loader-wrap" *ngIf="loading()">
+    <div class="spinner"></div><p>Loading jobs…</p>
+  </div>
+
+  <div *ngIf="!loading()">
+
+    <!-- Assigned jobs -->
+    <div *ngIf="activeTab() === 'assigned'">
+      <div class="empty-state" *ngIf="assignedJobs().length === 0">
+        <span class="empty-icon">📦</span>
+        <p>No new jobs assigned right now.</p>
+        <p class="empty-sub">Make sure you're Online to receive jobs.</p>
+      </div>
+
+      <div class="job-cards" *ngIf="assignedJobs().length > 0">
+        <div class="job-card" *ngFor="let job of assignedJobs()" [class.actioning]="actionId() === job.id">
+
+          <div class="job-header">
+            <span class="order-num">#{{ job.orderNumber }}</span>
+            <span class="time-ago">{{ timeAgo(job.assignedAt) }}</span>
+          </div>
+
+          <div class="route-visual">
+            <div class="route-point pickup">
+              <span class="point-dot pickup-dot"></span>
+              <div>
+                <p class="point-label">Pickup</p>
+                <p class="point-address">{{ job.restaurantName }}</p>
+                <p class="point-sub">{{ job.pickupAddress }}</p>
+              </div>
+            </div>
+            <div class="route-line"></div>
+            <div class="route-point dropoff">
+              <span class="point-dot dropoff-dot"></span>
+              <div>
+                <p class="point-label">Deliver to</p>
+                <p class="point-address">{{ job.customerName }}</p>
+                <p class="point-sub">{{ job.deliveryAddress }}, {{ job.deliveryCity }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="job-footer">
+            <div class="fee-badge">₹{{ job.deliveryFee }} fee</div>
+            <div class="job-actions">
+              <button class="btn-reject" [disabled]="actionId() === job.id" (click)="reject(job)">Reject</button>
+              <button class="btn-accept" [disabled]="actionId() === job.id" (click)="accept(job)">
+                {{ actionId() === job.id ? 'Updating…' : 'Accept' }}
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Completed jobs -->
+    <div *ngIf="activeTab() === 'completed'">
+      <div class="empty-state" *ngIf="completedJobs().length === 0">
+        <span class="empty-icon">✓</span>
+        <p>No completed deliveries yet.</p>
+      </div>
+      <div class="completed-list" *ngIf="completedJobs().length > 0">
+        <div class="completed-row" *ngFor="let job of completedJobs()">
+          <div>
+            <p class="fw-600">#{{ job.orderNumber }}</p>
+            <p class="text-muted small">{{ job.restaurantName }} → {{ job.deliveryCity }}</p>
+          </div>
+          <div class="right-col">
+            <p class="fw-600 green">₹{{ job.deliveryFee }}</p>
+            <p class="text-muted small">{{ timeAgo(job.assignedAt) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,102 @@
+$green      : #27ae60;
+$green-light: #eafaf1;
+$danger     : #e74c3c;
+$text       : #1c1c1c;
+$text-muted : #686b78;
+$border     : #e8e8e8;
+$bg         : #f4f6f9;
+$white      : #ffffff;
+$radius     : 12px;
+
+.active-page { max-width: 680px; }
+
+.toast {
+  padding: 12px 18px; border-radius: 8px;
+  font-size: 14px; font-weight: 500; margin-bottom: 16px;
+  &.success { background: $green-light; color: darken($green,5%); }
+  &.error   { background: #fef0ee; color: darken($danger,5%); }
+}
+
+.page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.page-title  { font-size: 22px; font-weight: 700; color: $text; margin: 0; }
+.btn-refresh {
+  padding: 8px 16px; border: 1px solid $border; border-radius: 8px;
+  background: $white; font-size: 13px; font-weight: 500; cursor: pointer;
+  color: $text-muted;
+  &:hover { border-color: $green; color: $green; }
+}
+
+.loader-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 12px; padding: 60px 0; color: $text-muted; font-size: 14px;
+}
+.spinner {
+  width: 30px; height: 30px; border: 3px solid $border;
+  border-top-color: $green; border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.empty-state {
+  text-align: center; padding: 60px 0; color: $text-muted;
+  .empty-icon { font-size: 48px; display: block; margin-bottom: 12px; }
+  p { font-size: 15px; margin: 0 0 4px; }
+  .empty-sub { font-size: 13px; }
+}
+
+.active-cards { display: flex; flex-direction: column; gap: 16px; }
+
+.active-card {
+  background: $white; border: 1px solid $border;
+  border-radius: $radius; padding: 20px;
+  transition: opacity 0.2s;
+  &.actioning { opacity: 0.65; pointer-events: none; }
+}
+
+// Progress steps
+.progress-steps {
+  display: flex; align-items: center;
+  margin-bottom: 20px; padding-bottom: 20px;
+  border-bottom: 1px solid $border;
+}
+.step {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 6px; flex-shrink: 0;
+
+  .step-dot {
+    width: 14px; height: 14px; border-radius: 50%;
+    background: $border; border: 2px solid $border;
+    transition: all 0.2s;
+  }
+  .step-label { font-size: 11px; color: $text-muted; font-weight: 500; }
+
+  &.done .step-dot { background: $green; border-color: $green; }
+  &.current .step-dot { background: $white; border-color: $green; border-width: 3px; }
+  &.done .step-label, &.current .step-label { color: $green; }
+}
+.step-line {
+  flex: 1; height: 2px; background: $border; margin-bottom: 18px;
+  transition: background 0.2s;
+  &.done { background: $green; }
+}
+
+// Order info
+.order-info {
+  display: flex; flex-direction: column;
+  gap: 10px; margin-bottom: 18px;
+}
+.info-row { display: flex; gap: 12px; font-size: 14px; }
+.info-label { color: $text-muted; font-weight: 500; min-width: 80px; flex-shrink: 0; }
+.info-value { color: $text; font-weight: 500; }
+.green  { color: $green; }
+.fw-700 { font-weight: 700; }
+
+.btn-action {
+  width: 100%; padding: 12px 0;
+  background: $green; color: $white;
+  border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: background 0.15s;
+  &:hover:not(:disabled) { background: darken($green, 5%); }
+  &:disabled { opacity: 0.55; cursor: wait; }
+}

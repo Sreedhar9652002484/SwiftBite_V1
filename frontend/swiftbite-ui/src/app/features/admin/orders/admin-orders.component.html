@@ -1,0 +1,67 @@
+<div class="orders-page">
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">All Orders</h1>
+      <p class="page-sub">{{ filtered().length }} orders shown</p>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <input
+      class="search-input"
+      placeholder="Search customer, restaurant, order ID…"
+      [ngModel]="searchTerm()"
+      (ngModelChange)="searchTerm.set($event)"
+    />
+    <select
+      class="status-select"
+      [ngModel]="filterStatus()"
+      (ngModelChange)="filterStatus.set($event)"
+    >
+      <option *ngFor="let s of statusOptions" [value]="s.value">{{ s.label }}</option>
+    </select>
+  </div>
+
+  <div class="loader-wrap" *ngIf="loading()">
+    <div class="spinner"></div>
+    <p>Loading all orders…</p>
+  </div>
+
+  <div class="card" *ngIf="!loading()">
+    <div class="empty-state" *ngIf="filtered().length === 0">
+      <p>No orders found.</p>
+    </div>
+
+    <table class="data-table" *ngIf="filtered().length > 0">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer</th>
+          <th>Restaurant</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Placed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let o of filtered()">
+          <td class="td-mono">#{{ o.id?.slice(-8).toUpperCase() }}</td>
+          <td>
+            <p class="fw-600">{{ o.customerName }}</p>
+            <p class="text-muted small">{{ o.deliveryCity }}</p>
+          </td>
+          <td>{{ o.restaurantName }}</td>
+          <td class="fw-600">₹{{ o.totalAmount | number:'1.0-0' }}</td>
+          <td>
+            <span class="status-badge" [ngClass]="statusClass(o.status)">
+              {{ statusLabel(o.status) }}
+            </span>
+          </td>
+          <td class="text-muted">{{ timeAgo(o.placedAt) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

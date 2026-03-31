@@ -23,6 +23,7 @@ public class OrderDto
     public DateTime PlacedAt { get; set; }
     public DateTime? EstimatedDeliveryAt { get; set; }
     public DateTime? DeliveredAt { get; set; }
+    public byte[]? RowVersion { get; set; }
     public List<OrderItemDto> Items { get; set; } = new();
     public List<OrderStatusHistoryDto> StatusHistory { get; set; } = new();
 }

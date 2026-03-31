@@ -1,0 +1,551 @@
+2026-03-30 05:50:13.979 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-30 05:50:18.913 +05:30 [INF] Executed DbCommand (605ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-30 05:50:19.445 +05:30 [INF] Executed DbCommand (488ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-30 05:50:19.479 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-30 05:50:19.508 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-30 05:50:20.187 +05:30 [INF] Executed DbCommand (576ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-30 05:50:20.269 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-30 05:50:28.145 +05:30 [INF] Executed DbCommand (6,642ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-30 05:50:28.357 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-30 05:50:28.381 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-30 05:50:28.403 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-30 05:50:28.588 +05:30 [INF] Executed DbCommand (108ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-30 05:50:28.641 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-30 05:50:28.690 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-30 05:50:28.708 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-30 05:50:28.772 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-30 05:50:28.842 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-30 05:50:29.319 +05:30 [INF] Executed DbCommand (346ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:50:29.661 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:50:37.065 +05:30 [INF] Executed DbCommand (6,166ms) [Parameters=[@p15='?' (Size = 450), @p0='?' (Size = 50), @p1='?' (Size = 100), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (Size = 50), @p16='?' (Size = 50), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [OpenIddictApplications] SET [ApplicationType] = @p0, [ClientId] = @p1, [ClientSecret] = @p2, [ClientType] = @p3, [ConcurrencyToken] = @p4, [ConsentType] = @p5, [DisplayName] = @p6, [DisplayNames] = @p7, [JsonWebKeySet] = @p8, [Permissions] = @p9, [PostLogoutRedirectUris] = @p10, [Properties] = @p11, [RedirectUris] = @p12, [Requirements] = @p13, [Settings] = @p14
+OUTPUT 1
+WHERE [Id] = @p15 AND [ConcurrencyToken] = @p16;
+2026-03-30 05:50:37.500 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:50:37.884 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:50:38.677 +05:30 [INF] Executed DbCommand (258ms) [Parameters=[@p15='?' (Size = 450), @p0='?' (Size = 50), @p1='?' (Size = 100), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (Size = 50), @p16='?' (Size = 50), @p5='?' (Size = 50), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [OpenIddictApplications] SET [ApplicationType] = @p0, [ClientId] = @p1, [ClientSecret] = @p2, [ClientType] = @p3, [ConcurrencyToken] = @p4, [ConsentType] = @p5, [DisplayName] = @p6, [DisplayNames] = @p7, [JsonWebKeySet] = @p8, [Permissions] = @p9, [PostLogoutRedirectUris] = @p10, [Properties] = @p11, [RedirectUris] = @p12, [Requirements] = @p13, [Settings] = @p14
+OUTPUT 1
+WHERE [Id] = @p15 AND [ConcurrencyToken] = @p16;
+2026-03-30 05:50:40.965 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:50:41.609 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:50:42.579 +05:30 [INF] Executed DbCommand (119ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:50:43.074 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:50:43.539 +05:30 [WRN] The WebRootPath was not found: C:\Users\nsrid\source\repos\SwiftBite\src\AuthServer\SwiftBite.AuthServer\wwwroot. Static files may be unavailable.
+2026-03-30 05:50:43.981 +05:30 [INF] Now listening on: https://localhost:7183
+2026-03-30 05:50:43.985 +05:30 [INF] Now listening on: http://localhost:5149
+2026-03-30 05:50:44.397 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-30 05:50:44.410 +05:30 [INF] Hosting environment: Development
+2026-03-30 05:50:44.419 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\AuthServer\SwiftBite.AuthServer
+2026-03-30 05:54:56.851 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/.well-known/openid-configuration - null null
+2026-03-30 05:54:57.119 +05:30 [INF] CORS policy execution successful.
+2026-03-30 05:54:57.291 +05:30 [INF] The request URI matched a server endpoint: "Configuration".
+2026-03-30 05:54:57.327 +05:30 [INF] The configuration request was successfully extracted: {}.
+2026-03-30 05:54:57.332 +05:30 [INF] The configuration request was successfully validated.
+2026-03-30 05:54:57.362 +05:30 [INF] The response was successfully returned as a JSON document: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-30 05:54:57.376 +05:30 [INF] HTTP GET /.well-known/openid-configuration responded 200 in 286.4674 ms
+2026-03-30 05:54:57.394 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/.well-known/openid-configuration - 200 1663 application/json;charset=UTF-8 573.9342ms
+2026-03-30 05:54:57.407 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/.well-known/jwks - null null
+2026-03-30 05:54:57.416 +05:30 [INF] CORS policy execution successful.
+2026-03-30 05:54:57.420 +05:30 [INF] The request URI matched a server endpoint: "Cryptography".
+2026-03-30 05:54:57.424 +05:30 [INF] The cryptography request was successfully extracted: {}.
+2026-03-30 05:54:57.430 +05:30 [INF] The cryptography request was successfully validated.
+2026-03-30 05:54:57.490 +05:30 [INF] The response was successfully returned as a JSON document: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-30 05:54:57.494 +05:30 [INF] HTTP GET /.well-known/jwks responded 200 in 78.7640 ms
+2026-03-30 05:54:57.499 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/.well-known/jwks - 200 1635 application/json;charset=UTF-8 92.5858ms
+2026-03-30 05:55:17.230 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5149/connect/token - application/x-www-form-urlencoded 181
+2026-03-30 05:55:17.242 +05:30 [INF] CORS policy execution successful.
+2026-03-30 05:55:17.250 +05:30 [INF] The request URI matched a server endpoint: "Token".
+2026-03-30 05:55:17.280 +05:30 [INF] The token request was successfully extracted: {
+  "grant_type": "password",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "client_id": "swiftbite-angular",
+  "username": "admin123@gmail.com",
+  "password": "[redacted]"
+}.
+2026-03-30 05:55:17.649 +05:30 [INF] Executed DbCommand (60ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:55:17.698 +05:30 [INF] The token request was successfully validated.
+2026-03-30 05:55:17.787 +05:30 [INF] Executing endpoint 'SwiftBite.AuthServer.Controllers.TokenController.Exchange (SwiftBite.AuthServer)'
+2026-03-30 05:55:17.920 +05:30 [INF] Route matched with {action = "Exchange", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Exchange() on controller SwiftBite.AuthServer.Controllers.TokenController (SwiftBite.AuthServer).
+2026-03-30 05:55:18.104 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RestaurantId], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-30 05:55:18.447 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-30 05:55:18.471 +05:30 [INF] Executing SignInResult with authentication scheme (OpenIddict.Server.AspNetCore) and the following principal: System.Security.Claims.ClaimsPrincipal.
+2026-03-30 05:55:18.856 +05:30 [INF] Executed DbCommand (140ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 450), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (Size = 50), @p11='?' (Size = 400), @p12='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [OpenIddictTokens] ([Id], [ApplicationId], [AuthorizationId], [ConcurrencyToken], [CreationDate], [ExpirationDate], [Payload], [Properties], [RedemptionDate], [ReferenceId], [Status], [Subject], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+2026-03-30 05:55:19.061 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 450), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (Size = 50), @p11='?' (Size = 400), @p12='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [OpenIddictTokens] ([Id], [ApplicationId], [AuthorizationId], [ConcurrencyToken], [CreationDate], [ExpirationDate], [Payload], [Properties], [RedemptionDate], [ReferenceId], [Status], [Subject], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+2026-03-30 05:55:19.085 +05:30 [INF] The response was successfully returned as a JSON document: {
+  "access_token": "[redacted]",
+  "token_type": "Bearer",
+  "expires_in": 3599,
+  "scope": "openid",
+  "id_token": "[redacted]"
+}.
+2026-03-30 05:55:19.096 +05:30 [INF] Executed action SwiftBite.AuthServer.Controllers.TokenController.Exchange (SwiftBite.AuthServer) in 1166.3117ms
+2026-03-30 05:55:19.100 +05:30 [INF] Executed endpoint 'SwiftBite.AuthServer.Controllers.TokenController.Exchange (SwiftBite.AuthServer)'
+2026-03-30 05:55:19.104 +05:30 [INF] HTTP POST /connect/token responded 200 in 1866.0688 ms
+2026-03-30 05:55:19.117 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5149/connect/token - 200 3359 application/json;charset=UTF-8 1887.7546ms
+2026-03-30 05:55:19.128 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5149/connect/userinfo - null null
+2026-03-30 05:55:19.134 +05:30 [INF] CORS policy execution successful.
+2026-03-30 05:55:19.141 +05:30 [INF] HTTP OPTIONS /connect/userinfo responded 204 in 6.5092 ms
+2026-03-30 05:55:19.145 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5149/connect/userinfo - 204 null null 17.7652ms
+2026-03-30 05:55:19.154 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/connect/userinfo - null null
+2026-03-30 05:55:19.158 +05:30 [INF] CORS policy execution successful.
+2026-03-30 05:55:19.161 +05:30 [INF] The request URI matched a server endpoint: "Userinfo".
+2026-03-30 05:55:19.169 +05:30 [INF] The userinfo request was successfully extracted: {
+  "access_token": "[redacted]"
+}.
+2026-03-30 05:55:19.511 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationId], [o].[AuthorizationId], [o].[ConcurrencyToken], [o].[CreationDate], [o].[ExpirationDate], [o].[Payload], [o].[Properties], [o].[RedemptionDate], [o].[ReferenceId], [o].[Status], [o].[Subject], [o].[Type], [o0].[Id], [o0].[ApplicationType], [o0].[ClientId], [o0].[ClientSecret], [o0].[ClientType], [o0].[ConcurrencyToken], [o0].[ConsentType], [o0].[DisplayName], [o0].[DisplayNames], [o0].[JsonWebKeySet], [o0].[Permissions], [o0].[PostLogoutRedirectUris], [o0].[Properties], [o0].[RedirectUris], [o0].[Requirements], [o0].[Settings], [o1].[Id], [o1].[ApplicationId], [o1].[ConcurrencyToken], [o1].[CreationDate], [o1].[Properties], [o1].[Scopes], [o1].[Status], [o1].[Subject], [o1].[Type]
+FROM [OpenIddictTokens] AS [o]
+LEFT JOIN [OpenIddictApplications] AS [o0] ON [o].[ApplicationId] = [o0].[Id]
+LEFT JOIN [OpenIddictAuthorizations] AS [o1] ON [o].[AuthorizationId] = [o1].[Id]
+WHERE [o].[Id] = @__key_0
+2026-03-30 05:55:19.534 +05:30 [INF] The userinfo request was successfully validated.
+2026-03-30 05:55:19.552 +05:30 [INF] Executing endpoint 'SwiftBite.AuthServer.Controllers.TokenController.Userinfo (SwiftBite.AuthServer)'
+2026-03-30 05:55:19.558 +05:30 [INF] Route matched with {action = "Userinfo", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Userinfo() on controller SwiftBite.AuthServer.Controllers.TokenController (SwiftBite.AuthServer).
+2026-03-30 05:55:19.595 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RestaurantId], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2026-03-30 05:55:19.606 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-30 05:55:19.622 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`9[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-30 05:55:19.665 +05:30 [INF] Executed action SwiftBite.AuthServer.Controllers.TokenController.Userinfo (SwiftBite.AuthServer) in 103.2226ms
+2026-03-30 05:55:19.669 +05:30 [INF] Executed endpoint 'SwiftBite.AuthServer.Controllers.TokenController.Userinfo (SwiftBite.AuthServer)'
+2026-03-30 05:55:19.672 +05:30 [INF] HTTP GET /connect/userinfo responded 200 in 513.1528 ms
+2026-03-30 05:55:19.679 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/connect/userinfo - 200 null application/json; charset=utf-8 525.6438ms
+2026-03-30 05:55:20.702 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/.well-known/openid-configuration - null null
+2026-03-30 05:55:20.707 +05:30 [INF] The request URI matched a server endpoint: "Configuration".
+2026-03-30 05:55:20.711 +05:30 [INF] The configuration request was successfully extracted: {}.
+2026-03-30 05:55:20.713 +05:30 [INF] The configuration request was successfully validated.
+2026-03-30 05:55:20.716 +05:30 [INF] The response was successfully returned as a JSON document: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-30 05:55:20.719 +05:30 [INF] HTTP GET /.well-known/openid-configuration responded 200 in 12.0216 ms
+2026-03-30 05:55:20.722 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/.well-known/openid-configuration - 200 1663 application/json;charset=UTF-8 21.9349ms
+2026-03-30 05:55:20.865 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/.well-known/jwks - null null
+2026-03-30 05:55:20.871 +05:30 [INF] The request URI matched a server endpoint: "Cryptography".
+2026-03-30 05:55:20.873 +05:30 [INF] The cryptography request was successfully extracted: {}.
+2026-03-30 05:55:20.877 +05:30 [INF] The cryptography request was successfully validated.
+2026-03-30 05:55:20.880 +05:30 [INF] The response was successfully returned as a JSON document: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-30 05:55:20.883 +05:30 [INF] HTTP GET /.well-known/jwks responded 200 in 12.4485 ms
+2026-03-30 05:55:20.887 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/.well-known/jwks - 200 1635 application/json;charset=UTF-8 22.7644ms
+2026-03-30 05:55:21.266 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5149/connect/introspect - application/x-www-form-urlencoded 2407
+2026-03-30 05:55:21.282 +05:30 [INF] The request URI matched a server endpoint: "Introspection".
+2026-03-30 05:55:21.288 +05:30 [INF] The introspection request was successfully extracted: {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-30 05:55:21.308 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:55:21.350 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationId], [o].[AuthorizationId], [o].[ConcurrencyToken], [o].[CreationDate], [o].[ExpirationDate], [o].[Payload], [o].[Properties], [o].[RedemptionDate], [o].[ReferenceId], [o].[Status], [o].[Subject], [o].[Type], [o0].[Id], [o0].[ApplicationType], [o0].[ClientId], [o0].[ClientSecret], [o0].[ClientType], [o0].[ConcurrencyToken], [o0].[ConsentType], [o0].[DisplayName], [o0].[DisplayNames], [o0].[JsonWebKeySet], [o0].[Permissions], [o0].[PostLogoutRedirectUris], [o0].[Properties], [o0].[RedirectUris], [o0].[Requirements], [o0].[Settings], [o1].[Id], [o1].[ApplicationId], [o1].[ConcurrencyToken], [o1].[CreationDate], [o1].[Properties], [o1].[Scopes], [o1].[Status], [o1].[Subject], [o1].[Type]
+FROM [OpenIddictTokens] AS [o]
+LEFT JOIN [OpenIddictApplications] AS [o0] ON [o].[ApplicationId] = [o0].[Id]
+LEFT JOIN [OpenIddictAuthorizations] AS [o1] ON [o].[AuthorizationId] = [o1].[Id]
+WHERE [o].[Id] = @__key_0
+2026-03-30 05:55:21.366 +05:30 [INF] The introspection request was successfully validated.
+2026-03-30 05:55:21.383 +05:30 [INF] The response was successfully returned as a JSON document: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "4013819f-b89d-4649-83d7-20e42f8ca8ba",
+  "scope": "openid",
+  "jti": "33faf462-5c03-4d88-80bd-ffe798b7be59",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774830318,
+  "nbf": 1774830318,
+  "exp": 1774833918,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "admin123@gmail.com",
+  "given_name": "Admin",
+  "family_name": "SwiftBite",
+  "firstName": "Admin",
+  "lastName": "SwiftBite",
+  "role": "Admin"
+}.
+2026-03-30 05:55:21.386 +05:30 [INF] HTTP POST /connect/introspect responded 200 in 106.2242 ms
+2026-03-30 05:55:21.391 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5149/connect/introspect - 200 719 application/json;charset=UTF-8 124.0217ms
+2026-03-30 05:55:22.482 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/.well-known/openid-configuration - null null
+2026-03-30 05:55:22.489 +05:30 [INF] The request URI matched a server endpoint: "Configuration".
+2026-03-30 05:55:22.493 +05:30 [INF] The configuration request was successfully extracted: {}.
+2026-03-30 05:55:22.496 +05:30 [INF] The configuration request was successfully validated.
+2026-03-30 05:55:22.499 +05:30 [INF] The response was successfully returned as a JSON document: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-30 05:55:22.503 +05:30 [INF] HTTP GET /.well-known/openid-configuration responded 200 in 13.6374 ms
+2026-03-30 05:55:22.507 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/.well-known/openid-configuration - 200 1663 application/json;charset=UTF-8 24.819ms
+2026-03-30 05:55:22.678 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5149/.well-known/jwks - null null
+2026-03-30 05:55:22.685 +05:30 [INF] The request URI matched a server endpoint: "Cryptography".
+2026-03-30 05:55:22.687 +05:30 [INF] The cryptography request was successfully extracted: {}.
+2026-03-30 05:55:22.690 +05:30 [INF] The cryptography request was successfully validated.
+2026-03-30 05:55:22.696 +05:30 [INF] The response was successfully returned as a JSON document: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-30 05:55:22.698 +05:30 [INF] HTTP GET /.well-known/jwks responded 200 in 14.0232 ms
+2026-03-30 05:55:22.702 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5149/.well-known/jwks - 200 1635 application/json;charset=UTF-8 24.0169ms
+2026-03-30 05:55:22.812 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5149/connect/introspect - application/x-www-form-urlencoded 2406
+2026-03-30 05:55:22.818 +05:30 [INF] The request URI matched a server endpoint: "Introspection".
+2026-03-30 05:55:22.820 +05:30 [INF] The introspection request was successfully extracted: {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-restaurantservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-30 05:55:22.831 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationType], [o].[ClientId], [o].[ClientSecret], [o].[ClientType], [o].[ConcurrencyToken], [o].[ConsentType], [o].[DisplayName], [o].[DisplayNames], [o].[JsonWebKeySet], [o].[Permissions], [o].[PostLogoutRedirectUris], [o].[Properties], [o].[RedirectUris], [o].[Requirements], [o].[Settings]
+FROM [OpenIddictApplications] AS [o]
+WHERE [o].[ClientId] = @__identifier_0
+2026-03-30 05:55:22.852 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[ApplicationId], [o].[AuthorizationId], [o].[ConcurrencyToken], [o].[CreationDate], [o].[ExpirationDate], [o].[Payload], [o].[Properties], [o].[RedemptionDate], [o].[ReferenceId], [o].[Status], [o].[Subject], [o].[Type], [o0].[Id], [o0].[ApplicationType], [o0].[ClientId], [o0].[ClientSecret], [o0].[ClientType], [o0].[ConcurrencyToken], [o0].[ConsentType], [o0].[DisplayName], [o0].[DisplayNames], [o0].[JsonWebKeySet], [o0].[Permissions], [o0].[PostLogoutRedirectUris], [o0].[Properties], [o0].[RedirectUris], [o0].[Requirements], [o0].[Settings], [o1].[Id], [o1].[ApplicationId], [o1].[ConcurrencyToken], [o1].[CreationDate], [o1].[Properties], [o1].[Scopes], [o1].[Status], [o1].[Subject], [o1].[Type]
+FROM [OpenIddictTokens] AS [o]
+LEFT JOIN [OpenIddictApplications] AS [o0] ON [o].[ApplicationId] = [o0].[Id]
+LEFT JOIN [OpenIddictAuthorizations] AS [o1] ON [o].[AuthorizationId] = [o1].[Id]
+WHERE [o].[Id] = @__key_0
+2026-03-30 05:55:22.860 +05:30 [INF] The introspection request was successfully validated.
+2026-03-30 05:55:22.863 +05:30 [INF] The response was successfully returned as a JSON document: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "4013819f-b89d-4649-83d7-20e42f8ca8ba",
+  "scope": "openid",
+  "jti": "33faf462-5c03-4d88-80bd-ffe798b7be59",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774830318,
+  "nbf": 1774830318,
+  "exp": 1774833918,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "admin123@gmail.com",
+  "given_name": "Admin",
+  "family_name": "SwiftBite",
+  "firstName": "Admin",
+  "lastName": "SwiftBite",
+  "role": "Admin"
+}.
+2026-03-30 05:55:22.865 +05:30 [INF] HTTP POST /connect/introspect responded 200 in 47.4714 ms
+2026-03-30 05:55:22.870 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5149/connect/introspect - 200 719 application/json;charset=UTF-8 58.0694ms

@@ -9,10 +9,12 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="12.1.1" />
     <PackageReference Include="MediatR" Version="14.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SwiftBite.OrderService.Domain\SwiftBite.OrderService.Domain.csproj" />
+
   </ItemGroup>
 
 </Project>
