@@ -61,6 +61,14 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         builder.Property(o => o.SpecialInstructions)
             .HasMaxLength(500);
 
+
+        //builder.Property(o => o.UpdatedAt)
+        //    .IsRowVersion();
+        // ✅ NEW: Map RowVersion instead
+        builder.Property(o => o.RowVersion)
+            .IsRowVersion();
+
+
         // ✅ One Order → many Items
         builder.HasMany(o => o.Items)
             .WithOne(i => i.Order)

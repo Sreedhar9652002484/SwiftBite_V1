@@ -7,5 +7,6 @@ namespace SwiftBite.OrderService.Application.Orders.Commands.UpdateOrderStatus;
 public record UpdateOrderStatusCommand(
     Guid OrderId,
     string RequesterId,  // Restaurant or Delivery partner
-    OrderStatus NewStatus
+    OrderStatus NewStatus,
+    byte[] RowVersion
 ) : IRequest<OrderDto>;

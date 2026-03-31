@@ -66,6 +66,7 @@ export interface Order {
   estimatedDeliveryAt?: Date;
   deliveredAt?: Date;
   items: OrderItem[];
+  rowVersion: string;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -142,20 +143,23 @@ export class OrderService {
    * Update order status
    * ✅ UPDATED: Extracts data from ApiResponse<Order>
    */
-  updateStatus(id: string, newStatus: number): Observable<Order> {
-    return this.http.put<any>(
-      `${this.api}/api/orders/${id}/status`,
-      { newStatus })
-      .pipe(
-        map(response => {
-          const order = this.apiResponseService.extractData<Order>(response);
-          if (!order) {
-            throw new Error('Failed to update order status');
-          }
-          return order;
-        })
-      );
-  }
+updateStatus(order: Order, newStatus: number): Observable<Order> {
+  return this.http.put<any>(
+    `${this.api}/api/orders/${order.id}/status`,
+    {
+      newStatus,
+      rowVersion: order.rowVersion   // ✅ FIXED
+    }
+  ).pipe(
+    map(response => {
+      const updated = this.apiResponseService.extractData<Order>(response);
+      if (!updated) {
+        throw new Error('Failed to update order status');
+      }
+      return updated;
+    })
+  );
+}
 
   /**
    * Get restaurant orders

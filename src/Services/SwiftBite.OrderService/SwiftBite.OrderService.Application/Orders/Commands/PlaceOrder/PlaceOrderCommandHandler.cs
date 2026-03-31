@@ -14,6 +14,7 @@ public class PlaceOrderCommandHandler
     private readonly IEventPublisher _publisher;
     private readonly ICacheService _cache;
 
+
     public PlaceOrderCommandHandler(
         IOrderRepository repo,
         IEventPublisher publisher,
@@ -99,6 +100,7 @@ public class PlaceOrderCommandHandler
         PlacedAt = o.PlacedAt,
         EstimatedDeliveryAt = o.EstimatedDeliveryAt,
         DeliveredAt = o.DeliveredAt,
+        RowVersion = o.RowVersion,
         Items = o.Items.Select(i => new OrderItemDto
         {
             Id = i.Id,

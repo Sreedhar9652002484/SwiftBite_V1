@@ -145,23 +145,28 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
   markReady(order: Order): void { this.changeStatus(order, OrderStatus.Ready); }
 
   // ✅ UPDATED: Accept OrderStatus ENUM
-  private changeStatus(order: Order, status: OrderStatus): void {
-    if (this.updatingId()) return;
-    this.updatingId.set(order.id);
+ private changeStatus(order: Order, status: OrderStatus): void {
+  if (this.updatingId()) return;
 
-    this.orderSvc.updateStatus(order.id, status).subscribe({
-      next: () => {
-        this.orders.update(list =>
-          list.map(o => o.id === order.id ? { ...o, status } : o)
-        );
-        this.updatingId.set(null);
-      },
-      error: err => {
-        console.error('Status update failed:', err);
-        this.updatingId.set(null);
-      },
-    });
-  }
+  this.updatingId.set(order.id);
+
+  this.orderSvc.updateStatus(order, status).subscribe({
+    next: (updatedOrder) => {   // ✅ CAPTURE RESPONSE
+      this.orders.update(list =>
+        list.map(o =>
+          o.id === updatedOrder.id ? updatedOrder : o   // ✅ FULL REPLACE
+        )
+      );
+
+      this.updatingId.set(null);
+    },
+
+    error: err => {
+      console.error('Status update failed:', err);
+      this.updatingId.set(null);
+    }
+  });
+}
 
 // ✅ UPDATED: Accept Date parameter
 timeAgo(dateStr: Date | string): string {

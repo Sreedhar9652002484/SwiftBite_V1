@@ -53,10 +53,27 @@ public class OrderRepository : IOrderRepository
         Order order, CancellationToken ct = default)
     {
         _db.Orders.Update(order);
+        _db.Entry(order).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         return Task.CompletedTask;
+        // ✅ FIX: Only call Update() if NOT already tracked
+        //var entry = _db.Entry(order);
+
+        //if (entry.State == EntityState.Detached)
+        //{
+        //    _db.Orders.Update(order);  
+        //}
+        // return Task.CompletedTask;
+
     }
 
     public async Task SaveChangesAsync(
         CancellationToken ct = default)
         => await _db.SaveChangesAsync(ct);
+
+    public void SetOriginalRowVersion(Order order, byte[] rowVersion)
+    {
+        _db.Entry(order)
+            .Property(o => o.RowVersion)
+            .OriginalValue = rowVersion;
+    }
 }

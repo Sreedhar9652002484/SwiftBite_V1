@@ -1,0 +1,140 @@
+$primary    : #1a1a2e;
+$green      : #27ae60;
+$green-light: #eafaf1;
+$danger     : #e74c3c;
+$text       : #1c1c1c;
+$text-muted : #686b78;
+$border     : #e8e8e8;
+$bg         : #f4f6f9;
+$white      : #ffffff;
+
+.delivery-shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: $bg;
+}
+
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  background: $primary;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 16px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  .brand-icon { font-size: 20px; }
+  .brand-name { font-size: 16px; font-weight: 700; color: $white; }
+  .brand-pill {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: $green;
+    color: $white;
+  }
+}
+
+.availability-card {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  .partner-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: $white;
+    margin: 0 0 10px;
+  }
+}
+
+.availability-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(231,76,60,0.2);
+  color: #ff7675;
+  transition: all 0.2s;
+  width: 100%;
+
+  &.online {
+    background: rgba(39,174,96,0.2);
+    color: #55efc4;
+  }
+
+  &:disabled { opacity: 0.6; cursor: wait; }
+
+  .toggle-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e74c3c;
+    flex-shrink: 0;
+  }
+
+  &.online .toggle-dot { background: $green; }
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.55);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+
+  &:hover { background: rgba(255,255,255,0.08); color: $white; }
+  &.active { background: $green; color: $white; }
+  .nav-icon { font-size: 17px; }
+}
+
+.sidebar-footer {
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.btn-logout {
+  width: 100%;
+  padding: 8px 0;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover { background: rgba(231,76,60,0.2); color: #ff7675; border-color: $danger; }
+}
+
+.delivery-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 28px;
+}

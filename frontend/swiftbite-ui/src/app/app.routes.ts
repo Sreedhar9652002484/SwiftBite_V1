@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { authGuard }  from './core/auth/auth.guard';
 import { ownerGuard } from './core/auth/owner.guard';   // ← add this import
+import { adminGuard } from './core/auth/admin.guard';
+import { deliveryGuard } from './core/auth/delivery.gaurd';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -58,11 +60,38 @@ export const routes: Routes = [
 
   // ── Admin ─────────────────────────────────────────────
   {
-    path: 'admin/dashboard',
+    path: 'admin',
     loadComponent: () =>
-      import('./features/admin/dashboard/admin-dashboard.component')
-        .then(m => m.AdminDashboardComponent),
-    canActivate: [authGuard],
+      import('./features/admin/admin-layout/admin-layout.component')
+        .then(m => m.AdminLayoutComponent),
+    canActivate: [authGuard, adminGuard],
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./features/admin/dashboard/admin-dashboard.component')
+            .then(m => m.AdminDashboardComponent),
+      },
+      {
+        path: 'restaurants',
+        loadComponent: () =>
+          import('./features/admin/restaurants/admin-restaurants.component')
+            .then(m => m.AdminRestaurantsComponent),
+      },
+      {
+        path: 'orders',
+        loadComponent: () =>
+          import('./features/admin/orders/admin-orders.component')
+            .then(m => m.AdminOrdersComponent),
+      },
+      {
+        path: 'analytics',
+        loadComponent: () =>
+          import('./features/admin/analytics/admin-analytics.component')
+            .then(m => m.AdminAnalyticsComponent),
+      },
+    ],
   },
 
  // ── Restaurant Owner ───────────────────────────────────
@@ -99,6 +128,21 @@ export const routes: Routes = [
           import('./features/restaurents/analytics/analytics.component')
             .then(m => m.AnalyticsComponent),
       },
+    ],
+  },
+   // ── Delivery Partner ───────────────────────────────────
+  {
+    path: 'delivery',
+    loadComponent: () =>
+      import('./features/delivery/layout/delivery-layout.component')
+        .then(m => m.DeliveryLayoutComponent),
+    canActivate: [authGuard, deliveryGuard],
+    children: [
+      { path: '', redirectTo: 'jobs', pathMatch: 'full' },
+      { path: 'jobs',     loadComponent: () => import('./features/delivery/jobs/delivery-jobs.component').then(m => m.DeliveryJobsComponent) },
+      { path: 'active',   loadComponent: () => import('./features/delivery/jobs/active/delivery-active.component').then(m => m.DeliveryActiveComponent) },
+      { path: 'earnings', loadComponent: () => import('./features/delivery/earnings/delivery-earnings.component').then(m => m.EarningsComponent) },
+      { path: 'profile',  loadComponent: () => import('./features/delivery/profile/delivery-profile.component').then(m => m.DeliveryProfileComponent) },
     ],
   },
  

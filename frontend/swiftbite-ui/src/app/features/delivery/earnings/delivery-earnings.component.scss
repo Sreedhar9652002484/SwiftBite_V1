@@ -1,0 +1,23 @@
+.earnings-page { max-width: 700px; }
+    .page-title { font-size: 22px; font-weight: 700; margin: 0 0 20px; }
+    .loader-wrap { display:flex; flex-direction:column; align-items:center; gap:12px; padding:60px 0; color:#686b78; font-size:14px; }
+    .spinner { width:30px; height:30px; border:3px solid #e8e8e8; border-top-color:#27ae60; border-radius:50%; animation:spin 0.7s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:16px; }
+    .stat-card { background:#fff; border:1px solid #e8e8e8; border-radius:12px; padding:18px 20px; }
+    .stat-card.green-card { background:#eafaf1; border-color:lighten(#27ae60,20%); .stat-value { color:#1a7a45; } }
+    .stat-value { font-size:24px; font-weight:700; margin:0 0 4px; }
+    .stat-label { font-size:12px; color:#686b78; margin:0; }
+    .card { background:#fff; border:1px solid #e8e8e8; border-radius:12px; padding:20px; }
+    .card-title { font-size:15px; font-weight:600; margin:0 0 16px; }
+    .empty-state { text-align:center; padding:24px; color:#686b78; font-size:14px; }
+    .job-list { display:flex; flex-direction:column; }
+    .job-row { display:flex; align-items:center; justify-content:space-between; padding:12px 0; border-bottom:1px solid #e8e8e8; }
+    .job-row:last-child { border-bottom:none; }
+    .right-col { text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+    .fw-600 { font-size:14px; font-weight:600; margin:0; }
+    .text-muted { color:#686b78; }
+    .small { font-size:12px; margin:2px 0 0; }
+    .green { color:#27ae60; }
+    .status-pill { font-size:11px; font-weight:600; padding:2px 8px; border-radius:20px; background:#e8e8e8; color:#686b78; }
+    .status-pill.delivered { background:#eafaf1; color:#1a7a45; }

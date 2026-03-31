@@ -36,7 +36,12 @@
         "ClusterId": "notification-cluster",
         "Match": { "Path": "/api/notifications/{**catch-all}" }
       },
-
+      "delivery-route": {
+        "ClusterId": "delivery-cluster",
+        "Match": {
+          "Path": "/api/delivery/{**catch-all}"
+        }
+      },
       "notification-hub-route": {
         "ClusterId": "notification-cluster",
         "Match": { "Path": "/hubs/{**catch-all}" }
@@ -73,7 +78,14 @@
         "Destinations": {
           "notification-service": { "Address": "http://localhost:5006" }
         }
+      },
+      "delivery-cluster": {
+        "Destinations": {
+          "delivery-service": {
+            "Address": "http://localhost:5007"
+          }
+        }
+      }
       }
     }
-  }
 }

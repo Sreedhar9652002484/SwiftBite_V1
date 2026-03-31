@@ -298,3 +298,1304 @@ System.Collections.Generic.KeyNotFoundException: User not found.
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at SwiftBite.Shared.Exceptions.Middleware.GlobalExceptionHandlerMiddleware.InvokeAsync(HttpContext context) in C:\Users\nsrid\source\repos\SwiftBite\SwiftBite.Shared.Exceptions\Middleware\GlobalExceptionHandlerMiddleware.cs:line 27
 2026-03-28 11:07:40.835 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/api/users/addresses - 404 null application/json 1209.3434ms
+2026-03-28 11:38:41.078 +05:30 [INF] Executed DbCommand (748ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 11:38:42.756 +05:30 [INF] Executed DbCommand (867ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 11:38:44.854 +05:30 [INF] Executed DbCommand (305ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 11:38:45.290 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 11:38:46.705 +05:30 [INF] Executed DbCommand (779ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 11:38:48.323 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 11:38:50.825 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 11:38:52.801 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 11:38:53.595 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 11:38:53.742 +05:30 [INF] Hosting environment: Development
+2026-03-28 11:38:53.905 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 11:38:55.855 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 11:39:00.621 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 4829.276ms
+2026-03-28 11:39:00.967 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_vs/browserLink - null null
+2026-03-28 11:39:01.397 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 11:39:01.741 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 342.0105ms
+2026-03-28 11:39:02.190 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1223.8084ms
+2026-03-28 11:39:11.645 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - null null
+2026-03-28 11:39:11.754 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 110.1808ms
+2026-03-28 12:31:22.167 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/users/addresses - null null
+2026-03-28 12:31:22.404 +05:30 [INF] CORS policy execution successful.
+2026-03-28 12:31:23.021 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 12:31:23.105 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 12:31:23.189 +05:30 [INF] Received HTTP response headers after 74.342ms - 200
+2026-03-28 12:31:23.218 +05:30 [INF] End processing HTTP request after 215.946ms - 200
+2026-03-28 12:31:23.254 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-28 12:31:23.384 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-28 12:31:23.423 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 12:31:23.427 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 12:31:23.455 +05:30 [INF] Received HTTP response headers after 23.9069ms - 200
+2026-03-28 12:31:23.460 +05:30 [INF] End processing HTTP request after 36.856ms - 200
+2026-03-28 12:31:23.467 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-28 12:31:23.474 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-28 12:31:23.612 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 12:31:23.615 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 12:31:23.672 +05:30 [INF] Received HTTP response headers after 54.9313ms - 200
+2026-03-28 12:31:23.676 +05:30 [INF] End processing HTTP request after 63.5838ms - 200
+2026-03-28 12:31:23.681 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 12:31:23.688 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "bc8e4dce-ea4c-4160-b9bc-4aa9964b157a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774678829,
+  "nbf": 1774678829,
+  "exp": 1774682429,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 12:31:23.745 +05:30 [INF] Executing endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 12:31:23.842 +05:30 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddresses(System.Threading.CancellationToken) on controller SwiftBite.UserService.API.Controllers.AddressesController (SwiftBite.UserService.Api).
+2026-03-28 12:31:23.865 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-28 12:31:24.913 +05:30 [INF] Executed DbCommand (81ms) [Parameters=[@__authUserId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthUserId], [t].[CreatedAt], [t].[DateOfBirth], [t].[Email], [t].[FirstName], [t].[IsActive], [t].[LastName], [t].[PhoneNumber], [t].[ProfilePictureUrl], [t].[UpdatedAt], [t].[Id0], [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId], [t].[AllergiesInfo], [t].[DietaryPreference], [t].[EmailNotifications], [t].[PreferredCuisines], [t].[PushNotifications], [t].[SmsNotifications], [t].[UpdatedAt0], [t].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AuthUserId], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PhoneNumber], [u].[ProfilePictureUrl], [u].[UpdatedAt], [u0].[Id] AS [Id0], [u0].[AllergiesInfo], [u0].[DietaryPreference], [u0].[EmailNotifications], [u0].[PreferredCuisines], [u0].[PushNotifications], [u0].[SmsNotifications], [u0].[UpdatedAt] AS [UpdatedAt0], [u0].[UserId]
+    FROM [Users] AS [u]
+    LEFT JOIN [UserPreferences] AS [u0] ON [u].[Id] = [u0].[UserId]
+    WHERE [u].[AuthUserId] = @__authUserId_0
+) AS [t]
+LEFT JOIN [Addresses] AS [a] ON [t].[Id] = [a].[UserId]
+ORDER BY [t].[Id], [t].[Id0]
+2026-03-28 12:31:25.267 +05:30 [INF] Executed action SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api) in 1417.1888ms
+2026-03-28 12:31:25.272 +05:30 [INF] Executed endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 12:31:25.284 +05:30 [ERR] HTTP GET /api/users/addresses responded 500 in 2858.4523 ms
+System.Collections.Generic.KeyNotFoundException: User not found.
+   at SwiftBite.UserService.Application.Addresses.Queries.GetAddresses.GetAddressesQueryHandler.Handle(GetAddressesQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.Application\Addresses\Queries\GetAddressesQueryHandler.cs:line 25
+   at SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API\Controllers\AddressesController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-28 12:31:25.592 +05:30 [ERR] Unhandled exception occurred. TraceId: 0HNKCI1UBUEMJ:00000001
+System.Collections.Generic.KeyNotFoundException: User not found.
+   at SwiftBite.UserService.Application.Addresses.Queries.GetAddresses.GetAddressesQueryHandler.Handle(GetAddressesQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.Application\Addresses\Queries\GetAddressesQueryHandler.cs:line 25
+   at SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API\Controllers\AddressesController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at SwiftBite.Shared.Exceptions.Middleware.GlobalExceptionHandlerMiddleware.InvokeAsync(HttpContext context) in C:\Users\nsrid\source\repos\SwiftBite\SwiftBite.Shared.Exceptions\Middleware\GlobalExceptionHandlerMiddleware.cs:line 27
+2026-03-28 12:31:25.666 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/api/users/addresses - 404 null application/json 3540.1369ms
+2026-03-28 12:35:41.624 +05:30 [INF] Executed DbCommand (139ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 12:35:42.405 +05:30 [INF] Executed DbCommand (131ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 12:35:42.463 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 12:35:42.575 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 12:35:42.711 +05:30 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 12:35:42.788 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 12:35:43.382 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 12:35:44.393 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 12:35:45.843 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 12:35:46.112 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 12:35:46.239 +05:30 [INF] Hosting environment: Development
+2026-03-28 12:35:46.244 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 12:35:49.007 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 3205.5342ms
+2026-03-28 12:35:49.202 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_vs/browserLink - null null
+2026-03-28 12:35:49.231 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 12:35:49.669 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 437.2494ms
+2026-03-28 12:35:49.744 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 542.4242ms
+2026-03-28 12:35:58.226 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - null null
+2026-03-28 12:35:59.107 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 881.3199ms
+2026-03-28 12:49:58.264 +05:30 [INF] Executed DbCommand (930ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 12:49:59.941 +05:30 [INF] Executed DbCommand (479ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 12:50:00.417 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 12:50:00.645 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 12:50:01.132 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 12:50:01.350 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 12:50:02.148 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 12:50:03.724 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 12:50:04.686 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 12:50:04.879 +05:30 [INF] Hosting environment: Development
+2026-03-28 12:50:05.161 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 12:50:06.189 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 12:50:08.276 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 2229.8616ms
+2026-03-28 12:50:08.335 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_vs/browserLink - null null
+2026-03-28 12:50:08.483 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 12:50:09.100 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 616.9873ms
+2026-03-28 12:50:09.451 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1110.233ms
+2026-03-28 12:50:12.751 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - null null
+2026-03-28 12:50:13.505 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 750.073ms
+2026-03-28 13:09:56.182 +05:30 [INF] Executed DbCommand (127ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 13:09:56.641 +05:30 [INF] Executed DbCommand (179ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 13:09:56.667 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 13:09:56.686 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 13:09:56.796 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 13:09:56.867 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 13:09:58.523 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 13:10:00.011 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 13:10:01.273 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 13:10:01.356 +05:30 [INF] Hosting environment: Development
+2026-03-28 13:10:01.456 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 13:10:30.020 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 13:10:33.094 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 3144.3712ms
+2026-03-28 13:10:34.865 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 13:10:34.873 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_vs/browserLink - null null
+2026-03-28 13:10:35.578 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 729.1937ms
+2026-03-28 13:10:36.055 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1192.4388ms
+2026-03-28 13:10:39.384 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - null null
+2026-03-28 13:10:39.795 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 411.6016ms
+2026-03-28 13:14:40.649 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/users/addresses - null null
+2026-03-28 13:14:41.169 +05:30 [INF] CORS policy execution successful.
+2026-03-28 13:14:42.907 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 13:14:43.045 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 13:14:43.225 +05:30 [INF] Received HTTP response headers after 163.8261ms - 200
+2026-03-28 13:14:43.282 +05:30 [INF] End processing HTTP request after 404.3208ms - 200
+2026-03-28 13:14:43.342 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-28 13:14:43.562 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-28 13:14:43.626 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 13:14:43.635 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 13:14:43.749 +05:30 [INF] Received HTTP response headers after 106.0672ms - 200
+2026-03-28 13:14:43.764 +05:30 [INF] End processing HTTP request after 138.7849ms - 200
+2026-03-28 13:14:43.776 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-28 13:14:43.812 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-28 13:14:44.067 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 13:14:44.075 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 13:14:44.203 +05:30 [INF] Received HTTP response headers after 119.3287ms - 200
+2026-03-28 13:14:44.211 +05:30 [INF] End processing HTTP request after 143.9497ms - 200
+2026-03-28 13:14:44.231 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 13:14:44.255 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "1f8a14e2-ccac-486e-b9f4-f23cfdf54343",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774683693,
+  "nbf": 1774683693,
+  "exp": 1774687293,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 13:14:44.363 +05:30 [INF] Executing endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 13:14:44.597 +05:30 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddresses(System.Threading.CancellationToken) on controller SwiftBite.UserService.API.Controllers.AddressesController (SwiftBite.UserService.Api).
+2026-03-28 13:14:44.658 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-28 13:14:47.122 +05:30 [INF] Executed DbCommand (148ms) [Parameters=[@__authUserId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthUserId], [t].[CreatedAt], [t].[DateOfBirth], [t].[Email], [t].[FirstName], [t].[IsActive], [t].[LastName], [t].[PhoneNumber], [t].[ProfilePictureUrl], [t].[UpdatedAt], [t].[Id0], [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId], [t].[AllergiesInfo], [t].[DietaryPreference], [t].[EmailNotifications], [t].[PreferredCuisines], [t].[PushNotifications], [t].[SmsNotifications], [t].[UpdatedAt0], [t].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AuthUserId], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PhoneNumber], [u].[ProfilePictureUrl], [u].[UpdatedAt], [u0].[Id] AS [Id0], [u0].[AllergiesInfo], [u0].[DietaryPreference], [u0].[EmailNotifications], [u0].[PreferredCuisines], [u0].[PushNotifications], [u0].[SmsNotifications], [u0].[UpdatedAt] AS [UpdatedAt0], [u0].[UserId]
+    FROM [Users] AS [u]
+    LEFT JOIN [UserPreferences] AS [u0] ON [u].[Id] = [u0].[UserId]
+    WHERE [u].[AuthUserId] = @__authUserId_0
+) AS [t]
+LEFT JOIN [Addresses] AS [a] ON [t].[Id] = [a].[UserId]
+ORDER BY [t].[Id], [t].[Id0]
+2026-03-28 13:14:47.713 +05:30 [INF] Executed action SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api) in 3087.8347ms
+2026-03-28 13:14:47.726 +05:30 [INF] Executed endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 13:14:47.746 +05:30 [ERR] HTTP GET /api/users/addresses responded 500 in 6528.0893 ms
+System.Collections.Generic.KeyNotFoundException: User not found.
+   at SwiftBite.UserService.Application.Addresses.Queries.GetAddresses.GetAddressesQueryHandler.Handle(GetAddressesQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.Application\Addresses\Queries\GetAddressesQueryHandler.cs:line 25
+   at SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API\Controllers\AddressesController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-28 13:14:48.599 +05:30 [ERR] Unhandled exception occurred. TraceId: 0HNKCJKVQ4BP2:00000001
+System.Collections.Generic.KeyNotFoundException: User not found.
+   at SwiftBite.UserService.Application.Addresses.Queries.GetAddresses.GetAddressesQueryHandler.Handle(GetAddressesQuery query, CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.Application\Addresses\Queries\GetAddressesQueryHandler.cs:line 25
+   at SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API\Controllers\AddressesController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at SwiftBite.Shared.Exceptions.Middleware.GlobalExceptionHandlerMiddleware.InvokeAsync(HttpContext context) in C:\Users\nsrid\source\repos\SwiftBite\SwiftBite.Shared.Exceptions\Middleware\GlobalExceptionHandlerMiddleware.cs:line 27
+2026-03-28 13:14:48.785 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/api/users/addresses - 404 null application/json 8223.8821ms
+2026-03-28 19:31:35.438 +05:30 [INF] Executed DbCommand (220ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 19:31:35.859 +05:30 [INF] Executed DbCommand (114ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 19:31:35.916 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 19:31:35.975 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 19:31:36.211 +05:30 [INF] Executed DbCommand (170ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 19:31:36.289 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 19:31:37.748 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 19:31:39.231 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 19:31:40.369 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 19:31:40.397 +05:30 [INF] Hosting environment: Development
+2026-03-28 19:31:40.402 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 19:31:44.685 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 19:31:46.142 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 1484.9463ms
+2026-03-28 19:31:46.149 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_vs/browserLink - null null
+2026-03-28 19:31:46.431 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 19:31:46.553 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 119.2954ms
+2026-03-28 19:31:46.633 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 484.0253ms
+2026-03-28 19:31:46.917 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - null null
+2026-03-28 19:31:47.478 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 560.6003ms
+2026-03-28 20:04:55.772 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/users/addresses - null null
+2026-03-28 20:04:56.066 +05:30 [INF] CORS policy execution successful.
+2026-03-28 20:04:59.213 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 20:04:59.984 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 20:05:00.075 +05:30 [INF] Received HTTP response headers after 80.4702ms - 200
+2026-03-28 20:05:00.100 +05:30 [INF] End processing HTTP request after 906.3567ms - 200
+2026-03-28 20:05:00.138 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-28 20:05:00.268 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-28 20:05:00.309 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 20:05:00.313 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 20:05:00.341 +05:30 [INF] Received HTTP response headers after 24.8083ms - 200
+2026-03-28 20:05:00.345 +05:30 [INF] End processing HTTP request after 36.042ms - 200
+2026-03-28 20:05:00.349 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-28 20:05:00.361 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-28 20:05:00.521 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 20:05:00.526 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 20:05:00.581 +05:30 [INF] Received HTTP response headers after 51.8523ms - 200
+2026-03-28 20:05:00.585 +05:30 [INF] End processing HTTP request after 64.1748ms - 200
+2026-03-28 20:05:00.593 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 20:05:00.605 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "581730ec-e230-4cfa-ac93-ae8cec4e6ade",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774706697,
+  "nbf": 1774706697,
+  "exp": 1774710297,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 20:05:00.667 +05:30 [INF] Executing endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 20:05:00.808 +05:30 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddresses(System.Threading.CancellationToken) on controller SwiftBite.UserService.API.Controllers.AddressesController (SwiftBite.UserService.Api).
+2026-03-28 20:05:00.840 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-28 20:05:02.245 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[@__authUserId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthUserId], [t].[CreatedAt], [t].[DateOfBirth], [t].[Email], [t].[FirstName], [t].[IsActive], [t].[LastName], [t].[PhoneNumber], [t].[ProfilePictureUrl], [t].[UpdatedAt], [t].[Id0], [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId], [t].[AllergiesInfo], [t].[DietaryPreference], [t].[EmailNotifications], [t].[PreferredCuisines], [t].[PushNotifications], [t].[SmsNotifications], [t].[UpdatedAt0], [t].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AuthUserId], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PhoneNumber], [u].[ProfilePictureUrl], [u].[UpdatedAt], [u0].[Id] AS [Id0], [u0].[AllergiesInfo], [u0].[DietaryPreference], [u0].[EmailNotifications], [u0].[PreferredCuisines], [u0].[PushNotifications], [u0].[SmsNotifications], [u0].[UpdatedAt] AS [UpdatedAt0], [u0].[UserId]
+    FROM [Users] AS [u]
+    LEFT JOIN [UserPreferences] AS [u0] ON [u].[Id] = [u0].[UserId]
+    WHERE [u].[AuthUserId] = @__authUserId_0
+) AS [t]
+LEFT JOIN [Addresses] AS [a] ON [t].[Id] = [a].[UserId]
+ORDER BY [t].[Id], [t].[Id0]
+2026-03-28 20:05:02.460 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId]
+FROM [Addresses] AS [a]
+WHERE [a].[UserId] = @__userId_0
+ORDER BY [a].[IsDefault] DESC
+2026-03-28 20:05:02.480 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 20:05:02.578 +05:30 [INF] Executed action SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api) in 1758.3643ms
+2026-03-28 20:05:02.584 +05:30 [INF] Executed endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 20:05:02.596 +05:30 [INF] HTTP GET /api/users/addresses responded 200 in 6506.5208 ms
+2026-03-28 20:05:02.618 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/api/users/addresses - 200 null application/json; charset=utf-8 6884.4856ms
+2026-03-28 20:12:11.598 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/users/preferences - null null
+2026-03-28 20:12:11.598 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/users/addresses - null null
+2026-03-28 20:12:11.598 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/users/profile - null null
+2026-03-28 20:12:11.725 +05:30 [INF] CORS policy execution successful.
+2026-03-28 20:12:11.725 +05:30 [INF] CORS policy execution successful.
+2026-03-28 20:12:11.725 +05:30 [INF] CORS policy execution successful.
+2026-03-28 20:12:11.798 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 20:12:11.798 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 20:12:11.799 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 20:12:11.804 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 20:12:11.806 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 20:12:11.810 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 20:12:12.010 +05:30 [INF] Received HTTP response headers after 194.3201ms - 200
+2026-03-28 20:12:12.021 +05:30 [INF] Received HTTP response headers after 208.1815ms - 200
+2026-03-28 20:12:12.024 +05:30 [INF] End processing HTTP request after 227.5891ms - 200
+2026-03-28 20:12:12.029 +05:30 [INF] End processing HTTP request after 232.7726ms - 200
+2026-03-28 20:12:12.030 +05:30 [INF] Received HTTP response headers after 211.8498ms - 200
+2026-03-28 20:12:12.037 +05:30 [INF] End processing HTTP request after 238.3772ms - 200
+2026-03-28 20:12:12.039 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 20:12:12.039 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 20:12:12.041 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 20:12:12.061 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "581730ec-e230-4cfa-ac93-ae8cec4e6ade",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774706697,
+  "nbf": 1774706697,
+  "exp": 1774710297,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 20:12:12.061 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "581730ec-e230-4cfa-ac93-ae8cec4e6ade",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774706697,
+  "nbf": 1774706697,
+  "exp": 1774710297,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 20:12:12.061 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "581730ec-e230-4cfa-ac93-ae8cec4e6ade",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774706697,
+  "nbf": 1774706697,
+  "exp": 1774710297,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 20:12:12.090 +05:30 [INF] Executing endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 20:12:12.090 +05:30 [INF] Executing endpoint 'SwiftBite.UserService.API.Controllers.UsersController.GetProfile (SwiftBite.UserService.Api)'
+2026-03-28 20:12:12.090 +05:30 [INF] Executing endpoint 'SwiftBite.UserService.API.Controllers.PreferencesController.GetPreferences (SwiftBite.UserService.Api)'
+2026-03-28 20:12:12.104 +05:30 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddresses(System.Threading.CancellationToken) on controller SwiftBite.UserService.API.Controllers.AddressesController (SwiftBite.UserService.Api).
+2026-03-28 20:12:12.146 +05:30 [INF] Route matched with {action = "GetPreferences", controller = "Preferences"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPreferences(System.Threading.CancellationToken) on controller SwiftBite.UserService.API.Controllers.PreferencesController (SwiftBite.UserService.Api).
+2026-03-28 20:12:12.146 +05:30 [INF] Route matched with {action = "GetProfile", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.Threading.CancellationToken) on controller SwiftBite.UserService.API.Controllers.UsersController (SwiftBite.UserService.Api).
+2026-03-28 20:12:12.393 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@__authUserId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthUserId], [t].[CreatedAt], [t].[DateOfBirth], [t].[Email], [t].[FirstName], [t].[IsActive], [t].[LastName], [t].[PhoneNumber], [t].[ProfilePictureUrl], [t].[UpdatedAt], [t].[Id0], [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId], [t].[AllergiesInfo], [t].[DietaryPreference], [t].[EmailNotifications], [t].[PreferredCuisines], [t].[PushNotifications], [t].[SmsNotifications], [t].[UpdatedAt0], [t].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AuthUserId], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PhoneNumber], [u].[ProfilePictureUrl], [u].[UpdatedAt], [u0].[Id] AS [Id0], [u0].[AllergiesInfo], [u0].[DietaryPreference], [u0].[EmailNotifications], [u0].[PreferredCuisines], [u0].[PushNotifications], [u0].[SmsNotifications], [u0].[UpdatedAt] AS [UpdatedAt0], [u0].[UserId]
+    FROM [Users] AS [u]
+    LEFT JOIN [UserPreferences] AS [u0] ON [u].[Id] = [u0].[UserId]
+    WHERE [u].[AuthUserId] = @__authUserId_0
+) AS [t]
+LEFT JOIN [Addresses] AS [a] ON [t].[Id] = [a].[UserId]
+ORDER BY [t].[Id], [t].[Id0]
+2026-03-28 20:12:12.622 +05:30 [INF] Executed DbCommand (125ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AllergiesInfo], [u].[DietaryPreference], [u].[EmailNotifications], [u].[PreferredCuisines], [u].[PushNotifications], [u].[SmsNotifications], [u].[UpdatedAt], [u].[UserId]
+FROM [UserPreferences] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2026-03-28 20:12:12.633 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 20:12:12.645 +05:30 [INF] Executed action SwiftBite.UserService.API.Controllers.PreferencesController.GetPreferences (SwiftBite.UserService.Api) in 491.1377ms
+2026-03-28 20:12:12.649 +05:30 [INF] Executed endpoint 'SwiftBite.UserService.API.Controllers.PreferencesController.GetPreferences (SwiftBite.UserService.Api)'
+2026-03-28 20:12:12.653 +05:30 [INF] HTTP GET /api/users/preferences responded 200 in 923.6590 ms
+2026-03-28 20:12:12.660 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/api/users/preferences - 200 null application/json; charset=utf-8 1083.0462ms
+2026-03-28 20:12:12.818 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__authUserId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthUserId], [t].[CreatedAt], [t].[DateOfBirth], [t].[Email], [t].[FirstName], [t].[IsActive], [t].[LastName], [t].[PhoneNumber], [t].[ProfilePictureUrl], [t].[UpdatedAt], [t].[Id0], [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId], [t].[AllergiesInfo], [t].[DietaryPreference], [t].[EmailNotifications], [t].[PreferredCuisines], [t].[PushNotifications], [t].[SmsNotifications], [t].[UpdatedAt0], [t].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AuthUserId], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PhoneNumber], [u].[ProfilePictureUrl], [u].[UpdatedAt], [u0].[Id] AS [Id0], [u0].[AllergiesInfo], [u0].[DietaryPreference], [u0].[EmailNotifications], [u0].[PreferredCuisines], [u0].[PushNotifications], [u0].[SmsNotifications], [u0].[UpdatedAt] AS [UpdatedAt0], [u0].[UserId]
+    FROM [Users] AS [u]
+    LEFT JOIN [UserPreferences] AS [u0] ON [u].[Id] = [u0].[UserId]
+    WHERE [u].[AuthUserId] = @__authUserId_0
+) AS [t]
+LEFT JOIN [Addresses] AS [a] ON [t].[Id] = [a].[UserId]
+ORDER BY [t].[Id], [t].[Id0]
+2026-03-28 20:12:12.836 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId]
+FROM [Addresses] AS [a]
+WHERE [a].[UserId] = @__userId_0
+ORDER BY [a].[IsDefault] DESC
+2026-03-28 20:12:12.851 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 20:12:12.860 +05:30 [INF] Executed action SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api) in 750.3111ms
+2026-03-28 20:12:12.864 +05:30 [INF] Executed endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 20:12:12.867 +05:30 [INF] HTTP GET /api/users/addresses responded 200 in 1135.9786 ms
+2026-03-28 20:12:12.872 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/api/users/addresses - 200 null application/json; charset=utf-8 1295.9595ms
+2026-03-28 20:12:13.254 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__authUserId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthUserId], [t].[CreatedAt], [t].[DateOfBirth], [t].[Email], [t].[FirstName], [t].[IsActive], [t].[LastName], [t].[PhoneNumber], [t].[ProfilePictureUrl], [t].[UpdatedAt], [t].[Id0], [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId], [t].[AllergiesInfo], [t].[DietaryPreference], [t].[EmailNotifications], [t].[PreferredCuisines], [t].[PushNotifications], [t].[SmsNotifications], [t].[UpdatedAt0], [t].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AuthUserId], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PhoneNumber], [u].[ProfilePictureUrl], [u].[UpdatedAt], [u0].[Id] AS [Id0], [u0].[AllergiesInfo], [u0].[DietaryPreference], [u0].[EmailNotifications], [u0].[PreferredCuisines], [u0].[PushNotifications], [u0].[SmsNotifications], [u0].[UpdatedAt] AS [UpdatedAt0], [u0].[UserId]
+    FROM [Users] AS [u]
+    LEFT JOIN [UserPreferences] AS [u0] ON [u].[Id] = [u0].[UserId]
+    WHERE [u].[AuthUserId] = @__authUserId_0
+) AS [t]
+LEFT JOIN [Addresses] AS [a] ON [t].[Id] = [a].[UserId]
+ORDER BY [t].[Id], [t].[Id0]
+2026-03-28 20:12:13.311 +05:30 [INF] 💾 Cache SET: user:profile:fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1
+2026-03-28 20:12:13.317 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 20:12:13.323 +05:30 [INF] Executed action SwiftBite.UserService.API.Controllers.UsersController.GetProfile (SwiftBite.UserService.Api) in 1164.5477ms
+2026-03-28 20:12:13.328 +05:30 [INF] Executed endpoint 'SwiftBite.UserService.API.Controllers.UsersController.GetProfile (SwiftBite.UserService.Api)'
+2026-03-28 20:12:13.331 +05:30 [INF] HTTP GET /api/users/profile responded 200 in 1601.0123 ms
+2026-03-28 20:12:13.336 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/api/users/profile - 200 null application/json; charset=utf-8 1759.9537ms
+2026-03-28 20:12:16.564 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5001/api/users/preferences - application/json 256
+2026-03-28 20:12:16.571 +05:30 [INF] CORS policy execution successful.
+2026-03-28 20:12:16.578 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 20:12:16.581 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 20:12:16.628 +05:30 [INF] Received HTTP response headers after 44.1511ms - 200
+2026-03-28 20:12:16.632 +05:30 [INF] End processing HTTP request after 54.5915ms - 200
+2026-03-28 20:12:16.635 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 20:12:16.639 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "581730ec-e230-4cfa-ac93-ae8cec4e6ade",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774706697,
+  "nbf": 1774706697,
+  "exp": 1774710297,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 20:12:16.645 +05:30 [INF] Executing endpoint 'SwiftBite.UserService.API.Controllers.PreferencesController.UpdatePreferences (SwiftBite.UserService.Api)'
+2026-03-28 20:12:16.657 +05:30 [INF] Route matched with {action = "UpdatePreferences", controller = "Preferences"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdatePreferences(SwiftBite.UserService.API.Controllers.UpdatePreferencesRequest, System.Threading.CancellationToken) on controller SwiftBite.UserService.API.Controllers.PreferencesController (SwiftBite.UserService.Api).
+2026-03-28 20:12:16.757 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-03-28 20:12:16.788 +05:30 [INF] Executed action SwiftBite.UserService.API.Controllers.PreferencesController.UpdatePreferences (SwiftBite.UserService.Api) in 126.209ms
+2026-03-28 20:12:16.792 +05:30 [INF] Executed endpoint 'SwiftBite.UserService.API.Controllers.PreferencesController.UpdatePreferences (SwiftBite.UserService.Api)'
+2026-03-28 20:12:16.796 +05:30 [INF] HTTP PUT /api/users/preferences responded 400 in 222.6765 ms
+2026-03-28 20:12:16.802 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5001/api/users/preferences - 400 null application/problem+json; charset=utf-8 238.1703ms
+2026-03-28 20:39:06.801 +05:30 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 20:39:07.019 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 20:39:07.041 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 20:39:07.057 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 20:39:07.266 +05:30 [INF] Executed DbCommand (169ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 20:39:07.388 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 20:39:25.788 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 20:39:26.248 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 20:41:43.799 +05:30 [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 20:41:44.122 +05:30 [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 20:41:44.497 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 20:41:44.518 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 20:41:44.805 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 20:41:45.136 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 20:41:46.485 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 20:41:47.133 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 20:41:47.550 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 20:41:47.900 +05:30 [INF] Hosting environment: Development
+2026-03-28 20:41:48.042 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 20:41:51.691 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 20:44:03.822 +05:30 [INF] Executed DbCommand (102ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 20:44:04.124 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 20:44:04.161 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 20:44:04.197 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 20:44:04.283 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 20:44:04.322 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 20:44:05.104 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 20:44:05.807 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 20:44:06.047 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 20:44:06.065 +05:30 [INF] Hosting environment: Development
+2026-03-28 20:44:06.073 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 20:44:08.101 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 20:44:09.178 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 1115.4516ms
+2026-03-28 20:44:09.444 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 20:44:09.444 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_vs/browserLink - null null
+2026-03-28 20:44:11.427 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 1983.107ms
+2026-03-28 20:44:11.786 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 2341.9311ms
+2026-03-28 20:44:17.438 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - null null
+2026-03-28 20:44:17.552 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 114.6103ms
+2026-03-28 20:59:41.994 +05:30 [INF] Executed DbCommand (170ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 20:59:42.275 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 20:59:42.300 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 20:59:42.316 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 20:59:42.406 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 20:59:42.450 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 20:59:43.362 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 20:59:43.975 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 20:59:44.290 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 20:59:44.303 +05:30 [INF] Hosting environment: Development
+2026-03-28 20:59:44.306 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 20:59:46.439 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 20:59:47.476 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 1064.8611ms
+2026-03-28 20:59:48.175 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_vs/browserLink - null null
+2026-03-28 20:59:48.300 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 20:59:48.765 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 589.5083ms
+2026-03-28 20:59:48.826 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 526.4517ms
+2026-03-28 20:59:53.495 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - null null
+2026-03-28 20:59:53.883 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 388.3784ms
+2026-03-28 22:07:11.502 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 22:07:11.706 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 22:07:11.724 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 22:07:11.744 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 22:07:11.907 +05:30 [INF] Executed DbCommand (126ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 22:07:11.949 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 22:07:12.967 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 22:07:13.341 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 22:07:13.870 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 22:07:13.873 +05:30 [INF] Hosting environment: Development
+2026-03-28 22:07:13.876 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 22:07:41.494 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 22:07:42.696 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 1271.169ms
+2026-03-28 22:07:43.069 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_vs/browserLink - null null
+2026-03-28 22:07:43.104 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 22:07:43.195 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 91.6772ms
+2026-03-28 22:07:44.185 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1123.8675ms
+2026-03-28 22:07:44.746 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - null null
+2026-03-28 22:07:44.964 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 218.8734ms
+2026-03-28 22:08:49.610 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/users/addresses - null null
+2026-03-28 22:08:49.664 +05:30 [INF] CORS policy execution successful.
+2026-03-28 22:08:51.521 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 22:08:52.109 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-03-28 22:08:52.171 +05:30 [INF] Received HTTP response headers after 55.5609ms - 200
+2026-03-28 22:08:52.187 +05:30 [INF] End processing HTTP request after 674.462ms - 200
+2026-03-28 22:08:52.203 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-28 22:08:52.289 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-28 22:08:52.312 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 22:08:52.315 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-03-28 22:08:52.337 +05:30 [INF] Received HTTP response headers after 19.2739ms - 200
+2026-03-28 22:08:52.340 +05:30 [INF] End processing HTTP request after 28.2831ms - 200
+2026-03-28 22:08:52.345 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-28 22:08:52.352 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-28 22:08:52.459 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 22:08:52.463 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 22:08:52.522 +05:30 [INF] Received HTTP response headers after 55.1534ms - 200
+2026-03-28 22:08:52.527 +05:30 [INF] End processing HTTP request after 68.4132ms - 200
+2026-03-28 22:08:52.534 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 22:08:52.542 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "10a3351c-c822-48a4-b727-b9513f5a9256",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774715917,
+  "nbf": 1774715917,
+  "exp": 1774719517,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 22:08:52.582 +05:30 [INF] Executing endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 22:08:52.645 +05:30 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddresses(System.Threading.CancellationToken) on controller SwiftBite.UserService.API.Controllers.AddressesController (SwiftBite.UserService.Api).
+2026-03-28 22:08:52.662 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-03-28 22:08:53.633 +05:30 [INF] Executed DbCommand (97ms) [Parameters=[@__authUserId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthUserId], [t].[CreatedAt], [t].[DateOfBirth], [t].[Email], [t].[FirstName], [t].[IsActive], [t].[LastName], [t].[PhoneNumber], [t].[ProfilePictureUrl], [t].[UpdatedAt], [t].[Id0], [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId], [t].[AllergiesInfo], [t].[DietaryPreference], [t].[EmailNotifications], [t].[PreferredCuisines], [t].[PushNotifications], [t].[SmsNotifications], [t].[UpdatedAt0], [t].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AuthUserId], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PhoneNumber], [u].[ProfilePictureUrl], [u].[UpdatedAt], [u0].[Id] AS [Id0], [u0].[AllergiesInfo], [u0].[DietaryPreference], [u0].[EmailNotifications], [u0].[PreferredCuisines], [u0].[PushNotifications], [u0].[SmsNotifications], [u0].[UpdatedAt] AS [UpdatedAt0], [u0].[UserId]
+    FROM [Users] AS [u]
+    LEFT JOIN [UserPreferences] AS [u0] ON [u].[Id] = [u0].[UserId]
+    WHERE [u].[AuthUserId] = @__authUserId_0
+) AS [t]
+LEFT JOIN [Addresses] AS [a] ON [t].[Id] = [a].[UserId]
+ORDER BY [t].[Id], [t].[Id0]
+2026-03-28 22:08:53.848 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId]
+FROM [Addresses] AS [a]
+WHERE [a].[UserId] = @__userId_0
+ORDER BY [a].[IsDefault] DESC
+2026-03-28 22:08:53.866 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 22:08:53.928 +05:30 [INF] Executed action SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api) in 1272.028ms
+2026-03-28 22:08:53.933 +05:30 [INF] Executed endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 22:08:53.939 +05:30 [INF] HTTP GET /api/users/addresses responded 200 in 4251.1364 ms
+2026-03-28 22:08:53.955 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/api/users/addresses - 200 null application/json; charset=utf-8 4353.2633ms
+2026-03-28 22:18:43.160 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/users/addresses - application/json 133
+2026-03-28 22:18:43.303 +05:30 [INF] CORS policy execution successful.
+2026-03-28 22:18:43.398 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 22:18:43.406 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 22:18:43.632 +05:30 [INF] Received HTTP response headers after 221.7996ms - 200
+2026-03-28 22:18:43.651 +05:30 [INF] End processing HTTP request after 255.2891ms - 200
+2026-03-28 22:18:43.671 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 22:18:43.698 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "10a3351c-c822-48a4-b727-b9513f5a9256",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774715917,
+  "nbf": 1774715917,
+  "exp": 1774719517,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 22:18:43.739 +05:30 [INF] Executing endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.AddAddress (SwiftBite.UserService.Api)'
+2026-03-28 22:18:43.877 +05:30 [INF] Route matched with {action = "AddAddress", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddAddress(SwiftBite.UserService.API.Controllers.AddAddressRequest, System.Threading.CancellationToken) on controller SwiftBite.UserService.API.Controllers.AddressesController (SwiftBite.UserService.Api).
+2026-03-28 22:18:44.564 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[@__authUserId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthUserId], [t].[CreatedAt], [t].[DateOfBirth], [t].[Email], [t].[FirstName], [t].[IsActive], [t].[LastName], [t].[PhoneNumber], [t].[ProfilePictureUrl], [t].[UpdatedAt], [t].[Id0], [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId], [t].[AllergiesInfo], [t].[DietaryPreference], [t].[EmailNotifications], [t].[PreferredCuisines], [t].[PushNotifications], [t].[SmsNotifications], [t].[UpdatedAt0], [t].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AuthUserId], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PhoneNumber], [u].[ProfilePictureUrl], [u].[UpdatedAt], [u0].[Id] AS [Id0], [u0].[AllergiesInfo], [u0].[DietaryPreference], [u0].[EmailNotifications], [u0].[PreferredCuisines], [u0].[PushNotifications], [u0].[SmsNotifications], [u0].[UpdatedAt] AS [UpdatedAt0], [u0].[UserId]
+    FROM [Users] AS [u]
+    LEFT JOIN [UserPreferences] AS [u0] ON [u].[Id] = [u0].[UserId]
+    WHERE [u].[AuthUserId] = @__authUserId_0
+) AS [t]
+LEFT JOIN [Addresses] AS [a] ON [t].[Id] = [a].[UserId]
+ORDER BY [t].[Id], [t].[Id0]
+2026-03-28 22:18:44.633 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId]
+FROM [Addresses] AS [a]
+WHERE [a].[UserId] = @__userId_0
+ORDER BY [a].[IsDefault] DESC
+2026-03-28 22:18:45.114 +05:30 [INF] Executed DbCommand (215ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 50), @p2='?' (DbType = DateTime2), @p3='?' (Size = 250), @p4='?' (DbType = Boolean), @p5='?' (Size = 30), @p6='?' (Size = 100), @p7='?' (DbType = Double), @p8='?' (DbType = Double), @p9='?' (Size = 10), @p10='?' (Size = 50), @p11='?' (Size = 100), @p12='?' (Size = 4000), @p13='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Addresses] ([Id], [City], [CreatedAt], [FullAddress], [IsDefault], [Label], [Landmark], [Latitude], [Longitude], [PinCode], [State], [Street], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2026-03-28 22:18:45.140 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 22:18:45.211 +05:30 [INF] Executed action SwiftBite.UserService.API.Controllers.AddressesController.AddAddress (SwiftBite.UserService.Api) in 1328.032ms
+2026-03-28 22:18:45.216 +05:30 [INF] Executed endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.AddAddress (SwiftBite.UserService.Api)'
+2026-03-28 22:18:45.220 +05:30 [INF] HTTP POST /api/users/addresses responded 201 in 1911.4144 ms
+2026-03-28 22:18:45.227 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5001/api/users/addresses - 201 null application/json; charset=utf-8 2091.4862ms
+2026-03-28 22:18:45.391 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/users/addresses - null null
+2026-03-28 22:18:45.408 +05:30 [INF] CORS policy execution successful.
+2026-03-28 22:18:45.416 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 22:18:45.420 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-03-28 22:18:45.490 +05:30 [INF] Received HTTP response headers after 67.442ms - 200
+2026-03-28 22:18:45.493 +05:30 [INF] End processing HTTP request after 77.4616ms - 200
+2026-03-28 22:18:45.496 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-userservice",
+  "client_secret": "[redacted]"
+}.
+2026-03-28 22:18:45.503 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "10a3351c-c822-48a4-b727-b9513f5a9256",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774715917,
+  "nbf": 1774715917,
+  "exp": 1774719517,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-03-28 22:18:45.510 +05:30 [INF] Executing endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 22:18:45.513 +05:30 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddresses(System.Threading.CancellationToken) on controller SwiftBite.UserService.API.Controllers.AddressesController (SwiftBite.UserService.Api).
+2026-03-28 22:18:45.530 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__authUserId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthUserId], [t].[CreatedAt], [t].[DateOfBirth], [t].[Email], [t].[FirstName], [t].[IsActive], [t].[LastName], [t].[PhoneNumber], [t].[ProfilePictureUrl], [t].[UpdatedAt], [t].[Id0], [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId], [t].[AllergiesInfo], [t].[DietaryPreference], [t].[EmailNotifications], [t].[PreferredCuisines], [t].[PushNotifications], [t].[SmsNotifications], [t].[UpdatedAt0], [t].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AuthUserId], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PhoneNumber], [u].[ProfilePictureUrl], [u].[UpdatedAt], [u0].[Id] AS [Id0], [u0].[AllergiesInfo], [u0].[DietaryPreference], [u0].[EmailNotifications], [u0].[PreferredCuisines], [u0].[PushNotifications], [u0].[SmsNotifications], [u0].[UpdatedAt] AS [UpdatedAt0], [u0].[UserId]
+    FROM [Users] AS [u]
+    LEFT JOIN [UserPreferences] AS [u0] ON [u].[Id] = [u0].[UserId]
+    WHERE [u].[AuthUserId] = @__authUserId_0
+) AS [t]
+LEFT JOIN [Addresses] AS [a] ON [t].[Id] = [a].[UserId]
+ORDER BY [t].[Id], [t].[Id0]
+2026-03-28 22:18:45.548 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[CreatedAt], [a].[FullAddress], [a].[IsDefault], [a].[Label], [a].[Landmark], [a].[Latitude], [a].[Longitude], [a].[PinCode], [a].[State], [a].[Street], [a].[Type], [a].[UserId]
+FROM [Addresses] AS [a]
+WHERE [a].[UserId] = @__userId_0
+ORDER BY [a].[IsDefault] DESC
+2026-03-28 22:18:45.555 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-28 22:18:45.559 +05:30 [INF] Executed action SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api) in 39.405ms
+2026-03-28 22:18:45.563 +05:30 [INF] Executed endpoint 'SwiftBite.UserService.API.Controllers.AddressesController.GetAddresses (SwiftBite.UserService.Api)'
+2026-03-28 22:18:45.566 +05:30 [INF] HTTP GET /api/users/addresses responded 200 in 156.2065 ms
+2026-03-28 22:18:45.572 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/api/users/addresses - 200 null application/json; charset=utf-8 180.9846ms
+2026-03-28 22:23:06.021 +05:30 [INF] Executed DbCommand (109ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 22:23:06.378 +05:30 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 22:23:06.403 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 22:23:06.418 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 22:23:06.566 +05:30 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 22:23:06.625 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 22:23:07.230 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 22:23:07.932 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 22:23:09.135 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 22:23:09.198 +05:30 [INF] Hosting environment: Development
+2026-03-28 22:23:09.280 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 22:23:12.790 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 22:23:14.017 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 1253.6541ms
+2026-03-28 22:23:15.231 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 22:23:15.231 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_vs/browserLink - null null
+2026-03-28 22:23:15.243 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 12.7713ms
+2026-03-28 22:23:15.607 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 376.9618ms
+2026-03-28 22:23:19.373 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - null null
+2026-03-28 22:23:19.691 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 318.0426ms
+2026-03-28 22:50:57.896 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 22:50:58.206 +05:30 [INF] Executed DbCommand (126ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 22:50:58.234 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-28 22:50:58.280 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-28 22:50:58.506 +05:30 [INF] Executed DbCommand (144ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-28 22:50:58.573 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-28 22:50:59.188 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-28 22:51:00.073 +05:30 [INF] Now listening on: http://localhost:5001
+2026-03-28 22:51:01.114 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-28 22:51:01.118 +05:30 [INF] Hosting environment: Development
+2026-03-28 22:51:01.128 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.UserService\SwiftBite.UserService.API
+2026-03-28 22:51:15.885 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/index.html - null null
+2026-03-28 22:51:17.239 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 1392.934ms
+2026-03-28 22:51:18.362 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-28 22:51:18.509 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/_vs/browserLink - null null
+2026-03-28 22:51:18.637 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16535 application/javascript; charset=utf-8 274.5171ms
+2026-03-28 22:51:19.480 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 970.6261ms
+2026-03-28 22:51:21.316 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - null null
+2026-03-28 22:51:21.679 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 363.9264ms

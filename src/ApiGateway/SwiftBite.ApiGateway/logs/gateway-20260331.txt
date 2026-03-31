@@ -1,0 +1,2555 @@
+2026-03-31 07:01:00.135 +05:30 [INF] Loading proxy data from config.
+2026-03-31 07:02:20.608 +05:30 [INF] [19e781b6] ➡️ POST /api/auth/register from ::1
+2026-03-31 07:02:20.693 +05:30 [INF] Proxying to http://localhost:5149/api/auth/register HTTP/2 RequestVersionOrLower 
+2026-03-31 07:02:38.067 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:02:38.084 +05:30 [INF] [19e781b6] ⬅️ 200 in 17486ms
+2026-03-31 07:02:38.094 +05:30 [INF] HTTP POST /api/auth/register responded 200 in 18954.5622 ms
+2026-03-31 07:02:53.406 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-31 07:02:53.568 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-31 07:02:53.612 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-31 07:02:53.618 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-31 07:02:53.823 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:02:53.832 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "cb9f795a-02fd-4f15-93cb-192e26f40d7d",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774920771,
+  "nbf": 1774920771,
+  "exp": 1774924371,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "Customer"
+}.
+2026-03-31 07:02:53.862 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=Customer
+2026-03-31 07:02:53.866 +05:30 [INF] [77ca0fdd] ➡️ GET /api/restaurants from ::1
+2026-03-31 07:02:53.869 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-31 07:02:54.085 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:02:54.089 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "cb9f795a-02fd-4f15-93cb-192e26f40d7d",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774920771,
+  "nbf": 1774920771,
+  "exp": 1774924371,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "Customer"
+}.
+2026-03-31 07:02:54.100 +05:30 [INF] [f4fc4b01] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-03-31 07:02:54.104 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-03-31 07:02:57.809 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:02:57.815 +05:30 [INF] [f4fc4b01] ⬅️ 200 in 3715ms
+2026-03-31 07:02:57.818 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 4914.1369 ms
+2026-03-31 07:02:57.903 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:02:57.911 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "cb9f795a-02fd-4f15-93cb-192e26f40d7d",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774920771,
+  "nbf": 1774920771,
+  "exp": 1774924371,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "Customer"
+}.
+2026-03-31 07:02:57.915 +05:30 [INF] [0bb0a7bd] ➡️ GET /hubs/notifications from ::1
+2026-03-31 07:02:57.918 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=4ATjlsuqyT11PBMS_wIe5g&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.e4KfCHXmBH1i8978jrTgkbikT2Xr_hecNuhwCan1I-kqUDflunS09oelyH4G7lTfuz8_tfb_aIFG_w3QfiCTXLTPF2elv98a6PqHuygFiefwdB0rccWQwrvV19mmFFzGTWwtGaxCMM6jlxXTVEGRgDtQdgFjBCGvWAqCShxchJBXZ5C8fuadoG_s5QQmWMSpLw2UAHBZ3-Jv9Yd8J8jvHr33raD0tyvyZ4ZM8teSyA1nRVb1QT_i7TX29ZwM1WkQuejqluJa3yt_FWYEoR55IDXWxGHE2gJpy5bcaE_JsPP5RtZU7xveMSDVumScziYgbi3tupWlFZ6JY7W6KIeKZw.lZFvB-t8GU5rKqnEx8IUyA.02IijFzZLi5AEMbDWwd8fH22-J3WPCRiqxN8pL6JZArxcUDEu9DfbTcwgifK5oS35Rh1-sN8mqYEXRippXh-rlHxZCTbSPchYCItj-PgwJxC7l3KSzfCMPYye02VpJJ5g0eNngrkyxpvlyMsT7Z76ZbMHqFrdJREERXiJvzOG9PujHHl4DmFm0SbeMg4pPajTlO9RFUfpnc2DnlssW8hsOYEKDFiDrm4bL0vMx5XP2DApfOeaX34_yUdhX9g-I6kzpGGZmuyHyuSVb0OWOEhWr_WHfLnfz0KmPwMT5QEk6r3BG7_g7AZ1ocVa0QGx04SWGfNZS6eK6H-Q0rMYEHhVvIvZFf45_F49EI23KLKnhn8Yk-oGmxfhuIFAQHDIXUYthqIB2BINpZY7NlfYLIwtJEfnGtuhuYLAtKZkvkXFa6dJm0AReLJKdiRxswlh5xmAnAjZSHTskm4MewzqjjqEWOn392S4NweSybh6B9McByHB9iVqA3kCEzqKkGQ56VuezdcHu_GloUGWhh0lCUFBWGhvm0pWWZERGBKVsq9hHXsioyVkoOqOyVchQyTlkLublhTKTP-HR8Iow9UvRx520DZsvd6zIbWwl8IdJC3htEK-9REV6FpwNt9-MfLGVXnpiXr40f9W7b5KTnZYBsH8FQPbQJYnZV7uir-l1pe0hwRZ0Um63caAxWh3OeIQLMGi7_Rf-tGnpsLC95tFydRkyztxWqj8UsxepJESe1xap9KpgaXgPoDSLoL6dI3wsaTjZO1RkvaZejhRALCilmMDIT3xBS05Rs08NxzME8zduI5U16YGJy1A9YLdWShs8X_EMqGJkAib2TSO52-YDoxWm7qY3XHTzwunl2hDTp4ndeXaTKA-HwwKVae4DZVHWaJCr_w-2YrKLFqBHmPWYl83w7ni1_tJ_33zxjCTGT_FUZ1aDMAOvAu0YKFG6hzdObVukN13xKGGf9fCMltlwYVbBpIUgYe9-dcMsHnVRn25qB1VDlvC5gRWpAcYFK3eBDUCtm3KLNiKfMKNGyUYQHEjCl3A4qCf17CZUbLZvGs9OfBRSsJNMTMJV9QnHtAvSJxd4862hKHVGePUOvu-9IV3WiaanZiUn_qr5G-7_MsSd3JvuWNtMayyCBSFhph55nAH-qK0l6vAWTKLhMj2HPyhAPDpODhIlk1RRzYi8c5dcLBBhioTB1pdoBSlEShwYvKc2wIz32GPERH1SXamvoZYQuia-TIDG4tQrYpNJ4pYl3V_ZKD8XZ1aeerEG_DGEb-QwgyEv1xU_NbD_OttTXNEyJE2MXfBHLdtnLBVY8vjixwUhDPwt9lGVNjlkADmEuzV3Md6wfY_nRUYBuLqqGSSHohvswC-JKSovkNM0n-1fP5JBvWMjHcBsKPgGDPr7kdw4Ix5kVM4uFix5NTPBW0QscljW4WhDIIq6J2s-8qay7de5Vn8SFtXZEKbxPVTennVNDorW1QqM5Kg6-HADSyDzBHWvVsY74DFUeAMSZ_7HbucfccjACWFB4fLVBIcIGiJAX9vfYQ_nvJqBi6y095e8AzKMKC8bKkDIN7ikcc2G8Zz_G89H1aYLQt882_gXqT0lg_mOuU_qyLYL-II6UmrJ3ojmAG0rfCrTY45w1nzhJFi_GKy5u3hMPkZwAvTGd9H4HuCmyHd74UMV55fNX2E6EKY8MS2rO67jLWwyyK5qhupq3G6tGrEfYcDePWvxh6xB1ERiVXNSql4OXcC54tnQ.WAjvxu4mNQMSdZo2VM7r7TyLYkEG6XAqIoJhruy7q7c HTTP/1.1 RequestVersionOrLower 
+2026-03-31 07:02:58.045 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-03-31 07:02:58.171 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:02:58.177 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "cb9f795a-02fd-4f15-93cb-192e26f40d7d",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774920771,
+  "nbf": 1774920771,
+  "exp": 1774924371,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "Customer"
+}.
+2026-03-31 07:02:58.180 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=Customer
+2026-03-31 07:02:58.183 +05:30 [INF] [b18e8619] ➡️ GET /api/notifications from ::1
+2026-03-31 07:02:58.187 +05:30 [INF] Proxying to http://localhost:5006/api/notifications HTTP/2 RequestVersionOrLower 
+2026-03-31 07:02:59.834 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:03:01.069 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:03:01.072 +05:30 [INF] [b18e8619] ⬅️ 200 in 2889ms
+2026-03-31 07:03:01.075 +05:30 [INF] [77ca0fdd] ⬅️ 200 in 7209ms
+2026-03-31 07:03:01.076 +05:30 [INF] HTTP GET /api/notifications responded 200 in 2968.3487 ms
+2026-03-31 07:03:01.079 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 8244.8597 ms
+2026-03-31 07:06:39.710 +05:30 [INF] [0bb0a7bd] ⬅️ 101 in 221805ms
+2026-03-31 07:06:39.747 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 221904.4625 ms
+2026-03-31 07:06:41.634 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:06:41.634 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:06:41.648 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "cb9f795a-02fd-4f15-93cb-192e26f40d7d",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774920771,
+  "nbf": 1774920771,
+  "exp": 1774924371,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "Customer"
+}.
+2026-03-31 07:06:41.648 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "cb9f795a-02fd-4f15-93cb-192e26f40d7d",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774920771,
+  "nbf": 1774920771,
+  "exp": 1774924371,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "Customer"
+}.
+2026-03-31 07:06:41.658 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=Customer
+2026-03-31 07:06:41.659 +05:30 [INF] [2082b599] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-03-31 07:06:41.661 +05:30 [INF] [69bf927c] ➡️ GET /api/restaurants from ::1
+2026-03-31 07:06:41.669 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-03-31 07:06:41.671 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-31 07:06:41.988 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:06:41.992 +05:30 [INF] [2082b599] ⬅️ 200 in 333ms
+2026-03-31 07:06:41.996 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 563.1298 ms
+2026-03-31 07:06:42.093 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:06:42.099 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "cb9f795a-02fd-4f15-93cb-192e26f40d7d",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774920771,
+  "nbf": 1774920771,
+  "exp": 1774924371,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "Customer"
+}.
+2026-03-31 07:06:42.126 +05:30 [INF] [cf0c8459] ➡️ GET /hubs/notifications from ::1
+2026-03-31 07:06:42.146 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=Xyjjqx95YZi9wIP6EaOSPA&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.e4KfCHXmBH1i8978jrTgkbikT2Xr_hecNuhwCan1I-kqUDflunS09oelyH4G7lTfuz8_tfb_aIFG_w3QfiCTXLTPF2elv98a6PqHuygFiefwdB0rccWQwrvV19mmFFzGTWwtGaxCMM6jlxXTVEGRgDtQdgFjBCGvWAqCShxchJBXZ5C8fuadoG_s5QQmWMSpLw2UAHBZ3-Jv9Yd8J8jvHr33raD0tyvyZ4ZM8teSyA1nRVb1QT_i7TX29ZwM1WkQuejqluJa3yt_FWYEoR55IDXWxGHE2gJpy5bcaE_JsPP5RtZU7xveMSDVumScziYgbi3tupWlFZ6JY7W6KIeKZw.lZFvB-t8GU5rKqnEx8IUyA.02IijFzZLi5AEMbDWwd8fH22-J3WPCRiqxN8pL6JZArxcUDEu9DfbTcwgifK5oS35Rh1-sN8mqYEXRippXh-rlHxZCTbSPchYCItj-PgwJxC7l3KSzfCMPYye02VpJJ5g0eNngrkyxpvlyMsT7Z76ZbMHqFrdJREERXiJvzOG9PujHHl4DmFm0SbeMg4pPajTlO9RFUfpnc2DnlssW8hsOYEKDFiDrm4bL0vMx5XP2DApfOeaX34_yUdhX9g-I6kzpGGZmuyHyuSVb0OWOEhWr_WHfLnfz0KmPwMT5QEk6r3BG7_g7AZ1ocVa0QGx04SWGfNZS6eK6H-Q0rMYEHhVvIvZFf45_F49EI23KLKnhn8Yk-oGmxfhuIFAQHDIXUYthqIB2BINpZY7NlfYLIwtJEfnGtuhuYLAtKZkvkXFa6dJm0AReLJKdiRxswlh5xmAnAjZSHTskm4MewzqjjqEWOn392S4NweSybh6B9McByHB9iVqA3kCEzqKkGQ56VuezdcHu_GloUGWhh0lCUFBWGhvm0pWWZERGBKVsq9hHXsioyVkoOqOyVchQyTlkLublhTKTP-HR8Iow9UvRx520DZsvd6zIbWwl8IdJC3htEK-9REV6FpwNt9-MfLGVXnpiXr40f9W7b5KTnZYBsH8FQPbQJYnZV7uir-l1pe0hwRZ0Um63caAxWh3OeIQLMGi7_Rf-tGnpsLC95tFydRkyztxWqj8UsxepJESe1xap9KpgaXgPoDSLoL6dI3wsaTjZO1RkvaZejhRALCilmMDIT3xBS05Rs08NxzME8zduI5U16YGJy1A9YLdWShs8X_EMqGJkAib2TSO52-YDoxWm7qY3XHTzwunl2hDTp4ndeXaTKA-HwwKVae4DZVHWaJCr_w-2YrKLFqBHmPWYl83w7ni1_tJ_33zxjCTGT_FUZ1aDMAOvAu0YKFG6hzdObVukN13xKGGf9fCMltlwYVbBpIUgYe9-dcMsHnVRn25qB1VDlvC5gRWpAcYFK3eBDUCtm3KLNiKfMKNGyUYQHEjCl3A4qCf17CZUbLZvGs9OfBRSsJNMTMJV9QnHtAvSJxd4862hKHVGePUOvu-9IV3WiaanZiUn_qr5G-7_MsSd3JvuWNtMayyCBSFhph55nAH-qK0l6vAWTKLhMj2HPyhAPDpODhIlk1RRzYi8c5dcLBBhioTB1pdoBSlEShwYvKc2wIz32GPERH1SXamvoZYQuia-TIDG4tQrYpNJ4pYl3V_ZKD8XZ1aeerEG_DGEb-QwgyEv1xU_NbD_OttTXNEyJE2MXfBHLdtnLBVY8vjixwUhDPwt9lGVNjlkADmEuzV3Md6wfY_nRUYBuLqqGSSHohvswC-JKSovkNM0n-1fP5JBvWMjHcBsKPgGDPr7kdw4Ix5kVM4uFix5NTPBW0QscljW4WhDIIq6J2s-8qay7de5Vn8SFtXZEKbxPVTennVNDorW1QqM5Kg6-HADSyDzBHWvVsY74DFUeAMSZ_7HbucfccjACWFB4fLVBIcIGiJAX9vfYQ_nvJqBi6y095e8AzKMKC8bKkDIN7ikcc2G8Zz_G89H1aYLQt882_gXqT0lg_mOuU_qyLYL-II6UmrJ3ojmAG0rfCrTY45w1nzhJFi_GKy5u3hMPkZwAvTGd9H4HuCmyHd74UMV55fNX2E6EKY8MS2rO67jLWwyyK5qhupq3G6tGrEfYcDePWvxh6xB1ERiVXNSql4OXcC54tnQ.WAjvxu4mNQMSdZo2VM7r7TyLYkEG6XAqIoJhruy7q7c HTTP/1.1 RequestVersionOrLower 
+2026-03-31 07:06:42.359 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-03-31 07:06:42.481 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:06:42.487 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "cb9f795a-02fd-4f15-93cb-192e26f40d7d",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774920771,
+  "nbf": 1774920771,
+  "exp": 1774924371,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "Customer"
+}.
+2026-03-31 07:06:42.490 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=Customer
+2026-03-31 07:06:42.493 +05:30 [INF] [220a137e] ➡️ GET /api/notifications from ::1
+2026-03-31 07:06:42.500 +05:30 [INF] Proxying to http://localhost:5006/api/notifications HTTP/2 RequestVersionOrLower 
+2026-03-31 07:06:42.678 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:06:42.695 +05:30 [INF] [69bf927c] ⬅️ 200 in 1033ms
+2026-03-31 07:06:42.701 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 1268.6131 ms
+2026-03-31 07:06:42.981 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:06:42.990 +05:30 [INF] [220a137e] ⬅️ 200 in 496ms
+2026-03-31 07:06:42.993 +05:30 [INF] HTTP GET /api/notifications responded 200 in 587.2643 ms
+2026-03-31 07:06:44.659 +05:30 [INF] [cf0c8459] ⬅️ 101 in 2532ms
+2026-03-31 07:06:44.664 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 2650.2717 ms
+2026-03-31 07:06:52.233 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:06:52.236 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "ba27a917-dca8-46c6-ab3a-5cebc9715000",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921011,
+  "nbf": 1774921011,
+  "exp": 1774924611,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:06:52.246 +05:30 [INF] [35c1f798] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-03-31 07:06:52.250 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-03-31 07:06:52.263 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:06:52.266 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "ba27a917-dca8-46c6-ab3a-5cebc9715000",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921011,
+  "nbf": 1774921011,
+  "exp": 1774924611,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:06:52.270 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:06:52.277 +05:30 [INF] [4eda726b] ➡️ GET /api/restaurants from ::1
+2026-03-31 07:06:52.281 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-31 07:06:52.382 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:06:52.385 +05:30 [INF] [35c1f798] ⬅️ 200 in 138ms
+2026-03-31 07:06:52.392 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 225.8158 ms
+2026-03-31 07:06:52.450 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:06:52.467 +05:30 [INF] [4eda726b] ⬅️ 200 in 189ms
+2026-03-31 07:06:52.470 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 302.8459 ms
+2026-03-31 07:06:52.475 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:06:52.483 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "ba27a917-dca8-46c6-ab3a-5cebc9715000",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921011,
+  "nbf": 1774921011,
+  "exp": 1774924611,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:06:52.486 +05:30 [INF] [a8633b43] ➡️ GET /hubs/notifications from ::1
+2026-03-31 07:06:52.492 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=aPoYrGAj4G7Xi6DV8J7q-A&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.Rofzr7l6qav_lM3wUVwFNMrekHqH71XCDKw0kxqDGwd9O8BjvCj5-ZM5xheZRcLESW_uhJMdvjpYTaC57vv-rEvbAulJCeT6FYSfcofs4suCUFtyaDFLfIx8BPlTcsra7q2Mk4rt6liwLYEOWL6B0-4lhedFiCoCP54mvWOrwf1PLmZk0ezWa3K4wDQJ-7lzai_JvzEEVWUwSRUOYoiRf88tsODIvAX6Drlkc3EUOx55gVGnkImpi5ypr2SfSsvVuB8yeuBVp0moGTyYmkKPP5k2wgXsxsVLHolf0qVlRuSyIi56wabQ3uCXp5Gsjbtrdpx_yy8TY3psvP5J9yQXZw.pI4YGd5Yf9xCeUi7gLJ16w.HZ6DuZYvOkxKMH4z42uEJ-8gspL7s0teeYizGd1FMScWPwVB8TjXfTpU8bIDJnRBcP_wUTwr-PgJ2387gWpLGe3iAB2wEDqmO2CKUwRi278jOATveplyKFtysMxVkDsQ-uFIwUI4h_qHKiV9xLhambV1BIZ297d6fWfQgm-rBBXycKxUaD-R2UVSeUjfvtobgbZkM5e3k2kzcuNbV34itDFTuYewzTOk5Rf4Liu2tXu1syXUWv-SO0VtAD40rDy0y_vVHrubiPVz9rDh9ZoPQ-tsCW1h3Ha-FucVknBuiQ6H6t9lxyJd_cVLAtcUdw0NJSR824woApIayZkc0fsjaU-aI-oLPHy1uqXQ526FDxkEon95Tk2cWCzLH1Xid34JZ4LPgdsyPJQWshoe8j5mO7r0F3kH-fqlwRzlX6_eZz9RNvvmEnGb6p2MLL6a61WJTt6Rko-ngE6qN_ozfOgcsKHxyC09A5Ic70FrJtc_I6rC3wyn-NhRpThAjd7V5cRwqT2wfuPwiveRiIgbCuY2VWTvQpuOzOsicCVqdE1amj-VCVyqNltCtQP31qgovlokq4b5vnKtpIvt4hjtqNtY65K62gy9w41FJYIIsb3n8stnLMgFuCNWBrgsAjFZuiRhWM7nRJG-Rmc32XzUn7UYMqTcNEgaIQhzT_dd3Al9IDGvyL55g-PSjNdh8DdOMXWxRHk6bBkC4Y-MyFo7JOLaaO2nDMAX50QX2OZH5aEbHCnk3LPw7y4-iN2vAPVjp0LzhP78tLHIkIG0WZ0lDtWAlNauQoyZ6s294eTWmg41s7xQh08yj7N-z4UDcWgks4kMFoYkVa-JAi1IK9Q4Oq7JUf_CqJSeLF6Fh5jg4fwKcDuJaj325z_GHESNBVNKtoyLcrRpYyJ3nEQ1LGCD9-zEeiQ7ibPdjBwHfSW6JOidyDJLXuhaoZObRFVEYFI5A4d38K6q17X_nvtdpbuQ_WcHkTB4FRawkMUlEs4j3s9gxJrJp4nJx__6qcGegqqCp90GCmtm4ThtgncW2SZZU5hbHqCJfz_NEI9_EdBbfDV5MWNMbVgkpNBMSmQ-CxDtuewaYcbap0ODGhemdL4U3UT3nZVNewTFQowWgetpLEuMa58DmonrminEppqLEjAmXeDIwelj1jGnfXgAXWzUuRCk82Os7Kr0X7LXo-iJr9MUoHgN8Y04RWNv9sVkOHn_fFQO_VAYdTZ7yZhwajYsD2v7jccZGImAmLvuqjyyH8E19jfzymnuzmowTe4Vm_K5JDCxwJQ8geXxCezE-Fpsg27H9RqneQGKlNoF9pcr1BPwZNVHlKOKzppawuwlvIZzlEW1wD2-bqT9xh_pLuVqLiOpY0_IR4zmAeljSj-ml4StMbpUiz85zOXXYnFfO0I8oXg80QSNIYIbnrscRkOJr3MN3T4Tt7aVG8lMNCoMLlnAW3zI9AFHERDc0TWRLsus713cDpkjzPai6ivy-abCoHIpiuBc2Bmte3bvSOJMFfGWFxrrFnZZKzOYu20UfO8YsvxjE3mKhY5CMKrdT7_0ZikkCGesj6uyCF5hcH0gI58oLZEwX0I07tX4FBUZfTSqdAD-ZtGtz2pEE4QWPOFrl4N9QEpx5Um9QwAGnl5Jw75nm-qDCBQzdfwD-kfGTQqq_8hHxhBwPEXVe_tbz0Hpmngk_bcPp16YXj1wnIPBvG_pF24h_gXBpq8N-1J5Qo_2juCMUQrJ31Cpmkfv-X9Lw8zGFQ.egYWA0hZfLEkLmkIMBnP0rdkn62iT7P-OiFtrsAHxks HTTP/1.1 RequestVersionOrLower 
+2026-03-31 07:06:52.629 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-03-31 07:06:52.691 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:06:52.693 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "ba27a917-dca8-46c6-ab3a-5cebc9715000",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921011,
+  "nbf": 1774921011,
+  "exp": 1774924611,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:06:52.696 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:06:52.698 +05:30 [INF] [3ecf01a9] ➡️ GET /api/notifications from ::1
+2026-03-31 07:06:52.700 +05:30 [INF] Proxying to http://localhost:5006/api/notifications HTTP/2 RequestVersionOrLower 
+2026-03-31 07:06:52.809 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:06:52.818 +05:30 [INF] [3ecf01a9] ⬅️ 200 in 120ms
+2026-03-31 07:06:52.821 +05:30 [INF] HTTP GET /api/notifications responded 200 in 173.7285 ms
+2026-03-31 07:07:16.695 +05:30 [INF] [a8633b43] ⬅️ 101 in 24210ms
+2026-03-31 07:07:16.698 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 24304.0237 ms
+2026-03-31 07:07:33.838 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:07:33.840 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:07:33.841 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "64d22821-8840-4488-9b46-0aa7e66b6394",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921053,
+  "nbf": 1774921053,
+  "exp": 1774924653,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:07:33.843 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "64d22821-8840-4488-9b46-0aa7e66b6394",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921053,
+  "nbf": 1774921053,
+  "exp": 1774924653,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:07:33.845 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:07:33.847 +05:30 [INF] [8ae53e45] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-03-31 07:07:33.849 +05:30 [INF] [78f34e12] ➡️ GET /api/restaurants from ::1
+2026-03-31 07:07:33.853 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-03-31 07:07:33.855 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-31 07:07:33.959 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:07:33.963 +05:30 [INF] [8ae53e45] ⬅️ 200 in 115ms
+2026-03-31 07:07:33.984 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 213.8881 ms
+2026-03-31 07:07:34.045 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:07:34.053 +05:30 [INF] [78f34e12] ⬅️ 200 in 203ms
+2026-03-31 07:07:34.056 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 299.2231 ms
+2026-03-31 07:07:34.088 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:07:34.092 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "64d22821-8840-4488-9b46-0aa7e66b6394",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921053,
+  "nbf": 1774921053,
+  "exp": 1774924653,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:07:34.094 +05:30 [INF] [23cf9f17] ➡️ GET /hubs/notifications from ::1
+2026-03-31 07:07:34.097 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=7N7ySD90IHAxMLARykxWgQ&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.XxcpySjYhyjnqp1a_u2gjiMXWcDSHA4FIR5vaqOICnrLyZnhEckRV3RiR8ML291ktTTGKHP_J1BnarrHaJgdUITnhRk-wD3UHvH3rm78vpvEIWk6GhvJPsEu-RSc9B8BBl_D3tgG05_zqPdSGsh_JTqVEre8zUzTGQhzSWlqatuq68W4U_rHmWOUy4zUoa505E2tr2NU9-pGNV7zRGPpALQtdqnjjTjbcvgkRa2CP1Vs7SrOD_dad7_z8SoYPxDsi3yKogZjmY-4tDOOtlzmgYGSQ9rrrXP5ssOpkaA17b1vz6o3Cz3SSdMZE7WnDkn9sLWUlF3W3_EHHt6VkUqYSw.S0o8lKJ0N2F3wPFH1wjDTQ.726ie4dIu_2cgNEiBoGFtXVIKCtR5YNgQqBiuys3MMwESEtilBnjcAENAyk66S0K_Ra2CkWxUF33xwXJ4ASjxWkPWlA074HtO5CB8xi3fJUcVrz0qzaGA74qlUg_2o7su2b48ybPcZOkmHHqkw6w1uTqPUnUQvjcTdPxyQyXOFf3t6g7DMryixYLEFgsaJO0eKmQ9EapQ3MJFCsVIY6KMuoQVukktQZcN5cEXIjeIaugqako7F2oimeFYfwJuwef4wyIDNY1dp3XviJNwHC0696s97L9c1614oRo6FLG5RoCQ3yjiGAOab2C4v1Gl6R4-5pNEyy3orwG5k4L6jrPZsMwjz5RmH80YEFnN-lAqewD9_xmXHYmLY5ILCSyh3Ug92BLrIFmQYeo56omiGPK6VcP_KdAKPeCsv5cMXwLZtqzVlkV5q4HJPiekwtJt0aqRtqQD93YZNU92C6Ta8FS-pMOaXaxoHkPdYXrJc_e7EkyJWIxq1mObzLzDdECUWqmsL3NVhMqQ7ijW8TFCS_0XGXeF7WNebpAiLdPOsahbNsugPoefLBLyOEtvzcRDIH5kFxDtHWnbqHo_esYLeMBE3Iusu-bErKZ6wTiOPegB4h6GoqPdQkgM5o_1Wukv6e6D8dZoAfuOaPaZoPVUMbIzg6qK-GvQVyvWb1P7obFS-fnzf30x3O4XbUI4_76Lcqoh16uHMAn57_unTlRlFygMjJwXW1wx1TOZ1q3beAv0-KzU1KuGOceHnMydrmz8LG4Tsqkr5j1chT-U5dt_UVsQeN7Rci9CNcitZ3wVDUyS2hUchAphClmQ_6z8Fs8KKTmRWk6mdU5ZpAOBJRwC9bdv5O8tBZsNNEdD6quxGctd7U33miu1B6j2eU8-KNbLo6BDFof2568LFBFVWnvkpuMXJYhWxu_E76GoR06XCpUqnHSt6YoskC44YYb5VvwXRwVHw3SLspjxe5QaGBEi_BFJ2dWvJi5mDabKPVKFf9HpIrBECrSQvmZM1_TFzrJcLy1YzLwAj7Yl5Dlh54C_9aWRxS6W-rJoQ3aH9q7BE_f9ZlimanfTzYupDfPyfJN_0UsE8wWufMupPl_kIHvHB64ebZZGrWhuc1lyCXBnAKrotLsjW8b1yxjrsXN92FXagBTPm4nClG6AoRdSPXhJm_7m4RZGJoigNGwGncRxssaWTCQJaHJxwcNJdZNEs_oAchel47lZhQL6ppgrSHC50N7UP7n9HfV8oZ8Ou7C19nACZI9ZsXyx3TB8axspdsLSe_pnPvKkhSiHHkAaG8pS4NFi-NBGMlo8IgPFwTsBVXOMcCH6g0mVYyqpI4-mJon_nrYFMi1EQeaftyo3EkNT5OFlwy5Sgrzfx7mpky0BvUovuwaEeR1G0st3BJVIDyi7EcMQe8h2-TUsxAgHNJPbURdU25S0rdSb10_Bh1Aeuco--vMyuAk3elnx5Qrqg9QrTSMb0PMRZG9di-PMHzmvkD3eTduxK72RWR-IZymQR_HoPVSisSoYhuyDv3KxZ1m8RAN2y35m5Dqsg84sxU-QDTSBiR4MUY6LoV5jOCYrrxfuHDzDiZBH5A53nH9G0fiChp2c6oyMQay-ulagLzEEP1FXIvUyCLB6a3_3qfA0wKqbox47s97XnZggtswGxDSh7vbqiMm7hO_WVIohKYeGEzYfRe1vYeNWLM4tjMmjXk-cmWquU7mOme-GSwQPh75TkaxHItBFRGoGE8OcSwb3jrbjw.XKX29iPMaTx5Hj7swROgIA4NNCXsDskhDU7RRlXDV4w HTTP/1.1 RequestVersionOrLower 
+2026-03-31 07:07:34.169 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-03-31 07:07:34.283 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:07:34.286 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "64d22821-8840-4488-9b46-0aa7e66b6394",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921053,
+  "nbf": 1774921053,
+  "exp": 1774924653,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:07:34.289 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:07:34.291 +05:30 [INF] [0d0be458] ➡️ GET /api/notifications from ::1
+2026-03-31 07:07:34.293 +05:30 [INF] Proxying to http://localhost:5006/api/notifications HTTP/2 RequestVersionOrLower 
+2026-03-31 07:07:34.388 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:07:34.396 +05:30 [INF] [0d0be458] ⬅️ 200 in 104ms
+2026-03-31 07:07:34.398 +05:30 [INF] HTTP GET /api/notifications responded 200 in 179.2673 ms
+2026-03-31 07:07:40.341 +05:30 [INF] [23cf9f17] ⬅️ 101 in 6247ms
+2026-03-31 07:07:40.346 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 6351.4766 ms
+2026-03-31 07:08:39.000 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:08:39.002 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:08:39.003 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:08:39.005 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:08:39.008 +05:30 [INF] [81fabc69] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-03-31 07:08:39.010 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:08:39.012 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-03-31 07:08:39.013 +05:30 [INF] [16e8d3ed] ➡️ GET /api/restaurants from ::1
+2026-03-31 07:08:39.019 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-31 07:08:39.120 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:08:39.131 +05:30 [INF] [81fabc69] ⬅️ 200 in 123ms
+2026-03-31 07:08:39.135 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 207.9837 ms
+2026-03-31 07:08:39.211 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:08:39.214 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:08:39.217 +05:30 [INF] [37b3a249] ➡️ GET /hubs/notifications from ::1
+2026-03-31 07:08:39.220 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=As_MZ4-Z9R2uROlQVO_0fA&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.SXgtMW6XbbqMnIkRBeE_Y7n_gKNstPIeJb63JdnQXljTrQ1axE01q9pDpoTxMiOxo_E46EtzcpfSXGOTb16Wqt3fkFnqdIyCBeOxyOlJXLlHCGH6iE5R15xoWWY2JEyxxSj1cI02hTkcEUS5gjWF3m1LsJ7tsPZEaDqVQqGLcRQuD2bZjzSzDr8PY1d2eF4Ua442kuAT1HnSRIzDZA7zTV7dUBFuCqhOB19f-ij7QIP-GUPemmVKoi1I32SOVOKOomsGMDysTdj8GNBFmCr9fkZ7DEiIzEiaRaswwRXxnWTvMUkGmm8e-ygiEiJXgBkjDRXe3BvLwFUen2M6rDhFjw.-PxDrhXDW1qtfYrwJxyBEg.PXiUy_QxjXj1aPRkutuHKPb3nSnA6EAYwX8EpxjduQ-gpO9arygSE4-ZdxhNxleWRRrHfWE1yCJaGw8AgdeCndEmdwEbPriN38nWuci7-xQewTPmgW5Jo3qVkhfpvp64H6P06lulGDC1XkmUk61mspiT8AcVyJ9IdU8fkygjee8k3u0r1H3nkJoVkrP3RyMckH4Ls0uJf4Sba0aaAn6unYvibOA1QY5_nBmmsDCYtcNRP2Fo9d11c_jEugzEkgEC8NTTxTTwOqeY0Uqbp0KEf-Ryv2tGxz3Oq_qVNMsyIsJnIrru7ZlTmTCrbm_dd5VUPWpn-0UmuOt5m4YEfNhcyiq7Fp1qbC3-jJ4bw_wTafdZjGJJu_a2HneoqpSqiol5dtZQlP_MTM42u-9uSmcPMTdUzgr1ddqq_E1mlP14k5xJzXO4aICpwdVAKPWQi42lMxOaSyvyCwPx35VHQrz5lSnsCfEd0KkPcVn5QXlGyzhTlUT2enYjVkc2_dy4E6wGn5Bx8gXawbiZrLqUE2O1k34yw4ZBmQZrb8GOU97OEEzIPlC0SsrWjvs3TgeVsYci1rjFfKZdZuEqs5m_94qiTjV5hdqIEoB4vku-yAqOZ6yGRtFxm0bmJhP3ZrEUAwLZNJwkg1e6ucbUuhZG6XgBt5C3mea1RdgkaUbUFWyjlFty-0lKYwm2sGh8h1si7M1DwOhEv_4d7EMC7Uqk10I3a7gtvUNwY9iC1V0I4baqR-2a_37P_noJWWcveMNT6C4ZyyIjMZ2Zaim9C72WBIQgAPPlpQzCtxtW3puq15A8km3nD7Espgz4Tmk7ub8i5G2MJ5-GTVEjFe_gJpbmI1ELPpMUVcSEeKpml1KVKn81JANK_m6gGAeAxGmZRjLQli1n6GsHQO_9eFx_FOg4Y2Si9CdT9A_Nzh6ikWZMy4NLw-8BA4527VI5MQ42mzF_BqwYe2CFcURTpf3ttlF7af4ObQaJ9WiTcjtANNKrRGsJWADb4aGD4zQEBqJ3Nx7sfTXXaAfwcUolFt5tiFh1shQtufzX_LrLbtNdbJR0Bepvwg-R_kzOHDs3p_3xS2oDUMc7zCBInc9QqXUzJ575QMiRaOqnmu7l1_QJHncSOnvSJPZHx3_T8FTFKoWjODE1yMWAl8v41tzjWoYPo_5md3dxydG070bojDO3HWL4n5AdswV_0HFvL2BpGenfN5ARNvJpfrkR4csC9Fxht_7KmNsdgU7Kmnejj8Jlp_t6-jS1X8XhNW5A1rqhU40rOhJ7sY3fT4kzPpEQvPHYOyd6ysB41Vv5Ns_zXcsHBfWdazPP7jRVus58E-mDZ6c77mlJ0jNgk9B6NVEPcjWZ3By-mLcA7vVHs1Phq0DLLYnTaVogSxFb_-WsIRgRBV5aKiAXzHD4XPzs5ALSm-bBB_4bQnize6aeAiKZ81Zfz9ut3YLBqExCuDfSiQvckm2RS1Vs0i-jrPpANEJZJyRce8ub6m5cGYgqKnk7kjOkFAeqzmFfrG3_vpkeb0Jl4fMMVZ5VFocsTx8ZP89Rlo6GR9exIML4kMvODjMN3ml2FjamVVHSVryX_TJJnL4D40JBnMxbKsOGBAVvJ2niLA-4O5zNqFeIq07EQ0Bgc8z5cC9DKJxdBfmF44t5lhMyAgT7RNnywjNXvrLv1AFlVfxgiM1Kb1PSWple2t-hFdOX_N1ZAsqSyDhtbjvDt7TZ5ZyhDL6ayR8vIwy6dZ5t9VPnAP0fhYSX1Q.tsexlcKxo24skjWd5fUmaz8WHsPPeEW3pjyqeIiR_Uc HTTP/1.1 RequestVersionOrLower 
+2026-03-31 07:08:39.312 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-03-31 07:08:39.395 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:08:39.398 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:08:39.401 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:08:39.403 +05:30 [INF] [ec3deead] ➡️ GET /api/notifications from ::1
+2026-03-31 07:08:39.408 +05:30 [INF] Proxying to http://localhost:5006/api/notifications HTTP/2 RequestVersionOrLower 
+2026-03-31 07:08:39.578 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:08:39.587 +05:30 [INF] [ec3deead] ⬅️ 200 in 183ms
+2026-03-31 07:08:39.593 +05:30 [INF] HTTP GET /api/notifications responded 200 in 259.5194 ms
+2026-03-31 07:08:39.811 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:08:39.819 +05:30 [INF] [16e8d3ed] ⬅️ 200 in 805ms
+2026-03-31 07:08:39.825 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 901.1286 ms
+2026-03-31 07:09:57.570 +05:30 [INF] [37b3a249] ⬅️ 101 in 78355ms
+2026-03-31 07:09:57.581 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 78436.4161 ms
+2026-03-31 07:10:23.804 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:10:23.804 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:10:23.813 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:10:23.814 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:10:23.823 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:10:23.824 +05:30 [INF] [98e6e0be] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-03-31 07:10:23.828 +05:30 [INF] [2d5ec802] ➡️ GET /api/restaurants from ::1
+2026-03-31 07:10:23.835 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-03-31 07:10:23.835 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-03-31 07:10:24.151 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:10:24.155 +05:30 [INF] [98e6e0be] ⬅️ 200 in 332ms
+2026-03-31 07:10:24.162 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 638.5625 ms
+2026-03-31 07:10:24.249 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:10:24.254 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:10:24.257 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:10:24.271 +05:30 [INF] [2d5ec802] ⬅️ 200 in 442ms
+2026-03-31 07:10:24.280 +05:30 [INF] [41f25da8] ➡️ GET /hubs/notifications from ::1
+2026-03-31 07:10:24.283 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 753.5574 ms
+2026-03-31 07:10:24.287 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=ioYXIi-WYc5j_CrBkueCHQ&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.SXgtMW6XbbqMnIkRBeE_Y7n_gKNstPIeJb63JdnQXljTrQ1axE01q9pDpoTxMiOxo_E46EtzcpfSXGOTb16Wqt3fkFnqdIyCBeOxyOlJXLlHCGH6iE5R15xoWWY2JEyxxSj1cI02hTkcEUS5gjWF3m1LsJ7tsPZEaDqVQqGLcRQuD2bZjzSzDr8PY1d2eF4Ua442kuAT1HnSRIzDZA7zTV7dUBFuCqhOB19f-ij7QIP-GUPemmVKoi1I32SOVOKOomsGMDysTdj8GNBFmCr9fkZ7DEiIzEiaRaswwRXxnWTvMUkGmm8e-ygiEiJXgBkjDRXe3BvLwFUen2M6rDhFjw.-PxDrhXDW1qtfYrwJxyBEg.PXiUy_QxjXj1aPRkutuHKPb3nSnA6EAYwX8EpxjduQ-gpO9arygSE4-ZdxhNxleWRRrHfWE1yCJaGw8AgdeCndEmdwEbPriN38nWuci7-xQewTPmgW5Jo3qVkhfpvp64H6P06lulGDC1XkmUk61mspiT8AcVyJ9IdU8fkygjee8k3u0r1H3nkJoVkrP3RyMckH4Ls0uJf4Sba0aaAn6unYvibOA1QY5_nBmmsDCYtcNRP2Fo9d11c_jEugzEkgEC8NTTxTTwOqeY0Uqbp0KEf-Ryv2tGxz3Oq_qVNMsyIsJnIrru7ZlTmTCrbm_dd5VUPWpn-0UmuOt5m4YEfNhcyiq7Fp1qbC3-jJ4bw_wTafdZjGJJu_a2HneoqpSqiol5dtZQlP_MTM42u-9uSmcPMTdUzgr1ddqq_E1mlP14k5xJzXO4aICpwdVAKPWQi42lMxOaSyvyCwPx35VHQrz5lSnsCfEd0KkPcVn5QXlGyzhTlUT2enYjVkc2_dy4E6wGn5Bx8gXawbiZrLqUE2O1k34yw4ZBmQZrb8GOU97OEEzIPlC0SsrWjvs3TgeVsYci1rjFfKZdZuEqs5m_94qiTjV5hdqIEoB4vku-yAqOZ6yGRtFxm0bmJhP3ZrEUAwLZNJwkg1e6ucbUuhZG6XgBt5C3mea1RdgkaUbUFWyjlFty-0lKYwm2sGh8h1si7M1DwOhEv_4d7EMC7Uqk10I3a7gtvUNwY9iC1V0I4baqR-2a_37P_noJWWcveMNT6C4ZyyIjMZ2Zaim9C72WBIQgAPPlpQzCtxtW3puq15A8km3nD7Espgz4Tmk7ub8i5G2MJ5-GTVEjFe_gJpbmI1ELPpMUVcSEeKpml1KVKn81JANK_m6gGAeAxGmZRjLQli1n6GsHQO_9eFx_FOg4Y2Si9CdT9A_Nzh6ikWZMy4NLw-8BA4527VI5MQ42mzF_BqwYe2CFcURTpf3ttlF7af4ObQaJ9WiTcjtANNKrRGsJWADb4aGD4zQEBqJ3Nx7sfTXXaAfwcUolFt5tiFh1shQtufzX_LrLbtNdbJR0Bepvwg-R_kzOHDs3p_3xS2oDUMc7zCBInc9QqXUzJ575QMiRaOqnmu7l1_QJHncSOnvSJPZHx3_T8FTFKoWjODE1yMWAl8v41tzjWoYPo_5md3dxydG070bojDO3HWL4n5AdswV_0HFvL2BpGenfN5ARNvJpfrkR4csC9Fxht_7KmNsdgU7Kmnejj8Jlp_t6-jS1X8XhNW5A1rqhU40rOhJ7sY3fT4kzPpEQvPHYOyd6ysB41Vv5Ns_zXcsHBfWdazPP7jRVus58E-mDZ6c77mlJ0jNgk9B6NVEPcjWZ3By-mLcA7vVHs1Phq0DLLYnTaVogSxFb_-WsIRgRBV5aKiAXzHD4XPzs5ALSm-bBB_4bQnize6aeAiKZ81Zfz9ut3YLBqExCuDfSiQvckm2RS1Vs0i-jrPpANEJZJyRce8ub6m5cGYgqKnk7kjOkFAeqzmFfrG3_vpkeb0Jl4fMMVZ5VFocsTx8ZP89Rlo6GR9exIML4kMvODjMN3ml2FjamVVHSVryX_TJJnL4D40JBnMxbKsOGBAVvJ2niLA-4O5zNqFeIq07EQ0Bgc8z5cC9DKJxdBfmF44t5lhMyAgT7RNnywjNXvrLv1AFlVfxgiM1Kb1PSWple2t-hFdOX_N1ZAsqSyDhtbjvDt7TZ5ZyhDL6ayR8vIwy6dZ5t9VPnAP0fhYSX1Q.tsexlcKxo24skjWd5fUmaz8WHsPPeEW3pjyqeIiR_Uc HTTP/1.1 RequestVersionOrLower 
+2026-03-31 07:10:24.440 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-03-31 07:10:24.537 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:10:24.540 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:10:24.545 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:10:24.547 +05:30 [INF] [910c6241] ➡️ GET /api/notifications from ::1
+2026-03-31 07:10:24.550 +05:30 [INF] Proxying to http://localhost:5006/api/notifications HTTP/2 RequestVersionOrLower 
+2026-03-31 07:10:24.805 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-03-31 07:10:24.817 +05:30 [INF] [910c6241] ⬅️ 200 in 269ms
+2026-03-31 07:10:24.821 +05:30 [INF] HTTP GET /api/notifications responded 200 in 349.7357 ms
+2026-03-31 07:10:51.448 +05:30 [INF] [41f25da8] ⬅️ 101 in 27169ms
+2026-03-31 07:10:51.460 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 27283.3117 ms
+2026-03-31 07:10:51.933 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:10:51.938 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:10:51.942 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:10:51.944 +05:30 [INF] [61427fd2] ➡️ GET /api/delivery/profile from ::1
+2026-03-31 07:10:51.947 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-03-31 07:10:51.957 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:10:51.960 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:10:51.962 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:10:51.964 +05:30 [INF] [e1f646ed] ➡️ GET /api/delivery/jobs from ::1
+2026-03-31 07:10:51.969 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-03-31 07:10:56.083 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:10:56.083 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:10:56.309 +05:30 [INF] [e1f646ed] ⬅️ 502 in 4345ms
+2026-03-31 07:10:56.318 +05:30 [INF] [61427fd2] ⬅️ 502 in 4374ms
+2026-03-31 07:10:56.318 +05:30 [ERR] HTTP GET /api/delivery/jobs responded 502 in 4426.9571 ms
+2026-03-31 07:10:56.321 +05:30 [ERR] HTTP GET /api/delivery/profile responded 502 in 4453.3827 ms
+2026-03-31 07:10:57.397 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:10:57.401 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:10:57.404 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:10:57.406 +05:30 [INF] [55c7e0e3] ➡️ GET /api/delivery/jobs from ::1
+2026-03-31 07:10:57.409 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-03-31 07:10:57.415 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:10:57.418 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:10:57.421 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:10:57.423 +05:30 [INF] [f718c806] ➡️ GET /api/delivery/profile from ::1
+2026-03-31 07:10:57.426 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:01.507 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:01.519 +05:30 [INF] [55c7e0e3] ⬅️ 502 in 4112ms
+2026-03-31 07:11:01.520 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:01.521 +05:30 [ERR] HTTP GET /api/delivery/jobs responded 502 in 4190.6458 ms
+2026-03-31 07:11:01.529 +05:30 [INF] [f718c806] ⬅️ 502 in 4105ms
+2026-03-31 07:11:01.534 +05:30 [ERR] HTTP GET /api/delivery/profile responded 502 in 4188.9919 ms
+2026-03-31 07:11:03.617 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:03.620 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:03.621 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:03.625 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:03.628 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:03.631 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:03.632 +05:30 [INF] [456d71c8] ➡️ GET /api/delivery/profile from ::1
+2026-03-31 07:11:03.634 +05:30 [INF] [ffe86cfa] ➡️ GET /api/delivery/jobs from ::1
+2026-03-31 07:11:03.638 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:03.642 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:07.739 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:07.747 +05:30 [INF] [ffe86cfa] ⬅️ 502 in 4113ms
+2026-03-31 07:11:07.749 +05:30 [ERR] HTTP GET /api/delivery/jobs responded 502 in 4197.5537 ms
+2026-03-31 07:11:07.756 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:07.763 +05:30 [INF] [456d71c8] ⬅️ 502 in 4131ms
+2026-03-31 07:11:07.765 +05:30 [ERR] HTTP GET /api/delivery/profile responded 502 in 4214.8297 ms
+2026-03-31 07:11:08.293 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:08.297 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:08.300 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:08.302 +05:30 [INF] [87e352b8] ➡️ GET /api/delivery/jobs/active from ::1
+2026-03-31 07:11:08.305 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs/active HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:10.841 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:10.845 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:10.848 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:10.850 +05:30 [INF] [f33f3755] ➡️ GET /api/delivery/earnings from ::1
+2026-03-31 07:11:10.854 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/earnings HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:11.887 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:11.892 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:11.895 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:11.897 +05:30 [INF] [5228dbe9] ➡️ GET /api/delivery/profile from ::1
+2026-03-31 07:11:11.900 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:12.414 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:12.423 +05:30 [INF] [87e352b8] ⬅️ 502 in 4121ms
+2026-03-31 07:11:12.425 +05:30 [ERR] HTTP GET /api/delivery/jobs/active responded 502 in 4180.8119 ms
+2026-03-31 07:11:13.487 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:13.491 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:13.493 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:13.495 +05:30 [INF] [1ef5222f] ➡️ GET /api/delivery/jobs/active from ::1
+2026-03-31 07:11:13.499 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs/active HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:14.962 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:14.971 +05:30 [INF] [f33f3755] ⬅️ 502 in 4121ms
+2026-03-31 07:11:14.973 +05:30 [ERR] HTTP GET /api/delivery/earnings responded 502 in 4177.6068 ms
+2026-03-31 07:11:16.003 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:16.012 +05:30 [INF] [5228dbe9] ⬅️ 502 in 4115ms
+2026-03-31 07:11:16.016 +05:30 [ERR] HTTP GET /api/delivery/profile responded 502 in 4184.6447 ms
+2026-03-31 07:11:16.021 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:16.023 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:16.026 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:16.029 +05:30 [INF] [34e9b69b] ➡️ GET /api/delivery/earnings from ::1
+2026-03-31 07:11:16.033 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/earnings HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:17.086 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:17.091 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:17.095 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:17.099 +05:30 [INF] [1ed5fb37] ➡️ GET /api/delivery/profile from ::1
+2026-03-31 07:11:17.101 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:17.591 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:17.601 +05:30 [INF] [1ef5222f] ⬅️ 502 in 4106ms
+2026-03-31 07:11:17.603 +05:30 [ERR] HTTP GET /api/delivery/jobs/active responded 502 in 4163.3942 ms
+2026-03-31 07:11:19.666 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:19.670 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:19.673 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:19.676 +05:30 [INF] [2a052727] ➡️ GET /api/delivery/jobs/active from ::1
+2026-03-31 07:11:19.679 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs/active HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:20.133 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:20.144 +05:30 [INF] [34e9b69b] ⬅️ 502 in 4115ms
+2026-03-31 07:11:20.148 +05:30 [ERR] HTTP GET /api/delivery/earnings responded 502 in 4166.9630 ms
+2026-03-31 07:11:20.737 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:20.741 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:20.745 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:20.747 +05:30 [INF] [7846d0a2] ➡️ PUT /api/delivery/availability from ::1
+2026-03-31 07:11:20.751 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/availability HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:21.202 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:21.212 +05:30 [INF] [1ed5fb37] ⬅️ 502 in 4113ms
+2026-03-31 07:11:21.215 +05:30 [ERR] HTTP GET /api/delivery/profile responded 502 in 4184.1360 ms
+2026-03-31 07:11:22.208 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:22.212 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:22.217 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:22.228 +05:30 [INF] [c6acf990] ➡️ GET /api/delivery/earnings from ::1
+2026-03-31 07:11:22.232 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/earnings HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:23.263 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:23.266 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:23.269 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:23.271 +05:30 [INF] [d6a34091] ➡️ GET /api/delivery/profile from ::1
+2026-03-31 07:11:23.276 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:23.767 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:23.776 +05:30 [INF] [2a052727] ⬅️ 502 in 4101ms
+2026-03-31 07:11:23.779 +05:30 [ERR] HTTP GET /api/delivery/jobs/active responded 502 in 4158.1309 ms
+2026-03-31 07:11:24.837 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:24.845 +05:30 [INF] [7846d0a2] ⬅️ 502 in 4098ms
+2026-03-31 07:11:24.847 +05:30 [ERR] HTTP PUT /api/delivery/availability responded 502 in 4159.3519 ms
+2026-03-31 07:11:25.904 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:25.908 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:25.910 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:25.912 +05:30 [INF] [74a2dec8] ➡️ PUT /api/delivery/availability from ::1
+2026-03-31 07:11:25.914 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/availability HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:26.335 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:26.347 +05:30 [INF] [c6acf990] ⬅️ 502 in 4119ms
+2026-03-31 07:11:26.350 +05:30 [ERR] HTTP GET /api/delivery/earnings responded 502 in 4191.3732 ms
+2026-03-31 07:11:27.364 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:27.381 +05:30 [INF] [d6a34091] ⬅️ 502 in 4109ms
+2026-03-31 07:11:27.384 +05:30 [ERR] HTTP GET /api/delivery/profile responded 502 in 4159.0690 ms
+2026-03-31 07:11:29.998 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:30.006 +05:30 [INF] [74a2dec8] ⬅️ 502 in 4094ms
+2026-03-31 07:11:30.008 +05:30 [ERR] HTTP PUT /api/delivery/availability responded 502 in 4152.2475 ms
+2026-03-31 07:11:32.084 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:11:32.089 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:11:32.092 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:11:32.094 +05:30 [INF] [eccea1e0] ➡️ PUT /api/delivery/availability from ::1
+2026-03-31 07:11:32.097 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/availability HTTP/2 RequestVersionOrLower 
+2026-03-31 07:11:36.200 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:11:36.207 +05:30 [INF] [eccea1e0] ⬅️ 502 in 4113ms
+2026-03-31 07:11:36.210 +05:30 [ERR] HTTP PUT /api/delivery/availability responded 502 in 4176.9410 ms
+2026-03-31 07:12:39.775 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:12:39.780 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:12:39.783 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:12:39.787 +05:30 [INF] [1750815e] ➡️ POST /api/delivery/register from ::1
+2026-03-31 07:12:39.792 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/register HTTP/2 RequestVersionOrLower 
+2026-03-31 07:12:43.890 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:12:43.904 +05:30 [INF] [1750815e] ⬅️ 502 in 4117ms
+2026-03-31 07:12:43.907 +05:30 [ERR] HTTP POST /api/delivery/register responded 502 in 4195.6473 ms
+2026-03-31 07:12:44.984 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:12:44.987 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:12:44.989 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:12:44.991 +05:30 [INF] [f6e45b1b] ➡️ POST /api/delivery/register from ::1
+2026-03-31 07:12:44.993 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/register HTTP/2 RequestVersionOrLower 
+2026-03-31 07:12:49.095 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:12:49.102 +05:30 [INF] [f6e45b1b] ⬅️ 502 in 4111ms
+2026-03-31 07:12:49.105 +05:30 [ERR] HTTP POST /api/delivery/register responded 502 in 4174.0392 ms
+2026-03-31 07:12:51.188 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:12:51.192 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:12:51.195 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:12:51.196 +05:30 [INF] [1b56f9e1] ➡️ POST /api/delivery/register from ::1
+2026-03-31 07:12:51.199 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/register HTTP/2 RequestVersionOrLower 
+2026-03-31 07:12:55.297 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:12:55.307 +05:30 [INF] [1b56f9e1] ⬅️ 502 in 4110ms
+2026-03-31 07:12:55.309 +05:30 [ERR] HTTP POST /api/delivery/register responded 502 in 4177.4668 ms
+2026-03-31 07:23:16.384 +05:30 [INF] Loading proxy data from config.
+2026-03-31 07:23:44.512 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-03-31 07:23:44.578 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-03-31 07:23:44.661 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-03-31 07:23:44.668 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-03-31 07:23:45.249 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:23:45.257 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:23:45.315 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:23:45.320 +05:30 [INF] [d5b34c77] ➡️ POST /api/delivery/register from ::1
+2026-03-31 07:23:45.362 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/register HTTP/2 RequestVersionOrLower 
+2026-03-31 07:23:49.457 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:23:49.497 +05:30 [INF] [d5b34c77] ⬅️ 502 in 4177ms
+2026-03-31 07:23:49.505 +05:30 [ERR] HTTP POST /api/delivery/register responded 502 in 5644.3476 ms
+2026-03-31 07:23:50.656 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:23:50.661 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:23:50.665 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:23:50.670 +05:30 [INF] [03328535] ➡️ POST /api/delivery/register from ::1
+2026-03-31 07:23:50.675 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/register HTTP/2 RequestVersionOrLower 
+2026-03-31 07:23:54.766 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:23:54.777 +05:30 [INF] [03328535] ⬅️ 502 in 4107ms
+2026-03-31 07:23:54.780 +05:30 [ERR] HTTP POST /api/delivery/register responded 502 in 4210.3722 ms
+2026-03-31 07:23:56.874 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:23:56.879 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:23:56.884 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:23:56.886 +05:30 [INF] [dff77e2e] ➡️ POST /api/delivery/register from ::1
+2026-03-31 07:23:56.890 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/register HTTP/2 RequestVersionOrLower 
+2026-03-31 07:24:01.011 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:24:01.048 +05:30 [INF] [dff77e2e] ⬅️ 502 in 4161ms
+2026-03-31 07:24:01.050 +05:30 [ERR] HTTP POST /api/delivery/register responded 502 in 4240.8177 ms
+2026-03-31 07:24:13.826 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:24:13.835 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:24:13.839 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:24:13.842 +05:30 [INF] [f29e5f59] ➡️ PUT /api/delivery/availability from ::1
+2026-03-31 07:24:13.850 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/availability HTTP/2 RequestVersionOrLower 
+2026-03-31 07:24:17.946 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:24:17.955 +05:30 [INF] [f29e5f59] ⬅️ 502 in 4112ms
+2026-03-31 07:24:17.958 +05:30 [ERR] HTTP PUT /api/delivery/availability responded 502 in 4202.9106 ms
+2026-03-31 07:24:19.045 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:24:19.051 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:24:19.055 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:24:19.057 +05:30 [INF] [19018624] ➡️ PUT /api/delivery/availability from ::1
+2026-03-31 07:24:19.060 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/availability HTTP/2 RequestVersionOrLower 
+2026-03-31 07:24:23.156 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:24:23.167 +05:30 [INF] [19018624] ⬅️ 502 in 4110ms
+2026-03-31 07:24:23.171 +05:30 [ERR] HTTP PUT /api/delivery/availability responded 502 in 4197.6061 ms
+2026-03-31 07:24:25.255 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-03-31 07:24:25.259 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "17e5217b-6f30-44d4-863a-3d9316398a23",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1774921118,
+  "nbf": 1774921118,
+  "exp": 1774924718,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-03-31 07:24:25.263 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-03-31 07:24:25.265 +05:30 [INF] [51f99376] ➡️ PUT /api/delivery/availability from ::1
+2026-03-31 07:24:25.269 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/availability HTTP/2 RequestVersionOrLower 
+2026-03-31 07:24:29.380 +05:30 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5007)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-03-31 07:24:29.389 +05:30 [INF] [51f99376] ⬅️ 502 in 4123ms
+2026-03-31 07:24:29.392 +05:30 [ERR] HTTP PUT /api/delivery/availability responded 502 in 4201.1574 ms

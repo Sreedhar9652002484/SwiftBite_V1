@@ -1,0 +1,37 @@
+2026-03-30 05:50:18.926 +05:30 [INF] Executed DbCommand (606ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-30 05:50:19.389 +05:30 [INF] Executed DbCommand (327ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-30 05:50:19.465 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-30 05:50:19.497 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-30 05:50:20.187 +05:30 [INF] Executed DbCommand (571ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-30 05:50:20.289 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-30 05:50:22.017 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-30 05:50:22.047 +05:30 [INF] 🎧 Kafka consumer started | Topics: swiftbite.order.placed, swiftbite.order.confirmed, swiftbite.order.cancelled, swiftbite.payment.success, swiftbite.payment.failed
+2026-03-30 05:50:25.905 +05:30 [INF] Now listening on: http://localhost:5006
+2026-03-30 05:50:26.280 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-30 05:50:26.281 +05:30 [INF] Hosting environment: Development
+2026-03-30 05:50:26.286 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.API
+2026-03-30 05:50:35.144 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/index.html - null null
+2026-03-30 05:50:37.168 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.cancelled: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-30 05:50:37.686 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.payment.failed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 67
+2026-03-30 05:50:38.865 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/index.html - 200 null text/html;charset=utf-8 3840.9356ms
+2026-03-30 05:50:39.046 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_vs/browserLink - null null
+2026-03-30 05:50:39.710 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-30 05:50:40.297 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - 200 16551 application/javascript; charset=utf-8 586.806ms
+2026-03-30 05:50:40.409 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1362.7653ms
+2026-03-30 05:50:45.104 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - null null
+2026-03-30 05:50:45.235 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 130.1861ms

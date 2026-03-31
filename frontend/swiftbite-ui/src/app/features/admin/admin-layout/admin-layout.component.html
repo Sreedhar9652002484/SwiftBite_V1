@@ -1,0 +1,38 @@
+<div class="admin-shell">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-name">SwiftBite</span>
+      <span class="brand-pill">Admin</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a
+        *ngFor="let item of navItems"
+        [routerLink]="item.path"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <span class="nav-icon">{{ item.icon }}</span>
+        <span>{{ item.label }}</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="admin-row">
+        <div class="avatar">{{ auth.firstName ? auth.firstName[0] : 'A' }}</div>
+        <div>
+          <p class="admin-name">{{ auth.firstName || 'Admin' }}</p>
+          <p class="admin-role">Platform Admin</p>
+        </div>
+      </div>
+      <button class="btn-logout" (click)="logout()">Logout</button>
+    </div>
+  </aside>
+
+  <main class="admin-content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

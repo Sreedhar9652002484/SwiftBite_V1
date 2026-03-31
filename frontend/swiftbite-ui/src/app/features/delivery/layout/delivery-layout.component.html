@@ -1,0 +1,44 @@
+<div class="delivery-shell">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">🚴</span>
+      <span class="brand-name">SwiftBite</span>
+      <span class="brand-pill">Delivery</span>
+    </div>
+
+    <div class="availability-card">
+      <p class="partner-name">{{ partnerName() }}</p>
+      <button
+        class="availability-toggle"
+        [class.online]="isAvailable()"
+        [disabled]="togglingStatus()"
+        (click)="toggleAvailability()"
+      >
+        <span class="toggle-dot"></span>
+        {{ isAvailable() ? 'Online' : 'Offline' }}
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a
+        *ngFor="let item of navItems"
+        [routerLink]="item.path"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <span class="nav-icon">{{ item.icon }}</span>
+        <span>{{ item.label }}</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="btn-logout" (click)="logout()">Logout</button>
+    </div>
+  </aside>
+
+  <main class="delivery-content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

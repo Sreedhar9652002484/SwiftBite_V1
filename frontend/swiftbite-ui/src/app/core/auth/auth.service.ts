@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 
 export interface RegisterRequest {
-  firstName:       string;
+  firstName?:       string;
   lastName:        string;
   email:           string;
   password:        string;
@@ -138,6 +138,7 @@ export class AuthService {
   }
 
   redirectBasedOnRole(): void {
+    debugger
     if (this.hasRole('Admin'))           this.router.navigate(['/admin/dashboard']);
     else if (this.hasRole('RestaurantAdmin')) this.router.navigate(['/owner/dashboard']);
     else if (this.hasRole('DeliveryPartner')) this.router.navigate(['/delivery/dashboard']);
