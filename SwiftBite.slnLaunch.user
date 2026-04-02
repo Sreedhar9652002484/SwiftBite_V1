@@ -29,6 +29,10 @@
       {
         "Path": "src\\Services\\SwiftBite.NotificationService\\SwiftBite.NotificationService.API\\SwiftBite.NotificationService.API.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "src\\Services\\SwiftBite.DeliveryService\\SwiftBite.DeliveryService.API\\SwiftBite.DeliveryService.API.csproj",
+        "Action": "Start"
       }
     ]
   }

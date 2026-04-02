@@ -13,6 +13,7 @@ public class ClientSeeder : IHostedService
         => _serviceProvider = serviceProvider;
 
     public async Task StartAsync(CancellationToken ct)
+    
     {
         using var scope = _serviceProvider.CreateScope();
 

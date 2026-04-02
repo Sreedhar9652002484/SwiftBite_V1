@@ -138,7 +138,13 @@ export const routes: Routes = [
         .then(m => m.DeliveryLayoutComponent),
     canActivate: [authGuard, deliveryGuard],
     children: [
-      { path: '', redirectTo: 'jobs', pathMatch: 'full' },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      {
+      path: 'dashboard',
+      loadComponent: () =>
+        import('./features/delivery/dashboard/delivery-dashboard.component')
+          .then(m => m.DeliveryDashboardComponent),
+    },
       { path: 'jobs',     loadComponent: () => import('./features/delivery/jobs/delivery-jobs.component').then(m => m.DeliveryJobsComponent) },
       { path: 'active',   loadComponent: () => import('./features/delivery/jobs/active/delivery-active.component').then(m => m.DeliveryActiveComponent) },
       { path: 'earnings', loadComponent: () => import('./features/delivery/earnings/delivery-earnings.component').then(m => m.EarningsComponent) },

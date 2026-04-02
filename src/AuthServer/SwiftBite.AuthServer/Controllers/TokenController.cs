@@ -130,6 +130,8 @@ namespace SwiftBite.AuthServer.Controllers
             identity.AddClaim(Claims.Audience, "swiftbite-orderservice");
             identity.AddClaim(Claims.Audience, "swiftbite-paymentservice");
             identity.AddClaim(Claims.Audience, "swiftbite-notificationservice");
+            identity.AddClaim(Claims.Audience, "swiftbite-deliveryservice");
+
             var roles = await _userManager.GetRolesAsync(user);
             foreach (var role in roles)
                 identity.AddClaim(Claims.Role, role);

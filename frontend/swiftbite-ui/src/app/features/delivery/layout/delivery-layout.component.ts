@@ -21,6 +21,7 @@ export class DeliveryLayoutComponent implements OnInit {
   togglingStatus = signal(false);
 
   navItems = [
+      { label: 'Dashboard', icon: '🏠', path: '/delivery/dashboard' }, // ← ADD
     { label: 'Jobs',     icon: '📦', path: '/delivery/jobs'     },
     { label: 'Active',   icon: '🚴', path: '/delivery/active'   },
     { label: 'Earnings', icon: '₹',  path: '/delivery/earnings' },

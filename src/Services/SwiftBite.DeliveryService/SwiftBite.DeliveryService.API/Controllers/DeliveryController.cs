@@ -9,8 +9,9 @@ using SwiftBite.DeliveryService.Application.DeliveryPartners.Commands.UpdateAvai
 using SwiftBite.DeliveryService.Application.DeliveryPartners.Queries.GetEarnings;
 using SwiftBite.DeliveryService.Application.DeliveryPartners.Queries.GetPartnerProfile;
 using SwiftBite.DeliveryService.Domain.Enums;
-using SwiftBite.Shared.Exceptions.Exceptions;   // ✅ IMPORTANT
-using SwiftBite.Shared.Exceptions.Models;
+using SwiftBite.Shared.Exceptions.Exceptions;  // ✅ ADD THIS
+using SwiftBite.Shared.Exceptions.Models;      // ✅ ADD THIS
+
 
 namespace SwiftBite.DeliveryService.API.Controllers;
 

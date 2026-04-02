@@ -2553,3 +2553,4 @@ System.Net.Http.HttpRequestException: No connection could be made because the ta
    at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
 2026-03-31 07:24:29.389 +05:30 [INF] [51f99376] ⬅️ 502 in 4123ms
 2026-03-31 07:24:29.392 +05:30 [ERR] HTTP PUT /api/delivery/availability responded 502 in 4201.1574 ms
+2026-03-31 07:25:49.284 +05:30 [INF] Loading proxy data from config.
