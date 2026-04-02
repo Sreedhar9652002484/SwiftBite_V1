@@ -11,7 +11,7 @@
 	  <PackageReference Include="MediatR" Version="14.1.0" />
 	  <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0"/>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0" />
 
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
 	  <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.4" />
@@ -26,9 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\SwiftBite.Shared.Exceptions\SwiftBite.Shared.Exceptions.csproj" />
     <ProjectReference Include="..\SwiftBite.DeliveryService.Application\SwiftBite.DeliveryService.Application.csproj" />
     <ProjectReference Include="..\SwiftBite.DeliveryService.Infrastructure\SwiftBite.DeliveryService.Infrastructure.csproj" />
-    <ProjectReference Include="..\SwiftBite.Shared.Exceptions\SwiftBite.Shared.Exceptions.csproj" />
   </ItemGroup>
 
 </Project>

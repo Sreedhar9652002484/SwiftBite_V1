@@ -67,11 +67,19 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod());
 });
 
-// ? 7. OpenIddict Validation — local JWT (no introspection)
+
+// ? 7. OpenIddict Validation
 builder.Services.AddOpenIddict()
     .AddValidation(options =>
     {
-        options.SetIssuer(builder.Configuration["AuthServer:Authority"]!);
+        options.SetIssuer(
+            builder.Configuration["AuthServer:Authority"]!);
+        options.AddAudiences("swiftbite-deliveryservice");
+
+        options.UseIntrospection()
+               .SetClientId("swiftbite-deliveryservice")
+               .SetClientSecret("deliveryservice-secret");
+
         options.UseSystemNetHttp();
         options.UseAspNetCore();
     });
