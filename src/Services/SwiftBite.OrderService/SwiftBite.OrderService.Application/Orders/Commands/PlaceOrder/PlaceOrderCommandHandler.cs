@@ -100,7 +100,9 @@ public class PlaceOrderCommandHandler
         PlacedAt = o.PlacedAt,
         EstimatedDeliveryAt = o.EstimatedDeliveryAt,
         DeliveredAt = o.DeliveredAt,
-        RowVersion = o.RowVersion,
+        RowVersion = o.RowVersion != null
+        ? Convert.ToBase64String(o.RowVersion)
+        : null,
         Items = o.Items.Select(i => new OrderItemDto
         {
             Id = i.Id,

@@ -34,6 +34,10 @@ namespace SwiftBite.DeliveryService.Infrastructure.Migrations
                     b.Property<DateTime>("AssignedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("CustomerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CustomerName")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -69,7 +73,7 @@ namespace SwiftBite.DeliveryService.Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<Guid>("PartnerId")
+                    b.Property<Guid?>("PartnerId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("PickedUpAt")
@@ -171,8 +175,7 @@ namespace SwiftBite.DeliveryService.Infrastructure.Migrations
                     b.HasOne("SwiftBite.DeliveryService.Domain.Domain.Entities.DeliveryPartner", "Partner")
                         .WithMany("Jobs")
                         .HasForeignKey("PartnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Partner");
                 });

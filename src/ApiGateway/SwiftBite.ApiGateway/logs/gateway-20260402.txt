@@ -6061,3 +6061,3245 @@ System.Net.Http.HttpRequestException: No connection could be made because the ta
    at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
 2026-04-02 07:07:35.436 +05:30 [INF] [5831f4d7] ⬅️ 502 in 4112ms
 2026-04-02 07:07:35.439 +05:30 [ERR] HTTP POST /api/delivery/register responded 502 in 4177.7423 ms
+2026-04-02 07:15:07.328 +05:30 [INF] Loading proxy data from config.
+2026-04-02 07:19:25.585 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-04-02 07:19:25.680 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-04-02 07:19:25.832 +05:30 [INF] The cryptography request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-04-02 07:19:25.839 +05:30 [INF] The cryptography response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-04-02 07:19:26.961 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:19:26.968 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:19:27.029 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:19:27.035 +05:30 [INF] [45f330b4] ➡️ POST /api/delivery/register from ::1
+2026-04-02 07:19:27.105 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/register HTTP/2 RequestVersionOrLower 
+2026-04-02 07:19:40.959 +05:30 [INF] Received HTTP/1.1 response 400.
+2026-04-02 07:19:40.973 +05:30 [INF] [45f330b4] ⬅️ 400 in 13938ms
+2026-04-02 07:19:40.983 +05:30 [INF] HTTP POST /api/delivery/register responded 400 in 18520.7853 ms
+2026-04-02 07:19:51.068 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:19:51.074 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:19:51.081 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:19:51.083 +05:30 [INF] [6769d53d] ➡️ GET /api/delivery/profile from ::1
+2026-04-02 07:19:51.089 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-04-02 07:19:51.128 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:19:51.132 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:19:51.136 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:19:51.138 +05:30 [INF] [43622571] ➡️ GET /api/delivery/jobs from ::1
+2026-04-02 07:19:51.141 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:25.128 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:25.133 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:25.135 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:25.137 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:25.139 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:25.140 +05:30 [INF] [aa7aef99] ➡️ PUT /api/delivery/availability from ::1
+2026-04-02 07:20:25.143 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:25.147 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/availability HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:25.148 +05:30 [INF] [fd89cbad] ➡️ GET /api/delivery/jobs from ::1
+2026-04-02 07:20:25.156 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:25.544 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:25.559 +05:30 [INF] [6769d53d] ⬅️ 200 in 34476ms
+2026-04-02 07:20:25.562 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 34622.7217 ms
+2026-04-02 07:20:25.683 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:25.683 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:25.690 +05:30 [INF] [43622571] ⬅️ 200 in 34552ms
+2026-04-02 07:20:25.693 +05:30 [INF] [fd89cbad] ⬅️ 200 in 545ms
+2026-04-02 07:20:25.697 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 34673.3985 ms
+2026-04-02 07:20:25.702 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 699.9750 ms
+2026-04-02 07:20:25.757 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:25.760 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:25.764 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:25.766 +05:30 [INF] [28b429db] ➡️ GET /api/delivery/jobs from ::1
+2026-04-02 07:20:25.769 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:25.860 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:25.866 +05:30 [INF] [aa7aef99] ⬅️ 200 in 725ms
+2026-04-02 07:20:25.870 +05:30 [INF] HTTP PUT /api/delivery/availability responded 200 in 877.4564 ms
+2026-04-02 07:20:25.964 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:25.971 +05:30 [INF] [28b429db] ⬅️ 200 in 205ms
+2026-04-02 07:20:25.978 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 284.3989 ms
+2026-04-02 07:20:36.271 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:36.273 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:36.276 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:36.276 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:36.281 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:36.284 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:36.286 +05:30 [INF] [66e03f13] ➡️ GET /api/delivery/profile from ::1
+2026-04-02 07:20:36.288 +05:30 [INF] [c828492f] ➡️ GET /api/delivery/jobs from ::1
+2026-04-02 07:20:36.291 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:36.294 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:36.404 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:36.409 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:36.409 +05:30 [INF] [66e03f13] ⬅️ 200 in 123ms
+2026-04-02 07:20:36.414 +05:30 [INF] [c828492f] ⬅️ 200 in 126ms
+2026-04-02 07:20:36.417 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 266.7311 ms
+2026-04-02 07:20:36.421 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 255.1303 ms
+2026-04-02 07:20:39.715 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:39.720 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:39.723 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:39.729 +05:30 [INF] [ea375ca8] ➡️ GET /api/delivery/profile from ::1
+2026-04-02 07:20:39.733 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:39.801 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:39.804 +05:30 [INF] [ea375ca8] ⬅️ 200 in 75ms
+2026-04-02 07:20:39.807 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 177.6802 ms
+2026-04-02 07:20:53.756 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:53.759 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:53.759 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:53.762 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:53.768 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:53.770 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:53.772 +05:30 [INF] [61135435] ➡️ GET /api/delivery/profile from ::1
+2026-04-02 07:20:53.774 +05:30 [INF] [938470be] ➡️ GET /api/delivery/jobs from ::1
+2026-04-02 07:20:53.778 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:53.782 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:53.850 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:53.855 +05:30 [INF] [61135435] ⬅️ 200 in 82ms
+2026-04-02 07:20:53.857 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 175.9720 ms
+2026-04-02 07:20:53.874 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:53.877 +05:30 [INF] [938470be] ⬅️ 200 in 103ms
+2026-04-02 07:20:53.885 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 203.2151 ms
+2026-04-02 07:20:55.742 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:55.745 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:55.749 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:55.752 +05:30 [INF] [fcec34a4] ➡️ GET /api/delivery/jobs from ::1
+2026-04-02 07:20:55.755 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:55.818 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:55.821 +05:30 [INF] [fcec34a4] ⬅️ 200 in 69ms
+2026-04-02 07:20:55.824 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 139.0580 ms
+2026-04-02 07:20:59.154 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:59.157 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:59.163 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:59.165 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:20:59.166 +05:30 [INF] [7d8baa61] ➡️ GET /api/delivery/jobs from ::1
+2026-04-02 07:20:59.169 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:20:59.172 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:59.174 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:20:59.182 +05:30 [INF] [de51a78c] ➡️ GET /api/delivery/profile from ::1
+2026-04-02 07:20:59.185 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-04-02 07:20:59.252 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:59.255 +05:30 [INF] [7d8baa61] ⬅️ 200 in 89ms
+2026-04-02 07:20:59.260 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 174.2240 ms
+2026-04-02 07:20:59.272 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:20:59.279 +05:30 [INF] [de51a78c] ⬅️ 200 in 96ms
+2026-04-02 07:20:59.283 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 198.3266 ms
+2026-04-02 07:21:00.559 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:00.563 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:21:00.566 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:21:00.568 +05:30 [INF] [ffa94744] ➡️ GET /api/delivery/jobs from ::1
+2026-04-02 07:21:00.571 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:00.633 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:00.638 +05:30 [INF] [ffa94744] ⬅️ 200 in 69ms
+2026-04-02 07:21:00.642 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 140.1982 ms
+2026-04-02 07:21:01.514 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:01.519 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:21:01.523 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:21:01.525 +05:30 [INF] [51749f8f] ➡️ GET /api/delivery/jobs/active from ::1
+2026-04-02 07:21:01.530 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/jobs/active HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:01.662 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:01.667 +05:30 [INF] [51749f8f] ⬅️ 200 in 141ms
+2026-04-02 07:21:01.670 +05:30 [INF] HTTP GET /api/delivery/jobs/active responded 200 in 220.6697 ms
+2026-04-02 07:21:02.661 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:02.664 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:21:02.667 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:21:02.669 +05:30 [INF] [d750366a] ➡️ GET /api/delivery/earnings from ::1
+2026-04-02 07:21:02.672 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/earnings HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:02.750 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:02.754 +05:30 [INF] [d750366a] ⬅️ 200 in 85ms
+2026-04-02 07:21:02.759 +05:30 [INF] HTTP GET /api/delivery/earnings responded 200 in 148.9087 ms
+2026-04-02 07:21:03.749 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:03.752 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "74111ba6-7041-4e31-a4a7-b93023a9616e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775093624,
+  "nbf": 1775093624,
+  "exp": 1775097224,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-02 07:21:03.757 +05:30 [INF] ✅ Authenticated: UserId=03e20a40-40e8-4ff7-beac-04d28d8679fd, Role=DeliveryPartner
+2026-04-02 07:21:03.759 +05:30 [INF] [06e0bdde] ➡️ GET /api/delivery/profile from ::1
+2026-04-02 07:21:03.762 +05:30 [INF] Proxying to http://localhost:5007/api/delivery/profile HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:03.818 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:03.825 +05:30 [INF] [06e0bdde] ⬅️ 200 in 65ms
+2026-04-02 07:21:03.837 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 140.9962 ms
+2026-04-02 07:21:29.464 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:29.479 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:21:29.491 +05:30 [INF] [ded914ae] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-04-02 07:21:29.496 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:29.500 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:29.514 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:21:29.540 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:21:29.543 +05:30 [INF] [831c13f4] ➡️ GET /api/restaurants from ::1
+2026-04-02 07:21:29.547 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:32.988 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:32.994 +05:30 [INF] [ded914ae] ⬅️ 200 in 3502ms
+2026-04-02 07:21:33.003 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 3659.8856 ms
+2026-04-02 07:21:33.084 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:33.088 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:21:33.091 +05:30 [INF] [a618e4af] ➡️ GET /hubs/notifications from ::1
+2026-04-02 07:21:33.094 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=mzqN0c7qITrD75ZGMqC6VQ&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.P5SJp_-TIAh5lYC8kJnukNiToxEKJjVW2mKQtExEWkhyjY6IqOnevJa2TExwCO-DZkJdVqoFzHfuAHA2RyDWmy4s7xlUrnOlqo02SQog3e7VWqWPK9l0oDXGTqErSIaX3xYJSlK6jmd8oXOmF0_GJa1DupsjydkQOQk47OapYLrF6q5hRQLyprgLEMSx_czX53v1ziDWz9l6ublnj1Nc_fhvzqD4uk_0Nn_G3vU0HLA5hAgW3pYDTSGDi0Bt74l1v9xXdGP9u_A8x7iP3k0TF_AovI99nHqKG9ZVqwlNm34MluryjMM7Bk4Lu0foW3KkLasBM4h21MW7K4G5oTxerA.I8S8j5S73F_citLZ7j4MSQ.qqyc7xG8jLypUem0ttBoiZx_p6VBwOiyut9wdqDhz3QgXx7f1p1osDuKb4AqA3_lvsL_1SjwrAyL9IYi1NmKEDY-up7zpFzaziI3yNmdFKlwlDlBtmL4wQXPZckS3_mqJEE1DPuiH0XrhPfawFtfQBCw11uzD5tiITUx7RVZJVCwU0oDCa4RcJ-MmrqXKOzL0X08uEwIWXNXIjMOadypnKtg_L0v4ncgX9xWtdt-UTOnNcTxrsndQAW1HvRafEQlU9nhvPENEb1KOz6bR0FbXBr1rIHMJyBGoo8UBgoOBb0ylKvMMJh6IQryzERn8qpanUQeEPFLrqZ_phphiURzJ8h-hJQn3122itxXsWTf6JA-H_LPKoG3B1fjV37Gs7jEyYUWXTgZy7hu1M9yJZqq4VAHF8z5avlT1xjPtaEmLYNop__NJqcD28Hf_dV_PF4e8wywx_-dLy-vw8NGEGgBGHPeGegODN2vO5W2jsVCOlIxBtdGQICZiJ03Hm9__FZCGE_YrJVJmbmPnyUhBpBagCaartQCQt5Y9Z2Xsod1Sd5sTHr7ENzMl9C8ibgQqbGZ5G0zYs5WlCC8mH5znriRVTu2UouJ111i0BuaTgp1P7hTZ94T9ZT16rXFQgt5fEbfZi2wKeY6PMhC14U3Vzhn1KNm-L7GB77oJbmlI6VY4LXkJSyyMyt7eASV-GRhniEXYRAi5lZSEkQZrE81ZELxubIHlTdRxgxtUZlmVuG2vMJDW_TelPGQZ0yPJ7l9IjKTI2jpl2OTzjquKnJsIzLsuxPYwtqACMGGRmFoeFGbsI6CJBCI46LMWc_epe2Z7DgG7d8OhFmccv6EvCuDlVnYG_aCbTnQgAtAWYYtQdbu3Z_93Do-SrypVA8BoZrOMGrkUypT9jkTHi2ONh9eSW5oMoUqcIXLLBRLZ03X2cMAd3UFXS2abo2PZfFchFJ0sFVq6TnDD_25jCnc_gB4_njLUTKZw-dBzhnM_WSjTNmadzYF6vjeaAZTNgUWwhFHsI1tgOmo8Fgys8D84abTpQdc6-bZOcSEX229OXrSiiHeGyL3oclAri7U4WMqj1V-GVGIiJYfKrDpJ6z9bLWTilkvXO4mriW-Y-esGUsLHQYiVks50le9ZJPh2ef0FM6ZiBwDMHcHU4c3wj48lj3WUlkh2clvYvfpAMbDXlgpgLYDJDKU-APxhZD-FRVe9SIEVFZ9p0i6JT37awXki2yEVJd_QU7PkRPpwWVZg9Rufrc3jBsTenolY93OOYBoZChOb1816A3wRrCYxUUdrwwdIL3AnzO4nj7DvpYqadQwNWpZ6kEEotURDU2GcjP7wzw85LpyZQtUBBhWqAoLgBGNflkWM4p5ZYGHxFWqMUGrzCXTkETTrFxdBhlIkFrmFIl8a1P7yta-N1P4mcLjPEgydDJxUatGzX8U0nbaLVMbERuISp1fkZOxQWLLlJZSnKmSBVETUtQRjsOHAxqxc_CnkuMmPK29XUBYfPhN0tN1H97xXk7TC4O0df9B2i9aFOKDg-4yBvizTJXtlRdk891iy4sIKN8pClJxkCpJNAxznNvETJHfCNvQzcWJ_Wjo8KM9CYg85z8glQZ53UfZC6FW9cVnbP5quIu017L85N72jlVZWwPDTVd7Ii2GkGQDdFlnfQ9uSWEh5Dx64EehmuDmzX8kieGAA4B7arp5zrZHbYiEu4zEmxBfrOVUDIbg0H9v_i35CTBFroHLw6GYi2hTgycge1N-sLNYID9GN6NtD8hK-ag.sQ7Fbo20gTPa_gTpjYhsUev5kbpK08qTM46ST_qwRRs HTTP/1.1 RequestVersionOrLower 
+2026-04-02 07:21:33.266 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-04-02 07:21:33.387 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:33.411 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:21:33.422 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:21:33.424 +05:30 [INF] [49d40782] ➡️ GET /api/notifications from ::1
+2026-04-02 07:21:33.427 +05:30 [INF] Proxying to http://localhost:5006/api/notifications HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:35.242 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:35.259 +05:30 [INF] [49d40782] ⬅️ 200 in 1834ms
+2026-04-02 07:21:35.264 +05:30 [INF] HTTP GET /api/notifications responded 200 in 1941.0793 ms
+2026-04-02 07:21:35.398 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:35.434 +05:30 [INF] [831c13f4] ⬅️ 200 in 5891ms
+2026-04-02 07:21:35.438 +05:30 [INF] HTTP GET /api/restaurants responded 200 in 6147.7148 ms
+2026-04-02 07:21:47.405 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:47.410 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:47.412 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:21:47.415 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:21:47.427 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:21:47.430 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:21:47.440 +05:30 [INF] [602f9f9b] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:21:47.442 +05:30 [INF] [4cbf9b9a] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:21:47.446 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:47.459 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:48.327 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:48.344 +05:30 [INF] [602f9f9b] ⬅️ 200 in 903ms
+2026-04-02 07:21:48.347 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 1045.7873 ms
+2026-04-02 07:21:50.576 +05:30 [INF] [a618e4af] ⬅️ 101 in 17485ms
+2026-04-02 07:21:50.583 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 17574.0384 ms
+2026-04-02 07:21:50.591 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:50.594 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:21:50.598 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:21:50.601 +05:30 [INF] [287e0660] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:21:50.604 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:50.608 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:50.611 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:21:50.617 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:21:50.620 +05:30 [INF] [9fe15f90] ➡️ GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/menu from ::1
+2026-04-02 07:21:50.622 +05:30 [INF] Proxying to http://localhost:5003/api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/menu HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:50.763 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:50.773 +05:30 [INF] [287e0660] ⬅️ 200 in 172ms
+2026-04-02 07:21:50.776 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 261.2792 ms
+2026-04-02 07:21:50.794 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:50.819 +05:30 [INF] [4cbf9b9a] ⬅️ 200 in 3377ms
+2026-04-02 07:21:50.822 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 3496.6366 ms
+2026-04-02 07:21:50.874 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:21:50.884 +05:30 [INF] [9fe15f90] ⬅️ 200 in 264ms
+2026-04-02 07:21:50.889 +05:30 [INF] HTTP GET /api/restaurants/4121c5d5-9af8-44cd-9738-064d3a325bcd/menu responded 200 in 368.0644 ms
+2026-04-02 07:21:55.532 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:21:55.536 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:21:55.540 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:21:55.542 +05:30 [INF] [2897dfa6] ➡️ GET /api/users/addresses from ::1
+2026-04-02 07:21:55.546 +05:30 [INF] Proxying to http://localhost:5001/api/users/addresses HTTP/2 RequestVersionOrLower 
+2026-04-02 07:21:59.028 +05:30 [INF] Received HTTP/1.1 response 404.
+2026-04-02 07:21:59.031 +05:30 [INF] [2897dfa6] ⬅️ 404 in 3489ms
+2026-04-02 07:21:59.034 +05:30 [INF] HTTP GET /api/users/addresses responded 404 in 3559.7674 ms
+2026-04-02 07:22:03.900 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:03.905 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:22:03.909 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:22:03.912 +05:30 [INF] [5f523933] ➡️ POST /api/orders from ::1
+2026-04-02 07:22:03.916 +05:30 [INF] Proxying to http://localhost:5004/api/orders HTTP/2 RequestVersionOrLower 
+2026-04-02 07:22:07.452 +05:30 [INF] Received HTTP/1.1 response 201.
+2026-04-02 07:22:07.462 +05:30 [INF] [5f523933] ⬅️ 201 in 3549ms
+2026-04-02 07:22:07.466 +05:30 [INF] HTTP POST /api/orders responded 201 in 3622.6792 ms
+2026-04-02 07:22:07.524 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:07.528 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:22:07.531 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:22:07.533 +05:30 [INF] [8043b9ae] ➡️ POST /api/payments/initiate from ::1
+2026-04-02 07:22:07.537 +05:30 [INF] Proxying to http://localhost:5005/api/payments/initiate HTTP/2 RequestVersionOrLower 
+2026-04-02 07:22:11.383 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:22:11.407 +05:30 [INF] [8043b9ae] ⬅️ 200 in 3873ms
+2026-04-02 07:22:11.410 +05:30 [INF] HTTP POST /api/payments/initiate responded 200 in 3934.4701 ms
+2026-04-02 07:22:18.317 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:18.326 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:22:18.330 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:22:18.333 +05:30 [INF] [f7a45f6e] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:22:18.336 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:22:18.533 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:22:18.551 +05:30 [INF] [f7a45f6e] ⬅️ 200 in 218ms
+2026-04-02 07:22:18.553 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 294.4679 ms
+2026-04-02 07:22:38.878 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:38.881 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:22:38.885 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:22:38.888 +05:30 [INF] [73e25aa0] ➡️ POST /api/payments/verify from ::1
+2026-04-02 07:22:38.892 +05:30 [INF] Proxying to http://localhost:5005/api/payments/verify HTTP/2 RequestVersionOrLower 
+2026-04-02 07:22:39.492 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:22:39.505 +05:30 [INF] [73e25aa0] ⬅️ 200 in 616ms
+2026-04-02 07:22:39.510 +05:30 [INF] HTTP POST /api/payments/verify responded 200 in 694.6772 ms
+2026-04-02 07:22:39.643 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:39.645 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:39.646 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:22:39.649 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:22:39.652 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:22:39.654 +05:30 [INF] [559350f0] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-04-02 07:22:39.656 +05:30 [INF] [0461c8ce] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:22:39.659 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:22:39.662 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:22:39.835 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:22:39.846 +05:30 [INF] [559350f0] ⬅️ 200 in 191ms
+2026-04-02 07:22:39.862 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 294.8559 ms
+2026-04-02 07:22:39.925 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:39.928 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:22:39.932 +05:30 [INF] [ab9bb803] ➡️ GET /hubs/notifications from ::1
+2026-04-02 07:22:39.935 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=Lr73uBIDtoUT_bGEJXaT8g&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.P5SJp_-TIAh5lYC8kJnukNiToxEKJjVW2mKQtExEWkhyjY6IqOnevJa2TExwCO-DZkJdVqoFzHfuAHA2RyDWmy4s7xlUrnOlqo02SQog3e7VWqWPK9l0oDXGTqErSIaX3xYJSlK6jmd8oXOmF0_GJa1DupsjydkQOQk47OapYLrF6q5hRQLyprgLEMSx_czX53v1ziDWz9l6ublnj1Nc_fhvzqD4uk_0Nn_G3vU0HLA5hAgW3pYDTSGDi0Bt74l1v9xXdGP9u_A8x7iP3k0TF_AovI99nHqKG9ZVqwlNm34MluryjMM7Bk4Lu0foW3KkLasBM4h21MW7K4G5oTxerA.I8S8j5S73F_citLZ7j4MSQ.qqyc7xG8jLypUem0ttBoiZx_p6VBwOiyut9wdqDhz3QgXx7f1p1osDuKb4AqA3_lvsL_1SjwrAyL9IYi1NmKEDY-up7zpFzaziI3yNmdFKlwlDlBtmL4wQXPZckS3_mqJEE1DPuiH0XrhPfawFtfQBCw11uzD5tiITUx7RVZJVCwU0oDCa4RcJ-MmrqXKOzL0X08uEwIWXNXIjMOadypnKtg_L0v4ncgX9xWtdt-UTOnNcTxrsndQAW1HvRafEQlU9nhvPENEb1KOz6bR0FbXBr1rIHMJyBGoo8UBgoOBb0ylKvMMJh6IQryzERn8qpanUQeEPFLrqZ_phphiURzJ8h-hJQn3122itxXsWTf6JA-H_LPKoG3B1fjV37Gs7jEyYUWXTgZy7hu1M9yJZqq4VAHF8z5avlT1xjPtaEmLYNop__NJqcD28Hf_dV_PF4e8wywx_-dLy-vw8NGEGgBGHPeGegODN2vO5W2jsVCOlIxBtdGQICZiJ03Hm9__FZCGE_YrJVJmbmPnyUhBpBagCaartQCQt5Y9Z2Xsod1Sd5sTHr7ENzMl9C8ibgQqbGZ5G0zYs5WlCC8mH5znriRVTu2UouJ111i0BuaTgp1P7hTZ94T9ZT16rXFQgt5fEbfZi2wKeY6PMhC14U3Vzhn1KNm-L7GB77oJbmlI6VY4LXkJSyyMyt7eASV-GRhniEXYRAi5lZSEkQZrE81ZELxubIHlTdRxgxtUZlmVuG2vMJDW_TelPGQZ0yPJ7l9IjKTI2jpl2OTzjquKnJsIzLsuxPYwtqACMGGRmFoeFGbsI6CJBCI46LMWc_epe2Z7DgG7d8OhFmccv6EvCuDlVnYG_aCbTnQgAtAWYYtQdbu3Z_93Do-SrypVA8BoZrOMGrkUypT9jkTHi2ONh9eSW5oMoUqcIXLLBRLZ03X2cMAd3UFXS2abo2PZfFchFJ0sFVq6TnDD_25jCnc_gB4_njLUTKZw-dBzhnM_WSjTNmadzYF6vjeaAZTNgUWwhFHsI1tgOmo8Fgys8D84abTpQdc6-bZOcSEX229OXrSiiHeGyL3oclAri7U4WMqj1V-GVGIiJYfKrDpJ6z9bLWTilkvXO4mriW-Y-esGUsLHQYiVks50le9ZJPh2ef0FM6ZiBwDMHcHU4c3wj48lj3WUlkh2clvYvfpAMbDXlgpgLYDJDKU-APxhZD-FRVe9SIEVFZ9p0i6JT37awXki2yEVJd_QU7PkRPpwWVZg9Rufrc3jBsTenolY93OOYBoZChOb1816A3wRrCYxUUdrwwdIL3AnzO4nj7DvpYqadQwNWpZ6kEEotURDU2GcjP7wzw85LpyZQtUBBhWqAoLgBGNflkWM4p5ZYGHxFWqMUGrzCXTkETTrFxdBhlIkFrmFIl8a1P7yta-N1P4mcLjPEgydDJxUatGzX8U0nbaLVMbERuISp1fkZOxQWLLlJZSnKmSBVETUtQRjsOHAxqxc_CnkuMmPK29XUBYfPhN0tN1H97xXk7TC4O0df9B2i9aFOKDg-4yBvizTJXtlRdk891iy4sIKN8pClJxkCpJNAxznNvETJHfCNvQzcWJ_Wjo8KM9CYg85z8glQZ53UfZC6FW9cVnbP5quIu017L85N72jlVZWwPDTVd7Ii2GkGQDdFlnfQ9uSWEh5Dx64EehmuDmzX8kieGAA4B7arp5zrZHbYiEu4zEmxBfrOVUDIbg0H9v_i35CTBFroHLw6GYi2hTgycge1N-sLNYID9GN6NtD8hK-ag.sQ7Fbo20gTPa_gTpjYhsUev5kbpK08qTM46ST_qwRRs HTTP/1.1 RequestVersionOrLower 
+2026-04-02 07:22:40.035 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-04-02 07:22:40.131 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:40.134 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:22:40.142 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:22:40.144 +05:30 [INF] [4d4e969c] ➡️ GET /api/notifications from ::1
+2026-04-02 07:22:40.148 +05:30 [INF] Proxying to http://localhost:5006/api/notifications HTTP/2 RequestVersionOrLower 
+2026-04-02 07:22:40.332 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:22:40.343 +05:30 [INF] [4d4e969c] ⬅️ 200 in 199ms
+2026-04-02 07:22:40.346 +05:30 [INF] HTTP GET /api/notifications responded 200 in 280.2395 ms
+2026-04-02 07:22:40.616 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:22:40.627 +05:30 [INF] [0461c8ce] ⬅️ 200 in 970ms
+2026-04-02 07:22:40.630 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 1063.2225 ms
+2026-04-02 07:22:45.451 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:45.456 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:22:45.460 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:22:45.463 +05:30 [INF] [defc2387] ➡️ PUT /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559/status from ::1
+2026-04-02 07:22:45.467 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559/status HTTP/2 RequestVersionOrLower 
+2026-04-02 07:22:50.034 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:50.040 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:22:50.045 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:22:50.049 +05:30 [INF] [aa755382] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:22:50.052 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:22:54.729 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:22:54.739 +05:30 [INF] [aa755382] ⬅️ 200 in 4690ms
+2026-04-02 07:22:54.742 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 4767.5735 ms
+2026-04-02 07:22:57.625 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:22:57.630 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:22:57.633 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:22:57.636 +05:30 [INF] [14fc8d5e] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:22:57.642 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:23:03.343 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:23:03.379 +05:30 [INF] [14fc8d5e] ⬅️ 200 in 5743ms
+2026-04-02 07:23:03.383 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 7450.8994 ms
+2026-04-02 07:29:23.566 +05:30 [WRN] "RequestTimedOut": The request timed out before receiving a response.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2026-04-02 07:29:23.566 +05:30 [WRN] "UpgradeActivityTimeout": The WebSocket connection was closed after being idle longer than the Activity Timeout.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.IO.Pipelines.Pipe.GetReadAsyncResult()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1UpgradeMessageBody.ReadAsyncInternalAwaited(ValueTask`1 readTask, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.ReadAsyncInternal(Memory`1 destination, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Yarp.ReverseProxy.Forwarder.StreamCopier.CopyAsync(Stream input, Stream output, Int64 promisedContentLength, StreamCopierTelemetry telemetry, ActivityCancellationTokenSource activityToken, Boolean autoFlush, CancellationToken cancellation)
+2026-04-02 07:29:24.126 +05:30 [INF] [defc2387] ⬅️ 504 in 398668ms
+2026-04-02 07:29:24.186 +05:30 [INF] [ab9bb803] ⬅️ 101 in 404260ms
+2026-04-02 07:29:24.193 +05:30 [ERR] HTTP PUT /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559/status responded 504 in 398800.4701 ms
+2026-04-02 07:29:24.195 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 404348.7571 ms
+2026-04-02 07:29:25.066 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:25.066 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:25.066 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:25.075 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:29:25.075 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:29:25.075 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:29:25.085 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:29:25.085 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:29:25.085 +05:30 [INF] [b4e97692] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-04-02 07:29:25.087 +05:30 [INF] [a4c60e83] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:29:25.090 +05:30 [INF] [a83b9f15] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:29:25.099 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:29:25.099 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:29:25.103 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:29:25.482 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:29:25.486 +05:30 [INF] [b4e97692] ⬅️ 200 in 401ms
+2026-04-02 07:29:25.489 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 1983.9317 ms
+2026-04-02 07:29:25.566 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:25.569 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:29:25.572 +05:30 [INF] [2bd78263] ➡️ GET /hubs/notifications from ::1
+2026-04-02 07:29:25.575 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=GBL4SbWRxk1D6Iuwj0l8vw&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.P5SJp_-TIAh5lYC8kJnukNiToxEKJjVW2mKQtExEWkhyjY6IqOnevJa2TExwCO-DZkJdVqoFzHfuAHA2RyDWmy4s7xlUrnOlqo02SQog3e7VWqWPK9l0oDXGTqErSIaX3xYJSlK6jmd8oXOmF0_GJa1DupsjydkQOQk47OapYLrF6q5hRQLyprgLEMSx_czX53v1ziDWz9l6ublnj1Nc_fhvzqD4uk_0Nn_G3vU0HLA5hAgW3pYDTSGDi0Bt74l1v9xXdGP9u_A8x7iP3k0TF_AovI99nHqKG9ZVqwlNm34MluryjMM7Bk4Lu0foW3KkLasBM4h21MW7K4G5oTxerA.I8S8j5S73F_citLZ7j4MSQ.qqyc7xG8jLypUem0ttBoiZx_p6VBwOiyut9wdqDhz3QgXx7f1p1osDuKb4AqA3_lvsL_1SjwrAyL9IYi1NmKEDY-up7zpFzaziI3yNmdFKlwlDlBtmL4wQXPZckS3_mqJEE1DPuiH0XrhPfawFtfQBCw11uzD5tiITUx7RVZJVCwU0oDCa4RcJ-MmrqXKOzL0X08uEwIWXNXIjMOadypnKtg_L0v4ncgX9xWtdt-UTOnNcTxrsndQAW1HvRafEQlU9nhvPENEb1KOz6bR0FbXBr1rIHMJyBGoo8UBgoOBb0ylKvMMJh6IQryzERn8qpanUQeEPFLrqZ_phphiURzJ8h-hJQn3122itxXsWTf6JA-H_LPKoG3B1fjV37Gs7jEyYUWXTgZy7hu1M9yJZqq4VAHF8z5avlT1xjPtaEmLYNop__NJqcD28Hf_dV_PF4e8wywx_-dLy-vw8NGEGgBGHPeGegODN2vO5W2jsVCOlIxBtdGQICZiJ03Hm9__FZCGE_YrJVJmbmPnyUhBpBagCaartQCQt5Y9Z2Xsod1Sd5sTHr7ENzMl9C8ibgQqbGZ5G0zYs5WlCC8mH5znriRVTu2UouJ111i0BuaTgp1P7hTZ94T9ZT16rXFQgt5fEbfZi2wKeY6PMhC14U3Vzhn1KNm-L7GB77oJbmlI6VY4LXkJSyyMyt7eASV-GRhniEXYRAi5lZSEkQZrE81ZELxubIHlTdRxgxtUZlmVuG2vMJDW_TelPGQZ0yPJ7l9IjKTI2jpl2OTzjquKnJsIzLsuxPYwtqACMGGRmFoeFGbsI6CJBCI46LMWc_epe2Z7DgG7d8OhFmccv6EvCuDlVnYG_aCbTnQgAtAWYYtQdbu3Z_93Do-SrypVA8BoZrOMGrkUypT9jkTHi2ONh9eSW5oMoUqcIXLLBRLZ03X2cMAd3UFXS2abo2PZfFchFJ0sFVq6TnDD_25jCnc_gB4_njLUTKZw-dBzhnM_WSjTNmadzYF6vjeaAZTNgUWwhFHsI1tgOmo8Fgys8D84abTpQdc6-bZOcSEX229OXrSiiHeGyL3oclAri7U4WMqj1V-GVGIiJYfKrDpJ6z9bLWTilkvXO4mriW-Y-esGUsLHQYiVks50le9ZJPh2ef0FM6ZiBwDMHcHU4c3wj48lj3WUlkh2clvYvfpAMbDXlgpgLYDJDKU-APxhZD-FRVe9SIEVFZ9p0i6JT37awXki2yEVJd_QU7PkRPpwWVZg9Rufrc3jBsTenolY93OOYBoZChOb1816A3wRrCYxUUdrwwdIL3AnzO4nj7DvpYqadQwNWpZ6kEEotURDU2GcjP7wzw85LpyZQtUBBhWqAoLgBGNflkWM4p5ZYGHxFWqMUGrzCXTkETTrFxdBhlIkFrmFIl8a1P7yta-N1P4mcLjPEgydDJxUatGzX8U0nbaLVMbERuISp1fkZOxQWLLlJZSnKmSBVETUtQRjsOHAxqxc_CnkuMmPK29XUBYfPhN0tN1H97xXk7TC4O0df9B2i9aFOKDg-4yBvizTJXtlRdk891iy4sIKN8pClJxkCpJNAxznNvETJHfCNvQzcWJ_Wjo8KM9CYg85z8glQZ53UfZC6FW9cVnbP5quIu017L85N72jlVZWwPDTVd7Ii2GkGQDdFlnfQ9uSWEh5Dx64EehmuDmzX8kieGAA4B7arp5zrZHbYiEu4zEmxBfrOVUDIbg0H9v_i35CTBFroHLw6GYi2hTgycge1N-sLNYID9GN6NtD8hK-ag.sQ7Fbo20gTPa_gTpjYhsUev5kbpK08qTM46ST_qwRRs HTTP/1.1 RequestVersionOrLower 
+2026-04-02 07:29:25.680 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-04-02 07:29:25.818 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:29:25.839 +05:30 [INF] [a83b9f15] ⬅️ 200 in 749ms
+2026-04-02 07:29:25.842 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 2336.6244 ms
+2026-04-02 07:29:25.851 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:29:25.859 +05:30 [INF] [a4c60e83] ⬅️ 200 in 771ms
+2026-04-02 07:29:25.867 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 2358.3830 ms
+2026-04-02 07:29:25.895 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:25.901 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:29:25.907 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:29:25.910 +05:30 [INF] [a7039835] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:29:25.914 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:29:25.922 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:25.926 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:29:25.932 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:29:25.934 +05:30 [INF] [10a17801] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:29:25.938 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:29:26.035 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:29:26.057 +05:30 [INF] [a7039835] ⬅️ 200 in 147ms
+2026-04-02 07:29:26.060 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 234.9195 ms
+2026-04-02 07:29:26.070 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:29:26.088 +05:30 [INF] [10a17801] ⬅️ 200 in 153ms
+2026-04-02 07:29:26.091 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 235.2323 ms
+2026-04-02 07:29:26.130 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:26.134 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:29:26.136 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:29:26.139 +05:30 [INF] [be9197d4] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:29:26.142 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:29:26.158 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:26.175 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:29:26.191 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:29:26.194 +05:30 [INF] [33d24774] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:29:26.203 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:29:26.327 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:29:26.338 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:26.342 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:29:26.346 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:29:26.346 +05:30 [INF] [be9197d4] ⬅️ 200 in 207ms
+2026-04-02 07:29:26.348 +05:30 [INF] [433b0515] ➡️ PUT /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559/status from ::1
+2026-04-02 07:29:26.350 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 309.7933 ms
+2026-04-02 07:29:26.355 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559/status HTTP/2 RequestVersionOrLower 
+2026-04-02 07:29:26.367 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:29:26.390 +05:30 [INF] [33d24774] ⬅️ 200 in 196ms
+2026-04-02 07:29:26.400 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 323.7718 ms
+2026-04-02 07:29:26.421 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:26.428 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:29:26.439 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:29:26.447 +05:30 [INF] [421c5a2a] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:29:26.451 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:29:26.465 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:29:26.470 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:29:26.473 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:29:26.475 +05:30 [INF] [2509c113] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:29:26.483 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:26.491 +05:30 [INF] [2bd78263] ⬅️ 101 in 60919ms
+2026-04-02 07:30:26.545 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 61032.4501 ms
+2026-04-02 07:30:27.235 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:27.278 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:27.283 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:27.284 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:30:27.287 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:27.289 +05:30 [INF] [5000742b] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:30:27.297 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:30:27.301 +05:30 [INF] [28ebb73e] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:30:27.299 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:27.304 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:27.419 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:30.032 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:30.127 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:30:30.288 +05:30 [INF] [a9703c47] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:30:30.317 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:31.288 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-04-02 07:30:31.315 +05:30 [INF] [421c5a2a] ⬅️ 500 in 64869ms
+2026-04-02 07:30:31.332 +05:30 [ERR] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 500 in 64996.2740 ms
+2026-04-02 07:30:31.405 +05:30 [INF] Received HTTP/1.1 response 500.
+2026-04-02 07:30:31.412 +05:30 [INF] [2509c113] ⬅️ 500 in 64937ms
+2026-04-02 07:30:31.415 +05:30 [ERR] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 500 in 65042.2812 ms
+2026-04-02 07:30:31.968 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:32.050 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:32.067 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:32.074 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:30:32.074 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:30:32.078 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:30:32.080 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:30:32.082 +05:30 [INF] [e3d9fdc3] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:30:32.084 +05:30 [INF] [0c2f16fe] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:30:32.090 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:32.094 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:32.342 +05:30 [INF] Received HTTP/1.1 response 400.
+2026-04-02 07:30:32.345 +05:30 [INF] [433b0515] ⬅️ 400 in 65997ms
+2026-04-02 07:30:32.345 +05:30 [INF] [5000742b] ⬅️ 200 in 5056ms
+2026-04-02 07:30:32.347 +05:30 [INF] HTTP PUT /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559/status responded 400 in 66093.6256 ms
+2026-04-02 07:30:32.350 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 5973.0499 ms
+2026-04-02 07:30:32.423 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:32.427 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:32.449 +05:30 [INF] [a9703c47] ⬅️ 200 in 2161ms
+2026-04-02 07:30:32.468 +05:30 [INF] [28ebb73e] ⬅️ 200 in 5167ms
+2026-04-02 07:30:32.479 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 6070.2130 ms
+2026-04-02 07:30:32.485 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 6081.0061 ms
+2026-04-02 07:30:32.545 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:32.550 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:32.559 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:30:32.563 +05:30 [INF] [c36b8cf6] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:30:32.569 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:32.606 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:32.618 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:30:32.631 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:30:32.634 +05:30 [INF] [e8908093] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:30:32.649 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:32.818 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:32.827 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:30:32.829 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:32.832 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:32.834 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:30:32.845 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:32.847 +05:30 [INF] [ecb96d2b] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:30:32.851 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:30:32.852 +05:30 [INF] [0c2f16fe] ⬅️ 200 in 768ms
+2026-04-02 07:30:32.859 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:32.861 +05:30 [INF] [a7244dee] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:30:32.864 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 1434.2124 ms
+2026-04-02 07:30:32.934 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:32.977 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:33.051 +05:30 [INF] [e3d9fdc3] ⬅️ 200 in 968ms
+2026-04-02 07:30:33.066 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 1704.4848 ms
+2026-04-02 07:30:33.154 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:33.209 +05:30 [INF] [c36b8cf6] ⬅️ 200 in 645ms
+2026-04-02 07:30:33.215 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 855.5951 ms
+2026-04-02 07:30:33.247 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:33.253 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:33.268 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:33.298 +05:30 [INF] [fce3deef] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-04-02 07:30:33.330 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:33.337 +05:30 [INF] [e8908093] ⬅️ 200 in 703ms
+2026-04-02 07:30:33.349 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 980.1981 ms
+2026-04-02 07:30:33.393 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:33.401 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:30:33.401 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:33.410 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:30:33.413 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:33.414 +05:30 [INF] [584e84a3] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:30:33.420 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:30:33.426 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:33.429 +05:30 [INF] [1891ce2c] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:30:33.438 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:33.461 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:33.499 +05:30 [INF] [a7244dee] ⬅️ 200 in 638ms
+2026-04-02 07:30:33.507 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 1009.6086 ms
+2026-04-02 07:30:33.553 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:33.601 +05:30 [INF] [ecb96d2b] ⬅️ 200 in 753ms
+2026-04-02 07:30:33.613 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 1100.0159 ms
+2026-04-02 07:30:33.692 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:33.699 +05:30 [INF] [fce3deef] ⬅️ 200 in 401ms
+2026-04-02 07:30:33.715 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 763.9505 ms
+2026-04-02 07:30:33.732 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:33.747 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:33.750 +05:30 [INF] [1891ce2c] ⬅️ 200 in 321ms
+2026-04-02 07:30:33.759 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 660.5330 ms
+2026-04-02 07:30:33.779 +05:30 [INF] [584e84a3] ⬅️ 200 in 364ms
+2026-04-02 07:30:33.789 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 839.7868 ms
+2026-04-02 07:30:33.872 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:33.882 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:33.893 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:30:33.897 +05:30 [INF] [bdcb6fca] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:30:33.901 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:33.915 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:33.920 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:33.923 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:30:33.925 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:33.928 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:30:33.931 +05:30 [INF] [ec870936] ➡️ GET /hubs/notifications from ::1
+2026-04-02 07:30:33.932 +05:30 [INF] [8a92f499] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:30:33.938 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=Eg8RWg-0SBlmehsAqt-qLA&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.P5SJp_-TIAh5lYC8kJnukNiToxEKJjVW2mKQtExEWkhyjY6IqOnevJa2TExwCO-DZkJdVqoFzHfuAHA2RyDWmy4s7xlUrnOlqo02SQog3e7VWqWPK9l0oDXGTqErSIaX3xYJSlK6jmd8oXOmF0_GJa1DupsjydkQOQk47OapYLrF6q5hRQLyprgLEMSx_czX53v1ziDWz9l6ublnj1Nc_fhvzqD4uk_0Nn_G3vU0HLA5hAgW3pYDTSGDi0Bt74l1v9xXdGP9u_A8x7iP3k0TF_AovI99nHqKG9ZVqwlNm34MluryjMM7Bk4Lu0foW3KkLasBM4h21MW7K4G5oTxerA.I8S8j5S73F_citLZ7j4MSQ.qqyc7xG8jLypUem0ttBoiZx_p6VBwOiyut9wdqDhz3QgXx7f1p1osDuKb4AqA3_lvsL_1SjwrAyL9IYi1NmKEDY-up7zpFzaziI3yNmdFKlwlDlBtmL4wQXPZckS3_mqJEE1DPuiH0XrhPfawFtfQBCw11uzD5tiITUx7RVZJVCwU0oDCa4RcJ-MmrqXKOzL0X08uEwIWXNXIjMOadypnKtg_L0v4ncgX9xWtdt-UTOnNcTxrsndQAW1HvRafEQlU9nhvPENEb1KOz6bR0FbXBr1rIHMJyBGoo8UBgoOBb0ylKvMMJh6IQryzERn8qpanUQeEPFLrqZ_phphiURzJ8h-hJQn3122itxXsWTf6JA-H_LPKoG3B1fjV37Gs7jEyYUWXTgZy7hu1M9yJZqq4VAHF8z5avlT1xjPtaEmLYNop__NJqcD28Hf_dV_PF4e8wywx_-dLy-vw8NGEGgBGHPeGegODN2vO5W2jsVCOlIxBtdGQICZiJ03Hm9__FZCGE_YrJVJmbmPnyUhBpBagCaartQCQt5Y9Z2Xsod1Sd5sTHr7ENzMl9C8ibgQqbGZ5G0zYs5WlCC8mH5znriRVTu2UouJ111i0BuaTgp1P7hTZ94T9ZT16rXFQgt5fEbfZi2wKeY6PMhC14U3Vzhn1KNm-L7GB77oJbmlI6VY4LXkJSyyMyt7eASV-GRhniEXYRAi5lZSEkQZrE81ZELxubIHlTdRxgxtUZlmVuG2vMJDW_TelPGQZ0yPJ7l9IjKTI2jpl2OTzjquKnJsIzLsuxPYwtqACMGGRmFoeFGbsI6CJBCI46LMWc_epe2Z7DgG7d8OhFmccv6EvCuDlVnYG_aCbTnQgAtAWYYtQdbu3Z_93Do-SrypVA8BoZrOMGrkUypT9jkTHi2ONh9eSW5oMoUqcIXLLBRLZ03X2cMAd3UFXS2abo2PZfFchFJ0sFVq6TnDD_25jCnc_gB4_njLUTKZw-dBzhnM_WSjTNmadzYF6vjeaAZTNgUWwhFHsI1tgOmo8Fgys8D84abTpQdc6-bZOcSEX229OXrSiiHeGyL3oclAri7U4WMqj1V-GVGIiJYfKrDpJ6z9bLWTilkvXO4mriW-Y-esGUsLHQYiVks50le9ZJPh2ef0FM6ZiBwDMHcHU4c3wj48lj3WUlkh2clvYvfpAMbDXlgpgLYDJDKU-APxhZD-FRVe9SIEVFZ9p0i6JT37awXki2yEVJd_QU7PkRPpwWVZg9Rufrc3jBsTenolY93OOYBoZChOb1816A3wRrCYxUUdrwwdIL3AnzO4nj7DvpYqadQwNWpZ6kEEotURDU2GcjP7wzw85LpyZQtUBBhWqAoLgBGNflkWM4p5ZYGHxFWqMUGrzCXTkETTrFxdBhlIkFrmFIl8a1P7yta-N1P4mcLjPEgydDJxUatGzX8U0nbaLVMbERuISp1fkZOxQWLLlJZSnKmSBVETUtQRjsOHAxqxc_CnkuMmPK29XUBYfPhN0tN1H97xXk7TC4O0df9B2i9aFOKDg-4yBvizTJXtlRdk891iy4sIKN8pClJxkCpJNAxznNvETJHfCNvQzcWJ_Wjo8KM9CYg85z8glQZ53UfZC6FW9cVnbP5quIu017L85N72jlVZWwPDTVd7Ii2GkGQDdFlnfQ9uSWEh5Dx64EehmuDmzX8kieGAA4B7arp5zrZHbYiEu4zEmxBfrOVUDIbg0H9v_i35CTBFroHLw6GYi2hTgycge1N-sLNYID9GN6NtD8hK-ag.sQ7Fbo20gTPa_gTpjYhsUev5kbpK08qTM46ST_qwRRs HTTP/1.1 RequestVersionOrLower 
+2026-04-02 07:30:33.942 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:34.273 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-04-02 07:30:34.292 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:34.335 +05:30 [INF] [bdcb6fca] ⬅️ 200 in 438ms
+2026-04-02 07:30:34.339 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 596.8924 ms
+2026-04-02 07:30:34.348 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:34.360 +05:30 [INF] [8a92f499] ⬅️ 200 in 427ms
+2026-04-02 07:30:34.362 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 591.8133 ms
+2026-04-02 07:30:36.670 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:36.673 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:36.673 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:30:36.676 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:36.680 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:30:36.682 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:30:36.684 +05:30 [INF] [a9f7a03c] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:30:36.686 +05:30 [INF] [7b4a2fe1] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:30:36.690 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:36.693 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:36.831 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:36.837 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:36.848 +05:30 [INF] [7b4a2fe1] ⬅️ 200 in 161ms
+2026-04-02 07:30:36.853 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 595.7344 ms
+2026-04-02 07:30:36.853 +05:30 [INF] [a9f7a03c] ⬅️ 200 in 169ms
+2026-04-02 07:30:36.859 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 614.9851 ms
+2026-04-02 07:30:47.340 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:47.345 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:30:47.348 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:30:47.350 +05:30 [INF] [212465e9] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:30:47.353 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:47.477 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:47.488 +05:30 [INF] [212465e9] ⬅️ 200 in 137ms
+2026-04-02 07:30:47.494 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 193.5466 ms
+2026-04-02 07:30:48.414 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:48.417 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:48.420 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:30:48.422 +05:30 [INF] [42b72e44] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:30:48.426 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:48.522 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:30:48.532 +05:30 [INF] [42b72e44] ⬅️ 200 in 109ms
+2026-04-02 07:30:48.535 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 166.6306 ms
+2026-04-02 07:30:51.940 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:51.945 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:30:51.948 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:30:51.950 +05:30 [INF] [f0294674] ➡️ PUT /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559/status from ::1
+2026-04-02 07:30:51.955 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559/status HTTP/2 RequestVersionOrLower 
+2026-04-02 07:30:59.696 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:30:59.699 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:30:59.703 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:30:59.705 +05:30 [INF] [595a2bee] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:30:59.708 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:31:21.877 +05:30 [INF] [ec870936] ⬅️ 101 in 47946ms
+2026-04-02 07:31:21.880 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:31:21.882 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 48114.5047 ms
+2026-04-02 07:31:21.885 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:31:21.891 +05:30 [INF] [e8a4e104] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-04-02 07:31:21.896 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:31:21.902 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:31:21.905 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:31:21.910 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:31:21.913 +05:30 [INF] [631df59a] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:31:21.920 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:31:22.247 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:31:22.253 +05:30 [INF] [e8a4e104] ⬅️ 200 in 362ms
+2026-04-02 07:31:22.256 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 1988.8485 ms
+2026-04-02 07:31:23.832 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:31:23.838 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:31:23.852 +05:30 [INF] [c2fd260d] ➡️ GET /hubs/notifications from ::1
+2026-04-02 07:31:23.856 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications?id=6ZfAJdbsO_cpCzmkKzZoHg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.P5SJp_-TIAh5lYC8kJnukNiToxEKJjVW2mKQtExEWkhyjY6IqOnevJa2TExwCO-DZkJdVqoFzHfuAHA2RyDWmy4s7xlUrnOlqo02SQog3e7VWqWPK9l0oDXGTqErSIaX3xYJSlK6jmd8oXOmF0_GJa1DupsjydkQOQk47OapYLrF6q5hRQLyprgLEMSx_czX53v1ziDWz9l6ublnj1Nc_fhvzqD4uk_0Nn_G3vU0HLA5hAgW3pYDTSGDi0Bt74l1v9xXdGP9u_A8x7iP3k0TF_AovI99nHqKG9ZVqwlNm34MluryjMM7Bk4Lu0foW3KkLasBM4h21MW7K4G5oTxerA.I8S8j5S73F_citLZ7j4MSQ.qqyc7xG8jLypUem0ttBoiZx_p6VBwOiyut9wdqDhz3QgXx7f1p1osDuKb4AqA3_lvsL_1SjwrAyL9IYi1NmKEDY-up7zpFzaziI3yNmdFKlwlDlBtmL4wQXPZckS3_mqJEE1DPuiH0XrhPfawFtfQBCw11uzD5tiITUx7RVZJVCwU0oDCa4RcJ-MmrqXKOzL0X08uEwIWXNXIjMOadypnKtg_L0v4ncgX9xWtdt-UTOnNcTxrsndQAW1HvRafEQlU9nhvPENEb1KOz6bR0FbXBr1rIHMJyBGoo8UBgoOBb0ylKvMMJh6IQryzERn8qpanUQeEPFLrqZ_phphiURzJ8h-hJQn3122itxXsWTf6JA-H_LPKoG3B1fjV37Gs7jEyYUWXTgZy7hu1M9yJZqq4VAHF8z5avlT1xjPtaEmLYNop__NJqcD28Hf_dV_PF4e8wywx_-dLy-vw8NGEGgBGHPeGegODN2vO5W2jsVCOlIxBtdGQICZiJ03Hm9__FZCGE_YrJVJmbmPnyUhBpBagCaartQCQt5Y9Z2Xsod1Sd5sTHr7ENzMl9C8ibgQqbGZ5G0zYs5WlCC8mH5znriRVTu2UouJ111i0BuaTgp1P7hTZ94T9ZT16rXFQgt5fEbfZi2wKeY6PMhC14U3Vzhn1KNm-L7GB77oJbmlI6VY4LXkJSyyMyt7eASV-GRhniEXYRAi5lZSEkQZrE81ZELxubIHlTdRxgxtUZlmVuG2vMJDW_TelPGQZ0yPJ7l9IjKTI2jpl2OTzjquKnJsIzLsuxPYwtqACMGGRmFoeFGbsI6CJBCI46LMWc_epe2Z7DgG7d8OhFmccv6EvCuDlVnYG_aCbTnQgAtAWYYtQdbu3Z_93Do-SrypVA8BoZrOMGrkUypT9jkTHi2ONh9eSW5oMoUqcIXLLBRLZ03X2cMAd3UFXS2abo2PZfFchFJ0sFVq6TnDD_25jCnc_gB4_njLUTKZw-dBzhnM_WSjTNmadzYF6vjeaAZTNgUWwhFHsI1tgOmo8Fgys8D84abTpQdc6-bZOcSEX229OXrSiiHeGyL3oclAri7U4WMqj1V-GVGIiJYfKrDpJ6z9bLWTilkvXO4mriW-Y-esGUsLHQYiVks50le9ZJPh2ef0FM6ZiBwDMHcHU4c3wj48lj3WUlkh2clvYvfpAMbDXlgpgLYDJDKU-APxhZD-FRVe9SIEVFZ9p0i6JT37awXki2yEVJd_QU7PkRPpwWVZg9Rufrc3jBsTenolY93OOYBoZChOb1816A3wRrCYxUUdrwwdIL3AnzO4nj7DvpYqadQwNWpZ6kEEotURDU2GcjP7wzw85LpyZQtUBBhWqAoLgBGNflkWM4p5ZYGHxFWqMUGrzCXTkETTrFxdBhlIkFrmFIl8a1P7yta-N1P4mcLjPEgydDJxUatGzX8U0nbaLVMbERuISp1fkZOxQWLLlJZSnKmSBVETUtQRjsOHAxqxc_CnkuMmPK29XUBYfPhN0tN1H97xXk7TC4O0df9B2i9aFOKDg-4yBvizTJXtlRdk891iy4sIKN8pClJxkCpJNAxznNvETJHfCNvQzcWJ_Wjo8KM9CYg85z8glQZ53UfZC6FW9cVnbP5quIu017L85N72jlVZWwPDTVd7Ii2GkGQDdFlnfQ9uSWEh5Dx64EehmuDmzX8kieGAA4B7arp5zrZHbYiEu4zEmxBfrOVUDIbg0H9v_i35CTBFroHLw6GYi2hTgycge1N-sLNYID9GN6NtD8hK-ag.sQ7Fbo20gTPa_gTpjYhsUev5kbpK08qTM46ST_qwRRs HTTP/1.1 RequestVersionOrLower 
+2026-04-02 07:31:26.292 +05:30 [INF] Received HTTP/1.1 response 101.
+2026-04-02 07:31:30.979 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:31:32.230 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:31:32.234 +05:30 [INF] [595a2bee] ⬅️ 200 in 32529ms
+2026-04-02 07:31:32.239 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 32617.7321 ms
+2026-04-02 07:31:32.249 +05:30 [INF] [631df59a] ⬅️ 200 in 10336ms
+2026-04-02 07:31:32.253 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 11946.0939 ms
+2026-04-02 07:31:32.767 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:31:32.770 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:31:32.773 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:31:32.776 +05:30 [INF] [5ce70096] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:31:32.779 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:31:41.055 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:31:41.133 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:31:41.136 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:31:41.138 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:31:41.140 +05:30 [INF] [bc7ad4cc] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:31:41.143 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:31:41.223 +05:30 [INF] [5ce70096] ⬅️ 200 in 8447ms
+2026-04-02 07:31:41.228 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 10235.8821 ms
+2026-04-02 07:31:41.260 +05:30 [INF] Received HTTP/1.1 response 400.
+2026-04-02 07:31:41.263 +05:30 [INF] [f0294674] ⬅️ 400 in 49313ms
+2026-04-02 07:31:41.267 +05:30 [INF] HTTP PUT /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559/status responded 400 in 49387.4109 ms
+2026-04-02 07:31:41.464 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:31:41.474 +05:30 [INF] [bc7ad4cc] ⬅️ 200 in 334ms
+2026-04-02 07:31:41.479 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 418.9741 ms
+2026-04-02 07:31:41.523 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:31:41.527 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:31:41.530 +05:30 [INF] ✅ Authenticated: UserId=26ed4a14-7288-4eeb-a46c-6d2357088b44, Role=Customer
+2026-04-02 07:31:41.532 +05:30 [INF] [825f2424] ➡️ GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 from ::1
+2026-04-02 07:31:41.536 +05:30 [INF] Proxying to http://localhost:5004/api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 HTTP/2 RequestVersionOrLower 
+2026-04-02 07:31:41.615 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:31:41.622 +05:30 [INF] [825f2424] ⬅️ 200 in 89ms
+2026-04-02 07:31:41.625 +05:30 [INF] HTTP GET /api/orders/4f11ce22-395b-45f6-a40f-7983475f5559 responded 200 in 152.9432 ms
+2026-04-02 07:31:47.342 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:31:47.345 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8",
+  "scope": "openid",
+  "jti": "fea6029f-abbd-45bf-9687-238956eac50f",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094706,
+  "nbf": 1775094706,
+  "exp": 1775098306,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "restaurantadmin@gmail.com",
+  "given_name": "Restaurant",
+  "family_name": "Admin",
+  "firstName": "Restaurant",
+  "lastName": "Admin",
+  "role": "RestaurantAdmin",
+  "restaurantId": "4121c5d5-9af8-44cd-9738-064d3a325bcd"
+}.
+2026-04-02 07:31:47.348 +05:30 [INF] ✅ Authenticated: UserId=98b75fd8-60f0-4d88-a10d-e6cde2cc6ba8, Role=RestaurantAdmin
+2026-04-02 07:31:47.350 +05:30 [INF] [12eb8c7e] ➡️ GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd from ::1
+2026-04-02 07:31:47.353 +05:30 [INF] Proxying to http://localhost:5004/api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd HTTP/2 RequestVersionOrLower 
+2026-04-02 07:31:47.450 +05:30 [INF] Received HTTP/1.1 response 200.
+2026-04-02 07:31:47.460 +05:30 [INF] [12eb8c7e] ⬅️ 200 in 109ms
+2026-04-02 07:31:47.463 +05:30 [INF] HTTP GET /api/orders/restaurant/4121c5d5-9af8-44cd-9738-064d3a325bcd responded 200 in 161.3199 ms
+2026-04-02 07:31:55.534 +05:30 [WRN] "UpgradeResponseDestination": The destination reported an error when copying the upgraded response body.
+System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host..
+ ---> System.Net.Sockets.SocketException (10054): An existing connection was forcibly closed by the remote host.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.ReadAsync(Memory`1 destination)
+   at System.Net.Http.HttpConnection.RawConnectionStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Yarp.ReverseProxy.Forwarder.StreamCopier.CopyAsync(Stream input, Stream output, Int64 promisedContentLength, StreamCopierTelemetry telemetry, ActivityCancellationTokenSource activityToken, Boolean autoFlush, CancellationToken cancellation)
+2026-04-02 07:31:55.565 +05:30 [INF] [c2fd260d] ⬅️ 101 in 31713ms
+2026-04-02 07:31:55.569 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 32629.1418 ms
+2026-04-02 07:31:55.639 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-gateway",
+  "client_secret": "[redacted]"
+}.
+2026-04-02 07:31:55.643 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "26ed4a14-7288-4eeb-a46c-6d2357088b44",
+  "scope": "openid",
+  "jti": "0bf8ee4f-c86c-47d0-a093-897e94f832cc",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775094688,
+  "nbf": 1775094688,
+  "exp": 1775098288,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "customer@gamil.com",
+  "given_name": "Customer",
+  "family_name": "cust",
+  "firstName": "Customer",
+  "lastName": "cust",
+  "role": "Customer"
+}.
+2026-04-02 07:31:55.648 +05:30 [INF] [233780f3] ➡️ POST /hubs/notifications/negotiate from ::1
+2026-04-02 07:31:55.652 +05:30 [INF] Proxying to http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 HTTP/2 RequestVersionOrLower 

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SwiftBite.DeliveryService.Application.DeliveryJobs.Commands.AcceptJob;
 using SwiftBite.DeliveryService.Application.DeliveryJobs.Queries.GetActiveJob;
 using SwiftBite.DeliveryService.Application.DeliveryJobs.Queries.GetActiveJobsQuery;
+using SwiftBite.DeliveryService.Application.DeliveryJobs.Queries.GetAvailableJobsQuery;
 using SwiftBite.DeliveryService.Application.DeliveryPartners.Commands.RegisterPartner;
 using SwiftBite.DeliveryService.Application.DeliveryPartners.Commands.UpdateAvailability;
 using SwiftBite.DeliveryService.Application.DeliveryPartners.Queries.GetEarnings;
@@ -99,8 +100,12 @@ public class DeliveryController : ControllerBase
         if (userId is null)
             throw new UnauthorizedException("User ID not found.");
 
+        //var result = await _mediator.Send(
+        //    new GetPartnerJobsQuery(userId), ct);
+
+        // ✅ CHANGED: Get all available (unassigned) jobs
         var result = await _mediator.Send(
-            new GetPartnerJobsQuery(userId), ct);
+            new GetAvailableJobsQuery(), ct);  // ← no userId needed
 
         return Ok(ApiResponse<object>.SuccessResponse(
             result,

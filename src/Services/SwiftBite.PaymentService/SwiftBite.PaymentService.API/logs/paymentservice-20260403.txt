@@ -1,0 +1,1558 @@
+2026-04-03 11:06:42.092 +05:30 [INF] Executed DbCommand (622ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 11:06:51.660 +05:30 [INF] Executed DbCommand (499ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 11:06:52.141 +05:30 [INF] Executed DbCommand (147ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 11:06:52.392 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 11:06:55.299 +05:30 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-03 11:06:55.428 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-03 11:07:07.943 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-03 11:07:12.863 +05:30 [INF] Now listening on: http://localhost:5005
+2026-04-03 11:07:14.965 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-03 11:07:15.010 +05:30 [INF] Hosting environment: Development
+2026-04-03 11:07:15.090 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-04-03 11:07:20.611 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-04-03 11:07:25.116 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 4516.4545ms
+2026-04-03 11:07:25.890 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-03 11:07:25.965 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-04-03 11:07:26.236 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 318.7559ms
+2026-04-03 11:07:26.515 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 550.8291ms
+2026-04-03 11:07:28.156 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-04-03 11:07:28.316 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 160.1517ms
+2026-04-03 11:10:22.316 +05:30 [INF] Executed DbCommand (143ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 11:10:22.732 +05:30 [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 11:10:22.844 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 11:10:22.889 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 11:10:23.127 +05:30 [INF] Executed DbCommand (120ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-03 11:10:23.223 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-03 11:10:25.081 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-03 11:10:25.609 +05:30 [INF] Now listening on: http://localhost:5005
+2026-04-03 11:10:26.224 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-03 11:10:26.248 +05:30 [INF] Hosting environment: Development
+2026-04-03 11:10:26.282 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-04-03 11:10:45.262 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-04-03 11:10:47.737 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 2477.3108ms
+2026-04-03 11:10:47.925 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-04-03 11:10:54.393 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-03 11:10:54.426 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 32.7094ms
+2026-04-03 11:10:55.067 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7141.8516ms
+2026-04-03 11:10:55.317 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-04-03 11:10:56.265 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 947.5864ms
+2026-04-03 11:14:01.120 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/initiate - application/json 186
+2026-04-03 11:14:01.286 +05:30 [INF] CORS policy execution successful.
+2026-04-03 11:14:02.293 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-03 11:14:02.355 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-03 11:14:02.650 +05:30 [INF] Received HTTP response headers after 287.6247ms - 200
+2026-04-03 11:14:02.666 +05:30 [INF] End processing HTTP request after 391.6906ms - 200
+2026-04-03 11:14:02.694 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-04-03 11:14:02.800 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-04-03 11:14:02.828 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-03 11:14:02.831 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-03 11:14:02.852 +05:30 [INF] Received HTTP response headers after 16.7735ms - 200
+2026-04-03 11:14:02.855 +05:30 [INF] End processing HTTP request after 26.7082ms - 200
+2026-04-03 11:14:02.858 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-04-03 11:14:02.866 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-04-03 11:14:02.955 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 11:14:02.959 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 11:14:03.007 +05:30 [INF] Received HTTP response headers after 46.0505ms - 200
+2026-04-03 11:14:03.011 +05:30 [INF] End processing HTTP request after 56.1635ms - 200
+2026-04-03 11:14:03.018 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 11:14:03.025 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e17d7721-955c-40a2-9f55-52e7ae91d2d8",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775195013,
+  "nbf": 1775195013,
+  "exp": 1775198613,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 11:14:03.059 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 11:14:03.128 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(SwiftBite.PaymentService.API.Controllers.InitiatePaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 11:14:03.144 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-04-03 11:14:04.117 +05:30 [INF] Executed DbCommand (142ms) [Parameters=[@__orderId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[OrderId] = @__orderId_0
+2026-04-03 11:14:04.163 +05:30 [INF] 📤 Creating Razorpay order | Receipt: ord_20260403054404_b2fc | Length: 23
+2026-04-03 11:14:05.017 +05:30 [INF] 💳 Razorpay order created | Id: order_SYuPTZKTndgImo | ₹345
+2026-04-03 11:14:05.268 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (Size = 10), @p4='?' (Size = 100), @p5='?' (Size = 500), @p6='?' (Size = 30), @p7='?' (DbType = Guid), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 30), @p16='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Currency], [CustomerId], [FailureReason], [Method], [OrderId], [PaidAt], [RazorpayOrderId], [RazorpayPaymentId], [RazorpaySignature], [RefundAmount], [RefundId], [RefundedAt], [Status], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-04-03 11:14:05.292 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 11:14:05.322 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API) in 2183.9836ms
+2026-04-03 11:14:05.326 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 11:14:05.333 +05:30 [INF] HTTP POST /api/payments/initiate responded 200 in 4029.3940 ms
+2026-04-03 11:14:05.343 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/initiate - 200 null application/json; charset=utf-8 4231.7652ms
+2026-04-03 11:14:39.070 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/verify - application/json 170
+2026-04-03 11:14:39.089 +05:30 [INF] CORS policy execution successful.
+2026-04-03 11:14:39.095 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 11:14:39.098 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 11:14:39.154 +05:30 [INF] Received HTTP response headers after 53.3322ms - 200
+2026-04-03 11:14:39.157 +05:30 [INF] End processing HTTP request after 61.3978ms - 200
+2026-04-03 11:14:39.159 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 11:14:39.162 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e17d7721-955c-40a2-9f55-52e7ae91d2d8",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775195013,
+  "nbf": 1775195013,
+  "exp": 1775198613,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 11:14:39.170 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 11:14:39.178 +05:30 [INF] Route matched with {action = "Verify", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Verify(SwiftBite.PaymentService.API.Controllers.VerifyPaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 11:14:39.429 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__razorpayOrderId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[RazorpayOrderId] = @__razorpayOrderId_0
+2026-04-03 11:14:39.453 +05:30 [INF] 🔐 Signature verification: VALID ✅
+2026-04-03 11:14:39.538 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[@p16='?' (DbType = Guid), @p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (Size = 500), @p5='?' (Size = 30), @p6='?' (DbType = Guid), @p7='?' (DbType = DateTime2), @p8='?' (Size = 100), @p9='?' (Size = 100), @p10='?' (Size = 500), @p11='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p12='?' (Size = 100), @p13='?' (DbType = DateTime2), @p14='?' (Size = 30), @p15='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [Currency] = @p2, [CustomerId] = @p3, [FailureReason] = @p4, [Method] = @p5, [OrderId] = @p6, [PaidAt] = @p7, [RazorpayOrderId] = @p8, [RazorpayPaymentId] = @p9, [RazorpaySignature] = @p10, [RefundAmount] = @p11, [RefundId] = @p12, [RefundedAt] = @p13, [Status] = @p14, [UpdatedAt] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+2026-04-03 11:14:39.604 +05:30 [INF] 🔥 Kafka published | Topic: swiftbite.payment.success | Partition: 0 | Offset: 12
+2026-04-03 11:14:39.610 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 11:14:39.645 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API) in 462.0353ms
+2026-04-03 11:14:39.652 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 11:14:39.655 +05:30 [INF] HTTP POST /api/payments/verify responded 200 in 563.7280 ms
+2026-04-03 11:14:39.659 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/verify - 200 null application/json; charset=utf-8 590.7475ms
+2026-04-03 11:51:25.995 +05:30 [INF] Executed DbCommand (118ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 11:51:26.262 +05:30 [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 11:51:26.290 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 11:51:26.305 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 11:51:26.414 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-03 11:51:26.466 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-03 11:51:27.222 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-03 11:51:28.172 +05:30 [INF] Now listening on: http://localhost:5005
+2026-04-03 11:51:29.265 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-03 11:51:29.416 +05:30 [INF] Hosting environment: Development
+2026-04-03 11:51:29.695 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-04-03 11:51:30.600 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-04-03 11:51:32.340 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 2399.336ms
+2026-04-03 11:51:32.416 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-04-03 11:51:32.524 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-03 11:51:32.556 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 32.119ms
+2026-04-03 11:51:32.881 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 467.0433ms
+2026-04-03 11:51:34.153 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-04-03 11:51:34.797 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 644.5315ms
+2026-04-03 12:05:43.752 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/initiate - application/json 186
+2026-04-03 12:05:43.984 +05:30 [INF] CORS policy execution successful.
+2026-04-03 12:05:44.826 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-03 12:05:44.891 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-03 12:05:44.962 +05:30 [INF] Received HTTP response headers after 62.7385ms - 200
+2026-04-03 12:05:44.983 +05:30 [INF] End processing HTTP request after 172.6087ms - 200
+2026-04-03 12:05:45.011 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-04-03 12:05:45.125 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-04-03 12:05:45.152 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-03 12:05:45.156 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-03 12:05:45.182 +05:30 [INF] Received HTTP response headers after 22.061ms - 200
+2026-04-03 12:05:45.186 +05:30 [INF] End processing HTTP request after 33.4886ms - 200
+2026-04-03 12:05:45.192 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-04-03 12:05:45.202 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-04-03 12:05:45.301 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 12:05:45.305 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 12:05:45.360 +05:30 [INF] Received HTTP response headers after 51.7292ms - 200
+2026-04-03 12:05:45.364 +05:30 [INF] End processing HTTP request after 63.2234ms - 200
+2026-04-03 12:05:45.368 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:05:45.378 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e17d7721-955c-40a2-9f55-52e7ae91d2d8",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775195013,
+  "nbf": 1775195013,
+  "exp": 1775198613,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 12:05:45.418 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 12:05:45.500 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(SwiftBite.PaymentService.API.Controllers.InitiatePaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 12:05:45.520 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-04-03 12:05:46.426 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[@__orderId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[OrderId] = @__orderId_0
+2026-04-03 12:05:46.479 +05:30 [INF] 📤 Creating Razorpay order | Receipt: ord_20260403063546_7b9d | Length: 23
+2026-04-03 12:05:47.201 +05:30 [INF] 💳 Razorpay order created | Id: order_SYvI5s6XCpmdNR | ₹345
+2026-04-03 12:05:47.428 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (Size = 10), @p4='?' (Size = 100), @p5='?' (Size = 500), @p6='?' (Size = 30), @p7='?' (DbType = Guid), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 30), @p16='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Currency], [CustomerId], [FailureReason], [Method], [OrderId], [PaidAt], [RazorpayOrderId], [RazorpayPaymentId], [RazorpaySignature], [RefundAmount], [RefundId], [RefundedAt], [Status], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-04-03 12:05:47.457 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 12:05:47.492 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API) in 1977.5846ms
+2026-04-03 12:05:47.497 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 12:05:47.504 +05:30 [INF] HTTP POST /api/payments/initiate responded 200 in 3492.9645 ms
+2026-04-03 12:05:47.518 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/initiate - 200 null application/json; charset=utf-8 3773.0637ms
+2026-04-03 12:06:18.673 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/verify - application/json 170
+2026-04-03 12:06:18.687 +05:30 [INF] CORS policy execution successful.
+2026-04-03 12:06:18.700 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 12:06:18.704 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 12:06:18.766 +05:30 [INF] Received HTTP response headers after 58.8951ms - 200
+2026-04-03 12:06:18.769 +05:30 [INF] End processing HTTP request after 69.6085ms - 200
+2026-04-03 12:06:18.773 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:06:18.783 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e17d7721-955c-40a2-9f55-52e7ae91d2d8",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775195013,
+  "nbf": 1775195013,
+  "exp": 1775198613,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 12:06:18.793 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 12:06:18.809 +05:30 [INF] Route matched with {action = "Verify", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Verify(SwiftBite.PaymentService.API.Controllers.VerifyPaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 12:06:19.119 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__razorpayOrderId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[RazorpayOrderId] = @__razorpayOrderId_0
+2026-04-03 12:06:19.155 +05:30 [INF] 🔐 Signature verification: VALID ✅
+2026-04-03 12:06:19.212 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@p16='?' (DbType = Guid), @p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (Size = 500), @p5='?' (Size = 30), @p6='?' (DbType = Guid), @p7='?' (DbType = DateTime2), @p8='?' (Size = 100), @p9='?' (Size = 100), @p10='?' (Size = 500), @p11='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p12='?' (Size = 100), @p13='?' (DbType = DateTime2), @p14='?' (Size = 30), @p15='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [Currency] = @p2, [CustomerId] = @p3, [FailureReason] = @p4, [Method] = @p5, [OrderId] = @p6, [PaidAt] = @p7, [RazorpayOrderId] = @p8, [RazorpayPaymentId] = @p9, [RazorpaySignature] = @p10, [RefundAmount] = @p11, [RefundId] = @p12, [RefundedAt] = @p13, [Status] = @p14, [UpdatedAt] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+2026-04-03 12:06:19.293 +05:30 [INF] 🔥 Kafka published | Topic: swiftbite.payment.success | Partition: 0 | Offset: 13
+2026-04-03 12:06:19.300 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 12:06:19.342 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API) in 529.2348ms
+2026-04-03 12:06:19.346 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 12:06:19.350 +05:30 [INF] HTTP POST /api/payments/verify responded 200 in 660.6584 ms
+2026-04-03 12:06:19.356 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/verify - 200 null application/json; charset=utf-8 683.7694ms
+2026-04-03 19:04:05.288 +05:30 [INF] Executed DbCommand (168ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 19:04:05.896 +05:30 [INF] Executed DbCommand (141ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 19:04:06.082 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 19:04:06.132 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 19:04:08.431 +05:30 [INF] Executed DbCommand (2,189ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-03 19:04:08.520 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-03 19:04:09.462 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-03 19:04:11.504 +05:30 [INF] Now listening on: http://localhost:5005
+2026-04-03 19:04:13.297 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-03 19:04:14.078 +05:30 [INF] Hosting environment: Development
+2026-04-03 19:04:14.455 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-04-03 19:04:15.095 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-04-03 19:04:16.752 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 1664.1609ms
+2026-04-03 19:04:17.225 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-04-03 19:04:17.254 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-03 19:04:17.729 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 406.0879ms
+2026-04-03 19:04:18.237 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1011.229ms
+2026-04-03 19:04:27.432 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-04-03 19:04:27.777 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 345.5334ms
+2026-04-03 19:06:53.325 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/initiate - application/json 188
+2026-04-03 19:06:53.540 +05:30 [INF] CORS policy execution successful.
+2026-04-03 19:06:54.386 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-03 19:06:54.491 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-03 19:06:54.557 +05:30 [INF] Received HTTP response headers after 53.5069ms - 200
+2026-04-03 19:06:54.598 +05:30 [INF] End processing HTTP request after 234.7911ms - 200
+2026-04-03 19:06:54.657 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-04-03 19:06:54.840 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-04-03 19:06:54.911 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-03 19:06:54.918 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-03 19:06:54.969 +05:30 [INF] Received HTTP response headers after 43.6581ms - 200
+2026-04-03 19:06:54.977 +05:30 [INF] End processing HTTP request after 65.824ms - 200
+2026-04-03 19:06:54.987 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-04-03 19:06:55.007 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-04-03 19:06:55.203 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 19:06:55.209 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 19:06:55.325 +05:30 [INF] Received HTTP response headers after 110.3329ms - 200
+2026-04-03 19:06:55.330 +05:30 [INF] End processing HTTP request after 126.8673ms - 200
+2026-04-03 19:06:55.336 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 19:06:55.347 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e3ed6151-59f1-41f8-aec8-74fd2237a30e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775223357,
+  "nbf": 1775223357,
+  "exp": 1775226957,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 19:06:55.411 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 19:06:55.512 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(SwiftBite.PaymentService.API.Controllers.InitiatePaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 19:06:55.538 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-04-03 19:06:57.077 +05:30 [INF] Executed DbCommand (81ms) [Parameters=[@__orderId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[OrderId] = @__orderId_0
+2026-04-03 19:06:57.169 +05:30 [INF] 📤 Creating Razorpay order | Receipt: ord_20260403133657_64eb | Length: 23
+2026-04-03 19:06:58.295 +05:30 [INF] 💳 Razorpay order created | Id: order_SZ2T0F8xF1RJ0X | ₹187.5
+2026-04-03 19:06:58.840 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (Size = 10), @p4='?' (Size = 100), @p5='?' (Size = 500), @p6='?' (Size = 30), @p7='?' (DbType = Guid), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 30), @p16='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Currency], [CustomerId], [FailureReason], [Method], [OrderId], [PaidAt], [RazorpayOrderId], [RazorpayPaymentId], [RazorpaySignature], [RefundAmount], [RefundId], [RefundedAt], [Status], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-04-03 19:06:58.908 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 19:06:58.980 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API) in 3452.1356ms
+2026-04-03 19:06:58.989 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 19:06:59.005 +05:30 [INF] HTTP POST /api/payments/initiate responded 200 in 5436.9408 ms
+2026-04-03 19:06:59.037 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/initiate - 200 null application/json; charset=utf-8 5721.3083ms
+2026-04-03 19:07:26.432 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/verify - application/json 170
+2026-04-03 19:07:26.438 +05:30 [INF] CORS policy execution successful.
+2026-04-03 19:07:26.443 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 19:07:26.446 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 19:07:26.491 +05:30 [INF] Received HTTP response headers after 41.7552ms - 200
+2026-04-03 19:07:26.493 +05:30 [INF] End processing HTTP request after 50.4463ms - 200
+2026-04-03 19:07:26.496 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 19:07:26.500 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "e3ed6151-59f1-41f8-aec8-74fd2237a30e",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775223357,
+  "nbf": 1775223357,
+  "exp": 1775226957,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 19:07:26.505 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 19:07:26.511 +05:30 [INF] Route matched with {action = "Verify", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Verify(SwiftBite.PaymentService.API.Controllers.VerifyPaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 19:07:26.766 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__razorpayOrderId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[RazorpayOrderId] = @__razorpayOrderId_0
+2026-04-03 19:07:26.787 +05:30 [INF] 🔐 Signature verification: VALID ✅
+2026-04-03 19:07:26.831 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@p16='?' (DbType = Guid), @p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (Size = 500), @p5='?' (Size = 30), @p6='?' (DbType = Guid), @p7='?' (DbType = DateTime2), @p8='?' (Size = 100), @p9='?' (Size = 100), @p10='?' (Size = 500), @p11='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p12='?' (Size = 100), @p13='?' (DbType = DateTime2), @p14='?' (Size = 30), @p15='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [Currency] = @p2, [CustomerId] = @p3, [FailureReason] = @p4, [Method] = @p5, [OrderId] = @p6, [PaidAt] = @p7, [RazorpayOrderId] = @p8, [RazorpayPaymentId] = @p9, [RazorpaySignature] = @p10, [RefundAmount] = @p11, [RefundId] = @p12, [RefundedAt] = @p13, [Status] = @p14, [UpdatedAt] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+2026-04-03 19:07:26.917 +05:30 [INF] 🔥 Kafka published | Topic: swiftbite.payment.success | Partition: 0 | Offset: 14
+2026-04-03 19:07:26.927 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 19:07:26.960 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API) in 443.9117ms
+2026-04-03 19:07:26.963 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 19:07:26.968 +05:30 [INF] HTTP POST /api/payments/verify responded 200 in 527.9591 ms
+2026-04-03 19:07:26.973 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/verify - 200 null application/json; charset=utf-8 541.6707ms
+2026-04-03 19:21:37.636 +05:30 [INF] Executed DbCommand (138ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 19:21:38.183 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 19:21:38.202 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 19:21:38.216 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 19:21:38.631 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-03 19:21:39.015 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-03 19:21:40.289 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-03 19:21:42.647 +05:30 [INF] Now listening on: http://localhost:5005
+2026-04-03 19:21:44.470 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-03 19:21:46.635 +05:30 [INF] Hosting environment: Development
+2026-04-03 19:21:46.965 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-04-03 19:21:46.983 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-04-03 19:21:48.968 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 1997.7205ms
+2026-04-03 19:21:51.223 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-04-03 19:21:51.834 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-03 19:21:53.200 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1977.012ms
+2026-04-03 19:21:54.837 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 3002.3596ms
+2026-04-03 19:21:59.240 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-04-03 19:21:59.596 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 355.6135ms
+2026-04-03 19:55:13.319 +05:30 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 19:55:13.592 +05:30 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 19:55:13.620 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 19:55:13.689 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 19:55:13.831 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-03 19:55:14.009 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-03 19:55:14.755 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-03 19:55:15.289 +05:30 [INF] Now listening on: http://localhost:5005
+2026-04-03 19:55:15.804 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-03 19:55:15.914 +05:30 [INF] Hosting environment: Development
+2026-04-03 19:55:15.937 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-04-03 19:55:22.821 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-04-03 19:55:35.567 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 12705.0905ms
+2026-04-03 19:55:35.991 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-04-03 19:55:36.757 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-03 19:55:37.889 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1905.9747ms
+2026-04-03 19:55:37.918 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 1160.7277ms
+2026-04-03 19:55:40.970 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-04-03 19:55:41.365 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 394.6108ms
+2026-04-03 19:56:45.996 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/initiate - application/json 188
+2026-04-03 19:56:47.010 +05:30 [INF] CORS policy execution successful.
+2026-04-03 19:56:51.454 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-03 19:56:51.540 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-03 19:56:51.618 +05:30 [INF] Received HTTP response headers after 69.5891ms - 200
+2026-04-03 19:56:51.661 +05:30 [INF] End processing HTTP request after 219.9551ms - 200
+2026-04-03 19:56:51.703 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-04-03 19:56:51.825 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-04-03 19:56:51.859 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-03 19:56:51.863 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-03 19:56:51.884 +05:30 [INF] Received HTTP response headers after 19.1648ms - 200
+2026-04-03 19:56:51.887 +05:30 [INF] End processing HTTP request after 27.6408ms - 200
+2026-04-03 19:56:51.890 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-04-03 19:56:51.903 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-04-03 19:56:52.038 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 19:56:52.042 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 19:56:52.132 +05:30 [INF] Received HTTP response headers after 85.0873ms - 200
+2026-04-03 19:56:52.142 +05:30 [INF] End processing HTTP request after 104.2471ms - 200
+2026-04-03 19:56:52.151 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 19:56:52.156 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "c1adcc9e-368b-45e4-b4a2-38dfe5457858",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775226372,
+  "nbf": 1775226372,
+  "exp": 1775229972,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 19:56:52.368 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 19:56:53.145 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(SwiftBite.PaymentService.API.Controllers.InitiatePaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 19:56:53.441 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-04-03 19:56:57.026 +05:30 [INF] Executed DbCommand (328ms) [Parameters=[@__orderId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[OrderId] = @__orderId_0
+2026-04-03 19:56:57.695 +05:30 [INF] 📤 Creating Razorpay order | Receipt: ord_20260403142657_d046 | Length: 23
+2026-04-03 19:56:58.648 +05:30 [INF] 💳 Razorpay order created | Id: order_SZ3JpVO3Qj0X7F | ₹502.5
+2026-04-03 19:56:59.152 +05:30 [INF] Executed DbCommand (214ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (Size = 10), @p4='?' (Size = 100), @p5='?' (Size = 500), @p6='?' (Size = 30), @p7='?' (DbType = Guid), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 30), @p16='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Currency], [CustomerId], [FailureReason], [Method], [OrderId], [PaidAt], [RazorpayOrderId], [RazorpayPaymentId], [RazorpaySignature], [RefundAmount], [RefundId], [RefundedAt], [Status], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-04-03 19:56:59.185 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 19:56:59.215 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API) in 6024.0284ms
+2026-04-03 19:56:59.218 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 19:56:59.228 +05:30 [INF] HTTP POST /api/payments/initiate responded 200 in 12198.1434 ms
+2026-04-03 19:56:59.244 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/initiate - 200 null application/json; charset=utf-8 13252.9651ms
+2026-04-03 19:57:33.210 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/verify - application/json 170
+2026-04-03 19:57:33.220 +05:30 [INF] CORS policy execution successful.
+2026-04-03 19:57:33.225 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 19:57:33.229 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 19:57:33.291 +05:30 [INF] Received HTTP response headers after 59.2786ms - 200
+2026-04-03 19:57:33.294 +05:30 [INF] End processing HTTP request after 69.8791ms - 200
+2026-04-03 19:57:33.298 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 19:57:33.302 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "c1adcc9e-368b-45e4-b4a2-38dfe5457858",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775226372,
+  "nbf": 1775226372,
+  "exp": 1775229972,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 19:57:33.308 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 19:57:33.317 +05:30 [INF] Route matched with {action = "Verify", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Verify(SwiftBite.PaymentService.API.Controllers.VerifyPaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 19:57:34.012 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__razorpayOrderId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[RazorpayOrderId] = @__razorpayOrderId_0
+2026-04-03 19:57:34.032 +05:30 [INF] 🔐 Signature verification: VALID ✅
+2026-04-03 19:57:34.089 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@p16='?' (DbType = Guid), @p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (Size = 500), @p5='?' (Size = 30), @p6='?' (DbType = Guid), @p7='?' (DbType = DateTime2), @p8='?' (Size = 100), @p9='?' (Size = 100), @p10='?' (Size = 500), @p11='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p12='?' (Size = 100), @p13='?' (DbType = DateTime2), @p14='?' (Size = 30), @p15='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [Currency] = @p2, [CustomerId] = @p3, [FailureReason] = @p4, [Method] = @p5, [OrderId] = @p6, [PaidAt] = @p7, [RazorpayOrderId] = @p8, [RazorpayPaymentId] = @p9, [RazorpaySignature] = @p10, [RefundAmount] = @p11, [RefundId] = @p12, [RefundedAt] = @p13, [Status] = @p14, [UpdatedAt] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+2026-04-03 19:57:34.135 +05:30 [INF] 🔥 Kafka published | Topic: swiftbite.payment.success | Partition: 0 | Offset: 15
+2026-04-03 19:57:34.147 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 19:57:34.202 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API) in 880.3641ms
+2026-04-03 19:57:34.205 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 19:57:34.207 +05:30 [INF] HTTP POST /api/payments/verify responded 200 in 985.0195 ms
+2026-04-03 19:57:34.215 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/verify - 200 null application/json; charset=utf-8 1004.4411ms
+2026-04-03 20:20:46.459 +05:30 [INF] Executed DbCommand (149ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 20:20:46.760 +05:30 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 20:20:46.793 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 20:20:46.821 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-03 20:20:47.252 +05:30 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-03 20:20:47.319 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-03 20:20:49.494 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-03 20:20:50.153 +05:30 [INF] Now listening on: http://localhost:5005
+2026-04-03 20:20:51.535 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-03 20:20:51.572 +05:30 [INF] Hosting environment: Development
+2026-04-03 20:20:51.574 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.API
+2026-04-03 20:20:57.053 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2026-04-03 20:21:03.747 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 6807.4896ms
+2026-04-03 20:21:04.122 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_vs/browserLink - null null
+2026-04-03 20:21:04.349 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-03 20:21:04.515 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16541 application/javascript; charset=utf-8 105.98ms
+2026-04-03 20:21:04.680 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 557.8779ms
+2026-04-03 20:21:07.238 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2026-04-03 20:21:07.465 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 226.2503ms
+2026-04-03 20:23:13.057 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/initiate - application/json 186
+2026-04-03 20:23:13.180 +05:30 [INF] CORS policy execution successful.
+2026-04-03 20:23:14.040 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-03 20:23:14.130 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-03 20:23:14.189 +05:30 [INF] Received HTTP response headers after 50.1912ms - 200
+2026-04-03 20:23:14.211 +05:30 [INF] End processing HTTP request after 182.7134ms - 200
+2026-04-03 20:23:14.234 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-04-03 20:23:14.382 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-04-03 20:23:14.408 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-03 20:23:14.411 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-03 20:23:14.436 +05:30 [INF] Received HTTP response headers after 22.8658ms - 200
+2026-04-03 20:23:14.440 +05:30 [INF] End processing HTTP request after 32.4093ms - 200
+2026-04-03 20:23:14.444 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-04-03 20:23:14.451 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-04-03 20:23:14.560 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 20:23:14.563 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 20:23:14.621 +05:30 [INF] Received HTTP response headers after 55.555ms - 200
+2026-04-03 20:23:14.625 +05:30 [INF] End processing HTTP request after 65.6815ms - 200
+2026-04-03 20:23:14.630 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 20:23:14.639 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "c1adcc9e-368b-45e4-b4a2-38dfe5457858",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775226372,
+  "nbf": 1775226372,
+  "exp": 1775229972,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 20:23:14.684 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 20:23:14.750 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(SwiftBite.PaymentService.API.Controllers.InitiatePaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 20:23:14.763 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-04-03 20:23:15.511 +05:30 [INF] Executed DbCommand (84ms) [Parameters=[@__orderId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[OrderId] = @__orderId_0
+2026-04-03 20:23:16.177 +05:30 [INF] 📤 Creating Razorpay order | Receipt: ord_20260403145316_2c11 | Length: 23
+2026-04-03 20:23:17.251 +05:30 [INF] 💳 Razorpay order created | Id: order_SZ3lcdikVgUn6d | ₹345
+2026-04-03 20:23:17.585 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (Size = 10), @p4='?' (Size = 100), @p5='?' (Size = 500), @p6='?' (Size = 30), @p7='?' (DbType = Guid), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 30), @p16='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Currency], [CustomerId], [FailureReason], [Method], [OrderId], [PaidAt], [RazorpayOrderId], [RazorpayPaymentId], [RazorpaySignature], [RefundAmount], [RefundId], [RefundedAt], [Status], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-04-03 20:23:17.617 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 20:23:17.660 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API) in 2898.9793ms
+2026-04-03 20:23:17.664 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 20:23:17.671 +05:30 [INF] HTTP POST /api/payments/initiate responded 200 in 4470.4240 ms
+2026-04-03 20:23:17.683 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/initiate - 200 null application/json; charset=utf-8 4630.7587ms
+2026-04-03 20:23:56.416 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/verify - application/json 170
+2026-04-03 20:23:56.432 +05:30 [INF] CORS policy execution successful.
+2026-04-03 20:23:56.455 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 20:23:56.459 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 20:23:56.532 +05:30 [INF] Received HTTP response headers after 70.6437ms - 200
+2026-04-03 20:23:56.537 +05:30 [INF] End processing HTTP request after 82.4178ms - 200
+2026-04-03 20:23:56.544 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 20:23:56.549 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "c1adcc9e-368b-45e4-b4a2-38dfe5457858",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775226372,
+  "nbf": 1775226372,
+  "exp": 1775229972,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 20:23:56.560 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 20:23:56.581 +05:30 [INF] Route matched with {action = "Verify", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Verify(SwiftBite.PaymentService.API.Controllers.VerifyPaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 20:24:01.545 +05:30 [INF] Executed DbCommand (1,114ms) [Parameters=[@__razorpayOrderId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[RazorpayOrderId] = @__razorpayOrderId_0
+2026-04-03 20:24:02.072 +05:30 [INF] 🔐 Signature verification: VALID ✅
+2026-04-03 20:24:03.437 +05:30 [INF] Executed DbCommand (528ms) [Parameters=[@p16='?' (DbType = Guid), @p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (Size = 500), @p5='?' (Size = 30), @p6='?' (DbType = Guid), @p7='?' (DbType = DateTime2), @p8='?' (Size = 100), @p9='?' (Size = 100), @p10='?' (Size = 500), @p11='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p12='?' (Size = 100), @p13='?' (DbType = DateTime2), @p14='?' (Size = 30), @p15='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [Currency] = @p2, [CustomerId] = @p3, [FailureReason] = @p4, [Method] = @p5, [OrderId] = @p6, [PaidAt] = @p7, [RazorpayOrderId] = @p8, [RazorpayPaymentId] = @p9, [RazorpaySignature] = @p10, [RefundAmount] = @p11, [RefundId] = @p12, [RefundedAt] = @p13, [Status] = @p14, [UpdatedAt] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+2026-04-03 20:24:04.540 +05:30 [INF] 🔥 Kafka published | Topic: swiftbite.payment.success | Partition: 0 | Offset: 16
+2026-04-03 20:24:05.458 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 20:24:05.524 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API) in 8937.4201ms
+2026-04-03 20:24:05.535 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 20:24:05.537 +05:30 [INF] HTTP POST /api/payments/verify responded 200 in 9101.4006 ms
+2026-04-03 20:24:05.541 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/verify - 200 null application/json; charset=utf-8 9125.7904ms
+2026-04-03 21:57:48.122 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/initiate - application/json 177
+2026-04-03 21:57:48.274 +05:30 [INF] CORS policy execution successful.
+2026-04-03 21:57:48.468 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 21:57:48.485 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 21:57:48.645 +05:30 [INF] Received HTTP response headers after 153.2475ms - 200
+2026-04-03 21:57:48.654 +05:30 [INF] End processing HTTP request after 191.8065ms - 200
+2026-04-03 21:57:48.674 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 21:57:48.708 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "06b31587-a954-4251-ae61-81f07246ef17",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775233644,
+  "nbf": 1775233644,
+  "exp": 1775237244,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 21:57:48.799 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 21:57:48.823 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(SwiftBite.PaymentService.API.Controllers.InitiatePaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 21:57:49.510 +05:30 [INF] Executed DbCommand (110ms) [Parameters=[@__orderId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[OrderId] = @__orderId_0
+2026-04-03 21:57:49.579 +05:30 [INF] 📤 Creating Razorpay order | Receipt: ord_20260403162749_3cc1 | Length: 23
+2026-04-03 21:57:50.175 +05:30 [INF] 💳 Razorpay order created | Id: order_SZ5NUsmNl5Cs0J | ₹345
+2026-04-03 21:57:50.335 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (Size = 10), @p4='?' (Size = 100), @p5='?' (Size = 500), @p6='?' (Size = 30), @p7='?' (DbType = Guid), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 30), @p16='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Currency], [CustomerId], [FailureReason], [Method], [OrderId], [PaidAt], [RazorpayOrderId], [RazorpayPaymentId], [RazorpaySignature], [RefundAmount], [RefundId], [RefundedAt], [Status], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-04-03 21:57:50.353 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 21:57:50.379 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API) in 1547.9547ms
+2026-04-03 21:57:50.389 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 21:57:50.395 +05:30 [INF] HTTP POST /api/payments/initiate responded 200 in 2112.3057 ms
+2026-04-03 21:57:50.407 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/initiate - 200 null application/json; charset=utf-8 2302.8762ms
+2026-04-03 21:58:41.454 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/verify - application/json 170
+2026-04-03 21:58:41.472 +05:30 [INF] CORS policy execution successful.
+2026-04-03 21:58:41.480 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 21:58:41.488 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 21:58:41.597 +05:30 [INF] Received HTTP response headers after 102.4911ms - 200
+2026-04-03 21:58:41.605 +05:30 [INF] End processing HTTP request after 125.5994ms - 200
+2026-04-03 21:58:41.612 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 21:58:41.622 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "06b31587-a954-4251-ae61-81f07246ef17",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775233644,
+  "nbf": 1775233644,
+  "exp": 1775237244,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 21:58:41.631 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 21:58:41.638 +05:30 [INF] Route matched with {action = "Verify", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Verify(SwiftBite.PaymentService.API.Controllers.VerifyPaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 21:58:41.680 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__razorpayOrderId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[RazorpayOrderId] = @__razorpayOrderId_0
+2026-04-03 21:58:41.703 +05:30 [INF] 🔐 Signature verification: VALID ✅
+2026-04-03 21:58:41.772 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[@p16='?' (DbType = Guid), @p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (Size = 500), @p5='?' (Size = 30), @p6='?' (DbType = Guid), @p7='?' (DbType = DateTime2), @p8='?' (Size = 100), @p9='?' (Size = 100), @p10='?' (Size = 500), @p11='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p12='?' (Size = 100), @p13='?' (DbType = DateTime2), @p14='?' (Size = 30), @p15='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [Currency] = @p2, [CustomerId] = @p3, [FailureReason] = @p4, [Method] = @p5, [OrderId] = @p6, [PaidAt] = @p7, [RazorpayOrderId] = @p8, [RazorpayPaymentId] = @p9, [RazorpaySignature] = @p10, [RefundAmount] = @p11, [RefundId] = @p12, [RefundedAt] = @p13, [Status] = @p14, [UpdatedAt] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+2026-04-03 21:58:41.892 +05:30 [INF] 🔥 Kafka published | Topic: swiftbite.payment.success | Partition: 0 | Offset: 17
+2026-04-03 21:58:41.901 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 21:58:41.916 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API) in 267.7713ms
+2026-04-03 21:58:41.927 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 21:58:41.932 +05:30 [INF] HTTP POST /api/payments/verify responded 200 in 455.4398 ms
+2026-04-03 21:58:41.945 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/verify - 200 null application/json; charset=utf-8 490.6649ms
+2026-04-03 22:13:10.426 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/initiate - application/json 177
+2026-04-03 22:13:10.592 +05:30 [INF] CORS policy execution successful.
+2026-04-03 22:13:10.743 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 22:13:10.753 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 22:13:11.015 +05:30 [INF] Received HTTP response headers after 256.4288ms - 200
+2026-04-03 22:13:11.023 +05:30 [INF] End processing HTTP request after 284.7142ms - 200
+2026-04-03 22:13:11.052 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 22:13:11.080 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "06b31587-a954-4251-ae61-81f07246ef17",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775233644,
+  "nbf": 1775233644,
+  "exp": 1775237244,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 22:13:11.127 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 22:13:11.248 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(SwiftBite.PaymentService.API.Controllers.InitiatePaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 22:13:11.833 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[@__orderId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[OrderId] = @__orderId_0
+2026-04-03 22:13:11.854 +05:30 [INF] 📤 Creating Razorpay order | Receipt: ord_20260403164311_229b | Length: 23
+2026-04-03 22:13:12.814 +05:30 [INF] 💳 Razorpay order created | Id: order_SZ5djFSwEws5dT | ₹345
+2026-04-03 22:13:12.943 +05:30 [INF] Executed DbCommand (48ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (Size = 10), @p4='?' (Size = 100), @p5='?' (Size = 500), @p6='?' (Size = 30), @p7='?' (DbType = Guid), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 30), @p16='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Currency], [CustomerId], [FailureReason], [Method], [OrderId], [PaidAt], [RazorpayOrderId], [RazorpayPaymentId], [RazorpaySignature], [RefundAmount], [RefundId], [RefundedAt], [Status], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-04-03 22:13:12.968 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 22:13:13.007 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API) in 1750.4596ms
+2026-04-03 22:13:13.017 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 22:13:13.022 +05:30 [INF] HTTP POST /api/payments/initiate responded 200 in 2423.9710 ms
+2026-04-03 22:13:13.032 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/initiate - 200 null application/json; charset=utf-8 2627.2429ms
+2026-04-03 22:14:04.816 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/verify - application/json 170
+2026-04-03 22:14:04.939 +05:30 [INF] CORS policy execution successful.
+2026-04-03 22:14:05.078 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 22:14:05.087 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 22:14:05.202 +05:30 [INF] Received HTTP response headers after 109.5566ms - 200
+2026-04-03 22:14:05.211 +05:30 [INF] End processing HTTP request after 134.9005ms - 200
+2026-04-03 22:14:05.229 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 22:14:05.263 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "06b31587-a954-4251-ae61-81f07246ef17",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775233644,
+  "nbf": 1775233644,
+  "exp": 1775237244,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 22:14:05.302 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 22:14:05.463 +05:30 [INF] Route matched with {action = "Verify", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Verify(SwiftBite.PaymentService.API.Controllers.VerifyPaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 22:14:05.716 +05:30 [INF] Executed DbCommand (48ms) [Parameters=[@__razorpayOrderId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[RazorpayOrderId] = @__razorpayOrderId_0
+2026-04-03 22:14:05.752 +05:30 [INF] 🔐 Signature verification: VALID ✅
+2026-04-03 22:14:05.926 +05:30 [INF] Executed DbCommand (142ms) [Parameters=[@p16='?' (DbType = Guid), @p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (Size = 500), @p5='?' (Size = 30), @p6='?' (DbType = Guid), @p7='?' (DbType = DateTime2), @p8='?' (Size = 100), @p9='?' (Size = 100), @p10='?' (Size = 500), @p11='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p12='?' (Size = 100), @p13='?' (DbType = DateTime2), @p14='?' (Size = 30), @p15='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [Currency] = @p2, [CustomerId] = @p3, [FailureReason] = @p4, [Method] = @p5, [OrderId] = @p6, [PaidAt] = @p7, [RazorpayOrderId] = @p8, [RazorpayPaymentId] = @p9, [RazorpaySignature] = @p10, [RefundAmount] = @p11, [RefundId] = @p12, [RefundedAt] = @p13, [Status] = @p14, [UpdatedAt] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+2026-04-03 22:14:06.901 +05:30 [INF] 🔥 Kafka published | Topic: swiftbite.payment.success | Partition: 0 | Offset: 18
+2026-04-03 22:14:06.910 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 22:14:06.962 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API) in 1488.6823ms
+2026-04-03 22:14:06.978 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 22:14:06.987 +05:30 [INF] HTTP POST /api/payments/verify responded 200 in 2038.6187 ms
+2026-04-03 22:14:06.995 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/verify - 200 null application/json; charset=utf-8 2194.1633ms
+2026-04-03 22:20:45.641 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/initiate - application/json 177
+2026-04-03 22:20:47.274 +05:30 [INF] CORS policy execution successful.
+2026-04-03 22:20:49.332 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 22:20:49.345 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 22:20:49.595 +05:30 [INF] Received HTTP response headers after 241.528ms - 200
+2026-04-03 22:20:49.610 +05:30 [INF] End processing HTTP request after 283.0388ms - 200
+2026-04-03 22:20:49.645 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 22:20:49.684 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "06b31587-a954-4251-ae61-81f07246ef17",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775233644,
+  "nbf": 1775233644,
+  "exp": 1775237244,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 22:20:49.751 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 22:20:49.879 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(SwiftBite.PaymentService.API.Controllers.InitiatePaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 22:20:57.774 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@__orderId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[OrderId] = @__orderId_0
+2026-04-03 22:21:00.502 +05:30 [INF] 📤 Creating Razorpay order | Receipt: ord_20260403165100_6649 | Length: 23
+2026-04-03 22:21:00.858 +05:30 [INF] 💳 Razorpay order created | Id: order_SZ5lyuluPfG8dS | ₹345
+2026-04-03 22:21:25.319 +05:30 [INF] Executed DbCommand (74ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (Size = 10), @p4='?' (Size = 100), @p5='?' (Size = 500), @p6='?' (Size = 30), @p7='?' (DbType = Guid), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 30), @p16='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Currency], [CustomerId], [FailureReason], [Method], [OrderId], [PaidAt], [RazorpayOrderId], [RazorpayPaymentId], [RazorpaySignature], [RefundAmount], [RefundId], [RefundedAt], [Status], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-04-03 22:21:30.850 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 22:21:36.157 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API) in 46244.8537ms
+2026-04-03 22:21:36.164 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Initiate (SwiftBite.PaymentService.API)'
+2026-04-03 22:21:36.169 +05:30 [INF] HTTP POST /api/payments/initiate responded 200 in 47038.7913 ms
+2026-04-03 22:21:36.180 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/initiate - 200 null application/json; charset=utf-8 50549.9736ms
+2026-04-03 22:22:12.479 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5005/api/payments/verify - application/json 170
+2026-04-03 22:22:12.617 +05:30 [INF] CORS policy execution successful.
+2026-04-03 22:22:12.786 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 22:22:12.800 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-03 22:22:13.125 +05:30 [INF] Received HTTP response headers after 312.6999ms - 200
+2026-04-03 22:22:13.144 +05:30 [INF] End processing HTTP request after 360.1473ms - 200
+2026-04-03 22:22:13.168 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-paymentservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 22:22:13.242 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "a3785f1d-0314-4060-897b-11850e7062a5",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "06b31587-a954-4251-ae61-81f07246ef17",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775233644,
+  "nbf": 1775233644,
+  "exp": 1775237244,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nsridhary2k@gmail.com",
+  "given_name": "Nagalli",
+  "family_name": "Sreedhar",
+  "firstName": "Nagalli",
+  "lastName": "Sreedhar",
+  "role": "Customer"
+}.
+2026-04-03 22:22:13.324 +05:30 [INF] Executing endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 22:22:13.364 +05:30 [INF] Route matched with {action = "Verify", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Verify(SwiftBite.PaymentService.API.Controllers.VerifyPaymentRequest, System.Threading.CancellationToken) on controller SwiftBite.PaymentService.API.Controllers.PaymentsController (SwiftBite.PaymentService.API).
+2026-04-03 22:22:13.701 +05:30 [INF] Executed DbCommand (64ms) [Parameters=[@__razorpayOrderId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Currency], [p].[CustomerId], [p].[FailureReason], [p].[Method], [p].[OrderId], [p].[PaidAt], [p].[RazorpayOrderId], [p].[RazorpayPaymentId], [p].[RazorpaySignature], [p].[RefundAmount], [p].[RefundId], [p].[RefundedAt], [p].[Status], [p].[UpdatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[RazorpayOrderId] = @__razorpayOrderId_0
+2026-04-03 22:22:13.750 +05:30 [INF] 🔐 Signature verification: VALID ✅
+2026-04-03 22:22:13.909 +05:30 [INF] Executed DbCommand (107ms) [Parameters=[@p16='?' (DbType = Guid), @p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 10), @p3='?' (Size = 100), @p4='?' (Size = 500), @p5='?' (Size = 30), @p6='?' (DbType = Guid), @p7='?' (DbType = DateTime2), @p8='?' (Size = 100), @p9='?' (Size = 100), @p10='?' (Size = 500), @p11='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p12='?' (Size = 100), @p13='?' (DbType = DateTime2), @p14='?' (Size = 30), @p15='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [Currency] = @p2, [CustomerId] = @p3, [FailureReason] = @p4, [Method] = @p5, [OrderId] = @p6, [PaidAt] = @p7, [RazorpayOrderId] = @p8, [RazorpayPaymentId] = @p9, [RazorpaySignature] = @p10, [RefundAmount] = @p11, [RefundId] = @p12, [RefundedAt] = @p13, [Status] = @p14, [UpdatedAt] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+2026-04-03 22:22:14.380 +05:30 [INF] 🔥 Kafka published | Topic: swiftbite.payment.success | Partition: 0 | Offset: 19
+2026-04-03 22:22:14.421 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-03 22:22:14.447 +05:30 [INF] Executed action SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API) in 1066.6781ms
+2026-04-03 22:22:14.462 +05:30 [INF] Executed endpoint 'SwiftBite.PaymentService.API.Controllers.PaymentsController.Verify (SwiftBite.PaymentService.API)'
+2026-04-03 22:22:14.473 +05:30 [INF] HTTP POST /api/payments/verify responded 200 in 1844.7255 ms
+2026-04-03 22:22:14.490 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5005/api/payments/verify - 200 null application/json; charset=utf-8 2025.2771ms

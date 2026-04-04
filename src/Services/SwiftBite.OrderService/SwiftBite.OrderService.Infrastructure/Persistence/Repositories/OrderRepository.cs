@@ -16,7 +16,8 @@ public class OrderRepository : IOrderRepository
         => await _db.Orders
             .Include(o => o.Items)
             .Include(o => o.StatusHistory
-                .OrderBy(h => h.Timestamp))
+                //.OrderBy(h => h.Timestamp)
+            )
             .FirstOrDefaultAsync(o => o.Id == id, ct);
 
     public async Task<IEnumerable<Order>> GetByCustomerIdAsync(
@@ -52,17 +53,18 @@ public class OrderRepository : IOrderRepository
     public Task UpdateAsync(
         Order order, CancellationToken ct = default)
     {
-        _db.Orders.Update(order);
-        _db.Entry(order).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-        return Task.CompletedTask;
-        // ✅ FIX: Only call Update() if NOT already tracked
-        //var entry = _db.Entry(order);
+        //_db.Orders.Update(order);
+        foreach (var history in order.StatusHistory)
+        {
+            var entry = _db.Entry(history);
 
-        //if (entry.State == EntityState.Detached)
-        //{
-        //    _db.Orders.Update(order);  
-        //}
-        // return Task.CompletedTask;
+            // If EF Core is confused and thinks this is an existing record being updated:
+            if (entry.State == EntityState.Modified)
+            {
+                entry.State = EntityState.Added;
+            }
+        }
+        return Task.CompletedTask;
 
     }
 
@@ -70,10 +72,21 @@ public class OrderRepository : IOrderRepository
         CancellationToken ct = default)
         => await _db.SaveChangesAsync(ct);
 
-    public void SetOriginalRowVersion(Order order, byte[] rowVersion)
+    public void SetOriginalRowVersion(Order order, string rowVersionBase64)
     {
-        _db.Entry(order)
-            .Property(o => o.RowVersion)
-            .OriginalValue = rowVersion;
+        var rowVersionBytes = Convert.FromBase64String(rowVersionBase64);
+
+        var entry = _db.Entry(order);
+
+        // Log what EF currently has vs what client sent
+        var currentOriginal = entry.Property(o => o.RowVersion).OriginalValue;
+        Console.WriteLine($"[RowVersion] DB original: {Convert.ToBase64String((byte[])currentOriginal)}");
+        Console.WriteLine($"[RowVersion] Client sent: {rowVersionBase64}");
+
+        entry.State = EntityState.Unchanged;
+        entry.Property(o => o.RowVersion).OriginalValue = rowVersionBytes;
+        entry.State = EntityState.Modified;
+
+        Console.WriteLine($"[RowVersion] Applied successfully");
     }
 }

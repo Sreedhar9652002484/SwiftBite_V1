@@ -30,6 +30,6 @@ public interface IOrderRepository
         CancellationToken ct = default);
 
 
-    void SetOriginalRowVersion(Order order, byte[] rowVersion);
+    void SetOriginalRowVersion(Order order, string rowVersion);
    
 }

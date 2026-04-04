@@ -38,6 +38,8 @@ public static class DependencyInjection
 
         // 🔥 Kafka Event Publisher
         services.AddSingleton<IEventPublisher, KafkaEventPublisher>();
+        services.AddHostedService<KafkaConsumerService>();
+
 
         return services;
     }

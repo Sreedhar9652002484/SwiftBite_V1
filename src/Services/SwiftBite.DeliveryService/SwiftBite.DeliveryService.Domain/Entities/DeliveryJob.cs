@@ -6,7 +6,9 @@ public class DeliveryJob
 {
     public Guid Id { get; private set; }
     public Guid OrderId { get; private set; }
-    public Guid PartnerId { get; private set; }
+    public Guid? PartnerId { get; private set; }  // ← must be nullable
+    public string CustomerId { get; private set; } = default!; // ✅ ADD
+
     public string OrderNumber { get; private set; } = default!;
     public string CustomerName { get; private set; } = default!;
     public string CustomerPhone { get; private set; } = default!;
@@ -22,13 +24,14 @@ public class DeliveryJob
     public DateTime? DeliveredAt { get; private set; }
 
     // Navigation
-    public DeliveryPartner Partner { get; private set; } = default!;
+    public DeliveryPartner? Partner { get; private set; } // ← nullable navigation
+
 
     private DeliveryJob() { }
 
     public static DeliveryJob Create(
         Guid orderId,
-        Guid partnerId,
+        string customerId,
         string orderNumber,
         string customerName,
         string customerPhone,
@@ -36,13 +39,15 @@ public class DeliveryJob
         string pickupAddress,
         string deliveryAddress,
         string deliveryCity,
-        decimal deliveryFee)
+        decimal deliveryFee,
+        Guid? partnerId = null)  // ← optional, default null
     {
         return new DeliveryJob
         {
             Id = Guid.NewGuid(),
             OrderId = orderId,
-            PartnerId = partnerId,
+            CustomerId = customerId,
+            PartnerId = partnerId,        // ✅ no .Value!
             OrderNumber = orderNumber,
             CustomerName = customerName,
             CustomerPhone = customerPhone,
@@ -56,11 +61,18 @@ public class DeliveryJob
         };
     }
 
-    public void Accept()
+    //public void Accept()
+    //{
+    //    Status = JobStatus.Accepted;
+    //    AcceptedAt = DateTime.UtcNow;
+    //}
+    public void AssignPartner(Guid partnerId)
     {
+        PartnerId = partnerId;
         Status = JobStatus.Accepted;
         AcceptedAt = DateTime.UtcNow;
     }
+
 
     public void MarkPickedUp()
     {

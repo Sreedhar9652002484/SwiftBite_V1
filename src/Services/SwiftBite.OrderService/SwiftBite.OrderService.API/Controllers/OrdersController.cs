@@ -194,5 +194,5 @@ public record PlaceOrderRequest(
     string? SpecialInstructions,
     List<OrderItemRequest> Items);
 
-public record UpdateStatusRequest(OrderStatus NewStatus, byte[] RowVersion);
+public record UpdateStatusRequest(OrderStatus NewStatus, string RowVersion);
 public record CancelOrderRequest(string Reason);

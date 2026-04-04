@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\SwiftBite.Shared.Kernel\SwiftBite.Shared.Kernel.csproj" />
     <ProjectReference Include="..\SwiftBite.OrderService.Domain\SwiftBite.OrderService.Domain.csproj" />
 
   </ItemGroup>

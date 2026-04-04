@@ -1,5 +1,6 @@
 ﻿using SwiftBite.OrderService.Domain.Entities;
 using SwiftBite.OrderService.Domain.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace SwiftBite.OrderService.Domain.Entities;
 
@@ -44,6 +45,7 @@ public class Order
     public DateTime UpdatedAt { get; private set; }
     public DateTime? EstimatedDeliveryAt { get; private set; }
     public DateTime? DeliveredAt { get; private set; }
+    [Timestamp]
     public byte[]? RowVersion { get; set; }
 
     // ── Navigation ────────────────────────────────────────
