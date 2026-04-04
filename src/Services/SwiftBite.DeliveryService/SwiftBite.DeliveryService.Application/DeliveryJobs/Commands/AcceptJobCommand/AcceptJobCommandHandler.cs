@@ -31,13 +31,20 @@ public class AcceptJobCommandHandler
         var job = await _jobRepo.GetByIdAsync(cmd.JobId, ct)
             ?? throw new KeyNotFoundException("Job not found.");
 
-        if (job.PartnerId != partner.Id)
-            throw new UnauthorizedAccessException("This job is not assigned to you.");
+        //if (job.PartnerId != partner.Id)
+        //    throw new UnauthorizedAccessException("This job is not assigned to you.");
 
         if (job.Status != JobStatus.Assigned)
             throw new InvalidOperationException("Job cannot be accepted in its current state.");
 
-        job.Accept();
+        //job.Accept();
+        // ✅ Check partner is available
+        if (!partner.IsAvailable)
+            throw new InvalidOperationException(
+                "You must be online to accept jobs.");
+
+        // ✅ Assign partner and accept
+        job.AssignPartner(partner.Id);  // ← sets PartnerId + Status = Accepted
         await _jobRepo.SaveChangesAsync(ct);
 
         return job.ToDto();

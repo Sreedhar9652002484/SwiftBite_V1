@@ -8,5 +8,5 @@ public record UpdateOrderStatusCommand(
     Guid OrderId,
     string RequesterId,  // Restaurant or Delivery partner
     OrderStatus NewStatus,
-    byte[] RowVersion
+    string RowVersion
 ) : IRequest<OrderDto>;

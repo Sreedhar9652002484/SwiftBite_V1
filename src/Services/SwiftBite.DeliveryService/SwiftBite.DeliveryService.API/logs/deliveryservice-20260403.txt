@@ -1,0 +1,1500 @@
+2026-04-03 12:44:38.297 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-04-03 12:44:38.636 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-04-03 12:44:38.699 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-04-03 12:44:38.712 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-04-03 12:44:39.419 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:44:39.420 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:44:39.431 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:44:39.431 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:44:39.640 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-04-03 12:44:39.640 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-04-03 12:44:41.679 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 5662.4264 ms
+2026-04-03 12:44:41.679 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 5662.4446 ms
+2026-04-03 12:44:41.845 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:44:41.852 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:44:41.939 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 172.7305 ms
+2026-04-03 12:44:45.076 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:44:45.083 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:44:45.106 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 95.1987 ms
+2026-04-03 12:44:48.453 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:44:48.457 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:44:48.488 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 99.7435 ms
+2026-04-03 12:46:18.344 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:46:18.344 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:46:18.478 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:46:18.478 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:46:19.243 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 1448.5666 ms
+2026-04-03 12:46:19.301 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 1507.8776 ms
+2026-04-03 12:46:19.483 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:46:19.488 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:46:19.490 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:46:19.505 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:46:19.513 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 118.7125 ms
+2026-04-03 12:46:19.529 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 100.0953 ms
+2026-04-03 12:46:24.157 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:46:24.162 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:46:24.624 +05:30 [INF] HTTP PUT /api/delivery/availability responded 200 in 510.7253 ms
+2026-04-03 12:46:25.576 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:46:25.581 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:46:25.601 +05:30 [INF] HTTP PUT /api/delivery/availability responded 200 in 69.8740 ms
+2026-04-03 12:46:29.730 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:46:29.734 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:46:29.747 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 59.2306 ms
+2026-04-03 12:46:29.940 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 12:46:29.945 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "6f84a779-20f6-467f-b737-68368202610a",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775200474,
+  "nbf": 1775200474,
+  "exp": 1775204074,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 12:46:29.958 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 64.7541 ms
+2026-04-03 23:27:18.841 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-04-03 23:27:19.193 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-04-03 23:27:19.254 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-04-03 23:27:19.263 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-04-03 23:27:19.481 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:27:19.506 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:27:19.519 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:27:19.541 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:27:19.964 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-04-03 23:27:19.964 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-04-03 23:27:21.332 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 5877.5625 ms
+2026-04-03 23:27:21.332 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 5877.6119 ms
+2026-04-03 23:27:21.483 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:27:21.488 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:27:21.604 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 171.3238 ms
+2026-04-03 23:27:27.682 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:27:27.687 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:27:27.717 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 95.9105 ms
+2026-04-03 23:27:31.282 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:27:31.286 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:27:31.317 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 86.4442 ms
+2026-04-03 23:28:26.577 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:28:26.591 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:28:26.604 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:28:26.604 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:28:26.747 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 300.4663 ms
+2026-04-03 23:28:26.751 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 304.7613 ms
+2026-04-03 23:28:28.544 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:28:28.551 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:28:28.578 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 85.0963 ms
+2026-04-03 23:28:29.949 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:28:29.960 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:28:30.166 +05:30 [INF] HTTP GET /api/delivery/jobs/active responded 200 in 272.7386 ms
+2026-04-03 23:28:32.639 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:28:32.643 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:28:32.706 +05:30 [INF] HTTP GET /api/delivery/earnings responded 200 in 120.4084 ms
+2026-04-03 23:28:33.735 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:28:33.740 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:28:33.752 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 58.7130 ms
+2026-04-03 23:28:35.589 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:28:35.596 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:28:35.675 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 229.5825 ms
+2026-04-03 23:28:35.711 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:28:35.715 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:28:35.748 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 248.9921 ms
+2026-04-03 23:29:26.824 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:29:26.829 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:29:26.850 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 154.1079 ms
+2026-04-03 23:29:27.664 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:29:27.667 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:29:27.681 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 64.5666 ms
+2026-04-03 23:29:27.714 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:29:27.716 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:29:27.730 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 108.0536 ms
+2026-04-03 23:29:48.557 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:29:48.560 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:29:48.933 +05:30 [INF] HTTP PUT /api/delivery/availability responded 200 in 416.4024 ms
+2026-04-03 23:29:51.127 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:29:51.132 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:29:51.167 +05:30 [INF] HTTP PUT /api/delivery/availability responded 200 in 83.7294 ms
+2026-04-03 23:29:52.462 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:29:52.465 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:29:52.480 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 71.9526 ms
+2026-04-03 23:29:53.523 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:29:53.526 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:29:53.543 +05:30 [INF] HTTP GET /api/delivery/jobs/active responded 200 in 59.0247 ms
+2026-04-03 23:31:38.618 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:31:38.618 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:31:38.654 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:31:38.654 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:31:38.964 +05:30 [INF] HTTP GET /api/delivery/profile responded 200 in 597.9920 ms
+2026-04-03 23:31:38.971 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 604.8847 ms
+2026-04-03 23:31:40.567 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:31:40.571 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:31:40.613 +05:30 [INF] HTTP GET /api/delivery/earnings responded 200 in 94.0891 ms
+2026-04-03 23:31:41.515 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:31:41.519 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:31:41.558 +05:30 [INF] HTTP GET /api/delivery/jobs/active responded 200 in 91.9287 ms
+2026-04-03 23:31:42.469 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-deliveryservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-03 23:31:42.475 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "03e20a40-40e8-4ff7-beac-04d28d8679fd",
+  "scope": "openid",
+  "jti": "a56f7800-d7f0-43dc-ae3b-6bcef9d38295",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775239034,
+  "nbf": 1775239034,
+  "exp": 1775242634,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "deliverypartner@gmail.com",
+  "given_name": "Delivery",
+  "family_name": "Partner",
+  "firstName": "Delivery",
+  "lastName": "Partner",
+  "role": "DeliveryPartner"
+}.
+2026-04-03 23:31:42.494 +05:30 [INF] HTTP GET /api/delivery/jobs responded 200 in 66.5029 ms

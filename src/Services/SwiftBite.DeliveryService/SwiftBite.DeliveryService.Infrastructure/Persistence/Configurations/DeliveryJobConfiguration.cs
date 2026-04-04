@@ -10,7 +10,6 @@ public class DeliveryJobConfiguration
     public void Configure(EntityTypeBuilder<DeliveryJob> builder)
     {
         builder.HasKey(j => j.Id);
-
         builder.Property(j => j.OrderNumber).IsRequired().HasMaxLength(50);
         builder.Property(j => j.CustomerName).IsRequired().HasMaxLength(200);
         builder.Property(j => j.CustomerPhone).IsRequired().HasMaxLength(20);
@@ -20,6 +19,10 @@ public class DeliveryJobConfiguration
         builder.Property(j => j.DeliveryCity).IsRequired().HasMaxLength(100);
         builder.Property(j => j.DeliveryFee).HasPrecision(18, 2);
         builder.Property(j => j.Status).HasConversion<int>();
+
+        // ✅ FIX: PartnerId is nullable — no partner until accepted
+        builder.Property(j => j.PartnerId)
+            .IsRequired(false);
 
         builder.HasIndex(j => j.OrderId);
         builder.HasIndex(j => j.PartnerId);

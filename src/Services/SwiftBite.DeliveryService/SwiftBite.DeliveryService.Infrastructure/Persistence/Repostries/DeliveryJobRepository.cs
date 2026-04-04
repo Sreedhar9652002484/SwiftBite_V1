@@ -16,6 +16,12 @@ public class DeliveryJobRepository : IDeliveryJobRepository
               .Include(j => j.Partner)
               .FirstOrDefaultAsync(j => j.Id == id, ct);
 
+    // DeliveryJobRepository implementation
+    public async Task<DeliveryJob?> GetByOrderIdAsync(
+        Guid orderId, CancellationToken ct = default)
+        => await _db.DeliveryJobs
+            .FirstOrDefaultAsync(j => j.OrderId == orderId, ct);
+
     public Task<List<DeliveryJob>> GetByPartnerIdAsync(Guid partnerId, CancellationToken ct = default)
         => _db.DeliveryJobs
               .Where(j => j.PartnerId == partnerId)
@@ -36,4 +42,13 @@ public class DeliveryJobRepository : IDeliveryJobRepository
 
     public Task SaveChangesAsync(CancellationToken ct = default)
         => _db.SaveChangesAsync(ct);
+    // DeliveryJobRepository
+    public async Task<List<DeliveryJob>> GetAvailableJobsAsync(
+        CancellationToken ct = default)
+        => await _db.DeliveryJobs
+            .Where(j => j.PartnerId == null        // no partner assigned
+                     && j.Status == JobStatus.Assigned) // still waiting
+            .OrderByDescending(j => j.AssignedAt)
+            .ToListAsync(ct);
+
 }

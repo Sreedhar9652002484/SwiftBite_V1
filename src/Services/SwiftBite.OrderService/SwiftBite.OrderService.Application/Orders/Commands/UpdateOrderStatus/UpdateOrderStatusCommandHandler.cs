@@ -6,6 +6,7 @@ using SwiftBite.OrderService.Application.Orders.Commands.PlaceOrder;
 using SwiftBite.OrderService.Application.Orders.DTOs;
 using SwiftBite.OrderService.Domain.Enums;
 using SwiftBite.OrderService.Domain.Interfaces;
+using SwiftBite.Shared.Kernel.Events;
 
 namespace SwiftBite.OrderService.Application.Orders.Commands.UpdateOrderStatus;
 
@@ -33,47 +34,16 @@ public class UpdateOrderStatusCommandHandler
         var order = await _repo.GetByIdAsync(cmd.OrderId, ct)
             ?? throw new KeyNotFoundException(
                 $"Order {cmd.OrderId} not found.");
-
-        // ✅🔥 CRITICAL LINE (YOU WERE MISSING THIS)
-        _repo.SetOriginalRowVersion(order, cmd.RowVersion);
+      
         // ✅ Transition to new status
         switch (cmd.NewStatus)
         {
-            case OrderStatus.Confirmed:
-                order.Confirm();
-                // 🔥 Kafka event
-                await _publisher.PublishAsync(
-                    "swiftbite.order.confirmed",
-                    new OrderConfirmedEvent
-                    {
-                        OrderId = order.Id,
-                        RestaurantId = order.RestaurantId,
-                        CustomerId = order.CustomerId,
-                        EstimatedPrepTimeMinutes = 30,
-                        ConfirmedAt = DateTime.UtcNow
-                    }, ct);
-                break;
-
-            case OrderStatus.Preparing:
-                order.StartPreparing();
-                break;
-
-            case OrderStatus.Ready:
-                order.MarkReady();
-                break;
-
-            case OrderStatus.PickedUp:
-                order.MarkPickedUp();
-                break;
-
-            case OrderStatus.OutForDelivery:
-                order.MarkOutForDelivery();
-                break;
-
-            case OrderStatus.Delivered:
-                order.MarkDelivered();
-                break;
-
+            case OrderStatus.Confirmed: order.Confirm(); break;
+            case OrderStatus.Preparing: order.StartPreparing(); break;
+            case OrderStatus.Ready: order.MarkReady(); break;
+            case OrderStatus.PickedUp: order.MarkPickedUp(); break;
+            case OrderStatus.OutForDelivery: order.MarkOutForDelivery(); break;
+            case OrderStatus.Delivered: order.MarkDelivered(); break;
             default:
                 throw new InvalidOperationException(
                     $"Invalid status transition: {cmd.NewStatus}");
@@ -87,17 +57,59 @@ public class UpdateOrderStatusCommandHandler
         }
         catch (DbUpdateConcurrencyException ex)
         {
+            var dbEntry = ex.Entries.FirstOrDefault();
+            var failingEntityName = dbEntry?.Entity.GetType().Name ?? "Unknown";
+
+            var dbValues = dbEntry != null
+                ? await dbEntry.GetDatabaseValuesAsync(ct)
+                : null;
+
+            if (dbValues == null)
+                throw new InvalidOperationException(
+                    $"{failingEntityName} was not found in the database. EF Core tracking failed.");
+
             throw new InvalidOperationException(
-                $"Failed to update order {cmd.OrderId}. The order may have been modified or deleted.",
-                ex);
+                $"Order {cmd.OrderId} was modified by another process. Please refresh and retry.");
         }
-        catch (DbUpdateException ex)
+        // 🔥 Kafka event
+        if (cmd.NewStatus == OrderStatus.Confirmed)
         {
-            throw new InvalidOperationException(
-                $"Database error while updating order {cmd.OrderId}.",
-                ex);
+            await _publisher.PublishAsync(
+                "swiftbite.order.confirmed",
+                new OrderConfirmedEvent
+                {
+                    OrderId = order.Id,
+                    RestaurantId = order.RestaurantId,
+                    CustomerId = order.CustomerId,
+                    EstimatedPrepTimeMinutes = 30,
+                    ConfirmedAt = DateTime.UtcNow
+                }, ct);
         }
 
+        // ✅ After SaveChangesAsync succeeds, publish event:
+        if (cmd.NewStatus == OrderStatus.Ready)
+        {
+            await _publisher.PublishAsync(
+                "swiftbite.order.ready",
+                new OrderReadyEvent
+                {
+                    OrderId = order.Id,
+                    CustomerId = order.CustomerId,  // ✅ ADD
+                    OrderNumber = order.Id.ToString()[..8].ToUpper(),
+
+                    RestaurantId = order.RestaurantId,
+                    RestaurantName = order.RestaurantName,
+                    CustomerName = order.CustomerName,
+                    CustomerPhone = order.CustomerPhone,
+                    DeliveryAddress = order.DeliveryAddress,
+                    DeliveryCity = order.DeliveryCity,
+                    DeliveryPinCode = order.DeliveryPinCode,
+                    DeliveryLatitude = order.DeliveryLatitude,
+                    DeliveryLongitude = order.DeliveryLongitude,
+                    DeliveryFee = order.DeliveryFee,
+                    ReadyAt = DateTime.UtcNow
+                }, ct);
+        }
 
         // ✅ Invalidate cache
         await _cache.RemoveAsync($"order:{cmd.OrderId}", ct);

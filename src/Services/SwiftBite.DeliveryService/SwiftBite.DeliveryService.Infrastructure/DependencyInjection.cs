@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SwiftBite.DeliveryService.Domain.Domain.Interfaces;
 using SwiftBite.DeliveryService.Domain.Interfaces;
+using SwiftBite.DeliveryService.Infrastructure.Messaging;
 using SwiftBite.DeliveryService.Infrastructure.Persistence;
 using SwiftBite.DeliveryService.Infrastructure.Persistence.Repositories;
 
@@ -16,7 +17,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<DeliveryDbContext>(options =>
             options.UseSqlServer(
-                configuration.GetConnectionString("RestaurantServiceDb")));
+                configuration.GetConnectionString("DeliveryServiceDb")));
 
         services.AddStackExchangeRedisCache(options =>
         {
@@ -27,6 +28,10 @@ public static class DependencyInjection
 
         services.AddScoped<IDeliveryPartnerRepository, DeliveryPartnerRepository>();
         services.AddScoped<IDeliveryJobRepository, DeliveryJobRepository>();
+
+        // 🎧 Kafka Consumer — runs as background service
+        services.AddScoped<IEventPublisher, KafkaEventPublisher>();
+        services.AddHostedService<KafkaConsumerService>();
 
         return services;
     }
