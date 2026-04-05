@@ -280,7 +280,7 @@ A `docker-compose.yml` is included to orchestrate frontend, backend services, an
 
 * ✅ Order Management Service
 
-* ⏳ Delivery Partner Service
+* ✅ Delivery Partner Service
 
 * ✅ Payment Service
 
