@@ -1,5 +1,6 @@
 ﻿using Confluent.Kafka;
 using MediatR;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -7,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using SwiftBite.NotificationService.Application.Events;
 using SwiftBite.NotificationService.Application.Notifications.Commands.SendNotification;
 using SwiftBite.NotificationService.Domain.Enums;
+using SwiftBite.NotificationService.Infrastructure.SignalR;
+using SwiftBite.Shared.Kernel.Events;
 using System.Text.Json;
 
 namespace SwiftBite.NotificationService.Infrastructure.Messaging;
@@ -25,7 +28,9 @@ public class KafkaConsumerService : BackgroundService
         "swiftbite.order.confirmed",
         "swiftbite.order.cancelled",
         "swiftbite.payment.success",
-        "swiftbite.payment.failed"
+        "swiftbite.payment.failed",
+        "swiftbite.location.updated"
+
     ];
 
     public KafkaConsumerService(
@@ -133,6 +138,9 @@ public class KafkaConsumerService : BackgroundService
                 await HandlePaymentFailed(
                     mediator, message, ct);
                 break;
+            case "swiftbite.location.updated":
+                await HandleLocationUpdated(message, ct);
+                break;
         }
     }
 
@@ -234,5 +242,43 @@ public class KafkaConsumerService : BackgroundService
                 NotificationType.PaymentFailed,
                 NotificationChannel.SignalR,
                 evt.OrderId.ToString()), ct);
+    }
+
+    private async Task HandleLocationUpdated(
+    string message, CancellationToken ct)
+    {
+        var evt = JsonSerializer
+            .Deserialize<LocationUpdatedEvent>(message)!;
+
+        using var scope = _services.CreateScope();
+        var hubContext = scope.ServiceProvider
+            .GetRequiredService<IHubContext<NotificationHub>>();
+
+        // ✅ Send to customer's SignalR group
+        await hubContext.Clients
+            .Group($"user_{evt.CustomerId}")
+            .SendAsync("LocationUpdated", new
+            {
+                orderId = evt.OrderId,
+                latitude = evt.Latitude,
+                longitude = evt.Longitude,
+                partnerName = evt.PartnerName,
+                status = evt.Status,
+                updatedAt = evt.UpdatedAt
+            }, ct);
+
+        // ✅ Also send to order tracking group
+        // so multiple devices can track same order
+        await hubContext.Clients
+            .Group($"order_{evt.OrderId}")
+            .SendAsync("LocationUpdated", new
+            {
+                orderId = evt.OrderId,
+                latitude = evt.Latitude,
+                longitude = evt.Longitude,
+                partnerName = evt.PartnerName,
+                status = evt.Status,
+                updatedAt = evt.UpdatedAt
+            }, ct);
     }
 }

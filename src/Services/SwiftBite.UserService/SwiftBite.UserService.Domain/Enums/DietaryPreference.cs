@@ -11,8 +11,9 @@ namespace SwiftBite.UserService.Domain.Enums
         None = 0,
         Vegetarian = 1,
         Vegan = 2,
-        Jain = 3,
-        Keto = 4,
-        GlutenFree = 5
+        NonVegetarian = 3,   // ✅ ADD THIS
+        Jain = 4,
+        Keto = 5,
+        GlutenFree = 6
     }
 }

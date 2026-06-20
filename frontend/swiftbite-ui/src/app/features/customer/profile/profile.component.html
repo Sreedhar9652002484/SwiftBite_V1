@@ -344,23 +344,21 @@
                      uppercase mb-2">
             Dietary Preference
           </p>
-          <div class="grid grid-cols-2 gap-2">
-            @for (d of dietaryOptions; track d) {
-              <button
-                (click)="prefForm.dietaryPreference = d"
-                class="py-2.5 rounded-xl text-sm
-                       font-semibold border-2 transition-all"
-                [class]="prefForm.dietaryPreference === d
-                  ? 'border-orange-500 bg-orange-50
-                     text-orange-600'
-                  : 'border-gray-200 text-gray-500'">
-                {{ d === 'Vegetarian'    ? '🟢 Vegetarian'    :
-                   d === 'Vegan'         ? '🌱 Vegan'         :
-                   d === 'NonVegetarian' ? '🔴 Non-Veg'       :
-                                          '🍽️ No Preference' }}
-              </button>
-            }
-          </div>
+<div class="grid grid-cols-2 gap-2">
+  @for (d of dietaryOptions; track d) {
+    <button
+      (click)="prefForm.dietaryPreference = d.value"
+      class="py-2.5 rounded-xl text-sm
+             font-semibold border-2 transition-all"
+      [class]="prefForm.dietaryPreference === d.value
+        ? 'border-orange-500 bg-orange-50 text-orange-600'
+        : 'border-gray-200 text-gray-500'">
+
+      {{ d.label }}
+
+    </button>
+  }
+</div>
         </div>
 
         <!-- Cuisines -->

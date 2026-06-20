@@ -1,8 +1,10 @@
 ﻿using AspNetCoreRateLimit;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using OpenIddict.Validation.AspNetCore;
 using Serilog;
 using SwiftBite.ApiGateway.Middleware;
 using SwiftBite.ApiGateway.Services;
-using OpenIddict.Validation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -111,6 +113,20 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddHealthChecksUI(opt =>
+{
+    opt.SetEvaluationTimeInSeconds(15);
+    opt.AddHealthCheckEndpoint("Order Service", "http://orderservice/health");
+    opt.AddHealthCheckEndpoint("Payment Service", "http://paymentservice/health");
+    opt.AddHealthCheckEndpoint("Restaurant Service", "http://restaurantservice/health");
+    opt.AddHealthCheckEndpoint("Delivery Service", "http://deliveryservice/health");
+    opt.AddHealthCheckEndpoint("Auth Server", "http://authserver/health");
+    opt.AddHealthCheckEndpoint("User Service", "http://userservice/health");
+    opt.AddHealthCheckEndpoint("Notification Service", "http://notificationservice/health");
+})
+.AddInMemoryStorage();
+
+
 var app = builder.Build();
 
 // ✅ MIDDLEWARE PIPELINE - CRITICAL ORDER!
@@ -123,7 +139,7 @@ app.UseAuthorization();
 app.UseMiddleware<AuthenticationMiddleware>();
 app.UseMiddleware<LoggingMiddleware>();
 app.UseMiddleware<UserIdForwardingMiddleware>();
-
+app.MapHealthChecksUI(config => config.UIPath = "/health-ui");
 app.MapReverseProxy();
 
 app.Run();

@@ -6,6 +6,7 @@ using SwiftBite.DeliveryService.Domain.Interfaces;
 using SwiftBite.DeliveryService.Infrastructure.Messaging;
 using SwiftBite.DeliveryService.Infrastructure.Persistence;
 using SwiftBite.DeliveryService.Infrastructure.Persistence.Repositories;
+using SwiftBite.DeliveryService.Infrastructure.Persistence.Repostries;
 
 namespace SwiftBite.DeliveryService.Infrastructure;
 
@@ -33,6 +34,7 @@ public static class DependencyInjection
         services.AddScoped<IEventPublisher, KafkaEventPublisher>();
         services.AddHostedService<KafkaConsumerService>();
 
+        services.AddScoped<ILocationBroadcaster, KafkaLocationBroadcaster>();
         return services;
     }
 }

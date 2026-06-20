@@ -183,4 +183,11 @@ export class DeliveryService {
         })
       );
   }
+
+  updateLocation(lat: number, lng: number): Observable<void> {
+  return this.http.put<any>(
+    `${this.api}/api/delivery/location`,
+    { latitude: lat, longitude: lng }
+  ).pipe(map(() => void 0));
+}
 }

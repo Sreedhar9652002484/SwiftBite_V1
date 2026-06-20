@@ -122,6 +122,19 @@ builder.Services.AddAuthentication(
         .AuthenticationScheme);
 builder.Services.AddAuthorization();
 
+builder.Services.AddHealthChecks()
+    .AddSqlServer(
+        builder.Configuration.GetConnectionString("NotificationServiceDb"),
+        name: "SwiftBite_NotificationDb")
+    .AddKafka(
+        config => {
+            config.BootstrapServers =
+                builder.Configuration["Kafka:BootstrapServers"];
+            // e.g. "localhost:9092" or "kafka:29092" inside docker
+        },
+        name: "kafka",
+        tags: new[] { "messaging" });
+
 var app = builder.Build();
 
 app.UseGlobalExceptionHandler();

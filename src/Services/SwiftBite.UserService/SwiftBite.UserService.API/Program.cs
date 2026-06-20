@@ -97,6 +97,20 @@ builder.Services.AddAuthorization(); ;
 
 builder.Services.AddAuthorization();
 
+
+builder.Services.AddHealthChecks()
+    .AddSqlServer(
+        builder.Configuration.GetConnectionString("UserServiceDb"),
+        name: "SwiftBite_UserDb")
+    .AddKafka(
+        config => {
+            config.BootstrapServers =
+                builder.Configuration["Kafka:BootstrapServers"];
+            // e.g. "localhost:9092" or "kafka:29092" inside docker
+        },
+        name: "kafka",
+        tags: new[] { "messaging" });
+
 var app = builder.Build();
 // ✅ ADD THIS - MUST BE FIRST!
 app.UseGlobalExceptionHandler();

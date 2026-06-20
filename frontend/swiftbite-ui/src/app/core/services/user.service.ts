@@ -32,8 +32,18 @@ export interface Address {
   isDefault: boolean;
 }
 
+export enum dietaryPreference{
+  None = 0,
+  Vegetarian = 1,
+  Vegan = 2,
+  NonVegetarian = 3,   // ✅ ADD THIS
+  Jain = 4,
+  Keto = 5,
+  GlutenFree = 6
+}
+
 export interface UserPreferences {
-  dietaryPreference: string;
+  dietaryPreference: dietaryPreference;
   emailNotifications: boolean;
   pushNotifications: boolean;
   smsNotifications: boolean;

@@ -64,4 +64,23 @@ public class NotificationHub : Hub
       ?? Context.User?.FindFirst(
           System.Security.Claims.ClaimTypes.NameIdentifier)
           ?.Value;
+
+    // Add this method to NotificationHub
+    public async Task JoinOrderTracking(string orderId)
+    {
+        await Groups.AddToGroupAsync(
+            Context.ConnectionId,
+            $"order_{orderId}");
+
+        _logger.LogInformation(
+            "🗺️ Joined order tracking | OrderId: {OrderId}",
+            orderId);
+    }
+
+    public async Task LeaveOrderTracking(string orderId)
+    {
+        await Groups.RemoveFromGroupAsync(
+            Context.ConnectionId,
+            $"order_{orderId}");
+    }
 }

@@ -1,0 +1,200 @@
+services:
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: swiftbite-sql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=SwiftBite@2024!
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    networks:
+      - swiftbite-network
+    healthcheck:
+      test: ["CMD", "/opt/mssql-tools18/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", "SwiftBite@2024!", "-Q", "SELECT 1", "-No"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 45s
+    restart: unless-stopped
+
+  authserver:
+    build:
+      context: ../..
+      dockerfile: src/AuthServer/SwiftBite.AuthServer/Dockerfile
+    container_name: swiftbite-auth
+    ports:
+      - "5001:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_AuthDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - AuthServer__Issuer=http://localhost:5001
+      - AuthServer__AngularBaseUrl=http://localhost:4200
+      - Google__ClientId=375224018147-02ec31i0psrrhj4lae1a5nth32h6ft7l.apps.googleusercontent.com
+      - Google__ClientSecret=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
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  orderservice:
+    build:
+      context: ../..
+      dockerfile: src/Services/SwiftBite.OrderService/Dockerfile
+    container_name: swiftbite-order
+    ports:
+      - "5002:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      # Fixes key mismatch: appsettings uses "OrderServiceDb", so we set BOTH to be safe
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_OrderDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - ConnectionStrings__OrderServiceDb=Server=swiftbite-sql;Database=SwiftBite_OrderDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Kafka__BootstrapServers=swiftbite-kafka:29092
+      - Redis__ConnectionString=swiftbite-redis:6379
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  paymentservice:
+    build:
+      context: ../..
+      dockerfile: src/Services/SwiftBite.PaymentService/Dockerfile
+    container_name: swiftbite-payment
+    ports:
+      - "5003:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_PaymentDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - ConnectionStrings__PaymentServiceDb=Server=swiftbite-sql;Database=SwiftBite_PaymentDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Kafka__BootstrapServers=swiftbite-kafka:29092
+      - Razorpay__KeyId=rzp_test_SPjl74L3jWlWqz
+      - Razorpay__KeySecret=qqTcp7RwOqUvBnRe3Q0oiDe3
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  restaurantservice:
+    build:
+      context: ../..
+      dockerfile: src/Services/SwiftBite.RestaurantService/Dockerfile
+    container_name: swiftbite-restaurant
+    ports:
+      - "5004:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_RestaurantDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - ConnectionStrings__RestaurantServiceDb=Server=swiftbite-sql;Database=SwiftBite_RestaurantDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Kafka__BootstrapServers=swiftbite-kafka:29092
+      - Redis__ConnectionString=swiftbite-redis:6379
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  deliveryservice:
+    build:
+      context: ../..
+      dockerfile: src/Services/SwiftBite.DeliveryService/Dockerfile
+    container_name: swiftbite-delivery
+    ports:
+      - "5005:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_DeliveryDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - ConnectionStrings__DeliveryServiceDb=Server=swiftbite-sql;Database=SwiftBite_DeliveryDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Kafka__BootstrapServers=swiftbite-kafka:29092
+      - Redis__ConnectionString=swiftbite-redis:6379
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  userservice:
+    build:
+      context: ../..
+      dockerfile: src/Services/SwiftBite.UserService/Dockerfile
+    container_name: swiftbite-user
+    ports:
+      - "5006:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_UserDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - ConnectionStrings__UserServiceDb=Server=swiftbite-sql;Database=SwiftBite_UserDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Redis__ConnectionString=swiftbite-redis:6379
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  notificationservice:
+    build:
+      context: ../..
+      dockerfile: src/Services/SwiftBite.NotificationService/Dockerfile
+    container_name: swiftbite-notification
+    ports:
+      - "5007:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_NotificationDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - ConnectionStrings__NotificationServiceDb=Server=swiftbite-sql;Database=SwiftBite_NotificationDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Kafka__BootstrapServers=swiftbite-kafka:29092
+      - Redis__ConnectionString=swiftbite-redis:6379
+    depends_on:
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  apigateway:
+    build:
+      context: ../..
+      dockerfile: src/ApiGateway/SwiftBite.ApiGateway/Dockerfile
+    container_name: swiftbite-gateway
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Redis__ConnectionString=swiftbite-redis:6379
+    depends_on:
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+networks:
+  swiftbite-network:
+    external: true

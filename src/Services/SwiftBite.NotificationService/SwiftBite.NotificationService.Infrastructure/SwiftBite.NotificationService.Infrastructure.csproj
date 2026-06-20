@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\SwiftBite.Shared.Kernel\SwiftBite.Shared.Kernel.csproj" />
     <ProjectReference Include="..\SwiftBite.NotificationService.Application\SwiftBite.NotificationService.Application.csproj" />
     <ProjectReference Include="..\SwiftBite.NotificationService.Domain\SwiftBite.NotificationService.Domain.csproj" />
   </ItemGroup>

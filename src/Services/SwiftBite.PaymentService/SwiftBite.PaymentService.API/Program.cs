@@ -98,6 +98,20 @@ builder.Services.AddAuthentication(
     OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
 builder.Services.AddAuthorization();
 
+
+builder.Services.AddHealthChecks()
+    .AddSqlServer(
+        builder.Configuration.GetConnectionString("PaymentServiceDb"),
+        name: "SwiftBite_PaymentDb")
+    .AddKafka(
+        config => {
+            config.BootstrapServers =
+                builder.Configuration["Kafka:BootstrapServers"];
+            // e.g. "localhost:9092" or "kafka:29092" inside docker
+        },
+        name: "kafka",
+        tags: new[] { "messaging" });
+
 var app = builder.Build();
 app.UseGlobalExceptionHandler();
 

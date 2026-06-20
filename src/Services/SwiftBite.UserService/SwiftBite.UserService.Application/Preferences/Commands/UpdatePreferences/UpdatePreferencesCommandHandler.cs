@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿        using MediatR;
 using SwiftBite.UserService.Application.Preferences.DTOs;
 using SwiftBite.UserService.Domain.Entities;
 using SwiftBite.UserService.Domain.Interfaces;

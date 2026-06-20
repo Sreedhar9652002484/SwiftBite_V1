@@ -9,6 +9,7 @@ using SwiftBite.DeliveryService.Application.DeliveryPartners.Commands.RegisterPa
 using SwiftBite.DeliveryService.Application.DeliveryPartners.Commands.UpdateAvailability;
 using SwiftBite.DeliveryService.Application.DeliveryPartners.Queries.GetEarnings;
 using SwiftBite.DeliveryService.Application.DeliveryPartners.Queries.GetPartnerProfile;
+using SwiftBite.DeliveryService.Application.Location.Commands.UpdateLocation;
 using SwiftBite.DeliveryService.Domain.Enums;
 using SwiftBite.Shared.Exceptions.Exceptions;  // ✅ ADD THIS
 using SwiftBite.Shared.Exceptions.Models;      // ✅ ADD THIS
@@ -188,10 +189,33 @@ public class DeliveryController : ControllerBase
             HttpContext.TraceIdentifier));
     }
 
+    // In DeliveryController
+    [HttpPut("location")]
+    public async Task<IActionResult> UpdateLocation(
+        [FromBody] UpdateLocationRequest request,
+        CancellationToken ct)
+    {
+        var userId = GetAuthUserId();
+        if (userId is null)
+            throw new UnauthorizedException("User ID not found.");
+
+        await _mediator.Send(
+            new UpdateLocationCommand(
+                userId,
+                request.Latitude,
+                request.Longitude), ct);
+
+        return Ok(ApiResponse<object>.SuccessResponse(
+            null,
+            "Location updated.",
+            HttpContext.TraceIdentifier));
+    }
     private string? GetAuthUserId()
         => Request.Headers["X-User-Id"].FirstOrDefault()
         ?? User.FindFirst("sub")?.Value;
 }
+
+
 
 // ── Request Models ────────────────────────────────────────
 public record RegisterPartnerRequest(
@@ -205,3 +229,8 @@ public record RegisterPartnerRequest(
 public record UpdateAvailabilityRequest(bool IsAvailable);
 
 public record UpdateJobStatusRequest(JobStatus Status);
+
+// UpdateLocationRequest
+public record UpdateLocationRequest(
+    double Latitude,
+    double Longitude);

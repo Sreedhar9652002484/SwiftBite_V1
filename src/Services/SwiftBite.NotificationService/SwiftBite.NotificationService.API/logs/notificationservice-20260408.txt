@@ -1,0 +1,578 @@
+2026-04-06 10:21:06.177 +05:30 [INF] 🔌 SignalR disconnected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1
+2026-04-06 10:21:06.177 +05:30 [INF] 🔌 SignalR disconnected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1
+2026-04-06 10:21:06.177 +05:30 [INF] 🔌 SignalR disconnected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1
+2026-04-06 10:21:06.177 +05:30 [INF] 🔌 SignalR disconnected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1
+2026-04-06 10:21:06.178 +05:30 [INF] 🔌 SignalR disconnected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1
+2026-04-08 06:04:22.280 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-04-08 06:04:22.280 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-04-08 06:04:22.281 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-04-08 06:04:22.283 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-04-08 06:04:22.281 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-04-08 06:04:22.562 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 169254054.8622 ms
+2026-04-08 06:04:22.562 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 169142591.4536 ms
+2026-04-08 06:04:22.562 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 169397773.6636 ms
+2026-04-08 06:04:22.562 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 169244472.1858 ms
+2026-04-08 06:04:22.562 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 169146637.5505 ms
+2026-04-08 06:04:23.613 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=m4YDhFRu4Gch1rYH_VCwYA&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.CEYigaAbJGJ3p608UuljRBf6vKyA1mleeAXwqsyQD6FVwFYVFyAFSQ0M_ph__ShNGgJZWEm9w-6BnPHuAQ4Rd_Be3D6sCc_lBQGhL34_pVan95F9a2owriq9VM9fmsMyq2p48Nw0CBglU72b0GGPTm7PsRy3eMFDjxQMDa4CgGBt2NvtDUZ8zy8N2CDexsPjUrTBjfdGCEun_l-R5ipIwynP4aNiYxUqV3KV8yi9-4Cx9Ab900t73oytoNQsAp2AABlh9iQVZ_h6T91XDftfbiGDve8wPf4Rg8sFqsLDUuJDrRd8tp9SAuArhGUCKasph79gdI70BaKRPGjP_EfQLg.FbNew9b-ZIJR9fBcCAovlA.r_S-8F4nWvIYvHwGqFdK-IsGuEkRsEOziFpuojeJMTThvYEmlqq0Mqq3Sn7XsRtYjBki9G4VNpWyzVZITi9iOkydSXqLz4-4vGb_BKbqpv9-vNgxpt8ogWFHlWQNwOZdI3kzzPpv1WXNuV-Ln1pHz2tPRx-QNEdmVSIaCXjVx1FCNI5WU_UK7dqdHbThYyZJ5SJRT9T9BQ3B57CoyLPcgYeZgFR-iBttJrZW38UD-aoEnqWLcuyKNj5sjtuCB9VMoSNa_3XYKq8VYxnenevp4Vs5B8r-yTuyAKBTdh4xMsnB_uKjl4AZ0JWw-xg3xh1z_awzLUvs5EKOJg8MMX3g5N0oNzH7cQc0oi5YzY1-QT_f2dlU2dmpLRKD-FqQjMJVfgj4-w9D_q5Spgpq6JufMmGyUe1bimEcO4UHc9dTrSKs7oK-aIs16k_c5QJyWcr2zFKsnzxiu5hHoLpsXYEhyjSXZmPefp7iMBbw_JiiSjUjsue1IY3_8ZZBmFSObUvadEoErIjoEP6N9pESE_K3UlK1_FrAGg_tZ5L2cV-r37ITniUDlSWzMBOqyu0Bg04h3Bodb0jXElTPEdOxj0hxlHXIruXJk0lLKP2rT0Fb9Erm0_je_Nse5rJh5UEBEHi835yePR7EzQzXNRIzywLxqoUXEhTyy4H0orJko2FqesbmA_B1bHiaWPioryvACNhMQXrjU78hoNoVoSsVBlLmauUn4ShW8pUCw-FXqDZUeY2tSk1xYx8n_ot6fhHH2tZnq4a5C9PteUT81yTIoNZOp8ueuyWX7CkjaiiEg0NHwcM9lj27UeC_srMXRjU29lDa7V7QFhAtoKDUdFGiv64Bv7uvbgpT4cHsHTkUzqj4O8iY2XjmpRxcjXgpMd-_nzsoGROvCa4Qq_dafRn5OaM9RGE9n4WVGmxM3ti74EIK_eUcol2nPO_p8ymIXm0OL66go0BDmhB2rT9Qp4_UpymPCH1Lk2MxPnx_zGbthOWtHOlU_4zcBBqGw7XVbYxQfFZ0mrbFYyeRJzRC0R6UjPno241PrahAvw4T-j24NaO71QRcFa-ofFIwS92Fp5qnONFYroUgg7cKZZBNwjB1_edA_IDvtkjo0chZVyqeCfbXimP5TwFmutzs6vhQVvDad-aoEwicIZRBADPc0P9gHkHg2Il-88CEi5Zvldcmy8KOd7FXACSz-1k-dI8s2-jYZKmd1b3LFCAPIs319eQL4pTSenIOFYnzsYpRs5ZxbKin3KwrW5F5m-pFp5PMPVU97UmgUuIjg8D9CUKRJrbGuBPq7Kf1fy5I6iUTeFBUOjqYJVR_hQKgXGpBbxZApyoDFvg1AdH68iKKAekfsdHNcuWRugWSmkMXBUcxMsF7VxE7yLPk3wFDlExeVRVKE3tXkxgk0F35FeUJNm4yO5W84V4fkNKtK0tgaLbV1n3badogS5C3zcEJRqAxHx_V52XCbtjJIRuCK5tY49-SKBL4ET6XKeP2levg12Yb-KQLOXBoKw1ukvVcM8dgBXkdBnWGMzA3ymrFsqIe9NJOVVmAfZwta1PPucfkgbr9Hrl2DbMi-IJHZz7O64DWR-2h8AZbIq52w4JjgnTPbiRaF3-nI5mL5f5DGf3nWBC0F82GTsAWgRTeBgSqkqgX5UC_ofvGOd7559puhywGXXGn4H9ilfpgtYhZQBXQrSnrHyOojV1ntK2IRf6e0IfTRAk7RuxD-DnKwAYALcXxUEqpX9_Oj0fx2Vs6MPRHs5JAg-AAp40otVcPAeLGzt9eLzpAswfrjosVRRVF4PWh-cctQpFDsGnTMVRnXO64Qao1_bdpD-Af5NYHsthzXG2jvmFqdsRZbSBQ2MTtlnCInqmEtg8TXqaLdnNjPlkd2O2ykw8LHvdnVD2Ucp9o1NfNdoqbkeGBlYVIPYsrvP8WYZuObOE5BIoxTyMfYcbha_u2-ACPRWy8KDjjimZH2XKhvBV6E2yqm_7yvrKAJCop63BnC4IoA4V_lw.oGwzWDjqY2PoqAUQL-kW6mzoPBpJDggEc7RxF3JgK4k - 101 null null 169255106.1497ms
+2026-04-08 06:04:26.883 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=kimj0ZlccnxNLs1Pw9i0Zw&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.CEYigaAbJGJ3p608UuljRBf6vKyA1mleeAXwqsyQD6FVwFYVFyAFSQ0M_ph__ShNGgJZWEm9w-6BnPHuAQ4Rd_Be3D6sCc_lBQGhL34_pVan95F9a2owriq9VM9fmsMyq2p48Nw0CBglU72b0GGPTm7PsRy3eMFDjxQMDa4CgGBt2NvtDUZ8zy8N2CDexsPjUrTBjfdGCEun_l-R5ipIwynP4aNiYxUqV3KV8yi9-4Cx9Ab900t73oytoNQsAp2AABlh9iQVZ_h6T91XDftfbiGDve8wPf4Rg8sFqsLDUuJDrRd8tp9SAuArhGUCKasph79gdI70BaKRPGjP_EfQLg.FbNew9b-ZIJR9fBcCAovlA.r_S-8F4nWvIYvHwGqFdK-IsGuEkRsEOziFpuojeJMTThvYEmlqq0Mqq3Sn7XsRtYjBki9G4VNpWyzVZITi9iOkydSXqLz4-4vGb_BKbqpv9-vNgxpt8ogWFHlWQNwOZdI3kzzPpv1WXNuV-Ln1pHz2tPRx-QNEdmVSIaCXjVx1FCNI5WU_UK7dqdHbThYyZJ5SJRT9T9BQ3B57CoyLPcgYeZgFR-iBttJrZW38UD-aoEnqWLcuyKNj5sjtuCB9VMoSNa_3XYKq8VYxnenevp4Vs5B8r-yTuyAKBTdh4xMsnB_uKjl4AZ0JWw-xg3xh1z_awzLUvs5EKOJg8MMX3g5N0oNzH7cQc0oi5YzY1-QT_f2dlU2dmpLRKD-FqQjMJVfgj4-w9D_q5Spgpq6JufMmGyUe1bimEcO4UHc9dTrSKs7oK-aIs16k_c5QJyWcr2zFKsnzxiu5hHoLpsXYEhyjSXZmPefp7iMBbw_JiiSjUjsue1IY3_8ZZBmFSObUvadEoErIjoEP6N9pESE_K3UlK1_FrAGg_tZ5L2cV-r37ITniUDlSWzMBOqyu0Bg04h3Bodb0jXElTPEdOxj0hxlHXIruXJk0lLKP2rT0Fb9Erm0_je_Nse5rJh5UEBEHi835yePR7EzQzXNRIzywLxqoUXEhTyy4H0orJko2FqesbmA_B1bHiaWPioryvACNhMQXrjU78hoNoVoSsVBlLmauUn4ShW8pUCw-FXqDZUeY2tSk1xYx8n_ot6fhHH2tZnq4a5C9PteUT81yTIoNZOp8ueuyWX7CkjaiiEg0NHwcM9lj27UeC_srMXRjU29lDa7V7QFhAtoKDUdFGiv64Bv7uvbgpT4cHsHTkUzqj4O8iY2XjmpRxcjXgpMd-_nzsoGROvCa4Qq_dafRn5OaM9RGE9n4WVGmxM3ti74EIK_eUcol2nPO_p8ymIXm0OL66go0BDmhB2rT9Qp4_UpymPCH1Lk2MxPnx_zGbthOWtHOlU_4zcBBqGw7XVbYxQfFZ0mrbFYyeRJzRC0R6UjPno241PrahAvw4T-j24NaO71QRcFa-ofFIwS92Fp5qnONFYroUgg7cKZZBNwjB1_edA_IDvtkjo0chZVyqeCfbXimP5TwFmutzs6vhQVvDad-aoEwicIZRBADPc0P9gHkHg2Il-88CEi5Zvldcmy8KOd7FXACSz-1k-dI8s2-jYZKmd1b3LFCAPIs319eQL4pTSenIOFYnzsYpRs5ZxbKin3KwrW5F5m-pFp5PMPVU97UmgUuIjg8D9CUKRJrbGuBPq7Kf1fy5I6iUTeFBUOjqYJVR_hQKgXGpBbxZApyoDFvg1AdH68iKKAekfsdHNcuWRugWSmkMXBUcxMsF7VxE7yLPk3wFDlExeVRVKE3tXkxgk0F35FeUJNm4yO5W84V4fkNKtK0tgaLbV1n3badogS5C3zcEJRqAxHx_V52XCbtjJIRuCK5tY49-SKBL4ET6XKeP2levg12Yb-KQLOXBoKw1ukvVcM8dgBXkdBnWGMzA3ymrFsqIe9NJOVVmAfZwta1PPucfkgbr9Hrl2DbMi-IJHZz7O64DWR-2h8AZbIq52w4JjgnTPbiRaF3-nI5mL5f5DGf3nWBC0F82GTsAWgRTeBgSqkqgX5UC_ofvGOd7559puhywGXXGn4H9ilfpgtYhZQBXQrSnrHyOojV1ntK2IRf6e0IfTRAk7RuxD-DnKwAYALcXxUEqpX9_Oj0fx2Vs6MPRHs5JAg-AAp40otVcPAeLGzt9eLzpAswfrjosVRRVF4PWh-cctQpFDsGnTMVRnXO64Qao1_bdpD-Af5NYHsthzXG2jvmFqdsRZbSBQ2MTtlnCInqmEtg8TXqaLdnNjPlkd2O2ykw8LHvdnVD2Ucp9o1NfNdoqbkeGBlYVIPYsrvP8WYZuObOE5BIoxTyMfYcbha_u2-ACPRWy8KDjjimZH2XKhvBV6E2yqm_7yvrKAJCop63BnC4IoA4V_lw.oGwzWDjqY2PoqAUQL-kW6mzoPBpJDggEc7RxF3JgK4k - 101 null null 169146939.543ms
+2026-04-08 06:04:26.974 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=FcfmY9pi7fOakzBnB77w1w&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.CEYigaAbJGJ3p608UuljRBf6vKyA1mleeAXwqsyQD6FVwFYVFyAFSQ0M_ph__ShNGgJZWEm9w-6BnPHuAQ4Rd_Be3D6sCc_lBQGhL34_pVan95F9a2owriq9VM9fmsMyq2p48Nw0CBglU72b0GGPTm7PsRy3eMFDjxQMDa4CgGBt2NvtDUZ8zy8N2CDexsPjUrTBjfdGCEun_l-R5ipIwynP4aNiYxUqV3KV8yi9-4Cx9Ab900t73oytoNQsAp2AABlh9iQVZ_h6T91XDftfbiGDve8wPf4Rg8sFqsLDUuJDrRd8tp9SAuArhGUCKasph79gdI70BaKRPGjP_EfQLg.FbNew9b-ZIJR9fBcCAovlA.r_S-8F4nWvIYvHwGqFdK-IsGuEkRsEOziFpuojeJMTThvYEmlqq0Mqq3Sn7XsRtYjBki9G4VNpWyzVZITi9iOkydSXqLz4-4vGb_BKbqpv9-vNgxpt8ogWFHlWQNwOZdI3kzzPpv1WXNuV-Ln1pHz2tPRx-QNEdmVSIaCXjVx1FCNI5WU_UK7dqdHbThYyZJ5SJRT9T9BQ3B57CoyLPcgYeZgFR-iBttJrZW38UD-aoEnqWLcuyKNj5sjtuCB9VMoSNa_3XYKq8VYxnenevp4Vs5B8r-yTuyAKBTdh4xMsnB_uKjl4AZ0JWw-xg3xh1z_awzLUvs5EKOJg8MMX3g5N0oNzH7cQc0oi5YzY1-QT_f2dlU2dmpLRKD-FqQjMJVfgj4-w9D_q5Spgpq6JufMmGyUe1bimEcO4UHc9dTrSKs7oK-aIs16k_c5QJyWcr2zFKsnzxiu5hHoLpsXYEhyjSXZmPefp7iMBbw_JiiSjUjsue1IY3_8ZZBmFSObUvadEoErIjoEP6N9pESE_K3UlK1_FrAGg_tZ5L2cV-r37ITniUDlSWzMBOqyu0Bg04h3Bodb0jXElTPEdOxj0hxlHXIruXJk0lLKP2rT0Fb9Erm0_je_Nse5rJh5UEBEHi835yePR7EzQzXNRIzywLxqoUXEhTyy4H0orJko2FqesbmA_B1bHiaWPioryvACNhMQXrjU78hoNoVoSsVBlLmauUn4ShW8pUCw-FXqDZUeY2tSk1xYx8n_ot6fhHH2tZnq4a5C9PteUT81yTIoNZOp8ueuyWX7CkjaiiEg0NHwcM9lj27UeC_srMXRjU29lDa7V7QFhAtoKDUdFGiv64Bv7uvbgpT4cHsHTkUzqj4O8iY2XjmpRxcjXgpMd-_nzsoGROvCa4Qq_dafRn5OaM9RGE9n4WVGmxM3ti74EIK_eUcol2nPO_p8ymIXm0OL66go0BDmhB2rT9Qp4_UpymPCH1Lk2MxPnx_zGbthOWtHOlU_4zcBBqGw7XVbYxQfFZ0mrbFYyeRJzRC0R6UjPno241PrahAvw4T-j24NaO71QRcFa-ofFIwS92Fp5qnONFYroUgg7cKZZBNwjB1_edA_IDvtkjo0chZVyqeCfbXimP5TwFmutzs6vhQVvDad-aoEwicIZRBADPc0P9gHkHg2Il-88CEi5Zvldcmy8KOd7FXACSz-1k-dI8s2-jYZKmd1b3LFCAPIs319eQL4pTSenIOFYnzsYpRs5ZxbKin3KwrW5F5m-pFp5PMPVU97UmgUuIjg8D9CUKRJrbGuBPq7Kf1fy5I6iUTeFBUOjqYJVR_hQKgXGpBbxZApyoDFvg1AdH68iKKAekfsdHNcuWRugWSmkMXBUcxMsF7VxE7yLPk3wFDlExeVRVKE3tXkxgk0F35FeUJNm4yO5W84V4fkNKtK0tgaLbV1n3badogS5C3zcEJRqAxHx_V52XCbtjJIRuCK5tY49-SKBL4ET6XKeP2levg12Yb-KQLOXBoKw1ukvVcM8dgBXkdBnWGMzA3ymrFsqIe9NJOVVmAfZwta1PPucfkgbr9Hrl2DbMi-IJHZz7O64DWR-2h8AZbIq52w4JjgnTPbiRaF3-nI5mL5f5DGf3nWBC0F82GTsAWgRTeBgSqkqgX5UC_ofvGOd7559puhywGXXGn4H9ilfpgtYhZQBXQrSnrHyOojV1ntK2IRf6e0IfTRAk7RuxD-DnKwAYALcXxUEqpX9_Oj0fx2Vs6MPRHs5JAg-AAp40otVcPAeLGzt9eLzpAswfrjosVRRVF4PWh-cctQpFDsGnTMVRnXO64Qao1_bdpD-Af5NYHsthzXG2jvmFqdsRZbSBQ2MTtlnCInqmEtg8TXqaLdnNjPlkd2O2ykw8LHvdnVD2Ucp9o1NfNdoqbkeGBlYVIPYsrvP8WYZuObOE5BIoxTyMfYcbha_u2-ACPRWy8KDjjimZH2XKhvBV6E2yqm_7yvrKAJCop63BnC4IoA4V_lw.oGwzWDjqY2PoqAUQL-kW6mzoPBpJDggEc7RxF3JgK4k - 101 null null 169402219.4018ms
+2026-04-08 06:04:27.331 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=hh_7JRLDZcV0frjhfYaxow&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.CEYigaAbJGJ3p608UuljRBf6vKyA1mleeAXwqsyQD6FVwFYVFyAFSQ0M_ph__ShNGgJZWEm9w-6BnPHuAQ4Rd_Be3D6sCc_lBQGhL34_pVan95F9a2owriq9VM9fmsMyq2p48Nw0CBglU72b0GGPTm7PsRy3eMFDjxQMDa4CgGBt2NvtDUZ8zy8N2CDexsPjUrTBjfdGCEun_l-R5ipIwynP4aNiYxUqV3KV8yi9-4Cx9Ab900t73oytoNQsAp2AABlh9iQVZ_h6T91XDftfbiGDve8wPf4Rg8sFqsLDUuJDrRd8tp9SAuArhGUCKasph79gdI70BaKRPGjP_EfQLg.FbNew9b-ZIJR9fBcCAovlA.r_S-8F4nWvIYvHwGqFdK-IsGuEkRsEOziFpuojeJMTThvYEmlqq0Mqq3Sn7XsRtYjBki9G4VNpWyzVZITi9iOkydSXqLz4-4vGb_BKbqpv9-vNgxpt8ogWFHlWQNwOZdI3kzzPpv1WXNuV-Ln1pHz2tPRx-QNEdmVSIaCXjVx1FCNI5WU_UK7dqdHbThYyZJ5SJRT9T9BQ3B57CoyLPcgYeZgFR-iBttJrZW38UD-aoEnqWLcuyKNj5sjtuCB9VMoSNa_3XYKq8VYxnenevp4Vs5B8r-yTuyAKBTdh4xMsnB_uKjl4AZ0JWw-xg3xh1z_awzLUvs5EKOJg8MMX3g5N0oNzH7cQc0oi5YzY1-QT_f2dlU2dmpLRKD-FqQjMJVfgj4-w9D_q5Spgpq6JufMmGyUe1bimEcO4UHc9dTrSKs7oK-aIs16k_c5QJyWcr2zFKsnzxiu5hHoLpsXYEhyjSXZmPefp7iMBbw_JiiSjUjsue1IY3_8ZZBmFSObUvadEoErIjoEP6N9pESE_K3UlK1_FrAGg_tZ5L2cV-r37ITniUDlSWzMBOqyu0Bg04h3Bodb0jXElTPEdOxj0hxlHXIruXJk0lLKP2rT0Fb9Erm0_je_Nse5rJh5UEBEHi835yePR7EzQzXNRIzywLxqoUXEhTyy4H0orJko2FqesbmA_B1bHiaWPioryvACNhMQXrjU78hoNoVoSsVBlLmauUn4ShW8pUCw-FXqDZUeY2tSk1xYx8n_ot6fhHH2tZnq4a5C9PteUT81yTIoNZOp8ueuyWX7CkjaiiEg0NHwcM9lj27UeC_srMXRjU29lDa7V7QFhAtoKDUdFGiv64Bv7uvbgpT4cHsHTkUzqj4O8iY2XjmpRxcjXgpMd-_nzsoGROvCa4Qq_dafRn5OaM9RGE9n4WVGmxM3ti74EIK_eUcol2nPO_p8ymIXm0OL66go0BDmhB2rT9Qp4_UpymPCH1Lk2MxPnx_zGbthOWtHOlU_4zcBBqGw7XVbYxQfFZ0mrbFYyeRJzRC0R6UjPno241PrahAvw4T-j24NaO71QRcFa-ofFIwS92Fp5qnONFYroUgg7cKZZBNwjB1_edA_IDvtkjo0chZVyqeCfbXimP5TwFmutzs6vhQVvDad-aoEwicIZRBADPc0P9gHkHg2Il-88CEi5Zvldcmy8KOd7FXACSz-1k-dI8s2-jYZKmd1b3LFCAPIs319eQL4pTSenIOFYnzsYpRs5ZxbKin3KwrW5F5m-pFp5PMPVU97UmgUuIjg8D9CUKRJrbGuBPq7Kf1fy5I6iUTeFBUOjqYJVR_hQKgXGpBbxZApyoDFvg1AdH68iKKAekfsdHNcuWRugWSmkMXBUcxMsF7VxE7yLPk3wFDlExeVRVKE3tXkxgk0F35FeUJNm4yO5W84V4fkNKtK0tgaLbV1n3badogS5C3zcEJRqAxHx_V52XCbtjJIRuCK5tY49-SKBL4ET6XKeP2levg12Yb-KQLOXBoKw1ukvVcM8dgBXkdBnWGMzA3ymrFsqIe9NJOVVmAfZwta1PPucfkgbr9Hrl2DbMi-IJHZz7O64DWR-2h8AZbIq52w4JjgnTPbiRaF3-nI5mL5f5DGf3nWBC0F82GTsAWgRTeBgSqkqgX5UC_ofvGOd7559puhywGXXGn4H9ilfpgtYhZQBXQrSnrHyOojV1ntK2IRf6e0IfTRAk7RuxD-DnKwAYALcXxUEqpX9_Oj0fx2Vs6MPRHs5JAg-AAp40otVcPAeLGzt9eLzpAswfrjosVRRVF4PWh-cctQpFDsGnTMVRnXO64Qao1_bdpD-Af5NYHsthzXG2jvmFqdsRZbSBQ2MTtlnCInqmEtg8TXqaLdnNjPlkd2O2ykw8LHvdnVD2Ucp9o1NfNdoqbkeGBlYVIPYsrvP8WYZuObOE5BIoxTyMfYcbha_u2-ACPRWy8KDjjimZH2XKhvBV6E2yqm_7yvrKAJCop63BnC4IoA4V_lw.oGwzWDjqY2PoqAUQL-kW6mzoPBpJDggEc7RxF3JgK4k - 101 null null 169249272.9011ms
+2026-04-08 06:04:27.744 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=7cAY6JHAkopo8lIc6Ym6zg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.CEYigaAbJGJ3p608UuljRBf6vKyA1mleeAXwqsyQD6FVwFYVFyAFSQ0M_ph__ShNGgJZWEm9w-6BnPHuAQ4Rd_Be3D6sCc_lBQGhL34_pVan95F9a2owriq9VM9fmsMyq2p48Nw0CBglU72b0GGPTm7PsRy3eMFDjxQMDa4CgGBt2NvtDUZ8zy8N2CDexsPjUrTBjfdGCEun_l-R5ipIwynP4aNiYxUqV3KV8yi9-4Cx9Ab900t73oytoNQsAp2AABlh9iQVZ_h6T91XDftfbiGDve8wPf4Rg8sFqsLDUuJDrRd8tp9SAuArhGUCKasph79gdI70BaKRPGjP_EfQLg.FbNew9b-ZIJR9fBcCAovlA.r_S-8F4nWvIYvHwGqFdK-IsGuEkRsEOziFpuojeJMTThvYEmlqq0Mqq3Sn7XsRtYjBki9G4VNpWyzVZITi9iOkydSXqLz4-4vGb_BKbqpv9-vNgxpt8ogWFHlWQNwOZdI3kzzPpv1WXNuV-Ln1pHz2tPRx-QNEdmVSIaCXjVx1FCNI5WU_UK7dqdHbThYyZJ5SJRT9T9BQ3B57CoyLPcgYeZgFR-iBttJrZW38UD-aoEnqWLcuyKNj5sjtuCB9VMoSNa_3XYKq8VYxnenevp4Vs5B8r-yTuyAKBTdh4xMsnB_uKjl4AZ0JWw-xg3xh1z_awzLUvs5EKOJg8MMX3g5N0oNzH7cQc0oi5YzY1-QT_f2dlU2dmpLRKD-FqQjMJVfgj4-w9D_q5Spgpq6JufMmGyUe1bimEcO4UHc9dTrSKs7oK-aIs16k_c5QJyWcr2zFKsnzxiu5hHoLpsXYEhyjSXZmPefp7iMBbw_JiiSjUjsue1IY3_8ZZBmFSObUvadEoErIjoEP6N9pESE_K3UlK1_FrAGg_tZ5L2cV-r37ITniUDlSWzMBOqyu0Bg04h3Bodb0jXElTPEdOxj0hxlHXIruXJk0lLKP2rT0Fb9Erm0_je_Nse5rJh5UEBEHi835yePR7EzQzXNRIzywLxqoUXEhTyy4H0orJko2FqesbmA_B1bHiaWPioryvACNhMQXrjU78hoNoVoSsVBlLmauUn4ShW8pUCw-FXqDZUeY2tSk1xYx8n_ot6fhHH2tZnq4a5C9PteUT81yTIoNZOp8ueuyWX7CkjaiiEg0NHwcM9lj27UeC_srMXRjU29lDa7V7QFhAtoKDUdFGiv64Bv7uvbgpT4cHsHTkUzqj4O8iY2XjmpRxcjXgpMd-_nzsoGROvCa4Qq_dafRn5OaM9RGE9n4WVGmxM3ti74EIK_eUcol2nPO_p8ymIXm0OL66go0BDmhB2rT9Qp4_UpymPCH1Lk2MxPnx_zGbthOWtHOlU_4zcBBqGw7XVbYxQfFZ0mrbFYyeRJzRC0R6UjPno241PrahAvw4T-j24NaO71QRcFa-ofFIwS92Fp5qnONFYroUgg7cKZZBNwjB1_edA_IDvtkjo0chZVyqeCfbXimP5TwFmutzs6vhQVvDad-aoEwicIZRBADPc0P9gHkHg2Il-88CEi5Zvldcmy8KOd7FXACSz-1k-dI8s2-jYZKmd1b3LFCAPIs319eQL4pTSenIOFYnzsYpRs5ZxbKin3KwrW5F5m-pFp5PMPVU97UmgUuIjg8D9CUKRJrbGuBPq7Kf1fy5I6iUTeFBUOjqYJVR_hQKgXGpBbxZApyoDFvg1AdH68iKKAekfsdHNcuWRugWSmkMXBUcxMsF7VxE7yLPk3wFDlExeVRVKE3tXkxgk0F35FeUJNm4yO5W84V4fkNKtK0tgaLbV1n3badogS5C3zcEJRqAxHx_V52XCbtjJIRuCK5tY49-SKBL4ET6XKeP2levg12Yb-KQLOXBoKw1ukvVcM8dgBXkdBnWGMzA3ymrFsqIe9NJOVVmAfZwta1PPucfkgbr9Hrl2DbMi-IJHZz7O64DWR-2h8AZbIq52w4JjgnTPbiRaF3-nI5mL5f5DGf3nWBC0F82GTsAWgRTeBgSqkqgX5UC_ofvGOd7559puhywGXXGn4H9ilfpgtYhZQBXQrSnrHyOojV1ntK2IRf6e0IfTRAk7RuxD-DnKwAYALcXxUEqpX9_Oj0fx2Vs6MPRHs5JAg-AAp40otVcPAeLGzt9eLzpAswfrjosVRRVF4PWh-cctQpFDsGnTMVRnXO64Qao1_bdpD-Af5NYHsthzXG2jvmFqdsRZbSBQ2MTtlnCInqmEtg8TXqaLdnNjPlkd2O2ykw8LHvdnVD2Ucp9o1NfNdoqbkeGBlYVIPYsrvP8WYZuObOE5BIoxTyMfYcbha_u2-ACPRWy8KDjjimZH2XKhvBV6E2yqm_7yvrKAJCop63BnC4IoA4V_lw.oGwzWDjqY2PoqAUQL-kW6mzoPBpJDggEc7RxF3JgK4k - 101 null null 169151843.5102ms
+2026-04-08 06:05:31.377 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-04-08 06:05:31.459 +05:30 [INF] CORS policy execution successful.
+2026-04-08 06:05:31.582 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:05:31.593 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:05:31.614 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-08 06:05:31.620 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/openid-configuration
+2026-04-08 06:05:31.838 +05:30 [INF] Received HTTP response headers after 214.8244ms - 200
+2026-04-08 06:05:31.843 +05:30 [INF] End processing HTTP request after 236.5753ms - 200
+2026-04-08 06:05:31.868 +05:30 [INF] The configuration request was successfully sent to "http://localhost:5149/.well-known/openid-configuration": {}.
+2026-04-08 06:05:31.892 +05:30 [INF] Received HTTP response headers after 287.449ms - 200
+2026-04-08 06:05:31.893 +05:30 [INF] The configuration response returned by "http://localhost:5149/.well-known/openid-configuration" was successfully extracted: {
+  "issuer": "http://localhost:5149/",
+  "authorization_endpoint": "http://localhost:5149/connect/authorize",
+  "token_endpoint": "http://localhost:5149/connect/token",
+  "introspection_endpoint": "http://localhost:5149/connect/introspect",
+  "end_session_endpoint": "http://localhost:5149/connect/logout",
+  "userinfo_endpoint": "http://localhost:5149/connect/userinfo",
+  "jwks_uri": "http://localhost:5149/.well-known/jwks",
+  "grant_types_supported": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials",
+    "password"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "scopes_supported": [
+    "openid",
+    "offline_access",
+    "profile",
+    "email",
+    "swiftbite.user",
+    "swiftbite.restaurant",
+    "swiftbite.order",
+    "swiftbite.payment",
+    "swiftbite.delivery"
+  ],
+  "claims_supported": [
+    "aud",
+    "exp",
+    "iat",
+    "iss",
+    "sub"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "introspection_endpoint_auth_methods_supported": [
+    "client_secret_post",
+    "private_key_jwt",
+    "client_secret_basic"
+  ],
+  "claims_parameter_supported": false,
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": false,
+  "authorization_response_iss_parameter_supported": true
+}.
+2026-04-08 06:05:31.894 +05:30 [INF] End processing HTTP request after 320.9707ms - 200
+2026-04-08 06:05:31.905 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-08 06:05:31.909 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "3336247d-d9be-4547-ade9-b5d7757d5cbe",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775608526,
+  "nbf": 1775608526,
+  "exp": 1775612126,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-08 06:05:31.915 +05:30 [INF] Start processing HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-08 06:05:31.920 +05:30 [INF] Sending HTTP request GET http://localhost:5149/.well-known/jwks
+2026-04-08 06:05:31.937 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-04-08 06:05:31.951 +05:30 [INF] Received HTTP response headers after 28.9473ms - 200
+2026-04-08 06:05:31.954 +05:30 [INF] End processing HTTP request after 39.6395ms - 200
+2026-04-08 06:05:31.958 +05:30 [INF] The JSON Web Key Set request was successfully sent to "http://localhost:5149/.well-known/jwks": {}.
+2026-04-08 06:05:31.958 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-04-08 06:05:31.972 +05:30 [INF] The JSON Web Key Set response returned by "http://localhost:5149/.well-known/jwks" was successfully extracted: {
+  "keys": [
+    {
+      "kid": "0C35D6C4FF378045AC9C67EB6B485252649D961E",
+      "use": "sig",
+      "kty": "RSA",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "r-oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3-xxw6Crgj-g3ZvHITXGM7mxfbWRUkhBNx2k-ux7Hp9gPzkKMbwQ0-n-NygWn9MIajNCwtXIteiNwGjZfI_hUCvWzIYTvKD-goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQ",
+      "x5t": "DDXWxP83gEWsnGfra0hSUmSdlh4",
+      "x5c": [
+        "MIIC9TCCAd2gAwIBAgIJAKe5j+9SqKJBMA0GCSqGSIb3DQEBCwUAMDAxLjAsBgNVBAMTJU9wZW5JZGRpY3QgU2VydmVyIFNpZ25pbmcgQ2VydGlmaWNhdGUwHhcNMjYwMjI3MDcwNjEwWhcNMjgwMjI3MDcwNjEwWjAwMS4wLAYDVQQDEyVPcGVuSWRkaWN0IFNlcnZlciBTaWduaW5nIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr+oaO78xPRRvGP6b5Sq7Viy5hmfTwHP6F3xaYDlRoctD33wHyf523hUHLBIAJ99O9l91Bdp1EgyGwijpXu6dCIMiwBGqSLTklmzIQkcAUCCBcd9hd3+xxw6Crgj+g3ZvHITXGM7mxfbWRUkhBNx2k+ux7Hp9gPzkKMbwQ0+n+NygWn9MIajNCwtXIteiNwGjZfI/hUCvWzIYTvKD+goZdIZQZbrLR3T628SKCn5PwrKQklqt8ASMbTbX5zmbBHD9tWGg0mQ7vBHVwyTLtmRKQELVRRI8RrnGRQIi32BekTUsPfdQ2SXugGITtDJuC3nnRXAiJaLnMkfKaav60ddgGQIDAQABoxIwEDAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAER3GiwpWkxemtAPPbihC5fRgyJXpj1EW8ow+wnFzCBT+LPOFR6DmGH2hMg6RrQV4HiN8Ch/rLgKOw4IHIq+25HbaNBecugd/+cJUQrRcJSgcPeaiYpBJXMG9ZyH2879IHBy01ZJmJR5ZfyneHYn/625Rktjj8igVfKQUy9t3mdLx0MNMN3AK3e1vTT44EEEtzwC6bul08Emmj6IEbzJ3VD193VXql5zwSzD3xn9Nn38coaQ4kyRTtWXUDEueO0csWbBEyt1glatXhgydPXz82I1wAtBZ6zDx+YjLBZPiwQx61bIrinp77S2IbBR3OMsH1+vh6CAbFyNiwTOnjUlFFg="
+      ]
+    }
+  ]
+}.
+2026-04-08 06:05:31.975 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 501.0740 ms
+2026-04-08 06:05:31.993 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 621.4532ms
+2026-04-08 06:05:32.151 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=S5Zr8cFOUtTlGKitrPOq-Q&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.D6Ltu3SekdMncsGTGXtTUVnFINb0mplkyUXOSXkpOhPiAMqqnV9acLfpe-eankaGC0ydRr_PO1vYMwIiPGoopsyqMJpo2rey5JD2iIuLeKQBRs1qPncyMjCX3-TBa0Jy1XPGbrYAjxWwnlOX79bWoB5sfhfgagRPvZaT8KvHPvLG9b5mJlLe6C_z1nPoVcUgf6ZKYUtBXnuweb1isfCVzCZs63Hrmg0Wd3kBwcNNLxwV2_oAzBttzbP1EM--I5cwi-2tbehiPd0AWoJdwcj2bPLRrSqYNtcyZKPbp9CgANbEHxUIGDHB2IE152nGEoYybkd_Sa9oZlTNboTa68jmsg.Ckh2gyikEGiskVpGbhjIJg.CetR0ja-2kw_lGbZFWOH0AHI7OdbRg8r2Ufy28VIWuG9Zvei0W-i7bqvrsh60IRpjo2FVVgDaOe5w93z0xJYK_OSjaGy3x6bpfSZXCfBrA08X2zAkDnNuiV22tJoS9XUweewmFy29-XDIwEoexfmzJsrhtCQoQ37k4j8NB4y1IgvU6AWgE3Fjs-VH-GcymwBRiavW3lc7rbFqJyCwVERosV1ePGFbkI0rUAuV1jomx4_RV0IorxfDtZ_WsA3q62Uok-I-sjv4FWGZbO11WPqcdQEozaJ4Eo5ePmsfBc57uda6390Qua5MwpklSWpmNpdeP-zY1QvY8EwOgd2r9wz1ThXXby10dPAL2dhWYpQHP705YAIZsk3pCWl6gum75g0FV-cQxmWMJCwWinMRFztnALGsqcZOBFcJs0ERThg9G3MWLLK7e7dGNvYc_YU4Olpztqc-Ga7zL7kPN7vbRfWc3A8j9RerQarYEETuoYUpz5bYKKppVChA2sWi5zGVB1E1nySF5SGGi2G4KoOM3V2HY9_vywNwNngRak_01SDjqhpQZBsqFjyjDu3t_p_PNZ1KpeseRVDenmOaIHJMkml25p07syphOe64cLQfDGkkkqlehaY99LmOHTyQWezacnQyA1dAqAdk3Cj2YULpmBjI9nrTpanLki5kYI1tlG0p2losNqUvvcv6F6YwIEoXiMeWKZCYwr1E584bcySKKalJ-r1ysQqpHuvSEUrDqW1CSk2V1GMYwnUWG48Gl8zmlaAWtdZA0H5B0OhfuI_7HuEsTXxZn2rgM7y38e9f4LYMMhiby49apF3Pv0t06Q8srg7mYeQmnpbi4Jz-inKPPkfT7Z5JfWX8N1huTAuUv3eBQcFtmPWsf8ez6ztBb3FYRUrrYTbvOVWqD9Vw8YAfzdq7oJp17M96xaPzw1jAih_MSsVK9XSfvkboXAc7oSOw_bdM0skCHiXfHNZrw5ZsNPDgcew6qFDfqGbjZ-gOipiQzcWY4Q9syIGObVx_8RCHjvphluOE0seTXEKTIN8T61EbpzIFCXDwxSmP9vBJM3jEpRDq42B30h9rrYLfbMrUMIrVr1T6o7RYttrGLce1RnGZNdF_VSke6DUR9MvSAxytXZBYd0NyEQpvMsKNYEEhq7LYHh6cQbakpPpujzFofFjWBo3qid4GxgSXVnCHa0VmJe78YMhQen5yMQH77UwYiok64SAtBG_OADZA-r5GtY0cCFm2lvTUwYVfazgiM9wRoNzy1ckKyQjrudPxVWE40tURrqdmPMIcjbDZaAJnxoyZECoHhGlTiUPcbn0m-soz3iiCv8jXtYSKHE7gV_vxHfr8tPoofgdFBNKZezyrbidMZHkD93HSy6SnNIEbQlNdsVy6UDLqLh_43Ukzcf2FfXbN5haYD6cE9DVWG5n036DdVsKmcuiHZgiX9L5i0O2ttSIKS7IkXFZSuo3XH4s9d7caQOKu8gW1nm1qz0NGh0mSRrn0lTBMgptXQ0ip9dMuBA8znD0rHJDOfzugD0xvK25MynY4JE5Drm_-WE-h89K1yiJ9mJAMVvUBdrwesYHYrShbOMR0bkWqfJnmSaBcCklUsvwc02VZZa4y60AyJ6HnS7C3iymwLm9ejcUzBmjVMRTbFK36T8ugify0vyFKqfJGOgjTNESVymTArLAGO6gxR0RKrRNOZWMvgXiQE_Sn_qc5Mq5vCs9punR0ZfXPcbxL3DEftUV9I477slJwTMcDZUcEYFQRnPidcWI-rhl5W-XHCEjF5IKIhDTsRol0ouTmuBNpOIp4_QpvKNB5MVedrxKkNDP7VxPkRUmlHsTEhif4J1vOka7QjRpQUMoXNGB4dCrXcLafYP-xx1NRj7OuOl9HE5s3vIKQG8C5P9TEi-mgULxCb5GAKN-Xc4xBbu_A-syddBK4W9lCObPwjh82LekqGLpfiCUkRy19P_YLU0dvDxQZv5OR40aHAktsDEkPq_xc2kPkupCilC4QXlcKQ.qkPPnpdmklXaOwvexqaPBqNaK0Zk7WVby0jABuWJlCM - null null
+2026-04-08 06:05:32.176 +05:30 [INF] CORS policy execution successful.
+2026-04-08 06:05:32.189 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:05:32.207 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:05:32.345 +05:30 [INF] Received HTTP response headers after 124.2995ms - 200
+2026-04-08 06:05:32.359 +05:30 [INF] End processing HTTP request after 169.7851ms - 200
+2026-04-08 06:05:32.371 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-08 06:05:32.383 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "3336247d-d9be-4547-ade9-b5d7757d5cbe",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775608526,
+  "nbf": 1775608526,
+  "exp": 1775612126,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-08 06:05:32.389 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-04-08 06:05:32.448 +05:30 [INF] 🔌 SignalR connected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | ConnectionId: UHKSs1M13TUoH_1KZhJ7UQ
+2026-04-08 06:05:32.791 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-04-08 06:05:32.847 +05:30 [INF] CORS policy execution successful.
+2026-04-08 06:05:32.859 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:05:32.889 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:05:33.068 +05:30 [INF] Received HTTP response headers after 175.888ms - 200
+2026-04-08 06:05:33.120 +05:30 [INF] End processing HTTP request after 261.1309ms - 200
+2026-04-08 06:05:33.125 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-08 06:05:33.140 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "3336247d-d9be-4547-ade9-b5d7757d5cbe",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775608526,
+  "nbf": 1775608526,
+  "exp": 1775612126,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-08 06:05:33.153 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-04-08 06:05:33.168 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-04-08 06:05:33.501 +05:30 [INF] Executed DbCommand (61ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-04-08 06:05:33.536 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-04-08 06:05:33.550 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-08 06:05:33.565 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 390.4546ms
+2026-04-08 06:05:33.568 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-04-08 06:05:33.578 +05:30 [INF] HTTP GET /api/notifications responded 200 in 721.7448 ms
+2026-04-08 06:05:33.585 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 793.3042ms
+2026-04-08 06:05:44.081 +05:30 [INF] 🔌 SignalR disconnected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1
+2026-04-08 06:05:44.092 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-04-08 06:05:44.096 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 11909.5339 ms
+2026-04-08 06:05:44.103 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=S5Zr8cFOUtTlGKitrPOq-Q&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.D6Ltu3SekdMncsGTGXtTUVnFINb0mplkyUXOSXkpOhPiAMqqnV9acLfpe-eankaGC0ydRr_PO1vYMwIiPGoopsyqMJpo2rey5JD2iIuLeKQBRs1qPncyMjCX3-TBa0Jy1XPGbrYAjxWwnlOX79bWoB5sfhfgagRPvZaT8KvHPvLG9b5mJlLe6C_z1nPoVcUgf6ZKYUtBXnuweb1isfCVzCZs63Hrmg0Wd3kBwcNNLxwV2_oAzBttzbP1EM--I5cwi-2tbehiPd0AWoJdwcj2bPLRrSqYNtcyZKPbp9CgANbEHxUIGDHB2IE152nGEoYybkd_Sa9oZlTNboTa68jmsg.Ckh2gyikEGiskVpGbhjIJg.CetR0ja-2kw_lGbZFWOH0AHI7OdbRg8r2Ufy28VIWuG9Zvei0W-i7bqvrsh60IRpjo2FVVgDaOe5w93z0xJYK_OSjaGy3x6bpfSZXCfBrA08X2zAkDnNuiV22tJoS9XUweewmFy29-XDIwEoexfmzJsrhtCQoQ37k4j8NB4y1IgvU6AWgE3Fjs-VH-GcymwBRiavW3lc7rbFqJyCwVERosV1ePGFbkI0rUAuV1jomx4_RV0IorxfDtZ_WsA3q62Uok-I-sjv4FWGZbO11WPqcdQEozaJ4Eo5ePmsfBc57uda6390Qua5MwpklSWpmNpdeP-zY1QvY8EwOgd2r9wz1ThXXby10dPAL2dhWYpQHP705YAIZsk3pCWl6gum75g0FV-cQxmWMJCwWinMRFztnALGsqcZOBFcJs0ERThg9G3MWLLK7e7dGNvYc_YU4Olpztqc-Ga7zL7kPN7vbRfWc3A8j9RerQarYEETuoYUpz5bYKKppVChA2sWi5zGVB1E1nySF5SGGi2G4KoOM3V2HY9_vywNwNngRak_01SDjqhpQZBsqFjyjDu3t_p_PNZ1KpeseRVDenmOaIHJMkml25p07syphOe64cLQfDGkkkqlehaY99LmOHTyQWezacnQyA1dAqAdk3Cj2YULpmBjI9nrTpanLki5kYI1tlG0p2losNqUvvcv6F6YwIEoXiMeWKZCYwr1E584bcySKKalJ-r1ysQqpHuvSEUrDqW1CSk2V1GMYwnUWG48Gl8zmlaAWtdZA0H5B0OhfuI_7HuEsTXxZn2rgM7y38e9f4LYMMhiby49apF3Pv0t06Q8srg7mYeQmnpbi4Jz-inKPPkfT7Z5JfWX8N1huTAuUv3eBQcFtmPWsf8ez6ztBb3FYRUrrYTbvOVWqD9Vw8YAfzdq7oJp17M96xaPzw1jAih_MSsVK9XSfvkboXAc7oSOw_bdM0skCHiXfHNZrw5ZsNPDgcew6qFDfqGbjZ-gOipiQzcWY4Q9syIGObVx_8RCHjvphluOE0seTXEKTIN8T61EbpzIFCXDwxSmP9vBJM3jEpRDq42B30h9rrYLfbMrUMIrVr1T6o7RYttrGLce1RnGZNdF_VSke6DUR9MvSAxytXZBYd0NyEQpvMsKNYEEhq7LYHh6cQbakpPpujzFofFjWBo3qid4GxgSXVnCHa0VmJe78YMhQen5yMQH77UwYiok64SAtBG_OADZA-r5GtY0cCFm2lvTUwYVfazgiM9wRoNzy1ckKyQjrudPxVWE40tURrqdmPMIcjbDZaAJnxoyZECoHhGlTiUPcbn0m-soz3iiCv8jXtYSKHE7gV_vxHfr8tPoofgdFBNKZezyrbidMZHkD93HSy6SnNIEbQlNdsVy6UDLqLh_43Ukzcf2FfXbN5haYD6cE9DVWG5n036DdVsKmcuiHZgiX9L5i0O2ttSIKS7IkXFZSuo3XH4s9d7caQOKu8gW1nm1qz0NGh0mSRrn0lTBMgptXQ0ip9dMuBA8znD0rHJDOfzugD0xvK25MynY4JE5Drm_-WE-h89K1yiJ9mJAMVvUBdrwesYHYrShbOMR0bkWqfJnmSaBcCklUsvwc02VZZa4y60AyJ6HnS7C3iymwLm9ejcUzBmjVMRTbFK36T8ugify0vyFKqfJGOgjTNESVymTArLAGO6gxR0RKrRNOZWMvgXiQE_Sn_qc5Mq5vCs9punR0ZfXPcbxL3DEftUV9I477slJwTMcDZUcEYFQRnPidcWI-rhl5W-XHCEjF5IKIhDTsRol0ouTmuBNpOIp4_QpvKNB5MVedrxKkNDP7VxPkRUmlHsTEhif4J1vOka7QjRpQUMoXNGB4dCrXcLafYP-xx1NRj7OuOl9HE5s3vIKQG8C5P9TEi-mgULxCb5GAKN-Xc4xBbu_A-syddBK4W9lCObPwjh82LekqGLpfiCUkRy19P_YLU0dvDxQZv5OR40aHAktsDEkPq_xc2kPkupCilC4QXlcKQ.qkPPnpdmklXaOwvexqaPBqNaK0Zk7WVby0jABuWJlCM - 101 null null 11951.5022ms
+2026-04-08 06:34:30.131 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-04-08 06:34:30.247 +05:30 [INF] CORS policy execution successful.
+2026-04-08 06:34:30.399 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:34:30.411 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:34:30.588 +05:30 [INF] Received HTTP response headers after 172.6738ms - 200
+2026-04-08 06:34:30.596 +05:30 [INF] End processing HTTP request after 202.0727ms - 200
+2026-04-08 06:34:30.621 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-08 06:34:30.671 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "3336247d-d9be-4547-ade9-b5d7757d5cbe",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775608526,
+  "nbf": 1775608526,
+  "exp": 1775612126,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-08 06:34:30.732 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-04-08 06:34:30.800 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-04-08 06:34:30.815 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 556.0734 ms
+2026-04-08 06:34:30.917 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 790.9207ms
+2026-04-08 06:34:31.914 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=5mrPL9bENC_jkPo-rHyjfg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.D6Ltu3SekdMncsGTGXtTUVnFINb0mplkyUXOSXkpOhPiAMqqnV9acLfpe-eankaGC0ydRr_PO1vYMwIiPGoopsyqMJpo2rey5JD2iIuLeKQBRs1qPncyMjCX3-TBa0Jy1XPGbrYAjxWwnlOX79bWoB5sfhfgagRPvZaT8KvHPvLG9b5mJlLe6C_z1nPoVcUgf6ZKYUtBXnuweb1isfCVzCZs63Hrmg0Wd3kBwcNNLxwV2_oAzBttzbP1EM--I5cwi-2tbehiPd0AWoJdwcj2bPLRrSqYNtcyZKPbp9CgANbEHxUIGDHB2IE152nGEoYybkd_Sa9oZlTNboTa68jmsg.Ckh2gyikEGiskVpGbhjIJg.CetR0ja-2kw_lGbZFWOH0AHI7OdbRg8r2Ufy28VIWuG9Zvei0W-i7bqvrsh60IRpjo2FVVgDaOe5w93z0xJYK_OSjaGy3x6bpfSZXCfBrA08X2zAkDnNuiV22tJoS9XUweewmFy29-XDIwEoexfmzJsrhtCQoQ37k4j8NB4y1IgvU6AWgE3Fjs-VH-GcymwBRiavW3lc7rbFqJyCwVERosV1ePGFbkI0rUAuV1jomx4_RV0IorxfDtZ_WsA3q62Uok-I-sjv4FWGZbO11WPqcdQEozaJ4Eo5ePmsfBc57uda6390Qua5MwpklSWpmNpdeP-zY1QvY8EwOgd2r9wz1ThXXby10dPAL2dhWYpQHP705YAIZsk3pCWl6gum75g0FV-cQxmWMJCwWinMRFztnALGsqcZOBFcJs0ERThg9G3MWLLK7e7dGNvYc_YU4Olpztqc-Ga7zL7kPN7vbRfWc3A8j9RerQarYEETuoYUpz5bYKKppVChA2sWi5zGVB1E1nySF5SGGi2G4KoOM3V2HY9_vywNwNngRak_01SDjqhpQZBsqFjyjDu3t_p_PNZ1KpeseRVDenmOaIHJMkml25p07syphOe64cLQfDGkkkqlehaY99LmOHTyQWezacnQyA1dAqAdk3Cj2YULpmBjI9nrTpanLki5kYI1tlG0p2losNqUvvcv6F6YwIEoXiMeWKZCYwr1E584bcySKKalJ-r1ysQqpHuvSEUrDqW1CSk2V1GMYwnUWG48Gl8zmlaAWtdZA0H5B0OhfuI_7HuEsTXxZn2rgM7y38e9f4LYMMhiby49apF3Pv0t06Q8srg7mYeQmnpbi4Jz-inKPPkfT7Z5JfWX8N1huTAuUv3eBQcFtmPWsf8ez6ztBb3FYRUrrYTbvOVWqD9Vw8YAfzdq7oJp17M96xaPzw1jAih_MSsVK9XSfvkboXAc7oSOw_bdM0skCHiXfHNZrw5ZsNPDgcew6qFDfqGbjZ-gOipiQzcWY4Q9syIGObVx_8RCHjvphluOE0seTXEKTIN8T61EbpzIFCXDwxSmP9vBJM3jEpRDq42B30h9rrYLfbMrUMIrVr1T6o7RYttrGLce1RnGZNdF_VSke6DUR9MvSAxytXZBYd0NyEQpvMsKNYEEhq7LYHh6cQbakpPpujzFofFjWBo3qid4GxgSXVnCHa0VmJe78YMhQen5yMQH77UwYiok64SAtBG_OADZA-r5GtY0cCFm2lvTUwYVfazgiM9wRoNzy1ckKyQjrudPxVWE40tURrqdmPMIcjbDZaAJnxoyZECoHhGlTiUPcbn0m-soz3iiCv8jXtYSKHE7gV_vxHfr8tPoofgdFBNKZezyrbidMZHkD93HSy6SnNIEbQlNdsVy6UDLqLh_43Ukzcf2FfXbN5haYD6cE9DVWG5n036DdVsKmcuiHZgiX9L5i0O2ttSIKS7IkXFZSuo3XH4s9d7caQOKu8gW1nm1qz0NGh0mSRrn0lTBMgptXQ0ip9dMuBA8znD0rHJDOfzugD0xvK25MynY4JE5Drm_-WE-h89K1yiJ9mJAMVvUBdrwesYHYrShbOMR0bkWqfJnmSaBcCklUsvwc02VZZa4y60AyJ6HnS7C3iymwLm9ejcUzBmjVMRTbFK36T8ugify0vyFKqfJGOgjTNESVymTArLAGO6gxR0RKrRNOZWMvgXiQE_Sn_qc5Mq5vCs9punR0ZfXPcbxL3DEftUV9I477slJwTMcDZUcEYFQRnPidcWI-rhl5W-XHCEjF5IKIhDTsRol0ouTmuBNpOIp4_QpvKNB5MVedrxKkNDP7VxPkRUmlHsTEhif4J1vOka7QjRpQUMoXNGB4dCrXcLafYP-xx1NRj7OuOl9HE5s3vIKQG8C5P9TEi-mgULxCb5GAKN-Xc4xBbu_A-syddBK4W9lCObPwjh82LekqGLpfiCUkRy19P_YLU0dvDxQZv5OR40aHAktsDEkPq_xc2kPkupCilC4QXlcKQ.qkPPnpdmklXaOwvexqaPBqNaK0Zk7WVby0jABuWJlCM - null null
+2026-04-08 06:34:31.939 +05:30 [INF] CORS policy execution successful.
+2026-04-08 06:34:31.947 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:34:31.951 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:34:32.040 +05:30 [INF] Received HTTP response headers after 83.7864ms - 200
+2026-04-08 06:34:32.047 +05:30 [INF] End processing HTTP request after 100.9586ms - 200
+2026-04-08 06:34:32.050 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-08 06:34:32.061 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "3336247d-d9be-4547-ade9-b5d7757d5cbe",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775608526,
+  "nbf": 1775608526,
+  "exp": 1775612126,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-08 06:34:32.066 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-04-08 06:34:32.128 +05:30 [INF] 🔌 SignalR connected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | ConnectionId: 9uFB27iGy6uF-Zkb9VView
+2026-04-08 06:34:32.250 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-04-08 06:34:32.264 +05:30 [INF] CORS policy execution successful.
+2026-04-08 06:34:32.273 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:34:32.278 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:34:32.361 +05:30 [INF] Received HTTP response headers after 80.9661ms - 200
+2026-04-08 06:34:32.366 +05:30 [INF] End processing HTTP request after 92.1673ms - 200
+2026-04-08 06:34:32.374 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-08 06:34:32.378 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "3336247d-d9be-4547-ade9-b5d7757d5cbe",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775608526,
+  "nbf": 1775608526,
+  "exp": 1775612126,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-08 06:34:32.382 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-04-08 06:34:32.398 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-04-08 06:34:32.728 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-04-08 06:34:32.757 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-04-08 06:34:32.766 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-08 06:34:32.776 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 366.1202ms
+2026-04-08 06:34:32.781 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-04-08 06:34:32.785 +05:30 [INF] HTTP GET /api/notifications responded 200 in 518.2445 ms
+2026-04-08 06:34:32.791 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 540.4848ms
+2026-04-08 06:34:34.956 +05:30 [INF] 🔌 SignalR disconnected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1
+2026-04-08 06:34:34.963 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-04-08 06:34:34.968 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 3026.2907 ms
+2026-04-08 06:34:34.974 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=5mrPL9bENC_jkPo-rHyjfg&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.D6Ltu3SekdMncsGTGXtTUVnFINb0mplkyUXOSXkpOhPiAMqqnV9acLfpe-eankaGC0ydRr_PO1vYMwIiPGoopsyqMJpo2rey5JD2iIuLeKQBRs1qPncyMjCX3-TBa0Jy1XPGbrYAjxWwnlOX79bWoB5sfhfgagRPvZaT8KvHPvLG9b5mJlLe6C_z1nPoVcUgf6ZKYUtBXnuweb1isfCVzCZs63Hrmg0Wd3kBwcNNLxwV2_oAzBttzbP1EM--I5cwi-2tbehiPd0AWoJdwcj2bPLRrSqYNtcyZKPbp9CgANbEHxUIGDHB2IE152nGEoYybkd_Sa9oZlTNboTa68jmsg.Ckh2gyikEGiskVpGbhjIJg.CetR0ja-2kw_lGbZFWOH0AHI7OdbRg8r2Ufy28VIWuG9Zvei0W-i7bqvrsh60IRpjo2FVVgDaOe5w93z0xJYK_OSjaGy3x6bpfSZXCfBrA08X2zAkDnNuiV22tJoS9XUweewmFy29-XDIwEoexfmzJsrhtCQoQ37k4j8NB4y1IgvU6AWgE3Fjs-VH-GcymwBRiavW3lc7rbFqJyCwVERosV1ePGFbkI0rUAuV1jomx4_RV0IorxfDtZ_WsA3q62Uok-I-sjv4FWGZbO11WPqcdQEozaJ4Eo5ePmsfBc57uda6390Qua5MwpklSWpmNpdeP-zY1QvY8EwOgd2r9wz1ThXXby10dPAL2dhWYpQHP705YAIZsk3pCWl6gum75g0FV-cQxmWMJCwWinMRFztnALGsqcZOBFcJs0ERThg9G3MWLLK7e7dGNvYc_YU4Olpztqc-Ga7zL7kPN7vbRfWc3A8j9RerQarYEETuoYUpz5bYKKppVChA2sWi5zGVB1E1nySF5SGGi2G4KoOM3V2HY9_vywNwNngRak_01SDjqhpQZBsqFjyjDu3t_p_PNZ1KpeseRVDenmOaIHJMkml25p07syphOe64cLQfDGkkkqlehaY99LmOHTyQWezacnQyA1dAqAdk3Cj2YULpmBjI9nrTpanLki5kYI1tlG0p2losNqUvvcv6F6YwIEoXiMeWKZCYwr1E584bcySKKalJ-r1ysQqpHuvSEUrDqW1CSk2V1GMYwnUWG48Gl8zmlaAWtdZA0H5B0OhfuI_7HuEsTXxZn2rgM7y38e9f4LYMMhiby49apF3Pv0t06Q8srg7mYeQmnpbi4Jz-inKPPkfT7Z5JfWX8N1huTAuUv3eBQcFtmPWsf8ez6ztBb3FYRUrrYTbvOVWqD9Vw8YAfzdq7oJp17M96xaPzw1jAih_MSsVK9XSfvkboXAc7oSOw_bdM0skCHiXfHNZrw5ZsNPDgcew6qFDfqGbjZ-gOipiQzcWY4Q9syIGObVx_8RCHjvphluOE0seTXEKTIN8T61EbpzIFCXDwxSmP9vBJM3jEpRDq42B30h9rrYLfbMrUMIrVr1T6o7RYttrGLce1RnGZNdF_VSke6DUR9MvSAxytXZBYd0NyEQpvMsKNYEEhq7LYHh6cQbakpPpujzFofFjWBo3qid4GxgSXVnCHa0VmJe78YMhQen5yMQH77UwYiok64SAtBG_OADZA-r5GtY0cCFm2lvTUwYVfazgiM9wRoNzy1ckKyQjrudPxVWE40tURrqdmPMIcjbDZaAJnxoyZECoHhGlTiUPcbn0m-soz3iiCv8jXtYSKHE7gV_vxHfr8tPoofgdFBNKZezyrbidMZHkD93HSy6SnNIEbQlNdsVy6UDLqLh_43Ukzcf2FfXbN5haYD6cE9DVWG5n036DdVsKmcuiHZgiX9L5i0O2ttSIKS7IkXFZSuo3XH4s9d7caQOKu8gW1nm1qz0NGh0mSRrn0lTBMgptXQ0ip9dMuBA8znD0rHJDOfzugD0xvK25MynY4JE5Drm_-WE-h89K1yiJ9mJAMVvUBdrwesYHYrShbOMR0bkWqfJnmSaBcCklUsvwc02VZZa4y60AyJ6HnS7C3iymwLm9ejcUzBmjVMRTbFK36T8ugify0vyFKqfJGOgjTNESVymTArLAGO6gxR0RKrRNOZWMvgXiQE_Sn_qc5Mq5vCs9punR0ZfXPcbxL3DEftUV9I477slJwTMcDZUcEYFQRnPidcWI-rhl5W-XHCEjF5IKIhDTsRol0ouTmuBNpOIp4_QpvKNB5MVedrxKkNDP7VxPkRUmlHsTEhif4J1vOka7QjRpQUMoXNGB4dCrXcLafYP-xx1NRj7OuOl9HE5s3vIKQG8C5P9TEi-mgULxCb5GAKN-Xc4xBbu_A-syddBK4W9lCObPwjh82LekqGLpfiCUkRy19P_YLU0dvDxQZv5OR40aHAktsDEkPq_xc2kPkupCilC4QXlcKQ.qkPPnpdmklXaOwvexqaPBqNaK0Zk7WVby0jABuWJlCM - 101 null null 3060.3211ms
+2026-04-08 06:35:39.742 +05:30 [INF] 📨 Kafka received | Topic: swiftbite.order.placed | Offset: 44
+2026-04-08 06:35:40.217 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 30), @p2='?' (DbType = DateTime2), @p3='?' (Size = 500), @p4='?' (DbType = Boolean), @p5='?' (Size = 1000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (Size = 200), @p9='?' (Size = 50), @p10='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([Id], [Channel], [CreatedAt], [ImageUrl], [IsRead], [Message], [ReadAt], [ReferenceId], [Title], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2026-04-08 06:35:40.267 +05:30 [INF] 📨 SignalR sent | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | Title: 🛒 Order Placed!
+2026-04-08 06:35:49.097 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2026-04-08 06:35:49.105 +05:30 [INF] CORS policy execution successful.
+2026-04-08 06:35:49.111 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:35:49.116 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:35:49.208 +05:30 [INF] Received HTTP response headers after 87.2894ms - 200
+2026-04-08 06:35:49.211 +05:30 [INF] End processing HTTP request after 100.2646ms - 200
+2026-04-08 06:35:49.215 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-08 06:35:49.218 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "3336247d-d9be-4547-ade9-b5d7757d5cbe",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775608526,
+  "nbf": 1775608526,
+  "exp": 1775612126,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-08 06:35:49.225 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2026-04-08 06:35:49.228 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2026-04-08 06:35:49.230 +05:30 [INF] HTTP POST /hubs/notifications/negotiate responded 200 in 121.1472 ms
+2026-04-08 06:35:49.247 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5006/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 150.2823ms
+2026-04-08 06:35:49.347 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=Tw7mDxnAQLi1aYMYBTqXPw&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.D6Ltu3SekdMncsGTGXtTUVnFINb0mplkyUXOSXkpOhPiAMqqnV9acLfpe-eankaGC0ydRr_PO1vYMwIiPGoopsyqMJpo2rey5JD2iIuLeKQBRs1qPncyMjCX3-TBa0Jy1XPGbrYAjxWwnlOX79bWoB5sfhfgagRPvZaT8KvHPvLG9b5mJlLe6C_z1nPoVcUgf6ZKYUtBXnuweb1isfCVzCZs63Hrmg0Wd3kBwcNNLxwV2_oAzBttzbP1EM--I5cwi-2tbehiPd0AWoJdwcj2bPLRrSqYNtcyZKPbp9CgANbEHxUIGDHB2IE152nGEoYybkd_Sa9oZlTNboTa68jmsg.Ckh2gyikEGiskVpGbhjIJg.CetR0ja-2kw_lGbZFWOH0AHI7OdbRg8r2Ufy28VIWuG9Zvei0W-i7bqvrsh60IRpjo2FVVgDaOe5w93z0xJYK_OSjaGy3x6bpfSZXCfBrA08X2zAkDnNuiV22tJoS9XUweewmFy29-XDIwEoexfmzJsrhtCQoQ37k4j8NB4y1IgvU6AWgE3Fjs-VH-GcymwBRiavW3lc7rbFqJyCwVERosV1ePGFbkI0rUAuV1jomx4_RV0IorxfDtZ_WsA3q62Uok-I-sjv4FWGZbO11WPqcdQEozaJ4Eo5ePmsfBc57uda6390Qua5MwpklSWpmNpdeP-zY1QvY8EwOgd2r9wz1ThXXby10dPAL2dhWYpQHP705YAIZsk3pCWl6gum75g0FV-cQxmWMJCwWinMRFztnALGsqcZOBFcJs0ERThg9G3MWLLK7e7dGNvYc_YU4Olpztqc-Ga7zL7kPN7vbRfWc3A8j9RerQarYEETuoYUpz5bYKKppVChA2sWi5zGVB1E1nySF5SGGi2G4KoOM3V2HY9_vywNwNngRak_01SDjqhpQZBsqFjyjDu3t_p_PNZ1KpeseRVDenmOaIHJMkml25p07syphOe64cLQfDGkkkqlehaY99LmOHTyQWezacnQyA1dAqAdk3Cj2YULpmBjI9nrTpanLki5kYI1tlG0p2losNqUvvcv6F6YwIEoXiMeWKZCYwr1E584bcySKKalJ-r1ysQqpHuvSEUrDqW1CSk2V1GMYwnUWG48Gl8zmlaAWtdZA0H5B0OhfuI_7HuEsTXxZn2rgM7y38e9f4LYMMhiby49apF3Pv0t06Q8srg7mYeQmnpbi4Jz-inKPPkfT7Z5JfWX8N1huTAuUv3eBQcFtmPWsf8ez6ztBb3FYRUrrYTbvOVWqD9Vw8YAfzdq7oJp17M96xaPzw1jAih_MSsVK9XSfvkboXAc7oSOw_bdM0skCHiXfHNZrw5ZsNPDgcew6qFDfqGbjZ-gOipiQzcWY4Q9syIGObVx_8RCHjvphluOE0seTXEKTIN8T61EbpzIFCXDwxSmP9vBJM3jEpRDq42B30h9rrYLfbMrUMIrVr1T6o7RYttrGLce1RnGZNdF_VSke6DUR9MvSAxytXZBYd0NyEQpvMsKNYEEhq7LYHh6cQbakpPpujzFofFjWBo3qid4GxgSXVnCHa0VmJe78YMhQen5yMQH77UwYiok64SAtBG_OADZA-r5GtY0cCFm2lvTUwYVfazgiM9wRoNzy1ckKyQjrudPxVWE40tURrqdmPMIcjbDZaAJnxoyZECoHhGlTiUPcbn0m-soz3iiCv8jXtYSKHE7gV_vxHfr8tPoofgdFBNKZezyrbidMZHkD93HSy6SnNIEbQlNdsVy6UDLqLh_43Ukzcf2FfXbN5haYD6cE9DVWG5n036DdVsKmcuiHZgiX9L5i0O2ttSIKS7IkXFZSuo3XH4s9d7caQOKu8gW1nm1qz0NGh0mSRrn0lTBMgptXQ0ip9dMuBA8znD0rHJDOfzugD0xvK25MynY4JE5Drm_-WE-h89K1yiJ9mJAMVvUBdrwesYHYrShbOMR0bkWqfJnmSaBcCklUsvwc02VZZa4y60AyJ6HnS7C3iymwLm9ejcUzBmjVMRTbFK36T8ugify0vyFKqfJGOgjTNESVymTArLAGO6gxR0RKrRNOZWMvgXiQE_Sn_qc5Mq5vCs9punR0ZfXPcbxL3DEftUV9I477slJwTMcDZUcEYFQRnPidcWI-rhl5W-XHCEjF5IKIhDTsRol0ouTmuBNpOIp4_QpvKNB5MVedrxKkNDP7VxPkRUmlHsTEhif4J1vOka7QjRpQUMoXNGB4dCrXcLafYP-xx1NRj7OuOl9HE5s3vIKQG8C5P9TEi-mgULxCb5GAKN-Xc4xBbu_A-syddBK4W9lCObPwjh82LekqGLpfiCUkRy19P_YLU0dvDxQZv5OR40aHAktsDEkPq_xc2kPkupCilC4QXlcKQ.qkPPnpdmklXaOwvexqaPBqNaK0Zk7WVby0jABuWJlCM - null null
+2026-04-08 06:35:49.357 +05:30 [INF] CORS policy execution successful.
+2026-04-08 06:35:49.360 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:35:49.362 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:35:49.412 +05:30 [INF] Received HTTP response headers after 47.646ms - 200
+2026-04-08 06:35:49.415 +05:30 [INF] End processing HTTP request after 55.6305ms - 200
+2026-04-08 06:35:49.418 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-08 06:35:49.422 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "3336247d-d9be-4547-ade9-b5d7757d5cbe",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775608526,
+  "nbf": 1775608526,
+  "exp": 1775612126,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-08 06:35:49.425 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2026-04-08 06:35:49.442 +05:30 [INF] 🔌 SignalR connected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1 | ConnectionId: 7LxK7ofdbjAuNtmbN3Pj8Q
+2026-04-08 06:35:49.516 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/api/notifications - null null
+2026-04-08 06:35:49.525 +05:30 [INF] CORS policy execution successful.
+2026-04-08 06:35:49.528 +05:30 [INF] Start processing HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:35:49.531 +05:30 [INF] Sending HTTP request POST http://localhost:5149/connect/introspect
+2026-04-08 06:35:49.588 +05:30 [INF] Received HTTP response headers after 54.3947ms - 200
+2026-04-08 06:35:49.592 +05:30 [INF] End processing HTTP request after 63.6099ms - 200
+2026-04-08 06:35:49.595 +05:30 [INF] The token request was successfully sent to "http://localhost:5149/connect/introspect": {
+  "token": "[redacted]",
+  "token_type_hint": "access_token",
+  "client_id": "swiftbite-notificationservice",
+  "client_secret": "[redacted]"
+}.
+2026-04-08 06:35:49.598 +05:30 [INF] The token response returned by "http://localhost:5149/connect/introspect" was successfully extracted: {
+  "active": true,
+  "iss": "http://localhost:5149/",
+  "sub": "fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1",
+  "scope": "openid profile email offline_access swiftbite.user swiftbite.order",
+  "jti": "3336247d-d9be-4547-ade9-b5d7757d5cbe",
+  "token_type": "Bearer",
+  "token_usage": "access_token",
+  "client_id": "swiftbite-angular",
+  "iat": 1775608526,
+  "nbf": 1775608526,
+  "exp": 1775612126,
+  "aud": [
+    "swiftbite-gateway",
+    "swiftbite-userservice",
+    "swiftbite-restaurantservice",
+    "swiftbite-orderservice",
+    "swiftbite-paymentservice",
+    "swiftbite-notificationservice",
+    "swiftbite-deliveryservice"
+  ],
+  "email": "nagallisreedhar1918@gmail.com",
+  "given_name": "Nagalli Sreedhar",
+  "firstName": "Nagalli Sreedhar",
+  "role": "Customer"
+}.
+2026-04-08 06:35:49.605 +05:30 [INF] Executing endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-04-08 06:35:49.609 +05:30 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.Threading.CancellationToken) on controller SwiftBite.NotificationService.API.Controllers.NotificationsController (SwiftBite.NotificationService.API).
+2026-04-08 06:35:49.622 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 100), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Channel], [n].[CreatedAt], [n].[ImageUrl], [n].[IsRead], [n].[Message], [n].[ReadAt], [n].[ReferenceId], [n].[Title], [n].[Type], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-04-08 06:35:49.632 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__userId_0 AND [n].[IsRead] = CAST(0 AS bit)
+2026-04-08 06:35:49.639 +05:30 [INF] Executing OkObjectResult, writing value of type 'SwiftBite.Shared.Exceptions.Models.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-08 06:35:49.643 +05:30 [INF] Executed action SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API) in 31.0646ms
+2026-04-08 06:35:49.646 +05:30 [INF] Executed endpoint 'SwiftBite.NotificationService.API.Controllers.NotificationsController.GetAll (SwiftBite.NotificationService.API)'
+2026-04-08 06:35:49.649 +05:30 [INF] HTTP GET /api/notifications responded 200 in 121.3494 ms
+2026-04-08 06:35:49.656 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/api/notifications - 200 null application/json; charset=utf-8 139.5974ms
+2026-04-08 06:36:06.792 +05:30 [INF] 🔌 SignalR disconnected | User: fd4c9fd2-8fd8-412c-9fc0-ce0b8bcab0d1
+2026-04-08 06:36:06.797 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2026-04-08 06:36:06.800 +05:30 [INF] HTTP GET /hubs/notifications responded 101 in 17440.4739 ms
+2026-04-08 06:36:06.807 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/hubs/notifications?id=Tw7mDxnAQLi1aYMYBTqXPw&access_token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI4ODI2MjIyNjM4NEU0QkRFOTNEMTcyRDYyQTYzMDFGNUQzN0JEOTQwIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.D6Ltu3SekdMncsGTGXtTUVnFINb0mplkyUXOSXkpOhPiAMqqnV9acLfpe-eankaGC0ydRr_PO1vYMwIiPGoopsyqMJpo2rey5JD2iIuLeKQBRs1qPncyMjCX3-TBa0Jy1XPGbrYAjxWwnlOX79bWoB5sfhfgagRPvZaT8KvHPvLG9b5mJlLe6C_z1nPoVcUgf6ZKYUtBXnuweb1isfCVzCZs63Hrmg0Wd3kBwcNNLxwV2_oAzBttzbP1EM--I5cwi-2tbehiPd0AWoJdwcj2bPLRrSqYNtcyZKPbp9CgANbEHxUIGDHB2IE152nGEoYybkd_Sa9oZlTNboTa68jmsg.Ckh2gyikEGiskVpGbhjIJg.CetR0ja-2kw_lGbZFWOH0AHI7OdbRg8r2Ufy28VIWuG9Zvei0W-i7bqvrsh60IRpjo2FVVgDaOe5w93z0xJYK_OSjaGy3x6bpfSZXCfBrA08X2zAkDnNuiV22tJoS9XUweewmFy29-XDIwEoexfmzJsrhtCQoQ37k4j8NB4y1IgvU6AWgE3Fjs-VH-GcymwBRiavW3lc7rbFqJyCwVERosV1ePGFbkI0rUAuV1jomx4_RV0IorxfDtZ_WsA3q62Uok-I-sjv4FWGZbO11WPqcdQEozaJ4Eo5ePmsfBc57uda6390Qua5MwpklSWpmNpdeP-zY1QvY8EwOgd2r9wz1ThXXby10dPAL2dhWYpQHP705YAIZsk3pCWl6gum75g0FV-cQxmWMJCwWinMRFztnALGsqcZOBFcJs0ERThg9G3MWLLK7e7dGNvYc_YU4Olpztqc-Ga7zL7kPN7vbRfWc3A8j9RerQarYEETuoYUpz5bYKKppVChA2sWi5zGVB1E1nySF5SGGi2G4KoOM3V2HY9_vywNwNngRak_01SDjqhpQZBsqFjyjDu3t_p_PNZ1KpeseRVDenmOaIHJMkml25p07syphOe64cLQfDGkkkqlehaY99LmOHTyQWezacnQyA1dAqAdk3Cj2YULpmBjI9nrTpanLki5kYI1tlG0p2losNqUvvcv6F6YwIEoXiMeWKZCYwr1E584bcySKKalJ-r1ysQqpHuvSEUrDqW1CSk2V1GMYwnUWG48Gl8zmlaAWtdZA0H5B0OhfuI_7HuEsTXxZn2rgM7y38e9f4LYMMhiby49apF3Pv0t06Q8srg7mYeQmnpbi4Jz-inKPPkfT7Z5JfWX8N1huTAuUv3eBQcFtmPWsf8ez6ztBb3FYRUrrYTbvOVWqD9Vw8YAfzdq7oJp17M96xaPzw1jAih_MSsVK9XSfvkboXAc7oSOw_bdM0skCHiXfHNZrw5ZsNPDgcew6qFDfqGbjZ-gOipiQzcWY4Q9syIGObVx_8RCHjvphluOE0seTXEKTIN8T61EbpzIFCXDwxSmP9vBJM3jEpRDq42B30h9rrYLfbMrUMIrVr1T6o7RYttrGLce1RnGZNdF_VSke6DUR9MvSAxytXZBYd0NyEQpvMsKNYEEhq7LYHh6cQbakpPpujzFofFjWBo3qid4GxgSXVnCHa0VmJe78YMhQen5yMQH77UwYiok64SAtBG_OADZA-r5GtY0cCFm2lvTUwYVfazgiM9wRoNzy1ckKyQjrudPxVWE40tURrqdmPMIcjbDZaAJnxoyZECoHhGlTiUPcbn0m-soz3iiCv8jXtYSKHE7gV_vxHfr8tPoofgdFBNKZezyrbidMZHkD93HSy6SnNIEbQlNdsVy6UDLqLh_43Ukzcf2FfXbN5haYD6cE9DVWG5n036DdVsKmcuiHZgiX9L5i0O2ttSIKS7IkXFZSuo3XH4s9d7caQOKu8gW1nm1qz0NGh0mSRrn0lTBMgptXQ0ip9dMuBA8znD0rHJDOfzugD0xvK25MynY4JE5Drm_-WE-h89K1yiJ9mJAMVvUBdrwesYHYrShbOMR0bkWqfJnmSaBcCklUsvwc02VZZa4y60AyJ6HnS7C3iymwLm9ejcUzBmjVMRTbFK36T8ugify0vyFKqfJGOgjTNESVymTArLAGO6gxR0RKrRNOZWMvgXiQE_Sn_qc5Mq5vCs9punR0ZfXPcbxL3DEftUV9I477slJwTMcDZUcEYFQRnPidcWI-rhl5W-XHCEjF5IKIhDTsRol0ouTmuBNpOIp4_QpvKNB5MVedrxKkNDP7VxPkRUmlHsTEhif4J1vOka7QjRpQUMoXNGB4dCrXcLafYP-xx1NRj7OuOl9HE5s3vIKQG8C5P9TEi-mgULxCb5GAKN-Xc4xBbu_A-syddBK4W9lCObPwjh82LekqGLpfiCUkRy19P_YLU0dvDxQZv5OR40aHAktsDEkPq_xc2kPkupCilC4QXlcKQ.qkPPnpdmklXaOwvexqaPBqNaK0Zk7WVby0jABuWJlCM - 101 null null 17460.0894ms
+2026-04-08 07:17:02.662 +05:30 [INF] Executed DbCommand (619ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 07:17:05.395 +05:30 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-08 07:17:05.609 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 07:17:05.738 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-08 07:17:05.934 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-08 07:17:06.006 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-08 07:17:09.406 +05:30 [INF] User profile is available. Using 'C:\Users\nsrid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-08 07:17:09.568 +05:30 [INF] 🎧 Kafka consumer started | Topics: swiftbite.order.placed, swiftbite.order.confirmed, swiftbite.order.cancelled, swiftbite.payment.success, swiftbite.payment.failed, swiftbite.location.updated
+2026-04-08 07:17:10.586 +05:30 [INF] Now listening on: http://localhost:5006
+2026-04-08 07:17:12.688 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/index.html - null null
+2026-04-08 07:17:13.093 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.order.cancelled: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 72
+2026-04-08 07:17:13.316 +05:30 [ERR] ❌ Kafka consume error
+Confluent.Kafka.ConsumeException: Subscribed topic not available: swiftbite.payment.failed: Broker: Unknown topic or partition
+   at Confluent.Kafka.Consumer`2.Consume(Int32 millisecondsTimeout)
+   at Confluent.Kafka.Consumer`2.Consume(TimeSpan timeout)
+   at SwiftBite.NotificationService.Infrastructure.Messaging.KafkaConsumerService.ExecuteAsync(CancellationToken ct) in C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.Infrastructure\Messaging\KafkaConsumerService.cs:line 72
+2026-04-08 07:17:14.900 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-08 07:17:14.913 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/index.html - 200 null text/html;charset=utf-8 2227.2837ms
+2026-04-08 07:17:14.994 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_vs/browserLink - null null
+2026-04-08 07:17:15.071 +05:30 [INF] Hosting environment: Development
+2026-04-08 07:17:19.646 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-08 07:17:19.710 +05:30 [INF] Content root path: C:\Users\nsrid\source\repos\SwiftBite\src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.API
+2026-04-08 07:17:19.841 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - 200 16551 application/javascript; charset=utf-8 195.6412ms
+2026-04-08 07:17:20.038 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_vs/browserLink - 200 null text/javascript; charset=UTF-8 5044.4471ms
+2026-04-08 07:17:22.886 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - null null
+2026-04-08 07:17:23.117 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 230.4888ms

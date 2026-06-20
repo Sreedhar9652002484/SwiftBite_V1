@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SwiftBite.UserService", "Sw
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SwiftBite.UserService.API", "SwiftBite.UserService.API", "{2A0BA022-6BC7-AFE4-D74C-B1149D60A043}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.UserService.Api", "src\Services\SwiftBite.UserService\SwiftBite.UserService.API\SwiftBite.UserService.Api.csproj", "{68570770-DB30-4969-9735-B211C616CBBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.UserService.API", "src\Services\SwiftBite.UserService\SwiftBite.UserService.API\SwiftBite.UserService.API.csproj", "{68570770-DB30-4969-9735-B211C616CBBE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.UserService.Application", "src\Services\SwiftBite.UserService\SwiftBite.UserService.Application\SwiftBite.UserService.Application.csproj", "{865D2692-71FE-4B53-B266-10A55921989D}"
 EndProject
@@ -65,6 +65,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.PaymentService.Infrastructure", "src\Services\SwiftBite.PaymentService\SwiftBite.PaymentService.Infrastructure\SwiftBite.PaymentService.Infrastructure.csproj", "{6164C626-E052-471D-A528-D4A7506F6EAA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SwiftBite.NotificationService", "SwiftBite.NotificationService", "{E45B857D-21CC-76DA-57D3-2583DA0E29D6}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile.txt = TextFile.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.NotificationService.API", "src\Services\SwiftBite.NotificationService\SwiftBite.NotificationService.API\SwiftBite.NotificationService.API.csproj", "{63A60609-9EB4-4A0F-8B82-02A367361D7D}"
 EndProject
@@ -77,6 +80,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.Shared.Exceptions", "SwiftBite.Shared.Exceptions\SwiftBite.Shared.Exceptions.csproj", "{F30BB3B0-345B-4AFD-B804-F55B6CE6534B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SwiftBite.DeliveryService", "SwiftBite.DeliveryService", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile.txt = Dockerfile.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.DeliveryService.Application", "src\Services\SwiftBite.DeliveryService\SwiftBite.DeliveryService.Application\SwiftBite.DeliveryService.Application.csproj", "{059928BE-99D8-4D93-BA20-63243DBDE4F8}"
 EndProject
@@ -85,6 +91,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.DeliveryService.Infrastructure", "src\Services\SwiftBite.DeliveryService\SwiftBite.DeliveryService.Infrastructure\SwiftBite.DeliveryService.Infrastructure.csproj", "{A194AC57-ACDE-4545-9F5A-AC9EAA132BD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftBite.DeliveryService.API", "src\Services\SwiftBite.DeliveryService\SwiftBite.DeliveryService.API\SwiftBite.DeliveryService.API.csproj", "{0578B545-DC21-47D9-8869-1E69A83E0895}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dockerfile", "Dockerfile", "{9CEB8E42-CFAE-4D01-B834-F248939B2109}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -476,6 +484,7 @@ Global
 		{2EAD09B6-B4F7-41C8-8AFF-7AE2918FB364} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{A194AC57-ACDE-4545-9F5A-AC9EAA132BD2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{0578B545-DC21-47D9-8869-1E69A83E0895} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{9CEB8E42-CFAE-4D01-B834-F248939B2109} = {99C2AAA5-DC80-388B-1134-B03A989D2F97}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C086FA7A-B06E-45C8-A8A5-D65EA51CFB53}

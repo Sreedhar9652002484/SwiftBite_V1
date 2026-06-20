@@ -3,7 +3,7 @@ import { Component, OnInit, inject, signal }
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService }
+import { dietaryPreference, UserService }
   from '../../../core/services/user.service';
 import { AuthService }
   from '../../../core/auth/auth.service';
@@ -43,13 +43,13 @@ export class ProfileComponent implements OnInit {
     latitude: 0, longitude: 0
   };
 
-  prefForm = {
-    dietaryPreference: 'None',
-    emailNotifications: true,
-    pushNotifications: true,
-    smsNotifications: false,
-    preferredCuisines: [] as string[]
-  };
+    prefForm = {
+      dietaryPreference: dietaryPreference.None,
+      emailNotifications: true,
+      pushNotifications: true,
+      smsNotifications: false,
+      preferredCuisines: [] as string[]
+    };
 
   showAddressForm = signal(false);
   editingProfile  = signal(false);
@@ -60,11 +60,12 @@ export class ProfileComponent implements OnInit {
     'Biryani', 'Healthy', 'Desserts'
   ];
 
-  dietaryOptions = [
-    'None', 'Vegetarian',
-    'Vegan', 'NonVegetarian'
-  ];
-
+dietaryOptions = [
+  { label: '🍽️ No Preference', value: dietaryPreference.None },
+  { label: '🟢 Vegetarian', value: dietaryPreference.Vegetarian },
+  { label: '🌱 Vegan', value: dietaryPreference.Vegan },
+  { label: '🔴 Non-Veg', value: dietaryPreference.NonVegetarian }
+];
   addressTypes = ['Home', 'Office', 'Other'];
 
   ngOnInit(): void {
@@ -190,7 +191,12 @@ export class ProfileComponent implements OnInit {
 
   savePreferences(): void {
     this.saving.set(true);
-    this.userSvc.updatePreferences(this.prefForm)
+      const request = {
+    ...this.prefForm, // reuse everything
+    preferredCuisines: this.prefForm.preferredCuisines.join(',') // override only this
+  };
+
+    this.userSvc.updatePreferences(request)
       .subscribe({
         next: () => {
           this.toast.success('✅ Preferences saved!');
@@ -230,4 +236,5 @@ export class ProfileComponent implements OnInit {
       ?? this.authSvc.firstName?.charAt(0)
       ?? 'U';
   }
+
 }

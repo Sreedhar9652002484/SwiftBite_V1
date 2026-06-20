@@ -23,6 +23,9 @@ public class DeliveryPartner
     private DeliveryPartner() { }
 
     public ICollection<DeliveryJob> Jobs { get; private set; } = new List<DeliveryJob>();
+    public double CurrentLatitude { get; private set; }
+    public double CurrentLongitude { get; private set; }
+    public DateTime LastLocationUpdate { get; private set; }
 
     public static DeliveryPartner Create(
         string userId,
@@ -70,6 +73,13 @@ public class DeliveryPartner
     {
         Rating = newRating;
         UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void UpdateLocation(double latitude, double longitude)
+    {
+        CurrentLatitude = latitude;
+        CurrentLongitude = longitude;
+        LastLocationUpdate = DateTime.UtcNow;
     }
 
 }
