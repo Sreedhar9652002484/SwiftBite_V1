@@ -31,8 +31,7 @@ services:
       - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_AuthDb;User Id=sa;Password=SwiftBite@2024!;TrustServerCertificate=True
       - AuthServer__Issuer=http://localhost:5001
       - AuthServer__AngularBaseUrl=http://localhost:4200
-      # - Google__ClientId=375224018147-02ec31i0psrrhj4lae1a5nth32h6ft7l.apps.googleusercontent.com
-      # - Google__ClientSecret=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
+   
     depends_on:
       sqlserver:
         condition: service_healthy
