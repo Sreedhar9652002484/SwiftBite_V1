@@ -17,6 +17,10 @@ appsettings.Development.json
 appsettings.Production.json
 .env
 
+# -------- Application Logs --------
+logs/
+*.log
+
 # -------- OS / IDE --------
 .vscode/
 .idea/
