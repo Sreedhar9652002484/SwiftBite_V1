@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 
 namespace SwiftBite.PaymentService.Infrastructure.Persistence;
 
@@ -8,13 +9,18 @@ public class PaymentDbContextFactory
 {
     public PaymentDbContext CreateDbContext(string[] args)
     {
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(AppContext.BaseDirectory)
+            .AddJsonFile("appsettings.json", optional: false)
+            .AddJsonFile("appsettings.Development.json", optional: true)
+            .AddEnvironmentVariables()
+            .Build();
+
         var optionsBuilder =
             new DbContextOptionsBuilder<PaymentDbContext>();
 
         optionsBuilder.UseSqlServer(
-            "Server=localhost,1433;Database=SwiftBite_PaymentDb;" +
-            "User Id=sa;Password=SwiftBite@2024!;" +
-            "TrustServerCertificate=True");
+            configuration.GetConnectionString("PaymentServiceDb"));
 
         return new PaymentDbContext(optionsBuilder.Options);
     }
