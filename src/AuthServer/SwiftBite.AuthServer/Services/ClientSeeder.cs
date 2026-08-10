@@ -33,21 +33,23 @@ public class ClientSeeder : IHostedService
         var manager = scope.ServiceProvider
             .GetRequiredService<IOpenIddictApplicationManager>();
 
+        var angularBaseUrl = _configuration["AuthServer:AngularBaseUrl"] ?? "http://localhost:4200";
+
         // ── Client 1: Angular Customer App ──────────────────
         if (await manager.FindByClientIdAsync("swiftbite-angular", ct) is null)
         {
             await manager.CreateAsync(new OpenIddictApplicationDescriptor
             {
                 ClientId = "swiftbite-angular",
-                ClientType = ClientTypes.Public, 
+                ClientType = ClientTypes.Public,
                 DisplayName = "SwiftBite Angular App",
                 RedirectUris =
                 {
-                    new Uri("http://localhost:4200/auth/callback")
+                    new Uri($"{angularBaseUrl}/auth/callback")
                 },
                 PostLogoutRedirectUris =
                 {
-                    new Uri("http://localhost:4200/auth/logout")
+                    new Uri($"{angularBaseUrl}/auth/logout")
                 },
                 Permissions =
                 {
@@ -115,11 +117,11 @@ public class ClientSeeder : IHostedService
                 DisplayName = "SwiftBite Restaurant Portal",
                 RedirectUris =
                 {
-                    new Uri("http://localhost:4200/auth/callback")
+                    new Uri($"{angularBaseUrl}/auth/callback")
                 },
                 PostLogoutRedirectUris =
                 {
-                    new Uri("http://localhost:4200/auth/logout")
+                    new Uri($"{angularBaseUrl}/auth/logout")
                 },
                 Permissions =
                 {

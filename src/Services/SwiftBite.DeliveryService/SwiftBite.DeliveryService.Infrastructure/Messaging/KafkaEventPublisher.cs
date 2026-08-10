@@ -26,6 +26,7 @@ public class KafkaEventPublisher : IEventPublisher
             RetryBackoffMs = 1000,
             CompressionType = CompressionType.Snappy
         };
+        KafkaSecurity.Apply(config, configuration);
         _producer = new ProducerBuilder<string, string>(config).Build();
     }
 

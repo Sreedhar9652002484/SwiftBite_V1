@@ -67,12 +67,12 @@ builder.Services.AddValidatorsFromAssembly(
 builder.Services.AddOrderInfrastructure(builder.Configuration);
 
 // ? 6. CORS
+var corsOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
+    ?? new[] { "http://localhost:4200", "http://localhost:5000" };
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("SwiftBitePolicy", policy =>
-        policy.WithOrigins(
-                "http://localhost:4200",
-                "http://localhost:5000")
+        policy.WithOrigins(corsOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod());
 });
@@ -109,6 +109,7 @@ builder.Services.AddHealthChecks()
             config.BootstrapServers =
                 builder.Configuration["Kafka:BootstrapServers"];
             // e.g. "localhost:9092" or "kafka:29092" inside docker
+            SwiftBite.OrderService.Infrastructure.Messaging.KafkaSecurity.Apply(config, builder.Configuration);
         },
         name: "kafka",
         tags: new[] { "messaging" });

@@ -85,7 +85,7 @@ docker-compose.yml                # full local stack (infra + services)
 
 * .NET 8 SDK
 * Node.js + Angular CLI
-* Docker Desktop (recommended — runs SQL Server, Redis, RabbitMQ, Kafka, and every service)
+* Docker Desktop (recommended — runs SQL Server, Redis, Kafka, and every service)
 
 ### Run everything with Docker
 
@@ -95,7 +95,7 @@ cp .env.example .env
 docker compose up --build
 ```
 
-This starts SQL Server, Redis, RabbitMQ, Kafka, and all backend services. The API Gateway is exposed on `http://localhost:5000`, the Auth Server on `http://localhost:5001`.
+This starts SQL Server, Redis, Kafka, and all backend services. The API Gateway is exposed on `http://localhost:5000`, the Auth Server on `http://localhost:5001`.
 
 ### Run a service locally (outside Docker)
 

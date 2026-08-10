@@ -32,21 +32,6 @@ services:
       - swiftbite-network
     restart: unless-stopped
 
-  rabbitmq:
-    image: rabbitmq:3-management-alpine
-    container_name: swiftbite-rabbitmq
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    environment:
-      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
-      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASSWORD}
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
-    networks:
-      - swiftbite-network
-    restart: unless-stopped
-
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
     container_name: swiftbite-zookeeper
@@ -284,7 +269,6 @@ services:
 volumes:
   sqlserver_data:
   redis_data:
-  rabbitmq_data:
 
 networks:
   swiftbite-network:

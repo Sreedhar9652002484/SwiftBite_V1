@@ -40,6 +40,7 @@ using System.Text.Json;
                 AutoOffsetReset = AutoOffsetReset.Earliest,
                 EnableAutoCommit = false  // Manual commit like yours
             };
+            KafkaSecurity.Apply(_config, configuration);
         }
 
         protected override async Task ExecuteAsync(CancellationToken ct)

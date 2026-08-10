@@ -26,16 +26,14 @@ builder.Services.AddReverseProxy()
 // ✅ 3. Redis Cache
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    options.Configuration = builder.Configuration["Redis:ConnectionString"]
-                            ?? "localhost:6379";
+    var redisConnectionString = builder.Configuration["Redis:ConnectionString"] ?? "localhost:6379";
     options.InstanceName = "SwiftBite_GW_";
-    options.ConfigurationOptions = new StackExchange.Redis.ConfigurationOptions
-    {
-        EndPoints = { builder.Configuration["Redis:ConnectionString"] ?? "localhost:6379" },
-        ConnectTimeout = 3000,
-        AbortOnConnectFail = false,
-        ConnectRetry = 2
-    };
+    // Parse (not manually rebuild EndPoints) so password/ssl in the connection string survive - e.g. Upstash Redis
+    var configurationOptions = StackExchange.Redis.ConfigurationOptions.Parse(redisConnectionString);
+    configurationOptions.ConnectTimeout = 3000;
+    configurationOptions.AbortOnConnectFail = false;
+    configurationOptions.ConnectRetry = 2;
+    options.ConfigurationOptions = configurationOptions;
 });
 builder.Services.AddSingleton<ICacheService, RedisCacheService>();
 
@@ -105,11 +103,13 @@ builder.Services.AddAuthorization(options =>
 });
 
 // ✅ 7. CORS
+var corsOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
+    ?? new[] { "http://localhost:4200" };
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("SwiftBitePolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins(corsOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();

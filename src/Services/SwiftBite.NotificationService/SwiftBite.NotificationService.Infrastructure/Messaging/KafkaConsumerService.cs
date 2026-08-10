@@ -49,6 +49,7 @@ public class KafkaConsumerService : BackgroundService
             AutoOffsetReset = AutoOffsetReset.Earliest,
             EnableAutoCommit = false  // Manual commit!
         };
+        KafkaSecurity.Apply(_config, configuration);
     }
 
     protected override async Task ExecuteAsync(

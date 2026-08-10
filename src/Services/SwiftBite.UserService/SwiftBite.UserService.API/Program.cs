@@ -66,12 +66,12 @@ builder.Services.AddValidatorsFromAssembly(
 builder.Services.AddUserInfrastructure(builder.Configuration);
 
 // ✅ 6. CORS for Angular + Gateway
+var corsOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
+    ?? new[] { "http://localhost:4200", "http://localhost:5000" };
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("SwiftBitePolicy", policy =>
-        policy.WithOrigins(
-                "http://localhost:4200",
-                "http://localhost:5000")
+        policy.WithOrigins(corsOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod());
 });
@@ -110,6 +110,16 @@ builder.Services.AddHealthChecks()
             config.BootstrapServers =
                 builder.Configuration["Kafka:BootstrapServers"];
             // e.g. "localhost:9092" or "kafka:29092" inside docker
+
+            // SASL_SSL is required by hosted brokers like Upstash; local Kafka stays PLAINTEXT when unset
+            var kafkaSaslUsername = builder.Configuration["Kafka:SaslUsername"];
+            if (!string.IsNullOrEmpty(kafkaSaslUsername))
+            {
+                config.SecurityProtocol = Confluent.Kafka.SecurityProtocol.SaslSsl;
+                config.SaslMechanism = Confluent.Kafka.SaslMechanism.ScramSha256;
+                config.SaslUsername = kafkaSaslUsername;
+                config.SaslPassword = builder.Configuration["Kafka:SaslPassword"];
+            }
         },
         name: "kafka",
         tags: new[] { "messaging" });
