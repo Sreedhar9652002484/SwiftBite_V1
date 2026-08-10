@@ -1,0 +1,49 @@
+# ===============================
+# SwiftBite - Global .gitignore
+# ===============================
+
+# -------- .NET --------
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# -------- Logs (CRITICAL) --------
+**/logs/
+*.log
+*.txt
+
+# -------- Angular / Node --------
+node_modules/
+.angular/
+dist/
+out-tsc/
+.tmp/
+
+# -------- Environment / Secrets --------
+.env
+.env.*
+appsettings.Development.json
+appsettings.Local.json
+# ⚠️ DO NOT ignore main config unless you use template
+# appsettings.json  ❌ (remove this line unless intentional)
+
+# -------- Application Logs --------
+logs/
+*.log
+
+# -------- OS / IDE --------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# -------- Test / Coverage --------
+coverage/
+TestResults/
+
+# -------- Docker --------
+docker-compose.override.yml

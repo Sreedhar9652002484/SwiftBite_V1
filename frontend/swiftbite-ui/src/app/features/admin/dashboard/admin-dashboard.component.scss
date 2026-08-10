@@ -1,0 +1,272 @@
+$accent     : #e94560;
+$accent-light:#fef0f3;
+$success    : #27ae60;
+$success-light:#eafaf1;
+$danger     : #e74c3c;
+$danger-light:#fef0ee;
+$warning    : #f39c12;
+$warning-light:#fef9e7;
+$blue       : #2980b9;
+$blue-light :#ebf5fb;
+$text       : #1c1c1c;
+$text-muted : #686b78;
+$border     : #e8e8e8;
+$bg         : #f4f6f9;
+$white      : #ffffff;
+$radius     : 12px;
+
+.overview { max-width: 1100px; }
+
+// ── Header ────────────────────────────────────────────────────
+.page-header {
+  margin-bottom: 24px;
+}
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: $text;
+  margin: 0 0 4px;
+}
+.page-sub {
+  font-size: 13px;
+  color: $text-muted;
+  margin: 0;
+}
+
+// ── Loader ────────────────────────────────────────────────────
+.loader-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 60px 0;
+  color: $text-muted;
+  font-size: 14px;
+}
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid $border;
+  border-top-color: $accent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+// ── Stat grid ─────────────────────────────────────────────────
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  &.accent {
+    background: #1a1a2e;
+    border-color: #1a1a2e;
+    .stat-value { color: $white; }
+    .stat-label { color: rgba(255,255,255,0.55); }
+    .stat-icon  { background: $accent; color: $white; }
+  }
+}
+
+.stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: $bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: $text;
+  margin: 0 0 2px;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 12px;
+  color: $text-muted;
+  margin: 0;
+}
+.stat-sub {
+  font-size: 11px;
+  color: $success;
+  margin: 3px 0 0;
+  &.danger { color: $danger; }
+}
+
+// ── Bottom grid ───────────────────────────────────────────────
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 16px;
+}
+
+.card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: $text;
+  margin: 0;
+}
+
+.view-all {
+  font-size: 13px;
+  color: $accent;
+  text-decoration: none;
+  font-weight: 500;
+  &:hover { text-decoration: underline; }
+}
+
+// ── Table ─────────────────────────────────────────────────────
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+
+  th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 0 8px 10px;
+    border-bottom: 1px solid $border;
+  }
+
+  td {
+    padding: 10px 8px;
+    color: $text;
+    border-bottom: 1px solid $border;
+    vertical-align: middle;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  .td-name { font-weight: 600; }
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $danger;
+  margin-right: 6px;
+  vertical-align: middle;
+
+  &.open { background: $success; }
+}
+
+.rating {
+  color: #f39c12;
+  font-weight: 600;
+  font-size: 12px;
+}
+.no-rating { color: $text-muted; }
+
+// ── Top list ──────────────────────────────────────────────────
+.top-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.top-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rank {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: $accent-light;
+  color: $accent;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.top-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.top-name { font-size: 13px; font-weight: 600; color: $text; }
+.top-count { font-size: 11px; color: $text-muted; }
+.top-rev { font-size: 13px; font-weight: 700; color: $text; }
+
+// ── Alert ─────────────────────────────────────────────────────
+.alert-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: $warning-light;
+  border-radius: 8px;
+  font-size: 13px;
+  color: darken($warning, 15%);
+  font-weight: 500;
+  border: 1px solid lighten($warning, 25%);
+
+  .alert-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $warning;
+    flex-shrink: 0;
+  }
+}
+
+// ── Empty ─────────────────────────────────────────────────────
+.empty-state {
+  text-align: center;
+  padding: 24px;
+  color: $text-muted;
+  font-size: 14px;
+}
+
+// ── Status badges ─────────────────────────────────────────────
+.badge-pending   { background: $warning-light; color: darken($warning,10%); }
+.badge-confirmed { background: $blue-light;    color: darken($blue,5%);     }
+.badge-preparing { background: $accent-light;  color: $accent;              }
+.badge-ready     { background: $success-light; color: darken($success,5%);  }
+.badge-delivery  { background: $blue-light;    color: darken($blue,10%);    }
+.badge-delivered { background: $success-light; color: darken($success,10%); }
+.badge-cancelled { background: $danger-light;  color: darken($danger,5%);   }

@@ -1,0 +1,21 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+COPY ["src/Services/SwiftBite.DeliveryService/SwiftBite.DeliveryService.API/SwiftBite.DeliveryService.API.csproj", "src/Services/SwiftBite.DeliveryService/SwiftBite.DeliveryService.API/"]
+COPY ["src/Services/SwiftBite.DeliveryService/SwiftBite.DeliveryService.Application/SwiftBite.DeliveryService.Application.csproj", "src/Services/SwiftBite.DeliveryService/SwiftBite.DeliveryService.Application/"]
+COPY ["src/Services/SwiftBite.DeliveryService/SwiftBite.DeliveryService.Domain/SwiftBite.DeliveryService.Domain.csproj", "src/Services/SwiftBite.DeliveryService/SwiftBite.DeliveryService.Domain/"]
+COPY ["src/Services/SwiftBite.DeliveryService/SwiftBite.DeliveryService.Infrastructure/SwiftBite.DeliveryService.Infrastructure.csproj", "src/Services/SwiftBite.DeliveryService/SwiftBite.DeliveryService.Infrastructure/"]
+COPY ["SwiftBite.Shared.Kernel/SwiftBite.Shared.Kernel.csproj", "SwiftBite.Shared.Kernel/"]
+COPY ["SwiftBite.Shared.Exceptions/SwiftBite.Shared.Exceptions.csproj", "SwiftBite.Shared.Exceptions/"]
+
+RUN dotnet restore "src/Services/SwiftBite.DeliveryService/SwiftBite.DeliveryService.API/SwiftBite.DeliveryService.API.csproj"
+
+COPY . .
+
+WORKDIR "/src/src/Services/SwiftBite.DeliveryService/SwiftBite.DeliveryService.API"
+RUN dotnet publish -c Release -o /app/publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "SwiftBite.DeliveryService.API.dll"]

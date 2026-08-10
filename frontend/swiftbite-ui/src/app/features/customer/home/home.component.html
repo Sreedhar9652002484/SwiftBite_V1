@@ -1,0 +1,196 @@
+<div class="min-h-screen bg-gray-50">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 bg-orange-500 rounded-xl flex items-center justify-center">
+          <span class="text-lg">🍽️</span>
+        </div>
+        <span class="font-extrabold text-xl text-gray-900">SwiftBite</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-2 cursor-pointer text-gray-700">
+        <span class="text-lg">📍</span>
+        <span class="font-semibold text-sm">{{ selectedCity() }}, IN</span>
+      </div>
+
+      <div class="hidden md:flex items-center bg-gray-100 rounded-xl px-4 py-2 gap-2 w-64">
+        <span class="text-gray-400">🔍</span>
+        <input type="text"
+          placeholder="Search for food, restaurants..."
+          class="bg-transparent text-sm outline-none w-full text-gray-700"
+          (input)="onSearch($any($event.target).value)"/>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <!-- 🔔 Notification Bell -->
+         <app-notification-bell />
+        <button class="relative p-2 text-gray-500 hover:text-orange-500"
+          [routerLink]="['/orders']">
+          📦
+          <span class="text-xs font-semibold">Orders</span>
+        </button>
+
+        <div class="flex items-center gap-2 cursor-pointer"
+          [routerLink]="['/profile']">
+          <div class="w-9 h-9 bg-orange-100 rounded-full flex items-center
+                      justify-center text-orange-600 font-bold text-sm">
+                 {{ authService.firstName ? authService.firstName.charAt(0) : 'U' }}
+          </div>
+          <span class="hidden md:block text-sm font-semibold text-gray-700">
+            {{ authService.firstName || 'User' }}
+          </span>
+        </div>
+
+        <button (click)="authService.logout()"
+          class="text-xs text-gray-500 hover:text-red-500 font-medium">
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-gradient-to-r from-orange-500 to-amber-400 text-white">
+    <div class="max-w-6xl mx-auto px-4 py-10">
+      <h1 class="text-3xl font-extrabold mb-2">
+        Hey {{ authService.firstName || 'there' }}! 👋
+      </h1>
+      <p class="text-orange-100 text-lg">
+        What would you like to eat today?
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+
+    <!-- API Status Banner -->
+    <div *ngIf="error()"
+      class="mb-4 p-3 bg-amber-50 border border-amber-200
+             rounded-xl text-amber-700 text-sm flex items-center gap-2">
+      ⚠️ {{ error() }} —
+      <span class="font-semibold">
+        Start RestaurantService to see live data!
+      </span>
+    </div>
+
+    <!-- Category Pills -->
+    <div class="flex gap-3 overflow-x-auto pb-2 mb-8">
+      @for (cat of categories; track cat.name) {
+        <button
+          class="flex flex-col items-center gap-1 flex-shrink-0
+                 bg-white rounded-2xl px-5 py-3 shadow-sm
+                 hover:shadow-md border-2 border-transparent
+                 hover:border-orange-300 transition-all"
+          (click)="filterByCuisine(cat.cuisine)">
+          <span class="text-2xl">{{ cat.emoji }}</span>
+          <span class="text-xs font-semibold text-gray-700 whitespace-nowrap">
+            {{ cat.name }}
+          </span>
+        </button>
+      }
+    </div>
+
+    <!-- Loading -->
+    <div *ngIf="loading()"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (i of [1,2,3,4,5,6]; track i) {
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden animate-pulse">
+          <div class="h-44 bg-gray-200"></div>
+          <div class="p-4 space-y-2">
+            <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+            <div class="h-3 bg-gray-100 rounded w-1/2"></div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Restaurant Grid -->
+    <div *ngIf="!loading()">
+      <h2 class="text-xl font-extrabold text-gray-900 mb-4">
+        Restaurants near you
+        <span class="text-gray-400 font-normal text-sm ml-2">
+          ({{ restaurants().length }} found)
+        </span>
+      </h2>
+
+      <!-- Empty State -->
+      <div *ngIf="restaurants().length === 0"
+        class="text-center py-20 text-gray-400">
+        <div class="text-6xl mb-4">🍽️</div>
+        <p class="text-xl font-semibold">
+          No restaurants found
+        </p>
+        <p class="text-sm mt-2">
+          Try a different city or cuisine
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (r of restaurants(); track r.id) {
+          <div
+            class="bg-white rounded-2xl shadow-sm hover:shadow-lg
+                   transition-all cursor-pointer overflow-hidden
+                   border border-gray-100"
+            (click)="goToRestaurant(r.id)">
+
+            <!-- Image / Emoji fallback -->
+            <div class="relative h-44 overflow-hidden">
+              <img *ngIf="r.bannerUrl; else emojiBlock"
+                [src]="r.bannerUrl" [alt]="r.name"
+                class="w-full h-full object-cover"/>
+              <ng-template #emojiBlock>
+                <div class="w-full h-full bg-gradient-to-br
+                            from-orange-100 to-amber-50
+                            flex items-center justify-center">
+                  <span class="text-6xl">
+                    {{ getEmoji(r.cuisineType) }}
+                  </span>
+                </div>
+              </ng-template>
+
+              <!-- Closed overlay -->
+              <div *ngIf="!r.isOpen"
+                class="absolute inset-0 bg-black/50
+                       flex items-center justify-center">
+                <span class="text-white font-bold text-lg">
+                  🔴 Closed
+                </span>
+              </div>
+
+              <!-- Rating badge -->
+              <div class="absolute top-3 left-3 text-white text-xs
+                          font-bold px-2 py-1 rounded-lg"
+                [style.background]="getRatingColor(r.averageRating)">
+                ⭐ {{ r.averageRating | number:'1.1-1' }}
+              </div>
+            </div>
+
+            <div class="p-4">
+              <h3 class="font-extrabold text-gray-900 text-base">
+                {{ r.name }}
+              </h3>
+              <p class="text-gray-500 text-xs mt-0.5">
+                {{ r.cuisineType }}
+              </p>
+              <div class="flex items-center gap-3 mt-3 text-sm">
+                <span class="text-gray-500">
+                  ⏱ {{ r.averageDeliveryTimeMinutes }} min
+                </span>
+                <span class="text-gray-300">•</span>
+                <span class="text-gray-500">
+                  ₹{{ r.minimumOrderAmount }} min
+                </span>
+                <span class="text-gray-300">•</span>
+                <span class="text-gray-500">
+                  {{ r.totalRatings }} ratings
+                </span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

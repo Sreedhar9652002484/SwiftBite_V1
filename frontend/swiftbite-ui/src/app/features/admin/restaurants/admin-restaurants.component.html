@@ -1,0 +1,90 @@
+<div class="restaurants-page">
+
+  <div class="toast success" *ngIf="successMsg()">✓ {{ successMsg() }}</div>
+  <div class="toast error"   *ngIf="errorMsg()">✕ {{ errorMsg() }}</div>
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Restaurants</h1>
+      <p class="page-sub">{{ filtered().length }} of {{ restaurants().length }} restaurants</p>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filter-bar">
+    <input
+      class="search-input"
+      placeholder="Search by name or city…"
+      [ngModel]="searchTerm()"
+      (ngModelChange)="searchTerm.set($event)"
+    />
+    <div class="filter-pills">
+      <button [class.active]="filterOpen() === 'all'"    (click)="filterOpen.set('all')">All</button>
+      <button [class.active]="filterOpen() === 'open'"   (click)="filterOpen.set('open')">Open</button>
+      <button [class.active]="filterOpen() === 'closed'" (click)="filterOpen.set('closed')">Closed</button>
+    </div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loader-wrap" *ngIf="loading()">
+    <div class="spinner"></div>
+    <p>Loading restaurants…</p>
+  </div>
+
+  <!-- Table -->
+  <div class="card" *ngIf="!loading()">
+    <div class="empty-state" *ngIf="filtered().length === 0">
+      <p>No restaurants match your filter.</p>
+    </div>
+
+    <table class="data-table" *ngIf="filtered().length > 0">
+      <thead>
+        <tr>
+          <th>Restaurant</th>
+          <th>City</th>
+          <th>Cuisine</th>
+          <th>Rating</th>
+          <th>Min Order</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of filtered()">
+          <td>
+            <div class="restaurant-cell">
+              <div class="restaurant-avatar">{{ r.name?.[0] }}</div>
+              <div>
+                <p class="restaurant-name">{{ r.name }}</p>
+                <p class="restaurant-email">{{ r.email }}</p>
+              </div>
+            </div>
+          </td>
+          <td>{{ r.city }}</td>
+          <td><span class="cuisine-tag">{{ cuisineLabel(r.cuisineType) }}</span></td>
+          <td>
+            <span class="rating" *ngIf="r.averageRating > 0">★ {{ r.averageRating | number:'1.1-1' }}</span>
+            <span class="no-rating" *ngIf="!r.averageRating">—</span>
+          </td>
+          <td>₹{{ r.minimumOrderAmount }}</td>
+          <td>
+            <span class="status-badge" [class.open]="r.isOpen">
+              {{ r.isOpen ? 'Open' : 'Closed' }}
+            </span>
+          </td>
+          <td>
+            <button
+              class="btn-toggle"
+              [class.closing]="r.isOpen"
+              [disabled]="saving() === r.id"
+              (click)="toggleStatus(r)"
+            >
+              {{ saving() === r.id ? '…' : (r.isOpen ? 'Close' : 'Open') }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

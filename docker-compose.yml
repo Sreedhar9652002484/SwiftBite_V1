@@ -1,0 +1,292 @@
+services:
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: swiftbite-sql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${DB_SA_PASSWORD}
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - swiftbite-network
+    healthcheck:
+      test: ["CMD", "/opt/mssql-tools18/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", "${DB_SA_PASSWORD}", "-Q", "SELECT 1", "-No"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 45s
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: swiftbite-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: swiftbite-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASSWORD}
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: swiftbite-zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: swiftbite-kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://swiftbite-kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: swiftbite-kafka-ui
+    depends_on:
+      - kafka
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: swiftbite
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: swiftbite-kafka:29092
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  authserver:
+    build:
+      context: .
+      dockerfile: src/AuthServer/SwiftBite.AuthServer/Dockerfile
+    container_name: swiftbite-auth
+    ports:
+      - "5001:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_AuthDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - AuthServer__Issuer=http://localhost:5001
+      - AuthServer__AngularBaseUrl=http://localhost:4200
+      - OpenIddictClients__GatewaySecret=${OPENIDDICT_GATEWAY_SECRET}
+      - OpenIddictClients__UserServiceSecret=${OPENIDDICT_USERSERVICE_SECRET}
+      - OpenIddictClients__RestaurantServiceSecret=${OPENIDDICT_RESTAURANTSERVICE_SECRET}
+      - OpenIddictClients__OrderServiceSecret=${OPENIDDICT_ORDERSERVICE_SECRET}
+      - OpenIddictClients__PaymentServiceSecret=${OPENIDDICT_PAYMENTSERVICE_SECRET}
+      - OpenIddictClients__NotificationServiceSecret=${OPENIDDICT_NOTIFICATIONSERVICE_SECRET}
+      - OpenIddictClients__DeliveryServiceSecret=${OPENIDDICT_DELIVERYSERVICE_SECRET}
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  orderservice:
+    build:
+      context: .
+      dockerfile: src/Services/SwiftBite.OrderService/Dockerfile
+    container_name: swiftbite-order
+    ports:
+      - "5002:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_OrderDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - ConnectionStrings__OrderServiceDb=Server=swiftbite-sql;Database=SwiftBite_OrderDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Kafka__BootstrapServers=swiftbite-kafka:29092
+      - Redis__ConnectionString=swiftbite-redis:6379
+      - OpenIddictClients__OrderServiceSecret=${OPENIDDICT_ORDERSERVICE_SECRET}
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  paymentservice:
+    build:
+      context: .
+      dockerfile: src/Services/SwiftBite.PaymentService/Dockerfile
+    container_name: swiftbite-payment
+    ports:
+      - "5003:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_PaymentDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - ConnectionStrings__PaymentServiceDb=Server=swiftbite-sql;Database=SwiftBite_PaymentDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Kafka__BootstrapServers=swiftbite-kafka:29092
+      - Razorpay__KeyId=${RAZORPAY_KEY_ID}
+      - Razorpay__KeySecret=${RAZORPAY_KEY_SECRET}
+      - Razorpay__WebhookSecret=${RAZORPAY_WEBHOOK_SECRET}
+      - OpenIddictClients__PaymentServiceSecret=${OPENIDDICT_PAYMENTSERVICE_SECRET}
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  restaurantservice:
+    build:
+      context: .
+      dockerfile: src/Services/SwiftBite.RestaurantService/Dockerfile
+    container_name: swiftbite-restaurant
+    ports:
+      - "5004:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_RestaurantDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - ConnectionStrings__RestaurantServiceDb=Server=swiftbite-sql;Database=SwiftBite_RestaurantDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Kafka__BootstrapServers=swiftbite-kafka:29092
+      - Redis__ConnectionString=swiftbite-redis:6379
+      - OpenIddictClients__RestaurantServiceSecret=${OPENIDDICT_RESTAURANTSERVICE_SECRET}
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  deliveryservice:
+    build:
+      context: .
+      dockerfile: src/Services/SwiftBite.DeliveryService/Dockerfile
+    container_name: swiftbite-delivery
+    ports:
+      - "5005:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_DeliveryDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - ConnectionStrings__DeliveryServiceDb=Server=swiftbite-sql;Database=SwiftBite_DeliveryDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Kafka__BootstrapServers=swiftbite-kafka:29092
+      - Redis__ConnectionString=swiftbite-redis:6379
+      - OpenIddictClients__DeliveryServiceSecret=${OPENIDDICT_DELIVERYSERVICE_SECRET}
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  userservice:
+    build:
+      context: .
+      dockerfile: src/Services/SwiftBite.UserService/Dockerfile
+    container_name: swiftbite-user
+    ports:
+      - "5006:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_UserDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - ConnectionStrings__UserServiceDb=Server=swiftbite-sql;Database=SwiftBite_UserDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Redis__ConnectionString=swiftbite-redis:6379
+      - OpenIddictClients__UserServiceSecret=${OPENIDDICT_USERSERVICE_SECRET}
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  notificationservice:
+    build:
+      context: .
+      dockerfile: src/Services/SwiftBite.NotificationService/Dockerfile
+    container_name: swiftbite-notification
+    ports:
+      - "5007:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=swiftbite-sql;Database=SwiftBite_NotificationDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - ConnectionStrings__NotificationServiceDb=Server=swiftbite-sql;Database=SwiftBite_NotificationDb;User Id=sa;Password=${DB_SA_PASSWORD};TrustServerCertificate=True
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Kafka__BootstrapServers=swiftbite-kafka:29092
+      - Redis__ConnectionString=swiftbite-redis:6379
+      - OpenIddictClients__NotificationServiceSecret=${OPENIDDICT_NOTIFICATIONSERVICE_SECRET}
+    depends_on:
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+  apigateway:
+    build:
+      context: .
+      dockerfile: src/ApiGateway/SwiftBite.ApiGateway/Dockerfile
+    container_name: swiftbite-gateway
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - AuthServer__Authority=http://swiftbite-auth:8080
+      - Redis__ConnectionString=swiftbite-redis:6379
+      - OpenIddictClients__GatewaySecret=${OPENIDDICT_GATEWAY_SECRET}
+    depends_on:
+      authserver:
+        condition: service_started
+    networks:
+      - swiftbite-network
+    restart: unless-stopped
+
+volumes:
+  sqlserver_data:
+  redis_data:
+  rabbitmq_data:
+
+networks:
+  swiftbite-network:
+    name: swiftbite-network
+    driver: bridge

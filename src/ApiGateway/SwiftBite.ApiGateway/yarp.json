@@ -1,0 +1,128 @@
+﻿{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "AuthServer": {
+    "Authority": "http://swiftbite-auth:8080"
+  },
+  "Redis": {
+    "ConnectionString": "swiftbite-redis:6379"
+  },
+  "IpRateLimiting": {
+    "EnableEndpointRateLimiting": true,
+    "StackBlockedRequests": false,
+    "HttpStatusCode": 429,
+    "RealIpHeader": "X-Real-IP",
+    "GeneralRules": [
+      {
+        "Endpoint": "*",
+        "Period": "1m",
+        "Limit": 100
+      },
+      {
+        "Endpoint": "post:/api/auth/login",
+        "Period": "1m",
+        "Limit": 10
+      },
+      {
+        "Endpoint": "post:/api/auth/register",
+        "Period": "1h",
+        "Limit": 5
+      }
+    ]
+  },
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    }
+  },
+  "ReverseProxy": {
+    "Routes": {
+      "auth-route": {
+        "ClusterId": "auth-cluster",
+        "Match": { "Path": "/api/auth/{**catch-all}" }
+      },
+      "openiddict-route": {
+        "ClusterId": "auth-cluster",
+        "Match": { "Path": "/connect/{**catch-all}" }
+      },
+      "openid-config-route": {
+        "ClusterId": "auth-cluster",
+        "Match": { "Path": "/.well-known/{**catch-all}" }
+      },
+      "user-route": {
+        "ClusterId": "user-cluster",
+        "Match": { "Path": "/api/users/{**catch-all}" }
+      },
+      "restaurant-route": {
+        "ClusterId": "restaurant-cluster",
+        "Match": { "Path": "/api/restaurants/{**catch-all}" }
+      },
+      "order-route": {
+        "ClusterId": "order-cluster",
+        "Match": { "Path": "/api/orders/{**catch-all}" }
+      },
+      "payment-route": {
+        "ClusterId": "payment-cluster",
+        "Match": { "Path": "/api/payments/{**catch-all}" }
+      },
+      "notification-route": {
+        "ClusterId": "notification-cluster",
+        "Match": { "Path": "/api/notifications/{**catch-all}" }
+      },
+      "delivery-route": {
+        "ClusterId": "delivery-cluster",
+        "Match": { "Path": "/api/delivery/{**catch-all}" }
+      },
+      "notification-hub-route": {
+        "ClusterId": "notification-cluster",
+        "Match": { "Path": "/hubs/{**catch-all}" }
+      }
+    },
+    "Clusters": {
+      "auth-cluster": {
+        "Destinations": {
+          "auth-server": { "Address": "http://swiftbite-auth:8080" }
+        }
+      },
+      "user-cluster": {
+        "Destinations": {
+          "user-service": { "Address": "http://swiftbite-user:8080" }
+        }
+      },
+      "restaurant-cluster": {
+        "Destinations": {
+          "restaurant-service": { "Address": "http://swiftbite-restaurant:8080" }
+        }
+      },
+      "order-cluster": {
+        "Destinations": {
+          "order-service": { "Address": "http://swiftbite-order:8080" }
+        }
+      },
+      "payment-cluster": {
+        "Destinations": {
+          "payment-service": { "Address": "http://swiftbite-payment:8080" }
+        }
+      },
+      "notification-cluster": {
+        "Destinations": {
+          "notification-service": { "Address": "http://swiftbite-notification:8080" }
+        }
+      },
+      "delivery-cluster": {
+        "Destinations": {
+          "delivery-service": { "Address": "http://swiftbite-delivery:8080" }
+        }
+      }
+    }
+  }
+}

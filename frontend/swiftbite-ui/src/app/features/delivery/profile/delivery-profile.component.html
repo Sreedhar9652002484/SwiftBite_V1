@@ -1,0 +1,103 @@
+<div class="profile-page">
+
+  <div class="toast success" *ngIf="successMsg()">✓ {{ successMsg() }}</div>
+  <div class="toast error"   *ngIf="errorMsg()">✕ {{ errorMsg() }}</div>
+
+  <div class="loader-wrap" *ngIf="loading()">
+    <div class="spinner"></div><p>Loading profile…</p>
+  </div>
+
+  <!-- Registration form — shown if not yet registered -->
+  <div class="register-card" *ngIf="!loading() && notRegistered()">
+    <h1 class="page-title">Complete Your Registration</h1>
+    <p class="page-sub">Fill in your details to start receiving delivery jobs.</p>
+
+    <div class="form-grid">
+      <div class="field">
+        <label>First name *</label>
+        <input [(ngModel)]="regForm.firstName" placeholder="John" />
+      </div>
+      <div class="field">
+        <label>Last name *</label>
+        <input [(ngModel)]="regForm.lastName" placeholder="Smith" />
+      </div>
+      <div class="field full">
+        <label>Email *</label>
+        <input [(ngModel)]="regForm.email" type="email" placeholder="john@example.com" />
+      </div>
+      <div class="field">
+        <label>Phone number *</label>
+        <input [(ngModel)]="regForm.phoneNumber" placeholder="+91 9876543210" />
+      </div>
+      <div class="field">
+        <label>Vehicle type *</label>
+        <select [(ngModel)]="regForm.vehicleType">
+          <option *ngFor="let v of vehicleTypes" [ngValue]="v.value">{{ v.label }}</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Vehicle number *</label>
+        <input [(ngModel)]="regForm.vehicleNumber" placeholder="TS 09 AB 1234" />
+      </div>
+    </div>
+
+    <button
+      class="btn-register"
+      [disabled]="saving() || !regForm.firstName || !regForm.phoneNumber"
+      (click)="register()"
+    >
+      {{ saving() ? 'Registering…' : 'Register as Delivery Partner' }}
+    </button>
+  </div>
+
+  <!-- Profile view -->
+  <div *ngIf="!loading() && profile()">
+    <h1 class="page-title">My Profile</h1>
+
+    <div class="profile-card">
+      <div class="avatar-row">
+        <div class="avatar">{{ profile()!.firstName[0] }}</div>
+        <div>
+          <p class="profile-name">{{ profile()!.firstName }} {{ profile()!.lastName }}</p>
+          <p class="profile-email">{{ profile()!.email }}</p>
+          <span class="status-badge" [class.active]="profile()!.status === 'Active'">
+            {{ profile()!.status }}
+          </span>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <p class="info-label">Phone</p>
+          <p class="info-value">{{ profile()!.phoneNumber }}</p>
+        </div>
+        <div class="info-item">
+          <p class="info-label">Vehicle type</p>
+          <p class="info-value">{{ profile()!.vehicleType }}</p>
+        </div>
+        <div class="info-item">
+          <p class="info-label">Vehicle number</p>
+          <p class="info-value">{{ profile()!.vehicleNumber }}</p>
+        </div>
+        <div class="info-item">
+          <p class="info-label">Member since</p>
+          <p class="info-value">{{ profile()!.createdAt | date:'mediumDate' }}</p>
+        </div>
+        <div class="info-item">
+          <p class="info-label">Total deliveries</p>
+          <p class="info-value">{{ profile()!.totalDeliveries }}</p>
+        </div>
+        <div class="info-item">
+          <p class="info-label">Rating</p>
+          <p class="info-value">{{ profile()!.rating | number:'1.1-1' }} ★</p>
+        </div>
+      </div>
+
+      <div class="total-earnings">
+        <p class="earnings-label">Total earnings</p>
+        <p class="earnings-value">₹{{ profile()!.totalEarnings | number:'1.0-0' }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

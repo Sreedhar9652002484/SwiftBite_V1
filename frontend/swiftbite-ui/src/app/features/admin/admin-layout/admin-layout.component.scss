@@ -1,0 +1,150 @@
+$primary    : #1a1a2e;
+$accent     : #e94560;
+$accent-light: #fef0f3;
+$success    : #27ae60;
+$warning    : #f39c12;
+$danger     : #e74c3c;
+$text       : #1c1c1c;
+$text-muted : #686b78;
+$border     : #e8e8e8;
+$bg         : #f4f6f9;
+$white      : #ffffff;
+$sidebar-w  : 230px;
+
+.admin-shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: $bg;
+}
+
+// ── Sidebar ───────────────────────────────────────────────────
+.sidebar {
+  width: $sidebar-w;
+  min-width: $sidebar-w;
+  height: 100%;
+  background: $primary;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 18px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  .brand-icon { font-size: 20px; }
+
+  .brand-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: $white;
+  }
+
+  .brand-pill {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: $accent;
+    color: $white;
+  }
+}
+
+// ── Nav ───────────────────────────────────────────────────────
+.sidebar-nav {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+
+  &:hover { background: rgba(255,255,255,0.08); color: $white; }
+
+  &.active {
+    background: $accent;
+    color: $white;
+  }
+
+  .nav-icon { font-size: 17px; }
+}
+
+// ── Footer ────────────────────────────────────────────────────
+.sidebar-footer {
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: $accent;
+    color: $white;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .admin-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: $white;
+    margin: 0;
+  }
+
+  .admin-role {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    margin: 2px 0 0;
+  }
+}
+
+.btn-logout {
+  width: 100%;
+  padding: 8px 0;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover { background: rgba(233,69,96,0.2); color: #ff7a8a; border-color: $accent; }
+}
+
+// ── Content ───────────────────────────────────────────────────
+.admin-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 32px;
+}

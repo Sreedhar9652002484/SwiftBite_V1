@@ -1,0 +1,126 @@
+<div class="overview">
+
+  <!-- Header -->
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Platform Overview</h1>
+      <p class="page-sub">SwiftBite admin control centre</p>
+    </div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loader-wrap" *ngIf="loading">
+    <div class="spinner"></div>
+    <p>Loading platform data…</p>
+  </div>
+
+  <div *ngIf="!loading">
+
+    <!-- Stat cards -->
+    <div class="stat-grid">
+      <div class="stat-card accent">
+        <div class="stat-icon">₹</div>
+        <div>
+          <p class="stat-value">₹{{ totalRevenue() | number:'1.0-0' }}</p>
+          <p class="stat-label">Total revenue</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🧾</div>
+        <div>
+          <p class="stat-value">{{ totalOrders() }}</p>
+          <p class="stat-label">Total orders</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🍴</div>
+        <div>
+          <p class="stat-value">{{ totalRestaurants() }}</p>
+          <p class="stat-label">Restaurants</p>
+          <p class="stat-sub">{{ openRestaurants() }} open now</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">✓</div>
+        <div>
+          <p class="stat-value">{{ deliveredOrders() }}</p>
+          <p class="stat-label">Delivered</p>
+          <p class="stat-sub danger" *ngIf="cancelledOrders() > 0">{{ cancelledOrders() }} cancelled</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom grid: restaurants + recent orders -->
+    <div class="bottom-grid">
+
+      <!-- Restaurants table -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">All restaurants</h2>
+          <a routerLink="/admin/restaurants" class="view-all">View all</a>
+        </div>
+
+        <div class="empty-state" *ngIf="restaurants().length === 0">
+          <p>No restaurants found.</p>
+        </div>
+
+        <table class="data-table" *ngIf="restaurants().length > 0">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>City</th>
+              <th>Rating</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let r of restaurants().slice(0, 8)">
+              <td class="td-name">{{ r.name }}</td>
+              <td>{{ r.city }}</td>
+              <td>
+                <span class="rating" *ngIf="r.averageRating > 0">
+                  ★ {{ r.averageRating | number:'1.1-1' }}
+                </span>
+                <span class="no-rating" *ngIf="!r.averageRating">—</span>
+              </td>
+              <td>
+                <span class="status-dot" [class.open]="r.isOpen"></span>
+                {{ r.isOpen ? 'Open' : 'Closed' }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Top restaurants by orders -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Top by orders</h2>
+        </div>
+
+        <div class="empty-state" *ngIf="topRestaurants().length === 0">
+          <p>No order data yet.</p>
+        </div>
+
+        <div class="top-list" *ngIf="topRestaurants().length > 0">
+          <div class="top-item" *ngFor="let r of topRestaurants(); let i = index">
+            <span class="rank">{{ i + 1 }}</span>
+            <div class="top-info">
+              <span class="top-name">{{ r.name }}</span>
+              <span class="top-count">{{ r.count }} orders</span>
+            </div>
+            <span class="top-rev">₹{{ r.revenue | number:'1.0-0' }}</span>
+          </div>
+        </div>
+
+        <!-- Pending orders alert -->
+        <div class="alert-box" *ngIf="pendingOrders() > 0">
+          <span class="alert-dot"></span>
+          {{ pendingOrders() }} orders pending across platform
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

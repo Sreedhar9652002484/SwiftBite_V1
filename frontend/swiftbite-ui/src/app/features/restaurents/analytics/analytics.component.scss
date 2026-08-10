@@ -1,0 +1,380 @@
+$orange      : #fc8019;
+$orange-dark : #e07010;
+$orange-light: #fff3ec;
+$success     : #27ae60;
+$success-light:#eafaf1;
+$danger      : #e74c3c;
+$danger-light: #fef0ee;
+$warning     : #f39c12;
+$warning-light:#fef9e7;
+$blue        : #2980b9;
+$blue-light  : #ebf5fb;
+$text-primary: #1c1c1c;
+$text-muted  : #686b78;
+$border      : #e8e8e8;
+$bg          : #f8f8f8;
+$white       : #ffffff;
+$radius      : 12px;
+
+.analytics { max-width: 1000px; }
+
+// ── Header ────────────────────────────────────────────────────
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: $text-primary;
+  margin: 0 0 4px;
+}
+
+.page-sub {
+  font-size: 13px;
+  color: $text-muted;
+  margin: 0;
+}
+
+// ── Period switcher ───────────────────────────────────────────
+.period-switcher {
+  display: flex;
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 8px;
+  overflow: hidden;
+
+  button {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 500;
+    color: $text-muted;
+    cursor: pointer;
+    transition: all 0.15s;
+    border-right: 1px solid $border;
+
+    &:last-child { border-right: none; }
+    &:hover      { background: $bg; color: $text-primary; }
+    &.active     { background: $orange; color: #fff; }
+  }
+}
+
+// ── Loader ────────────────────────────────────────────────────
+.loader-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 60px 0;
+  color: $text-muted;
+  font-size: 14px;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid $border;
+  border-top-color: $orange;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+// ── Stat grid ─────────────────────────────────────────────────
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+
+  @media (max-width: 800px) { grid-template-columns: repeat(2, 1fr); }
+}
+
+.stat-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  &.orange {
+    background: $orange-light;
+    border-color: lighten($orange, 20%);
+    .stat-value { color: $orange-dark; }
+    .stat-icon  { background: $orange; color: #fff; }
+  }
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: $bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: $text-primary;
+  margin: 0 0 2px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: $text-muted;
+  margin: 0;
+}
+
+// ── Chart cards ───────────────────────────────────────────────
+.chart-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0 0 20px;
+}
+
+.empty-chart {
+  text-align: center;
+  padding: 32px 0;
+  color: $text-muted;
+  font-size: 14px;
+
+  span { font-size: 36px; display: block; margin-bottom: 10px; }
+  p    { margin: 0; }
+}
+
+// ── Bar chart ─────────────────────────────────────────────────
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 180px;
+  padding-bottom: 28px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 28px;
+    left: 0; right: 0;
+    height: 1px;
+    background: $border;
+  }
+}
+
+.bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.bar-wrap {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  min-height: 0;
+}
+
+.bar-tip {
+  font-size: 10px;
+  color: $text-muted;
+  white-space: nowrap;
+}
+
+.bar {
+  width: 70%;
+  min-width: 12px;
+  background: $orange;
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  transition: height 0.3s ease;
+
+  &.bar-empty { background: $border; opacity: 0.5; }
+}
+
+.bar-label {
+  font-size: 11px;
+  color: $text-muted;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  text-align: center;
+}
+
+// ── Bottom grid ───────────────────────────────────────────────
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  @media (max-width: 700px) { grid-template-columns: 1fr; }
+
+  .chart-card { margin-bottom: 0; }
+}
+
+// ── Top items ─────────────────────────────────────────────────
+.top-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.top-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rank {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: $orange-light;
+  color: $orange-dark;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: $text-primary;
+}
+
+.item-count {
+  font-size: 12px;
+  color: $text-muted;
+}
+
+.item-rev {
+  font-size: 14px;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+// ── Status breakdown ──────────────────────────────────────────
+.status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-name {
+  font-size: 13px;
+  color: $text-primary;
+  font-weight: 500;
+}
+
+.status-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-bar-wrap {
+  flex: 1;
+  height: 8px;
+  background: $bg;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.status-bar {
+  height: 100%;
+  border-radius: 4px;
+  min-width: 4px;
+  transition: width 0.4s ease;
+}
+
+.status-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: $text-primary;
+  min-width: 24px;
+  text-align: right;
+}
+
+// ── Status colors ─────────────────────────────────────────────
+.dot-pending   { background: $warning; }
+.dot-confirmed { background: $blue; }
+.dot-preparing { background: $orange; }
+.dot-ready     { background: $success; }
+.dot-delivery  { background: darken($blue, 10%); }
+.dot-delivered { background: $success; }
+.dot-cancelled { background: $danger; }
+
+// bar fills same as dots
+.status-bar {
+  &.dot-pending   { background: $warning-light; border: 1px solid $warning; }
+  &.dot-confirmed { background: $blue-light;    border: 1px solid $blue; }
+  &.dot-preparing { background: $orange-light;  border: 1px solid $orange; }
+  &.dot-ready     { background: $success-light; border: 1px solid $success; }
+  &.dot-delivery  { background: $blue-light;    border: 1px solid darken($blue, 10%); }
+  &.dot-delivered { background: $success-light; border: 1px solid $success; }
+  &.dot-cancelled { background: $danger-light;  border: 1px solid $danger; }
+}

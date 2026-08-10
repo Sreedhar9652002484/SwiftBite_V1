@@ -1,0 +1,136 @@
+<div class="analytics">
+
+  <!-- Header -->
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Analytics</h1>
+      <p class="page-sub">Performance overview for your restaurant</p>
+    </div>
+    <div class="period-switcher">
+      <button [class.active]="period() === '7d'"  (click)="setPeriod('7d')">7 days</button>
+      <button [class.active]="period() === '30d'" (click)="setPeriod('30d')">30 days</button>
+      <button [class.active]="period() === '90d'" (click)="setPeriod('90d')">90 days</button>
+    </div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loader-wrap" *ngIf="loading()">
+    <div class="spinner"></div>
+    <p>Loading analytics…</p>
+  </div>
+
+  <div *ngIf="!loading()">
+
+    <!-- Summary cards -->
+    <div class="stat-grid">
+      <div class="stat-card orange">
+        <span class="stat-icon">₹</span>
+        <div>
+          <p class="stat-value">₹{{ totalRevenue() | number:'1.0-0' }}</p>
+          <p class="stat-label">Total Revenue</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">🧾</span>
+        <div>
+          <p class="stat-value">{{ totalOrders() }}</p>
+          <p class="stat-label">Total Orders</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">📊</span>
+        <div>
+          <p class="stat-value">₹{{ avgOrderValue() | number:'1.0-0' }}</p>
+          <p class="stat-label">Avg Order Value</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">✓</span>
+        <div>
+          <p class="stat-value">{{ completionRate() }}%</p>
+          <p class="stat-label">Completion Rate</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Revenue bar chart -->
+    <div class="chart-card">
+      <h2 class="card-title">Revenue over time</h2>
+
+      <div class="empty-chart" *ngIf="totalRevenue() === 0">
+        <span>📉</span>
+        <p>No revenue data for this period yet.</p>
+      </div>
+
+      <div class="bar-chart" *ngIf="totalRevenue() > 0">
+        <div class="bar-col" *ngFor="let day of dailyData()">
+          <div class="bar-wrap">
+            <span class="bar-tip" *ngIf="day.revenue > 0">₹{{ day.revenue | number:'1.0-0' }}</span>
+            <div
+              class="bar"
+              [style.height.%]="barHeight(day.revenue)"
+              [class.bar-empty]="day.revenue === 0"
+            ></div>
+          </div>
+          <span class="bar-label">{{ day.date }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom row: Top items + Status breakdown -->
+    <div class="bottom-grid">
+
+      <!-- Top selling items -->
+      <div class="chart-card">
+        <h2 class="card-title">Top selling items</h2>
+
+        <div class="empty-chart" *ngIf="topItems().length === 0">
+          <span>🍽️</span>
+          <p>No order data yet.</p>
+        </div>
+
+        <div class="top-items" *ngIf="topItems().length > 0">
+          <div class="top-item" *ngFor="let item of topItems(); let i = index">
+            <span class="rank">{{ i + 1 }}</span>
+            <div class="item-info">
+              <span class="item-name">{{ item.name }}</span>
+              <span class="item-count">{{ item.count }} sold</span>
+            </div>
+            <span class="item-rev">₹{{ item.revenue | number:'1.0-0' }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order status breakdown -->
+      <div class="chart-card">
+        <h2 class="card-title">Order breakdown</h2>
+
+        <div class="empty-chart" *ngIf="statusBreakdown().length === 0">
+          <span>📋</span>
+          <p>No orders in this period.</p>
+        </div>
+
+        <div class="status-list" *ngIf="statusBreakdown().length > 0">
+          <div class="status-row" *ngFor="let s of statusBreakdown()">
+            <div class="status-left">
+              <span class="status-dot" [ngClass]="statusClass(s.status)"></span>
+              <span class="status-name">{{ s.status }}</span>
+            </div>
+            <div class="status-right">
+              <div class="status-bar-wrap">
+                <div
+                  class="status-bar"
+                  [ngClass]="statusClass(s.status)"
+                  [style.width.%]="(s.count / totalOrders()) * 100"
+                ></div>
+              </div>
+              <span class="status-count">{{ s.count }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

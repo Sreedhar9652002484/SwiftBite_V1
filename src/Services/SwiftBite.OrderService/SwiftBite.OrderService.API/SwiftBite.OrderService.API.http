@@ -1,0 +1,6 @@
+@SwiftBite.OrderService.API_HostAddress = http://localhost:5291
+
+GET {{SwiftBite.OrderService.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -f Dockerfile.txt structure.txt .github/workflows/swift-ci.yml)",
+      "Bash(rm -f frontend/Account/ExternalLogin)",
+      "Bash(rmdir frontend/Account)",
+      "Bash(dotnet --version)",
+      "Bash(dotnet add *)",
+      "Bash(dotnet build *)"
+    ]
+  }
+}

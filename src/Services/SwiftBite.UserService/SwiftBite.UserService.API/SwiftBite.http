@@ -1,0 +1,6 @@
+@SwiftBite_HostAddress = http://localhost:5146
+
+GET {{SwiftBite_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

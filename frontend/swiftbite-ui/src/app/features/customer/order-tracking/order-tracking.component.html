@@ -1,0 +1,209 @@
+<div class="tracking-page">
+
+  <!-- Navbar -->
+  <nav class="tracking-nav">
+    <div class="tracking-nav__inner">
+      <button (click)="router.navigate(['/orders'])" class="tracking-nav__back">
+        ← Orders
+      </button>
+      <span class="tracking-nav__title">Track Order</span>
+      <span class="tracking-nav__id">#{{ orderId.slice(0,8).toUpperCase() }}</span>
+    </div>
+  </nav>
+
+  <!-- Loading -->
+  <div *ngIf="loading()" class="tracking-loading">
+    <div class="tracking-loading__spinner"></div>
+    <p>Loading order...</p>
+  </div>
+
+  <div *ngIf="!loading() && order()" class="tracking-content">
+
+    <!-- CANCELLED -->
+    <div *ngIf="isCancelled()" class="cancelled-card">
+      <div class="cancelled-card__emoji">😔</div>
+      <h2 class="cancelled-card__title">Order {{ order().status }}</h2>
+      <p class="cancelled-card__desc">
+        {{ order().status === 'Refunded'
+          ? 'Your refund is being processed.'
+          : 'We\'re sorry your order was cancelled.' }}
+      </p>
+    </div>
+
+    <!-- LIVE TRACKING CARD -->
+    <div *ngIf="!isCancelled()" class="tracking-card">
+
+      <!-- Header -->
+      <div class="tracking-card__header">
+        <div class="tracking-card__header-left">
+          <p class="tracking-card__header-label">Live Tracking</p>
+          <h2 class="tracking-card__header-status">
+            {{ steps[getCurrentStepIndex()]?.icon }}
+            {{ steps[getCurrentStepIndex()]?.label }}
+          </h2>
+          <p class="tracking-card__header-desc">
+            {{ steps[getCurrentStepIndex()]?.desc }}
+          </p>
+        </div>
+        <div class="live-badge">
+          <div class="live-badge__dot"></div>
+          <span>LIVE</span>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar">
+        <div class="progress-bar__track">
+          <div class="progress-bar__fill"
+            [style.width]="getProgressPercent()+'%'"></div>
+        </div>
+        <div class="progress-bar__labels">
+          <span>Order Placed</span>
+          <span>{{ getProgressPercent() }}%</span>
+          <span>Delivered</span>
+        </div>
+      </div>
+
+      <!-- MAP SECTION — shows when PickedUp or OutForDelivery -->
+      <div *ngIf="showMap()" class="map-section">
+        <div class="map-section__statusbar">
+          <div class="map-section__statusbar-left">
+            <div class="map-dot" [class.map-dot--active]="isTracking()"></div>
+            <span>{{ isTracking() ? 'Partner location live' : 'Connecting...' }}</span>
+          </div>
+          <div class="map-section__statusbar-right" *ngIf="partnerName()">
+            <span class="partner-chip">🛵 {{ partnerName() }}</span>
+            <span class="updated-chip">{{ lastUpdated() }}</span>
+          </div>
+        </div>
+
+        <!-- Leaflet Map -->
+        <div id="tracking-map" class="map-canvas"></div>
+
+        <!-- Partner info -->
+        <div class="map-info" *ngIf="partnerName()">
+          <div class="map-info__row">
+            <span class="map-info__label">Delivery Partner</span>
+            <span class="map-info__value">{{ partnerName() }}</span>
+          </div>
+          <div class="map-info__row">
+            <span class="map-info__label">Status</span>
+            <span class="map-info__badge">{{ orderStatus() }}</span>
+          </div>
+        </div>
+
+        <!-- Waiting -->
+        <div class="map-waiting" *ngIf="!partnerName()">
+          <div class="map-waiting__pulse"></div>
+          <p>Waiting for partner location...</p>
+        </div>
+      </div>
+
+      <!-- Step Timeline -->
+      <div class="timeline">
+        @for (step of steps; track step.status; let last = $last) {
+          <div class="timeline__item" [class.timeline__item--done]="isStepDone(step.status)"
+               [class.timeline__item--active]="isStepActive(step.status)"
+               [class.timeline__item--pending]="!isStepDone(step.status)">
+
+            <div class="timeline__left">
+              <div class="timeline__circle"
+                [class.timeline__circle--active]="isStepActive(step.status)"
+                [class.timeline__circle--done]="isStepDone(step.status) && !isStepActive(step.status)"
+                [class.timeline__circle--pending]="!isStepDone(step.status)">
+                <span *ngIf="isStepDone(step.status) && !isStepActive(step.status)">✓</span>
+                <span *ngIf="isStepActive(step.status) || !isStepDone(step.status)">{{ step.icon }}</span>
+              </div>
+              <div *ngIf="!last" class="timeline__line"
+                [class.timeline__line--done]="isStepDone(step.status)"></div>
+            </div>
+
+            <div class="timeline__content">
+              <div class="timeline__content-header">
+                <p class="timeline__label"
+                  [class.timeline__label--active]="isStepActive(step.status)"
+                  [class.timeline__label--done]="isStepDone(step.status) && !isStepActive(step.status)">
+                  {{ step.label }}
+                </p>
+                <span *ngIf="isStepActive(step.status)" class="timeline__badge">
+                  In Progress
+                </span>
+              </div>
+              <p class="timeline__desc">{{ step.desc }}</p>
+              @for (h of order().statusHistory; track h.status) {
+                @if (h.status === step.status) {
+                  <p class="timeline__time">{{ h.timestamp | date:'h:mm a' }}</p>
+                }
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- ORDER DETAILS -->
+    <div class="details-card">
+      <h3 class="details-card__title">🧾 Order Details</h3>
+
+      <div class="details-card__restaurant">
+        <div class="details-card__restaurant-icon">🍽️</div>
+        <div>
+          <p class="details-card__restaurant-name">{{ order().restaurantName }}</p>
+          <p class="details-card__restaurant-time">
+            Placed at {{ order().placedAt | date:'h:mm a, MMM d' }}
+          </p>
+        </div>
+        <span class="payment-badge"
+          [class.payment-badge--paid]="order().paymentStatus === 2"
+          [class.payment-badge--pending]="order().paymentStatus !== 2">
+          💳 {{ getPaymentStatusLabel(order().paymentStatus) }}
+        </span>
+      </div>
+
+      <div class="details-card__items">
+        @for (item of order().items; track item.name) {
+          <div class="details-card__item">
+            <span>{{ item.name }} × {{ item.quantity }}</span>
+            <span class="details-card__item-price">₹{{ item.totalPrice }}</span>
+          </div>
+        }
+      </div>
+
+      <div class="details-card__totals">
+        <div class="details-card__total-row">
+          <span>Subtotal</span><span>₹{{ order().subTotal }}</span>
+        </div>
+        <div class="details-card__total-row">
+          <span>Delivery</span><span>₹{{ order().deliveryFee }}</span>
+        </div>
+        <div class="details-card__total-row">
+          <span>GST</span><span>₹{{ order().taxes }}</span>
+        </div>
+        <div class="details-card__total-row details-card__total-row--grand">
+          <span>Total</span>
+          <span class="details-card__grand-total">₹{{ order().totalAmount }}</span>
+        </div>
+      </div>
+
+      <div class="details-card__address">
+        <p class="details-card__address-label">Delivering to</p>
+        <p class="details-card__address-value">📍 {{ order().deliveryAddress }}</p>
+      </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="tracking-actions">
+      <button *ngIf="canCancel()" (click)="cancelOrder()" class="btn btn--cancel">
+        ❌ Cancel Order
+      </button>
+      <button *ngIf="order().status === 7" (click)="router.navigate(['/home'])"
+        class="btn btn--primary">
+        🍽️ Order Again
+      </button>
+      <button (click)="router.navigate(['/orders'])" class="btn btn--secondary">
+        📋 All Orders
+      </button>
+    </div>
+
+  </div>
+</div>

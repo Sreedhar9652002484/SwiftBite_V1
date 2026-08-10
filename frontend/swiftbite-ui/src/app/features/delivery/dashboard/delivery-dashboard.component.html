@@ -1,0 +1,125 @@
+<div class="dashboard">
+
+  <!-- Loader -->
+  <div class="loader-wrap" *ngIf="loading()">
+    <div class="spinner"></div>
+    <p>Loading your dashboard…</p>
+  </div>
+
+  <div *ngIf="!loading()">
+
+    <!-- Welcome header -->
+    <div class="welcome-header">
+      <div>
+        <h1 class="welcome-title">
+          Hey {{ profile()?.firstName || auth.firstName || 'Partner' }}! 👋
+        </h1>
+        <p class="welcome-sub">Here's your delivery overview for today.</p>
+      </div>
+      <div class="availability-badge" [class.online]="profile()?.isAvailable">
+        <span class="avail-dot"></span>
+        {{ profile()?.isAvailable ? 'Online' : 'Offline' }}
+      </div>
+    </div>
+
+    <!-- Active jobs alert -->
+    <div class="active-alert" *ngIf="activeJobs().length > 0">
+      <span class="alert-icon">🚴</span>
+      <div>
+        <p class="alert-title">{{ activeJobs().length }} active delivery{{ activeJobs().length > 1 ? 'ies' : '' }}</p>
+        <p class="alert-sub">You have ongoing jobs right now.</p>
+      </div>
+      <a routerLink="/delivery/active" class="alert-btn">View Active</a>
+    </div>
+
+    <!-- Pending jobs alert -->
+    <div class="pending-alert" *ngIf="pendingJobs() > 0">
+      <span class="alert-icon">📦</span>
+      <div>
+        <p class="alert-title">{{ pendingJobs() }} new job{{ pendingJobs() > 1 ? 's' : '' }} waiting</p>
+        <p class="alert-sub">New delivery assignments available.</p>
+      </div>
+      <a routerLink="/delivery/jobs" class="alert-btn-outline">Accept Jobs</a>
+    </div>
+
+    <!-- Stat cards -->
+    <div class="stat-grid">
+      <div class="stat-card green-card">
+        <span class="stat-icon">₹</span>
+        <div>
+          <p class="stat-value">₹{{ todayEarnings() | number:'1.0-0' }}</p>
+          <p class="stat-label">Today's earnings</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">✓</span>
+        <div>
+          <p class="stat-value">{{ todayDeliveries() }}</p>
+          <p class="stat-label">Today's deliveries</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">📦</span>
+        <div>
+          <p class="stat-value">{{ profile()?.totalDeliveries ?? 0 }}</p>
+          <p class="stat-label">All-time deliveries</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">★</span>
+        <div>
+          <p class="stat-value">{{ (profile()?.rating ?? 0) | number:'1.1-1' }}</p>
+          <p class="stat-label">Your rating</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent activity -->
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Recent activity</h2>
+        <a routerLink="/delivery/earnings" class="view-all">View all</a>
+      </div>
+
+      <div class="empty-state" *ngIf="recentJobs().length === 0">
+        <span class="empty-icon">📋</span>
+        <p>No deliveries yet. Accept a job to get started!</p>
+      </div>
+
+      <div class="job-list" *ngIf="recentJobs().length > 0">
+        <div class="job-row" *ngFor="let job of recentJobs()">
+          <div class="job-icon">🛵</div>
+          <div class="job-info">
+            <p class="job-title">{{ job.restaurantName }} → {{ job.deliveryCity }}</p>
+            <p class="job-sub">#{{ job.orderNumber }} · {{ timeAgo(job.assignedAt) }}</p>
+          </div>
+          <div class="job-right">
+            <p class="job-fee">₹{{ job.deliveryFee }}</p>
+            <span class="status-badge" [ngClass]="statusClass(job.status)">{{ job.status }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick links -->
+    <div class="quick-links">
+      <a routerLink="/delivery/jobs" class="quick-card">
+        <span class="quick-icon">📦</span>
+        <span class="quick-label">Job Queue</span>
+      </a>
+      <a routerLink="/delivery/active" class="quick-card">
+        <span class="quick-icon">🚴</span>
+        <span class="quick-label">Active</span>
+      </a>
+      <a routerLink="/delivery/earnings" class="quick-card">
+        <span class="quick-icon">₹</span>
+        <span class="quick-label">Earnings</span>
+      </a>
+      <a routerLink="/delivery/profile" class="quick-card">
+        <span class="quick-icon">👤</span>
+        <span class="quick-label">Profile</span>
+      </a>
+    </div>
+
+  </div>
+</div>

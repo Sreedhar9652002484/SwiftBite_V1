@@ -1,0 +1,216 @@
+$orange      : #fc8019;
+$orange-dark : #e07010;
+$orange-light: #fff3ec;
+$success     : #27ae60;
+$danger      : #e74c3c;
+$text-primary: #1c1c1c;
+$text-muted  : #686b78;
+$border      : #e8e8e8;
+$bg          : #f8f8f8;
+$white       : #ffffff;
+$sidebar-w   : 230px;
+
+.owner-shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: $bg;
+}
+
+// ── Sidebar ───────────────────────────────────────────────────
+.sidebar {
+  width: $sidebar-w;
+  min-width: $sidebar-w;
+  height: 100%;
+  background: $white;
+  border-right: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid $border;
+
+  .brand-icon { font-size: 20px; }
+
+  .brand-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: $orange;
+  }
+
+  .brand-pill {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: $orange-light;
+    color: $orange-dark;
+  }
+}
+
+// ── Restaurant card ───────────────────────────────────────────
+.restaurant-card {
+  padding: 14px 18px;
+  border-bottom: 1px solid $border;
+
+  .restaurant-name {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: $text-primary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.status-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.15s;
+
+  &:disabled { opacity: 0.55; cursor: wait; }
+
+  .toggle-track {
+    width: 38px;
+    height: 20px;
+    border-radius: 10px;
+    background: #ccc;
+    position: relative;
+    transition: background 0.2s;
+
+    .toggle-thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: $white;
+      box-shadow: 0 1px 3px rgba(0,0,0,.2);
+      transition: transform 0.2s;
+    }
+  }
+
+  &.open .toggle-track {
+    background: $success;
+    .toggle-thumb { transform: translateX(18px); }
+  }
+
+  .status-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: $danger;
+  }
+
+  &.open .status-label { color: $success; }
+}
+
+// ── Nav ───────────────────────────────────────────────────────
+.sidebar-nav {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: $text-muted;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: $orange-light;
+    color: $orange-dark;
+  }
+
+  &.active {
+    background: $orange;
+    color: $white;
+  }
+
+  .nav-icon { font-size: 18px; line-height: 1; }
+}
+
+// ── Footer ────────────────────────────────────────────────────
+.sidebar-footer {
+  padding: 14px 18px;
+  border-top: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.owner-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: $orange;
+    color: $white;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .owner-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: $text-primary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.btn-logout {
+  width: 100%;
+  padding: 8px 0;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: transparent;
+  color: $text-muted;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    background: #fff0f0;
+    color: $danger;
+    border-color: $danger;
+  }
+}
+
+// ── Content ───────────────────────────────────────────────────
+.owner-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 32px;
+}

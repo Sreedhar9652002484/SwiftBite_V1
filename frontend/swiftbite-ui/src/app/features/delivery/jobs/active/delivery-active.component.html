@@ -1,0 +1,82 @@
+<div class="active-page">
+
+  <div class="toast success" *ngIf="successMsg()">✓ {{ successMsg() }}</div>
+  <div class="toast error"   *ngIf="errorMsg()">✕ {{ errorMsg() }}</div>
+
+  <div class="page-header">
+    <h1 class="page-title">Active Deliveries</h1>
+    <button class="btn-refresh" (click)="loadActive()">↻ Refresh</button>
+  </div>
+
+  <div class="loader-wrap" *ngIf="loading()">
+    <div class="spinner"></div><p>Loading…</p>
+  </div>
+
+  <div *ngIf="!loading()">
+
+    <div class="empty-state" *ngIf="activeJobs().length === 0">
+      <span class="empty-icon">🚴</span>
+      <p>No active deliveries.</p>
+      <p class="empty-sub">Accept a job from the Jobs tab to get started.</p>
+    </div>
+
+    <div class="active-cards" *ngIf="activeJobs().length > 0">
+      <div class="active-card" *ngFor="let job of activeJobs()" [class.actioning]="actionId() === job.id">
+
+        <!-- Progress steps -->
+        <div class="progress-steps">
+          <div class="step" [class.done]="statusStep(job) >= 1" [class.current]="statusStep(job) === 1">
+            <div class="step-dot"></div>
+            <span class="step-label">Accepted</span>
+          </div>
+          <div class="step-line" [class.done]="statusStep(job) >= 2"></div>
+          <div class="step" [class.done]="statusStep(job) >= 2" [class.current]="statusStep(job) === 2">
+            <div class="step-dot"></div>
+            <span class="step-label">Picked Up</span>
+          </div>
+          <div class="step-line" [class.done]="statusStep(job) >= 3"></div>
+          <div class="step" [class.done]="statusStep(job) >= 3" [class.current]="statusStep(job) === 3">
+            <div class="step-dot"></div>
+            <span class="step-label">Delivered</span>
+          </div>
+        </div>
+
+        <!-- Order info -->
+        <div class="order-info">
+          <div class="info-row">
+            <span class="info-label">Order</span>
+            <span class="info-value">#{{ job.orderNumber }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Customer</span>
+            <span class="info-value">{{ job.customerName }} · {{ job.customerPhone }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Pickup</span>
+            <span class="info-value">{{ job.restaurantName }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Deliver to</span>
+            <span class="info-value">{{ job.deliveryAddress }}, {{ job.deliveryCity }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Your fee</span>
+            <span class="info-value green fw-700">₹{{ job.deliveryFee }}</span>
+          </div>
+        </div>
+
+        <!-- Action button -->
+        <button
+          class="btn-action"
+          *ngIf="nextAction(job)"
+          [disabled]="actionId() === job.id"
+          (click)="nextAction(job)!.fn()"
+        >
+          {{ actionId() === job.id ? 'Updating…' : nextAction(job)!.label }}
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+</div>

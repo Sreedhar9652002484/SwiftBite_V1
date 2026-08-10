@@ -1,0 +1,56 @@
+name: SwiftBite CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore Dependencies
+      run: dotnet restore SwiftBite.sln
+
+    - name: Build Application
+      run: dotnet build SwiftBite.sln --configuration Release --no-restore
+
+    - name: Run Unit Tests
+      run: dotnet test SwiftBite.sln --no-build --verbosity normal
+
+  frontend:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+        cache: npm
+        cache-dependency-path: frontend/swiftbite-ui/package-lock.json
+
+    - name: Install Dependencies
+      working-directory: frontend/swiftbite-ui
+      run: npm ci
+
+    - name: Build
+      working-directory: frontend/swiftbite-ui
+      run: npm run build
