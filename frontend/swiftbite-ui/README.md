@@ -1,59 +1,53 @@
-# SwiftbiteUi
+# SwiftBite UI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+The Angular frontend for [SwiftBite](../../README.md) — customer ordering flow, restaurant admin dashboard, delivery partner view, and OAuth2/OIDC login against the SwiftBite Auth Server.
+
+**Stack:** Angular 20 (standalone components), TypeScript, Tailwind CSS, `angular-oauth2-oidc`, SignalR client (live order/notification updates), Leaflet (delivery tracking map).
+
+## Prerequisites
+
+* Node.js 20+
+* The backend running — either via `docker compose up --build` from the repo root, or the individual services via `dotnet run` (see the [root README](../../README.md#-getting-started))
 
 ## Development server
 
-To start a local development server, run:
-
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open `http://localhost:4200/`. The dev build reads `src/environments/environment.ts`, which points at the local backend (`http://localhost:5000` gateway, `http://localhost:5001` auth server).
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Production build
 
 ```bash
-ng generate component component-name
+ng build --configuration production
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+This swaps in `src/environments/environment.production.ts` (via the `fileReplacements` entry in `angular.json`) — **update the `CHANGE_ME` placeholders in that file with your real deployed backend URLs before building for a live deployment.** See [docs/DEPLOYMENT.md](../../docs/DEPLOYMENT.md) for the full deployment walkthrough (Vercel/Netlify).
 
-```bash
-ng generate --help
-```
+Output goes to `dist/swiftbite-ui/browser`.
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+Runs the Karma/Jasmine unit tests. Coverage here is currently minimal (see the [production readiness checklist](../../docs/PRODUCTION_READINESS_CHECKLIST.md)) — contributions welcome.
 
-For end-to-end (e2e) testing, run:
+## Project structure
 
-```bash
-ng e2e
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+src/app/
+├── core/
+│   ├── auth/            # OIDC config, auth guard, auth service
+│   ├── interceptors/    # JWT + loading interceptors
+│   └── services/        # API clients per domain (order, payment, restaurant, delivery, notification, user)
+└── features/
+    ├── auth/             # login, register, OAuth callback
+    ├── customer/         # ordering flow, order tracking
+    ├── restaurents/      # restaurant admin dashboard, menu manager, analytics
+    ├── delivery/         # delivery partner dashboard
+    └── admin/            # admin dashboard
+```

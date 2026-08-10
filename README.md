@@ -42,7 +42,9 @@ Each microservice:
 * ✅ API Gateway (YARP, rate limiting, Redis cache)
 * ✅ User, Restaurant, Order, Payment, Delivery, Notification services (Clean Architecture: API / Application / Domain / Infrastructure)
 * ✅ Angular frontend with auth flow, admin dashboard
-* 🚧 Test coverage, CI/CD, deployment infrastructure (see checklist)
+* ✅ 133 automated tests across 8 test projects, CI running on every push/PR
+* ✅ Free-tier live deployment path documented (Azure Container Apps + Upstash + Vercel/Netlify)
+* 🚧 Broader test coverage, production-grade secrets management (see checklist)
 
 ---
 
@@ -74,6 +76,9 @@ src/
 SwiftBite.Shared.Kernel/          # shared domain primitives
 SwiftBite.Shared.Exceptions/      # shared exception handling middleware
 frontend/swiftbite-ui/            # Angular app
+docs/                             # production readiness checklist, deployment runbook
+scripts/                          # one-time Azure provisioning script
+.github/workflows/                # ci.yml (build+test), deploy.yml (build+push+deploy)
 docker-compose.yml                # full local stack (infra + services)
 ```
 
@@ -124,11 +129,22 @@ Never commit real secrets. `appsettings.json` files ship with `CHANGE_ME` placeh
 
 ## 🧪 Testing
 
-Run all backend tests:
+133 tests across 8 xUnit projects (validators, controllers, middleware, and the webhook signature verification logic). Run them all:
 
 ```bash
 dotnet test SwiftBite.sln
 ```
+
+CI (`.github/workflows/ci.yml`) runs this automatically on every push and pull request to `main`.
+
+---
+
+## 🚢 CI/CD & Deployment
+
+* `.github/workflows/ci.yml` — builds and runs the full test suite on every push/PR. No setup required.
+* `.github/workflows/deploy.yml` — builds Docker images, pushes them to GitHub Container Registry, and deploys to Azure Container Apps on every push to `main`. Requires one-time setup — see below.
+
+To get the whole stack (backend + database + cache + message broker + frontend) running live for free, follow **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**. `scripts/azure-setup.sh` automates the one-time Azure resource provisioning.
 
 ---
 
