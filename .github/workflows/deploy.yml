@@ -15,6 +15,7 @@ jobs:
       contents: read
       packages: write
     strategy:
+      fail-fast: false
       matrix:
         include:
           - service: authserver
@@ -71,8 +72,16 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - run: |
-          az containerapp update \
-            --name ${{ matrix.containerapp }} \
-            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --image ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/swiftbite-${{ matrix.service }}:${{ github.sha }}
+      - name: Update Container App (retries on transient conflicts)
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if az containerapp update \
+              --name ${{ matrix.containerapp }} \
+              --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+              --image ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/swiftbite-${{ matrix.service }}:${{ github.sha }}; then
+              exit 0
+            fi
+            echo "Attempt $attempt failed, retrying in 15s..."
+            sleep 15
+          done
+          exit 1
