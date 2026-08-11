@@ -119,6 +119,10 @@ namespace SwiftBite.AuthServer.Controllers
 
                 identity.AddClaim(Claims.Subject, request.ClientId!);
                 identity.AddClaim(Claims.Audience, "swiftbite-restaurantservice");
+                // Trusted confidential-client-only grant, used solely for AuthServer's own
+                // internal provisioning calls (e.g. approving a restaurant it just created
+                // on behalf of an admin who already reviewed the partner application).
+                identity.AddClaim(Claims.Role, "Admin");
                 identity.SetDestinations(GetDestinations);
 
                 return SignIn(

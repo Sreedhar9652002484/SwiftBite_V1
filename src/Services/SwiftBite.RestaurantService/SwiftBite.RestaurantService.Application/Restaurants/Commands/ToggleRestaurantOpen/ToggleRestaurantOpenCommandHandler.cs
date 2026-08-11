@@ -34,6 +34,9 @@ public class ToggleRestaurantOpenCommandHandler
 
         await _cache.RemoveAsync(
             $"restaurant:{cmd.RestaurantId}", ct);
+        await _cache.RemoveByPrefixAsync(
+            $"restaurants:city:{restaurant.City.ToLower()}", ct);
+        await _cache.RemoveAsync("restaurants:all", ct);
 
         return restaurant.IsOpen;
     }

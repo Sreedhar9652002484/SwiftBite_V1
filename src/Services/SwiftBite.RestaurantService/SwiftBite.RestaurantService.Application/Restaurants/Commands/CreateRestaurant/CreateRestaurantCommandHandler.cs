@@ -33,9 +33,10 @@ public class CreateRestaurantCommandHandler
         await _repo.AddAsync(restaurant, ct);
         await _repo.SaveChangesAsync(ct);
 
-        // ✅ Invalidate city cache
+        // ✅ Invalidate city and aggregate caches
         await _cache.RemoveByPrefixAsync(
             $"restaurants:city:{cmd.City.ToLower()}", ct);
+        await _cache.RemoveAsync("restaurants:all", ct);
 
         return MapToDto(restaurant);
     }

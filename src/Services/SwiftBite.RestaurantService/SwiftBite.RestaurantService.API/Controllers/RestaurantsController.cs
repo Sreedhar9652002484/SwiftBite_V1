@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SwiftBite.RestaurantService.Application.Restaurants.Commands.ApproveRestaurant;
 using SwiftBite.RestaurantService.Application.Restaurants.Commands.CreateRestaurant;
 using SwiftBite.RestaurantService.Application.Restaurants.Commands.ToggleRestaurantOpen;
 using SwiftBite.RestaurantService.Application.Restaurants.Commands.UpdateRestaurant;
@@ -194,11 +195,36 @@ public class RestaurantsController : ControllerBase
                 "Owner ID not found in request.");
 
         // ✅ CHANGE: NO try-catch! Middleware handles it
-        await _mediator.Send(
+        var isOpen = await _mediator.Send(
             new ToggleRestaurantOpenCommand(id, ownerId), ct);
 
-        return Ok(ApiResponse.SuccessResponse(
+        return Ok(ApiResponse<object>.SuccessResponse(
+            new { isOpen },
             "Restaurant status toggled successfully.",
+            HttpContext.TraceIdentifier));
+    }
+
+    /// <summary>
+    /// Approve a pending restaurant so it becomes visible to customers.
+    /// </summary>
+    [HttpPut("{id:guid}/approve")]
+    [Authorize]
+    [ProducesResponseType(typeof(ApiResponse), 200)]
+    [ProducesResponseType(typeof(ExceptionResponse), 401)]
+    [ProducesResponseType(typeof(ExceptionResponse), 403)]
+    [ProducesResponseType(typeof(ExceptionResponse), 404)]
+    [ProducesResponseType(typeof(ExceptionResponse), 500)]
+    public async Task<IActionResult> Approve(Guid id, CancellationToken ct)
+    {
+        // Manual claim check: OpenIddict issues the short "role" claim, not the
+        // ClaimTypes.Role that [Authorize(Roles=...)] checks by default.
+        if (!User.HasClaim(c => c.Type == "role" && c.Value == "Admin"))
+            throw new ForbiddenException("Admin role required.");
+
+        await _mediator.Send(new ApproveRestaurantCommand(id), ct);
+
+        return Ok(ApiResponse.SuccessResponse(
+            "Restaurant approved successfully.",
             HttpContext.TraceIdentifier));
     }
 

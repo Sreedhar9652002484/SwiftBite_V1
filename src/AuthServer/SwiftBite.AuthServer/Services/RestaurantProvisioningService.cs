@@ -65,6 +65,15 @@ public class RestaurantProvisioningService : IRestaurantProvisioningService
 
         using var createDoc = JsonDocument.Parse(await createResponse.Content.ReadAsStringAsync(ct));
         var id = createDoc.RootElement.GetProperty("data").GetProperty("id").GetString();
+
+        // The partner application was already reviewed by a human admin, so the new
+        // restaurant can go straight to Active instead of sitting in PendingApproval
+        // with no way to ever be approved.
+        using var approveRequest = new HttpRequestMessage(HttpMethod.Put, $"{restaurantServiceUrl}/api/restaurants/{id}/approve");
+        approveRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+        var approveResponse = await _http.SendAsync(approveRequest, ct);
+        approveResponse.EnsureSuccessStatusCode();
+
         return Guid.Parse(id!);
     }
 }
