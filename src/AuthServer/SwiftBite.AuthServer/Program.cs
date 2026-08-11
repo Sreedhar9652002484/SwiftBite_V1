@@ -140,7 +140,12 @@ builder.Services.AddOpenIddict()
         }
         else
         {
-            // TODO: Load real cert from Azure Key Vault in production
+            // Ephemeral keys regenerate on restart, invalidating existing sessions/tokens -
+            // fine for a demo deployment, but a real production deployment should load a
+            // persistent X.509 certificate (e.g. from Azure Key Vault) instead.
+            options.AddEphemeralEncryptionKey()
+                   .AddEphemeralSigningKey();
+
             options.UseAspNetCore()
                    .EnableTokenEndpointPassthrough()
                    .EnableAuthorizationEndpointPassthrough()
