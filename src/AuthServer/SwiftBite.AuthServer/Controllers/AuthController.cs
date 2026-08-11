@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OpenIddict.Validation.AspNetCore;
 using SwiftBite.AuthServer.Models;
 
 namespace SwiftBite.AuthServer.Controllers;
@@ -56,7 +57,7 @@ public class AuthController : ControllerBase
 
     // ── GET /api/auth/me ─────────────────────────────────────
     [HttpGet("me")]
-    [Authorize]
+    [Authorize(AuthenticationSchemes = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme)]
     public async Task<IActionResult> Me()
     {
         var user = await _userManager.GetUserAsync(User);

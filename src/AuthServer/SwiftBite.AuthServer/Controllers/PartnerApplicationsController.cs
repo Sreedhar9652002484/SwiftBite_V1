@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OpenIddict.Abstractions;
+using OpenIddict.Validation.AspNetCore;
 using SwiftBite.AuthServer.Data;
 using SwiftBite.AuthServer.Models;
 using SwiftBite.Shared.Exceptions.Exceptions;
@@ -12,7 +13,7 @@ namespace SwiftBite.AuthServer.Controllers;
 
 [Route("api/partner-applications")]
 [ApiController]
-[Authorize]
+[Authorize(AuthenticationSchemes = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme)]
 public class PartnerApplicationsController : ControllerBase
 {
     private static readonly string[] AllowedRoles = ["RestaurantAdmin", "DeliveryPartner"];
