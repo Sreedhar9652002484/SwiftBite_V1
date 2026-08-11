@@ -21,6 +21,9 @@ builder.Host.UseSerilog();
 
 // ✅ 2. YARP - load from yarp.json
 builder.Configuration.AddJsonFile("yarp.json", optional: false, reloadOnChange: true);
+// re-add env vars so e.g. ReverseProxy__Clusters__auth-cluster__Destinations__auth-server__Address
+// can override yarp.json's docker-compose-only hostnames when deployed elsewhere
+builder.Configuration.AddEnvironmentVariables();
 builder.Services.AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
