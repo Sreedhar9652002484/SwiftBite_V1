@@ -138,13 +138,15 @@ var app = builder.Build();
 
 // Azure Container Apps terminates TLS at the edge and forwards plain HTTP internally, and
 // also puts the real client IP in X-Forwarded-For - trust it so IsHttps checks and the IP
-// rate limiter both see accurate values.
-app.UseForwardedHeaders(new ForwardedHeadersOptions
+// rate limiter both see accurate values. KnownNetworks/KnownProxies default to loopback-only,
+// so they must be cleared (not just left empty in an initializer) for this to take effect.
+var forwardedHeadersOptions = new ForwardedHeadersOptions
 {
-    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
-    KnownNetworks = { },
-    KnownProxies = { }
-});
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+};
+forwardedHeadersOptions.KnownNetworks.Clear();
+forwardedHeadersOptions.KnownProxies.Clear();
+app.UseForwardedHeaders(forwardedHeadersOptions);
 
 // ✅ MIDDLEWARE PIPELINE - CRITICAL ORDER!
 app.UseCors("SwiftBitePolicy");

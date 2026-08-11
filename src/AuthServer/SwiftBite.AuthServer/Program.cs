@@ -181,12 +181,15 @@ var app = builder.Build();
 // Azure Container Apps (and similar PaaS) terminate TLS at the edge and forward plain HTTP
 // internally, so without this the app sees every request as HTTP and OpenIddict's server
 // component rejects it - trust the platform's proxy since it's the only path to the container.
-app.UseForwardedHeaders(new ForwardedHeadersOptions
+// KnownNetworks/KnownProxies default to loopback-only, so they must be cleared (not just left
+// empty in an initializer, which adds zero items but keeps the defaults) for this to take effect.
+var forwardedHeadersOptions = new ForwardedHeadersOptions
 {
-    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
-    KnownNetworks = { },
-    KnownProxies = { }
-});
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+};
+forwardedHeadersOptions.KnownNetworks.Clear();
+forwardedHeadersOptions.KnownProxies.Clear();
+app.UseForwardedHeaders(forwardedHeadersOptions);
 
 app.UseGlobalExceptionHandler();
 
