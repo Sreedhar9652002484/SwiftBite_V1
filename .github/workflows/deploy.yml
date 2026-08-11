@@ -62,7 +62,9 @@ jobs:
           context: .
           file: ${{ matrix.dockerfile }}
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/swiftbite-${{ matrix.service }}:latest
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/swiftbite-${{ matrix.service }}:latest
+            ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/swiftbite-${{ matrix.service }}:${{ github.sha }}
 
       - name: Deploy ${{ matrix.service }} to Azure Container Apps
         uses: azure/login@v2
@@ -73,4 +75,4 @@ jobs:
           az containerapp update \
             --name ${{ matrix.containerapp }} \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --image ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/swiftbite-${{ matrix.service }}:latest
+            --image ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/swiftbite-${{ matrix.service }}:${{ github.sha }}
