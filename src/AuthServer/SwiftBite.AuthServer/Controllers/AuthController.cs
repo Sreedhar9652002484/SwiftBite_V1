@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OpenIddict.Abstractions;
 using OpenIddict.Validation.AspNetCore;
 using SwiftBite.AuthServer.Models;
 
@@ -60,7 +61,10 @@ public class AuthController : ControllerBase
     [Authorize(AuthenticationSchemes = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme)]
     public async Task<IActionResult> Me()
     {
-        var user = await _userManager.GetUserAsync(User);
+        // OpenIddict issues the short "sub" claim, not ClaimTypes.NameIdentifier,
+        // so GetUserAsync(User) can't resolve it — look up by subject claim instead.
+        var subject = User.GetClaim(OpenIddictConstants.Claims.Subject);
+        var user = subject is null ? null : await _userManager.FindByIdAsync(subject);
         if (user is null) return Unauthorized();
 
         return Ok(new
