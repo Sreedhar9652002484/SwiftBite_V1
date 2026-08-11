@@ -36,7 +36,8 @@ public class ClientSeeder : IHostedService
         var angularBaseUrl = _configuration["AuthServer:AngularBaseUrl"] ?? "http://localhost:4200";
 
         // ── Client 1: Angular Customer App ──────────────────
-        if (await manager.FindByClientIdAsync("swiftbite-angular", ct) is null)
+        var angularClient = await manager.FindByClientIdAsync("swiftbite-angular", ct);
+        if (angularClient is null)
         {
             await manager.CreateAsync(new OpenIddictApplicationDescriptor
             {
@@ -73,6 +74,19 @@ public class ClientSeeder : IHostedService
                 }
             }, ct);
         }
+        else
+        {
+            // keep redirect URIs in sync when AngularBaseUrl changes (e.g. new Vercel/Netlify URL)
+            var descriptor = new OpenIddictApplicationDescriptor();
+            await manager.PopulateAsync(descriptor, angularClient, ct);
+
+            descriptor.RedirectUris.Clear();
+            descriptor.RedirectUris.Add(new Uri($"{angularBaseUrl}/auth/callback"));
+            descriptor.PostLogoutRedirectUris.Clear();
+            descriptor.PostLogoutRedirectUris.Add(new Uri($"{angularBaseUrl}/auth/logout"));
+
+            await manager.UpdateAsync(angularClient, descriptor, ct);
+        }
 
         // ── Client 2: API Gateway (service-to-service) ───────
         var gatewayClient = await manager.FindByClientIdAsync("swiftbite-gateway", ct);
@@ -108,7 +122,8 @@ public class ClientSeeder : IHostedService
             await manager.UpdateAsync(gatewayClient, descriptor, ct);
         }
         // ── Client 3: Restaurant Admin App ───────────────────
-        if (await manager.FindByClientIdAsync("swiftbite-restaurant-portal", ct) is null)
+        var restaurantPortalClient = await manager.FindByClientIdAsync("swiftbite-restaurant-portal", ct);
+        if (restaurantPortalClient is null)
         {
             await manager.CreateAsync(new OpenIddictApplicationDescriptor
             {
@@ -136,6 +151,18 @@ public class ClientSeeder : IHostedService
                     Permissions.Prefixes.Scope + "swiftbite.restaurant",
                 }
             }, ct);
+        }
+        else
+        {
+            var descriptor = new OpenIddictApplicationDescriptor();
+            await manager.PopulateAsync(descriptor, restaurantPortalClient, ct);
+
+            descriptor.RedirectUris.Clear();
+            descriptor.RedirectUris.Add(new Uri($"{angularBaseUrl}/auth/callback"));
+            descriptor.PostLogoutRedirectUris.Clear();
+            descriptor.PostLogoutRedirectUris.Add(new Uri($"{angularBaseUrl}/auth/logout"));
+
+            await manager.UpdateAsync(restaurantPortalClient, descriptor, ct);
         }
 
         // ── Client 4: UserService ─────────────────────────────
