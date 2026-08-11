@@ -16,7 +16,7 @@ public class UserPreferenceConfiguration
 
         builder.Property(p => p.PreferredCuisines)
             .HasMaxLength(500)
-            .HasDefaultValueSql("[]");
+            .HasDefaultValue("[]");
 
         builder.Property(p => p.AllergiesInfo)
             .HasMaxLength(250);

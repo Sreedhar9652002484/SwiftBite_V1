@@ -72,7 +72,7 @@ namespace SwiftBite.UserService.Infrastructure.Migrations
                     EmailNotifications = table.Column<bool>(type: "bit", nullable: false),
                     PushNotifications = table.Column<bool>(type: "bit", nullable: false),
                     SmsNotifications = table.Column<bool>(type: "bit", nullable: false),
-                    PreferredCuisines = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false, defaultValueSql: "[]"),
+                    PreferredCuisines = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false, defaultValue: "[]"),
                     AllergiesInfo = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },

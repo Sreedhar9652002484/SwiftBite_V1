@@ -12,7 +12,7 @@ using SwiftBite.UserService.Infrastructure.Persistence;
 namespace SwiftBite.UserService.Infrastructure.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20260811102521_InitialCreate")]
+    [Migration("20260811104611_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -171,7 +171,7 @@ namespace SwiftBite.UserService.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)")
-                        .HasDefaultValueSql("[]");
+                        .HasDefaultValue("[]");
 
                     b.Property<bool>("PushNotifications")
                         .HasColumnType("bit");

@@ -168,7 +168,7 @@ namespace SwiftBite.UserService.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)")
-                        .HasDefaultValueSql("[]");
+                        .HasDefaultValue("[]");
 
                     b.Property<bool>("PushNotifications")
                         .HasColumnType("bit");
