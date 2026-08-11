@@ -1,0 +1,54 @@
+<div class="applications-page">
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Partner Applications</h1>
+      <p class="page-sub">{{ applications().length }} pending application(s)</p>
+    </div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loader-wrap" *ngIf="loading()">
+    <div class="spinner"></div>
+    <p>Loading applications…</p>
+  </div>
+
+  <!-- Cards -->
+  <div class="card" *ngIf="!loading()">
+    <div class="empty-state" *ngIf="applications().length === 0">
+      <p>No pending applications right now.</p>
+    </div>
+
+    <div class="app-list" *ngIf="applications().length > 0">
+      <div class="app-row" *ngFor="let app of applications()">
+        <div class="app-cell">
+          <div class="app-avatar">{{ app.applicantName?.[0] }}</div>
+          <div>
+            <p class="app-name">{{ app.applicantName }}</p>
+            <p class="app-email">{{ app.applicantEmail }}</p>
+          </div>
+        </div>
+
+        <div class="app-role-badge">{{ roleLabel(app.requestedRole) }}</div>
+
+        <div class="app-details">
+          <p *ngIf="app.businessName"><strong>Business:</strong> {{ app.businessName }}</p>
+          <p *ngIf="app.city"><strong>City:</strong> {{ app.city }}</p>
+          <p *ngIf="app.vehicleType"><strong>Vehicle:</strong> {{ app.vehicleType }}</p>
+          <p *ngIf="app.licenseNumber"><strong>License:</strong> {{ app.licenseNumber }}</p>
+          <p><strong>Phone:</strong> {{ app.phone }}</p>
+          <p *ngIf="app.note" class="app-note">"{{ app.note }}"</p>
+        </div>
+
+        <div class="app-actions">
+          <button class="btn-approve" [disabled]="processing() === app.id" (click)="approve(app)">
+            {{ processing() === app.id ? '...' : '✓ Approve' }}
+          </button>
+          <button class="btn-reject" [disabled]="processing() === app.id" (click)="reject(app)">
+            ✕ Reject
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

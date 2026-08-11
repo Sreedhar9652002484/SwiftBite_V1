@@ -57,6 +57,13 @@ export const routes: Routes = [
         .then(m => m.ProfileComponent),
     canActivate: [authGuard],
   },
+  {
+    path: 'become-partner',
+    loadComponent: () =>
+      import('./features/customer/become-partner/become-partner.component')
+        .then(m => m.BecomePartnerComponent),
+    canActivate: [authGuard],
+  },
 
   // ── Admin ─────────────────────────────────────────────
   {
@@ -90,6 +97,12 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/admin/analytics/admin-analytics.component')
             .then(m => m.AdminAnalyticsComponent),
+      },
+      {
+        path: 'partner-applications',
+        loadComponent: () =>
+          import('./features/admin/partner-applications/admin-partner-applications.component')
+            .then(m => m.AdminPartnerApplicationsComponent),
       },
     ],
   },

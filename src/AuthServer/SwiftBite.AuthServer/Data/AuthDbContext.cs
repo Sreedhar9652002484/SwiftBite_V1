@@ -9,6 +9,9 @@ namespace SwiftBite.AuthServer.Data
         public AuthDbContext(DbContextOptions<AuthDbContext> options) : base(options)
         {
         }
+
+        public DbSet<PartnerApplication> PartnerApplications => Set<PartnerApplication>();
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

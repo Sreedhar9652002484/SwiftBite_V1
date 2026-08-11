@@ -50,6 +50,10 @@
         "ClusterId": "auth-cluster",
         "Match": { "Path": "/api/auth/{**catch-all}" }
       },
+      "partner-applications-route": {
+        "ClusterId": "auth-cluster",
+        "Match": { "Path": "/api/partner-applications/{**catch-all}" }
+      },
       "openiddict-route": {
         "ClusterId": "auth-cluster",
         "Match": { "Path": "/connect/{**catch-all}" }

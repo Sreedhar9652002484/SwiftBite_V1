@@ -18,6 +18,7 @@ export class AdminLayoutComponent {
     { label: 'Restaurants', icon: '🍴', path: '/admin/restaurants'   },
     { label: 'Orders',      icon: '🧾', path: '/admin/orders'        },
     { label: 'Analytics',   icon: '📈', path: '/admin/analytics'     },
+    { label: 'Applications', icon: '📝', path: '/admin/partner-applications' },
   ];
 
   logout(): void { this.auth.logout(); }
