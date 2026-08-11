@@ -22,6 +22,16 @@
       </div>
     </div>
 
+    <!-- Registration incomplete alert -->
+    <div class="pending-alert" *ngIf="!profile()">
+      <span class="alert-icon">👤</span>
+      <div>
+        <p class="alert-title">Finish setting up your partner profile</p>
+        <p class="alert-sub">Add your vehicle details to start receiving delivery jobs.</p>
+      </div>
+      <a routerLink="/delivery/profile" class="alert-btn-outline">Complete Profile</a>
+    </div>
+
     <!-- Active jobs alert -->
     <div class="active-alert" *ngIf="activeJobs().length > 0">
       <span class="alert-icon">🚴</span>
