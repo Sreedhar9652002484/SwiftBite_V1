@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OpenIddict.Abstractions;
@@ -176,6 +177,17 @@ builder.Services.AddHostedService<RoleSeeder>();
 builder.Services.AddHostedService<ClientSeeder>();
 
 var app = builder.Build();
+
+// Azure Container Apps (and similar PaaS) terminate TLS at the edge and forward plain HTTP
+// internally, so without this the app sees every request as HTTP and OpenIddict's server
+// component rejects it - trust the platform's proxy since it's the only path to the container.
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
+    KnownNetworks = { },
+    KnownProxies = { }
+});
+
 app.UseGlobalExceptionHandler();
 
 // ✅ Serilog Request Logging - AFTER exception handler
