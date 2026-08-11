@@ -173,8 +173,9 @@ builder.Services.AddCors(options =>
 });
 
 // ?? 5. Register ClientSeeder ?????????????????????????????????
-builder.Services.AddHostedService<RoleSeeder>();     
+builder.Services.AddHostedService<RoleSeeder>();
 builder.Services.AddHostedService<ClientSeeder>();
+builder.Services.AddHttpClient<IRestaurantProvisioningService, RestaurantProvisioningService>();
 
 var app = builder.Build();
 

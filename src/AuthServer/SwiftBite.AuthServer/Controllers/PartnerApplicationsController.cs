@@ -6,6 +6,7 @@ using OpenIddict.Abstractions;
 using OpenIddict.Validation.AspNetCore;
 using SwiftBite.AuthServer.Data;
 using SwiftBite.AuthServer.Models;
+using SwiftBite.AuthServer.Services;
 using SwiftBite.Shared.Exceptions.Exceptions;
 using SwiftBite.Shared.Exceptions.Models;
 
@@ -20,11 +21,16 @@ public class PartnerApplicationsController : ControllerBase
 
     private readonly AuthDbContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
+    private readonly IRestaurantProvisioningService _restaurantProvisioning;
 
-    public PartnerApplicationsController(AuthDbContext db, UserManager<ApplicationUser> userManager)
+    public PartnerApplicationsController(
+        AuthDbContext db,
+        UserManager<ApplicationUser> userManager,
+        IRestaurantProvisioningService restaurantProvisioning)
     {
         _db = db;
         _userManager = userManager;
+        _restaurantProvisioning = restaurantProvisioning;
     }
 
     // ── POST /api/partner-applications ───────────────────────
@@ -40,6 +46,9 @@ public class PartnerApplicationsController : ControllerBase
 
         if (request.RequestedRole == "RestaurantAdmin" && string.IsNullOrWhiteSpace(request.BusinessName))
             throw new ValidationException("BusinessName is required for restaurant applications.");
+
+        if (request.RequestedRole == "RestaurantAdmin" && string.IsNullOrWhiteSpace(request.City))
+            throw new ValidationException("City is required for restaurant applications.");
 
         if (request.RequestedRole == "DeliveryPartner" && string.IsNullOrWhiteSpace(request.VehicleType))
             throw new ValidationException("VehicleType is required for delivery partner applications.");
@@ -122,6 +131,12 @@ public class PartnerApplicationsController : ControllerBase
 
         var user = await _userManager.FindByIdAsync(application.UserId)
             ?? throw new ResourceNotFoundException("User", application.UserId);
+
+        if (application.RequestedRole == "RestaurantAdmin" && user.RestaurantId is null)
+        {
+            user.RestaurantId = await _restaurantProvisioning.CreateRestaurantAsync(user, application, ct);
+            await _userManager.UpdateAsync(user);
+        }
 
         if (!await _userManager.IsInRoleAsync(user, application.RequestedRole))
             await _userManager.AddToRoleAsync(user, application.RequestedRole);

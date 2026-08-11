@@ -106,6 +106,26 @@ namespace SwiftBite.AuthServer.Controllers
                     OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
             }
 
+            // ── Client Credentials (internal service-to-service calls) ─
+            // Client authentication (client_id/client_secret) already happened before this
+            // code runs. Used by AuthServer itself to call other services, e.g. provisioning
+            // a Restaurant in RestaurantService when a partner application is approved.
+            if (request.IsClientCredentialsGrantType())
+            {
+                var identity = new ClaimsIdentity(
+                    OpenIddictServerAspNetCoreDefaults.AuthenticationScheme,
+                    Claims.Name,
+                    Claims.Role);
+
+                identity.AddClaim(Claims.Subject, request.ClientId!);
+                identity.AddClaim(Claims.Audience, "swiftbite-restaurantservice");
+                identity.SetDestinations(GetDestinations);
+
+                return SignIn(
+                    new ClaimsPrincipal(identity),
+                    OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
+            }
+
             return BadRequest(new { error = "Unsupported grant type" });
         }
 
