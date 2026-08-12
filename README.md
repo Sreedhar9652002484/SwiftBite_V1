@@ -147,6 +147,7 @@ CI (`.github/workflows/ci.yml`) runs this automatically on every push and pull r
 To get the whole stack (backend + database + cache + message broker + frontend) running live for free, follow **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**. `scripts/azure-setup.sh` automates the one-time Azure resource provisioning.
 
 ---
+<img width="954" height="780" alt="image" src="https://github.com/user-attachments/assets/93b42387-878d-4aa9-9bff-156e41e9bb12" />
 
 ## 🤝 Contribution
 
