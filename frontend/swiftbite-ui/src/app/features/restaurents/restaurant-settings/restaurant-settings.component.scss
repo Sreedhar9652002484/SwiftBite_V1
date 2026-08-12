@@ -1,29 +1,6 @@
-$orange      : #fc8019;
-$orange-dark : #e07010;
-$orange-light: #fff3ec;
-$success     : #27ae60;
-$success-light:#eafaf1;
-$danger      : #e74c3c;
-$danger-light: #fef0ee;
-$text-primary: #1c1c1c;
-$text-muted  : #686b78;
-$border      : #e8e8e8;
-$bg          : #f8f8f8;
-$white       : #ffffff;
-$radius      : 12px;
+@use '../../../../styles/legacy-vars' as *;
 
 .settings-page { max-width: 720px; }
-
-// ── Toasts ────────────────────────────────────────────────────
-.toast {
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 16px;
-  &.success { background: $success-light; color: darken($success, 5%); }
-  &.error   { background: $danger-light;  color: darken($danger, 5%);  }
-}
 
 // ── Header ────────────────────────────────────────────────────
 .page-header {
@@ -32,6 +9,7 @@ $radius      : 12px;
   justify-content: space-between;
   margin-bottom: 24px;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .page-title {
@@ -50,7 +28,7 @@ $radius      : 12px;
 // ── Save button ───────────────────────────────────────────────
 .btn-save {
   padding: 10px 24px;
-  background: $orange;
+  background: $accent;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -61,7 +39,7 @@ $radius      : 12px;
   transition: background 0.15s;
   flex-shrink: 0;
 
-  &:hover:not(:disabled) { background: $orange-dark; }
+  &:hover:not(:disabled) { background: $accent-hover; }
   &:disabled { opacity: 0.55; cursor: wait; }
 }
 
@@ -80,7 +58,7 @@ $radius      : 12px;
   width: 30px;
   height: 30px;
   border: 3px solid $border;
-  border-top-color: $orange;
+  border-top-color: $accent;
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
 }
@@ -144,7 +122,7 @@ $radius      : 12px;
     width: 100%;
     box-sizing: border-box;
 
-    &:focus { outline: none; border-color: $orange; }
+    &:focus { outline: none; border-color: $accent; }
     &::placeholder { color: #b0b0b0; }
   }
 
@@ -162,7 +140,7 @@ $radius      : 12px;
   overflow: hidden;
   transition: border-color 0.15s;
 
-  &:focus-within { border-color: $orange; }
+  &:focus-within { border-color: $accent; }
 
   input {
     border: none;
@@ -199,4 +177,12 @@ $radius      : 12px;
   display: flex;
   justify-content: flex-end;
   padding-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
 }

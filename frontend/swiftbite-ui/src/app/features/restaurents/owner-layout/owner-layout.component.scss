@@ -1,31 +1,74 @@
-$orange      : #fc8019;
-$orange-dark : #e07010;
-$orange-light: #fff3ec;
-$success     : #27ae60;
-$danger      : #e74c3c;
-$text-primary: #1c1c1c;
-$text-muted  : #686b78;
-$border      : #e8e8e8;
-$bg          : #f8f8f8;
-$white       : #ffffff;
+@use '../../../../styles/legacy-vars' as *;
+
 $sidebar-w   : 230px;
 
 .owner-shell {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   background: $bg;
+}
+
+// ── Mobile topbar (hidden on desktop) ───────────────────────────
+.mobile-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3.25rem;
+  padding: 0 1rem;
+  background: $white;
+  border-bottom: 1px solid $border;
+  z-index: 40;
+
+  &__title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: $text-primary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.hamburger {
+  width: 2.1rem; height: 2.1rem;
+  border-radius: $radius-sm;
+  border: 1px solid $border;
+  background: $white;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 3px; cursor: pointer; flex-shrink: 0;
+
+  span { width: 1.05rem; height: 2px; background: $text-primary; border-radius: 1px; }
+}
+
+.brand-theme-toggle { display: none; margin-left: auto; }
+
+.sidebar-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 45;
 }
 
 // ── Sidebar ───────────────────────────────────────────────────
 .sidebar {
   width: $sidebar-w;
   min-width: $sidebar-w;
-  height: 100%;
+  height: 100vh;
   background: $white;
   border-right: 1px solid $border;
   display: flex;
   flex-direction: column;
+
+  // Off-canvas by default on mobile
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 50;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease;
+
+  &--open { transform: translateX(0); }
 }
 
 .sidebar-brand {
@@ -40,17 +83,17 @@ $sidebar-w   : 230px;
   .brand-name {
     font-size: 17px;
     font-weight: 700;
-    color: $orange;
+    color: $accent;
   }
 
   .brand-pill {
-    margin-left: auto;
+    margin-left: 0;
     font-size: 10px;
     font-weight: 600;
     padding: 2px 8px;
     border-radius: 20px;
-    background: $orange-light;
-    color: $orange-dark;
+    background: $accent-light;
+    color: $accent-hover;
   }
 }
 
@@ -86,7 +129,7 @@ $sidebar-w   : 230px;
     width: 38px;
     height: 20px;
     border-radius: 10px;
-    background: #ccc;
+    background: $border;
     position: relative;
     transition: background 0.2s;
 
@@ -124,6 +167,7 @@ $sidebar-w   : 230px;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  overflow-y: auto;
 }
 
 .nav-link {
@@ -139,12 +183,12 @@ $sidebar-w   : 230px;
   transition: background 0.15s, color 0.15s;
 
   &:hover {
-    background: $orange-light;
-    color: $orange-dark;
+    background: $accent-light;
+    color: $accent-hover;
   }
 
   &.active {
-    background: $orange;
+    background: $accent;
     color: $white;
   }
 
@@ -169,7 +213,7 @@ $sidebar-w   : 230px;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: $orange;
+    background: $accent;
     color: $white;
     font-size: 14px;
     font-weight: 700;
@@ -202,7 +246,7 @@ $sidebar-w   : 230px;
   transition: all 0.15s;
 
   &:hover {
-    background: #fff0f0;
+    background: $danger-light;
     color: $danger;
     border-color: $danger;
   }
@@ -212,5 +256,27 @@ $sidebar-w   : 230px;
 .owner-content {
   flex: 1;
   overflow-y: auto;
-  padding: 28px 32px;
+  padding: 1.75rem 1.25rem;
+  width: 100%;
+  margin-top: 3.25rem; // clears the fixed mobile topbar
+}
+
+// ── Desktop breakpoint ──────────────────────────────────────────
+@media (min-width: 900px) {
+  .mobile-topbar { display: none; }
+  .sidebar-backdrop { display: none; }
+  .brand-theme-toggle { display: flex; }
+
+  .sidebar {
+    position: static;
+    transform: none;
+    height: 100vh;
+  }
+
+  .owner-content {
+    margin-top: 0;
+    padding: 28px 32px;
+  }
+
+  .owner-shell { height: 100vh; overflow: hidden; }
 }

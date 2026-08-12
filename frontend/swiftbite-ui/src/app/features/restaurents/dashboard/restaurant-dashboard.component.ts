@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../core/auth/auth.service';
 import { OrderService, Order, OrderStatus } from '../../../core/services/order.service';  // ✅ IMPORT ENUM
+import { ConfirmService } from '../../../core/services/confirm.service';
 
 @Component({
   selector: 'app-restaurant-dashboard',
@@ -76,6 +77,7 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
   constructor(
     private auth: AuthService,
     private orderSvc: OrderService,
+    private confirmSvc: ConfirmService,
   ) {}
 
   ngOnInit(): void {
@@ -140,7 +142,16 @@ export class RestaurantDashboardComponent implements OnInit, OnDestroy {
 
   // ✅ UPDATED: Use ENUM values
   acceptOrder(order: Order): void { this.changeStatus(order, OrderStatus.Confirmed); }
-  rejectOrder(order: Order): void { this.changeStatus(order, OrderStatus.Cancelled); }
+  async rejectOrder(order: Order): Promise<void> {
+    const ok = await this.confirmSvc.confirm({
+      title: 'Reject this order?',
+      message: `The customer will be notified their order (#${order.id.slice(0, 8).toUpperCase()}) was rejected.`,
+      confirmLabel: 'Reject order',
+      danger: true,
+    });
+    if (!ok) return;
+    this.changeStatus(order, OrderStatus.Cancelled);
+  }
   markPreparing(order: Order): void { this.changeStatus(order, OrderStatus.Preparing); }
   markReady(order: Order): void { this.changeStatus(order, OrderStatus.Ready); }
 

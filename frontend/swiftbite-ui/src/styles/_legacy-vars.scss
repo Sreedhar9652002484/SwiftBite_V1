@@ -8,6 +8,7 @@
 // swapping :root.dark's tokens repaints every component that uses these.
 
 $accent: var(--color-primary);
+$accent-hover: var(--color-primary-hover);
 $accent-light: var(--color-primary-soft);
 $primary: var(--color-ink);
 $success: var(--color-accent);

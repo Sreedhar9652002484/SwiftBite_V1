@@ -3,11 +3,12 @@ import { CommonModule }              from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AuthService }               from '../../../core/auth/auth.service';
 import { RestaurantService }         from '../../../core/services/restaurant.service';
+import { ThemeToggleComponent }      from '../../../shared/components/theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'app-owner-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, ThemeToggleComponent],
   templateUrl: './owner-layout.component.html',
   styleUrls: ['./owner-layout.component.scss'],
 })
@@ -16,6 +17,7 @@ export class OwnerLayoutComponent implements OnInit {
   restaurantName = signal('My Restaurant');
   isOpen         = signal(false);
   togglingStatus = signal(false);
+  mobileMenuOpen = signal(false);
 
   navItems = [
     { label: 'Orders',    icon: '🧾', path: '/owner/dashboard'  },
@@ -70,5 +72,13 @@ export class OwnerLayoutComponent implements OnInit {
 
   logout(): void {
     this.auth.logout();
+  }
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen.update(v => !v);
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen.set(false);
   }
 }

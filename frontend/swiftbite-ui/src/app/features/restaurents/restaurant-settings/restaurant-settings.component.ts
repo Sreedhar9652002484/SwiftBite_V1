@@ -3,6 +3,7 @@ import { CommonModule }      from '@angular/common';
 import { FormsModule }       from '@angular/forms';
 import { AuthService }       from '../../../core/auth/auth.service';
 import { RestaurantService } from '../../../core/services/restaurant.service';
+import { ToastService }      from '../../../core/services/toast.service';
 
 // Matches CuisineType enum — integer value sent to backend
 const CUISINE_TYPES: { label: string; value: number }[] = [
@@ -41,15 +42,14 @@ const CUISINE_TYPES: { label: string; value: number }[] = [
 })
 export class RestaurantSettingsComponent implements OnInit {
 
-  private auth    = inject(AuthService);
-  private restSvc = inject(RestaurantService);
+  private auth     = inject(AuthService);
+  private restSvc  = inject(RestaurantService);
+  private toastSvc = inject(ToastService);
 
   cuisineTypes = CUISINE_TYPES;
 
   loading    = signal(true);
   saving     = signal(false);
-  successMsg = signal<string | null>(null);
-  errorMsg   = signal<string | null>(null);
 
   // cuisineType stored as number matching enum integer value
   form = {
@@ -94,7 +94,7 @@ export class RestaurantSettingsComponent implements OnInit {
       },
       error: () => {
         this.loading.set(false);
-        this.toast('error', 'Failed to load restaurant details.');
+        this.toastSvc.error('Failed to load restaurant details.');
       },
     });
   }
@@ -102,20 +102,15 @@ export class RestaurantSettingsComponent implements OnInit {
   save(): void {
     const rid = this.rid;
     if (!rid) return;
-    if (!this.form.name.trim()) { this.toast('error', 'Restaurant name is required.'); return; }
+    if (!this.form.name.trim()) { this.toastSvc.error('Restaurant name is required.'); return; }
 
     this.saving.set(true);
     this.restSvc.updateRestaurant(rid, {
       ...this.form,
       cuisineType: Number(this.form.cuisineType),  // ensure int, not string from select
     }).subscribe({
-      next: () => { this.saving.set(false); this.toast('success', 'Settings saved!'); },
-      error: () => { this.saving.set(false); this.toast('error', 'Failed to save. Try again.'); },
+      next: () => { this.saving.set(false); this.toastSvc.success('Settings saved!'); },
+      error: () => { this.saving.set(false); this.toastSvc.error('Failed to save. Try again.'); },
     });
-  }
-
-  private toast(type: 'success' | 'error', msg: string): void {
-    if (type === 'success') { this.successMsg.set(msg); setTimeout(() => this.successMsg.set(null), 3000); }
-    else                    { this.errorMsg.set(msg);   setTimeout(() => this.errorMsg.set(null),   4000); }
   }
 }
