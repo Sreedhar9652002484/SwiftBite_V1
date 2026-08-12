@@ -1,10 +1,24 @@
 <div class="delivery-shell">
 
-  <aside class="sidebar">
+  <!-- ── Mobile topbar ─────────────────────────────────── -->
+  <div class="mobile-topbar">
+    <button class="hamburger" (click)="toggleMobileMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <span class="mobile-topbar__title">{{ partnerName() }}</span>
+    <app-theme-toggle />
+  </div>
+
+  @if (mobileMenuOpen()) {
+    <div class="sidebar-backdrop" (click)="closeMobileMenu()"></div>
+  }
+
+  <aside class="sidebar" [class.sidebar--open]="mobileMenuOpen()">
     <div class="sidebar-brand">
       <span class="brand-icon">🚴</span>
       <span class="brand-name">SwiftBite</span>
       <span class="brand-pill">Delivery</span>
+      <app-theme-toggle class="brand-theme-toggle" />
     </div>
 
     <div class="availability-card">
@@ -26,6 +40,7 @@
         [routerLink]="item.path"
         routerLinkActive="active"
         class="nav-link"
+        (click)="closeMobileMenu()"
       >
         <span class="nav-icon">{{ item.icon }}</span>
         <span>{{ item.label }}</span>

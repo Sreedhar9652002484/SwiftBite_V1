@@ -1,26 +1,72 @@
-$primary    : #1a1a2e;
-$green      : #27ae60;
-$green-light: #eafaf1;
-$danger     : #e74c3c;
-$text       : #1c1c1c;
-$text-muted : #686b78;
-$border     : #e8e8e8;
-$bg         : #f4f6f9;
-$white      : #ffffff;
+@use '../../../../styles/legacy-vars' as *;
+
+// The sidebar is intentionally always dark-navy regardless of the light/dark
+// toggle (fixed chrome, like admin's sidebar) - not tied to theme tokens.
+$sidebar-bg: #1a1a2e;
 
 .delivery-shell {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   background: $bg;
+}
+
+// ── Mobile topbar (hidden on desktop) ───────────────────────────
+.mobile-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3.25rem;
+  padding: 0 1rem;
+  background: $sidebar-bg;
+  z-index: 40;
+
+  &__title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: $white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.hamburger {
+  width: 2.1rem; height: 2.1rem;
+  border-radius: $radius-sm;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 3px; cursor: pointer; flex-shrink: 0;
+
+  span { width: 1.05rem; height: 2px; background: $white; border-radius: 1px; }
+}
+
+.brand-theme-toggle { display: none; margin-left: auto; }
+
+.sidebar-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 45;
 }
 
 .sidebar {
   width: 220px;
   min-width: 220px;
-  background: $primary;
+  height: 100vh;
+  background: $sidebar-bg;
   display: flex;
   flex-direction: column;
+
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 50;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease;
+
+  &--open { transform: translateX(0); }
 }
 
 .sidebar-brand {
@@ -33,12 +79,12 @@ $white      : #ffffff;
   .brand-icon { font-size: 20px; }
   .brand-name { font-size: 16px; font-weight: 700; color: $white; }
   .brand-pill {
-    margin-left: auto;
+    margin-left: 0;
     font-size: 10px;
     font-weight: 600;
     padding: 2px 8px;
     border-radius: 20px;
-    background: $green;
+    background: $success;
     color: $white;
   }
 }
@@ -81,11 +127,11 @@ $white      : #ffffff;
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #e74c3c;
+    background: $danger;
     flex-shrink: 0;
   }
 
-  &.online .toggle-dot { background: $green; }
+  &.online .toggle-dot { background: $success; }
 }
 
 .sidebar-nav {
@@ -94,6 +140,7 @@ $white      : #ffffff;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  overflow-y: auto;
 }
 
 .nav-link {
@@ -109,7 +156,7 @@ $white      : #ffffff;
   transition: all 0.15s;
 
   &:hover { background: rgba(255,255,255,0.08); color: $white; }
-  &.active { background: $green; color: $white; }
+  &.active { background: $success; color: $white; }
   .nav-icon { font-size: 17px; }
 }
 
@@ -136,5 +183,26 @@ $white      : #ffffff;
 .delivery-content {
   flex: 1;
   overflow-y: auto;
-  padding: 28px 28px;
+  padding: 1.75rem 1.25rem;
+  width: 100%;
+  margin-top: 3.25rem;
+}
+
+@media (min-width: 900px) {
+  .mobile-topbar { display: none; }
+  .sidebar-backdrop { display: none; }
+  .brand-theme-toggle { display: flex; }
+
+  .sidebar {
+    position: static;
+    transform: none;
+    height: 100vh;
+  }
+
+  .delivery-content {
+    margin-top: 0;
+    padding: 28px 28px;
+  }
+
+  .delivery-shell { height: 100vh; overflow: hidden; }
 }

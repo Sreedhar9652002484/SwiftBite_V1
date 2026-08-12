@@ -1,6 +1,8 @@
 import { Component, OnInit, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeliveryService, DeliveryJob } from '../../../core/services/delivery.service';
+import { ToastService } from '../../../core/services/toast.service';
+import { ConfirmService } from '../../../core/services/confirm.service';
 
 @Component({
   selector: 'app-delivery-jobs',
@@ -11,12 +13,12 @@ import { DeliveryService, DeliveryJob } from '../../../core/services/delivery.se
 })
 export class DeliveryJobsComponent implements OnInit {
 
-  private svc = inject(DeliveryService);
+  private svc        = inject(DeliveryService);
+  private toastSvc   = inject(ToastService);
+  private confirmSvc = inject(ConfirmService);
 
   loading    = signal(true);
   actionId   = signal<string | null>(null);
-  errorMsg   = signal<string | null>(null);
-  successMsg = signal<string | null>(null);
 
   assignedJobs  = signal<DeliveryJob[]>([]);
   completedJobs = signal<DeliveryJob[]>([]);
@@ -44,19 +46,26 @@ export class DeliveryJobsComponent implements OnInit {
           list.map(j => j.id === job.id ? updated : j)
         );
         this.actionId.set(null);
-        this.toast('success', 'Job accepted! Head to the restaurant.');
+        this.toastSvc.success('Job accepted! Head to the restaurant.');
         this.loadJobs();
       },
-      error: () => { this.actionId.set(null); this.toast('error', 'Failed to accept job.'); },
+      error: () => { this.actionId.set(null); this.toastSvc.error('Failed to accept job.'); },
     });
   }
 
-  reject(job: DeliveryJob): void {
+  async reject(job: DeliveryJob): Promise<void> {
+    const ok = await this.confirmSvc.confirm({
+      title: 'Reject this job?',
+      message: 'It\'ll go back into the queue for another partner to pick up.',
+      confirmLabel: 'Reject job',
+      danger: true,
+    });
+    if (!ok) return;
     this.actionId.set(job.id);
     // JobStatus.Rejected = 5
     this.svc.updateJobStatus(job.id, 5).subscribe({
-      next: () => { this.actionId.set(null); this.loadJobs(); },
-      error: () => { this.actionId.set(null); this.toast('error', 'Failed to reject job.'); },
+      next: () => { this.actionId.set(null); this.toastSvc.success('Job rejected.'); this.loadJobs(); },
+      error: () => { this.actionId.set(null); this.toastSvc.error('Failed to reject job.'); },
     });
   }
 
@@ -65,10 +74,5 @@ export class DeliveryJobsComponent implements OnInit {
     if (mins < 1)  return 'Just now';
     if (mins < 60) return `${mins}m ago`;
     return `${Math.floor(mins / 60)}h ago`;
-  }
-
-  private toast(type: 'success' | 'error', msg: string): void {
-    if (type === 'success') { this.successMsg.set(msg); setTimeout(() => this.successMsg.set(null), 3000); }
-    else                    { this.errorMsg.set(msg);   setTimeout(() => this.errorMsg.set(null),   4000); }
   }
 }

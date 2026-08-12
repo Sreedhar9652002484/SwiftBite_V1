@@ -1,28 +1,14 @@
-$green      : #27ae60;
-$green-light: #eafaf1;
-$danger     : #e74c3c;
-$danger-light:#fef0ee;
-$warning    : #f39c12;
-$warning-light:#fef9e7;
-$text       : #1c1c1c;
-$text-muted : #686b78;
-$border     : #e8e8e8;
-$bg         : #f4f6f9;
-$white      : #ffffff;
-$radius     : 12px;
+@use '../../../../styles/legacy-vars' as *;
+
+$green: $success;
+$green-light: $success-light;
 
 .jobs-page { max-width: 700px; }
-
-.toast {
-  padding: 12px 18px; border-radius: 8px;
-  font-size: 14px; font-weight: 500; margin-bottom: 16px;
-  &.success { background: $green-light; color: darken($green,5%); }
-  &.error   { background: $danger-light; color: darken($danger,5%); }
-}
 
 .page-header {
   display: flex; align-items: center;
   justify-content: space-between; margin-bottom: 20px;
+  flex-wrap: wrap; gap: 10px;
 }
 .page-title { font-size: 22px; font-weight: 700; color: $text; margin: 0; }
 
@@ -37,6 +23,7 @@ $radius     : 12px;
 .tab-bar {
   display: flex; gap: 4px; margin-bottom: 20px;
   border-bottom: 2px solid $border; padding-bottom: 0;
+  overflow-x: auto;
 
   button {
     display: flex; align-items: center; gap: 8px;
@@ -44,6 +31,7 @@ $radius     : 12px;
     font-size: 14px; font-weight: 500; color: $text-muted;
     cursor: pointer; border-bottom: 2px solid transparent;
     margin-bottom: -2px; transition: all 0.15s; border-radius: 6px 6px 0 0;
+    white-space: nowrap;
     &:hover { color: $text; }
     &.active { color: $green; border-bottom-color: $green; }
   }
@@ -86,6 +74,7 @@ $radius     : 12px;
 .job-header {
   display: flex; align-items: center;
   justify-content: space-between; margin-bottom: 16px;
+  flex-wrap: wrap; gap: 6px;
 }
 .order-num { font-size: 15px; font-weight: 700; color: $text; }
 .time-ago  { font-size: 12px; color: $text-muted; }
@@ -116,9 +105,10 @@ $radius     : 12px;
   display: flex; align-items: center;
   justify-content: space-between;
   border-top: 1px solid $border; padding-top: 14px;
+  flex-wrap: wrap; gap: 10px;
 }
 .fee-badge {
-  background: $green-light; color: darken($green,5%);
+  background: $green-light; color: $green;
   font-size: 14px; font-weight: 700;
   padding: 4px 12px; border-radius: 20px;
 }
@@ -128,14 +118,14 @@ $radius     : 12px;
   padding: 9px 18px; border-radius: 8px; font-size: 13px;
   font-weight: 600; cursor: pointer;
   background: $danger-light; color: $danger;
-  border: 1px solid lighten($danger,25%);
+  border: 1px solid $danger;
   &:disabled { opacity: 0.5; cursor: wait; }
 }
 .btn-accept {
   padding: 9px 20px; border-radius: 8px; font-size: 13px;
   font-weight: 600; cursor: pointer;
   background: $green; color: $white; border: none;
-  &:hover:not(:disabled) { background: darken($green,5%); }
+  &:hover:not(:disabled) { filter: brightness(0.93); }
   &:disabled { opacity: 0.5; cursor: wait; }
 }
 
@@ -145,6 +135,7 @@ $radius     : 12px;
   display: flex; align-items: center;
   justify-content: space-between;
   padding: 14px 0; border-bottom: 1px solid $border;
+  flex-wrap: wrap; gap: 6px;
   &:last-child { border-bottom: none; }
 }
 .right-col { text-align: right; }
@@ -152,3 +143,7 @@ $radius     : 12px;
 .text-muted { color: $text-muted; }
 .small { font-size: 12px; margin: 2px 0 0; }
 .green { color: $green; }
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+}

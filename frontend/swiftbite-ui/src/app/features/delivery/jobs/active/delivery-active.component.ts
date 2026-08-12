@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeliveryJob, DeliveryService } from '../../../../core/services/delivery.service';
+import { ToastService } from '../../../../core/services/toast.service';
 
 @Component({
   selector: 'app-delivery-active',
@@ -11,12 +12,11 @@ import { DeliveryJob, DeliveryService } from '../../../../core/services/delivery
 })
 export class DeliveryActiveComponent implements OnInit, OnDestroy {
 
-  private svc = inject(DeliveryService);
+  private svc      = inject(DeliveryService);
+  private toastSvc = inject(ToastService);
 
   loading    = signal(true);
   actionId   = signal<string | null>(null);
-  successMsg = signal<string | null>(null);
-  errorMsg   = signal<string | null>(null);
   activeJobs = signal<DeliveryJob[]>([]);
 
   // ✅ Location tracking
@@ -107,12 +107,12 @@ export class DeliveryActiveComponent implements OnInit, OnDestroy {
     this.svc.updateJobStatus(jobId, status).subscribe({
       next: () => {
         this.actionId.set(null);
-        this.toast('success', successText);
+        this.toastSvc.success(successText);
         this.loadActive(); // ← reloads and re-checks if tracking needed
       },
       error: () => {
         this.actionId.set(null);
-        this.toast('error', 'Failed to update status.');
+        this.toastSvc.error('Failed to update status.');
       },
     });
   }
@@ -128,15 +128,5 @@ export class DeliveryActiveComponent implements OnInit, OnDestroy {
       Assigned: 0, Accepted: 1, PickedUp: 2, Delivered: 3
     };
     return steps[job.status] ?? 0;
-  }
-
-  private toast(type: 'success' | 'error', msg: string): void {
-    if (type === 'success') {
-      this.successMsg.set(msg);
-      setTimeout(() => this.successMsg.set(null), 3000);
-    } else {
-      this.errorMsg.set(msg);
-      setTimeout(() => this.errorMsg.set(null), 4000);
-    }
   }
 }

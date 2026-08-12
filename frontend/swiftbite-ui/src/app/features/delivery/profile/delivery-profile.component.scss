@@ -1,21 +1,9 @@
-$green      : #27ae60;
-$green-light: #eafaf1;
-$danger     : #e74c3c;
-$text       : #1c1c1c;
-$text-muted : #686b78;
-$border     : #e8e8e8;
-$bg         : #f4f6f9;
-$white      : #ffffff;
-$radius     : 12px;
+@use '../../../../styles/legacy-vars' as *;
+
+$green: $success;
+$green-light: $success-light;
 
 .profile-page { max-width: 600px; }
-
-.toast {
-  padding: 12px 18px; border-radius: 8px;
-  font-size: 14px; font-weight: 500; margin-bottom: 16px;
-  &.success { background: $green-light; color: darken($green,5%); }
-  &.error   { background: #fef0ee; color: darken($danger,5%); }
-}
 
 .loader-wrap {
   display: flex; flex-direction: column; align-items: center;
@@ -39,6 +27,8 @@ $radius     : 12px;
 .form-grid {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 14px; margin-bottom: 20px;
+
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
 }
 .field {
   display: flex; flex-direction: column; gap: 6px;
@@ -48,7 +38,7 @@ $radius     : 12px;
     padding: 9px 12px; border: 1px solid $border; border-radius: 8px;
     font-size: 14px; color: $text; background: $white;
     &:focus { outline: none; border-color: $green; }
-    &::placeholder { color: #b0b0b0; }
+    &::placeholder { color: $text-muted; }
   }
 }
 .btn-register {
@@ -56,8 +46,8 @@ $radius     : 12px;
   background: $green; color: $white;
   border: none; border-radius: 8px;
   font-size: 14px; font-weight: 600;
-  cursor: pointer; transition: background 0.15s;
-  &:hover:not(:disabled) { background: darken($green, 5%); }
+  cursor: pointer; transition: filter 0.15s;
+  &:hover:not(:disabled) { filter: brightness(0.93); }
   &:disabled { opacity: 0.55; cursor: wait; }
 }
 
@@ -70,6 +60,7 @@ $radius     : 12px;
   display: flex; align-items: center; gap: 16px;
   margin-bottom: 24px; padding-bottom: 20px;
   border-bottom: 1px solid $border;
+  flex-wrap: wrap;
 }
 .avatar {
   width: 52px; height: 52px; border-radius: 50%;
@@ -83,13 +74,15 @@ $radius     : 12px;
 .status-badge {
   font-size: 11px; font-weight: 600;
   padding: 3px 10px; border-radius: 20px;
-  background: #f1f1f1; color: $text-muted;
-  &.active { background: $green-light; color: darken($green, 5%); }
+  background: $bg; color: $text-muted;
+  &.active { background: $green-light; color: $green; }
 }
 
 .info-grid {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 16px; margin-bottom: 20px;
+
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
 }
 .info-item { display: flex; flex-direction: column; gap: 4px; }
 .info-label { font-size: 11px; font-weight: 600; color: $text-muted; text-transform: uppercase; letter-spacing: 0.4px; margin: 0; }
@@ -99,5 +92,9 @@ $radius     : 12px;
   background: $green-light; border-radius: 8px;
   padding: 16px 20px; text-align: center;
 }
-.earnings-label { font-size: 12px; color: darken($green, 10%); font-weight: 500; margin: 0 0 4px; }
-.earnings-value { font-size: 28px; font-weight: 700; color: darken($green, 5%); margin: 0; }
+.earnings-label { font-size: 12px; color: $green; font-weight: 500; margin: 0 0 4px; }
+.earnings-value { font-size: 28px; font-weight: 700; color: $green; margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+}

@@ -2,6 +2,7 @@ import { Component, OnInit, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DeliveryService, DeliveryPartner } from '../../../core/services/delivery.service';
+import { ToastService } from '../../../core/services/toast.service';
 
 @Component({
   selector: 'app-delivery-profile',
@@ -12,13 +13,12 @@ import { DeliveryService, DeliveryPartner } from '../../../core/services/deliver
 })
 export class DeliveryProfileComponent implements OnInit {
 
-  private svc = inject(DeliveryService);
+  private svc      = inject(DeliveryService);
+  private toastSvc = inject(ToastService);
 
   loading     = signal(true);
   saving      = signal(false);
   notRegistered = signal(false);
-  successMsg  = signal<string | null>(null);
-  errorMsg    = signal<string | null>(null);
   profile     = signal<DeliveryPartner | null>(null);
 
   // Registration form
@@ -51,14 +51,9 @@ export class DeliveryProfileComponent implements OnInit {
         this.profile.set(p);
         this.notRegistered.set(false);
         this.saving.set(false);
-        this.toast('success', 'Registration successful! You can now receive jobs.');
+        this.toastSvc.success('Registration successful! You can now receive jobs.');
       },
-      error: () => { this.saving.set(false); this.toast('error', 'Registration failed. Try again.'); },
+      error: () => { this.saving.set(false); this.toastSvc.error('Registration failed. Try again.'); },
     });
-  }
-
-  private toast(type: 'success' | 'error', msg: string): void {
-    if (type === 'success') { this.successMsg.set(msg); setTimeout(() => this.successMsg.set(null), 3000); }
-    else                    { this.errorMsg.set(msg);   setTimeout(() => this.errorMsg.set(null),   4000); }
   }
 }
