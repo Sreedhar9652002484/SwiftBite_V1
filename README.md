@@ -9,8 +9,6 @@ SwiftBite supports:
 * Delivery partners fulfilling deliveries
 * Admins controlling the platform
 
-See [docs/PRODUCTION_READINESS_CHECKLIST.md](docs/PRODUCTION_READINESS_CHECKLIST.md) for an honest, up-to-date assessment of what's done and what's left before this is production-ready.
-
 ---
 
 ## 🏗️ Architecture
