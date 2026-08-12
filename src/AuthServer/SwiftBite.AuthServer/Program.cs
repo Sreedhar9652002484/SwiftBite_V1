@@ -10,6 +10,7 @@ using SwiftBite.AuthServer.Models;
 using SwiftBite.AuthServer.Models.Validators;
 using SwiftBite.AuthServer.Services;
 using SwiftBite.Shared.Exceptions.Extensions;
+using System.Security.Cryptography.X509Certificates;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -141,11 +142,22 @@ builder.Services.AddOpenIddict()
         }
         else
         {
-            // Ephemeral keys regenerate on restart, invalidating existing sessions/tokens -
-            // fine for a demo deployment, but a real production deployment should load a
-            // persistent X.509 certificate (e.g. from Azure Key Vault) instead.
-            options.AddEphemeralEncryptionKey()
-                   .AddEphemeralSigningKey();
+            // Ephemeral keys regenerate on every container restart, which invalidates every
+            // issued access/refresh token immediately - on a scale-to-zero deployment this means
+            // near-constant forced logouts. Load a persistent certificate instead so keys (and
+            // therefore sessions) survive restarts. A real production deployment would source
+            // this from Azure Key Vault rather than a base64 secret.
+            var certBase64 = builder.Configuration["OpenIddict:SigningCertificate"];
+            if (string.IsNullOrEmpty(certBase64))
+                throw new InvalidOperationException("Missing required configuration: OpenIddict:SigningCertificate");
+
+            var cert = new X509Certificate2(
+                Convert.FromBase64String(certBase64),
+                builder.Configuration["OpenIddict:SigningCertificatePassword"],
+                X509KeyStorageFlags.MachineKeySet);
+
+            options.AddSigningCertificate(cert)
+                   .AddEncryptionCertificate(cert);
 
             options.UseAspNetCore()
                    .EnableTokenEndpointPassthrough()
