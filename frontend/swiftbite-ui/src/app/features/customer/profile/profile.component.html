@@ -1,15 +1,15 @@
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen bg-paper">
 
   <!-- Navbar -->
-  <nav class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="bg-surface shadow-sm sticky top-0 z-50 border-b border-border">
     <div class="max-w-2xl mx-auto px-4 py-3
                 flex items-center gap-3">
       <button (click)="router.navigate(['/home'])"
-        class="p-2 rounded-lg hover:bg-gray-100
-               text-gray-600">
+        class="p-2 rounded-lg hover:bg-paper
+               text-muted">
         ← Home
       </button>
-      <span class="font-extrabold text-lg text-gray-900">
+      <span class="font-extrabold text-lg text-ink">
         My Profile
       </span>
     </div>
@@ -18,25 +18,24 @@
   <div class="max-w-2xl mx-auto px-4 py-6">
 
     <!-- Profile Header Card -->
-    <div class="bg-gradient-to-r from-orange-500
-                to-amber-400 rounded-2xl p-6 mb-6
+    <div class="bg-primary rounded-2xl p-5 sm:p-6 mb-6
                 text-white">
-      <div class="flex items-center gap-4">
-        <div class="w-16 h-16 bg-white/20 rounded-full
+      <div class="flex items-center gap-4 flex-wrap">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white/20 rounded-full
                     flex items-center justify-center
-                    text-3xl font-extrabold border-2
+                    text-2xl sm:text-3xl font-extrabold border-2
                     border-white/40">
           {{ getInitial() }}
         </div>
-        <div>
-          <h2 class="font-extrabold text-xl">
+        <div class="min-w-0">
+          <h2 class="font-extrabold text-lg sm:text-xl truncate">
             {{ profile()?.firstName }}
             {{ profile()?.lastName }}
           </h2>
-          <p class="text-orange-100 text-sm">
+          <p class="text-white/80 text-sm truncate">
             {{ authSvc.userEmail }}
           </p>
-          <p class="text-orange-100 text-xs mt-0.5"
+          <p class="text-white/80 text-xs mt-0.5"
             *ngIf="profile()?.phoneNumber">
             📱 {{ profile()?.phoneNumber }}
           </p>
@@ -52,7 +51,7 @@
     </div>
 
     <!-- Tab Switcher -->
-    <div class="flex bg-white rounded-2xl p-1
+    <div class="flex bg-surface rounded-2xl p-1
                 shadow-sm mb-6 gap-1">
       @for (tab of ['profile','addresses','preferences'];
             track tab) {
@@ -61,8 +60,8 @@
           class="flex-1 py-2.5 rounded-xl text-sm
                  font-semibold transition-all capitalize"
           [class]="activeTab() === tab
-            ? 'bg-orange-500 text-white shadow-sm'
-            : 'text-gray-500 hover:text-gray-700'">
+            ? 'bg-primary text-white shadow-sm'
+            : 'text-muted hover:text-ink'">
           {{ tab === 'profile'      ? '👤 Profile'      :
              tab === 'addresses'    ? '📍 Addresses'    :
                                      '⚙️ Preferences'  }}
@@ -72,53 +71,53 @@
 
     <!-- ── TAB: PROFILE ──────────────────────────── -->
     @if (activeTab() === 'profile') {
-      <div class="bg-white rounded-2xl shadow-sm p-6">
+      <div class="bg-surface rounded-2xl shadow-sm p-5 sm:p-6">
 
         @if (!editingProfile()) {
           <!-- View Mode -->
           <div class="space-y-4">
             <div class="grid grid-cols-2 gap-4">
               <div>
-                <p class="text-xs text-gray-400
+                <p class="text-xs text-muted
                            font-semibold uppercase mb-1">
                   First Name
                 </p>
-                <p class="font-semibold text-gray-800">
+                <p class="font-semibold text-ink">
                   {{ profile()?.firstName || '—' }}
                 </p>
               </div>
               <div>
-                <p class="text-xs text-gray-400
+                <p class="text-xs text-muted
                            font-semibold uppercase mb-1">
                   Last Name
                 </p>
-                <p class="font-semibold text-gray-800">
+                <p class="font-semibold text-ink">
                   {{ profile()?.lastName || '—' }}
                 </p>
               </div>
             </div>
             <div>
-              <p class="text-xs text-gray-400
+              <p class="text-xs text-muted
                          font-semibold uppercase mb-1">
                 Email
               </p>
-              <p class="font-semibold text-gray-800">
+              <p class="font-semibold text-ink">
                 {{ authSvc.userEmail }}
               </p>
             </div>
             <div>
-              <p class="text-xs text-gray-400
+              <p class="text-xs text-muted
                          font-semibold uppercase mb-1">
                 Phone
               </p>
-              <p class="font-semibold text-gray-800">
+              <p class="font-semibold text-ink">
                 {{ profile()?.phoneNumber || 'Not set' }}
               </p>
             </div>
             <button
               (click)="editingProfile.set(true)"
-              class="w-full py-3 bg-orange-500 text-white
-                     rounded-xl font-bold hover:bg-orange-600
+              class="w-full py-3 bg-primary text-white
+                     rounded-xl font-bold hover:bg-primary-hover
                      transition-all">
               ✏️ Edit Profile
             </button>
@@ -126,59 +125,62 @@
 
         } @else {
           <!-- Edit Mode -->
-          <h3 class="font-bold text-gray-800 mb-4">
+          <h3 class="font-bold text-ink mb-4">
             Edit Profile
           </h3>
           <div class="space-y-3">
             <div class="grid grid-cols-2 gap-3">
               <div>
-                <label class="text-xs text-gray-500
+                <label class="text-xs text-muted
                                font-semibold mb-1 block">
                   First Name
                 </label>
                 <input [(ngModel)]="profileForm.firstName"
                   placeholder="First Name"
                   class="w-full px-4 py-2.5 border
-                         border-gray-200 rounded-xl text-sm
-                         outline-none focus:border-orange-400"/>
+                         border-border rounded-xl text-sm
+                         bg-surface text-ink
+                         outline-none focus:border-primary"/>
               </div>
               <div>
-                <label class="text-xs text-gray-500
+                <label class="text-xs text-muted
                                font-semibold mb-1 block">
                   Last Name
                 </label>
                 <input [(ngModel)]="profileForm.lastName"
                   placeholder="Last Name"
                   class="w-full px-4 py-2.5 border
-                         border-gray-200 rounded-xl text-sm
-                         outline-none focus:border-orange-400"/>
+                         border-border rounded-xl text-sm
+                         bg-surface text-ink
+                         outline-none focus:border-primary"/>
               </div>
             </div>
             <div>
-              <label class="text-xs text-gray-500
+              <label class="text-xs text-muted
                              font-semibold mb-1 block">
                 Phone Number
               </label>
               <input [(ngModel)]="profileForm.phoneNumber"
                 placeholder="+91 98765 43210"
                 class="w-full px-4 py-2.5 border
-                       border-gray-200 rounded-xl text-sm
-                       outline-none focus:border-orange-400"/>
+                       border-border rounded-xl text-sm
+                       bg-surface text-ink
+                       outline-none focus:border-primary"/>
             </div>
             <div class="flex gap-3 pt-2">
               <button (click)="saveProfile()"
                 [disabled]="saving()"
-                class="flex-1 py-3 bg-orange-500 text-white
+                class="flex-1 py-3 bg-primary text-white
                        rounded-xl font-bold
-                       hover:bg-orange-600 transition-all
+                       hover:bg-primary-hover transition-all
                        disabled:opacity-60">
                 {{ saving() ? 'Saving...' : '✅ Save' }}
               </button>
               <button
                 (click)="editingProfile.set(false)"
-                class="flex-1 py-3 bg-gray-100
-                       text-gray-600 rounded-xl font-semibold
-                       hover:bg-gray-200 transition-all">
+                class="flex-1 py-3 bg-paper
+                       text-muted rounded-xl font-semibold
+                       hover:bg-border/60 transition-all">
                 Cancel
               </button>
             </div>
@@ -192,53 +194,53 @@
       <div class="space-y-3">
 
         @for (addr of addresses(); track addr.id) {
-          <div class="bg-white rounded-2xl shadow-sm p-4">
-            <div class="flex items-start justify-between">
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 bg-orange-100
+          <div class="bg-surface rounded-2xl shadow-sm p-4">
+            <div class="flex items-start justify-between gap-3 flex-wrap">
+              <div class="flex items-start gap-3 min-w-0">
+                <div class="w-10 h-10 bg-primary-soft
                             rounded-xl flex items-center
-                            justify-center text-xl">
+                            justify-center text-xl flex-shrink-0">
                   {{ addr.addressType === 'Home' ? '🏠' :
                      addr.addressType === 'Office'? '🏢' :
                                                    '📍' }}
                 </div>
-                <div>
-                  <div class="flex items-center gap-2">
-                    <p class="font-bold text-gray-900 text-sm">
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <p class="font-bold text-ink text-sm">
                       {{ addr.label || addr.addressType }}
                     </p>
                     @if (addr.isDefault) {
-                      <span class="text-xs bg-green-100
-                                   text-green-700 px-2 py-0.5
+                      <span class="text-xs bg-accent-soft
+                                   text-accent px-2 py-0.5
                                    rounded-full font-semibold">
                         Default
                       </span>
                     }
                   </div>
-                  <p class="text-gray-500 text-sm mt-0.5">
+                  <p class="text-muted text-sm mt-0.5">
                     {{ addr.fullAddress }}
                   </p>
-                  <p class="text-gray-400 text-xs">
+                  <p class="text-muted text-xs">
                     {{ addr.city }}, {{ addr.pinCode }}
                   </p>
                 </div>
               </div>
               <!-- Actions -->
-              <div class="flex gap-2">
+              <div class="flex gap-2 flex-shrink-0">
                 @if (!addr.isDefault) {
                   <button (click)="setDefault(addr.id)"
-                    class="text-xs text-orange-500
-                           hover:text-orange-600
+                    class="text-xs text-primary
+                           hover:text-primary-hover
                            font-semibold px-2 py-1
-                           rounded-lg hover:bg-orange-50">
+                           rounded-lg hover:bg-primary-soft">
                     Set Default
                   </button>
                 }
                 <button (click)="deleteAddress(addr.id)"
-                  class="text-xs text-red-400
-                         hover:text-red-600 font-semibold
+                  class="text-xs text-danger
+                         hover:opacity-80 font-semibold
                          px-2 py-1 rounded-lg
-                         hover:bg-red-50">
+                         hover:bg-danger-soft">
                   Delete
                 </button>
               </div>
@@ -250,58 +252,63 @@
         @if (!showAddressForm()) {
           <button (click)="showAddressForm.set(true)"
             class="w-full py-4 border-2 border-dashed
-                   border-gray-300 rounded-2xl text-gray-500
-                   text-sm font-semibold hover:border-orange-400
-                   hover:text-orange-500 transition-all">
+                   border-border rounded-2xl text-muted
+                   text-sm font-semibold hover:border-primary/50
+                   hover:text-primary transition-all">
             + Add New Address
           </button>
         }
 
         <!-- Address Form -->
         @if (showAddressForm()) {
-          <div class="bg-white rounded-2xl shadow-sm p-5">
-            <h3 class="font-bold text-gray-800 mb-4">
+          <div class="bg-surface rounded-2xl shadow-sm p-5">
+            <h3 class="font-bold text-ink mb-4">
               Add New Address
             </h3>
             <div class="space-y-3">
               <input [(ngModel)]="addressForm.label"
                 placeholder="Label (e.g. Home, Office)"
                 class="w-full px-4 py-2.5 border
-                       border-gray-200 rounded-xl text-sm
-                       outline-none focus:border-orange-400"/>
+                       border-border rounded-xl text-sm
+                       bg-surface text-ink
+                       outline-none focus:border-primary"/>
               <input [(ngModel)]="addressForm.fullAddress"
                 placeholder="Full Address"
                 class="w-full px-4 py-2.5 border
-                       border-gray-200 rounded-xl text-sm
-                       outline-none focus:border-orange-400"/>
+                       border-border rounded-xl text-sm
+                       bg-surface text-ink
+                       outline-none focus:border-primary"/>
               <input [(ngModel)]="addressForm.street"
                 placeholder="Street"
                 class="w-full px-4 py-2.5 border
-                       border-gray-200 rounded-xl text-sm
-                       outline-none focus:border-orange-400"/>
+                       border-border rounded-xl text-sm
+                       bg-surface text-ink
+                       outline-none focus:border-primary"/>
               <div class="grid grid-cols-2 gap-3">
                 <input [(ngModel)]="addressForm.city"
                   placeholder="City"
                   class="w-full px-4 py-2.5 border
-                         border-gray-200 rounded-xl text-sm
-                         outline-none focus:border-orange-400"/>
+                         border-border rounded-xl text-sm
+                         bg-surface text-ink
+                         outline-none focus:border-primary"/>
                 <input [(ngModel)]="addressForm.pinCode"
                   placeholder="PIN Code"
                   class="w-full px-4 py-2.5 border
-                         border-gray-200 rounded-xl text-sm
-                         outline-none focus:border-orange-400"/>
+                         border-border rounded-xl text-sm
+                         bg-surface text-ink
+                         outline-none focus:border-primary"/>
               </div>
               <!-- Address Type -->
-              <div class="flex gap-2">
+              <div class="flex gap-2 flex-wrap">
                 @for (type of addressTypes; track type) {
                   <button
                     (click)="addressForm.addressType = type"
-                    class="flex-1 py-2 rounded-xl text-sm
+                    class="flex-1 min-w-[6rem] py-2 rounded-xl text-sm
                            font-semibold border-2 transition-all"
                     [class]="addressForm.addressType === type
-                      ? 'border-orange-500 bg-orange-50
-                         text-orange-600'
-                      : 'border-gray-200 text-gray-500'">
+                      ? 'border-primary bg-primary-soft
+                         text-primary'
+                      : 'border-border text-muted'">
                     {{ type === 'Home'   ? '🏠 Home'   :
                        type === 'Office' ? '🏢 Office' :
                                           '📍 Other'  }}
@@ -311,17 +318,17 @@
               <div class="flex gap-3">
                 <button (click)="saveAddress()"
                   [disabled]="saving()"
-                  class="flex-1 py-3 bg-orange-500
+                  class="flex-1 py-3 bg-primary
                          text-white rounded-xl font-bold
-                         hover:bg-orange-600 transition-all
+                         hover:bg-primary-hover transition-all
                          disabled:opacity-60">
                   {{ saving() ? 'Saving...' : '✅ Save' }}
                 </button>
                 <button
                   (click)="showAddressForm.set(false)"
-                  class="flex-1 py-3 bg-gray-100
-                         text-gray-600 rounded-xl
-                         font-semibold hover:bg-gray-200">
+                  class="flex-1 py-3 bg-paper
+                         text-muted rounded-xl
+                         font-semibold hover:bg-border/60">
                   Cancel
                 </button>
               </div>
@@ -333,14 +340,14 @@
 
     <!-- ── TAB: PREFERENCES ──────────────────────── -->
     @if (activeTab() === 'preferences') {
-      <div class="bg-white rounded-2xl shadow-sm p-6">
-        <h3 class="font-bold text-gray-800 mb-5">
+      <div class="bg-surface rounded-2xl shadow-sm p-5 sm:p-6">
+        <h3 class="font-bold text-ink mb-5">
           Food Preferences
         </h3>
 
         <!-- Dietary -->
         <div class="mb-5">
-          <p class="text-xs text-gray-400 font-semibold
+          <p class="text-xs text-muted font-semibold
                      uppercase mb-2">
             Dietary Preference
           </p>
@@ -351,8 +358,8 @@
       class="py-2.5 rounded-xl text-sm
              font-semibold border-2 transition-all"
       [class]="prefForm.dietaryPreference === d.value
-        ? 'border-orange-500 bg-orange-50 text-orange-600'
-        : 'border-gray-200 text-gray-500'">
+        ? 'border-primary bg-primary-soft text-primary'
+        : 'border-border text-muted'">
 
       {{ d.label }}
 
@@ -363,7 +370,7 @@
 
         <!-- Cuisines -->
         <div class="mb-5">
-          <p class="text-xs text-gray-400 font-semibold
+          <p class="text-xs text-muted font-semibold
                      uppercase mb-2">
             Favourite Cuisines
           </p>
@@ -374,10 +381,10 @@
                 class="px-3 py-1.5 rounded-full text-sm
                        font-semibold border-2 transition-all"
                 [class]="hasCuisine(c)
-                  ? 'border-orange-500 bg-orange-50
-                     text-orange-600'
-                  : 'border-gray-200 text-gray-500
-                     hover:border-orange-300'">
+                  ? 'border-primary bg-primary-soft
+                     text-primary'
+                  : 'border-border text-muted
+                     hover:border-primary/40'">
                 {{ c }}
               </button>
             }
@@ -386,7 +393,7 @@
 
         <!-- Notifications -->
         <div class="mb-6">
-          <p class="text-xs text-gray-400 font-semibold
+          <p class="text-xs text-muted font-semibold
                      uppercase mb-3">
             Notifications
           </p>
@@ -401,7 +408,7 @@
             ]; track n.key) {
               <div class="flex items-center
                           justify-between">
-                <span class="text-sm text-gray-700
+                <span class="text-sm text-ink
                              font-medium">
                   {{ n.label }}
                 </span>
@@ -411,8 +418,8 @@
                   class="w-12 h-6 rounded-full
                          transition-all relative"
                   [class]="$any(prefForm)[n.key]
-                    ? 'bg-orange-500'
-                    : 'bg-gray-300'">
+                    ? 'bg-primary'
+                    : 'bg-border'">
                   <div class="w-5 h-5 bg-white rounded-full
                               absolute top-0.5 transition-all
                               shadow-sm"
@@ -427,8 +434,8 @@
 
         <button (click)="savePreferences()"
           [disabled]="saving()"
-          class="w-full py-3 bg-orange-500 text-white
-                 rounded-xl font-bold hover:bg-orange-600
+          class="w-full py-3 bg-primary text-white
+                 rounded-xl font-bold hover:bg-primary-hover
                  transition-all disabled:opacity-60">
           {{ saving() ? 'Saving...' : '✅ Save Preferences' }}
         </button>
@@ -438,9 +445,9 @@
     <!-- Become a Partner -->
     <div class="mt-6">
       <button (click)="router.navigate(['/become-partner'])"
-        class="w-full py-3 border-2 border-orange-200
-               text-orange-600 rounded-xl font-semibold
-               hover:bg-orange-50 transition-all">
+        class="w-full py-3 border-2 border-primary/30
+               text-primary rounded-xl font-semibold
+               hover:bg-primary-soft transition-all">
         🤝 Become a Restaurant or Delivery Partner
       </button>
     </div>
@@ -448,9 +455,9 @@
     <!-- Logout Button -->
     <div class="mt-3">
       <button (click)="authSvc.logout()"
-        class="w-full py-3 border-2 border-red-200
-               text-red-500 rounded-xl font-semibold
-               hover:bg-red-50 transition-all">
+        class="w-full py-3 border-2 border-danger/30
+               text-danger rounded-xl font-semibold
+               hover:bg-danger-soft transition-all">
         🚪 Logout
       </button>
     </div>

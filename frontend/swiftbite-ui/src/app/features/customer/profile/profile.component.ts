@@ -9,6 +9,8 @@ import { AuthService }
   from '../../../core/auth/auth.service';
 import { ToastService }
   from '../../../core/services/toast.service';
+import { ConfirmService }
+  from '../../../core/services/confirm.service';
 
 @Component({
   selector: 'app-profile',
@@ -19,6 +21,7 @@ import { ToastService }
 export class ProfileComponent implements OnInit {
   private userSvc = inject(UserService);
   private toast   = inject(ToastService);
+  private confirmSvc = inject(ConfirmService);
   authSvc         = inject(AuthService);
   router          = inject(Router);
 
@@ -166,8 +169,14 @@ dietaryOptions = [
       });
   }
 
-  deleteAddress(id: string): void {
-    if (!confirm('Delete this address?')) return;
+  async deleteAddress(id: string): Promise<void> {
+    const ok = await this.confirmSvc.confirm({
+      title: 'Delete this address?',
+      message: 'You can always add it again later.',
+      confirmLabel: 'Delete',
+      danger: true,
+    });
+    if (!ok) return;
     this.userSvc.deleteAddress(id).subscribe({
       next: () => {
         this.toast.success('Address deleted');

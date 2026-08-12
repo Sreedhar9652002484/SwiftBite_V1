@@ -1,15 +1,15 @@
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen bg-paper">
 
   <!-- Navbar -->
-  <nav class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="bg-surface shadow-sm sticky top-0 z-50 border-b border-border">
     <div class="max-w-2xl mx-auto px-4 py-3
                 flex items-center gap-3">
       <button (click)="router.navigate(['/home'])"
-        class="p-2 rounded-lg hover:bg-gray-100
-               text-gray-600">
+        class="p-2 rounded-lg hover:bg-paper
+               text-muted">
         ← Home
       </button>
-      <span class="font-extrabold text-lg text-gray-900">
+      <span class="font-extrabold text-lg text-ink">
         My Orders
       </span>
     </div>
@@ -26,10 +26,10 @@
                  font-semibold whitespace-nowrap
                  transition-all"
           [class]="filter() === f
-            ? 'bg-orange-500 text-white shadow-sm'
-            : 'bg-white text-gray-600
-               border border-gray-200
-               hover:border-orange-300'">
+            ? 'bg-primary text-white shadow-sm'
+            : 'bg-surface text-muted
+               border border-border
+               hover:border-primary/40'">
           {{ f }}
         </button>
       }
@@ -39,17 +39,17 @@
     @if (loading()) {
       <div class="space-y-4">
         @for (i of [1,2,3]; track i) {
-          <div class="bg-white rounded-2xl p-5
+          <div class="bg-surface rounded-2xl p-5
                       shadow-sm animate-pulse">
             <div class="flex justify-between mb-3">
-              <div class="h-4 bg-gray-200 rounded w-1/3">
+              <div class="h-4 bg-border rounded w-1/3">
               </div>
-              <div class="h-4 bg-gray-200 rounded w-1/5">
+              <div class="h-4 bg-border rounded w-1/5">
               </div>
             </div>
-            <div class="h-3 bg-gray-100 rounded w-1/2 mb-4">
+            <div class="h-3 bg-border/60 rounded w-1/2 mb-4">
             </div>
-            <div class="h-10 bg-gray-100 rounded-xl">
+            <div class="h-10 bg-border/60 rounded-xl">
             </div>
           </div>
         }
@@ -60,16 +60,16 @@
     @if (!loading() && filteredOrders().length === 0) {
       <div class="text-center py-20">
         <div class="text-6xl mb-4">🍽️</div>
-        <h3 class="font-extrabold text-gray-700 text-xl">
+        <h3 class="font-extrabold text-ink text-xl">
           No orders yet
         </h3>
-        <p class="text-gray-400 text-sm mt-2 mb-6">
+        <p class="text-muted text-sm mt-2 mb-6">
           Your order history will appear here
         </p>
         <button
           (click)="router.navigate(['/home'])"
-          class="bg-orange-500 text-white px-6 py-3
-                 rounded-xl font-bold hover:bg-orange-600
+          class="bg-primary text-white px-6 py-3
+                 rounded-xl font-bold hover:bg-primary-hover
                  transition-all">
           🍕 Order Now
         </button>
@@ -80,24 +80,24 @@
     @if (!loading()) {
       <div class="space-y-4">
         @for (order of filteredOrders(); track order.id) {
-          <div class="bg-white rounded-2xl shadow-sm
+          <div class="bg-surface rounded-2xl shadow-sm
                       overflow-hidden hover:shadow-md
                       transition-all">
 
             <!-- Order Header -->
-            <div class="px-5 pt-5 pb-3">
+            <div class="px-4 sm:px-5 pt-5 pb-3">
               <div class="flex items-start
-                          justify-between">
-                <div>
-                  <h3 class="font-extrabold text-gray-900">
+                          justify-between gap-3">
+                <div class="min-w-0">
+                  <h3 class="font-extrabold text-ink truncate">
                     {{ order.restaurantName }}
                   </h3>
-                  <p class="text-xs text-gray-400 mt-0.5">
+                  <p class="text-xs text-muted mt-0.5">
                     {{ order.placedAt
                        | date:'MMM d, y • h:mm a' }}
                   </p>
                   <!-- Items summary -->
-                  <p class="text-sm text-gray-500 mt-1">
+                  <p class="text-sm text-muted mt-1 truncate">
                     @for (item of order.items;
                           track item.name;
                           let last = $last) {
@@ -108,14 +108,14 @@
                 </div>
 
                 <!-- Status Badge -->
-                <div class="flex flex-col items-end gap-1">
+                <div class="flex flex-col items-end gap-1 flex-shrink-0">
                   <span class="text-xs font-bold px-3 py-1
-                               rounded-full"
+                               rounded-full whitespace-nowrap"
                     [class]="getStatusColor(order.status)">
                     {{ getStatusIcon(order.status) }}
                     {{ order.status }}
                   </span>
-                  <span class="font-extrabold text-gray-900">
+                  <span class="font-extrabold text-ink">
                     ₹{{ order.totalAmount }}
                   </span>
                 </div>
@@ -124,9 +124,9 @@
 
             <!-- Active Order Progress Bar -->
             @if (isActive(order.status)) {
-              <div class="px-5 pb-3">
-                <div class="bg-orange-100 rounded-full h-1.5">
-                  <div class="bg-orange-500 rounded-full
+              <div class="px-4 sm:px-5 pb-3">
+                <div class="bg-primary-soft rounded-full h-1.5">
+                  <div class="bg-primary rounded-full
                               h-1.5 transition-all"
                     [style.width]="
                       order.status === 'Pending'        ? '15%' :
@@ -142,14 +142,14 @@
             }
 
             <!-- Actions -->
-            <div class="px-5 pb-4 flex gap-2">
+            <div class="px-4 sm:px-5 pb-4 flex flex-wrap gap-2">
               <!-- Track button for active orders -->
               @if (isActive(order.status)) {
                 <button
                   (click)="trackOrder(order.id)"
-                  class="flex-1 py-2.5 bg-orange-500
+                  class="flex-1 min-w-[8rem] py-2.5 bg-primary
                          text-white rounded-xl font-bold
-                         text-sm hover:bg-orange-600
+                         text-sm hover:bg-primary-hover
                          transition-all flex items-center
                          justify-center gap-2">
                   <span class="animate-pulse">🔴</span>
@@ -161,10 +161,10 @@
               @if (order.status === 'Delivered') {
                 <button
                   (click)="router.navigate(['/home'])"
-                  class="flex-1 py-2.5 bg-orange-50
-                         text-orange-500 border border-orange-200
+                  class="flex-1 min-w-[8rem] py-2.5 bg-primary-soft
+                         text-primary border border-primary/30
                          rounded-xl font-bold text-sm
-                         hover:bg-orange-100 transition-all">
+                         hover:bg-primary/15 transition-all">
                   🔄 Reorder
                 </button>
               }
@@ -172,9 +172,9 @@
               <!-- View Details always -->
               <button
                 (click)="trackOrder(order.id)"
-                class="flex-1 py-2.5 bg-gray-100
-                       text-gray-600 rounded-xl font-semibold
-                       text-sm hover:bg-gray-200 transition-all">
+                class="flex-1 min-w-[8rem] py-2.5 bg-paper
+                       text-muted rounded-xl font-semibold
+                       text-sm hover:bg-border/60 transition-all">
                 View Details
               </button>
             </div>

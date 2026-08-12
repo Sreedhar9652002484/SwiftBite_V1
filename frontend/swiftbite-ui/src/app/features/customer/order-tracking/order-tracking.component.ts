@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService, Order, OrderStatus } from '../../../core/services/order.service';
 import { NotificationService } from '../../../core/services/notification.service';
 import { ToastService } from '../../../core/services/toast.service';
+import { ConfirmService } from '../../../core/services/confirm.service';
 import { TrackingService, LocationUpdate } from '../../../core/services/tracking.service';
 import { Subscription } from 'rxjs';
 import * as L from 'leaflet';
@@ -39,6 +40,7 @@ export class OrderTrackingComponent
   private orderSvc    = inject(OrderService);
   private notifSvc    = inject(NotificationService);
   private toast       = inject(ToastService);
+  private confirmSvc  = inject(ConfirmService);
   private trackingSvc = inject(TrackingService);
 
   order      = signal<any>(null);
@@ -230,8 +232,15 @@ export class OrderTrackingComponent
     return s === OrderStatus.Pending || s === OrderStatus.Confirmed;
   }
 
-  cancelOrder(): void {
-    if (!confirm('Are you sure you want to cancel this order?')) return;
+  async cancelOrder(): Promise<void> {
+    const ok = await this.confirmSvc.confirm({
+      title: 'Cancel this order?',
+      message: 'This can\'t be undone. The restaurant will be notified immediately.',
+      confirmLabel: 'Cancel order',
+      cancelLabel: 'Keep order',
+      danger: true,
+    });
+    if (!ok) return;
     this.orderSvc.cancelOrder(this.orderId).subscribe({
       next: () => { this.toast.success('Order cancelled.'); this.loadOrder(); },
       error: () => this.toast.error('Cannot cancel order now.')

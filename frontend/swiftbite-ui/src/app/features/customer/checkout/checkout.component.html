@@ -59,6 +59,12 @@
           </h2>
 
           <!-- Address List -->
+          @if (loadingAddresses()) {
+            <div class="flex items-center gap-2 text-muted text-sm py-6 justify-center">
+              <span class="inline-block w-4 h-4 border-2 border-primary-soft border-t-primary rounded-full animate-spin"></span>
+              Loading addresses...
+            </div>
+          }
           <div class="space-y-3 mb-4">
             @for (addr of addresses(); track addr.id) {
               <div class="border-2 rounded-xl p-4 cursor-pointer transition-all"

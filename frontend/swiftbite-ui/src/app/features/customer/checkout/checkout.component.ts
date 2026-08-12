@@ -26,6 +26,7 @@ export class CheckoutComponent implements OnInit {
   public router     = inject(Router);
 
   addresses    = signal<any[]>([]);
+  loadingAddresses = signal(true);
   selectedAddr = signal<any>(null);
   paymentMethod = signal<string>('UPI');
   loading      = signal(false);
@@ -64,6 +65,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   loadAddresses(): void {
+    this.loadingAddresses.set(true);
     this.userSvc.getAddresses().subscribe({
       next: addrs => {
         this.addresses.set(addrs);
@@ -71,6 +73,7 @@ export class CheckoutComponent implements OnInit {
         if (def) this.selectedAddr.set(def);
         else if (addrs.length > 0)
           this.selectedAddr.set(addrs[0]);
+        this.loadingAddresses.set(false);
       },
       error: () => {
         // Mock address for demo
@@ -82,6 +85,7 @@ export class CheckoutComponent implements OnInit {
         };
         this.addresses.set([mock]);
         this.selectedAddr.set(mock);
+        this.loadingAddresses.set(false);
       }
     });
   }
