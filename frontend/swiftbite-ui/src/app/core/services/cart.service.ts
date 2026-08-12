@@ -1,5 +1,6 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, inject, signal, computed } from '@angular/core';
 import { MenuItem } from '../models/restaurant.model';
+import { ConfirmService } from './confirm.service';
 
 export interface CartItem {
   menuItemId:  string;
@@ -13,6 +14,7 @@ export interface CartItem {
 @Injectable({ providedIn: 'root' })
 export class CartService {
 
+  private confirmSvc = inject(ConfirmService);
   private _items     = signal<CartItem[]>([]);
   restaurantId       = signal<string>('');
   restaurantName     = signal<string>('');
@@ -30,13 +32,17 @@ export class CartService {
   total     = computed(() =>
     this.subTotal() + this.deliveryFee() + this.taxes());
 
-  addItem(item: MenuItem, restId: string, restName: string): void {
+  async addItem(item: MenuItem, restId: string, restName: string): Promise<void> {
     // ✅ Different restaurant? Clear cart first!
     if (this.restaurantId() &&
         this.restaurantId() !== restId) {
-      if (!confirm(
-        'Your cart has items from another restaurant. ' +
-        'Clear cart and add new item?')) return;
+      const ok = await this.confirmSvc.confirm({
+        title: 'Start a new cart?',
+        message: 'Your cart has items from another restaurant. Clear cart and add this item instead?',
+        confirmLabel: 'Clear & add',
+        danger: true,
+      });
+      if (!ok) return;
       this.clearCart();
     }
 

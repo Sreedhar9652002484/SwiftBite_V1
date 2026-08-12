@@ -1,20 +1,20 @@
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen bg-paper">
 
   <!-- Navbar -->
-  <nav class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="bg-surface shadow-sm sticky top-0 z-50 border-b border-border">
     <div class="max-w-4xl mx-auto px-4 py-3 flex items-center gap-3">
       <button (click)="router.navigate(['/home'])"
-        class="p-2 rounded-lg hover:bg-gray-100 text-gray-600">
+        class="p-2 rounded-lg hover:bg-paper text-muted">
         ← Back
       </button>
-      <span class="font-extrabold text-lg text-gray-900">
+      <span class="font-extrabold text-lg text-ink">
         Checkout
       </span>
     </div>
   </nav>
 
   <!-- Steps Indicator -->
-  <div class="bg-white border-b">
+  <div class="bg-surface border-b border-border">
     <div class="max-w-4xl mx-auto px-4 py-3">
       <div class="flex items-center gap-2">
         @for (s of ['address','payment','confirm']; track s; let i = $index) {
@@ -22,16 +22,16 @@
             <div class="w-7 h-7 rounded-full flex items-center justify-center
                         text-xs font-bold"
               [class]="step() === s
-                ? 'bg-orange-500 text-white'
-                : 'bg-gray-200 text-gray-500'">
+                ? 'bg-primary text-white'
+                : 'bg-paper text-muted'">
               {{ i + 1 }}
             </div>
             <span class="text-xs font-semibold capitalize"
               [class]="step() === s
-                ? 'text-orange-500' : 'text-gray-400'">
+                ? 'text-primary' : 'text-muted'">
               {{ s }}
             </span>
-            <span *ngIf="i < 2" class="text-gray-200 mx-1">›</span>
+            <span *ngIf="i < 2" class="text-border mx-1">›</span>
           </div>
         }
       </div>
@@ -39,22 +39,22 @@
   </div>
 
   <div class="max-w-4xl mx-auto px-4 py-6">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
 
       <!-- LEFT: Steps -->
       <div class="lg:col-span-2 space-y-4">
 
         <!-- Error -->
         <div *ngIf="error()"
-          class="p-4 bg-red-50 border border-red-200
-                 rounded-xl text-red-700 text-sm">
+          class="p-4 bg-danger/10 border border-danger/40
+                 rounded-xl text-danger text-sm">
           ❌ {{ error() }}
         </div>
 
         <!-- ── STEP 1: Address ─────────────────────────── -->
         <div *ngIf="step() === 'address'"
-          class="bg-white rounded-2xl p-6 shadow-sm">
-          <h2 class="font-extrabold text-lg mb-4">
+          class="bg-surface rounded-2xl p-4 sm:p-6 shadow-sm">
+          <h2 class="font-extrabold text-lg mb-4 text-ink">
             📍 Delivery Address
           </h2>
 
@@ -63,32 +63,32 @@
             @for (addr of addresses(); track addr.id) {
               <div class="border-2 rounded-xl p-4 cursor-pointer transition-all"
                 [class]="selectedAddr()?.id === addr.id
-                  ? 'border-orange-500 bg-orange-50'
-                  : 'border-gray-200 hover:border-orange-300'"
+                  ? 'border-primary bg-primary-soft'
+                  : 'border-border hover:border-primary/40'"
                 (click)="selectedAddr.set(addr)">
                 <div class="flex items-start justify-between">
                   <div>
                     <div class="flex items-center gap-2">
-                      <span class="font-bold text-sm">
+                      <span class="font-bold text-sm text-ink">
                         {{ addr.addressType === 'Home' ? '🏠' :
                            addr.addressType === 'Office' ? '🏢' : '📍' }}
                         {{ addr.label || addr.addressType }}
                       </span>
                       <span *ngIf="addr.isDefault"
-                        class="bg-green-100 text-green-700 text-xs
+                        class="bg-accent-soft text-accent text-xs
                                px-2 py-0.5 rounded-full font-semibold">
                         Default
                       </span>
                     </div>
-                    <p class="text-gray-600 text-sm mt-1">
+                    <p class="text-muted text-sm mt-1">
                       {{ addr.fullAddress }}
                     </p>
-                    <p class="text-gray-400 text-xs mt-0.5">
+                    <p class="text-muted text-xs mt-0.5">
                       {{ addr.city }}, {{ addr.pinCode }}
                     </p>
                   </div>
                   <div *ngIf="selectedAddr()?.id === addr.id"
-                    class="text-orange-500 text-xl">✓</div>
+                    class="text-primary text-xl">✓</div>
                 </div>
               </div>
             }
@@ -97,16 +97,16 @@
           <!-- Add Address -->
           <button *ngIf="!showAddressForm()"
             (click)="showAddressForm.set(true)"
-            class="w-full border-2 border-dashed border-gray-300
-                   rounded-xl p-3 text-gray-500 text-sm
-                   hover:border-orange-400 hover:text-orange-500
+            class="w-full border-2 border-dashed border-border
+                   rounded-xl p-3 text-muted text-sm
+                   hover:border-primary/50 hover:text-primary
                    transition-all">
             + Add New Address
           </button>
 
           <!-- Address Form -->
           <div *ngIf="showAddressForm()"
-            class="border rounded-xl p-4 mt-2 space-y-3">
+            class="border border-border rounded-xl p-4 mt-2 space-y-3">
             <input [(ngModel)]="newAddress.label"
               placeholder="Label (e.g. Home, Office)"
               class="input-field"/>
@@ -140,8 +140,8 @@
 
         <!-- ── STEP 2: Payment ─────────────────────────── -->
         <div *ngIf="step() === 'payment'"
-          class="bg-white rounded-2xl p-6 shadow-sm">
-          <h2 class="font-extrabold text-lg mb-4">
+          class="bg-surface rounded-2xl p-4 sm:p-6 shadow-sm">
+          <h2 class="font-extrabold text-lg mb-4 text-ink">
             💳 Payment Method
           </h2>
 
@@ -149,18 +149,18 @@
             @for (pm of paymentMethods; track pm.id) {
               <div class="border-2 rounded-xl p-4 cursor-pointer transition-all"
                 [class]="paymentMethod() === pm.id
-                  ? 'border-orange-500 bg-orange-50'
-                  : 'border-gray-200 hover:border-orange-300'"
+                  ? 'border-primary bg-primary-soft'
+                  : 'border-border hover:border-primary/40'"
                 (click)="paymentMethod.set(pm.id)">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <span class="text-2xl">{{ pm.icon }}</span>
-                    <span class="font-semibold text-sm">
+                    <span class="font-semibold text-sm text-ink">
                       {{ pm.label }}
                     </span>
                   </div>
                   <div *ngIf="paymentMethod() === pm.id"
-                    class="text-orange-500 text-xl">✓</div>
+                    class="text-primary text-xl">✓</div>
                 </div>
               </div>
             }
@@ -180,31 +180,31 @@
 
         <!-- ── STEP 3: Confirm ─────────────────────────── -->
         <div *ngIf="step() === 'confirm'"
-          class="bg-white rounded-2xl p-6 shadow-sm">
-          <h2 class="font-extrabold text-lg mb-4">
+          class="bg-surface rounded-2xl p-4 sm:p-6 shadow-sm">
+          <h2 class="font-extrabold text-lg mb-4 text-ink">
             ✅ Review & Confirm
           </h2>
 
           <!-- Delivery Address -->
-          <div class="bg-gray-50 rounded-xl p-4 mb-4">
-            <p class="text-xs text-gray-500 font-semibold mb-1">
+          <div class="bg-paper rounded-xl p-4 mb-4">
+            <p class="text-xs text-muted font-semibold mb-1">
               DELIVERING TO
             </p>
-            <p class="font-semibold text-sm">
+            <p class="font-semibold text-sm text-ink">
               {{ selectedAddr()?.fullAddress }}
             </p>
-            <p class="text-xs text-gray-500">
+            <p class="text-xs text-muted">
               {{ selectedAddr()?.city }},
               {{ selectedAddr()?.pinCode }}
             </p>
           </div>
 
           <!-- Payment -->
-          <div class="bg-gray-50 rounded-xl p-4 mb-4">
-            <p class="text-xs text-gray-500 font-semibold mb-1">
+          <div class="bg-paper rounded-xl p-4 mb-4">
+            <p class="text-xs text-muted font-semibold mb-1">
               PAYMENT
             </p>
-            <p class="font-semibold text-sm">
+            <p class="font-semibold text-sm text-ink">
              {{ selectedPaymentMethod?.icon }}
             {{ selectedPaymentMethod?.label }}
             </p>
@@ -232,10 +232,10 @@
 
       <!-- RIGHT: Order Summary -->
       <div class="lg:col-span-1">
-        <div class="bg-white rounded-2xl shadow-sm overflow-hidden sticky top-20">
-          <div class="bg-orange-500 text-white px-5 py-4">
+        <div class="bg-surface rounded-2xl shadow-sm overflow-hidden lg:sticky lg:top-20">
+          <div class="bg-primary text-white px-5 py-4">
             <h3 class="font-bold">🛒 Order Summary</h3>
-            <p class="text-orange-100 text-xs mt-1">
+            <p class="text-white/80 text-xs mt-1">
               {{ cartSvc.restaurantName() }}
             </p>
           </div>
@@ -243,33 +243,33 @@
           <div class="p-4 space-y-3">
             @for (item of cartSvc.items(); track item.menuItemId) {
               <div class="flex justify-between text-sm">
-                <span class="text-gray-700">
+                <span class="text-ink">
                   {{ item.name }} × {{ item.quantity }}
                 </span>
-                <span class="font-semibold">
+                <span class="font-semibold text-ink">
                   ₹{{ item.price * item.quantity }}
                 </span>
               </div>
             }
           </div>
 
-          <div class="border-t px-4 py-3 space-y-2 bg-gray-50">
-            <div class="flex justify-between text-sm text-gray-600">
+          <div class="border-t border-border px-4 py-3 space-y-2 bg-paper">
+            <div class="flex justify-between text-sm text-muted">
               <span>Subtotal</span>
               <span>₹{{ cartSvc.subTotal() }}</span>
             </div>
-            <div class="flex justify-between text-sm text-gray-600">
+            <div class="flex justify-between text-sm text-muted">
               <span>Delivery</span>
               <span>₹{{ cartSvc.deliveryFee() }}</span>
             </div>
-            <div class="flex justify-between text-sm text-gray-600">
+            <div class="flex justify-between text-sm text-muted">
               <span>GST (5%)</span>
               <span>₹{{ cartSvc.taxes() }}</span>
             </div>
             <div class="flex justify-between font-extrabold
-                        text-base border-t pt-2">
+                        text-base border-t border-border pt-2 text-ink">
               <span>Total</span>
-              <span class="text-orange-500">
+              <span class="text-primary">
                 ₹{{ cartSvc.total() }}
               </span>
             </div>

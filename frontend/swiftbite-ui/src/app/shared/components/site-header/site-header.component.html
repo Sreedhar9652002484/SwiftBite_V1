@@ -1,0 +1,42 @@
+<header class="site-header">
+  <div class="site-header__bar">
+    <a routerLink="/home" class="site-header__brand" (click)="closeMenu()">
+      <span class="site-header__logo">🍽️</span>
+      <span class="site-header__name">SwiftBite</span>
+    </a>
+
+    <nav class="site-header__nav site-header__nav--desktop">
+      <a routerLink="/home" class="site-header__link">Home</a>
+      <a routerLink="/orders" class="site-header__link">Orders</a>
+      <a routerLink="/become-partner" class="site-header__link">Become a Partner</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <app-notification-bell />
+      <app-theme-toggle />
+
+      <a routerLink="/profile" class="site-header__avatar" (click)="closeMenu()">
+        <span>{{ auth.firstName ? auth.firstName.charAt(0) : 'U' }}</span>
+      </a>
+
+      <button
+        type="button"
+        class="site-header__burger"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  @if (menuOpen()) {
+    <nav class="site-header__nav site-header__nav--mobile">
+      <a routerLink="/home" class="site-header__link" (click)="closeMenu()">🏠 Home</a>
+      <a routerLink="/orders" class="site-header__link" (click)="closeMenu()">📦 Orders</a>
+      <a routerLink="/profile" class="site-header__link" (click)="closeMenu()">👤 Profile</a>
+      <a routerLink="/become-partner" class="site-header__link" (click)="closeMenu()">🤝 Become a Partner</a>
+      <button type="button" class="site-header__link site-header__logout" (click)="logout()">🚪 Logout</button>
+    </nav>
+  }
+</header>

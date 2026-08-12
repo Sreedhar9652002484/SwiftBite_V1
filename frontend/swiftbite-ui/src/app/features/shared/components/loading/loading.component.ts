@@ -11,7 +11,9 @@ import { LoadingService } from '../../../../core/services/loading.service';
     @if (loadingSvc.isLoading()) {
       <div class="loading-overlay">
         <div class="loading-card">
-          <div class="spinner"></div>
+          <div class="loading-dots">
+            <span></span><span></span><span></span>
+          </div>
           <p class="loading-text">
             {{ loadingSvc.message() }}
           </p>
@@ -22,29 +24,41 @@ import { LoadingService } from '../../../../core/services/loading.service';
   styles: [`
     .loading-overlay {
       position: fixed; inset: 0;
-      background: rgba(0,0,0,0.4);
+      background: var(--color-overlay);
       backdrop-filter: blur(2px);
       z-index: 9998; display: flex;
       align-items: center; justify-content: center;
+      animation: fadeIn 0.15s ease;
     }
     .loading-card {
-      background: white; border-radius: 20px;
-      padding: 32px 40px; display: flex;
+      background: var(--color-surface-raised);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2.25rem; display: flex;
       flex-direction: column; align-items: center;
-      gap: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      gap: 0.9rem; box-shadow: var(--shadow-lg);
     }
-    .spinner {
-      width: 48px; height: 48px; border-radius: 50%;
-      border: 4px solid #FEE2E2;
-      border-top-color: #FF6B35;
-      animation: spin 0.8s linear infinite;
+    .loading-dots {
+      display: flex; gap: 0.4rem;
     }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    .loading-dots span {
+      width: 0.6rem; height: 0.6rem; border-radius: 50%;
+      background: var(--color-primary);
+      animation: bounce 0.9s ease-in-out infinite;
     }
+    .loading-dots span:nth-child(2) { animation-delay: 0.15s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     .loading-text {
-      font-size: 14px; color: #6B7280;
+      font-size: var(--text-sm); color: var(--color-text-muted);
       font-weight: 500;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .loading-overlay { animation: none; }
+      .loading-dots span { animation: none; opacity: 1; transform: scale(0.85); }
     }
   `]
 })

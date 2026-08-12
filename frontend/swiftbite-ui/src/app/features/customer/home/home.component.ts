@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/auth/auth.service';
 import { RestaurantService, Restaurant, CuisineType } from '../../../core/services/restaurant.service';
-import { NotificationBellComponent } from '../../shared/components/notification-bell/notification-bell.component';
+import { SiteHeaderComponent } from '../../../shared/components/site-header/site-header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, NotificationBellComponent],
+  imports: [CommonModule, RouterLink, SiteHeaderComponent],
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {

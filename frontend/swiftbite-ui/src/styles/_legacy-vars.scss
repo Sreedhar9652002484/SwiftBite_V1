@@ -1,0 +1,32 @@
+// Bridges the hand-rolled SCSS portals (admin/owner/delivery) onto the same
+// design tokens as Tailwind, without a full rewrite. Each portal's
+// component .scss replaces its local $var block with:
+//   @use '../../../../styles/legacy-vars' as *;
+// (adjust the relative path depth to the component's actual location)
+//
+// Values are CSS custom properties, so dark mode "just works" here too —
+// swapping :root.dark's tokens repaints every component that uses these.
+
+$accent: var(--color-primary);
+$accent-light: var(--color-primary-soft);
+$primary: var(--color-ink);
+$success: var(--color-accent);
+$success-light: var(--color-accent-soft);
+$danger: var(--color-danger);
+$danger-light: var(--color-danger-soft);
+$warning: var(--color-warning);
+$warning-light: var(--color-warning-soft);
+$info: var(--color-info);
+$info-light: var(--color-info-soft);
+
+$text: var(--color-text);
+$text-primary: var(--color-text);
+$text-muted: var(--color-text-muted);
+$border: var(--color-border);
+$bg: var(--color-paper);
+$white: var(--color-surface);
+$surface: var(--color-surface);
+
+$radius: var(--radius-lg);
+$radius-sm: var(--radius-sm);
+$radius-md: var(--radius-md);
