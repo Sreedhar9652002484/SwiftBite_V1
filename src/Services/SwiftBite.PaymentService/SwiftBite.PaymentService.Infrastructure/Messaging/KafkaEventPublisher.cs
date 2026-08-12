@@ -58,10 +58,12 @@ public class KafkaEventPublisher : IEventPublisher
         }
         catch (Exception ex)
         {
+            // Publishing is a best-effort side-channel notification to other services —
+            // the caller's own database write already succeeded, so a broker outage here
+            // must not fail (or appear to fail) an otherwise-successful command.
             _logger.LogError(ex,
                 "❌ Kafka publish failed | Topic: {Topic}",
                 topic);
-            throw;
         }
     }
 }
