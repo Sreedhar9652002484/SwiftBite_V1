@@ -1,12 +1,4 @@
-$accent     : #e94560;
-$accent-light:#fef0f3;
-$success    : #27ae60;
-$text       : #1c1c1c;
-$text-muted : #686b78;
-$border     : #e8e8e8;
-$bg         : #f4f6f9;
-$white      : #ffffff;
-$radius     : 12px;
+@use '../../../../styles/legacy-vars' as *;
 
 .analytics-page { max-width: 900px; }
 
@@ -68,6 +60,9 @@ $radius     : 12px;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-bottom: 20px;
+
+  @media (max-width: 640px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 420px) { grid-template-columns: 1fr; }
 }
 
 .stat-card {

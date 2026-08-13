@@ -85,8 +85,11 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         builder.Property(o => o.UpdatedAt)
             .IsRequired();
 
-        // ==================== DATE TIME CONFIGURATION (Important) ====================
-        ConfigureDateTimeProperties(builder);
+        // Note: UTC round-tripping for PlacedAt/UpdatedAt/EstimatedDeliveryAt/DeliveredAt
+        // (and all other DateTime properties in this context) is handled globally by
+        // OrderDbContext.ConfigureConventions, so no per-property HasConversion is needed here.
+        builder.Property(o => o.PlacedAt)
+            .IsRequired();
 
         // Relationships
         builder.HasMany(o => o.Items)
@@ -106,32 +109,5 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         builder.HasIndex(o => o.PlacedAt);
 
         builder.ToTable("Orders");
-    }
-
-    // Helper method to handle DateTime properly (Prevents wrong date/time issues)
-    private static void ConfigureDateTimeProperties(EntityTypeBuilder<Order> builder)
-    {
-        // Force all DateTimes to be stored and read as UTC
-        var utcConverter = new Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter<DateTime, DateTime>(
-            v => v.ToUniversalTime(),
-            v => DateTime.SpecifyKind(v, DateTimeKind.Utc));
-
-        var utcNullableConverter = new Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter<DateTime?, DateTime?>(
-            v => v.HasValue ? v.Value.ToUniversalTime() : null,
-            v => v.HasValue ? DateTime.SpecifyKind(v.Value, DateTimeKind.Utc) : null);
-
-        builder.Property(o => o.PlacedAt)
-            .HasConversion(utcConverter)
-            .IsRequired();
-
-        builder.Property(o => o.UpdatedAt)
-            .HasConversion(utcConverter)
-            .IsRequired();
-
-        builder.Property(o => o.EstimatedDeliveryAt)
-            .HasConversion(utcNullableConverter);
-
-        builder.Property(o => o.DeliveredAt)
-            .HasConversion(utcNullableConverter);
     }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RestaurantService } from '../../../core/services/restaurant.service';
+import { ToastService } from '../../../core/services/toast.service';
 
 @Component({
   selector: 'app-admin-restaurants',
@@ -12,12 +13,11 @@ import { RestaurantService } from '../../../core/services/restaurant.service';
 })
 export class AdminRestaurantsComponent implements OnInit {
 
-  private restSvc = inject(RestaurantService);
+  private restSvc  = inject(RestaurantService);
+  private toastSvc = inject(ToastService);
 
   loading    = signal(true);
   saving     = signal<string | null>(null);
-  errorMsg   = signal<string | null>(null);
-  successMsg = signal<string | null>(null);
   searchTerm = signal('');
   filterOpen = signal<'all' | 'open' | 'closed'>('all');
 
@@ -55,9 +55,9 @@ export class AdminRestaurantsComponent implements OnInit {
           list.map(r => r.id === restaurant.id ? { ...r, isOpen: res.isOpen } : r)
         );
         this.saving.set(null);
-        this.toast('success', `${restaurant.name} is now ${res.isOpen ? 'Open' : 'Closed'}`);
+        this.toastSvc.success(`${restaurant.name} is now ${res.isOpen ? 'Open' : 'Closed'}`);
       },
-      error: () => { this.saving.set(null); this.toast('error', 'Failed to toggle status.'); },
+      error: () => { this.saving.set(null); this.toastSvc.error('Failed to toggle status.'); },
     });
   }
 
@@ -70,10 +70,5 @@ export class AdminRestaurantsComponent implements OnInit {
       33:'Healthy', 30:'Cafe',
     };
     return map[type] ?? `Type ${type}`;
-  }
-
-  private toast(type: 'success' | 'error', msg: string): void {
-    if (type === 'success') { this.successMsg.set(msg); setTimeout(() => this.successMsg.set(null), 3000); }
-    else                    { this.errorMsg.set(msg);   setTimeout(() => this.errorMsg.set(null),   4000); }
   }
 }

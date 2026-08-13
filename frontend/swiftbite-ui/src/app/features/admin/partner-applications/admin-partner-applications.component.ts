@@ -2,6 +2,7 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PartnerService, PartnerApplication } from '../../../core/services/partner.service';
 import { ToastService } from '../../../core/services/toast.service';
+import { ConfirmService } from '../../../core/services/confirm.service';
 
 @Component({
   selector: 'app-admin-partner-applications',
@@ -13,6 +14,7 @@ import { ToastService } from '../../../core/services/toast.service';
 export class AdminPartnerApplicationsComponent implements OnInit {
   private partnerSvc = inject(PartnerService);
   private toast = inject(ToastService);
+  private confirmSvc = inject(ConfirmService);
 
   loading = signal(true);
   processing = signal<string | null>(null);
@@ -52,8 +54,15 @@ export class AdminPartnerApplicationsComponent implements OnInit {
     });
   }
 
-  reject(app: PartnerApplication): void {
+  async reject(app: PartnerApplication): Promise<void> {
     if (this.processing()) return;
+    const ok = await this.confirmSvc.confirm({
+      title: 'Reject application?',
+      message: `Reject ${app.applicantName}'s partner application? This cannot be undone.`,
+      confirmLabel: 'Reject',
+      danger: true,
+    });
+    if (!ok) return;
     const note = prompt('Reason for rejection (optional):') ?? undefined;
     this.processing.set(app.id);
     this.partnerSvc.reject(app.id, note).subscribe({

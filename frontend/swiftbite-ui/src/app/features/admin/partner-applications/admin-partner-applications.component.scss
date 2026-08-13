@@ -1,15 +1,4 @@
-$accent     : #e94560;
-$accent-light:#fef0f3;
-$success    : #27ae60;
-$success-light:#eafaf1;
-$danger     : #e74c3c;
-$danger-light:#fef0ee;
-$text       : #1c1c1c;
-$text-muted : #686b78;
-$border     : #e8e8e8;
-$bg         : #f4f6f9;
-$white      : #ffffff;
-$radius     : 12px;
+@use '../../../../styles/legacy-vars' as *;
 
 .applications-page { max-width: 1100px; }
 
@@ -125,14 +114,14 @@ $radius     : 12px;
 
 .btn-approve {
   background: $success-light;
-  color: darken($success, 5%);
-  border-color: lighten($success, 20%);
+  color: $success;
+  border-color: $success-light;
 }
 
 .btn-reject {
   background: $danger-light;
-  color: darken($danger, 5%);
-  border-color: lighten($danger, 20%);
+  color: $danger;
+  border-color: $danger-light;
 }
 
 @media (max-width: 768px) {

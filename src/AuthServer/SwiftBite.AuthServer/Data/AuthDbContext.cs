@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;  
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using SwiftBite.AuthServer.Data.Converters;
 using SwiftBite.AuthServer.Models;
 
 namespace SwiftBite.AuthServer.Data
@@ -15,9 +17,24 @@ namespace SwiftBite.AuthServer.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.UseOpenIddict(); 
+            builder.UseOpenIddict();
 
             // Additional configuration can be added here if needed
+        }
+
+        protected override void ConfigureConventions(
+            ModelConfigurationBuilder configurationBuilder)
+        {
+            base.ConfigureConventions(configurationBuilder);
+
+            // Globally ensure every DateTime/DateTime? property (e.g. ApplicationUser.CreatedAt,
+            // PartnerApplication.CreatedAt/ReviewedAt) round-trips as UTC, since SQL Server's
+            // datetime2 does not persist DateTimeKind.
+            configurationBuilder.Properties<DateTime>()
+                .HaveConversion<UtcDateTimeConverter>();
+
+            configurationBuilder.Properties<DateTime?>()
+                .HaveConversion<NullableUtcDateTimeConverter>();
         }
     }
 }

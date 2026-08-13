@@ -64,32 +64,34 @@
           <p>No restaurants found.</p>
         </div>
 
-        <table class="data-table" *ngIf="restaurants().length > 0">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>City</th>
-              <th>Rating</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let r of restaurants().slice(0, 8)">
-              <td class="td-name">{{ r.name }}</td>
-              <td>{{ r.city }}</td>
-              <td>
-                <span class="rating" *ngIf="r.averageRating > 0">
-                  ★ {{ r.averageRating | number:'1.1-1' }}
-                </span>
-                <span class="no-rating" *ngIf="!r.averageRating">—</span>
-              </td>
-              <td>
-                <span class="status-dot" [class.open]="r.isOpen"></span>
-                {{ r.isOpen ? 'Open' : 'Closed' }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-scroll" *ngIf="restaurants().length > 0">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Rating</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let r of restaurants().slice(0, 8)">
+                <td class="td-name">{{ r.name }}</td>
+                <td>{{ r.city }}</td>
+                <td>
+                  <span class="rating" *ngIf="r.averageRating > 0">
+                    ★ {{ r.averageRating | number:'1.1-1' }}
+                  </span>
+                  <span class="no-rating" *ngIf="!r.averageRating">—</span>
+                </td>
+                <td>
+                  <span class="status-dot" [class.open]="r.isOpen"></span>
+                  {{ r.isOpen ? 'Open' : 'Closed' }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <!-- Top restaurants by orders -->
