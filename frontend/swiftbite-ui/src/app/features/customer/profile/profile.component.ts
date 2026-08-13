@@ -28,6 +28,7 @@ export class ProfileComponent implements OnInit {
   activeTab   = signal<'profile'|'addresses'|'preferences'>('profile');
   loading     = signal(false);
   saving      = signal(false);
+  loadError   = signal(false);
 
   profile     = signal<any>(null);
   addresses   = signal<any[]>([]);
@@ -84,6 +85,7 @@ dietaryOptions = [
 
   loadProfile(): void {
     this.loading.set(true);
+    this.loadError.set(false);
     this.userSvc.getProfile().subscribe({
       next: p => {
         this.profile.set(p);
@@ -96,16 +98,9 @@ dietaryOptions = [
         this.loading.set(false);
       },
       error: () => {
-        // Mock for demo
-        const mock = {
-          firstName: this.authSvc.firstName,
-          lastName: '',
-          email: this.authSvc.userEmail,
-          phoneNumber: ''
-        };
-        this.profile.set(mock);
-        this.profileForm.firstName = mock.firstName;
         this.loading.set(false);
+        this.loadError.set(true);
+        this.toast.error('Failed to load your profile.');
       }
     });
   }
@@ -113,14 +108,10 @@ dietaryOptions = [
   loadAddresses(): void {
     this.userSvc.getAddresses().subscribe({
       next: a => this.addresses.set(a),
-      error: () => this.addresses.set([
-        {
-          id: 'mock-1', label: 'Home',
-          fullAddress: 'Kukatpally, Hyderabad',
-          city: 'Hyderabad', pinCode: '500072',
-          isDefault: true, addressType: 'Home'
-        }
-      ])
+      error: () => {
+        this.loadError.set(true);
+        this.toast.error('Failed to load your saved addresses.');
+      }
     });
   }
 

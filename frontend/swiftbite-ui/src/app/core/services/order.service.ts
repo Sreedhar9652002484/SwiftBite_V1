@@ -175,4 +175,17 @@ updateStatus(order: Order, newStatus: number): Observable<Order> {
         })
       );
   }
+
+  /**
+   * Get all orders across the platform (Admin only)
+   */
+  getAllOrdersAdmin(): Observable<Order[]> {
+    return this.http.get<any>(`${this.api}/api/orders/admin/all`)
+      .pipe(
+        map(response => {
+          const orders = this.apiResponseService.extractData<Order[]>(response);
+          return orders || [];
+        })
+      );
+  }
 }

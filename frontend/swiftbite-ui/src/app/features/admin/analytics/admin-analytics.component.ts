@@ -18,6 +18,7 @@ export class AdminAnalyticsComponent implements OnInit {
   private orderSvc = inject(OrderService);
 
   loading      = signal(true);
+  error        = signal<string | null>(null);
   period       = signal<Period>('7d');
   allOrders    = signal<any[]>([]);
   restaurants  = signal<any[]>([]);
@@ -72,24 +73,33 @@ export class AdminAnalyticsComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.restSvc.getAll().subscribe({
+    this.load();
+  }
+
+  load(): void {
+    this.error.set(null);
+    this.loading.set(true);
+    this.restSvc.getAllForAdmin().subscribe({
       next: restaurants => {
         this.restaurants.set(restaurants);
-        this.loadAllOrders(restaurants);
+        this.loadAllOrders();
       },
-      error: () => this.loading.set(false),
+      error: err => {
+        this.error.set('Failed to load restaurants. Please try again.');
+        this.loading.set(false);
+        console.error(err);
+      },
     });
   }
 
-  private loadAllOrders(restaurants: any[]): void {
-    if (!restaurants.length) { this.loading.set(false); return; }
-    const all: any[] = [];
-    let done = 0;
-    restaurants.forEach(r => {
-      this.orderSvc.getRestaurantOrders(r.id).subscribe({
-        next:  orders => { all.push(...orders); done++; if (done === restaurants.length) { this.allOrders.set(all); this.loading.set(false); } },
-        error: ()     => { done++; if (done === restaurants.length) { this.allOrders.set(all); this.loading.set(false); } },
-      });
+  private loadAllOrders(): void {
+    this.orderSvc.getAllOrdersAdmin().subscribe({
+      next: orders => { this.allOrders.set(orders); this.loading.set(false); },
+      error: err => {
+        this.error.set('Failed to load orders. Please try again.');
+        this.loading.set(false);
+        console.error(err);
+      },
     });
   }
 

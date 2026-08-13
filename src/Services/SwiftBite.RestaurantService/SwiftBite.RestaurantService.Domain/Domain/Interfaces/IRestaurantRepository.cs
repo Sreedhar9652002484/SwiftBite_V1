@@ -6,6 +6,7 @@ public interface IRestaurantRepository
 {
     Task<Restaurant?> GetByIdAsync(Guid id, CancellationToken ct = default);
     Task<IEnumerable<Restaurant>> GetAllAsync(CancellationToken ct = default);
+    Task<IEnumerable<Restaurant>> GetAllUnfilteredAsync(CancellationToken ct = default);
     Task<IEnumerable<Restaurant>> GetByCityAsync(string city, CancellationToken ct = default);
     Task<IEnumerable<Restaurant>> GetByOwnerIdAsync(string ownerId, CancellationToken ct = default);
     Task AddAsync(Restaurant restaurant, CancellationToken ct = default);

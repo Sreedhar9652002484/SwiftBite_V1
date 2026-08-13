@@ -38,6 +38,14 @@ public class OrderRepository : IOrderRepository
             .OrderByDescending(o => o.PlacedAt)
             .ToListAsync(ct);
 
+    public async Task<IEnumerable<Order>> GetAllAsync(
+        CancellationToken ct = default)
+        => await _db.Orders
+            .Include(o => o.Items)
+            .Include(o => o.StatusHistory)
+            .OrderByDescending(o => o.PlacedAt)
+            .ToListAsync(ct);
+
     public async Task<IEnumerable<Order>> GetByStatusAsync(
         OrderStatus status, CancellationToken ct = default)
         => await _db.Orders

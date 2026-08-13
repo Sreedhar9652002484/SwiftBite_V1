@@ -19,7 +19,12 @@
     <p>Loading analytics…</p>
   </div>
 
-  <div *ngIf="!loading()">
+  <!-- Error -->
+  <div class="state-box error" *ngIf="errorMsg() && !loading()">
+    <p>⚠️ {{ errorMsg() }}</p>
+  </div>
+
+  <div *ngIf="!loading() && !errorMsg()">
 
     <!-- Summary cards -->
     <div class="stat-grid">

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SwiftBite.OrderService.Application.Orders.Commands.CancelOrder;
 using SwiftBite.OrderService.Application.Orders.Commands.PlaceOrder;
 using SwiftBite.OrderService.Application.Orders.Commands.UpdateOrderStatus;
+using SwiftBite.OrderService.Application.Orders.Queries.GetAllOrders;
 using SwiftBite.OrderService.Application.Orders.Queries.GetCustomerOrders;
 using SwiftBite.OrderService.Application.Orders.Queries.GetOrderById;
 using SwiftBite.OrderService.Application.Orders.Queries.GetRestaurantOrders;
@@ -119,6 +120,26 @@ public class OrdersController : ControllerBase
         return Ok(ApiResponse<object>.SuccessResponse(
             result,
             "Restaurant orders retrieved successfully.",
+            HttpContext.TraceIdentifier));
+    }
+
+    // ── GET api/orders/admin/all ──────────────────────────
+    // Admin sees all orders across the whole platform
+    [HttpGet("admin/all")]
+    public async Task<IActionResult> GetAllOrders(
+        CancellationToken ct)
+    {
+        // Manual claim check: OpenIddict issues the short "role" claim, not the
+        // ClaimTypes.Role that [Authorize(Roles=...)] checks by default.
+        if (!User.HasClaim(c => c.Type == "role" && c.Value == "Admin"))
+            throw new ForbiddenException("Admin role required.");
+
+        var result = await _mediator.Send(
+            new GetAllOrdersQuery(), ct);
+
+        return Ok(ApiResponse<object>.SuccessResponse(
+            result,
+            "All orders retrieved successfully.",
             HttpContext.TraceIdentifier));
     }
 

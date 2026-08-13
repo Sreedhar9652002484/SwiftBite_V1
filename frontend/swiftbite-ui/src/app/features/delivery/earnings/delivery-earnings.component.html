@@ -5,7 +5,12 @@
         <div class="spinner"></div><p>Loading earnings…</p>
       </div>
 
-      <div *ngIf="!loading() && data()">
+      <div class="state-box error" *ngIf="error() && !loading()">
+        <p>⚠️ {{ error() }}</p>
+        <button class="retry-btn" (click)="load()">Retry</button>
+      </div>
+
+      <div *ngIf="!loading() && !error() && data()">
         <div class="stat-grid">
           <div class="stat-card green-card">
             <p class="stat-value">₹{{ data()!.totalEarnings | number:'1.0-0' }}</p>

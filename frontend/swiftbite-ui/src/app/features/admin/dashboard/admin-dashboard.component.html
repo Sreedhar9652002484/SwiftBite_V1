@@ -14,7 +14,13 @@
     <p>Loading platform data…</p>
   </div>
 
-  <div *ngIf="!loading">
+  <!-- Error -->
+  <div class="state-box error" *ngIf="error() && !loading">
+    <p>⚠️ {{ error() }}</p>
+    <button class="btn-refresh" (click)="retry()">Retry</button>
+  </div>
+
+  <div *ngIf="!loading && !error()">
 
     <!-- Stat cards -->
     <div class="stat-grid">

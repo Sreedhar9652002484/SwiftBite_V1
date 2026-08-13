@@ -16,6 +16,9 @@ public interface IOrderRepository
         Guid restaurantId,
         CancellationToken ct = default);
 
+    Task<IEnumerable<Order>> GetAllAsync(
+        CancellationToken ct = default);
+
     Task<IEnumerable<Order>> GetByStatusAsync(
         OrderStatus status,
         CancellationToken ct = default);

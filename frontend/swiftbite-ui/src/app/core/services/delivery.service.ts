@@ -124,6 +124,20 @@ export class DeliveryService {
   }
 
   /**
+   * Get this partner's own job history (assigned, in-progress and completed).
+   * Used by the dashboard/earnings screens for partner-scoped stats.
+   */
+  getMyJobHistory(): Observable<DeliveryJob[]> {
+    return this.http.get<any>(`${this.api}/api/delivery/jobs/mine`)
+      .pipe(
+        map(response => {
+          const jobs = this.apiResponseService.extractData<DeliveryJob[]>(response);
+          return jobs || [];
+        })
+      );
+  }
+
+  /**
    * Get active jobs
    */
   getActiveJobs(): Observable<DeliveryJob[]> {

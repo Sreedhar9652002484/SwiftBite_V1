@@ -19,14 +19,20 @@ export class DeliveryDashboardComponent implements OnInit {
   loadingProfile = signal(true);
   loadingJobs    = signal(true);
 
-  profile    = signal<DeliveryPartner | null>(null);
-  allJobs    = signal<DeliveryJob[]>([]);
-  activeJobs = signal<DeliveryJob[]>([]);
+  error = signal<string | null>(null);
+
+  profile      = signal<DeliveryPartner | null>(null);
+  // Partner's own job history (assigned/accepted/pickedup/delivered/rejected/cancelled) —
+  // used for today's-earnings/deliveries and recent activity.
+  myJobs       = signal<DeliveryJob[]>([]);
+  // Partner's currently in-flight jobs (from the correct partner-scoped endpoint).
+  activeJobs   = signal<DeliveryJob[]>([]);
+  // Open marketplace pool of unassigned jobs available to claim.
+  availableJobs = signal<DeliveryJob[]>([]);
 
   // ── Computed stats ─────────────────────────────────────
   todayEarnings = computed(() => {
-    const today = new Date();
-    return this.allJobs()
+    return this.myJobs()
       .filter(j =>
         j.status === 'Delivered' &&
         j.deliveredAt &&
@@ -36,19 +42,18 @@ export class DeliveryDashboardComponent implements OnInit {
   });
 
   todayDeliveries = computed(() =>
-    this.allJobs().filter(j =>
+    this.myJobs().filter(j =>
       j.status === 'Delivered' &&
       j.deliveredAt &&
       this.isToday(j.deliveredAt)
     ).length
   );
 
-  pendingJobs = computed(() =>
-    this.allJobs().filter(j => j.status === 'Assigned').length
-  );
+  // Number of open jobs in the platform-wide pool this partner can claim.
+  pendingJobs = computed(() => this.availableJobs().length);
 
   recentJobs = computed(() =>
-    [...this.allJobs()]
+    [...this.myJobs()]
       .sort((a, b) => new Date(b.assignedAt).getTime() - new Date(a.assignedAt).getTime())
       .slice(0, 5)
   );
@@ -63,21 +68,43 @@ export class DeliveryDashboardComponent implements OnInit {
   private loadProfile(): void {
     this.deliverySvc.getProfile().subscribe({
       next:  p => { this.profile.set(p); this.loadingProfile.set(false); },
-      error: () => this.loadingProfile.set(false),
+      error: () => {
+        this.loadingProfile.set(false);
+        this.error.set('Could not load your profile. Please try again.');
+      },
     });
   }
 
   private loadJobs(): void {
-    this.deliverySvc.getJobs().subscribe({
-      next: jobs => {
-        this.allJobs.set(jobs);
-        this.activeJobs.set(jobs.filter(j =>
-          ['Assigned','Accepted','PickedUp'].includes(j.status)
-        ));
-        this.loadingJobs.set(false);
-      },
-      error: () => this.loadingJobs.set(false),
+    let pending = 3;
+    const done = () => { if (--pending === 0) this.loadingJobs.set(false); };
+    const fail = (msg: string) => {
+      this.error.set(msg);
+      done();
+    };
+
+    this.deliverySvc.getMyJobHistory().subscribe({
+      next: jobs => { this.myJobs.set(jobs); done(); },
+      error: () => fail('Could not load your job history. Please try again.'),
     });
+
+    this.deliverySvc.getActiveJobs().subscribe({
+      next: jobs => { this.activeJobs.set(jobs); done(); },
+      error: () => fail('Could not load your active jobs. Please try again.'),
+    });
+
+    this.deliverySvc.getJobs().subscribe({
+      next: jobs => { this.availableJobs.set(jobs); done(); },
+      error: () => fail('Could not load available jobs. Please try again.'),
+    });
+  }
+
+  retry(): void {
+    this.error.set(null);
+    this.loadingProfile.set(true);
+    this.loadingJobs.set(true);
+    this.loadProfile();
+    this.loadJobs();
   }
 
   statusClass(status: string): string {

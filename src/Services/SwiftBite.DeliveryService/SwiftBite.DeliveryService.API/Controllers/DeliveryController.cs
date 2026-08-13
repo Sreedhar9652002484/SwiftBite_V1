@@ -101,16 +101,32 @@ public class DeliveryController : ControllerBase
         if (userId is null)
             throw new UnauthorizedException("User ID not found.");
 
-        //var result = await _mediator.Send(
-        //    new GetPartnerJobsQuery(userId), ct);
-
-        // ✅ CHANGED: Get all available (unassigned) jobs
+        // Marketplace pool: all unassigned jobs open for any partner to claim.
+        // (Partner-scoped history moved to GET api/delivery/jobs/mine.)
         var result = await _mediator.Send(
             new GetAvailableJobsQuery(), ct);  // ← no userId needed
 
         return Ok(ApiResponse<object>.SuccessResponse(
             result,
             "Jobs retrieved successfully.",
+            HttpContext.TraceIdentifier));
+    }
+
+    // ── GET api/delivery/jobs/mine ─────────────────────────
+    [HttpGet("jobs/mine")]
+    public async Task<IActionResult> GetMyJobs(CancellationToken ct)
+    {
+        var userId = GetAuthUserId();
+
+        if (userId is null)
+            throw new UnauthorizedException("User ID not found.");
+
+        var result = await _mediator.Send(
+            new GetPartnerJobsQuery(userId), ct);
+
+        return Ok(ApiResponse<object>.SuccessResponse(
+            result,
+            "Your job history retrieved successfully.",
             HttpContext.TraceIdentifier));
     }
 

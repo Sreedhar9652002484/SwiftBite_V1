@@ -1,7 +1,7 @@
 import { Component, OnInit, signal, computed, inject } from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { AuthService }   from '../../../core/auth/auth.service';
-import { OrderService }  from '../../../core/services/order.service';
+import { OrderService, OrderStatus }  from '../../../core/services/order.service';
 
 type Period = '7d' | '30d' | '90d';
 
@@ -41,7 +41,7 @@ export class AnalyticsComponent implements OnInit {
     const cutoff = new Date();
     cutoff.setDate(cutoff.getDate() - days);
     return this.allOrders().filter(o =>
-      new Date(o.createdAt) >= cutoff
+      new Date(o.placedAt) >= cutoff
     );
   });
 
@@ -53,11 +53,11 @@ export class AnalyticsComponent implements OnInit {
   totalOrders = computed(() => this.filteredOrders().length);
 
   deliveredOrders = computed(() =>
-    this.filteredOrders().filter(o => o.status === 'Delivered')
+    this.filteredOrders().filter(o => o.status === OrderStatus.Delivered)
   );
 
   cancelledOrders = computed(() =>
-    this.filteredOrders().filter(o => o.status === 'Cancelled')
+    this.filteredOrders().filter(o => o.status === OrderStatus.Cancelled)
   );
 
   avgOrderValue = computed(() => {
@@ -88,7 +88,7 @@ export class AnalyticsComponent implements OnInit {
         : end.toLocaleDateString('en', { day: 'numeric', month: 'short' });
 
       const bucket = this.deliveredOrders().filter(o => {
-        const d = new Date(o.createdAt);
+        const d = new Date(o.placedAt);
         return d >= start && d < end;
       });
 
@@ -113,7 +113,7 @@ export class AnalyticsComponent implements OnInit {
       (order.items ?? []).forEach((item: any) => {
         const name = item.name ?? item.menuItemName ?? 'Unknown';
         const qty  = item.quantity ?? 1;
-        const rev  = (item.price ?? 0) * qty;
+        const rev  = item.totalPrice ?? (item.unitPrice ?? 0) * qty;
         const existing = map.get(name);
         if (existing) {
           existing.count   += qty;
@@ -130,11 +130,20 @@ export class AnalyticsComponent implements OnInit {
   });
 
   // ── Order status breakdown ────────────────────────────────
+  private statusLabels: Record<string, OrderStatus> = {
+    Pending: OrderStatus.Pending,
+    Confirmed: OrderStatus.Confirmed,
+    Preparing: OrderStatus.Preparing,
+    ReadyForPickup: OrderStatus.Ready,
+    OutForDelivery: OrderStatus.OutForDelivery,
+    Delivered: OrderStatus.Delivered,
+    Cancelled: OrderStatus.Cancelled,
+  };
+
   statusBreakdown = computed(() => {
-    const statuses = ['Pending','Confirmed','Preparing','ReadyForPickup','OutForDelivery','Delivered','Cancelled'];
-    return statuses.map(s => ({
-      status: s,
-      count:  this.filteredOrders().filter(o => o.status === s).length,
+    return Object.entries(this.statusLabels).map(([label, value]) => ({
+      status: label,
+      count:  this.filteredOrders().filter(o => o.status === value).length,
     })).filter(s => s.count > 0);
   });
 

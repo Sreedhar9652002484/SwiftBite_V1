@@ -15,12 +15,22 @@ export { EarningsComponent };
 class EarningsComponent implements OnInit {
   private svc = inject(DeliveryService);
   loading = signal(true);
+  error   = signal<string | null>(null);
   data    = signal<EarningsData | null>(null);
 
   ngOnInit(): void {
+    this.load();
+  }
+
+  load(): void {
+    this.loading.set(true);
+    this.error.set(null);
     this.svc.getEarnings().subscribe({
       next:  d => { this.data.set(d); this.loading.set(false); },
-      error: () => this.loading.set(false),
+      error: () => {
+        this.loading.set(false);
+        this.error.set('Could not load your earnings. Please try again.');
+      },
     });
   }
 }

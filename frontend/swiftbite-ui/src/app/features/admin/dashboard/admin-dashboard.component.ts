@@ -18,6 +18,7 @@ export class AdminDashboardComponent implements OnInit {
 
   loadingRestaurants = signal(true);
   loadingOrders      = signal(true);
+  error              = signal<string | null>(null);
 
   restaurants = signal<any[]>([]);
   orders      = signal<any[]>([]);
@@ -71,18 +72,35 @@ export class AdminDashboardComponent implements OnInit {
     this.loadOrders();
   }
 
+  retry(): void {
+    this.error.set(null);
+    this.loadingRestaurants.set(true);
+    this.loadingOrders.set(true);
+    this.loadRestaurants();
+    this.loadOrders();
+  }
+
   private loadRestaurants(): void {
-    this.restSvc.getAll().subscribe({
-      next:  r => { this.restaurants.set(r); this.loadingRestaurants.set(false); },
-      error: () => this.loadingRestaurants.set(false),
+    this.restSvc.getAllForAdmin().subscribe({
+      next: r => { this.restaurants.set(r); this.loadingRestaurants.set(false); },
+      error: err => {
+        this.error.set('Failed to load restaurants. Please try again.');
+        this.loadingRestaurants.set(false);
+        console.error(err);
+      },
     });
   }
 
   private loadOrders(): void {
-    // Admin sees all orders — we aggregate across all restaurants
-    // Since there's no GET /api/orders/all yet, we collect from all restaurants
-    // TODO: Add GET /api/orders/all endpoint to OrderService backend
-    this.loadingOrders.set(false);
+    // Admin sees all orders across the whole platform
+    this.orderSvc.getAllOrdersAdmin().subscribe({
+      next: o => { this.orders.set(o); this.loadingOrders.set(false); },
+      error: err => {
+        this.error.set('Failed to load orders. Please try again.');
+        this.loadingOrders.set(false);
+        console.error(err);
+      },
+    });
   }
 
   statusLabel(status: number): string {
@@ -111,6 +129,6 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   get loading(): boolean {
-    return this.loadingRestaurants();
+    return this.loadingRestaurants() || this.loadingOrders();
   }
 }

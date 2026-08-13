@@ -25,6 +25,18 @@ $blue-light: $info-light;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+// ── Error state ───────────────────────────────────────────────
+.state-box {
+  text-align: center; padding: 40px 20px; color: $text-muted;
+  p { margin: 4px 0 12px; font-size: 14px; }
+  &.error p { color: $danger; }
+}
+.retry-btn {
+  @extend .alert-btn-outline;
+  color: $danger; border-color: $danger;
+  &:hover { background: $danger; }
+}
+
 // ── Welcome header ────────────────────────────────────────────
 .welcome-header {
   display: flex;

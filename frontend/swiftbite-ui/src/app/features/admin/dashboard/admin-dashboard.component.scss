@@ -41,6 +41,32 @@ $blue-light : $info-light;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+// ── State box (error) ────────────────────────────────────────
+.state-box {
+  text-align: center;
+  padding: 60px 20px;
+  color: $text-muted;
+
+  p { margin: 4px 0 12px; font-size: 14px; }
+
+  &.error p { color: $danger; }
+}
+
+.btn-refresh {
+  padding: 8px 18px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: $white;
+  font-size: 13px;
+  font-weight: 500;
+  color: $text-muted;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover:not(:disabled) { border-color: $accent; color: $accent; }
+  &:disabled { opacity: 0.5; cursor: not-allowed; }
+}
+
 // ── Stat grid ─────────────────────────────────────────────────
 .stat-grid {
   display: grid;

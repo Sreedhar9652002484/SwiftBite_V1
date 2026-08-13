@@ -17,7 +17,12 @@
     <p>Crunching platform data…</p>
   </div>
 
-  <div *ngIf="!loading()">
+  <div class="state-box error" *ngIf="error() && !loading()">
+    <p>⚠️ {{ error() }}</p>
+    <button class="btn-refresh" (click)="load()">Retry</button>
+  </div>
+
+  <div *ngIf="!loading() && !error()">
 
     <!-- Stats -->
     <div class="stat-grid">

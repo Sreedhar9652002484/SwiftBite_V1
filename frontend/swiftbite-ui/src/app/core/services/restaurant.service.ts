@@ -137,6 +137,17 @@ export class RestaurantService {
       );
   }
 
+  /**
+   * Get all restaurants regardless of status (Admin only)
+   */
+  getAllForAdmin(): Observable<Restaurant[]> {
+    return this.http
+      .get<any>(`${this.api}/api/restaurants/admin/all`)
+      .pipe(
+        map(res => this.apiResponseService.extractData<Restaurant[]>(res) ?? [])
+      );
+  }
+
   getById(id: string): Observable<Restaurant> {
     return this.http
       .get<any>(`${this.api}/api/restaurants/${id}`)

@@ -6,6 +6,7 @@ using SwiftBite.RestaurantService.Application.Restaurants.Commands.CreateRestaur
 using SwiftBite.RestaurantService.Application.Restaurants.Commands.ToggleRestaurantOpen;
 using SwiftBite.RestaurantService.Application.Restaurants.Commands.UpdateRestaurant;
 using SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurants;
+using SwiftBite.RestaurantService.Application.Restaurants.Queries.GetAllRestaurantsForAdmin;
 using SwiftBite.RestaurantService.Application.Restaurants.Queries.GetRestaurantById;
 using SwiftBite.RestaurantService.Application.Restaurants.Queries.GetRestaurantsByCity;
 using SwiftBite.RestaurantService.Domain.Enums;
@@ -33,6 +34,31 @@ public class RestaurantsController : ControllerBase
     {
         var result = await _mediator.Send(
             new GetAllRestaurantsQuery(), ct);
+
+        return Ok(ApiResponse<object>.SuccessResponse(
+            result,
+            "All restaurants retrieved successfully.",
+            HttpContext.TraceIdentifier));
+    }
+
+    /// <summary>
+    /// Get all restaurants regardless of status (Admin only).
+    /// </summary>
+    [HttpGet("admin/all")]
+    [Authorize]
+    [ProducesResponseType(typeof(ApiResponse<object>), 200)]
+    [ProducesResponseType(typeof(ExceptionResponse), 401)]
+    [ProducesResponseType(typeof(ExceptionResponse), 403)]
+    [ProducesResponseType(typeof(ExceptionResponse), 500)]
+    public async Task<IActionResult> GetAllForAdmin(CancellationToken ct)
+    {
+        // Manual claim check: OpenIddict issues the short "role" claim, not the
+        // ClaimTypes.Role that [Authorize(Roles=...)] checks by default.
+        if (!User.HasClaim(c => c.Type == "role" && c.Value == "Admin"))
+            throw new ForbiddenException("Admin role required.");
+
+        var result = await _mediator.Send(
+            new GetAllRestaurantsForAdminQuery(), ct);
 
         return Ok(ApiResponse<object>.SuccessResponse(
             result,

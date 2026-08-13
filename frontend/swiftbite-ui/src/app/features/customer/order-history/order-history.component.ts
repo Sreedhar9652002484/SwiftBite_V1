@@ -2,7 +2,7 @@ import { Component, OnInit, inject, signal }
   from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { OrderService }
+import { OrderService, OrderStatus }
   from '../../../core/services/order.service';
 import { ToastService }
   from '../../../core/services/toast.service';
@@ -18,20 +18,26 @@ export class OrderHistoryComponent implements OnInit {
   private toast    = inject(ToastService);
   router           = inject(Router);
 
+  OrderStatus = OrderStatus;
+
   orders  = signal<any[]>([]);
   loading = signal(true);
+  error   = signal(false);
   filter  = signal<string>('All');
 
   filters = ['All', 'Active', 'Delivered', 'Cancelled'];
 
+  private readonly inactiveStatuses = [
+    OrderStatus.Delivered, OrderStatus.Cancelled, OrderStatus.Refunded,
+  ];
+
   filteredOrders = () => {
     const f = this.filter();
     if (f === 'All') return this.orders();
-    if (f === 'Active') return this.orders().filter(o =>
-      !['Delivered','Cancelled','Refunded']
-        .includes(o.status));
-    return this.orders().filter(o =>
-      o.status === f);
+    if (f === 'Active') return this.orders().filter(o => !this.inactiveStatuses.includes(o.status));
+    if (f === 'Delivered') return this.orders().filter(o => o.status === OrderStatus.Delivered);
+    if (f === 'Cancelled') return this.orders().filter(o => o.status === OrderStatus.Cancelled);
+    return this.orders();
   };
 
   ngOnInit(): void {
@@ -39,14 +45,17 @@ export class OrderHistoryComponent implements OnInit {
   }
 
   loadOrders(): void {
+    this.loading.set(true);
+    this.error.set(false);
     this.orderSvc.getMyOrders().subscribe({
       next: orders => {
         this.orders.set(orders);
         this.loading.set(false);
       },
       error: () => {
-        this.orders.set(this.getMockOrders());
         this.loading.set(false);
+        this.error.set(true);
+        this.toast.error('Failed to load your orders.');
       }
     });
   }
@@ -55,76 +64,67 @@ export class OrderHistoryComponent implements OnInit {
     this.router.navigate(['/orders', orderId, 'track']);
   }
 
-  getStatusColor(status: string): string {
-    const map: Record<string, string> = {
-      'Pending':        'bg-yellow-100 text-yellow-700',
-      'Confirmed':      'bg-blue-100 text-blue-700',
-      'Preparing':      'bg-orange-100 text-orange-700',
-      'Ready':          'bg-purple-100 text-purple-700',
-      'PickedUp':       'bg-indigo-100 text-indigo-700',
-      'OutForDelivery': 'bg-cyan-100 text-cyan-700',
-      'Delivered':      'bg-green-100 text-green-700',
-      'Cancelled':      'bg-red-100 text-red-700',
-      'Refunded':       'bg-gray-100 text-gray-700',
+  getStatusLabel(status: OrderStatus): string {
+    const map: Record<OrderStatus, string> = {
+      [OrderStatus.Pending]:        'Pending',
+      [OrderStatus.Confirmed]:      'Confirmed',
+      [OrderStatus.Preparing]:      'Preparing',
+      [OrderStatus.Ready]:          'Ready',
+      [OrderStatus.PickedUp]:       'Picked Up',
+      [OrderStatus.OutForDelivery]: 'Out for Delivery',
+      [OrderStatus.Delivered]:      'Delivered',
+      [OrderStatus.Cancelled]:      'Cancelled',
+      [OrderStatus.Refunded]:       'Refunded',
+    };
+    return map[status] ?? 'Unknown';
+  }
+
+  getStatusColor(status: OrderStatus): string {
+    const map: Record<OrderStatus, string> = {
+      [OrderStatus.Pending]:        'bg-yellow-100 text-yellow-700',
+      [OrderStatus.Confirmed]:      'bg-blue-100 text-blue-700',
+      [OrderStatus.Preparing]:      'bg-orange-100 text-orange-700',
+      [OrderStatus.Ready]:          'bg-purple-100 text-purple-700',
+      [OrderStatus.PickedUp]:       'bg-indigo-100 text-indigo-700',
+      [OrderStatus.OutForDelivery]: 'bg-cyan-100 text-cyan-700',
+      [OrderStatus.Delivered]:      'bg-green-100 text-green-700',
+      [OrderStatus.Cancelled]:      'bg-red-100 text-red-700',
+      [OrderStatus.Refunded]:       'bg-gray-100 text-gray-700',
     };
     return map[status] ?? 'bg-gray-100 text-gray-600';
   }
 
-  getStatusIcon(status: string): string {
-    const map: Record<string, string> = {
-      'Pending':        '🕐',
-      'Confirmed':      '✅',
-      'Preparing':      '👨‍🍳',
-      'Ready':          '📦',
-      'PickedUp':       '🛵',
-      'OutForDelivery': '🚀',
-      'Delivered':      '🎉',
-      'Cancelled':      '❌',
-      'Refunded':       '💰',
+  getStatusIcon(status: OrderStatus): string {
+    const map: Record<OrderStatus, string> = {
+      [OrderStatus.Pending]:        '🕐',
+      [OrderStatus.Confirmed]:      '✅',
+      [OrderStatus.Preparing]:      '👨‍🍳',
+      [OrderStatus.Ready]:          '📦',
+      [OrderStatus.PickedUp]:       '🛵',
+      [OrderStatus.OutForDelivery]: '🚀',
+      [OrderStatus.Delivered]:      '🎉',
+      [OrderStatus.Cancelled]:      '❌',
+      [OrderStatus.Refunded]:       '💰',
     };
     return map[status] ?? '📋';
   }
 
-  isActive(status: string): boolean {
-    return !['Delivered', 'Cancelled', 'Refunded']
-      .includes(status);
+  isActive(status: OrderStatus): boolean {
+    return !this.inactiveStatuses.includes(status);
   }
 
-  getMockOrders(): any[] {
-    return [
-      {
-        id: 'ord-001-mock',
-        restaurantName: 'Paradise Biryani',
-        status: 'Preparing',
-        totalAmount: 397.5,
-        placedAt: new Date(),
-        items: [
-          { name: 'Chicken Biryani', quantity: 2 }
-        ]
-      },
-      {
-        id: 'ord-002-mock',
-        restaurantName: 'Pizza Hut',
-        status: 'Delivered',
-        totalAmount: 549,
-        placedAt: new Date(
-          Date.now() - 86400000), // yesterday
-        items: [
-          { name: 'Margherita Pizza', quantity: 1 },
-          { name: 'Garlic Bread',     quantity: 1 }
-        ]
-      },
-      {
-        id: 'ord-003-mock',
-        restaurantName: "McDonald's",
-        status: 'Cancelled',
-        totalAmount: 280,
-        placedAt: new Date(
-          Date.now() - 172800000), // 2 days ago
-        items: [
-          { name: 'McAloo Tikki', quantity: 2 }
-        ]
-      }
-    ];
+  progressWidth(status: OrderStatus): string {
+    const map: Record<OrderStatus, string> = {
+      [OrderStatus.Pending]:        '15%',
+      [OrderStatus.Confirmed]:      '30%',
+      [OrderStatus.Preparing]:      '50%',
+      [OrderStatus.Ready]:          '65%',
+      [OrderStatus.PickedUp]:       '80%',
+      [OrderStatus.OutForDelivery]: '90%',
+      [OrderStatus.Delivered]:      '100%',
+      [OrderStatus.Cancelled]:      '100%',
+      [OrderStatus.Refunded]:       '100%',
+    };
+    return map[status] ?? '100%';
   }
 }

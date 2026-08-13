@@ -5,6 +5,16 @@ $blue-light: $info-light;
 
 .analytics { max-width: 1000px; }
 
+.state-box {
+  text-align: center;
+  padding: 60px 20px;
+  color: $text-muted;
+
+  p { margin: 4px 0; font-size: 14px; }
+
+  &.error p { color: $danger; }
+}
+
 // ── Header ────────────────────────────────────────────────────
 .page-header {
   display: flex;

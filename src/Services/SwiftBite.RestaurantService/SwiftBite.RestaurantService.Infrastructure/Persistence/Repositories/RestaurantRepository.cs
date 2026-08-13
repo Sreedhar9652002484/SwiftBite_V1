@@ -26,6 +26,12 @@ public class RestaurantRepository : IRestaurantRepository
             .OrderByDescending(r => r.AverageRating)
             .ToListAsync(ct);
 
+    public async Task<IEnumerable<Restaurant>> GetAllUnfilteredAsync(
+        CancellationToken ct = default)
+        => await _db.Restaurants
+            .OrderByDescending(r => r.CreatedAt)
+            .ToListAsync(ct);
+
     public async Task<IEnumerable<Restaurant>> GetByCityAsync(
         string city, CancellationToken ct = default)
         => await _db.Restaurants
