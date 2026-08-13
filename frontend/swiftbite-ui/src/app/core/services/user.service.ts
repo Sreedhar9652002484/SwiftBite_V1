@@ -27,7 +27,7 @@ export interface Address {
   pinCode: string;
   latitude: number;
   longitude: number;
-  type: number;
+  addressType: 'Home' | 'Office' | 'Other';
   landmark?: string;
   isDefault: boolean;
 }

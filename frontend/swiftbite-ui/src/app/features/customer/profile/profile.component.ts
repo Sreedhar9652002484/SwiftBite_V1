@@ -30,6 +30,10 @@ export class ProfileComponent implements OnInit {
   saving      = signal(false);
   loadError   = signal(false);
 
+  // Tracks which address currently has a delete/set-default request in
+  // flight, so only that address's buttons are disabled during the call.
+  addressActionId = signal<string | null>(null);
+
   profile     = signal<any>(null);
   addresses   = signal<any[]>([]);
   preferences = signal<any>(null);
@@ -126,6 +130,7 @@ dietaryOptions = [
   }
 
   saveProfile(): void {
+    if (this.saving()) return;
     this.saving.set(true);
     this.userSvc.updateProfile(this.profileForm)
       .subscribe({
@@ -143,6 +148,7 @@ dietaryOptions = [
   }
 
   saveAddress(): void {
+    if (this.saving()) return;
     this.saving.set(true);
     this.userSvc.addAddress(this.addressForm)
       .subscribe({
@@ -161,6 +167,7 @@ dietaryOptions = [
   }
 
   async deleteAddress(id: string): Promise<void> {
+    if (this.addressActionId()) return;
     const ok = await this.confirmSvc.confirm({
       title: 'Delete this address?',
       message: 'You can always add it again later.',
@@ -168,28 +175,38 @@ dietaryOptions = [
       danger: true,
     });
     if (!ok) return;
+    this.addressActionId.set(id);
     this.userSvc.deleteAddress(id).subscribe({
       next: () => {
         this.toast.success('Address deleted');
+        this.addressActionId.set(null);
         this.loadAddresses();
       },
-      error: () =>
-        this.toast.error('Failed to delete address')
+      error: () => {
+        this.toast.error('Failed to delete address');
+        this.addressActionId.set(null);
+      }
     });
   }
 
   setDefault(id: string): void {
+    if (this.addressActionId()) return;
+    this.addressActionId.set(id);
     this.userSvc.setDefaultAddress(id).subscribe({
       next: () => {
         this.toast.success('✅ Default address set!');
+        this.addressActionId.set(null);
         this.loadAddresses();
       },
-      error: () =>
-        this.toast.error('Failed to set default')
+      error: () => {
+        this.toast.error('Failed to set default');
+        this.addressActionId.set(null);
+      }
     });
   }
 
   savePreferences(): void {
+    if (this.saving()) return;
     this.saving.set(true);
       const request = {
     ...this.prefForm, // reuse everything

@@ -242,19 +242,23 @@
               <div class="flex gap-2 flex-shrink-0">
                 @if (!addr.isDefault) {
                   <button (click)="setDefault(addr.id)"
+                    [disabled]="!!addressActionId()"
                     class="text-xs text-primary
                            hover:text-primary-hover
                            font-semibold px-2 py-1
-                           rounded-lg hover:bg-primary-soft">
-                    Set Default
+                           rounded-lg hover:bg-primary-soft
+                           disabled:opacity-50">
+                    {{ addressActionId() === addr.id ? 'Setting…' : 'Set Default' }}
                   </button>
                 }
                 <button (click)="deleteAddress(addr.id)"
+                  [disabled]="!!addressActionId()"
                   class="text-xs text-danger
                          hover:opacity-80 font-semibold
                          px-2 py-1 rounded-lg
-                         hover:bg-danger-soft">
-                  Delete
+                         hover:bg-danger-soft
+                         disabled:opacity-50">
+                  {{ addressActionId() === addr.id ? 'Deleting…' : 'Delete' }}
                 </button>
               </div>
             </div>

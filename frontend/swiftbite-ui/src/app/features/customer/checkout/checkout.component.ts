@@ -33,6 +33,11 @@ export class CheckoutComponent implements OnInit {
   error        = signal('');
   step         = signal<'address' | 'payment' | 'confirm'>('address');
 
+  // Set once an order has been created but payment hasn't completed yet
+  // (e.g. the Razorpay modal was dismissed or verification failed). A retry
+  // reuses this order instead of placing a duplicate one for the same cart.
+  private pendingOrder = signal<any>(null);
+
   paymentMethods = [
     { id: 'UPI',        label: 'UPI',          icon: '📱' },
     { id: 'Card',       label: 'Credit/Debit', icon: '💳' },
@@ -49,6 +54,7 @@ export class CheckoutComponent implements OnInit {
 }
   // New address form
   showAddressForm = signal(false);
+  savingAddress   = signal(false);
   newAddress = {
     label: '', fullAddress: '', street: '',
     city: 'Hyderabad', state: 'Telangana',
@@ -99,12 +105,18 @@ export class CheckoutComponent implements OnInit {
   }
 
   addNewAddress(): void {
+    if (this.savingAddress()) return;
+    this.savingAddress.set(true);
     this.userSvc.addAddress(this.newAddress).subscribe({
       next: () => {
+        this.savingAddress.set(false);
         this.loadAddresses();
         this.showAddressForm.set(false);
       },
-      error: () => this.error.set('Failed to add address')
+      error: () => {
+        this.savingAddress.set(false);
+        this.error.set('Failed to add address');
+      }
     });
   }
 
@@ -120,15 +132,26 @@ export class CheckoutComponent implements OnInit {
 
   // ✅ Main order + payment flow
   async placeOrder(): Promise<void> {
-    
+    // Reentrancy guard: the button's [disabled]="loading()" binding covers
+    // normal clicks, but this makes placeOrder() itself safe against any
+    // click that slips in before Angular re-renders the disabled state.
+    if (this.loading()) return;
+
     if (!this.selectedAddr()) {
       this.error.set('Please select a delivery address');
       return;
     }
-    this.loading.set(true);
     this.error.set('');
+    this.loading.set(true);
     const user = this.authSvc.currentUser();
 
+    // If a previous attempt already created an order but payment never
+    // completed, resume payment on that order instead of placing a new one.
+    const existing = this.pendingOrder();
+    if (existing) {
+      await this.initiatePayment(existing);
+      return;
+    }
 
     try {
       // Step 1: Place order
@@ -159,6 +182,7 @@ export class CheckoutComponent implements OnInit {
             return;
           }
           // Step 2: Initiate Razorpay
+          this.pendingOrder.set(order);
           await this.initiatePayment(order);
         },
         error: (err) => {
@@ -195,12 +219,15 @@ export class CheckoutComponent implements OnInit {
 
     this.paymentSvc.initiatePayment(payReq).subscribe({
       next: (payData) => {
-        this.loading.set(false);
+        // Keep the button disabled — the Razorpay modal is opening next and
+        // the button must stay locked until payment succeeds, fails, or is
+        // cancelled, not just until the payment session is created.
         this.openRazorpay(payData, order);
       },
       error: () => {
         // Mock payment for demo
         this.loading.set(false);
+        this.pendingOrder.set(null);
         this.cartSvc.clearCart();
         this.router.navigate(
           ['/orders', order.id, 'track']);
@@ -230,20 +257,29 @@ export class CheckoutComponent implements OnInit {
           razorpaySignature: response.razorpay_signature
         }).subscribe({
           next: () => {
+            this.loading.set(false);
+            this.pendingOrder.set(null);
             this.cartSvc.clearCart();
             this.router.navigate(
               ['/orders', order.id, 'track']);
           },
           error: () => {
-            this.error.set('Payment verification failed!');
+            // Order still exists unpaid — leave pendingOrder set so a retry
+            // resumes payment on it instead of placing a duplicate order.
+            this.loading.set(false);
+            this.error.set('Payment verification failed! Click Place Order to retry.');
           }
         });
       },
 
       modal: {
         ondismiss: () => {
+          // Order still exists unpaid — leave pendingOrder set so clicking
+          // Place Order again resumes payment on it instead of creating a
+          // second order for the same cart.
+          this.loading.set(false);
           this.error.set(
-            'Payment cancelled. Your order is saved — retry from orders.');
+            'Payment cancelled. Click Place Order to retry payment for your order.');
         }
       }
     };

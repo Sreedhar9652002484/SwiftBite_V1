@@ -24,6 +24,18 @@ public class UserRepository : IUserRepository
             .Include(u => u.Preference)
             .FirstOrDefaultAsync(u => u.AuthUserId == authUserId, ct);
 
+    // Lightweight projection for callers that only need the internal user
+    // Id (e.g. to scope a follow-up query) and don't need the Addresses/
+    // Preference navigations loaded. Avoids pulling and tracking the full
+    // address list just to resolve one Guid.
+    public async Task<Guid?> GetIdByAuthUserIdAsync(
+        string authUserId, CancellationToken ct = default)
+        => await _db.Users
+            .AsNoTracking()
+            .Where(u => u.AuthUserId == authUserId)
+            .Select(u => (Guid?)u.Id)
+            .FirstOrDefaultAsync(ct);
+
     public async Task<User?> GetByEmailAsync(
         string email, CancellationToken ct = default)
         => await _db.Users

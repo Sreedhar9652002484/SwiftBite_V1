@@ -18,6 +18,7 @@ public class AddressRepository : IAddressRepository
     public async Task<IEnumerable<Address>> GetByUserIdAsync(
         Guid userId, CancellationToken ct = default)
         => await _db.Addresses
+            .AsNoTracking()
             .Where(a => a.UserId == userId)
             .OrderByDescending(a => a.IsDefault)
             .ToListAsync(ct);

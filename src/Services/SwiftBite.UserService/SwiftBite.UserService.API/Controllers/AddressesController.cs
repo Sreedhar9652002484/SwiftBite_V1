@@ -159,5 +159,5 @@ public record AddAddressRequest(
     string PinCode,
     double Latitude,
     double Longitude,
-    AddressType Type,
+    [property: System.Text.Json.Serialization.JsonPropertyName("addressType")] AddressType Type,
     string? Landmark = null);

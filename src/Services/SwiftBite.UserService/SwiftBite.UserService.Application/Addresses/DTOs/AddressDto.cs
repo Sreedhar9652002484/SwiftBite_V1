@@ -1,4 +1,5 @@
-﻿using SwiftBite.UserService.Domain.Enums;
+﻿using System.Text.Json.Serialization;
+using SwiftBite.UserService.Domain.Enums;
 
 namespace SwiftBite.UserService.Application.Addresses.DTOs;
 
@@ -16,5 +17,6 @@ public class AddressDto
     public double Latitude { get; set; }
     public double Longitude { get; set; }
     public bool IsDefault { get; set; }
+    [JsonPropertyName("addressType")]
     public AddressType Type { get; set; }
 }

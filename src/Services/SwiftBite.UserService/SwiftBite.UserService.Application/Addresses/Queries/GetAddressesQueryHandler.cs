@@ -22,10 +22,16 @@ public class GetAddressesQueryHandler
     public async Task<IEnumerable<AddressDto>> Handle(
         GetAddressesQuery query, CancellationToken ct)
     {
-        var user = await _userRepo.GetByAuthUserIdAsync(query.AuthUserId, ct)
+        // Use the lightweight, no-tracking projection here instead of
+        // GetByAuthUserIdAsync: that method eagerly Includes Addresses and
+        // Preference, which meant every "get addresses" request loaded the
+        // full address list (tracked) once just to resolve the user's Id,
+        // then loaded it again via GetByUserIdAsync below. That duplicate
+        // round-trip was pure overhead on the hot checkout-page path.
+        var userId = await _userRepo.GetIdByAuthUserIdAsync(query.AuthUserId, ct)
             ?? throw new KeyNotFoundException("User not found.");
 
-        var addresses = await _addressRepo.GetByUserIdAsync(user.Id, ct);
+        var addresses = await _addressRepo.GetByUserIdAsync(userId, ct);
 
         return addresses.Select(AddAddressCommandHandler.MapToDto);
     }
