@@ -32,6 +32,15 @@ public class NotificationHub : Hub
                 userId, Context.ConnectionId);
         }
 
+        if (IsDeliveryPartner())
+        {
+            // Delivery jobs aren't assigned to a specific partner until
+            // accepted, so new-job pushes go to a shared broadcast group.
+            await Groups.AddToGroupAsync(
+                Context.ConnectionId,
+                "delivery_partners");
+        }
+
         await base.OnConnectedAsync();
     }
 
@@ -51,6 +60,13 @@ public class NotificationHub : Hub
                 userId);
         }
 
+        if (IsDeliveryPartner())
+        {
+            await Groups.RemoveFromGroupAsync(
+                Context.ConnectionId,
+                "delivery_partners");
+        }
+
         await base.OnDisconnectedAsync(exception);
     }
 
@@ -64,6 +80,11 @@ public class NotificationHub : Hub
       ?? Context.User?.FindFirst(
           System.Security.Claims.ClaimTypes.NameIdentifier)
           ?.Value;
+
+    // OpenIddict issues the short "role" claim, not ClaimTypes.Role.
+    private bool IsDeliveryPartner()
+      => Context.User?.HasClaim(c =>
+          c.Type == "role" && c.Value == "DeliveryPartner") ?? false;
 
     // Add this method to NotificationHub
     public async Task JoinOrderTracking(string orderId)

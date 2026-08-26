@@ -29,7 +29,8 @@ public class KafkaConsumerService : BackgroundService
         "swiftbite.order.cancelled",
         "swiftbite.payment.success",
         "swiftbite.payment.failed",
-        "swiftbite.location.updated"
+        "swiftbite.location.updated",
+        "swiftbite.order.ready"
 
     ];
 
@@ -141,6 +142,9 @@ public class KafkaConsumerService : BackgroundService
                 break;
             case "swiftbite.location.updated":
                 await HandleLocationUpdated(message, ct);
+                break;
+            case "swiftbite.order.ready":
+                await HandleOrderReady(message, ct);
                 break;
         }
     }
@@ -280,6 +284,30 @@ public class KafkaConsumerService : BackgroundService
                 partnerName = evt.PartnerName,
                 status = evt.Status,
                 updatedAt = evt.UpdatedAt
+            }, ct);
+    }
+
+    // 🍔 Order ready → push new-job alert to all connected delivery partners
+    private async Task HandleOrderReady(
+        string message, CancellationToken ct)
+    {
+        var evt = JsonSerializer
+            .Deserialize<OrderReadyEvent>(message)!;
+
+        using var scope = _services.CreateScope();
+        var hubContext = scope.ServiceProvider
+            .GetRequiredService<IHubContext<NotificationHub>>();
+
+        await hubContext.Clients
+            .Group("delivery_partners")
+            .SendAsync("NewJobAvailable", new
+            {
+                orderId = evt.OrderId,
+                orderNumber = evt.OrderNumber,
+                restaurantName = evt.RestaurantName,
+                deliveryCity = evt.DeliveryCity,
+                deliveryFee = evt.DeliveryFee,
+                readyAt = evt.ReadyAt
             }, ct);
     }
 }

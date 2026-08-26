@@ -96,18 +96,16 @@ public class KafkaConsumerService : BackgroundService
         }
     }
 
-    // 🛵 Partner accepted → Order = PickedUp
+    // 🛵 Partner accepted the job → order stays Ready until it's actually picked up
     private async Task HandleDeliveryAccepted(
         string message, CancellationToken ct)
     {
         var evt = JsonSerializer.Deserialize<DeliveryJobAcceptedEvent>(message)!;
         _logger.LogInformation(
             "🛵 Delivery accepted for Order {OrderId}", evt.OrderId);
-
-        await UpdateOrderStatus(evt.OrderId, OrderStatus.PickedUp, ct);
     }
 
-    // 📦 Partner picked up → Order = OutForDelivery
+    // 📦 Partner picked up → Order = PickedUp
     private async Task HandleDeliveryPickedUp(
         string message, CancellationToken ct)
     {
@@ -115,7 +113,7 @@ public class KafkaConsumerService : BackgroundService
         _logger.LogInformation(
             "📦 Order picked up {OrderId}", evt.OrderId);
 
-        await UpdateOrderStatus(evt.OrderId, OrderStatus.OutForDelivery, ct);
+        await UpdateOrderStatus(evt.OrderId, OrderStatus.PickedUp, ct);
     }
 
     // ✅ Partner delivered → Order = Delivered

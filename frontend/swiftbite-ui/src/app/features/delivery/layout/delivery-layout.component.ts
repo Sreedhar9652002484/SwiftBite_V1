@@ -1,8 +1,9 @@
-import { Component, OnInit, signal, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AuthService } from '../../../core/auth/auth.service';
 import { DeliveryService } from '../../../core/services/delivery.service';
+import { NotificationService } from '../../../core/services/notification.service';
 import { ThemeToggleComponent } from '../../../shared/components/theme-toggle/theme-toggle.component';
 
 @Component({
@@ -12,10 +13,11 @@ import { ThemeToggleComponent } from '../../../shared/components/theme-toggle/th
   templateUrl: './delivery-layout.component.html',
   styleUrls: ['./delivery-layout.component.scss'],
 })
-export class DeliveryLayoutComponent implements OnInit {
+export class DeliveryLayoutComponent implements OnInit, OnDestroy {
 
   auth        = inject(AuthService);
   deliverySvc = inject(DeliveryService);
+  private notifSvc = inject(NotificationService);
 
   isAvailable    = signal(false);
   partnerName    = signal('Partner');
@@ -38,6 +40,12 @@ export class DeliveryLayoutComponent implements OnInit {
       },
       error: () => {} // not yet registered — handled by profile page
     });
+
+    this.notifSvc.connectSignalR();
+  }
+
+  ngOnDestroy(): void {
+    this.notifSvc.disconnectSignalR();
   }
 
   toggleAvailability(): void {

@@ -1,8 +1,9 @@
-import { Component, OnInit, signal, inject } from '@angular/core';
+import { Component, OnInit, signal, inject, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeliveryService, DeliveryJob } from '../../../core/services/delivery.service';
 import { ToastService } from '../../../core/services/toast.service';
 import { ConfirmService } from '../../../core/services/confirm.service';
+import { NotificationService } from '../../../core/services/notification.service';
 
 @Component({
   selector: 'app-delivery-jobs',
@@ -16,6 +17,7 @@ export class DeliveryJobsComponent implements OnInit {
   private svc        = inject(DeliveryService);
   private toastSvc   = inject(ToastService);
   private confirmSvc = inject(ConfirmService);
+  private notifSvc   = inject(NotificationService);
 
   loading    = signal(true);
   actionId   = signal<string | null>(null);
@@ -23,6 +25,17 @@ export class DeliveryJobsComponent implements OnInit {
   assignedJobs  = signal<DeliveryJob[]>([]);
   completedJobs = signal<DeliveryJob[]>([]);
   activeTab     = signal<'assigned' | 'completed'>('assigned');
+
+  constructor() {
+    // 📦 New job pushed via SignalR — refresh the list instantly instead of
+    // waiting for the user to navigate away/back or refresh the page.
+    effect(() => {
+      const job = this.notifSvc.newJobAvailable();
+      if (!job) return;
+      this.toastSvc.success('New job available!');
+      this.loadJobs();
+    });
+  }
 
   ngOnInit(): void { this.loadJobs(); }
 

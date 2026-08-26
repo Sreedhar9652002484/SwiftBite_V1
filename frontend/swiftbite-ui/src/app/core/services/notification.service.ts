@@ -43,6 +43,7 @@ export class NotificationService {
 
   notifications = signal<Notification[]>([]);
   unreadCount = signal<number>(0);
+  newJobAvailable = signal<any>(null);
 
   private hubConnection?: signalR.HubConnection;
 
@@ -64,6 +65,12 @@ export class NotificationService {
         this.notifications.update(n => [data, ...n]);
         this.unreadCount.update(c => c + 1);
         this.showBrowserNotification(data.title, data.message);
+      });
+
+    // 📦 Listen for new delivery jobs becoming available
+    this.hubConnection.on(
+      'NewJobAvailable', (data: any) => {
+        this.newJobAvailable.set(data);
       });
 
     this.hubConnection.onreconnected(() =>
