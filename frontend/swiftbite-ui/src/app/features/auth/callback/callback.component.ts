@@ -5,17 +5,18 @@ import { OAuthService } from 'angular-oauth2-oidc';
 import { AuthService } from '../../../core/auth/auth.service';
 import { environment } from '../../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BrandMarkComponent } from '../../../shared/components/brand-mark/brand-mark.component';
 
 @Component({
   selector: 'app-callback',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BrandMarkComponent],
   template: `
     <div class="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50
                 flex flex-col items-center justify-center gap-4">
       <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center
-                  justify-center shadow-lg">
-        <span class="text-3xl">🍽️</span>
+                  justify-center shadow-lg text-white">
+        <app-brand-mark />
       </div>
       <p class="text-gray-600 font-semibold text-lg">Signing you in...</p>
       <div class="w-8 h-8 border-4 border-orange-500 border-t-transparent

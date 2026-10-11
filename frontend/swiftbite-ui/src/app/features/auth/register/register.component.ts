@@ -3,11 +3,12 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModul
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../core/auth/auth.service';
 import { CommonModule } from '@angular/common';
+import { BrandMarkComponent } from '../../../shared/components/brand-mark/brand-mark.component';
 
 @Component({
   selector: 'app-register',
    standalone: true,                              // ← MUST have this
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, BrandMarkComponent],
   templateUrl: './register.component.html'
 })
 export class RegisterComponent {

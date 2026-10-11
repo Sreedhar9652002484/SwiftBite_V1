@@ -1,5 +1,12 @@
 @use './styles/tokens';
 
+/* Scale the whole app down to match an 80% browser zoom look while the
+   browser itself stays at 100%. Every rem-based Tailwind/token size
+   (spacing, radii, font sizes) is relative to this root value. */
+html {
+  font-size: 80%;
+}
+
 /* @tailwind directives */
 /* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind base;

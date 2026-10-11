@@ -5,11 +5,12 @@ import { AuthService } from '../../../core/auth/auth.service';
 import { CommonModule } from '@angular/common';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { environment } from '../../../../environments/environment';
+import { BrandMarkComponent } from '../../../shared/components/brand-mark/brand-mark.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, BrandMarkComponent],
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
