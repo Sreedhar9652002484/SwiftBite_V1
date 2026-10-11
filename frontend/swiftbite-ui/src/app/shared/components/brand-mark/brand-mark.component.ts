@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-brand-mark',
   standalone: true,
+  // Fill the parent tile and centre the svg; otherwise the inline host element
+  // sits on a text baseline and the mark drifts off-centre.
+  host: { style: 'display:flex;align-items:center;justify-content:center;width:100%;height:100%;' },
   template: `
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
          style="width: 62%; height: 62%;" role="img" aria-label="SwiftBite">
@@ -20,7 +23,10 @@ import { Component } from '@angular/core';
           <path d="M13.4 6.4 7.9 13.5h3.7l-1.2 4.9 6-7.7h-3.8l.8-4.3Z" fill="#000"/>
         </mask>
       </defs>
-      <circle cx="12" cy="12" r="9.5" fill="currentColor" mask="url(#sb-mark-mask)"/>
+      <!-- nudged toward the bite so the shape looks optically centred -->
+      <g transform="translate(0.5 -0.5)">
+        <circle cx="12" cy="12" r="9.5" fill="currentColor" mask="url(#sb-mark-mask)"/>
+      </g>
     </svg>
   `,
 })
