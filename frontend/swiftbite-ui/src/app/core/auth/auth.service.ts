@@ -133,12 +133,11 @@ export class AuthService {
       credentials: 'include',
       mode: 'no-cors'
     }).finally(() => {
-      this.router.navigate(['/auth/login']);
+      this.router.navigate(['/']);
     });
   }
 
   redirectBasedOnRole(): void {
-    debugger
     if (this.hasRole('Admin'))           this.router.navigate(['/admin/dashboard']);
     else if (this.hasRole('RestaurantAdmin')) this.router.navigate(['/owner/dashboard']);
     else if (this.hasRole('DeliveryPartner')) this.router.navigate(['/delivery/dashboard']);

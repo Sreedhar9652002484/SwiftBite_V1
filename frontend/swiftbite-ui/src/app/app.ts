@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs';
 import { ToastComponent } from './features/shared/components/toast/toast.component';
 import { LoadingComponent } from './features/shared/components/loading/loading.component';
 import { NetworkStatusComponent } from './features/shared/components/network/network-status.component';
@@ -16,4 +17,11 @@ export class App {
   protected readonly title = signal('swiftbite-ui');
   // Injected so the theme class is applied to <html> as early as possible.
   private theme = inject(ThemeService);
+
+  constructor() {
+    // A navigation succeeded, so the stale-chunk reload guard (see app.config.ts) can reset.
+    inject(Router).events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
+      try { sessionStorage.removeItem('chunk_reload'); } catch { /* storage unavailable */ }
+    });
+  }
 }
