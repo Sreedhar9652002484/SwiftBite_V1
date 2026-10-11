@@ -79,8 +79,8 @@ public class PreferencesController : ControllerBase
                 request.EmailNotifications,
                 request.PushNotifications,
                 request.SmsNotifications,
-                request.PreferredCuisines,
-                request.AllergiesInfo), ct);
+                request.PreferredCuisines ?? string.Empty,
+                request.AllergiesInfo ?? string.Empty), ct);
 
         return Ok(ApiResponse<object>.SuccessResponse(
             result,
@@ -98,5 +98,5 @@ public record UpdatePreferencesRequest(
     bool EmailNotifications,
     bool PushNotifications,
     bool SmsNotifications,
-    string PreferredCuisines,
-    string AllergiesInfo);
+    string? PreferredCuisines = null,
+    string? AllergiesInfo = null);

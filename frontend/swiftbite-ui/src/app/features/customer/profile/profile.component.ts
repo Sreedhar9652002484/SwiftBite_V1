@@ -57,7 +57,8 @@ export class ProfileComponent implements OnInit {
       emailNotifications: true,
       pushNotifications: true,
       smsNotifications: false,
-      preferredCuisines: [] as string[]
+      preferredCuisines: [] as string[],
+      allergiesInfo: ''
     };
 
   showAddressForm = signal(false);
@@ -124,7 +125,19 @@ dietaryOptions = [
     this.userSvc.getPreferences().subscribe({
       next: p => {
         this.preferences.set(p);
-        this.prefForm = { ...this.prefForm, ...p };
+        // The API stores cuisines as one comma-separated string; the form works with a list.
+        const raw: unknown = p.preferredCuisines;
+        const cuisines = Array.isArray(raw)
+          ? raw as string[]
+          : String(raw ?? '').split(',').map(c => c.trim()).filter(Boolean);
+        this.prefForm = {
+          dietaryPreference:  p.dietaryPreference ?? this.prefForm.dietaryPreference,
+          emailNotifications: p.emailNotifications ?? this.prefForm.emailNotifications,
+          pushNotifications:  p.pushNotifications ?? this.prefForm.pushNotifications,
+          smsNotifications:   p.smsNotifications ?? this.prefForm.smsNotifications,
+          preferredCuisines:  cuisines,
+          allergiesInfo:      p.allergiesInfo ?? '',
+        };
       },
       error: () => {}
     });
@@ -209,10 +222,15 @@ dietaryOptions = [
   savePreferences(): void {
     if (this.saving()) return;
     this.saving.set(true);
-      const request = {
-    ...this.prefForm, // reuse everything
-    preferredCuisines: this.prefForm.preferredCuisines.join(',') // override only this
-  };
+    // Send exactly what the API expects. allergiesInfo is required there, so never omit it.
+    const request = {
+      dietaryPreference:  this.prefForm.dietaryPreference,
+      emailNotifications: this.prefForm.emailNotifications,
+      pushNotifications:  this.prefForm.pushNotifications,
+      smsNotifications:   this.prefForm.smsNotifications,
+      preferredCuisines:  this.prefForm.preferredCuisines.join(','),
+      allergiesInfo:      this.prefForm.allergiesInfo ?? '',
+    };
 
     this.userSvc.updatePreferences(request)
       .subscribe({
