@@ -4,5 +4,5 @@ export const environment = {
   apiGatewayUrl: 'https://swiftbite-apigateway.jollybay-415f930f.southindia.azurecontainerapps.io',
   angularBaseUrl: 'https://swift-bite-pi.vercel.app',
   signalRHub: 'https://swiftbite-apigateway.jollybay-415f930f.southindia.azurecontainerapps.io/hubs/notifications',
-  razorpayKeyId: 'rzp_test_CHANGE_ME',
+  razorpayKeyId: 'rzp_test_TmVvBjXH497UdL',
 };
