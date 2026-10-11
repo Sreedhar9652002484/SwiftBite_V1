@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { ApiResponseService } from './api-response.service';  // ✅ ADD
 
@@ -56,6 +56,24 @@ export class UserService {
   private http = inject(HttpClient);
   private apiResponseService = inject(ApiResponseService);  // ✅ ADD
   private api = environment.apiGatewayUrl;
+
+  /**
+   * The backend creates the user's profile row on the first GET /api/users/profile.
+   * Address and preference endpoints return "User not found" until then, so a new
+   * user who goes straight to checkout (e.g. after Google sign-in) would fail.
+   * Make sure that call has happened once per session before them.
+   */
+  private profileEnsured = false;
+
+  private afterProfile<T>(request: () => Observable<T>): Observable<T> {
+    const ensure$: Observable<unknown> = this.profileEnsured
+      ? of(null)
+      : this.getProfile().pipe(
+          tap(() => (this.profileEnsured = true)),
+          catchError(() => of(null))   // let the real request report any genuine failure
+        );
+    return ensure$.pipe(switchMap(request));
+  }
 
   /**
    * Get user profile
@@ -113,7 +131,7 @@ export class UserService {
    * ✅ UPDATED: Extracts data from ApiResponse<Address[]>
    */
   getAddresses(): Observable<Address[]> {
-    return this.http.get<any>(`${this.api}/api/users/addresses`)
+    return this.afterProfile(() => this.http.get<any>(`${this.api}/api/users/addresses`))
       .pipe(
         map(response => {
           const addresses = this.apiResponseService.extractData<Address[]>(response);
@@ -127,7 +145,7 @@ export class UserService {
    * ✅ UPDATED: Extracts data from ApiResponse<Address>
    */
   addAddress(request: any): Observable<Address> {
-    return this.http.post<any>(`${this.api}/api/users/addresses`, request)
+    return this.afterProfile(() => this.http.post<any>(`${this.api}/api/users/addresses`, request))
       .pipe(
         map(response => {
           const address = this.apiResponseService.extractData<Address>(response);
@@ -144,7 +162,7 @@ export class UserService {
    * ✅ UPDATED: Handles ApiResponse without data
    */
   deleteAddress(id: string): Observable<void> {
-    return this.http.delete<any>(`${this.api}/api/users/addresses/${id}`)
+    return this.afterProfile(() => this.http.delete<any>(`${this.api}/api/users/addresses/${id}`))
       .pipe(
         map(response => {
           if (!this.apiResponseService.isSuccess(response)) {
@@ -160,8 +178,8 @@ export class UserService {
    * ✅ UPDATED: Handles ApiResponse without data
    */
   setDefaultAddress(id: string): Observable<void> {
-    return this.http.put<any>(
-      `${this.api}/api/users/addresses/${id}/default`, {})
+    return this.afterProfile(() => this.http.put<any>(
+      `${this.api}/api/users/addresses/${id}/default`, {}))
       .pipe(
         map(response => {
           if (!this.apiResponseService.isSuccess(response)) {
@@ -177,7 +195,7 @@ export class UserService {
    * ✅ UPDATED: Extracts data from ApiResponse<UserPreferences>
    */
   getPreferences(): Observable<UserPreferences> {
-    return this.http.get<any>(`${this.api}/api/users/preferences`)
+    return this.afterProfile(() => this.http.get<any>(`${this.api}/api/users/preferences`))
       .pipe(
         map(response => {
           const preferences = this.apiResponseService.extractData<UserPreferences>(response);
@@ -194,7 +212,7 @@ export class UserService {
    * ✅ UPDATED: Extracts data from ApiResponse<UserPreferences>
    */
   updatePreferences(request: any): Observable<UserPreferences> {
-    return this.http.put<any>(`${this.api}/api/users/preferences`, request)
+    return this.afterProfile(() => this.http.put<any>(`${this.api}/api/users/preferences`, request))
       .pipe(
         map(response => {
           const preferences = this.apiResponseService.extractData<UserPreferences>(response);

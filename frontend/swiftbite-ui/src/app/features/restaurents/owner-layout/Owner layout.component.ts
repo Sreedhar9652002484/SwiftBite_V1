@@ -4,11 +4,12 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AuthService }               from '../../../core/auth/auth.service';
 import { RestaurantService }         from '../../../core/services/restaurant.service';
 import { ThemeToggleComponent }      from '../../../shared/components/theme-toggle/theme-toggle.component';
+import { BrandMarkComponent } from '../../../shared/components/brand-mark/brand-mark.component';
 
 @Component({
   selector: 'app-owner-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, ThemeToggleComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, ThemeToggleComponent, BrandMarkComponent],
   templateUrl: './owner-layout.component.html',
   styleUrls: ['./owner-layout.component.scss'],
 })

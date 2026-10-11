@@ -5,11 +5,12 @@ import { AuthService } from '../../../core/auth/auth.service';
 import { DeliveryService } from '../../../core/services/delivery.service';
 import { NotificationService } from '../../../core/services/notification.service';
 import { ThemeToggleComponent } from '../../../shared/components/theme-toggle/theme-toggle.component';
+import { BrandMarkComponent } from '../../../shared/components/brand-mark/brand-mark.component';
 
 @Component({
   selector: 'app-delivery-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, ThemeToggleComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, ThemeToggleComponent, BrandMarkComponent],
   templateUrl: './delivery-layout.component.html',
   styleUrls: ['./delivery-layout.component.scss'],
 })

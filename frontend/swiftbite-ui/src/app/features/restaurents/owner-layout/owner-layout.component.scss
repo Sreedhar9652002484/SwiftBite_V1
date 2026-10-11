@@ -78,7 +78,17 @@ $sidebar-w   : 230px;
   padding: 18px 18px 14px;
   border-bottom: 1px solid $border;
 
-  .brand-icon { font-size: 20px; }
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--gradient-brand);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
 
   .brand-name {
     font-size: 17px;
