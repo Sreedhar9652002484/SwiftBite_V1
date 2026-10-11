@@ -4,7 +4,7 @@ import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { AuthService } from '../../../core/auth/auth.service';
 import { CommonModule } from '@angular/common';
 import { OAuthService } from 'angular-oauth2-oidc';
-import { environment } from '../../../../environments/environment';
+import { startGoogleLogin } from '../../../core/auth/google-login';
 import { BrandMarkComponent } from '../../../shared/components/brand-mark/brand-mark.component';
 
 @Component({
@@ -62,67 +62,9 @@ export class LoginComponent {
   }
 
 
-loginWithGoogle(): void {
-  // ✅ Go DIRECTLY to Google via Auth Server
-  // Bypasses Auth Server login page completely
-  // returnUrl carries the authorize URL so OAuth2 completes
-  
-  const scope = encodeURIComponent(
-    'openid profile email offline_access swiftbite.user swiftbite.order'
-  );
-  const redirectUri = encodeURIComponent(
-    environment.angularBaseUrl + '/auth/callback'
-  );
-
-  // Build authorize URL manually WITH our own state
-  const state    = this.generateRandom(32);
-  const nonce    = this.generateRandom(32);
-  const verifier = this.generateRandom(64);
-
-  // Store PKCE verifier in sessionStorage BEFORE navigation
-  sessionStorage.setItem('pkce_verifier', verifier);
-  sessionStorage.setItem('oauth_state',   state);
-  sessionStorage.setItem('oauth_nonce',   nonce);
-
-  // Generate code challenge
-  this.generateCodeChallenge(verifier).then(challenge => {
-    const authorizeUrl =
-      `${environment.authServerUrl}/connect/authorize` +
-      `?response_type=code` +
-      `&client_id=swiftbite-angular` +
-      `&scope=${scope}` +
-      `&redirect_uri=${redirectUri}` +
-      `&state=${state}` +
-      `&nonce=${nonce}` +
-      `&code_challenge=${encodeURIComponent(challenge)}` +
-      `&code_challenge_method=S256`;
-
-    // Go DIRECTLY to Google — skips Auth Server login page
-    window.location.href =
-      `${environment.authServerUrl}/Account/ExternalLogin` +
-      `?provider=Google` +
-      `&returnUrl=${encodeURIComponent(authorizeUrl)}`;
-  });
-}
-
-private generateRandom(length: number): string {
-  const array = new Uint8Array(length);
-  crypto.getRandomValues(array);
-  return btoa(String.fromCharCode(...array))
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=/g, '');
-}
-
-private async generateCodeChallenge(verifier: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const data    = encoder.encode(verifier);
-  const digest  = await crypto.subtle.digest('SHA-256', data);
-  return btoa(String.fromCharCode(...new Uint8Array(digest)))
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=/g, '');
-}
+  loginWithGoogle(): void {
+    void startGoogleLogin();
+  }
 
   togglePassword(): void {
     this.showPassword.update(v => !v);

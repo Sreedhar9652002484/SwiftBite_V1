@@ -5,7 +5,14 @@ import { adminGuard } from './core/auth/admin.guard';
 import { deliveryGuard } from './core/auth/delivery.gaurd';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // ── Public landing ────────────────────────────────────
+  {
+    path: '',
+    pathMatch: 'full',
+    loadComponent: () =>
+      import('./features/landing/landing.component')
+        .then(m => m.LandingComponent),
+  },
 
   // ── Auth ──────────────────────────────────────────────
   {

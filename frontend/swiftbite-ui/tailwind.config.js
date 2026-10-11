@@ -14,6 +14,9 @@ module.exports = {
       xl: 'var(--text-xl)',
       '2xl': 'var(--text-2xl)',
       '3xl': 'calc(var(--text-2xl) * 1.25)',
+      '4xl': 'calc(var(--text-2xl) * 1.5)',
+      '5xl': 'calc(var(--text-2xl) * 1.9)',
+      '6xl': 'calc(var(--text-2xl) * 2.3)',
     },
     extend: {
       colors: {

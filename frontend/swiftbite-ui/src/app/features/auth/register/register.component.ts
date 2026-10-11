@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModul
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../core/auth/auth.service';
 import { CommonModule } from '@angular/common';
+import { startGoogleLogin } from '../../../core/auth/google-login';
 import { BrandMarkComponent } from '../../../shared/components/brand-mark/brand-mark.component';
 
 @Component({
@@ -40,6 +41,10 @@ export class RegisterComponent {
     const pass    = group.get('password')?.value;
     const confirm = group.get('confirmPassword')?.value;
     return pass === confirm ? null : { passwordMismatch: true };
+  }
+
+  signUpWithGoogle(): void {
+    void startGoogleLogin();
   }
 
   togglePassword() {

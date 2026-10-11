@@ -12,15 +12,11 @@ import { BrandMarkComponent } from '../../../shared/components/brand-mark/brand-
   standalone: true,
   imports: [CommonModule, BrandMarkComponent],
   template: `
-    <div class="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50
-                flex flex-col items-center justify-center gap-4">
-      <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center
-                  justify-center shadow-lg text-white">
-        <app-brand-mark />
-      </div>
-      <p class="text-gray-600 font-semibold text-lg">Signing you in...</p>
-      <div class="w-8 h-8 border-4 border-orange-500 border-t-transparent
-                  rounded-full animate-spin"></div>
+    <div class="min-h-screen sb-auth-bg flex flex-col items-center justify-center gap-5 p-4">
+      <div class="sb-logo-tile sb-float"><app-brand-mark /></div>
+      <p class="text-ink font-extrabold text-xl tracking-tight">Signing you in…</p>
+      <p class="text-muted text-sm -mt-3">Just a moment while we get things ready</p>
+      <div class="w-9 h-9 border-4 border-primary-soft border-t-primary rounded-full animate-spin"></div>
     </div>
   `
 })
