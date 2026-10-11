@@ -133,8 +133,14 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
           break;
 
         case 404:
-          // ✅ Silence 404s for background calls like profile check
-          if (!req.url.includes('/api/users/profile')) {
+          // ✅ Silence 404s for background calls like profile check. A delivery partner
+          // who hasn't completed their profile has no partner record yet, so background
+          // GETs to /api/delivery/* legitimately 404; the UI prompts them to finish setup.
+          const isUnregisteredPartnerRead =
+            req.method === 'GET' &&
+            req.url.includes('/api/delivery/') &&
+            /partner not found/i.test(getErrorMessage());
+          if (!req.url.includes('/api/users/profile') && !isUnregisteredPartnerRead) {
             toast.error(`🔍 ${getErrorMessage()}`);
           }
           break;

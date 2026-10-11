@@ -61,37 +61,53 @@ export class DeliveryDashboardComponent implements OnInit {
   loading = computed(() => this.loadingProfile() || this.loadingJobs());
 
   ngOnInit(): void {
-    this.loadProfile();
-    this.loadJobs();
+    this.load();
   }
 
-  private loadProfile(): void {
+  /**
+   * A partner record only exists after "Complete Profile" is submitted. Until then every
+   * partner-scoped call (job history, active jobs) answers "Partner not found", so load the
+   * profile first and only request those once it exists. The open job pool needs no profile.
+   */
+  private load(): void {
     this.deliverySvc.getProfile().subscribe({
-      next:  p => { this.profile.set(p); this.loadingProfile.set(false); },
-      error: () => {
+      next: p => {
+        this.profile.set(p);
         this.loadingProfile.set(false);
-        this.error.set('Could not load your profile. Please try again.');
+        this.loadJobs(true);
+      },
+      error: (err: { status?: number }) => {
+        this.loadingProfile.set(false);
+        if (err?.status === 404) {
+          // Not registered yet: the "Finish setting up" banner handles this, no error.
+          this.loadJobs(false);
+        } else {
+          this.error.set('Could not load your profile. Please try again.');
+          this.loadJobs(false);
+        }
       },
     });
   }
 
-  private loadJobs(): void {
-    let pending = 3;
+  private loadJobs(registered: boolean): void {
+    let pending = registered ? 3 : 1;
     const done = () => { if (--pending === 0) this.loadingJobs.set(false); };
     const fail = (msg: string) => {
       this.error.set(msg);
       done();
     };
 
-    this.deliverySvc.getMyJobHistory().subscribe({
-      next: jobs => { this.myJobs.set(jobs); done(); },
-      error: () => fail('Could not load your job history. Please try again.'),
-    });
+    if (registered) {
+      this.deliverySvc.getMyJobHistory().subscribe({
+        next: jobs => { this.myJobs.set(jobs); done(); },
+        error: () => fail('Could not load your job history. Please try again.'),
+      });
 
-    this.deliverySvc.getActiveJobs().subscribe({
-      next: jobs => { this.activeJobs.set(jobs); done(); },
-      error: () => fail('Could not load your active jobs. Please try again.'),
-    });
+      this.deliverySvc.getActiveJobs().subscribe({
+        next: jobs => { this.activeJobs.set(jobs); done(); },
+        error: () => fail('Could not load your active jobs. Please try again.'),
+      });
+    }
 
     this.deliverySvc.getJobs().subscribe({
       next: jobs => { this.availableJobs.set(jobs); done(); },
@@ -103,8 +119,7 @@ export class DeliveryDashboardComponent implements OnInit {
     this.error.set(null);
     this.loadingProfile.set(true);
     this.loadingJobs.set(true);
-    this.loadProfile();
-    this.loadJobs();
+    this.load();
   }
 
   statusClass(status: string): string {
