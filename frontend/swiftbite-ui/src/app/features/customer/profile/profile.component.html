@@ -1,201 +1,124 @@
-<div class="min-h-screen bg-paper">
+<div class="min-h-screen bg-paper sb-page">
 
   <!-- Navbar -->
-  <nav class="bg-surface shadow-sm sticky top-0 z-50 border-b border-border">
-    <div class="max-w-2xl mx-auto px-4 py-3
-                flex items-center gap-3">
-      <button (click)="router.navigate(['/home'])"
-        class="p-2 rounded-lg hover:bg-paper
-               text-muted">
-        ← Home
-      </button>
-      <span class="font-extrabold text-lg text-ink">
-        My Profile
-      </span>
+  <nav class="sticky top-0 z-50 bg-surface/90 backdrop-blur border-b border-border">
+    <div class="max-w-2xl mx-auto px-4 py-3 flex items-center gap-3">
+      <button type="button" (click)="router.navigate(['/home'])" aria-label="Back to home"
+        class="w-10 h-10 rounded-full bg-paper text-ink font-bold hover:bg-border transition-all
+               flex items-center justify-center">←</button>
+      <span class="font-extrabold text-lg text-ink tracking-tight">My profile</span>
     </div>
   </nav>
 
-  <div class="max-w-2xl mx-auto px-4 py-6">
+  <div class="max-w-2xl mx-auto px-4 py-5">
 
     <!-- Error banner -->
-    <div
-      *ngIf="loadError()"
-      class="flex items-center justify-between gap-3 bg-danger/10
-             text-danger rounded-xl px-4 py-3 mb-4 text-sm font-semibold">
+    <div *ngIf="loadError()" role="alert"
+      class="flex items-center justify-between gap-3 bg-danger/10 text-danger rounded-2xl px-4 py-3 mb-4 text-sm font-semibold">
       <span>⚠️ Some of your profile data couldn't be loaded.</span>
-      <button
-        (click)="loadProfile(); loadAddresses()"
-        class="underline hover:no-underline flex-shrink-0">
-        Retry
-      </button>
+      <button type="button" (click)="loadProfile(); loadAddresses()"
+        class="underline hover:no-underline flex-shrink-0">Retry</button>
     </div>
 
-    <!-- Profile Header Card -->
-    <div class="bg-primary rounded-2xl p-5 sm:p-6 mb-6
-                text-white">
-      <div class="flex items-center gap-4 flex-wrap">
-        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white/20 rounded-full
-                    flex items-center justify-center
-                    text-2xl sm:text-3xl font-extrabold border-2
-                    border-white/40">
+    <!-- Header card -->
+    <div class="sb-hero !rounded-3xl p-5 sm:p-6 mb-5">
+      <div class="flex items-center gap-4 flex-wrap relative z-10">
+        <div class="w-16 h-16 bg-white/25 rounded-full flex items-center justify-center
+                    text-3xl font-extrabold border-2 border-white/50">
           {{ getInitial() }}
         </div>
         <div class="min-w-0">
-          <h2 class="font-extrabold text-lg sm:text-xl truncate">
-            {{ profile()?.firstName }}
-            {{ profile()?.lastName }}
+          <h2 class="font-extrabold text-xl truncate tracking-tight">
+            {{ profile()?.firstName }} {{ profile()?.lastName }}
           </h2>
-          <p class="text-white/80 text-sm truncate">
-            {{ authSvc.userEmail }}
-          </p>
-          <p class="text-white/80 text-xs mt-0.5"
-            *ngIf="profile()?.phoneNumber">
-            📱 {{ profile()?.phoneNumber }}
-          </p>
+          <p class="text-white/85 text-sm truncate">{{ authSvc.userEmail }}</p>
+          <p class="text-white/85 text-xs mt-0.5" *ngIf="profile()?.phoneNumber">📱 {{ profile()?.phoneNumber }}</p>
         </div>
-        <button
-          (click)="editingProfile.set(true)"
-          class="ml-auto bg-white/20 hover:bg-white/30
-                 px-3 py-1.5 rounded-lg text-sm
-                 font-semibold transition-all">
+        <button type="button" (click)="editingProfile.set(true)"
+          class="ml-auto bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-bold transition-all">
           ✏️ Edit
         </button>
       </div>
     </div>
 
-    <!-- Tab Switcher -->
-    <div class="flex bg-surface rounded-2xl p-1
-                shadow-sm mb-6 gap-1">
-      @for (tab of ['profile','addresses','preferences'];
-            track tab) {
-        <button
+    <!-- Quick links -->
+    <div class="grid grid-cols-2 gap-3 mb-5">
+      <button type="button" (click)="router.navigate(['/orders'])"
+        class="sb-card sb-card-hover p-4 text-left">
+        <span class="text-2xl">🧾</span>
+        <p class="font-extrabold text-ink text-sm mt-1">My orders</p>
+        <p class="text-muted text-xs">Track &amp; reorder</p>
+      </button>
+      <button type="button" (click)="setTab('addresses')"
+        class="sb-card sb-card-hover p-4 text-left">
+        <span class="text-2xl">📍</span>
+        <p class="font-extrabold text-ink text-sm mt-1">Addresses</p>
+        <p class="text-muted text-xs">{{ addresses().length }} saved</p>
+      </button>
+    </div>
+
+    <!-- Tab switcher -->
+    <div class="flex bg-surface border border-border rounded-full p-1 mb-5 gap-1" role="tablist">
+      @for (tab of ['profile','addresses','preferences']; track tab) {
+        <button type="button" role="tab" [attr.aria-selected]="activeTab() === tab"
           (click)="setTab(tab)"
-          class="flex-1 py-2.5 rounded-xl text-sm
-                 font-semibold transition-all capitalize"
-          [class]="activeTab() === tab
-            ? 'bg-primary text-white shadow-sm'
-            : 'text-muted hover:text-ink'">
-          {{ tab === 'profile'      ? '👤 Profile'      :
-             tab === 'addresses'    ? '📍 Addresses'    :
-                                     '⚙️ Preferences'  }}
+          class="flex-1 py-2.5 rounded-full text-sm font-bold transition-all capitalize"
+          [class]="activeTab() === tab ? 'bg-brand text-white shadow-pop' : 'text-muted hover:text-ink'">
+          {{ tab === 'profile' ? '👤 Profile' : tab === 'addresses' ? '📍 Addresses' : '⚙️ Preferences' }}
         </button>
       }
     </div>
 
     <!-- ── TAB: PROFILE ──────────────────────────── -->
     @if (activeTab() === 'profile') {
-      <div class="bg-surface rounded-2xl shadow-sm p-5 sm:p-6">
+      <div class="sb-card p-5 sm:p-6 sb-rise">
 
         @if (!editingProfile()) {
-          <!-- View Mode -->
           <div class="space-y-4">
             <div class="grid grid-cols-2 gap-4">
               <div>
-                <p class="text-xs text-muted
-                           font-semibold uppercase mb-1">
-                  First Name
-                </p>
-                <p class="font-semibold text-ink">
-                  {{ profile()?.firstName || '—' }}
-                </p>
+                <p class="text-xs text-muted font-extrabold uppercase tracking-wider mb-1">First name</p>
+                <p class="font-bold text-ink">{{ profile()?.firstName || '—' }}</p>
               </div>
               <div>
-                <p class="text-xs text-muted
-                           font-semibold uppercase mb-1">
-                  Last Name
-                </p>
-                <p class="font-semibold text-ink">
-                  {{ profile()?.lastName || '—' }}
-                </p>
+                <p class="text-xs text-muted font-extrabold uppercase tracking-wider mb-1">Last name</p>
+                <p class="font-bold text-ink">{{ profile()?.lastName || '—' }}</p>
               </div>
             </div>
             <div>
-              <p class="text-xs text-muted
-                         font-semibold uppercase mb-1">
-                Email
-              </p>
-              <p class="font-semibold text-ink">
-                {{ authSvc.userEmail }}
-              </p>
+              <p class="text-xs text-muted font-extrabold uppercase tracking-wider mb-1">Email</p>
+              <p class="font-bold text-ink break-all">{{ authSvc.userEmail }}</p>
             </div>
             <div>
-              <p class="text-xs text-muted
-                         font-semibold uppercase mb-1">
-                Phone
-              </p>
-              <p class="font-semibold text-ink">
-                {{ profile()?.phoneNumber || 'Not set' }}
-              </p>
+              <p class="text-xs text-muted font-extrabold uppercase tracking-wider mb-1">Phone</p>
+              <p class="font-bold text-ink">{{ profile()?.phoneNumber || 'Not set' }}</p>
             </div>
-            <button
-              (click)="editingProfile.set(true)"
-              class="w-full py-3 bg-primary text-white
-                     rounded-xl font-bold hover:bg-primary-hover
-                     transition-all">
-              ✏️ Edit Profile
+            <button type="button" (click)="editingProfile.set(true)" class="sb-btn sb-btn--primary w-full">
+              ✏️ Edit profile
             </button>
           </div>
-
         } @else {
-          <!-- Edit Mode -->
-          <h3 class="font-bold text-ink mb-4">
-            Edit Profile
-          </h3>
+          <h3 class="font-extrabold text-ink mb-4">Edit profile</h3>
           <div class="space-y-3">
             <div class="grid grid-cols-2 gap-3">
               <div>
-                <label class="text-xs text-muted
-                               font-semibold mb-1 block">
-                  First Name
-                </label>
-                <input [(ngModel)]="profileForm.firstName"
-                  placeholder="First Name"
-                  class="w-full px-4 py-2.5 border
-                         border-border rounded-xl text-sm
-                         bg-surface text-ink
-                         outline-none focus:border-primary"/>
+                <label class="text-xs text-muted font-bold mb-1 block">First name</label>
+                <input [(ngModel)]="profileForm.firstName" placeholder="First name" class="sb-field"/>
               </div>
               <div>
-                <label class="text-xs text-muted
-                               font-semibold mb-1 block">
-                  Last Name
-                </label>
-                <input [(ngModel)]="profileForm.lastName"
-                  placeholder="Last Name"
-                  class="w-full px-4 py-2.5 border
-                         border-border rounded-xl text-sm
-                         bg-surface text-ink
-                         outline-none focus:border-primary"/>
+                <label class="text-xs text-muted font-bold mb-1 block">Last name</label>
+                <input [(ngModel)]="profileForm.lastName" placeholder="Last name" class="sb-field"/>
               </div>
             </div>
             <div>
-              <label class="text-xs text-muted
-                             font-semibold mb-1 block">
-                Phone Number
-              </label>
-              <input [(ngModel)]="profileForm.phoneNumber"
-                placeholder="+91 98765 43210"
-                class="w-full px-4 py-2.5 border
-                       border-border rounded-xl text-sm
-                       bg-surface text-ink
-                       outline-none focus:border-primary"/>
+              <label class="text-xs text-muted font-bold mb-1 block">Phone number</label>
+              <input [(ngModel)]="profileForm.phoneNumber" placeholder="+91 98765 43210" class="sb-field"/>
             </div>
             <div class="flex gap-3 pt-2">
-              <button (click)="saveProfile()"
-                [disabled]="saving()"
-                class="flex-1 py-3 bg-primary text-white
-                       rounded-xl font-bold
-                       hover:bg-primary-hover transition-all
-                       disabled:opacity-60">
-                {{ saving() ? 'Saving...' : '✅ Save' }}
-              </button>
-              <button
-                (click)="editingProfile.set(false)"
-                class="flex-1 py-3 bg-paper
-                       text-muted rounded-xl font-semibold
-                       hover:bg-border/60 transition-all">
-                Cancel
-              </button>
+              <button type="button" (click)="saveProfile()" [disabled]="saving()"
+                class="sb-btn sb-btn--primary flex-1">{{ saving() ? 'Saving...' : '✅ Save' }}</button>
+              <button type="button" (click)="editingProfile.set(false)"
+                class="sb-btn sb-btn--ghost flex-1">Cancel</button>
             </div>
           </div>
         }
@@ -204,60 +127,35 @@
 
     <!-- ── TAB: ADDRESSES ────────────────────────── -->
     @if (activeTab() === 'addresses') {
-      <div class="space-y-3">
+      <div class="space-y-3 sb-rise">
 
         @for (addr of addresses(); track addr.id) {
-          <div class="bg-surface rounded-2xl shadow-sm p-4">
+          <div class="sb-card p-4">
             <div class="flex items-start justify-between gap-3 flex-wrap">
               <div class="flex items-start gap-3 min-w-0">
-                <div class="w-10 h-10 bg-primary-soft
-                            rounded-xl flex items-center
-                            justify-center text-xl flex-shrink-0">
-                  {{ addr.addressType === 'Home' ? '🏠' :
-                     addr.addressType === 'Office'? '🏢' :
-                                                   '📍' }}
+                <div class="w-11 h-11 bg-primary-soft rounded-full flex items-center justify-center text-xl flex-shrink-0">
+                  {{ addr.addressType === 'Home' ? '🏠' : addr.addressType === 'Office' ? '🏢' : '📍' }}
                 </div>
                 <div class="min-w-0">
                   <div class="flex items-center gap-2 flex-wrap">
-                    <p class="font-bold text-ink text-sm">
-                      {{ addr.label || addr.addressType }}
-                    </p>
+                    <p class="font-extrabold text-ink text-sm">{{ addr.label || addr.addressType }}</p>
                     @if (addr.isDefault) {
-                      <span class="text-xs bg-accent-soft
-                                   text-accent px-2 py-0.5
-                                   rounded-full font-semibold">
-                        Default
-                      </span>
+                      <span class="text-xs bg-accent-soft text-accent px-2 py-0.5 rounded-full font-bold">Default</span>
                     }
                   </div>
-                  <p class="text-muted text-sm mt-0.5">
-                    {{ addr.fullAddress }}
-                  </p>
-                  <p class="text-muted text-xs">
-                    {{ addr.city }}, {{ addr.pinCode }}
-                  </p>
+                  <p class="text-muted text-sm mt-0.5">{{ addr.fullAddress }}</p>
+                  <p class="text-muted text-xs">{{ addr.city }}, {{ addr.pinCode }}</p>
                 </div>
               </div>
-              <!-- Actions -->
-              <div class="flex gap-2 flex-shrink-0">
+              <div class="flex gap-1 flex-shrink-0">
                 @if (!addr.isDefault) {
-                  <button (click)="setDefault(addr.id)"
-                    [disabled]="!!addressActionId()"
-                    class="text-xs text-primary
-                           hover:text-primary-hover
-                           font-semibold px-2 py-1
-                           rounded-lg hover:bg-primary-soft
-                           disabled:opacity-50">
-                    {{ addressActionId() === addr.id ? 'Setting…' : 'Set Default' }}
+                  <button type="button" (click)="setDefault(addr.id)" [disabled]="!!addressActionId()"
+                    class="text-xs text-primary font-bold px-3 py-1.5 rounded-full hover:bg-primary-soft disabled:opacity-50">
+                    {{ addressActionId() === addr.id ? 'Setting…' : 'Set default' }}
                   </button>
                 }
-                <button (click)="deleteAddress(addr.id)"
-                  [disabled]="!!addressActionId()"
-                  class="text-xs text-danger
-                         hover:opacity-80 font-semibold
-                         px-2 py-1 rounded-lg
-                         hover:bg-danger-soft
-                         disabled:opacity-50">
+                <button type="button" (click)="deleteAddress(addr.id)" [disabled]="!!addressActionId()"
+                  class="text-xs text-danger font-bold px-3 py-1.5 rounded-full hover:bg-danger-soft disabled:opacity-50">
                   {{ addressActionId() === addr.id ? 'Deleting…' : 'Delete' }}
                 </button>
               </div>
@@ -265,89 +163,39 @@
           </div>
         }
 
-        <!-- Add Address Button -->
         @if (!showAddressForm()) {
-          <button (click)="showAddressForm.set(true)"
-            class="w-full py-4 border-2 border-dashed
-                   border-border rounded-2xl text-muted
-                   text-sm font-semibold hover:border-primary/50
-                   hover:text-primary transition-all">
-            + Add New Address
+          <button type="button" (click)="showAddressForm.set(true)"
+            class="w-full py-4 border-2 border-dashed border-border rounded-2xl text-muted text-sm font-bold
+                   hover:border-primary hover:text-primary transition-all">
+            + Add new address
           </button>
         }
 
-        <!-- Address Form -->
         @if (showAddressForm()) {
-          <div class="bg-surface rounded-2xl shadow-sm p-5">
-            <h3 class="font-bold text-ink mb-4">
-              Add New Address
-            </h3>
+          <div class="sb-card p-5">
+            <h3 class="font-extrabold text-ink mb-4">Add new address</h3>
             <div class="space-y-3">
-              <input [(ngModel)]="addressForm.label"
-                placeholder="Label (e.g. Home, Office)"
-                class="w-full px-4 py-2.5 border
-                       border-border rounded-xl text-sm
-                       bg-surface text-ink
-                       outline-none focus:border-primary"/>
-              <input [(ngModel)]="addressForm.fullAddress"
-                placeholder="Full Address"
-                class="w-full px-4 py-2.5 border
-                       border-border rounded-xl text-sm
-                       bg-surface text-ink
-                       outline-none focus:border-primary"/>
-              <input [(ngModel)]="addressForm.street"
-                placeholder="Street"
-                class="w-full px-4 py-2.5 border
-                       border-border rounded-xl text-sm
-                       bg-surface text-ink
-                       outline-none focus:border-primary"/>
+              <input [(ngModel)]="addressForm.label" placeholder="Label (e.g. Home, Office)" class="sb-field"/>
+              <input [(ngModel)]="addressForm.fullAddress" placeholder="Full address" class="sb-field"/>
+              <input [(ngModel)]="addressForm.street" placeholder="Street" class="sb-field"/>
               <div class="grid grid-cols-2 gap-3">
-                <input [(ngModel)]="addressForm.city"
-                  placeholder="City"
-                  class="w-full px-4 py-2.5 border
-                         border-border rounded-xl text-sm
-                         bg-surface text-ink
-                         outline-none focus:border-primary"/>
-                <input [(ngModel)]="addressForm.pinCode"
-                  placeholder="PIN Code"
-                  class="w-full px-4 py-2.5 border
-                         border-border rounded-xl text-sm
-                         bg-surface text-ink
-                         outline-none focus:border-primary"/>
+                <input [(ngModel)]="addressForm.city" placeholder="City" class="sb-field"/>
+                <input [(ngModel)]="addressForm.pinCode" placeholder="PIN code" class="sb-field"/>
               </div>
-              <!-- Address Type -->
               <div class="flex gap-2 flex-wrap">
                 @for (type of addressTypes; track type) {
-                  <button
-                    (click)="addressForm.addressType = type"
-                    class="flex-1 min-w-[6rem] py-2 rounded-xl text-sm
-                           font-semibold border-2 transition-all"
-                    [class]="addressForm.addressType === type
-                      ? 'border-primary bg-primary-soft
-                         text-primary'
-                      : 'border-border text-muted'">
-                    {{ type === 'Home'   ? '🏠 Home'   :
-                       type === 'Office' ? '🏢 Office' :
-                                          '📍 Other'  }}
+                  <button type="button" (click)="addressForm.addressType = type"
+                    class="sb-chip flex-1 min-w-[6rem] justify-center"
+                    [class.is-active]="addressForm.addressType === type">
+                    {{ type === 'Home' ? '🏠 Home' : type === 'Office' ? '🏢 Office' : '📍 Other' }}
                   </button>
                 }
               </div>
               <div class="flex gap-3">
-                <button (click)="saveAddress()"
-                  [disabled]="saving()"
-                  class="flex-1 py-3 bg-primary
-                         text-white rounded-xl font-bold
-                         hover:bg-primary-hover transition-all
-                         disabled:opacity-60">
-                  {{ saving() ? 'Saving...' : '✅ Save' }}
-                </button>
-                <button
-                  (click)="showAddressForm.set(false)"
-                  class="flex-1 py-3 bg-paper
-                         text-muted rounded-xl
-                         font-semibold hover:bg-border/60">
-                  Cancel
-                </button>
+                <button type="button" (click)="saveAddress()" [disabled]="saving()"
+                  class="sb-btn sb-btn--primary flex-1">{{ saving() ? 'Saving...' : '✅ Save' }}</button>
+                <button type="button" (click)="showAddressForm.set(false)"
+                  class="sb-btn sb-btn--ghost flex-1">Cancel</button>
               </div>
             </div>
           </div>
@@ -357,127 +205,81 @@
 
     <!-- ── TAB: PREFERENCES ──────────────────────── -->
     @if (activeTab() === 'preferences') {
-      <div class="bg-surface rounded-2xl shadow-sm p-5 sm:p-6">
-        <h3 class="font-bold text-ink mb-5">
-          Food Preferences
-        </h3>
+      <div class="sb-card p-5 sm:p-6 sb-rise">
+        <h3 class="font-extrabold text-ink mb-5">Food preferences</h3>
 
-        <!-- Dietary -->
         <div class="mb-5">
-          <p class="text-xs text-muted font-semibold
-                     uppercase mb-2">
-            Dietary Preference
-          </p>
-<div class="grid grid-cols-2 gap-2">
-  @for (d of dietaryOptions; track d) {
-    <button
-      (click)="prefForm.dietaryPreference = d.value"
-      class="py-2.5 rounded-xl text-sm
-             font-semibold border-2 transition-all"
-      [class]="prefForm.dietaryPreference === d.value
-        ? 'border-primary bg-primary-soft text-primary'
-        : 'border-border text-muted'">
-
-      {{ d.label }}
-
-    </button>
-  }
-</div>
-        </div>
-
-        <!-- Cuisines -->
-        <div class="mb-5">
-          <p class="text-xs text-muted font-semibold
-                     uppercase mb-2">
-            Favourite Cuisines
-          </p>
-          <div class="flex flex-wrap gap-2">
-            @for (c of cuisineOptions; track c) {
-              <button
-                (click)="toggleCuisine(c)"
-                class="px-3 py-1.5 rounded-full text-sm
-                       font-semibold border-2 transition-all"
-                [class]="hasCuisine(c)
-                  ? 'border-primary bg-primary-soft
-                     text-primary'
-                  : 'border-border text-muted
-                     hover:border-primary/40'">
-                {{ c }}
+          <p class="text-xs text-muted font-extrabold uppercase tracking-wider mb-2">Dietary preference</p>
+          <div class="grid grid-cols-2 gap-2">
+            @for (d of dietaryOptions; track d) {
+              <button type="button" (click)="prefForm.dietaryPreference = d.value"
+                class="sb-chip justify-center !py-2.5"
+                [class.is-active]="prefForm.dietaryPreference === d.value">
+                {{ d.label }}
               </button>
             }
           </div>
         </div>
 
-        <!-- Notifications -->
+        <div class="mb-5">
+          <p class="text-xs text-muted font-extrabold uppercase tracking-wider mb-2">Favourite cuisines</p>
+          <div class="flex flex-wrap gap-2">
+            @for (c of cuisineOptions; track c) {
+              <button type="button" (click)="toggleCuisine(c)" class="sb-chip"
+                [class.is-active]="hasCuisine(c)">{{ c }}</button>
+            }
+          </div>
+        </div>
+
         <div class="mb-6">
-          <p class="text-xs text-muted font-semibold
-                     uppercase mb-3">
-            Notifications
-          </p>
+          <p class="text-xs text-muted font-extrabold uppercase tracking-wider mb-3">Notifications</p>
           <div class="space-y-3">
             @for (n of [
-              { key: 'emailNotifications',
-                label: '📧 Email Notifications' },
-              { key: 'pushNotifications',
-                label: '🔔 Push Notifications' },
-              { key: 'smsNotifications',
-                label: '📱 SMS Notifications' }
+              { key: 'emailNotifications', label: '📧 Email notifications' },
+              { key: 'pushNotifications',  label: '🔔 Push notifications' },
+              { key: 'smsNotifications',   label: '📱 SMS notifications' }
             ]; track n.key) {
-              <div class="flex items-center
-                          justify-between">
-                <span class="text-sm text-ink
-                             font-medium">
-                  {{ n.label }}
-                </span>
-                <button
-                  (click)="$any(prefForm)[n.key] =
-                            !$any(prefForm)[n.key]"
-                  class="w-12 h-6 rounded-full
-                         transition-all relative"
-                  [class]="$any(prefForm)[n.key]
-                    ? 'bg-primary'
-                    : 'bg-border'">
-                  <div class="w-5 h-5 bg-white rounded-full
-                              absolute top-0.5 transition-all
-                              shadow-sm"
-                    [class]="$any(prefForm)[n.key]
-                      ? 'right-0.5' : 'left-0.5'">
-                  </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-ink font-semibold">{{ n.label }}</span>
+                <button type="button" role="switch" [attr.aria-checked]="!!$any(prefForm)[n.key]"
+                  [attr.aria-label]="n.label"
+                  (click)="$any(prefForm)[n.key] = !$any(prefForm)[n.key]"
+                  class="w-12 h-7 rounded-full transition-all relative"
+                  [class]="$any(prefForm)[n.key] ? 'bg-primary' : 'bg-border'">
+                  <span class="w-5 h-5 bg-white rounded-full absolute top-1 transition-all shadow-card"
+                    [class]="$any(prefForm)[n.key] ? 'right-1' : 'left-1'"></span>
                 </button>
               </div>
             }
           </div>
         </div>
 
-        <button (click)="savePreferences()"
-          [disabled]="saving()"
-          class="w-full py-3 bg-primary text-white
-                 rounded-xl font-bold hover:bg-primary-hover
-                 transition-all disabled:opacity-60">
-          {{ saving() ? 'Saving...' : '✅ Save Preferences' }}
+        <button type="button" (click)="savePreferences()" [disabled]="saving()"
+          class="sb-btn sb-btn--primary w-full">
+          {{ saving() ? 'Saving...' : '✅ Save preferences' }}
         </button>
       </div>
     }
 
     <!-- Become a Partner -->
     <div class="mt-6">
-      <button (click)="router.navigate(['/become-partner'])"
-        class="w-full py-3 border-2 border-primary/30
-               text-primary rounded-xl font-semibold
+      <button type="button" (click)="router.navigate(['/become-partner'])"
+        class="w-full py-3.5 border-2 border-primary/30 text-primary rounded-2xl font-bold
                hover:bg-primary-soft transition-all">
-        🤝 Become a Restaurant or Delivery Partner
+        🤝 Become a restaurant or delivery partner
       </button>
     </div>
 
-    <!-- Logout Button -->
+    <!-- Logout -->
     <div class="mt-3">
-      <button (click)="authSvc.logout()"
-        class="w-full py-3 border-2 border-danger/30
-               text-danger rounded-xl font-semibold
+      <button type="button" (click)="authSvc.logout()"
+        class="w-full py-3.5 border-2 border-danger/30 text-danger rounded-2xl font-bold
                hover:bg-danger-soft transition-all">
         🚪 Logout
       </button>
     </div>
 
   </div>
+
+  <app-bottom-nav />
 </div>

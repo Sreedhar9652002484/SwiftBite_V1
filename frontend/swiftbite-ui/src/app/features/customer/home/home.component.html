@@ -1,154 +1,166 @@
-<div class="min-h-screen bg-paper">
+<div class="min-h-screen bg-paper sb-page">
 
   <app-site-header />
 
   <!-- Hero -->
-  <div class="bg-primary text-white">
-    <div class="max-w-6xl mx-auto px-4 py-8 sm:py-10">
-      <h1 class="text-xl sm:text-2xl font-extrabold mb-1.5">
-        Hey {{ authService.firstName || 'there' }}! 👋
-      </h1>
-      <p class="text-white/85 text-sm sm:text-md">
-        What would you like to eat today?
+  <section class="sb-hero">
+    <div class="max-w-6xl mx-auto px-4 pt-7 pb-10 sm:pt-10 sm:pb-14 relative z-10">
+      <p class="text-white/85 text-sm font-semibold">
+        Hey {{ authService.firstName || 'there' }} 👋
       </p>
+      <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight mt-1 max-w-xl tracking-tight">
+        Hungry? Get your favourites delivered fast.
+      </h1>
 
-      <div class="mt-4 flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-xl px-4 py-2.5 max-w-md">
-        <span class="text-white/70">🔍</span>
+      <div class="sb-search mt-5 max-w-xl">
+        <span aria-hidden="true">🔍</span>
         <input type="text"
-          placeholder="Search for food, restaurants..."
-          class="bg-transparent text-sm outline-none w-full text-white placeholder-white/60"
+          placeholder="Search restaurants or dishes"
+          aria-label="Search restaurants or dishes"
           (input)="onSearch($any($event.target).value)"/>
       </div>
+
+      <div class="mt-4 flex flex-wrap gap-2 text-xs font-bold">
+        <span class="bg-white/20 rounded-full px-3 py-1.5">⚡ 30 min delivery</span>
+        <span class="bg-white/20 rounded-full px-3 py-1.5">🛵 Live order tracking</span>
+        <span class="bg-white/20 rounded-full px-3 py-1.5">💳 Secure payments</span>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="max-w-6xl mx-auto px-4 py-6 sm:py-8">
+  <div class="max-w-6xl mx-auto px-4 -mt-5 sm:-mt-6 relative z-10">
 
-    <!-- API Status Banner -->
+    <!-- API status banner -->
     <div *ngIf="error()"
-      class="mb-4 p-3 bg-warning/10 border border-warning/40
-             rounded-xl text-warning text-sm flex items-center gap-2">
-      ⚠️ {{ error() }} —
-      <span class="font-semibold">
-        Start RestaurantService to see live data!
-      </span>
+      class="mb-4 p-3 bg-warning/10 border border-warning/40 rounded-xl text-warning text-sm">
+      ⚠️ {{ error() }}
     </div>
 
-    <!-- Category Pills -->
-    <div class="flex gap-2.5 overflow-x-auto pb-2 mb-6 sm:mb-8 -mx-4 px-4 sm:mx-0 sm:px-0">
-      @for (cat of categories; track cat.name) {
-        <button
-          class="flex flex-col items-center gap-1 flex-shrink-0
-                 bg-surface rounded-2xl px-4 py-2.5 shadow-sm
-                 hover:shadow-md border-2 border-transparent
-                 hover:border-primary/40 transition-all"
-          (click)="filterByCuisine(cat.cuisine)">
-          <span class="text-xl">{{ cat.emoji }}</span>
-          <span class="text-xs font-semibold text-ink whitespace-nowrap">
-            {{ cat.name }}
-          </span>
-        </button>
-      }
-    </div>
+    <!-- Categories -->
+    <section class="sb-card p-3 sm:p-4 mb-6" aria-label="Cuisines">
+      <div class="flex gap-3 sm:gap-4 overflow-x-auto sb-no-scrollbar">
+        @for (cat of categories; track cat.name) {
+          <button type="button"
+            class="flex flex-col items-center gap-1.5 flex-shrink-0 w-16 sm:w-20 group"
+            [attr.aria-pressed]="activeCuisine() === cat.cuisine"
+            (click)="filterByCuisine(cat.cuisine)">
+            <span class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center
+                         text-2xl sm:text-3xl border-2 transition-all group-hover:scale-105"
+              [class]="activeCuisine() === cat.cuisine
+                ? 'bg-primary-soft border-primary shadow-pop'
+                : 'bg-paper border-transparent'">
+              {{ cat.emoji }}
+            </span>
+            <span class="text-xs font-bold whitespace-nowrap"
+              [class]="activeCuisine() === cat.cuisine ? 'text-primary' : 'text-ink'">
+              {{ cat.name }}
+            </span>
+          </button>
+        }
+      </div>
+    </section>
 
     <!-- Loading -->
     <div *ngIf="loading()"
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
       @for (i of [1,2,3,4,5,6]; track i) {
-        <div class="bg-surface rounded-2xl shadow-sm overflow-hidden animate-pulse">
-          <div class="h-40 sm:h-44 bg-border"></div>
-          <div class="p-4 space-y-2">
-            <div class="h-4 bg-border rounded w-3/4"></div>
-            <div class="h-3 bg-border/60 rounded w-1/2"></div>
+        <div class="sb-card overflow-hidden">
+          <div class="sb-skeleton h-44 !rounded-none"></div>
+          <div class="p-4 space-y-2.5">
+            <div class="sb-skeleton h-4 w-3/4"></div>
+            <div class="sb-skeleton h-3 w-1/2"></div>
           </div>
         </div>
       }
     </div>
 
-    <!-- Restaurant Grid -->
-    <div *ngIf="!loading()">
-      <h2 class="text-lg sm:text-xl font-extrabold text-ink mb-4">
-        Restaurants near you
-        <span class="text-muted font-normal text-sm ml-2">
-          ({{ restaurants().length }} found)
-        </span>
-      </h2>
+    <!-- Restaurants -->
+    <section *ngIf="!loading()">
+      <div class="flex items-end justify-between gap-3 mb-4 flex-wrap">
+        <h2 class="text-lg sm:text-xl font-extrabold text-ink tracking-tight">
+          Restaurants near you
+          <span class="text-muted font-semibold text-sm ml-1">{{ visible().length }}</span>
+        </h2>
+        <div class="flex gap-2">
+          <button type="button" class="sb-chip" [class.is-active]="openOnly()"
+            (click)="openOnly.set(!openOnly())">🟢 Open now</button>
+          <button *ngIf="activeCuisine() !== null" type="button" class="sb-chip"
+            (click)="activeCuisine.set(null)">✕ Clear filter</button>
+        </div>
+      </div>
 
-      <!-- Empty State -->
-      <div *ngIf="restaurants().length === 0"
-        class="text-center py-16 sm:py-20 text-muted">
-        <div class="text-5xl sm:text-6xl mb-4">🍽️</div>
-        <p class="text-lg sm:text-xl font-semibold">
-          No restaurants found
-        </p>
-        <p class="text-sm mt-2">
-          Try a different city or cuisine
-        </p>
+      <!-- Empty state -->
+      <div *ngIf="visible().length === 0" class="sb-card text-center py-14 px-6">
+        <div class="text-5xl mb-3">🍽️</div>
+        <p class="text-lg font-extrabold text-ink">No restaurants found</p>
+        <p class="text-sm text-muted mt-1">Try a different cuisine or clear the filters.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        @for (r of restaurants(); track r.id) {
-          <div
-            class="bg-surface rounded-2xl shadow-sm hover:shadow-lg
-                   transition-all cursor-pointer overflow-hidden
-                   border border-border"
-            (click)="goToRestaurant(r.id)">
+        @for (r of visible(); track r.id) {
+          <article class="sb-card sb-card-hover sb-rise overflow-hidden cursor-pointer"
+            tabindex="0" role="link" [attr.aria-label]="r.name"
+            (click)="goToRestaurant(r.id)"
+            (keydown.enter)="goToRestaurant(r.id)">
 
-            <!-- Image / Emoji fallback -->
-            <div class="relative h-40 sm:h-44 overflow-hidden">
+            <div class="relative h-44 overflow-hidden">
               <img *ngIf="r.bannerUrl; else emojiBlock"
-                [src]="r.bannerUrl" [alt]="r.name"
-                class="w-full h-full object-cover"/>
+                [src]="r.bannerUrl" [alt]="r.name" loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"/>
               <ng-template #emojiBlock>
-                <div class="w-full h-full bg-primary-soft
-                            flex items-center justify-center">
-                  <span class="text-6xl">
-                    {{ getEmoji(r.cuisineType) }}
-                  </span>
+                <div class="w-full h-full bg-primary-soft flex items-center justify-center">
+                  <span class="text-6xl">{{ getEmoji(r.cuisineType) }}</span>
                 </div>
               </ng-template>
 
-              <!-- Closed overlay -->
-              <div *ngIf="!r.isOpen"
-                class="absolute inset-0 bg-black/50
-                       flex items-center justify-center">
-                <span class="text-white font-bold text-lg">
-                  🔴 Closed
-                </span>
-              </div>
+              <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent"></div>
 
-              <!-- Rating badge -->
-              <div class="absolute top-3 left-3 text-white text-xs
-                          font-bold px-2 py-1 rounded-lg"
+              <span class="absolute bottom-3 left-3 bg-white text-ink text-xs font-extrabold
+                           px-2.5 py-1 rounded-full shadow-card">
+                ⏱ {{ r.averageDeliveryTimeMinutes }} min
+              </span>
+
+              <span class="absolute top-3 right-3 text-white text-xs font-extrabold px-2.5 py-1 rounded-full"
                 [style.background]="getRatingColor(r.averageRating)">
-                ⭐ {{ r.averageRating | number:'1.1-1' }}
+                ★ {{ r.averageRating | number:'1.1-1' }}
+              </span>
+
+              <div *ngIf="!r.isOpen"
+                class="absolute inset-0 bg-black/55 flex items-center justify-center">
+                <span class="text-white font-extrabold bg-black/40 px-4 py-1.5 rounded-full">Closed now</span>
               </div>
             </div>
 
             <div class="p-4">
-              <h3 class="font-extrabold text-ink text-base">
-                {{ r.name }}
-              </h3>
-              <p class="text-muted text-xs mt-0.5">
-                {{ r.cuisineType }}
-              </p>
-              <div class="flex items-center gap-3 mt-3 text-sm">
-                <span class="text-muted">
-                  ⏱ {{ r.averageDeliveryTimeMinutes }} min
-                </span>
-                <span class="text-border">•</span>
-                <span class="text-muted">
-                  ₹{{ r.minimumOrderAmount }} min
-                </span>
-                <span class="text-border">•</span>
-                <span class="text-muted">
+              <div class="flex items-start justify-between gap-2">
+                <h3 class="font-extrabold text-ink text-base leading-snug">{{ r.name }}</h3>
+                <span class="text-xs text-muted font-semibold whitespace-nowrap mt-0.5">
                   {{ r.totalRatings }} ratings
                 </span>
               </div>
+              <p class="text-muted text-xs mt-0.5">
+                {{ getEmoji(r.cuisineType) }} {{ getCuisineName(r.cuisineType) }}
+              </p>
+              <div class="flex items-center justify-between mt-3 pt-3 border-t border-border text-xs font-semibold">
+                <span class="text-muted">Min order ₹{{ r.minimumOrderAmount }}</span>
+                <span class="text-primary">View menu →</span>
+              </div>
             </div>
-          </div>
+          </article>
         }
       </div>
-    </div>
+    </section>
   </div>
+
+  <!-- Floating cart -->
+  @if (cartSvc.itemCount() > 0) {
+    <button type="button" (click)="router.navigate(['/checkout'])"
+      class="sb-btn sb-btn--primary fixed z-[55] left-4 right-4 sm:left-auto sm:right-6 sm:w-80
+             bottom-20 lg:bottom-6 justify-between">
+      <span>🛒 {{ cartSvc.itemCount() }} item{{ cartSvc.itemCount() > 1 ? 's' : '' }}</span>
+      <span>View cart · ₹{{ cartSvc.total() }}</span>
+    </button>
+  }
+
+  <app-bottom-nav />
 </div>

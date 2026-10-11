@@ -3,6 +3,7 @@ import { Component, OnInit, inject, signal }
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BottomNavComponent } from '../../../shared/components/bottom-nav/bottom-nav.component';
 import { dietaryPreference, UserService }
   from '../../../core/services/user.service';
 import { AuthService }
@@ -15,7 +16,7 @@ import { ConfirmService }
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, BottomNavComponent],
   templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit {

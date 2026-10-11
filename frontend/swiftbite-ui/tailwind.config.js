@@ -33,8 +33,15 @@ module.exports = {
         border: 'var(--color-border)',
         muted: 'var(--color-text-muted)',
       },
+      boxShadow: {
+        card: 'var(--shadow-card)',
+        pop: 'var(--shadow-pop)',
+      },
+      backgroundImage: {
+        brand: 'var(--gradient-brand)',
+      },
       fontFamily: {
-        sans: ['Nunito', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Nunito', 'system-ui', 'sans-serif'],
       }
     },
   },

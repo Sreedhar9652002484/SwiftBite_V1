@@ -5,8 +5,9 @@
 
 // ── Navbar
 .tracking-nav {
-  background: var(--color-surface);
-  box-shadow: var(--shadow-sm);
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -21,8 +22,8 @@
   }
 
   &__back {
-    padding: 0.4rem 0.75rem;
-    border-radius: var(--radius-sm);
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
     background: var(--color-paper);
     border: none;
     cursor: pointer;
@@ -81,7 +82,7 @@
 .cancelled-card {
   background: var(--color-danger-soft);
   border: 1px solid var(--color-danger);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: 2rem 1.5rem;
   text-align: center;
 
@@ -93,11 +94,17 @@
 // ── Main tracking card
 .tracking-card {
   background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+
+  &__top {
+    background: var(--gradient-brand);
+    position: relative;
+  }
 
   &__header {
-    background: var(--color-primary);
     padding: 1.5rem 1.25rem 1rem;
     display: flex;
     align-items: flex-start;
@@ -151,8 +158,7 @@
 
 // ── Progress bar
 .progress-bar {
-  padding: 0.75rem 1.25rem 1rem;
-  background: var(--color-primary);
+  padding: 0.75rem 1.25rem 1.25rem;
 
   &__track {
     background: rgba(255,255,255,0.3);
@@ -178,6 +184,7 @@
 
 // ── Map section
 .map-section {
+  border-radius: 0;
   border-bottom: 1px solid var(--color-border);
   position: relative;
   z-index: 1;
@@ -318,7 +325,7 @@
   flex-shrink: 0;
   transition: all 0.4s;
 
-  &--active  { background: var(--color-primary); box-shadow: 0 4px 14px rgba(230,57,70,0.4); transform: scale(1.1); }
+  &--active  { background: var(--gradient-brand); box-shadow: var(--shadow-pop); transform: scale(1.1); }
   &--done    { background: var(--color-accent); color: #fff; font-size: var(--text-sm); font-weight: 700; }
   &--pending { background: var(--color-paper); }
 }
@@ -379,8 +386,9 @@
 // ── Details card
 .details-card {
   background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
   padding: 1.25rem;
 
   &__title {
@@ -404,7 +412,7 @@
     width: 2.6rem;
     height: 2.6rem;
     background: var(--color-primary-soft);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -505,8 +513,8 @@
 .btn {
   flex: 1;
   min-width: 8rem;
-  padding: 0.8rem 0.5rem;
-  border-radius: var(--radius-md);
+  padding: 0.9rem 0.5rem;
+  border-radius: var(--radius-xl);
   font-size: var(--text-sm);
   font-weight: 700;
   border: none;
@@ -514,9 +522,10 @@
   transition: all 0.2s;
 
   &--primary {
-    background: var(--color-primary);
+    background: var(--gradient-brand);
     color: #fff;
-    &:hover { background: var(--color-primary-hover); }
+    box-shadow: var(--shadow-pop);
+    &:hover { filter: brightness(1.05); }
   }
 
   &--secondary {

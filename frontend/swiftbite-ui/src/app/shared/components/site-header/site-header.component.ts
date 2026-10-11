@@ -1,6 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../../core/auth/auth.service';
 import { CartService } from '../../../core/services/cart.service';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
@@ -10,7 +10,7 @@ import { BrandMarkComponent } from '../brand-mark/brand-mark.component';
 @Component({
   selector: 'app-site-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, ThemeToggleComponent, NotificationBellComponent, BrandMarkComponent],
+  imports: [CommonModule, RouterLink, RouterLinkActive, ThemeToggleComponent, NotificationBellComponent, BrandMarkComponent],
   templateUrl: './site-header.component.html',
   styleUrl: './site-header.component.scss',
 })
@@ -18,18 +18,7 @@ export class SiteHeaderComponent {
   auth = inject(AuthService);
   cart = inject(CartService);
 
-  menuOpen = signal(false);
-
-  toggleMenu(): void {
-    this.menuOpen.update(v => !v);
-  }
-
-  closeMenu(): void {
-    this.menuOpen.set(false);
-  }
-
   logout(): void {
-    this.closeMenu();
     this.auth.logout();
   }
 }

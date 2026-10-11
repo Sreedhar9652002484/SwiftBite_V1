@@ -1,200 +1,128 @@
-<div class="min-h-screen bg-paper">
+<div class="min-h-screen bg-paper sb-page">
 
   <!-- Navbar -->
-  <nav class="bg-surface shadow-sm sticky top-0 z-50 border-b border-border">
-    <div class="max-w-2xl mx-auto px-4 py-3
-                flex items-center gap-3">
-      <button (click)="router.navigate(['/home'])"
-        class="p-2 rounded-lg hover:bg-paper
-               text-muted">
-        ← Home
-      </button>
-      <span class="font-extrabold text-lg text-ink">
-        My Orders
-      </span>
+  <nav class="sticky top-0 z-50 bg-surface/90 backdrop-blur border-b border-border">
+    <div class="max-w-2xl mx-auto px-4 py-3 flex items-center gap-3">
+      <button type="button" (click)="router.navigate(['/home'])" aria-label="Back to home"
+        class="w-10 h-10 rounded-full bg-paper text-ink font-bold hover:bg-border transition-all
+               flex items-center justify-center">←</button>
+      <span class="font-extrabold text-lg text-ink tracking-tight">My orders</span>
     </div>
   </nav>
 
-  <div class="max-w-2xl mx-auto px-4 py-6">
+  <div class="max-w-2xl mx-auto px-4 py-5">
 
-    <!-- Filter Tabs -->
-    <div class="flex gap-2 mb-6 overflow-x-auto pb-1">
+    <!-- Filter chips -->
+    <div class="flex gap-2 mb-5 overflow-x-auto pb-1 sb-no-scrollbar">
       @for (f of filters; track f) {
-        <button
-          (click)="filter.set(f)"
-          class="px-4 py-2 rounded-full text-sm
-                 font-semibold whitespace-nowrap
-                 transition-all"
-          [class]="filter() === f
-            ? 'bg-primary text-white shadow-sm'
-            : 'bg-surface text-muted
-               border border-border
-               hover:border-primary/40'">
-          {{ f }}
-        </button>
+        <button type="button" class="sb-chip flex-shrink-0"
+          [class.is-active]="filter() === f"
+          (click)="filter.set(f)">{{ f }}</button>
       }
     </div>
 
-    <!-- Loading Skeleton -->
+    <!-- Loading skeleton -->
     @if (loading()) {
       <div class="space-y-4">
         @for (i of [1,2,3]; track i) {
-          <div class="bg-surface rounded-2xl p-5
-                      shadow-sm animate-pulse">
+          <div class="sb-card p-5">
             <div class="flex justify-between mb-3">
-              <div class="h-4 bg-border rounded w-1/3">
-              </div>
-              <div class="h-4 bg-border rounded w-1/5">
-              </div>
+              <div class="sb-skeleton h-4 w-1/3"></div>
+              <div class="sb-skeleton h-4 w-1/5"></div>
             </div>
-            <div class="h-3 bg-border/60 rounded w-1/2 mb-4">
-            </div>
-            <div class="h-10 bg-border/60 rounded-xl">
-            </div>
+            <div class="sb-skeleton h-3 w-1/2 mb-4"></div>
+            <div class="sb-skeleton h-10"></div>
           </div>
         }
       </div>
     }
 
-    <!-- Error State -->
+    <!-- Error -->
     @if (!loading() && error()) {
-      <div class="text-center py-20">
-        <div class="text-6xl mb-4">⚠️</div>
-        <h3 class="font-extrabold text-ink text-xl">
-          Couldn't load your orders
-        </h3>
-        <p class="text-muted text-sm mt-2 mb-6">
-          Something went wrong. Please try again.
-        </p>
-        <button
-          (click)="loadOrders()"
-          class="bg-primary text-white px-6 py-3
-                 rounded-xl font-bold hover:bg-primary-hover
-                 transition-all">
-          Try Again
-        </button>
+      <div class="sb-card text-center py-16 px-6">
+        <div class="text-5xl mb-3">⚠️</div>
+        <h3 class="font-extrabold text-ink text-xl">Couldn't load your orders</h3>
+        <p class="text-muted text-sm mt-2 mb-6">Something went wrong. Please try again.</p>
+        <button type="button" (click)="loadOrders()" class="sb-btn sb-btn--primary">Try again</button>
       </div>
     }
 
-    <!-- Empty State -->
+    <!-- Empty -->
     @if (!loading() && !error() && filteredOrders().length === 0) {
-      <div class="text-center py-20">
-        <div class="text-6xl mb-4">🍽️</div>
-        <h3 class="font-extrabold text-ink text-xl">
-          No orders yet
-        </h3>
-        <p class="text-muted text-sm mt-2 mb-6">
-          Your order history will appear here
-        </p>
-        <button
-          (click)="router.navigate(['/home'])"
-          class="bg-primary text-white px-6 py-3
-                 rounded-xl font-bold hover:bg-primary-hover
-                 transition-all">
-          🍕 Order Now
+      <div class="sb-card text-center py-16 px-6">
+        <div class="text-5xl mb-3">🍽️</div>
+        <h3 class="font-extrabold text-ink text-xl">No orders yet</h3>
+        <p class="text-muted text-sm mt-2 mb-6">Your order history will appear here.</p>
+        <button type="button" (click)="router.navigate(['/home'])" class="sb-btn sb-btn--primary">
+          🍕 Order now
         </button>
       </div>
     }
 
-    <!-- Orders List -->
+    <!-- Orders -->
     @if (!loading() && !error()) {
       <div class="space-y-4">
         @for (order of filteredOrders(); track order.id) {
-          <div class="bg-surface rounded-2xl shadow-sm
-                      overflow-hidden hover:shadow-md
-                      transition-all">
+          <article class="sb-card sb-rise overflow-hidden">
 
-            <!-- Order Header -->
             <div class="px-4 sm:px-5 pt-5 pb-3">
-              <div class="flex items-start
-                          justify-between gap-3">
-                <div class="min-w-0">
-                  <h3 class="font-extrabold text-ink truncate">
-                    {{ order.restaurantName }}
-                  </h3>
-                  <p class="text-xs text-muted mt-0.5">
-                    {{ order.placedAt
-                       | date:'MMM d, y • h:mm a' }}
-                  </p>
-                  <!-- Items summary -->
-                  <p class="text-sm text-muted mt-1 truncate">
-                    @for (item of order.items;
-                          track item.name;
-                          let last = $last) {
-                      {{ item.name }}
-                      × {{ item.quantity }}{{ last ? '' : ', ' }}
-                    }
-                  </p>
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex gap-3 min-w-0">
+                  <span class="w-12 h-12 rounded-2xl bg-primary-soft flex items-center justify-center text-2xl flex-shrink-0">🍽️</span>
+                  <div class="min-w-0">
+                    <h3 class="font-extrabold text-ink truncate">{{ order.restaurantName }}</h3>
+                    <p class="text-xs text-muted mt-0.5">{{ order.placedAt | date:'MMM d, y • h:mm a' }}</p>
+                    <p class="text-sm text-muted mt-1 truncate">
+                      @for (item of order.items; track item.name; let last = $last) {
+                        {{ item.name }} × {{ item.quantity }}{{ last ? '' : ', ' }}
+                      }
+                    </p>
+                  </div>
                 </div>
 
-                <!-- Status Badge -->
-                <div class="flex flex-col items-end gap-1 flex-shrink-0">
-                  <span class="text-xs font-bold px-3 py-1
-                               rounded-full whitespace-nowrap"
+                <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                  <span class="text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap"
                     [class]="getStatusColor(order.status)">
-                    {{ getStatusIcon(order.status) }}
-                    {{ getStatusLabel(order.status) }}
+                    {{ getStatusIcon(order.status) }} {{ getStatusLabel(order.status) }}
                   </span>
-                  <span class="font-extrabold text-ink">
-                    ₹{{ order.totalAmount }}
-                  </span>
+                  <span class="font-extrabold text-ink">₹{{ order.totalAmount }}</span>
                 </div>
               </div>
             </div>
 
-            <!-- Active Order Progress Bar -->
             @if (isActive(order.status)) {
               <div class="px-4 sm:px-5 pb-3">
-                <div class="bg-primary-soft rounded-full h-1.5">
-                  <div class="bg-primary rounded-full
-                              h-1.5 transition-all"
-                    [style.width]="progressWidth(order.status)">
-                  </div>
+                <div class="bg-primary-soft rounded-full h-2 overflow-hidden">
+                  <div class="bg-brand rounded-full h-2 transition-all duration-700"
+                    [style.width]="progressWidth(order.status)"></div>
                 </div>
               </div>
             }
 
-            <!-- Actions -->
             <div class="px-4 sm:px-5 pb-4 flex flex-wrap gap-2">
-              <!-- Track button for active orders -->
               @if (isActive(order.status)) {
-                <button
-                  (click)="trackOrder(order.id)"
-                  class="flex-1 min-w-[8rem] py-2.5 bg-primary
-                         text-white rounded-xl font-bold
-                         text-sm hover:bg-primary-hover
-                         transition-all flex items-center
-                         justify-center gap-2">
-                  <span class="animate-pulse">🔴</span>
-                  Track Live
+                <button type="button" (click)="trackOrder(order.id)"
+                  class="sb-btn sb-btn--primary flex-1 min-w-[8rem] !py-2.5">
+                  <span class="animate-pulse">🔴</span> Track live
                 </button>
               }
-
-              <!-- Reorder for delivered -->
               @if (order.status === OrderStatus.Delivered) {
-                <button
-                  (click)="router.navigate(['/home'])"
-                  class="flex-1 min-w-[8rem] py-2.5 bg-primary-soft
-                         text-primary border border-primary/30
-                         rounded-xl font-bold text-sm
-                         hover:bg-primary/15 transition-all">
+                <button type="button" (click)="router.navigate(['/home'])"
+                  class="sb-btn flex-1 min-w-[8rem] !py-2.5 bg-primary-soft text-primary border-primary/30 hover:bg-primary/15">
                   🔄 Reorder
                 </button>
               }
-
-              <!-- View Details always -->
-              <button
-                (click)="trackOrder(order.id)"
-                class="flex-1 min-w-[8rem] py-2.5 bg-paper
-                       text-muted rounded-xl font-semibold
-                       text-sm hover:bg-border/60 transition-all">
-                View Details
+              <button type="button" (click)="trackOrder(order.id)"
+                class="sb-btn sb-btn--ghost flex-1 min-w-[8rem] !py-2.5">
+                View details
               </button>
             </div>
-          </div>
+          </article>
         }
       </div>
     }
 
   </div>
+
+  <app-bottom-nav />
 </div>

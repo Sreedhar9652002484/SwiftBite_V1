@@ -33,6 +33,7 @@
     <!-- LIVE TRACKING CARD -->
     <div *ngIf="!isCancelled()" class="tracking-card">
 
+      <div class="tracking-card__top">
       <!-- Header -->
       <div class="tracking-card__header">
         <div class="tracking-card__header-left">
@@ -62,6 +63,7 @@
           <span>{{ getProgressPercent() }}%</span>
           <span>Delivered</span>
         </div>
+      </div>
       </div>
 
       <!-- MAP SECTION — shows when PickedUp or OutForDelivery -->

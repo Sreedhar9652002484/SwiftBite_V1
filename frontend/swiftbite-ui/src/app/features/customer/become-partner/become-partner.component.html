@@ -1,7 +1,7 @@
 <div class="min-h-screen bg-paper">
 
   <!-- Navbar -->
-  <nav class="bg-surface shadow-sm sticky top-0 z-50 border-b border-border">
+  <nav class="sticky top-0 z-50 bg-surface/90 backdrop-blur border-b border-border">
     <div class="max-w-2xl mx-auto px-4 py-3 flex items-center gap-3">
       <button (click)="router.navigate(['/home'])"
         class="p-2 rounded-lg hover:bg-paper text-muted">
@@ -16,7 +16,7 @@
   <div class="max-w-2xl mx-auto px-4 py-6">
 
     @if (submitted()) {
-      <div class="bg-surface rounded-2xl shadow-sm p-8 text-center">
+      <div class="sb-card p-8 text-center">
         <div class="text-5xl mb-4">✅</div>
         <h2 class="font-extrabold text-xl text-ink mb-2">
           Application Submitted!
@@ -25,27 +25,27 @@
           Our team will review your application and get back to you soon.
         </p>
         <button (click)="router.navigate(['/home'])"
-          class="w-full py-3 bg-primary text-white rounded-xl font-bold hover:bg-primary-hover transition-all">
+          class="sb-btn sb-btn--primary w-full">
           Back to Home
         </button>
       </div>
     } @else {
 
       <!-- Role Switcher -->
-      <div class="flex bg-surface rounded-2xl p-1 shadow-sm mb-6 gap-1">
+      <div class="flex bg-surface border border-border rounded-full p-1 mb-6 gap-1">
         <button (click)="setRole('RestaurantAdmin')"
-          class="flex-1 py-2.5 rounded-xl text-sm font-semibold transition-all"
-          [class]="role() === 'RestaurantAdmin' ? 'bg-primary text-white shadow-sm' : 'text-muted hover:text-ink'">
+          class="flex-1 py-2.5 rounded-full text-sm font-bold transition-all"
+          [class]="role() === 'RestaurantAdmin' ? 'bg-brand text-white shadow-pop' : 'text-muted hover:text-ink'">
           🍽️ Restaurant Partner
         </button>
         <button (click)="setRole('DeliveryPartner')"
-          class="flex-1 py-2.5 rounded-xl text-sm font-semibold transition-all"
-          [class]="role() === 'DeliveryPartner' ? 'bg-primary text-white shadow-sm' : 'text-muted hover:text-ink'">
+          class="flex-1 py-2.5 rounded-full text-sm font-bold transition-all"
+          [class]="role() === 'DeliveryPartner' ? 'bg-brand text-white shadow-pop' : 'text-muted hover:text-ink'">
           🛵 Delivery Partner
         </button>
       </div>
 
-      <div class="bg-surface rounded-2xl shadow-sm p-5 sm:p-6">
+      <div class="sb-card p-5 sm:p-6">
         <h3 class="font-bold text-ink mb-1">
           {{ role() === 'RestaurantAdmin' ? 'List your restaurant on SwiftBite' : 'Deliver with SwiftBite' }}
         </h3>
@@ -57,19 +57,19 @@
           <div>
             <label class="text-xs text-muted font-semibold mb-1 block">Phone Number *</label>
             <input [(ngModel)]="form.phone" placeholder="+91 98765 43210"
-              class="w-full px-4 py-2.5 border border-border rounded-xl text-sm bg-surface text-ink outline-none focus:border-primary"/>
+              class="sb-field"/>
           </div>
 
           @if (role() === 'RestaurantAdmin') {
             <div>
               <label class="text-xs text-muted font-semibold mb-1 block">Business Name *</label>
               <input [(ngModel)]="form.businessName" placeholder="e.g. Tasty Bites Kitchen"
-                class="w-full px-4 py-2.5 border border-border rounded-xl text-sm bg-surface text-ink outline-none focus:border-primary"/>
+                class="sb-field"/>
             </div>
             <div>
               <label class="text-xs text-muted font-semibold mb-1 block">City</label>
               <input [(ngModel)]="form.city" placeholder="City"
-                class="w-full px-4 py-2.5 border border-border rounded-xl text-sm bg-surface text-ink outline-none focus:border-primary"/>
+                class="sb-field"/>
             </div>
           } @else {
             <div>
@@ -87,18 +87,18 @@
             <div>
               <label class="text-xs text-muted font-semibold mb-1 block">License Number</label>
               <input [(ngModel)]="form.licenseNumber" placeholder="Driving license number"
-                class="w-full px-4 py-2.5 border border-border rounded-xl text-sm bg-surface text-ink outline-none focus:border-primary"/>
+                class="sb-field"/>
             </div>
           }
 
           <div>
             <label class="text-xs text-muted font-semibold mb-1 block">Additional Notes</label>
             <textarea [(ngModel)]="form.note" rows="3" placeholder="Anything else we should know?"
-              class="w-full px-4 py-2.5 border border-border rounded-xl text-sm bg-surface text-ink outline-none focus:border-primary"></textarea>
+              class="sb-field"></textarea>
           </div>
 
           <button (click)="submit()" [disabled]="submitting()"
-            class="w-full py-3 bg-primary text-white rounded-xl font-bold hover:bg-primary-hover transition-all disabled:opacity-60">
+            class="sb-btn sb-btn--primary w-full disabled:opacity-60">
             {{ submitting() ? 'Submitting...' : '✅ Submit Application' }}
           </button>
         </div>

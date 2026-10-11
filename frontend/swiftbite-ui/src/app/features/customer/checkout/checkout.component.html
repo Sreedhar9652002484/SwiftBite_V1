@@ -1,289 +1,206 @@
-<div class="min-h-screen bg-paper">
+<div class="min-h-screen bg-paper pb-10">
 
   <!-- Navbar -->
-  <nav class="bg-surface shadow-sm sticky top-0 z-50 border-b border-border">
+  <nav class="sticky top-0 z-50 bg-surface/90 backdrop-blur border-b border-border">
     <div class="max-w-4xl mx-auto px-4 py-3 flex items-center gap-3">
-      <button (click)="router.navigate(['/home'])"
-        class="p-2 rounded-lg hover:bg-paper text-muted">
-        ← Back
-      </button>
-      <span class="font-extrabold text-lg text-ink">
-        Checkout
-      </span>
+      <button type="button" (click)="router.navigate(['/home'])" aria-label="Back"
+        class="w-10 h-10 rounded-full bg-paper text-ink font-bold hover:bg-border transition-all
+               flex items-center justify-center">←</button>
+      <span class="font-extrabold text-lg text-ink tracking-tight">Checkout</span>
+      <span class="ml-auto text-xs font-bold text-muted">🔒 Secure</span>
     </div>
   </nav>
 
-  <!-- Steps Indicator -->
-  <div class="bg-surface border-b border-border">
-    <div class="max-w-4xl mx-auto px-4 py-3">
-      <div class="flex items-center gap-2">
-        @for (s of ['address','payment','confirm']; track s; let i = $index) {
+  <!-- Steps -->
+  <div class="max-w-4xl mx-auto px-4 pt-5">
+    <ol class="flex items-center">
+      @for (s of ['address','payment','confirm']; track s; let i = $index) {
+        <li class="flex items-center" [class.flex-1]="i < 2">
           <div class="flex items-center gap-2">
-            <div class="w-7 h-7 rounded-full flex items-center justify-center
-                        text-xs font-bold"
+            <span class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-extrabold transition-all"
               [class]="step() === s
-                ? 'bg-primary text-white'
-                : 'bg-paper text-muted'">
+                ? 'bg-brand text-white shadow-pop'
+                : 'bg-surface border border-border text-muted'">
               {{ i + 1 }}
-            </div>
-            <span class="text-xs font-semibold capitalize"
-              [class]="step() === s
-                ? 'text-primary' : 'text-muted'">
-              {{ s }}
             </span>
-            <span *ngIf="i < 2" class="text-border mx-1">›</span>
+            <span class="text-xs font-bold capitalize hidden sm:inline"
+              [class]="step() === s ? 'text-primary' : 'text-muted'">{{ s }}</span>
           </div>
-        }
-      </div>
-    </div>
+          @if (i < 2) {
+            <span class="flex-1 h-0.5 mx-3 bg-border rounded"></span>
+          }
+        </li>
+      }
+    </ol>
   </div>
 
-  <div class="max-w-4xl mx-auto px-4 py-6">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+  <div class="max-w-4xl mx-auto px-4 py-5">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
 
       <!-- LEFT: Steps -->
       <div class="lg:col-span-2 space-y-4">
 
-        <!-- Error -->
-        <div *ngIf="error()"
-          class="p-4 bg-danger/10 border border-danger/40
-                 rounded-xl text-danger text-sm">
+        <div *ngIf="error()" role="alert"
+          class="p-4 bg-danger/10 border border-danger/40 rounded-2xl text-danger text-sm font-semibold">
           ❌ {{ error() }}
         </div>
 
         <!-- ── STEP 1: Address ─────────────────────────── -->
-        <div *ngIf="step() === 'address'"
-          class="bg-surface rounded-2xl p-4 sm:p-6 shadow-sm">
-          <h2 class="font-extrabold text-lg mb-4 text-ink">
-            📍 Delivery Address
-          </h2>
+        <section *ngIf="step() === 'address'" class="sb-card p-4 sm:p-6 sb-rise">
+          <h2 class="font-extrabold text-lg mb-4 text-ink tracking-tight">📍 Delivery address</h2>
 
-          <!-- Address List -->
           @if (loadingAddresses()) {
-            <div class="flex items-center gap-2 text-muted text-sm py-6 justify-center">
-              <span class="inline-block w-4 h-4 border-2 border-primary-soft border-t-primary rounded-full animate-spin"></span>
-              Loading addresses...
+            <div class="space-y-3 mb-4">
+              <div class="sb-skeleton h-20"></div>
+              <div class="sb-skeleton h-20"></div>
             </div>
           }
+
           <div class="space-y-3 mb-4">
             @for (addr of addresses(); track addr.id) {
-              <div class="border-2 rounded-xl p-4 cursor-pointer transition-all"
-                [class]="selectedAddr()?.id === addr.id
-                  ? 'border-primary bg-primary-soft'
-                  : 'border-border hover:border-primary/40'"
-                (click)="selectedAddr.set(addr)">
-                <div class="flex items-start justify-between">
-                  <div>
-                    <div class="flex items-center gap-2">
-                      <span class="font-bold text-sm text-ink">
-                        {{ addr.addressType === 'Home' ? '🏠' :
-                           addr.addressType === 'Office' ? '🏢' : '📍' }}
-                        {{ addr.label || addr.addressType }}
-                      </span>
-                      <span *ngIf="addr.isDefault"
-                        class="bg-accent-soft text-accent text-xs
-                               px-2 py-0.5 rounded-full font-semibold">
-                        Default
-                      </span>
+              <div class="sb-option" role="radio" tabindex="0"
+                [attr.aria-checked]="selectedAddr()?.id === addr.id"
+                [class.is-selected]="selectedAddr()?.id === addr.id"
+                (click)="selectedAddr.set(addr)"
+                (keydown.enter)="selectedAddr.set(addr)">
+                <div class="flex items-start justify-between gap-3">
+                  <div class="flex gap-3 min-w-0">
+                    <span class="w-10 h-10 rounded-full bg-paper flex items-center justify-center text-lg flex-shrink-0">
+                      {{ addr.addressType === 'Home' ? '🏠' : addr.addressType === 'Office' ? '🏢' : '📍' }}
+                    </span>
+                    <div class="min-w-0">
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <span class="font-extrabold text-sm text-ink">{{ addr.label || addr.addressType }}</span>
+                        <span *ngIf="addr.isDefault"
+                          class="bg-accent-soft text-accent text-xs px-2 py-0.5 rounded-full font-bold">Default</span>
+                      </div>
+                      <p class="text-muted text-sm mt-0.5">{{ addr.fullAddress }}</p>
+                      <p class="text-muted text-xs mt-0.5">{{ addr.city }}, {{ addr.pinCode }}</p>
                     </div>
-                    <p class="text-muted text-sm mt-1">
-                      {{ addr.fullAddress }}
-                    </p>
-                    <p class="text-muted text-xs mt-0.5">
-                      {{ addr.city }}, {{ addr.pinCode }}
-                    </p>
                   </div>
-                  <div *ngIf="selectedAddr()?.id === addr.id"
-                    class="text-primary text-xl">✓</div>
+                  <span *ngIf="selectedAddr()?.id === addr.id"
+                    class="w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center flex-shrink-0">✓</span>
                 </div>
               </div>
             }
           </div>
 
-          <!-- Add Address -->
-          <button *ngIf="!showAddressForm()"
-            (click)="showAddressForm.set(true)"
-            class="w-full border-2 border-dashed border-border
-                   rounded-xl p-3 text-muted text-sm
-                   hover:border-primary/50 hover:text-primary
-                   transition-all">
-            + Add New Address
+          <button type="button" *ngIf="!showAddressForm()" (click)="showAddressForm.set(true)"
+            class="w-full border-2 border-dashed border-border rounded-2xl p-3.5 text-muted text-sm font-bold
+                   hover:border-primary hover:text-primary transition-all">
+            + Add new address
           </button>
 
-          <!-- Address Form -->
-          <div *ngIf="showAddressForm()"
-            class="border border-border rounded-xl p-4 mt-2 space-y-3">
-            <input [(ngModel)]="newAddress.label"
-              placeholder="Label (e.g. Home, Office)"
-              class="input-field"/>
-            <input [(ngModel)]="newAddress.fullAddress"
-              placeholder="Full Address"
-              class="input-field"/>
+          <div *ngIf="showAddressForm()" class="border border-border rounded-2xl p-4 mt-2 space-y-3 bg-paper">
+            <input [(ngModel)]="newAddress.label" placeholder="Label (e.g. Home, Office)" class="sb-field"/>
+            <input [(ngModel)]="newAddress.fullAddress" placeholder="Full address" class="sb-field"/>
             <div class="grid grid-cols-2 gap-3">
-              <input [(ngModel)]="newAddress.city"
-                placeholder="City" class="input-field"/>
-              <input [(ngModel)]="newAddress.pinCode"
-                placeholder="PIN Code" class="input-field"/>
+              <input [(ngModel)]="newAddress.city" placeholder="City" class="sb-field"/>
+              <input [(ngModel)]="newAddress.pinCode" placeholder="PIN code" class="sb-field"/>
             </div>
             <div class="flex gap-2">
-              <button (click)="addNewAddress()"
-                [disabled]="savingAddress()"
-                class="btn-primary flex-1">
-                {{ savingAddress() ? 'Saving…' : 'Save Address' }}
+              <button type="button" (click)="addNewAddress()" [disabled]="savingAddress()"
+                class="sb-btn sb-btn--primary flex-1">
+                {{ savingAddress() ? 'Saving…' : 'Save address' }}
               </button>
-              <button (click)="showAddressForm.set(false)"
-                [disabled]="savingAddress()"
-                class="btn-secondary flex-1">
-                Cancel
-              </button>
+              <button type="button" (click)="showAddressForm.set(false)" [disabled]="savingAddress()"
+                class="sb-btn sb-btn--ghost flex-1">Cancel</button>
             </div>
           </div>
 
-          <button (click)="nextStep()"
-            [disabled]="!selectedAddr()"
-            class="btn-primary w-full mt-4">
-            Continue to Payment →
+          <button type="button" (click)="nextStep()" [disabled]="!selectedAddr()"
+            class="sb-btn sb-btn--primary w-full mt-5">
+            Continue to payment →
           </button>
-        </div>
+        </section>
 
         <!-- ── STEP 2: Payment ─────────────────────────── -->
-        <div *ngIf="step() === 'payment'"
-          class="bg-surface rounded-2xl p-4 sm:p-6 shadow-sm">
-          <h2 class="font-extrabold text-lg mb-4 text-ink">
-            💳 Payment Method
-          </h2>
+        <section *ngIf="step() === 'payment'" class="sb-card p-4 sm:p-6 sb-rise">
+          <h2 class="font-extrabold text-lg mb-4 text-ink tracking-tight">💳 Payment method</h2>
 
-          <div class="space-y-3">
+          <div class="space-y-3" role="radiogroup">
             @for (pm of paymentMethods; track pm.id) {
-              <div class="border-2 rounded-xl p-4 cursor-pointer transition-all"
-                [class]="paymentMethod() === pm.id
-                  ? 'border-primary bg-primary-soft'
-                  : 'border-border hover:border-primary/40'"
-                (click)="paymentMethod.set(pm.id)">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <span class="text-2xl">{{ pm.icon }}</span>
-                    <span class="font-semibold text-sm text-ink">
-                      {{ pm.label }}
-                    </span>
-                  </div>
-                  <div *ngIf="paymentMethod() === pm.id"
-                    class="text-primary text-xl">✓</div>
+              <div class="sb-option flex items-center justify-between" role="radio" tabindex="0"
+                [attr.aria-checked]="paymentMethod() === pm.id"
+                [class.is-selected]="paymentMethod() === pm.id"
+                (click)="paymentMethod.set(pm.id)"
+                (keydown.enter)="paymentMethod.set(pm.id)">
+                <div class="flex items-center gap-3">
+                  <span class="w-10 h-10 rounded-full bg-paper flex items-center justify-center text-xl">{{ pm.icon }}</span>
+                  <span class="font-bold text-sm text-ink">{{ pm.label }}</span>
                 </div>
+                <span *ngIf="paymentMethod() === pm.id"
+                  class="w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center">✓</span>
               </div>
             }
           </div>
 
-          <div class="flex gap-3 mt-4">
-            <button (click)="prevStep()"
-              class="btn-secondary flex-1">
-              ← Back
-            </button>
-            <button (click)="nextStep()"
-              class="btn-primary flex-1">
-              Review Order →
-            </button>
+          <div class="flex gap-3 mt-5">
+            <button type="button" (click)="prevStep()" class="sb-btn sb-btn--ghost flex-1">← Back</button>
+            <button type="button" (click)="nextStep()" class="sb-btn sb-btn--primary flex-1">Review order →</button>
           </div>
-        </div>
+        </section>
 
         <!-- ── STEP 3: Confirm ─────────────────────────── -->
-        <div *ngIf="step() === 'confirm'"
-          class="bg-surface rounded-2xl p-4 sm:p-6 shadow-sm">
-          <h2 class="font-extrabold text-lg mb-4 text-ink">
-            ✅ Review & Confirm
-          </h2>
+        <section *ngIf="step() === 'confirm'" class="sb-card p-4 sm:p-6 sb-rise">
+          <h2 class="font-extrabold text-lg mb-4 text-ink tracking-tight">✅ Review &amp; confirm</h2>
 
-          <!-- Delivery Address -->
-          <div class="bg-paper rounded-xl p-4 mb-4">
-            <p class="text-xs text-muted font-semibold mb-1">
-              DELIVERING TO
-            </p>
-            <p class="font-semibold text-sm text-ink">
-              {{ selectedAddr()?.fullAddress }}
-            </p>
-            <p class="text-xs text-muted">
-              {{ selectedAddr()?.city }},
-              {{ selectedAddr()?.pinCode }}
-            </p>
+          <div class="bg-paper rounded-2xl p-4 mb-3">
+            <p class="text-xs text-muted font-extrabold tracking-wider mb-1">DELIVERING TO</p>
+            <p class="font-bold text-sm text-ink">{{ selectedAddr()?.fullAddress }}</p>
+            <p class="text-xs text-muted mt-0.5">{{ selectedAddr()?.city }}, {{ selectedAddr()?.pinCode }}</p>
           </div>
 
-          <!-- Payment -->
-          <div class="bg-paper rounded-xl p-4 mb-4">
-            <p class="text-xs text-muted font-semibold mb-1">
-              PAYMENT
-            </p>
-            <p class="font-semibold text-sm text-ink">
-             {{ selectedPaymentMethod?.icon }}
-            {{ selectedPaymentMethod?.label }}
+          <div class="bg-paper rounded-2xl p-4 mb-5">
+            <p class="text-xs text-muted font-extrabold tracking-wider mb-1">PAYMENT</p>
+            <p class="font-bold text-sm text-ink">
+              {{ selectedPaymentMethod?.icon }} {{ selectedPaymentMethod?.label }}
             </p>
           </div>
 
           <div class="flex gap-3">
-            <button (click)="prevStep()"
-              class="btn-secondary flex-1">
-              ← Back
-            </button>
-            <button (click)="placeOrder()"
-              [disabled]="loading()"
-              class="btn-primary flex-1">
+            <button type="button" (click)="prevStep()" class="sb-btn sb-btn--ghost flex-1">← Back</button>
+            <button type="button" (click)="placeOrder()" [disabled]="loading()"
+              class="sb-btn sb-btn--primary flex-[2]">
               @if (loading()) {
-                <span>Placing Order...</span>
+                <span>Placing order…</span>
               } @else {
-                <span>
-                  Place Order • ₹{{ cartSvc.total() }}
-                </span>
+                <span>Place order · ₹{{ cartSvc.total() }}</span>
               }
             </button>
           </div>
-        </div>
+        </section>
       </div>
 
-      <!-- RIGHT: Order Summary -->
-      <div class="lg:col-span-1">
-        <div class="bg-surface rounded-2xl shadow-sm overflow-hidden lg:sticky lg:top-20">
-          <div class="bg-primary text-white px-5 py-4">
-            <h3 class="font-bold">🛒 Order Summary</h3>
-            <p class="text-white/80 text-xs mt-1">
-              {{ cartSvc.restaurantName() }}
-            </p>
+      <!-- RIGHT: Order summary -->
+      <aside class="lg:col-span-1">
+        <div class="sb-card overflow-hidden lg:sticky lg:top-20">
+          <div class="bg-brand text-white px-5 py-4">
+            <h3 class="font-extrabold">🛒 Order summary</h3>
+            <p class="text-white/85 text-xs mt-1">{{ cartSvc.restaurantName() }}</p>
           </div>
 
           <div class="p-4 space-y-3">
             @for (item of cartSvc.items(); track item.menuItemId) {
-              <div class="flex justify-between text-sm">
+              <div class="flex justify-between gap-3 text-sm">
                 <span class="text-ink">
-                  {{ item.name }} × {{ item.quantity }}
+                  <span class="font-extrabold text-primary">{{ item.quantity }}×</span> {{ item.name }}
                 </span>
-                <span class="font-semibold text-ink">
-                  ₹{{ item.price * item.quantity }}
-                </span>
+                <span class="font-bold text-ink">₹{{ item.price * item.quantity }}</span>
               </div>
             }
           </div>
 
           <div class="border-t border-border px-4 py-3 space-y-2 bg-paper">
-            <div class="flex justify-between text-sm text-muted">
-              <span>Subtotal</span>
-              <span>₹{{ cartSvc.subTotal() }}</span>
-            </div>
-            <div class="flex justify-between text-sm text-muted">
-              <span>Delivery</span>
-              <span>₹{{ cartSvc.deliveryFee() }}</span>
-            </div>
-            <div class="flex justify-between text-sm text-muted">
-              <span>GST (5%)</span>
-              <span>₹{{ cartSvc.taxes() }}</span>
-            </div>
-            <div class="flex justify-between font-extrabold
-                        text-base border-t border-border pt-2 text-ink">
-              <span>Total</span>
-              <span class="text-primary">
-                ₹{{ cartSvc.total() }}
-              </span>
+            <div class="flex justify-between text-sm text-muted"><span>Subtotal</span><span>₹{{ cartSvc.subTotal() }}</span></div>
+            <div class="flex justify-between text-sm text-muted"><span>Delivery</span><span>₹{{ cartSvc.deliveryFee() }}</span></div>
+            <div class="flex justify-between text-sm text-muted"><span>GST (5%)</span><span>₹{{ cartSvc.taxes() }}</span></div>
+            <div class="flex justify-between font-extrabold text-base border-t border-border pt-2 text-ink">
+              <span>Total</span><span class="text-primary">₹{{ cartSvc.total() }}</span>
             </div>
           </div>
         </div>
-      </div>
+      </aside>
     </div>
   </div>
 </div>

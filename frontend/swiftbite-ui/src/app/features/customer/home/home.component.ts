@@ -1,20 +1,33 @@
-import { Component, OnInit, signal, inject } from '@angular/core';
+import { Component, OnInit, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../../../core/auth/auth.service';
 import { RestaurantService, Restaurant, CuisineType } from '../../../core/services/restaurant.service';
 import { SiteHeaderComponent } from '../../../shared/components/site-header/site-header.component';
+import { BottomNavComponent } from '../../../shared/components/bottom-nav/bottom-nav.component';
+import { CartService } from '../../../core/services/cart.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, SiteHeaderComponent],
+  imports: [CommonModule, SiteHeaderComponent, BottomNavComponent],
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
   authService = inject(AuthService);
   router      = inject(Router);
   private restSvc = inject(RestaurantService);
+  cartSvc = inject(CartService);
+
+  activeCuisine = signal<CuisineType | null>(null);
+  openOnly      = signal(false);
+  /** What the grid renders: the loaded list narrowed by the active filters. */
+  visible = computed(() => {
+    const c = this.activeCuisine();
+    return this.restaurants().filter(r =>
+      (c === null || Number(r.cuisineType) === Number(c)) &&
+      (!this.openOnly() || r.isOpen));
+  });
 
   restaurants  = signal<Restaurant[]>([]);
   loading      = signal(true);
@@ -96,15 +109,7 @@ export class HomeComponent implements OnInit {
   }
 
   filterByCuisine(cuisineEnum: CuisineType): void {
-    const filtered = this.restaurants().filter(r =>
-      // compare as numbers since cuisineType may be number | string
-      Number(r.cuisineType) === Number(cuisineEnum)
-    );
-    if (filtered.length > 0) {
-      this.restaurants.set(filtered);
-    } else {
-      this.loadRestaurants();
-    }
+    this.activeCuisine.set(this.activeCuisine() === cuisineEnum ? null : cuisineEnum);
   }
 
   onSearch(query: string): void {
